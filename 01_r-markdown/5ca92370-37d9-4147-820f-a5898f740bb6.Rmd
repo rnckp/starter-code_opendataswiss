@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Freigegebene Chargen
+
+Die Liste führt die durch das OMCL freigegebenen Chargen Blutprodukte und Impfstoffe auf. Die Freigabe erfolgte gemäss Art. 21 AMZV aufgrund eigener Laborprüfungen und Überprüfung der Dokumentation des Herstellers oder durch die Anerkennung eines Chargenfreigabezertifikates eines EU/EEA-OMCL (Notifikation).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/freigegebene-chargen)<br>
+[Direct link by **Swissmedic Schweizerisches Heilmittelinstitut** for dataset](https://www.swissmedic.ch/swissmedic/de/home/services/omcl-lab/freigegebene_chargen.html)
+
+Auto generated R starter code for data set bw214@swissmedic.
+
+## Metadata
+
+- **Publisher** `Schnittstellen-Team ‘Internet’`
+- **Organization.display_name.de** `Swissmedic Schweizerisches Heilmittelinstitut`
+- **Organization.url** `https://www.swissmedic.ch/`
+- **Maintainer** `technischer Ansprechpartner (Bitte im Vermerk angeben, dass es sich um die Schnittstelle bw-214-ogd handelt)`
+- **Maintainer_email** `IT@swissmedic.ch`
+- **Keywords.de** `['freigegebenen-chargen', 'blutprodukte']`
+- **Issued** `2022-05-01T00:00:00`
+- **Metadata_created** `2022-02-13T15:14:13.339624`
+- **Metadata_modified** `2022-07-06T14:48:17.540526`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5ca92370-37d9-4147-820f-a5898f740bb6
+# Description              : Die Liste führt die durch das OMCL freigegebenen Chargen Blutprodukte und Impfstoffe auf. 
+# Issued                   : 2022-05-01T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://ogd.swissmedic.ch/bew/omcl/Freigegebene_Chargen.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+IT@swissmedic.ch | technischer Ansprechpartner (Bitte im Vermerk angeben, dass es sich um die Schnittstelle bw-214-ogd handelt)

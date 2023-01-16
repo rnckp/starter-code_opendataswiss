@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Grundstückspreise (Median) der im Freihandkauf umgesetzten Grundstücke nach Bebauungsart abzüglich Gebäudeversicherungswert (Bauzone), seit 2009
+
+
+Diese Daten beinhalten die Medianpreise pro Quadratmeter Bauland abzüglich des Gebäudeversicherungswerts der Bebauung von gehandelten Grundstücken in der Stadt Zürich nach Handänderungsjahr und Bebauungstyp, ergänzt mit der Anzahl Handänderungen, gehandelter Fläche und Umsatzwert, der für die Zahlen berücksichtigt wurde.
+
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/grundstuckspreise-median-der-im-freihandkauf-umgesetzten-grundstucke-nach-bebauungsart-abz-2009)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_hae_preis_anz_fl_bebart_uw_ohnegvz_seit2009_od5131)
+
+Auto generated R starter code for data set ba63af54-e3a9-47cc-bfe0-b8324ecafdab@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['tabelle', 'liegenschaftenhandel', 'sachdaten', 'handanderungen', 'sasa', 'zeitreihe', 'bebaungsart']`
+- **Issued** `2019-10-15T00:00:00`
+- **Metadata_created** `2020-02-11T05:08:54.986297`
+- **Metadata_modified** `2023-01-16T00:50:38.340428`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 17724aa5-2666-46c9-a283-1f618131395f
+# Description              : 
+# Issued                   : 2020-02-10T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_hae_preis_anz_fl_bebart_uw_ohnegvz_seit2009_od5131/download/BAU513OD5131.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

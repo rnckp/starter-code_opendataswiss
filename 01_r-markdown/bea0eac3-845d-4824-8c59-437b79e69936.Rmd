@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Altersklassen der Bewohnenden nach Gebäudeeigentum und Stadtquartieren in der Stadt Zürich seit 2008
+
+
+Diese Daten zeigen die Personenzahl und deren Altersverteilung nach Stadtquartier und Gebäude-Eigentumsgruppe in der Stadt Zürich. Die Daten liegen ab dem Jahr 2008 jährlich vor.
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/altersklassen-der-bewohnenden-nach-gebaudeeigentum-und-stadtquartieren-in-der-stadt-zurich-2008)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_best_geb_ea_pers_altersgruppe_quartier_jahr_od6983)
+
+Auto generated R starter code for data set 0b5fdc43-a738-420f-8d3c-72c1a49cfd2f@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['betagt', 'eigentum', 'gwz', 'senior', 'gemeinnutzig', 'bvs', 'eigentumswohnung', 'stockwerkeigentum', 'erwerb', 'kind', 'zeitreihe', 'quartier', 'grundangebot-bau', 'offentlich', 'tabelle', 'sachdaten', 'bewohn', 'alter', 'privat', 'sasa']`
+- **Issued** `2021-04-15T00:00:00`
+- **Metadata_created** `2021-06-29T02:48:04.684611`
+- **Metadata_modified** `2023-01-16T00:51:05.202731`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : bea0eac3-845d-4824-8c59-437b79e69936
+# Description              : 
+# Issued                   : 2021-06-28T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_best_geb_ea_pers_altersgruppe_quartier_jahr_od6983/download/BAU698OD6983.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

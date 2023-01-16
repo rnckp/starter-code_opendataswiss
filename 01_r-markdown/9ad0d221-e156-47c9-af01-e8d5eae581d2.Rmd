@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Standorte der automatischen Fuss- und Velozählungen
+
+Das Tiefbauamt erhebt seit 2009 die Velofrequenzen in der Stadt Zürich mit Hilfe automatischer Zählgeräte. Der Fussverkehr wird seit 2012 mit Geräten gezählt. Das Zählstellennetz wurde schrittweise gemäss einem definierten Standortkonzept ausgebaut und umfasst jeweils rund 20 - 25 Querschnitten im gesamten Stadtgebiet. Die damit erhobenen Daten bilden eine wichtige quantitative Grundlage zur Beurteilung der Veloförderung im Sinne von «Stadtverkehr 2025» und dem Masterplan Velo. Die Daten liegen richtungsgetrennt und auf Viertelstundenwerte aggregiert vor. Die Daten stellen Gerätewerte dar. Um die effektiven Frequenzen im Fuss- oder Veloverkehr zu bestimmen, müssen die angegebenen Korrekturfaktoren angewandt werden.
+In diesem Datensatz sind nur die eigentlichen Standorte enthalten. Die dazugehörenden Zählwerte sind über Open Data Zürich erhältlich (https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo).
+
+**Zweck**: Die erhobenen Daten werden für das Controlling von Stadtverkehr 2025 und Masterplan Velo benötigt. Sie bilden zudem eine wichtige Grundlage zur Dokumentation der Bedeutungen des Fuss- und Veloverkehrs und für die Erfolgskontrolle deren Förderung.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/standorte-der-automatischen-fuss-und-velozahlungen)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_standorte_der_automatischen_fuss__und_velozaehlungen)
+
+Auto generated R starter code for data set 3287af1c-905b-4fcd-b108-fd2ca9e43a4d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Grundlagen + Strategien, Tiefbauamt, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['fussverkehr', 'frequenzen', 'geodaten', 'verkehrszahlung', 'vektordaten', 'geoportal', 'punktdaten', 'stzh', 'veloverkehr']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:13:39.310646`
+- **Metadata_modified** `2023-01-16T00:54:42.941638`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9ad0d221-e156-47c9-af01-e8d5eae581d2
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Standorte_der_automatischen_Fuss__und_Velozaehlungen?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

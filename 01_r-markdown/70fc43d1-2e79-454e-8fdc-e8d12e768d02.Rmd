@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Maturitätsquoten im Kanton Zürich
+
+Durchschnittliche Maturitätsquoten aller politischen Gemeinden im Kanton Zürich in den letzten vier verfügbaren Jahren. Die Quoten werden pro politische Gemeinde wie folgt berechnet: Summe der Maturitätsabschlüsse der Gemeinde in den vier letzten Jahren geteilt durch die Summe der Anzahl 19-jähriger Einwohnerinnen und Einwohner dieser Gemeinde in den letzten vier Jahren.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/maturitatsquoten-im-kanton-zurich)<br>
+[Direct link by **Bildungsstatistik Kanton Zürich** for dataset](https://www.zh.ch/de/bildung/bildungssystem/zahlen-fakten-in-bildung.html#-748425056)
+
+Auto generated R starter code for data set 672@bildungsstatistik-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Bildungsstatistik des Kantons Zürich`
+- **Organization.display_name.de** `Bildungsstatistik Kanton Zürich`
+- **Organization.url** `https://pub.bista.zh.ch`
+- **Maintainer** `Bildungsstatistik des Kantons Zürich`
+- **Maintainer_email** `bista@bi.zh.ch`
+- **Keywords.de** `['lernende', 'mittelschulen', 'handelsschulen', 'ausbildung', 'bildung', 'gemeinden', 'schuelerinnen', 'gymnasien', 'matura', 'politischegemeinden', 'schueler']`
+- **Issued** `2020-03-06T00:00:00`
+- **Metadata_created** `2021-01-14T16:40:22.135320`
+- **Metadata_modified** `2023-01-16T03:09:11.831346`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 70fc43d1-2e79-454e-8fdc-e8d12e768d02
+# Description              : Die Daten sind differenziert nach Stand der Gemeindegrenzen, politische Gemeinde, BFS-Code der politischen Gemeinde. Ausgewiesen werden die Anzahl Abschlüsse einer Gymnasialen Maturität, die Anzahl Personen im Alter von 19 Jahren und die daraus berechnete Quote. Stand_Gemeindegrenzen: Durch die Fusionen von Gemeinden verändern sich die Gemeindegrenzen von Jahr zu Jahr. Der Stand der Gemeindegrenzen zeigt das Jahr, das für die Auswahl der Gemeinden benutzt wird. Sind Gemeinden in den Vorjahren noch nicht fusioniert, werden diese für die Berechnung zusammengefasst. Total_Abschluss_gymnasial: Die Anzahl aller in den vier relevanten Jahren erlangen gymnasialen Maturitäten. Relevant für die Zuteilung zu den Gemeinden ist der Wohnort der Schülerinnen und Schüler. Schülerinnen und Schüler, welche eine Schule ausserhalb des Kantons Zürich besuchen, sind nicht berücksichtigt. Total_19_Jahre: Als Referenz für die Quotenberechnung dient die jeweilige 19-jährige Wohnbevölkerung. Für Gemeinden, deren Anzahl 19-Jähriger kleiner als 51 ist, wird keine Maturitätsquote berechnet.
+# Issued                   : 2020-03-06T00:00:00
+# Modified                 : 2022-10-21T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/bista/ZH_Maturitaetsquote_Gemeinden_und_Kanton.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+bista@bi.zh.ch | Bildungsstatistik des Kantons Zürich

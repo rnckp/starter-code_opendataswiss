@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Rinder - Anzahl Abkalbungen von Kühen
+
+Verteilung der Anzahl Abkalbungen von Kühen nach Jahr der Schlachtung und Rassentyp (Milchrassen oder Fleischrassen). Die Anzahl wird im Bereich von 1-20 in Form eines Boxplots wiedergegeben. Die Anzahl Beobachtungen pro Rassentyp und Jahr findet sich im .csv.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/rinder-anzahl-abkalbungen-von-kuhen)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set cattle-calvingNumbers@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['rinder', 'abkalbung', 'nutztiere', 'alter']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:23:02.425965`
+- **Metadata_modified** `2023-01-10T01:10:53.391545`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 426d1fde-01ae-49fb-b276-f8452e317e57
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/cattle-calvingNumbers.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

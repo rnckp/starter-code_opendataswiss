@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Zweiradparkierung
+
+Der Datensatz umfasst den aktuellen Stand (soweit bekannt) der öffentlich zugänglichen Abstellplätze für Velo, Motorräder oder kombinierte Velo/Motorräder-Abstellplätze auf dem Gebiet der Stadt Zürich. Neben der Lage der Abstellplätze enthält der Datensatz weitere Attribute wie Pfostentyp, Kapazität, Gebührenpflicht. Die Daten werden alle zwei Jahre manuell bei einer Begehung erhoben und der Datensatz entsprechend nachgführt. Aber auch zwischendurch werden bei bekannt gewordenen Änderungen oder Rückmeldungen Daten aktualisiert. Die Daten zeigen nicht in allen Fällen das aktuelle und reale Abstellplatzangebot vor Ort: So ist das temporäre Wegfallen von Abstellplätzen wegen Baustellen oder Ähnlichem nicht berücksichtigt. Bei allen Anlagen wird die Kapazität an Abstellplätzen bestmöglich abgeschätzt. Die Daten enthalten keine Informationen darüber, ob ein Abstellplatz frei oder belegt ist. Auch besteht keine Garantie, dass die aufgeführten Abstellplätze zu jedem Zeitpunkt nutzbar und zugänglich sind. Die gemischten Abstellplätze können trotz sorgfältiger Datenaufnahme in der Praxis an Orten sein, deren Zufahrt für Motorräder verboten ist. Sollten aufgeführte Abstellplätze nicht öffentlich zugänglich sein, so werden diese auf Wunsch oder nach Rückmeldung aus der Datentabelle entfernt. Fehlerhafte Attribute werden nach Rückmeldung ebenfalls korrigiert.
+
+**Zweck**: Parkraumplanung, Statistisches Jahrbuch und statistisches Informationsportal, Controlling Masterplan Velo, Mobilitätsmanagement, allgemeine Planungsgrundlage
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zweiradparkierung)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_zweiradparkierung)
+
+Auto generated R starter code for data set 82e356fb-0510-4f0d-8395-53f19117f3a5@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Grundlagen + Strategien, Tiefbauamt, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['motorrad', 'mofa', 'geodaten', 'velo', 'zweiradabstellplatze', 'abstellplatz', 'punktdaten', 'stzh', 'parkplatz', 'vektordaten', 'fahrrad', 'geoportal']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:10:28.117533`
+- **Metadata_modified** `2023-01-16T00:53:38.684508`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9161520a-31a3-4b0c-851c-9b36ee50caee
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Zweiradparkierung?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

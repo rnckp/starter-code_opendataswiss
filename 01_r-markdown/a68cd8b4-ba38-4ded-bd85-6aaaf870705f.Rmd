@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Spitex
+
+Spitexstandorte in der Stadt Zürich
+
+**Zweck**: Lokalisierung der Spitexstandorte
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/spitex1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_spitex)
+
+Auto generated R starter code for data set 8f2c85c0-ebc0-4402-ac83-94c5bb297da9@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Informatik & Organisation, Städtische Gesundheitsdienste, Gesundheits- und Umweltdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['vektordaten', 'pflege', 'punktdaten', 'spitex', 'stzh', 'geodaten', 'geoportal']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:13:41.914471`
+- **Metadata_modified** `2023-01-16T00:53:52.489714`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a68cd8b4-ba38-4ded-bd85-6aaaf870705f
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Spitex?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

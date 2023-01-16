@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Sozialzentrum
+
+Sozialzentren in der Stadt Zürich
+
+**Zweck**: Lokalisierung der Sozialzentren
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sozialzentrum2)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_sozialzentrum)
+
+Auto generated R starter code for data set e7ce0e7c-19d9-43c3-866c-8ed0c6c1f508@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Sozialstatistik/Evaluation, Soziale Dienste, Sozialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['stzh', 'geoportal', 'punktdaten', 'quartier', 'geodaten', 'sozialzentrum', 'vektordaten']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:10:45.605520`
+- **Metadata_modified** `2023-01-16T00:52:27.848002`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d78af0cc-ad47-4c4c-ac21-0b60d9bf9eb1
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Sozialzentrum?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

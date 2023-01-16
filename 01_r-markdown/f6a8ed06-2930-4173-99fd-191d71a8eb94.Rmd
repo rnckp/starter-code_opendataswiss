@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Verkäufe von unbebautem Land [Anz.]
+
+Freihandverkäufe von unbebautem Land der Wohn- und Mischzone (Zentrums-, Kern- und Wohn/Gewerbezonen) inkl. Abbruchliegenschaften. Bis ins Jahr 2011 wurden Verkäufe ab Plan (in der Regel bei Stockwerkeigentum) als unbebaute Liegenschaft erfasst. Die Anzahl Verkäufe ist ab 2011 entsprechend tiefer als zuvor. Die letzten drei Jahre sind provisorisch.
+Weitere Infos: www.zh.ch/bodenpreise
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkaufe-von-unbebautem-land-anz)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/gemeinden/gemeindeportraet.html)
+
+Auto generated R starter code for data set 116@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['bauland', 'wohnbauland', 'gemeinden', 'handaenderungen', 'kantonzuerich', 'freihandverkaeufe', 'bezirke']`
+- **Issued** `2016-01-20T00:00:00`
+- **Metadata_created** `2021-01-14T17:56:18.987811`
+- **Metadata_modified** `2023-01-16T03:06:46.674109`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f6a8ed06-2930-4173-99fd-191d71a8eb94
+# Description              : 
+# Issued                   : 2016-01-21T00:00:00
+# Modified                 : 2022-05-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_402.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

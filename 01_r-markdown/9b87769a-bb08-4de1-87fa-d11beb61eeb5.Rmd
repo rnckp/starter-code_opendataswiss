@@ -1,0 +1,95 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Sammlung Europa, Museum der Kulturen Basel
+
+Das Museum der Kulturen Basel (MKB) ist das grösste ethnologische Museum der Schweiz und eines der bedeutendsten seiner Art in Europa. Seine Sammlung geniesst Weltruf und zählt mehr als 340 000 Objekte. Rund 75 000 Objekte dieser Sammlung gehören zur Abteilung Europa. Sie wurden seit 1904 bis heute aus allen Teilen des Kontinents zusammengetragen. Die Tabelle zu den rund 75 000 Sammlungsstücken der Abteilung Europa enthält folgende Spalten:
+
+ * «Inventarnummer» (Präfix plus Laufnummer. Unterschiedliche Präfixe deuten auf unterschiedliche Unter-Sammlungen hin. Standard ist VI, weil Europa die sechste Abteilung des Museums ist)
+ * «Kurzbezeichnung und Titel» [Kurzbezeichnung: Titel] (Kurzbezeichnung ist die möglichst allgemeine Bezeichnung des Objekts, der Titel eine präzisere Bezeichnung, einheimische Bezeichnung oder Werktitel. Titel kann fehlen)
+ * «Datierung» (geschätzte oder dokumentiertes Jahr der Herstellung des Objekts. In der Regel sehr ungenau, fehlt häufig)
+ * «Material &Technik»
+ * «Masse»
+ * «Herkunft geografisch» (teilweise Land, Region, Ort)
+ * «Einlauf-Info» [Einlaufnummer, Einlieferer*in, Erwerbungsart Jahr]
+   * Einlaufnummer besteht aus Suffix-Underline-Laufnummer. Sie nummeriert jeweils die Gruppe von Objekten, die zusammen ins Museum gekommen sind.
+   * Der/die Einlieferer*in brachte die Objekte ins Museum bzw. bezahlte dafür.
+   * Erwerbungsart ist in der Regel Kauf (dann bezahlte das Museum und als Einlieferer erscheint der aktuelle Kurator) oder Geschenk, teils auch Legat oder Tausch. Leider teilweise auch «unbekannt, alter Bestand»
+   * Jahr der Einlieferung
+
+Die publizierten Daten sind mehrheitlich unbereinigt. Sowohl bei der erstmaligen Katalogisierung der Objekte, wie auch bei der Abschrift in die Datenbank gab es Inkonsistenzen, Fehler und Auslassungen. Darin enthaltene Terminologien können inzwischen unzutreffend, veraltet oder rassistisch beleidigend sein. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sammlung-europa)<br>
+[Direct link by **OpenGLAM CH Working Group** for dataset]()
+
+Auto generated R starter code for data set sammlung-europa-museum-der-kulturen-basel@openglam.
+
+## Metadata
+
+- **Publisher** `Museum der Kulturen Basel`
+- **Organization.display_name.de** `OpenGLAM CH Working Group`
+- **Organization.url** `https://glam.opendata.ch/hackathons/`
+- **Maintainer** `Tabea Buri`
+- **Maintainer_email** `tabea.buri@bs.ch`
+- **Keywords.de** `['glam', 'openglam']`
+- **Issued** `2021-04-13T00:00:00`
+- **Metadata_created** `2021-04-13T15:00:51.161206`
+- **Metadata_modified** `2022-09-29T14:13:18.448660`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9b87769a-bb08-4de1-87fa-d11beb61eeb5
+# Description              : 
+# Issued                   : 2021-04-13T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/explore/dataset/100148/information/?sort=inventarnummer')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tabea.buri@bs.ch | Tabea Buri

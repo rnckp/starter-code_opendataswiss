@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Grossratswahlen 2022
+
+Schlussresultate der kantonalen Wahl 'Grossratswahlen 2022', 15. Mai 2022, Graubünden - Grischun - Grigioni, aufgeschlüsselt nach Kandidaten und Gemeinden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/grossratswahlen-2022)<br>
+[Direct link by **Standeskanzlei Graubünden** for dataset](https://abstimmungen.gr.ch/elections/grw2022/data)
+
+Auto generated R starter code for data set election-grw2022@standeskanzlei-graubuenden.
+
+## Metadata
+
+- **Publisher** `Standeskanzlei Graubünden`
+- **Organization.display_name.de** `Standeskanzlei Graubünden`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['kantonal', 'wahl']`
+- **Issued** `2022-05-15T00:00:00`
+- **Metadata_created** `2022-04-06T18:02:31.967894`
+- **Metadata_modified** `2023-01-11T18:02:01.618740`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5dc1e4b3-7cd9-410a-9d8f-132aca7f6d28
+# Description              : 
+# Issued                   : 2022-04-04T00:00:00
+# Modified                 : 2022-05-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://abstimmungen.gr.ch/elections/grw2022/data-csv')
+
+# Distribution 1
+# Package_id               : 5dc1e4b3-7cd9-410a-9d8f-132aca7f6d28
+# Description              : 
+# Issued                   : 2022-04-04T00:00:00
+# Modified                 : 2022-05-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://abstimmungen.gr.ch/elections/grw2022/data-parties-csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@gr.ch | Standeskanzlei Graubünden

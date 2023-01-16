@@ -1,0 +1,88 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Statistische Raumeinheiten: Blockseiten
+
+Die Blockseite ist die dem angrenzenden Strassenraum zugeordnete Seite eines Blocks.
+
+Statistische Nummerierung:
+Die Nummerierung der Blockseiten setzt sich zusammen aus der zweistelligen Wohnviertel-Nr., der einstelligen Bezirks-Nr. und der dreistelligen Block-Nr
+(im Label jeweils durch Punkte getrennt), gefolgt von der vierstelligen Block-Nr
+(sowohl im Label als auch in der ID durch einen Unterstrich verbunden):
+- Blockseiten haben wie die Blöcke keine Namensbezeichnung und werden lediglich über die Nummer referenziert.
+- Beispiel Blockseite mit der Clarakirche: BLS_ID 121014_1741, die Bezeichnung (BLS_Label) lautet 12.1.014_1741
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/statistische-raumeinheiten-blockseiten)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100041/)
+
+Auto generated R starter code for data set 100041@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['statistik', 'einteilung', 'wohnblockseite']`
+- **Issued** `2019-11-06T00:00:00`
+- **Metadata_created** `2021-09-03T09:21:34.008552`
+- **Metadata_modified** `2023-01-16T00:21:51.485806`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3f5124d3-27cd-487f-a4cf-d1a91d5b4bdf
+# Description              : Statistische Raumeinheiten: Blockseiten (csv)
+# Issued                   : 2019-11-06T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100041/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

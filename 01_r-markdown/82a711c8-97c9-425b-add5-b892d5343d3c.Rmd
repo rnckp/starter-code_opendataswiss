@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Mutter- und Hauptsprachen, seit 1860
+
+Mutter- und Hauptsprachen Deutsch, Englisch, Französisch oder Italienisch der ständigen Wohnbevölkerung in der Stadt Zürich, seit 1860.
+Die Auswertung basiert auf den Daten der Volkszählung (bis 2000) und auf Daten des Haushaltsdatensatzes der Strukturerhebung nach Einzeljahren (ab 2010).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/mutter-und-hauptsprachen-seit-18603)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bfs_ste_bev_hauptsprachen_seit1860_od3032)
+
+Auto generated R starter code for data set 868dceaa-a34f-41d1-a897-0ce6c27619e0@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Volkszählung und Strukturerhebung, Bundesamt für Statistik`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zeitreihe', 'sachdaten', 'tabelle', 'sasa', 'sprache']`
+- **Issued** `2016-11-17T00:00:00`
+- **Metadata_created** `2019-07-30T00:38:19.774166`
+- **Metadata_modified** `2023-01-16T00:50:40.335389`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 82a711c8-97c9-425b-add5-b892d5343d3c
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bfs_ste_bev_hauptsprachen_seit1860_od3032/download/BEV303OD3032.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Ständige Wohnbevölkerung Kanton Thurgau ab 2015 nach Bezirk, Alter und Staatsangehörigkeit
+
+Der Datensatz beinhaltet die ständige Wohnbevölkerung in Personen nach Bezirken, Einzelaltersjahren und Staatsangehörigkeit (zwei Kategorien: Schweiz und Ausland) ab dem Jahr 2015. 100-Jährige und Ältere sind in einer Sammelkategorie '100+' zusammengefasst.
+Die Daten stammen aus der kantonalen Bevölkerungserhebung der Dienststelle für Statistik Kanton Thurgau. Zur ständigen Wohnbevölkerung zählen alle Personen mit Hauptwohnsitz im Kanton Thurgau. Bei der ausländischen Bevölkerung werden Personen mit der Niederlassungsbewilligung (C), Aufenthaltsbewilligung (B) oder Kurzaufenthaltsbewilligung (L) von 12 Monaten oder mehr berücksichtigt. Aufgeführt ist der Bevölkerungsbestand in Personen jeweils per 31.12. Die genaue Beschreibung der verwendeten Codes in den Datensätzen sind im Codebook unter 'weitere Informationen' aufgeführt. Quellenangabe: Dienststelle für Statistik Kanton Thurgau, kantonale Bevölkerungserhebung.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/standige-wohnbevolkerung-kanton-thurgau-ab-2015-nach-bezirk-alter-und-staatsangehorigkeit)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-64/)
+
+Auto generated R starter code for data set sk-stat-64@kanton-thurgau.
+
+## Metadata
+
+- **Publisher** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['wohnbevolkerung', 'einzelaltersjahre', 'bezirk', 'nationalitat', 'ausland', 'bevolkerung', 'staatsangehorigkeit', 'standige-wohnbevolkerung', 'alter', 'schweiz']`
+- **Issued** `2017-07-03T00:00:00`
+- **Metadata_created** `2022-02-28T11:03:45.275459`
+- **Metadata_modified** `2023-01-16T11:02:26.852239`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 4ecc93b3-5755-4be3-8e1b-ce9c8a4c4899
+# Description              : Ständige Wohnbevölkerung Kanton Thurgau ab 2015 nach Bezirk, Alter und Staatsangehörigkeit (csv)
+# Issued                   : 2017-07-03T00:00:00
+# Modified                 : 2022-08-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-64/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

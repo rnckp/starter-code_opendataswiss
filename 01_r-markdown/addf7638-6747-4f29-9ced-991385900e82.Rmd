@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Gemeinderätinnen und Gemeinderäte 1832-2005
+
+Das Stadtarchiv bewahrt historisch bedeutsame Unterlagen zur Geschichte der Einwohnergemeinde Bern. Die Zusammensetzung der Behörden wurde 2007 von Emil Erne herausgegeben und von Bettina Tögel zusammengestellt. Die Erschliessung auf Ebene Serie richtet sich nach der originalen Gliederung in sechs Bundesordnern.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/de-gemeinderaetinnen-und-gemeinderaete-1832-2005)<br>
+[Direct link by **Stadtarchiv Bern** for dataset](http://www.bern.ch/open-government-data-ogd/ogd-nach-themen/stadtarchiv-ogd)
+
+Auto generated R starter code for data set SAB_D4_2 - Gemeinderätinnen und Gemeinderäte chronologisch 1832-2005@stadtarchiv-bern.
+
+## Metadata
+
+- **Publisher** `Stadtarchiv der Stadt Bern`
+- **Organization.display_name.de** `Stadtarchiv Bern`
+- **Organization.url** `http://www.bern.ch/themen/stadt-recht-und-politik/informationen-im-stadtarchiv`
+- **Maintainer** `Stadtarchiv der Stadt Bern, Stadtkanzlei, Helvetiastrasse 6, 3005 Bern, +41 31 321 62 40`
+- **Maintainer_email** `stadtarchiv@bern.ch`
+- **Keywords.de** `['gemeinderate', 'gemeinderatinnen', 'stadt-bern', 'stadtarchiv']`
+- **Issued** `2017-12-12T00:00:00`
+- **Metadata_created** `2018-02-23T09:42:43.508702`
+- **Metadata_modified** `2022-05-03T14:42:08.236883`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : addf7638-6747-4f29-9ced-991385900e82
+# Description              : Die Tabelle wurde anhand der jährlichen Mitgliederlisten des Gemeinderates (? Gemeinderat/ Mitglieder) sowie des Grossen Stadtrates und des Stadtrates (? Grosser Stadtrat/ Mitglieder und Stadtrat/ Mitglieder) erstellt, wo die benutz-ten Quellen im Eeinzelnen aufgeführt sind. Für die weiteren Ämter der Ge-meinderäte auf kantonaler und eidgenössischer Ebene, die erst für die Ge-meinderäte ab 1888 systematisch recherchiert wurden, wurde die Datenbank der Grossräte und Regierungsräte im Staatsarchiv Bern sowie der Eidgenössi-sche Staatskalender 1887ff. konsultiert.
+# Issued                   : 2017-12-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('http://www.bern.ch/open-government-data-ogd/ogd-nach-themen/stadtarchiv-ogd/download-zusammensetzung_der_behoerden_1832_bis_2005-ogd/gemeinderätinnen-und-Gemeinderäte-1832-bis-2005.txt/download')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+stadtarchiv@bern.ch | Stadtarchiv der Stadt Bern, Stadtkanzlei, Helvetiastrasse 6, 3005 Bern, +41 31 321 62 40

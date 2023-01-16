@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Zweitwohnungen und Apartments nach Stadtquartier, Bauperiode und Zimmerzahl
+
+Der Datensatz enthält den Wohnungsbestand nach Art der Nutzung, insbesondere nach Erstwohnungen, den Erstwohnungen gleichgestellte Wohnungen, Zweitwohnungen und Apartments für das aktuellste Jahr. Früher ausgewiesene Zahlen sind nicht mit den aktuellen vergleichbar; eine Zeitreihe ist deshalb nicht enthalten.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zweitwohnungen-und-apartments-nach-stadtquartier-bauperiode-und-zimmerzahl)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_zweitwhg_apartment_quartier_bauperiode_zizahl_od5414)
+
+Auto generated R starter code for data set 6decb03b-86c0-4840-bd85-cc2b3973e5cd@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zimmer', 'quartier', 'tabelle', 'appartement', 'wohnung', 'sasa', 'sachdaten', 'bau-grundangebot', 'apartment', 'zweitwohnung', 'bauperiode', 'erstwohnung', 'wohnen', 'bauwesen']`
+- **Issued** `2020-11-17T00:00:00`
+- **Metadata_created** `2020-11-18T18:57:05.710167`
+- **Metadata_modified** `2023-01-16T00:49:49.812693`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cca6eb2a-21dd-40eb-8cd8-688920a84316
+# Description              : 
+# Issued                   : 2020-11-17T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_zweitwhg_apartment_quartier_bauperiode_zizahl_od5414/download/BAU541OD5414.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

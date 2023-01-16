@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Durchschnittlicher Tagesverkehr (basierend auf dem Geschwindigkeitsmonitoring der Kantonspolizei)
+
+Dieser Datensatz resultiert aus dem Daten des Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt (siehe https://data.bs.ch/explore/?sort=modified&q=%22geschwindigkeitsmonitoring+Einzelmessungen%22). Es wird zu jeder Messung und Richtung (ein Messgerät an einem Standort misst in zwei Richtungen) der durchschnittliche Tagesverkehr berechnet. 
+
+Hinweis: Die Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Diese Messungen sind ab dem Jahr 2022 in der Spalte «Ausserordentliche Verkehrsführung» mit «True» gekennzeichnet. Manipulationen an Geräten können zu fehlerhaften Messungen führen.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/durchschnittlicher-tagesverkehr-basierend-auf-dem-geschwindigkeitsmonitoring-der-kantonspolizei)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100199/)
+
+Auto generated R starter code for data set 100199@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Mobilität`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['verkehr', 'durchschnitt', 'belastigung', 'statistik', 'tagesverkehr', 'auslastung', 'verkehrszahlung', 'dtv']`
+- **Issued** `2022-09-21T00:00:00`
+- **Metadata_created** `2022-09-23T00:30:44.292415`
+- **Metadata_modified** `2023-01-16T00:21:54.181976`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1171abcd-bb7c-42e7-9360-5e59b969f7a4
+# Description              : Durchschnittlicher Tagesverkehr (basierend auf dem Geschwindigkeitsmonitoring der Kantonspolizei) (csv)
+# Issued                   : 2022-09-21T00:00:00
+# Modified                 : 2023-01-11T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100199/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Biografische Daten zu Kunstschaffenden aus SIKART Lexikon zur Kunst in der Schweiz
+
+SIKART Lexikon zur Kunst in der Schweiz ist das redaktionell betreute, täglich aktualisierte und reich illustrierte Online-Nachschlagewerk des Schweizerischen Instituts für Kunstwissenschaft (SIK-ISEA) zur historischen und zeitgenössischen Kunst in der Schweiz. SIKART bietet Informationen zu KünstlerInnen, Werken, Ausstellungen, Literatur, Auszeichnungen und enthält rund 1'700 ausführliche biografische Artikel. Der Datensatz umfasst 17'000 Einträge mit den biografischen Grunddaten zu aktuellen und historischen Kunstschaffenden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kuenstlernamen-aus-sikart-lexikon-zur-kunst-in-der-schweiz)<br>
+[Direct link by **Schweizerisches Institut für Kunstwissenschaft (SIK-ISEA)** for dataset](http://www.sikart.ch)
+
+Auto generated R starter code for data set SIKART_Artists_20190115@sik-isea.
+
+## Metadata
+
+- **Publisher** `Schweizerisches Institut für Kunstwissenschaft (SIK-ISEA)`
+- **Organization.display_name.de** `Schweizerisches Institut für Kunstwissenschaft (SIK-ISEA)`
+- **Organization.url** `https://www.sik-isea.ch`
+- **Maintainer** `SIKART`
+- **Maintainer_email** `sikart@sik-isea.ch`
+- **Keywords.de** `['geschichte', 'glam', 'kultur', 'kunst', 'kunstgeschichte', 'kunstler', 'kunstlerinnen', 'lexikon', 'metadaten', 'openglam', 'personen', 'schweizer-geschichte']`
+- **Issued** `2019-03-18T00:00:00`
+- **Metadata_created** `2019-03-18T06:28:54.096109`
+- **Metadata_modified** `2022-04-14T08:22:08.154325`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : bfbb629c-ebc7-4b43-8b4c-c2eead8d7ec2
+# Description              : 
+# Issued                   : 2019-01-22T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.sikart.ch/personen_export.aspx')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+SIKART | sikart@sik-isea.ch

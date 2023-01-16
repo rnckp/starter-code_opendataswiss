@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: COVID-19-Fallzahlen Kanton Thurgau
+
+Der Datensatz beinhaltet die Fallzahlen des auf COVID19 positiv getesteten Personen im Kanton Thurgau (kumuliert gem. Labordatum) inkl. der Anzahl hospitalisierter, beatmeter, gestorbener Personen sowie der Anzahl negativer Tests (ab Mitte Mai). Bei den Daten zu den Spitalaustritten werden im Spital verstorbene Personen mitgezählt (Personen, die im Pflegeheim verstorben sind, werden nicht mitgezählt). Hinweis zu gelieferten Impfdosen: Die Anzahl Dosen gemäss Hersteller. Die tatsächliche Anzahl verimpfter Dosen ist höher als die Anzahl hier angegebener Dosen, da aus einem Vial (Flasche mit Impfstoff) teilweise mehr Dosen gezogen werden als vom Hersteller angegeben.Die Daten wurden bis und mit 9. Januar 2023 regelmässig aktualisiert.Hinweis: Die Daten wurden bis und mit 9. Januar 2023 aktualisiert. Für aktuelle Fallzahlen verweisen wir Sie auf das Covid-19-Dashboard des Bundesamts für Gesundheit (BAG). 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/covid-19-fallzahlen-kanton-thurgau)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/dfs-ga-1/)
+
+Auto generated R starter code for data set dfs-ga-1@kanton-thurgau.
+
+## Metadata
+
+- **Publisher** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['verstorben', 'covid19', 'isolation', 'corona', 'virus', 'ips', 'pandemie', 'fallzahlen', 'impfung', 'hospitalisation']`
+- **Issued** `2020-04-09T00:00:00`
+- **Metadata_created** `2022-03-01T15:39:11.983651`
+- **Metadata_modified** `2023-01-16T11:02:25.912615`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a8131cb3-7033-4983-ba59-c3d8fdd846b2
+# Description              : COVID-19-Fallzahlen Kanton Thurgau (csv)
+# Issued                   : 2020-04-09T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/dfs-ga-1/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

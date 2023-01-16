@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Kehrichtmengen [Tonnen]
+
+Kehrichtmengen aus kommunaler Sammlung von Haushalten, ab 2004 mit Betriebsabfällen (Anteil Siedlungsabfall, ohne Produktionsabfälle). Nicht enthalten sind Direktanlieferungen von Hauhshalten und Betrieben an die KVA und private Entsorgungslösungen, die nicht über den kommunalen Weg laufen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kehrichtmengen-tonnen)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/gemeinden/gemeindeportraet.html)
+
+Auto generated R starter code for data set 362@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['kantonzuerich', 'abfall', 'kehricht', 'bezirke', 'gemeinden']`
+- **Issued** `2016-01-21T00:00:00`
+- **Metadata_created** `2021-01-14T17:24:17.503067`
+- **Metadata_modified** `2023-01-16T03:04:49.178121`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d5140999-7f59-4c79-a2a7-e40709b02946
+# Description              : 
+# Issued                   : 2016-01-21T00:00:00
+# Modified                 : 2022-11-11T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_135.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

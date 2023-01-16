@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Statistik der Wasserkraftanlagen (WASTA)
+
+Die «Statistik der Wasserkraftanlagen (WASTA)» enthält Daten zu den Zentralen der schweizerischen Wasserkraftanlagen mit einer Leistung von mindestens 300 kW. Enthalten sind unter anderem technische Daten wie Leistung und Produktionserwartung.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/statistik-der-wasserkraftanlagen-wasta)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/statistik-wasserkraft)
+
+Auto generated R starter code for data set a7d239f2-4202-4760-9537-41e1a8c3c984@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `geoinformation@bfe.admin.ch`
+- **Maintainer_email** `geoinformation@bfe.admin.ch`
+- **Keywords.de** `['geobasisdaten', 'aufbewahrungs--und-archivierungsplanung-aap---bund', 'energiequellen', 'gewassernetz', 'bgdi-bundesgeodaten-infrastruktur']`
+- **Issued** `2010-01-01T00:00:00`
+- **Metadata_created** `2019-10-16T06:31:11.812160`
+- **Metadata_modified** `2022-12-18T07:17:46.615306`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 58ad922f-9add-4661-8937-bb11294b808a
+# Description              : Csv
+# Issued                   : 2010-01-01T00:00:00
+# Modified                 : 2021-12-31T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.geo.admin.ch/ch.bfe.statistik-wasserkraftanlagen/statistik-wasserkraftanlagen/statistik-wasserkraftanlagen_2056.csv.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+geoinformation@bfe.admin.ch | geoinformation@bfe.admin.ch

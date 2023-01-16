@@ -1,0 +1,101 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Referenz-Marktpreise gemäss Art. 15, EnFV
+
+Der Referenz-Marktpreis ist für die Festlegung der Einspeiseprämie für Erzeugungsanlagen mit Einspeisevergütung massgebend. Der Referenz-Marktpreis für __Photovoltaikanlagen__ entspricht dem Durchschnitt der Preise, die an der Strombörse (Swissix) in einem Vierteljahr jeweils für den Folgetag (day-ahead) festgesetzt werden, gewichtet nach der tatsächlichen viertelstündlichen Einspeisung der lastganggemessenen Anlagen. Bei den __übrigen Technologien__ entspricht der Referenz-Marktpreis dem Durchschnitt der Preise, die für lastganggemessene Anlagen in einem Monat und für nicht lastganggemessene Anlagen in einem Vierteljahr an der Strombörse für den Folgetag für das Marktgebiet Schweiz festgesetzt werden. 
+
+Die Preise verstehen sich exklusive Mehrwertsteuer.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/referenz-marktpreise-gemass-art-15-enfv)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](http://www.bfe.admin.ch/kev)
+
+Auto generated R starter code for data set ogd60@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['direktvermarktung', 'referenz-marktpreis', 'kev', 'einspeiseverguetung', 'ogd60bfe']`
+- **Issued** `2021-07-30T00:00:00`
+- **Metadata_created** `2021-07-28T09:33:41.132726`
+- **Metadata_modified** `2023-01-13T04:01:51.204947`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : eeadc4fb-8f11-4d13-a83b-4a0a0c816aec
+# Description              : 
+# Issued                   : 2022-04-13T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/60/ogd60_rmp_quartalspreise.csv')
+
+# Distribution 1
+# Package_id               : eeadc4fb-8f11-4d13-a83b-4a0a0c816aec
+# Description              : 
+# Issued                   : 2022-04-13T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/60/ogd60_rmp_jahrespreise.csv')
+
+# Distribution 2
+# Package_id               : eeadc4fb-8f11-4d13-a83b-4a0a0c816aec
+# Description              : 
+# Issued                   : 2021-07-30T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/60/ogd60_rmp_monatspreise.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@bfe.admin.ch | Bundesamt für Energie BFE

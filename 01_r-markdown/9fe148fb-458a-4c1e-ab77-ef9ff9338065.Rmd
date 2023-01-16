@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Badewasserqualität in öffentlichen Badeanstalten an Flüssen und Seen im Kanton Zürich
+
+In den Sommermonaten regelmässig erhobene Proben zur Überprüfung der Badewasserqualität. Daten enthalten: 'Name des Orts', 'Bewertungsstufen der Badewasserqualität', 'Breitengrad' und 'Längengrad des Orts'. Die Untersuchungen und Bewertungen der Wasserproben erfolgen nach den Empfehlungen zur Untersuchung und Beurteilung der Badewasserqualität von See- und Flussbädern des Bundesamtes für Umwelt (siehe 'Weitere Informationen').
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/badewasserqualitat-in-offentlichen-badeanstalten-an-flussen-und-seen-im-kanton-zurich)<br>
+[Direct link by **Gesundheitsdirektion Kanton Zürich** for dataset](nan)
+
+Auto generated R starter code for data set 729@gesundheitsdirektion-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Gesundheitsdirektion des Kantons Zürich`
+- **Organization.display_name.de** `Gesundheitsdirektion Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
+- **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Kantonales Labor`
+- **Maintainer_email** `info@kl.zh.ch`
+- **Keywords.de** `['gesundheit', 'sport', 'kantonzuerich', 'wasser', 'seen']`
+- **Issued** `2021-08-03T00:00:00`
+- **Metadata_created** `2021-08-04T03:53:38.798626`
+- **Metadata_modified** `2023-01-16T03:08:54.513940`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9fe148fb-458a-4c1e-ab77-ef9ff9338065
+# Description              : Variabeln: 'date' = Tag der Entnahme der Probe; 'id' = Identifikator des Orts; 'location' = Ausgeschriebener Name des Orts; 'quality' = Bewertungsstufen der Badewasserqualität; 'remark' = Optionale Anmerkungen zur Probe; 'source' = Organisation, welche die Probe durchführt; 'lat' = Breitengrad des Orts; 'long' = Längengrad des Orts; 'image' = Bild des Orts (wird nicht regelmässig aktualisiert; URL).
+# Issued                   : 2022-10-17T00:00:00
+# Modified                 : 2022-10-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000729_00003341.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@kl.zh.ch | Gesundheitsdirektion des Kantons Zürich, Kantonales Labor

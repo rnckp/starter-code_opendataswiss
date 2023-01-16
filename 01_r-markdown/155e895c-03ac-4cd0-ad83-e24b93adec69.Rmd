@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Bade-, Trinkwasser- und Zierbrunnen in Basel
+
+In der Stadt Basel betreibt IWB über 200 öffentliche Brunnen. Sie sind Kulturgut und «Visitenkarte» der Stadt. https://www.iwb.ch/brunnenIn einigen Brunnen ist auch Baden möglich und vom Eigentümer, dem Kanton Basel-Stadt, toleriert, jedoch auf eigene Verantwortung und Gefahr. Wir bitten darum, die Brunnen sauber zu hinterlassen und auf Anwohner Rücksicht zu nehmen. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bade-trinkwasser-und-zierbrunnen-in-basel)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100008/)
+
+Auto generated R starter code for data set 100008@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Industrielle Werke Basel`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wasser', 'brunnen', 'trinkwasser', 'baden']`
+- **Issued** `2019-11-06T00:00:00`
+- **Metadata_created** `2022-07-20T14:19:00.291665`
+- **Metadata_modified** `2023-01-16T00:22:18.591927`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 155e895c-03ac-4cd0-ad83-e24b93adec69
+# Description              : Bade-, Trinkwasser- und Zierbrunnen in Basel (csv)
+# Issued                   : 2019-11-06T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100008/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle Open Government Data Basel-Stadt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Anzahl Wohnungen nach Zimmerzahl in Bestand, Neubau und Abbruch seit 1901
+
+Der Datensatz enthält die Anzahl Wohnungen in Bestand, Neubau und Abbruch nach Zimmerzahl seit 1901.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/anzahl-wohnungen-nach-zimmerzahl-in-bestand-neubau-und-abbruch-seit-19011)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_best_whg_zizahl_jahr_od5062)
+
+Auto generated R starter code for data set e0415103-3bba-42e8-8724-21664b9fbed7@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gwz', 'sasa', 'bautaetigkeit', 'entwicklung', 'zeitreihe', 'sachdaten', 'grundangebot-bau', 'gebaeude', 'tabelle', 'bauwesen', 'wohnen']`
+- **Issued** `2020-07-01T00:00:00`
+- **Metadata_created** `2022-10-29T01:07:50.294164`
+- **Metadata_modified** `2023-01-16T00:50:37.931184`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b8fd32eb-b0ae-46ec-9fee-e2710d2c0512
+# Description              : 
+# Issued                   : 2022-10-28T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_best_whg_zizahl_jahr_od5062/download/BAU506OD5062.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

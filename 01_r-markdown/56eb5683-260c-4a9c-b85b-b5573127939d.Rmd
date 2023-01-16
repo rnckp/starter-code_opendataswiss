@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Adressen mit Zuordnung des Quartiers und der Bauzonen gemäss BZO 1999 und BZO 2016
+
+
+Spezialdatensatz zur Zuordnung der aktuellsten Adressen zum Quartier und zur Bauzone. Dabei wird pro Adresspunkt die Bauzone gemäss der Bau- und Zonenordnung (BZO) von 1999 ebenso wie die Bauzone gemäss der aktuellen BZO 2016 ausgegeben.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/adressen-mit-zuordnung-des-quartiers-und-der-bauzonen-gemass-bzo-1999-und-bzo-20161)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_hae_lima_zuordnung_adr_quartier_bzo16_bzo99_od5143)
+
+Auto generated R starter code for data set 1b874e7a-23c4-4237-81f6-6698e4effc76@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, GWZ/BVS`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['bzo1999', 'zonenart', 'lima', 'zeitreihe', 'tabelle', 'quartier', 'sasa', 'liegenschaft', 'bzo2016']`
+- **Issued** `2021-12-07T00:00:00`
+- **Metadata_created** `2022-09-08T01:45:17.174504`
+- **Metadata_modified** `2023-01-16T00:51:59.958149`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 56eb5683-260c-4a9c-b85b-b5573127939d
+# Description              : 
+# Issued                   : 2022-09-07T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_hae_lima_zuordnung_adr_quartier_bzo16_bzo99_od5143/download/BAU514OD5143.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

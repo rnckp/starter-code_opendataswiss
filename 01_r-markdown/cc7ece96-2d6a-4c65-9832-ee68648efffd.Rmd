@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Haltestelle: Mobilität
+
+Informationen zu Park+Rail, Veloparkplätzen, Railtaxi, Mietvelo, Carsharing inkl. Zahlsysteme.Information about Park+Rail, bicycle parking, Railtaxi, rental bike, car sharing and payment systems. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/haltestelle-mobilitat1)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/mobilitat/)
+
+Auto generated R starter code for data set mobilitat@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['dienstleistung']`
+- **Issued** `2023-01-15T00:00:00`
+- **Metadata_created** `2019-09-11T10:54:55.274849`
+- **Metadata_modified** `2023-01-16T00:28:54.117928`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cc7ece96-2d6a-4c65-9832-ee68648efffd
+# Description              : Haltestelle: Mobilität (csv)
+# Issued                   : 2023-01-15T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/mobilitat/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

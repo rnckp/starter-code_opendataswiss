@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wohnungsbestand und Anzahl Neubauwohnungen in der Stadt Winterthur ab 1981
+
+Zeitreihe des Wohnungsbestandes und der Anzahl Neubauwohnungen in der Stadt Winterthur ab 1981.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnungsbestand-und-anzahl-neubauwohnungen-in-der-stadt-winterthur-ab-1981)<br>
+[Direct link by **Stadt Winterthur** for dataset](https://stadt.winterthur.ch/themen/die-stadt/winterthur/statistik/bauen-und-wohnen)
+
+Auto generated R starter code for data set 1601@stadt-winterthur.
+
+## Metadata
+
+- **Publisher** `Stadt Winterthur`
+- **Organization.display_name.de** `Stadt Winterthur`
+- **Organization.url** `https://stadt.winterthur.ch/themen/die-stadt/winterthur/statistik`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wohnungsbestand', 'wohnungsbau', 'wohnungen', 'gemeinden', 'neubauten']`
+- **Issued** `2022-09-20T00:00:00`
+- **Metadata_created** `2022-11-15T16:04:48.647785`
+- **Metadata_modified** `2023-01-16T03:16:09.898909`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 517675f1-2851-4696-ba9e-bcedf617f7ee
+# Description              : Variablen: 'Wohnungsbestand' = Gesamtanzahl Wohnungen per Ende Jahr; 'Neuwohnungen' = Neu gebaute Wohnungen im entsprechenden Jahr.
+# Issued                   : 2022-09-20T00:00:00
+# Modified                 : 2022-09-20T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001601_00003061.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+hermann.hegner@win.ch | Stadt Winterthur, Stadtentwicklung der Stadt Winterthur

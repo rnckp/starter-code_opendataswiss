@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Zuzüge von auswärts nach Tag, Stadtquartier, Geschlecht, Altersgruppe und Herkunft, seit 1998
+
+
+Anzahl Zuzüge von auswärts nach Tag, Altersgruppe, Geschlecht, Herkunft, Stadtkreis und Stadtquartier, seit 1998.
+
+Im aktuellen Jahr handelt es sich um **provisorische** Daten. Diese können laufend korrigiert werden. Erst mit dem Jahresabschluss werden die Daten definitiv.
+ 
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zuzuge-von-auswarts-nach-tag-stadtquartier-geschlecht-altersgruppe-und-herkunft-seit-1998)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev_tag_zuz_quartier_geschl_ag_herkunft_od3531)
+
+Auto generated R starter code for data set 04fc9096-2cac-45d8-a036-d31042b00841@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Bevölkerungsamt, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['tabelle', 'zeitreihe', 'tagesdaten', 'sasa', 'migration', 'sachdaten']`
+- **Issued** `2017-04-21T00:00:00`
+- **Metadata_created** `2020-05-15T07:34:07.963230`
+- **Metadata_modified** `2023-01-16T00:50:48.813834`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ff5e2604-b680-4462-b984-9d08779ef65a
+# Description              : 
+# Issued                   : 2020-05-14T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev_tag_zuz_quartier_geschl_ag_herkunft_od3531/download/BEV353OD3531.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

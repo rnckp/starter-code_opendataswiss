@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Kantonaler Stromverbrauch
+
+Dieser Datensatz beinhaltet die Summe der elektrischen Energie, die im Kanton Basel-Stadt innert 15-Minuten Intervallen aus dem Netz bezogen wird, inklusive Netzverluste. Lokal direkt am Ort der Produktion verbrauchte elektrische Energie (z.B. aus Photovoltaikanlagen), welche nicht ins öffentliche Netz eingespiesen wird, ist in den vorliegenden Daten nicht enthalten. Seit 1. September 2020 liegen auch Daten zum Verbrauch der Kunden in der Grundversorgung vs. dem freien Markt vor. Die Daten umfassen den an allen im Netz installierten fernausgelesenen Zählern gemessenen Verbrauch sowie ergänzend, da nicht 100 % der Zähler fernauslesbar sind, Daten aus den ins Netz eingespeisten Strommengen. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kantonaler-stromverbrauch-netzlast)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100233/)
+
+Auto generated R starter code for data set 100233@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Industrielle Werke Basel`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['elektrizitat', 'stadtlast', 'watt', 'stromverbrauch', 'kilowattstunden', 'elektro', 'netzlast', 'strom']`
+- **Issued** `2022-11-22T00:00:00`
+- **Metadata_created** `2022-11-23T00:29:56.718485`
+- **Metadata_modified** `2023-01-16T00:23:25.347615`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 794c86c6-56f9-44c4-80bf-79c5eadd4c74
+# Description              : Kantonaler Stromverbrauch (csv)
+# Issued                   : 2022-11-22T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100233/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

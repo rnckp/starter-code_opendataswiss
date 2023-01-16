@@ -1,0 +1,228 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Verkehrszähldaten an der Stampfenbachstrasse nach Fahrzeugtypen, seit 2007
+
+
+Dieses Dataset umfasst die Verkehrszahlen an der Stampfenbachstrasse **seit 2007 bis zur letzten aktuellen Stunde**, aufgeteilt in Jahresdateien. Die Messung findet mittels Radardetektoren statt. Es wird die Länge des vorbeifahrenden Fahrzeugs gemessen. Aufgrund der Länge wird das Fahrzeug einer von 3 Klassen (0-2.7m = 2R, 2.7-7m = PW, 7-25m = LKW) zugeteilt. Die Zählstelle befindet sich auf der Höhe der Berufsschule für Detailhandel Zürich direkt neben dem Parkhaus Unterstrasse. 
+Während den Bauarbeiten an der Stampfenbachstrasse in den Jahren 2018 und 2019 sind die Verkehrszahlen nicht erfasst worden.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrszahldaten-an-der-stampfenbachstrasse-nach-fahrzeugtypen-seit-2007)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse)
+
+Auto generated R starter code for data set 388cced9-4965-4648-8efe-332cad3a049d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Messung Luftqualität, Umwelt- und Gesundheitsschutz, Gesundheits- und Umweltdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['tabelle', 'zeitreihe', 'sachdaten', 'mobilitaet', 'echtzeit', 'verkehr', 'miv', 'fahrzeugtypen']`
+- **Issued** `2020-10-21T00:00:00`
+- **Metadata_created** `2020-10-22T05:26:44.190037`
+- **Metadata_modified** `2023-01-16T00:51:53.887281`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 17 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2008.csv')
+
+# Distribution 1
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2020.csv')
+
+# Distribution 2
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2013.csv')
+
+# Distribution 3
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2012.csv')
+
+# Distribution 4
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2021-01-06T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2021.csv')
+
+# Distribution 5
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2009.csv')
+
+# Distribution 6
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2015.csv')
+
+# Distribution 7
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2007.csv')
+
+# Distribution 8
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2016.csv')
+
+# Distribution 9
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2019.csv')
+
+# Distribution 10
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2017.csv')
+
+# Distribution 11
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2011.csv')
+
+# Distribution 12
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2010.csv')
+
+# Distribution 13
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2018.csv')
+
+# Distribution 14
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2014.csv')
+
+# Distribution 15
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2022-01-01T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2022.csv')
+
+# Distribution 16
+# Package_id               : b6ea2562-3e1f-40cd-afb0-3a7ca4ca613f
+# Description              : 
+# Issued                   : 2023-01-02T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_stampfenbachstrasse/download/ugz_ogd_traffic_h1_2023.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

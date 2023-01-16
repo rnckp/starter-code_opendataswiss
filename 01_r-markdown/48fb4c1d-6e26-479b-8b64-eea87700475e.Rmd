@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Lernende der Volksschule im Kanton Zürich nach Staatsangehörigkeit auf Ebene Schulgemeinde ab 2000
+
+Schüler/innen an öffentlichen Volksschulen im Kanton Zürich, die nach kantonalem Lehrplan unterrichtet werden. Mit Volksschule wird die Schulbildung während der obligatorischen Schulzeit bezeichnet. Die obligatorische Schulzeit umfasst den Kindergarten, sechs Jahre Primarschule und drei Jahre Sekundarstufe I. Nicht mitgezählt sind Lernende der Mittelschulen, Lernende in in Heim-/Sonderschulen, und Lernende in Privatschulen. Es gilt das Schulortprinzip, gezählt werden Schülerinnen und Schüler, welche eine Schule innerhalb des Kantons Zürich besuchen.
+
+Die Daten werden jährlich für den Stichtag 15.9. erhoben.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/lernende-der-volksschule-im-kanton-zurich-nach-staatsangehorigkeit-auf-ebene-schulgemeinde-2000)<br>
+[Direct link by **Bildungsstatistik Kanton Zürich** for dataset](nan)
+
+Auto generated R starter code for data set 525@bildungsstatistik-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Bildungsstatistik des Kantons Zürich`
+- **Organization.display_name.de** `Bildungsstatistik Kanton Zürich`
+- **Organization.url** `https://pub.bista.zh.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['volksschule', 'schueler', 'schulgemeinden', 'ausbildung', 'lernende', 'schuelerinnen', 'sekundarstufe', 'nationalitaet', 'staatsangehoerigkeit', 'primarschule', 'bildung', 'kindergarten']`
+- **Issued** `2019-12-02T00:00:00`
+- **Metadata_created** `2022-10-04T03:10:24.288112`
+- **Metadata_modified** `2023-01-16T03:09:10.003639`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 48fb4c1d-6e26-479b-8b64-eea87700475e
+# Description              : Die Daten sind differenziert nach Jahr, zuständiger Schulgemeinde und Staatsangehörigkeit. Bei Zellen kleiner 5 wird die Staatsangehörigkeit zuerst auf Ebene Grossregion und, wenn nötig, auf Ebene Kontinent aggregiert. Jahr: Das Jahr ist jeweils das Kalenderjahr der Erhebung, wobei der Stichtag der 15.9. ist. Die Daten für das Jahr 2021 sind somit im Schuljahr 2021/22 erhoben worden und zeigen den Datenstand am 15. September 2021. Schulgemeinde: Es wird die zuständige Schulgemeinde dargestellt. Das ist üblicherweise die Schulgemeinde des Wohnort. Es entspricht aber nicht in jedem Fall der Schulgemeinde des Schulstandorts der effektiv besucht wird. Staatsangehoerigkeit: Es wird pro Person nur eine Staatsangehörigkeit erhoben. Falls eine Person mehrere Staatsangehörigkeiten hat, und eine davon ist die Schweizerische, so wird diese prioritär erfasst. Bei anderen mehrfachen Staatsangehörigkeiten wir keine Vorgabe zur Priorisierung gemacht. Staatsangehoerigkeit_ISO2_Code: Bei der Aggregation auf Grossregion und Kontinent bleibt der ISO2 Code leer. Anzahl: Anzahl der Schülerinnen und Schüler mit der entsprechenden Merkmalskombination.
+# Issued                   : 2022-10-03T00:00:00
+# Modified                 : 2022-10-21T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/bista/ZH_Lernende_Volksschule_Regional_Staatsangehoerigkeit.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+bista@bi.zh.ch | Bildungsstatistik des Kantons Zürich

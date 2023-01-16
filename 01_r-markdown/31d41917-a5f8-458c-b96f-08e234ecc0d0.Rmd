@@ -1,0 +1,95 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Messwerte der Wetterstationen der Wasserschutzpolizei Zürich
+
+Die beiden Wetterstationen **Tiefenbrunnen** (beim Dienstgebäude der Wasserpolizei) und **Mythenquai** (Hafen Enge) liefern Messwerte sowohl zu aktuellen wie auch zu vergangenen Wettersituationen (aktuelles und vorheriges Jahr). Über die REST-API namens [**Tecdottir**](https://data.stadt-zuerich.ch/showcase/wetterstation-api) können diese Daten direkt bezogen werden.
+
+Die älteren Daten können als csv-Dateien herunter geladen werden.
+
+Die Messwerte umfassen: Lufttemperatur, Luftfeuchte, Luftdruck, Taupunkt, Wassertemperatur, Windböen, Windgeschwindigkeit, Windstärke, Windrichtung und Windchill. Zusätzlich liefert die Wetterstation Mythenquai noch die Messwerte zu Globalstrahlung, Niederschlagsmenge und dem Pegelstand des Zürichsees.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/messwerte-der-wetterstationen-der-wasserschutzpolizei-zurich2)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/sid_wapo_wetterstationen)
+
+Auto generated R starter code for data set 537b5470-e3f9-4e03-b8d6-460492ff6994@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Wasserschutzpolizei, Stadtpolizei, Sicherheitsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['temperatur', 'sturm', 'sachdaten', 'zeitreihe', 'tabelle', 'kalte', 'hitze', 'echtzeitdaten', 'feuchte', 'wetter', 'api']`
+- **Issued** `2017-04-18T00:00:00`
+- **Metadata_created** `2022-07-13T01:38:39.088690`
+- **Metadata_modified** `2023-01-16T00:52:06.200244`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 31d41917-a5f8-458c-b96f-08e234ecc0d0
+# Description              : 
+# Issued                   : 2023-01-09T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_wapo_wetterstationen/download/messwerte_mythenquai_seit2007-heute.csv')
+
+# Distribution 1
+# Package_id               : 31d41917-a5f8-458c-b96f-08e234ecc0d0
+# Description              : 
+# Issued                   : 2023-01-09T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_wapo_wetterstationen/download/messwerte_tiefenbrunnen_seit2007-heute.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

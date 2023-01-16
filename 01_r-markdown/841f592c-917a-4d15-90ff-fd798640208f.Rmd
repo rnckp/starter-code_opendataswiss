@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Barrierefreies Reisen
+
+Barrierefreies Reisen
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/barrierefreies-reisen)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/barrierefreies-reisen/)
+
+Auto generated R starter code for data set barrierefreies-reisen@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['barrierefrei', 'infrastruktur']`
+- **Issued** `2021-03-05T00:00:00`
+- **Metadata_created** `2022-05-24T12:10:25.241767`
+- **Metadata_modified** `2023-01-16T00:28:13.633008`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 841f592c-917a-4d15-90ff-fd798640208f
+# Description              : Barrierefreies Reisen (csv)
+# Issued                   : 2021-03-05T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/barrierefreies-reisen/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch

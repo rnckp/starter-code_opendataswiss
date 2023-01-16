@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Einsatzstatistik von Schutz und Rettung Zürich seit 2010
+
+
+Jahresstatistiken von Schutz und Rettung Zürich bezüglich Anzahl Einsätzen vom Rettungsdienst, der Berufs- und Milizfeuerwehr und der Anzahl eingegangener Anrufe an eine Notrufnummer.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/einsatzstatistik-von-schutz-und-rettung-zurich-seit-20101)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/sid_srz_einsatzstatistik)
+
+Auto generated R starter code for data set a293025f-7259-450f-9559-8b013cba9a14@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Schutz und Rettung, Sicherheitsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['patientinnen', 'grundversorgung', 'rettungsdienst', 'sachdaten', 'ambulanz', 'krankenwagen', 'tabelle', 'patienten', 'rettung', 'notrufnummer', 'schutz', 'rettungswagen', 'feuerwehr', 'feuerpolizei']`
+- **Issued** `2015-01-23T00:00:00`
+- **Metadata_created** `2020-10-06T14:41:57.477365`
+- **Metadata_modified** `2023-01-16T00:50:56.426792`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 084ab6f1-3b36-43ed-b12b-5ab3bf59e1e9
+# Description              : 
+# Issued                   : 2020-10-01T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_srz_einsatzstatistik/download/SRZ_einsatzstatistik_seit2010.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

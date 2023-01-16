@@ -1,0 +1,405 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Web Analytics der Open Government Data des Kantons Zürich auf opendata.swiss von Februar 2018 bis Februar 2021
+
+Monatliche Nutzungsstatistiken (Anzahl Besuche) der Open Government Data (OGD) Metadatensätze von Verwaltungseinheiten und Organen des Kantons Zürich, die auf dem zentralen Katalog für offene Behördendaten opendata.swiss findbar sind. Hinweise: Ab Januar 2019 sind die Web Analytics um weitere Metadateninformationen erweitert bzw. wurden Metadatenanpassungen vorgenommen. Ab März 2021 sind die monatlichen Aktualisierungen aufgrund technischer Herausforderungen pausiert. Variabelndefinitionen: Column 'name' = dataset slug; 'issued' = first publication of dataset; 'organization_name' = publisher slug; 'organization_url' = publisher URL; 'E' up to 'AB' = thematic categories according to DCAT AP Switzerland.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/web-analytics-der-open-government-data-des-kantons-zurich)<br>
+[Direct link by **Fach- und Koordinationsstelle Open Government Data Kanton Zürich** for dataset](https://openzh.shinyapps.io/openzh_dashboard/)
+
+Auto generated R starter code for data set 715@fachstelle-ogd-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Fachstelle Open Government Data des Kantons Zürich`
+- **Organization.display_name.de** `Fach- und Koordinationsstelle Open Government Data Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt/open-government-data.html`
+- **Maintainer** `Fachstelle Open Government Data des Kantons Zürich`
+- **Maintainer_email** `info@open.zh.ch`
+- **Keywords.de** `['direktionen', 'kantonaleverwaltung', 'kantonzuerich']`
+- **Issued** `2018-12-11T00:00:00`
+- **Metadata_created** `2021-01-14T16:26:00.731597`
+- **Metadata_modified** `2023-01-07T03:13:12.984065`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 37 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-08-10T00:00:00
+# Modified                 : 2020-08-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001709.csv')
+
+# Distribution 1
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000776.csv')
+
+# Distribution 2
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kanton Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2021-03-24T00:00:00
+# Modified                 : 2021-03-24T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/web-analytics-der-open-government-data-des-kantons-zuerich/master/data/ZH_Datasets_UniqueActions_2021-02.csv')
+
+# Distribution 3
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000770.csv')
+
+# Distribution 4
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-09-01T00:00:00
+# Modified                 : 2020-09-01T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001720.csv')
+
+# Distribution 5
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-12-16T00:00:00
+# Modified                 : 2019-12-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001088.csv')
+
+# Distribution 6
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000780.csv')
+
+# Distribution 7
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000781.csv')
+
+# Distribution 8
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-11-04T00:00:00
+# Modified                 : 2019-11-04T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000908.csv')
+
+# Distribution 9
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000779.csv')
+
+# Distribution 10
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-08-10T00:00:00
+# Modified                 : 2020-08-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001710.csv')
+
+# Distribution 11
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2020-01-13T00:00:00
+# Modified                 : 2020-01-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001128.csv')
+
+# Distribution 12
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000778.csv')
+
+# Distribution 13
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000773.csv')
+
+# Distribution 14
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000771.csv')
+
+# Distribution 15
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000772.csv')
+
+# Distribution 16
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000774.csv')
+
+# Distribution 17
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2020-04-23T00:00:00
+# Modified                 : 2020-04-23T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001631.csv')
+
+# Distribution 18
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-08-10T00:00:00
+# Modified                 : 2020-08-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001708.csv')
+
+# Distribution 19
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-10-01T00:00:00
+# Modified                 : 2020-10-01T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001730.csv')
+
+# Distribution 20
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-12-02T00:00:00
+# Modified                 : 2020-12-02T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001772.csv')
+
+# Distribution 21
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000784.csv')
+
+# Distribution 22
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2020-04-23T00:00:00
+# Modified                 : 2020-04-23T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001630.csv')
+
+# Distribution 23
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-11-13T00:00:00
+# Modified                 : 2020-11-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001752.csv')
+
+# Distribution 24
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2020-04-23T00:00:00
+# Modified                 : 2020-04-23T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001629.csv')
+
+# Distribution 25
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2021-03-24T00:00:00
+# Modified                 : 2021-03-24T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/web-analytics-der-open-government-data-des-kantons-zuerich/master/data/ZH_Datasets_UniqueActions_2020-12.csv')
+
+# Distribution 26
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-09-05T00:00:00
+# Modified                 : 2019-09-05T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000836.csv')
+
+# Distribution 27
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-10-14T00:00:00
+# Modified                 : 2019-10-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000848.csv')
+
+# Distribution 28
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000785.csv')
+
+# Distribution 29
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000775.csv')
+
+# Distribution 30
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-09-05T00:00:00
+# Modified                 : 2019-09-05T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000837.csv')
+
+# Distribution 31
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000783.csv')
+
+# Distribution 32
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-09-05T00:00:00
+# Modified                 : 2019-09-05T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000835.csv')
+
+# Distribution 33
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000782.csv')
+
+# Distribution 34
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2020-08-10T00:00:00
+# Modified                 : 2020-08-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00001711.csv')
+
+# Distribution 35
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : 
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2019-08-26T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000715_00000777.csv')
+
+# Distribution 36
+# Package_id               : f7014086-5dae-4894-80b0-7553a48456f6
+# Description              : Ausgenommen sind die Datensätze, die von der Geoinformation des Kantons Zürich auf opendata.swiss verwaltet werden.
+# Issued                   : 2021-03-24T00:00:00
+# Modified                 : 2021-03-24T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/web-analytics-der-open-government-data-des-kantons-zuerich/master/data/ZH_Datasets_UniqueActions_2021-01.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@open.zh.ch | Fachstelle Open Government Data des Kantons Zürich

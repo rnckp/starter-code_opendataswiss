@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Ziegen - Entwicklung der Tierhaltungen
+
+Anzahl Tierhaltungen mit Ziegen. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ziegen-entwicklung-der-tierhaltungen)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set goats-holdings@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['nutztiere', 'tierhaltungen', 'ziegen']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:20:24.817050`
+- **Metadata_modified** `2023-01-10T01:10:14.064320`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1e4e15bd-9d99-45a1-a55a-668308b5dd83
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/goats-holdings.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

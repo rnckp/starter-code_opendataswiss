@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Rinder - Geburten nach Nutzungsarten und Geschlecht
+
+Anzahl gemeldete Geburten von Rindern, unterteilt nach Nutzungsart der Mutter (Milchkuh oder andere Kuh) und Geschlecht des Kalbs im Zeitverlauf (Literatur 1, 2, 3, 4).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/rinder-geburten-nach-nutzungsarten-und-geschlecht)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set cattle-birthSexDamUsage@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['populationsentwicklung', 'nutzungsarten', 'geburten', 'rinder', 'nutztiere']`
+- **Issued** `nan`
+- **Metadata_created** `2022-10-25T01:36:22.229245`
+- **Metadata_modified** `2023-01-10T01:10:05.320889`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e1c23acd-75dd-4090-8c4a-9ec4d3b3316b
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/cattle-birthSexDamUsage.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

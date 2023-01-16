@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Krankenversicherungsprämien
+
+Das Bundesamt für Gesundheit (BAG) übt die Aufsicht aus über die Versicherer, welche die soziale Krankenversicherung, d.h. die obligatorische Krankenpflegeversicherung und die freiwillige Taggeldversicherung anbieten. Die Aufsichtstätigkeit ist seit dem 1. Januar 2016 im neuen Krankenversicherungsaufsichtsgesetz (KVAG) geregelt. Das BAG ist dafür verantwortlich, dass die Versicherer das Krankenversicherungsgesetz (KVG) einheitlich anwenden. Die Prämien der Versicherer werden vom BAG geprüft und genehmigt. Vor ihrer Genehmigung dürfen die Prämien weder veröffentlicht noch angewandt werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/health-insurance-premiums)<br>
+[Direct link by **Bundesamt für Gesundheit BAG** for dataset](https://www.priminfo.admin.ch/fr/praemien)
+
+Auto generated R starter code for data set prim@bundesamt-fur-gesundheit-bag.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Gesundheit, Sektion Prämien und Solvenzaufsicht`
+- **Organization.display_name.de** `Bundesamt für Gesundheit BAG`
+- **Organization.url** ``
+- **Maintainer** `Bundesamt für Gesundheit BAG, Office fédéral de la santé publique OFSP, Ufficio federale della sanità pubblica UFSP`
+- **Maintainer_email** `KUV-BAKV@bag.admin.ch`
+- **Keywords.de** `['grundversicherung', 'okp', 'krankenversicherung', 'bag', 'obligatorische-krankenpflegeversicherung', 'praemien', 'krankenkassen', 'bundesamt-fuer-gesundheit']`
+- **Issued** `2013-09-26T00:00:00`
+- **Metadata_created** `2015-12-08T14:46:29.212390`
+- **Metadata_modified** `2022-09-27T15:20:17.085531`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 13345431-7cd8-4427-85b6-daf52f3be2ea
+# Description              : 
+# Issued                   : 2013-09-26T00:00:00
+# Modified                 : 2022-09-27T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bag-files.opendata.swiss/owncloud/index.php/s/83Vtexg1buoOk6M')
+
+# Distribution 1
+# Package_id               : 13345431-7cd8-4427-85b6-daf52f3be2ea
+# Description              : 
+# Issued                   : 2013-09-26T00:00:00
+# Modified                 : 2022-09-27T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bag-files.opendata.swiss/owncloud/index.php/s/xfkW838taWpI7XX')
+
+# Distribution 2
+# Package_id               : 13345431-7cd8-4427-85b6-daf52f3be2ea
+# Description              : 
+# Issued                   : 2013-09-26T00:00:00
+# Modified                 : 2022-09-27T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bag-files.opendata.swiss/owncloud/index.php/s/uUa96cu6sNf75I8')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Aufsicht-Krankenversicherung@bag.admin.ch | Bundesamt für Gesundheit BAG, Office fédéral de la santé publique OFSP, Ufficio federale della sanità pubblica UFSP

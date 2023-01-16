@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: AOZ Standorte
+
+AOZ (Asyl Organisation Zürich) - Standorte  
+
+**Zweck**: Visualisierung der Standorte in einer interaktiven Karte im Internet.  
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/aoz-standorte)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_aoz_standorte)
+
+Auto generated R starter code for data set 88934574-4325-4490-8668-dd880ef16b00@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `AOZ / DIR / KOM, AOZ, Asyl Organisation Zürich`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['punktdaten', 'geodaten', 'stzh', 'asyl', 'vektordaten', 'geoportal']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:08:52.245422`
+- **Metadata_modified** `2023-01-16T00:52:17.353924`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 7dfbe837-6673-4431-bb3a-c9e43caa5c3b
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/AOZ_Standorte?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

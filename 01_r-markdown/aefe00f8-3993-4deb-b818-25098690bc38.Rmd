@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Ziegen - Alter von Ziegen beim letzten Wurf
+
+Verteilung des Alters (in Monaten) von Ziegen beim der letzten Wurf (ALW) nach Jahr der Schlachtung und Nutzungsart. Das ALW wird im Bereich von 10-250 Monaten in Form eines Boxplots wiedergegeben. Die Einzeltieridentifikation und -registrierung von Kleinwiederkäuern wurden im Januar 2020 eingeführt. Analysen auf dieser Datenbasis können noch Verzerrungen aufweisen. Die Anzahl Beobachtungen nach Nutzungsart und Jahr findet sich im .csv.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ziegen-alter-von-ziegen-bei-der-letzten-ablammung)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set goats-ageLastKidding@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['alter', 'ablammung', 'ziegen', 'nutztiere']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:20:27.681946`
+- **Metadata_modified** `2023-01-10T01:09:43.784817`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : aefe00f8-3993-4deb-b818-25098690bc38
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/goats-ageLastKidding.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

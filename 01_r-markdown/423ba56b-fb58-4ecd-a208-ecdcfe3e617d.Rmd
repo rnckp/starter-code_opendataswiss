@@ -1,0 +1,87 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Statistische Zonen
+
+Die Statistischen Zonen der Stadt Zürich entsprechen einer weiteren - räumlich noch detaillierteren - administrativen Einteilung der Statistischen Quartiere.
+
+Die Statistischen Zonen entsprechen der kleinräumigsten Unterteilung der administrativen Einteilungen. Die Stadt Zürich ist in 12 Stadtkreise unterteilt, die wiederum aus den 34 Statistischen Stadtquartieren gebildet sind. Die Statistischen Stadtquartiere sind wiederum in 216 Statistische Zonen unterteilt worden. 
+
+Jedes Quartier ist in 3 bis 16 Statistische Zonen aufgeteilt. Gekennzeichnet sind diese mit einer eindeutigen Nummer (siehe unten StZNr), die sich aus der Stadtquartiernummer und einer Laufnummer zusammensetzt. Da es einfacher ist, sich den Namen eines Gebiets zu merken, hat Statistik Stadt Zürich allen einen - inoffiziellen - Namen gegeben. Bei der Namensvergabe wurden vor allem wichtige Plätze und Strassennamen verwendet, die bei der räumlichen Orientierung helfen sollen.
+
+**Zweck**: Statistische Daten der Stadt Zürich werden häufig zur räumlichen Differenzierung nach Statistischen Zonen, Statistischen Quartieren oder Stadtkreisen unterteilt. Generell dienen administrative Einteilungen den Dienststellen der Stadt Zürich als Grundlage für verwaltungsinterne Aufgaben. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/statistische-zonen)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_statistische_zonen)
+
+Auto generated R starter code for data set 681257d5-dddf-491b-beea-26e1f991e79e@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Datenmanagement, Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gebietseinteilungen', 'vektordaten', 'stadtquartiere', 'geoportal', 'polygondaten', 'quartiere', 'geodaten', 'stzh', 'punktdaten']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:11:07.540873`
+- **Metadata_modified** `2023-01-16T00:54:45.451895`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 423ba56b-fb58-4ecd-a208-ecdcfe3e617d
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Statistische_Zonen?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

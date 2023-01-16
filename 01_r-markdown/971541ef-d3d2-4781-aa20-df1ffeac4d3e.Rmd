@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Equiden - Anzahl Equiden pro Eigentümer:innen
+
+Entwicklung der Anzahl Eigentümerinnen und Eigentümer der registrierten und lebenden Equiden in der Schweiz, Liechtenstein und im Ausland nach Anzahl Equiden im Eigentum.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/equiden-eigentumer-innen-nach-anzahl-equiden)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set equids-perOwner@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['heimtiere', 'equiden', 'nutztiere', 'eigentumerinnen']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:18:24.416899`
+- **Metadata_modified** `2023-01-10T01:09:53.949798`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 971541ef-d3d2-4781-aa20-df1ffeac4d3e
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/equids-perOwner.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

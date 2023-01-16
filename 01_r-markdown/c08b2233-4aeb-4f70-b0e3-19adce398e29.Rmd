@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Verkehrsmeldungen von BERNMOBIL
+
+Automatisiert bereitgestellte Verkehrsmeldungen von BERNMOBIL
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrsmeldungen-bernmobil)<br>
+[Direct link by **BERNMOBIL** for dataset](https://github.com/BERNMOBIL/opendata-verkehrsmeldungen)
+
+Auto generated R starter code for data set incidents-brandaktuell@bernmobil.
+
+## Metadata
+
+- **Publisher** `BERNMOBIL Städtische Verkehrsbetriebe Bern`
+- **Organization.display_name.de** `BERNMOBIL`
+- **Organization.url** `https://www.bernmobil.ch/`
+- **Maintainer** `BERNMOBIL Open Data`
+- **Maintainer_email** `it.opendata@bernmobil.ch`
+- **Keywords.de** `['bern', 'offentlicher-nahverkehr', 'offentlicher-verkehr', 'opnv', 'stadt-bern', 'verkehrsmeldungen']`
+- **Issued** `2017-10-03T00:00:00`
+- **Metadata_created** `2017-12-07T09:05:27.752372`
+- **Metadata_modified** `2022-05-03T14:38:58.228204`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : c08b2233-4aeb-4f70-b0e3-19adce398e29
+# Description              : Automatisiert bereitgestellte Verkehrsmeldungen von BERNMOBIL als Open Data 
+# Issued                   : 2017-10-03T00:00:00
+# Modified                 : 2017-11-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://github.com/BERNMOBIL/opendata-verkehrsmeldungen/raw/master/incidents.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+it.opendata@bernmobil.ch | BERNMOBIL Open Data

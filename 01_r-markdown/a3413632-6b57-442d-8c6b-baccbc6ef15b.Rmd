@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Gastwirtschaftsbetriebe
+
+Aktuelle Gastwirtschaftsbetriebe der Stadt Zürich, welche von der Fachgruppe «Bewilligung Gastro» der Stadtpolizei Zürich bewilligt wurden.
+
+**Zweck**: Administration der Gastro-Bewilligungen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gastwirtschaftsbetriebe)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_gastwirtschaftsbetriebe)
+
+Auto generated R starter code for data set 47d96031-8885-4c01-acff-bffcbbb97528@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `SPA-VEPO-BG, Stadtpolizei, Sicherheitsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['punktdaten', 'geodaten', 'geoportal', 'standort', 'sachdaten', 'stzh', 'gastro', 'bar', 'adressen', 'essen', 'ausgang', 'vektordaten', 'trinken', 'gastronomie']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:08:35.620237`
+- **Metadata_modified** `2023-01-16T00:53:45.688471`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a3413632-6b57-442d-8c6b-baccbc6ef15b
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Gastwirtschaftsbetriebe?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

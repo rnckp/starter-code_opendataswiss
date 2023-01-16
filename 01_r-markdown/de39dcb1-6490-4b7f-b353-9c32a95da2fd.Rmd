@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Sanitäre Anlagen
+
+Öffentliche sanitäre Anlagen der Gemeinden Basel, Riehen und Bettingen: WC Anlage, WC Anlage rollstuhlgängig, nur Pissoir, Dusche, Anlage geschlossen (in Sanierung oder geschlossen).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sanitare-anlagen)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100031/)
+
+Auto generated R starter code for data set 100031@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Tiefbauamt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['toilette', 'wc', 'abort']`
+- **Issued** `2019-11-06T00:00:00`
+- **Metadata_created** `2022-06-14T07:36:45.309336`
+- **Metadata_modified** `2023-01-16T00:22:54.120954`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : de39dcb1-6490-4b7f-b353-9c32a95da2fd
+# Description              : Sanitäre Anlagen (csv)
+# Issued                   : 2019-11-06T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100031/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

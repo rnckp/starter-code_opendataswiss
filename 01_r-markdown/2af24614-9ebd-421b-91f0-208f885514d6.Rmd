@@ -1,0 +1,111 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Verkehrszähldaten an der Rosengartenstrasse nach Fahrzeugtypen, seit 2020
+
+
+Dieses Dataset umfasst die Verkehrszahlen an der Rosengartenstrasse **seit Januar 2020 bis zum letzten vollendeten Tag**, aufgeteilt in Jahresdateien. Die Daten werden mit dem Profiling-System TIC501 der Firma SICK erfasst. Die 2D LiDAR Sensoren sind an der nördlichen Seite der Rosengartenbrücke Richtung Bucheggplatz montiert. An dieser Stelle hat die Rosengartenstrasse sieben Spuren. Die Daten werden für jede Spur separat erfasst.
+Die einzelnen Fahrzeuge werden gemäss dem Klassierungssystem SWISS10 des ASTRA eingeteilt. Zusätzlich wird den Trolleybussen die Kategorie Trolleybus mit ID = 11 zugewiesen.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrszahldaten-an-der-rosengartenstrasse-nach-fahrzeugtypen-seit-2020)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_rosengartenbruecke)
+
+Auto generated R starter code for data set 56f5ff70-4a4e-419f-a45d-77531be32b19@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Messung Luftqualität, Umwelt- und Gesundheitsschutz, Gesundheits- und Umweltdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['miv', 'verkehr', 'echtzeit', 'fahrzeugtypen', 'tabelle', 'mobilitaet', 'sachdaten', 'zeitreihe']`
+- **Issued** `2020-10-21T00:00:00`
+- **Metadata_created** `2020-10-22T05:37:40.586014`
+- **Metadata_modified** `2023-01-16T00:51:27.274934`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2af24614-9ebd-421b-91f0-208f885514d6
+# Description              : 
+# Issued                   : 2023-01-02T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_rosengartenbruecke/download/ugz_ogd_traffic_rosengartenbruecke_h1_2023.csv')
+
+# Distribution 1
+# Package_id               : 2af24614-9ebd-421b-91f0-208f885514d6
+# Description              : 
+# Issued                   : 2022-01-01T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_rosengartenbruecke/download/ugz_ogd_traffic_rosengartenbruecke_h1_2022.csv')
+
+# Distribution 2
+# Package_id               : 2af24614-9ebd-421b-91f0-208f885514d6
+# Description              : 
+# Issued                   : 2020-10-21T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_rosengartenbruecke/download/ugz_ogd_traffic_rosengartenbruecke_h1_2020.csv')
+
+# Distribution 3
+# Package_id               : 2af24614-9ebd-421b-91f0-208f885514d6
+# Description              : 
+# Issued                   : 2021-01-06T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_verkehrsdaten_stundenwerte_rosengartenbruecke/download/ugz_ogd_traffic_rosengartenbruecke_h1_2021.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

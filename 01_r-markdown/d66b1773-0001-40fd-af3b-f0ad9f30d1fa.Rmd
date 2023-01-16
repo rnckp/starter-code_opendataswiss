@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Gemeinderatswahlen 2014: Alle Kandidierenden
+
+Angaben zu allen 1119 Kandidierenden für die Gemeinderatswahlen 2014 nach Vor- und Nachname, Geschlecht, Geburtsjahr, Beruf und Liste.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gemeinderatswahlen-2014-alle-kandidierenden)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/politik-gemeinderatswahlen-2014-alle-kandidierenden)
+
+Auto generated R starter code for data set politik_gemeinderatswahlen_2014_alle_kandidierenden@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Stadtkanzlei, Allgemeine Verwaltung`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['wahlen', 'gemeinderat', 'einzeldaten', 'tabellen', 'sachdaten']`
+- **Issued** `2013-12-18T00:00:00`
+- **Metadata_created** `2016-09-29T08:58:22.932793`
+- **Metadata_modified** `2023-01-16T00:55:38.022528`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d66b1773-0001-40fd-af3b-f0ad9f30d1fa
+# Description              : 
+# Issued                   : 2015-07-08T00:00:00
+# Modified                 : 2018-01-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/politik-gemeinderatswahlen-2014-alle-kandidierenden/download/GRW-2014-alle-Kandidierenden-OGD.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

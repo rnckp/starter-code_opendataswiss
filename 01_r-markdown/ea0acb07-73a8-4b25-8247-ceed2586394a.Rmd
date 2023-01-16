@@ -1,0 +1,108 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: KOF Konjunkturbarometer
+
+Seit den 1970er Jahren veröffentlicht die KOF einen vorlaufenden Sammelindikator, das Konjunkturbarometer, welches anzeigt, wie sich die Schweizer Konjunktur in der nahen Zukunft entwickeln dürfte. Die Methodik wurde 1998 revidiert, dann nochmals 2006. Die letzte umfassende Revision erfolgte im Jahr 2014.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kof-konjunkturbarometer)<br>
+[Direct link by **KOF Konjunkturforschungsstelle** for dataset](https://kof.ethz.ch/prognosen-indikatoren/indikatoren/kof-konjunkturbarometer.html)
+
+Auto generated R starter code for data set ch.kof.barometer@kof-konjunkturforschungsstelle.
+
+## Metadata
+
+- **Publisher** `KOF Konjunkturforschungsstelle`
+- **Organization.display_name.de** `KOF Konjunkturforschungsstelle`
+- **Organization.url** `https://kof.ethz.ch/`
+- **Maintainer** `KOF Datenservice`
+- **Maintainer_email** `data@kof.ethz.ch`
+- **Keywords.de** `['vorlaufindikator', 'schweiz', 'konjunktur']`
+- **Issued** `nan`
+- **Metadata_created** `2021-06-08T14:32:20.187613`
+- **Metadata_modified** `2023-01-16T01:08:04.793068`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ea0acb07-73a8-4b25-8247-ceed2586394a
+# Description              : Seit den 1970er Jahren veröffentlicht die KOF einen vorlaufenden Sammelindikator, das Konjunkturbarometer, welches anzeigt, wie sich die Schweizer Konjunktur in der nahen Zukunft entwickeln dürfte. Die Methodik wurde 1998 revidiert, dann nochmals 2006. Die letzte umfassende Revision erfolgte im Jahr 2014.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/collections/ogd_ch.kof.barometer?mime=csv')
+
+# Distribution 1
+# Package_id               : ea0acb07-73a8-4b25-8247-ceed2586394a
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.barometer?mime=csv&locale=de')
+
+# Distribution 2
+# Package_id               : ea0acb07-73a8-4b25-8247-ceed2586394a
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.barometer?mime=csv&locale=fr')
+
+# Distribution 3
+# Package_id               : ea0acb07-73a8-4b25-8247-ceed2586394a
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.barometer?mime=csv&locale=en')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@kof.ethz.ch | KOF Datenservice

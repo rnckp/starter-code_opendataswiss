@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Steuerertrag Grundsteuern [Mio.Fr.]
+
+Steuerertrag Grundsteuern (Nettoertrag Rechnungsjahr): Der Kanton Zürich kennt seit der Steuerperiode 2005 nur noch die Grundstückgewinnsteuer. Die Handänderungssteuer wurde mit einer Volksabstimmung per 1. Januar 2005 abgeschafft.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/steuerertrag-grundsteuern-mio-fr)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/gemeinden/gemeindeportraet.html)
+
+Auto generated R starter code for data set 192@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['gemeinden', 'steuerertrag', 'gemeindefinanzen', 'kantonzuerich', 'grundsteuern', 'steuern', 'bezirke']`
+- **Issued** `2016-01-20T00:00:00`
+- **Metadata_created** `2021-01-14T17:28:44.945516`
+- **Metadata_modified** `2023-01-16T03:03:20.682165`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 68ef42d2-22ba-4711-a625-cbd3e9d08f15
+# Description              : 
+# Issued                   : 2016-01-21T00:00:00
+# Modified                 : 2022-10-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_295.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

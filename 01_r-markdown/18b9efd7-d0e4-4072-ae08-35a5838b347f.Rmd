@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Resultate Umfrage Opendata.admin.ch
+
+In der Datei „Resultate Umfrage OGD: Zusammenfassung“ sind die aggregierten Antworten auf die einzelnen Fragen aufgeführt. Die Datei „Resultate Umfrage OGD“ enthält die Antworten auf die Multiple-Choice Fragen. Aus Datenschutzgründen mussten die offenen Fragen aus dieser Datei entfernt werden. Die Umfrage wurde auf Deutsch und Französisch durchgeführt. Die Dateien enthalten die zusammengeführten Antworten beider Sprachen. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/results-of-the-opendata-admin-ch-survey)<br>
+[Direct link by **Schweizerisches Bundesarchiv BAR** for dataset]()
+
+Auto generated R starter code for data set bar-05@schweizerisches-bundesarchiv-bar.
+
+## Metadata
+
+- **Publisher** `Schweizerisches Bundesarchiv`
+- **Organization.display_name.de** `Schweizerisches Bundesarchiv BAR`
+- **Organization.url** `https://www.bar.admin.ch`
+- **Maintainer** `Schweizerisches Bundesarchiv`
+- **Maintainer_email** `bundesarchiv@bar.admin.ch`
+- **Keywords.de** `['umfrage']`
+- **Issued** `2013-01-09T00:00:00`
+- **Metadata_created** `2015-11-25T10:03:30.859289`
+- **Metadata_modified** `2022-05-03T14:38:47.229802`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 18b9efd7-d0e4-4072-ae08-35a5838b347f
+# Description              : 
+# Issued                   : 2013-01-09T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/yiiBDna1d3VyChE')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+bundesarchiv@bar.admin.ch | Schweizerisches Bundesarchiv

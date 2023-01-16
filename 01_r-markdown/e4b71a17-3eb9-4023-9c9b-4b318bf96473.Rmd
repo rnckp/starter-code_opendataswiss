@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Kinder- und Jugendangebote
+
+Die offene Kinder- und Jugendarbeit (OKJA) ist ein Freizeitangebot für Kindern ab 5 Jahren bis jungen Erwachsenen im Alter von bis 25 Jahren. Sie umfasst Angebote wie Jugendzentren, mobile Jugendarbeit, Abenteuerspielplätze oder Spielmobile. Spezifisches Charakteristikum ist, dass die Angebote offen, freiwillig und partizipativ organisiert sind.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kinder-und-jugendangebote)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100024/)
+
+Auto generated R starter code for data set 100024@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Jugend, Familie und Sport`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['sport', 'freizeit', 'turnen', 'treffpunkt', 'jugenarbeit']`
+- **Issued** `2019-11-06T00:00:00`
+- **Metadata_created** `2022-06-09T08:39:23.074680`
+- **Metadata_modified** `2023-01-16T00:23:04.376780`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e4b71a17-3eb9-4023-9c9b-4b318bf96473
+# Description              : Kinder- und Jugendangebote (csv)
+# Issued                   : 2019-11-06T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100024/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

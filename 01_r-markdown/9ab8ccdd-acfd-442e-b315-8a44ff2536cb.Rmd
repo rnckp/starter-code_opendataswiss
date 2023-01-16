@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wochenstatistik Elektrizitätsbilanz - Erzeugung und Abgabe elektrischer Energie in der Schweiz
+
+Die Wochenstatistik Elektrizitätsbilanz - Erzeugung und Abgabe elektrischer Energie in der Schweiz gibt Auskunft über Produktion, Import / Export und Verbrauch von Elektrizität in der Schweiz jeweils am Mittwoch auf wöchentlicher Basis. Bei der Produktion werden die Hydrologische Erzeugung (Lauf- und Speicherwerke), die Erzeugung der Kernkraftwerke sowie die Konv.-therm. und andere Erzeugung unterschieden. Der Verbrauch der Speicherpumpen wird ausgewiesen. Die Wochenstatistik Elektrizitätsbilanz wird im Rahmen der Elektrizitätsstatistik erhoben, welche Teil der öffentlichen Statistik der Schweiz ist (gesetzliche Grundlage: BStatG).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wochenstatistik-elektrizitatsbilanz-erzeugung-und-abgabe-elektrischer-energie-in-der-schweiz)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](http://www.bfe.admin.ch/ogd51)
+
+Auto generated R starter code for data set ogd51@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['stromverbrauch', 'thermische-stromproduktion', 'landesverbrauch', 'elektrizitaetsbilanz', 'nettoerzeugung', 'wasserkraft', 'kernkraft', 'ogd51-bfe', 'elektrizitaetsstatistik', 'importsaldo', 'speicherpumpen', 'stromproduktion', 'erneuerbare-energien']`
+- **Issued** `2017-12-12T00:00:00`
+- **Metadata_created** `2018-01-09T12:39:05.884963`
+- **Metadata_modified** `2023-01-10T04:02:01.896032`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9ab8ccdd-acfd-442e-b315-8a44ff2536cb
+# Description              : 
+# Issued                   : 2022-01-18T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/51/ogd51_wochenstatistik_elektrizitaetsbilanz.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@bfe.admin.ch | Bundesamt für Energie BFE

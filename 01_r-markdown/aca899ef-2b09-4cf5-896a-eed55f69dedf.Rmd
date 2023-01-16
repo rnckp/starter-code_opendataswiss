@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Schafe - Geburten nach Nutzungsarten
+
+Anzahl gemeldete Geburten der registrierten Schafe, unterteilt nach Nutzungsart der Mutter (Schafe gemolken oder anderes Schaf >1-jährig). Die Nutzungsart von Kleinwiederkäuern wurde im Dezember 2021 eingeführt. Analysen auf dieser Datenbasis können noch Verzerrungen aufweisen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/schafe-geburten-nach-nutzungsarten)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set sheep-birthDamUsage@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['geburten', 'nutzungsarten', 'nutztiere', 'schafe', 'populationsentwicklung']`
+- **Issued** `nan`
+- **Metadata_created** `2022-10-25T01:33:30.370052`
+- **Metadata_modified** `2023-01-10T01:09:59.247583`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : aca899ef-2b09-4cf5-896a-eed55f69dedf
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/sheep-birthDamUsage.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

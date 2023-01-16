@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Stromverbrauch Swissgrid
+
+Der Landesverbrauch der Schweiz inklusive des Verbrauchs der Speicherumpen der Pumpspeicherkraftwerke ist ein wichtiger Indikator in Bezug auf die Stromversorgung. Beim Verbrauch gilt es unbedingt zwischen verschiedenen Zahlen zu differenzieren. Der Landesverbrauch enthält den gesamten Verbrauch von Haushalten, Gewerbe, Landwirtschaft, Dienstleistungen, Industrie und Verkehr (der sogenannte Endverbrauch) zuzüglich Übertragungs- und Verteilverluste (Netzverluste). Im aktuell ausgewiesenen Verbrauch ist neben dem Landesverbrauch auch der Stromverbrauch für den Betrieb der Speicherpumpen enthalten. Der Trend zeigt die Entwicklung des Landesverbrauches inklusive des Verbrauches der Speicherpumpen im Vergleich zum durchschnittlichen Verbrauch der letzten 10 Tage an. Der prognostizierte Wert gibt den modellbasiert geschätzten Landesverbrauch inklusive des Verbrauches der Speicherpumpen in 5 Tagen an. Landesverbrauch inklusive Verbrauch Speicherpumpen über die letzten Wochen Der Stromverbrauch hängt auch vom Einsatz der Speicherpumpen ab. Je weiter die Zahlen zurückliegen, desto belastbarer sind sie. Die Daten stammen von Verteilnetzbetreibern, die die Daten monatlich an Swissgrid melden. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert. Diese Daten der Swissgrid reichen bestenfalls 1 Monat zurück. Zeitnahe gemessenen Verbrauchsdaten sind nicht verfügbar. Um den aktuellen Landesverbrauch inklusive des Verbrauchs der Speicherpumpen zu ermitteln, werden Modelle herangezogen. Diese Modelle berücksichtigen die Temperaturentwicklung in der Schweiz nicht aber Verhaltensänderungen der Bevölkerung, also beispielsweise Reaktion auf Aufrufe zum Energiesparen. Solche Verhaltensänderungen können nur über gemessene Verbrauchsdaten erfasst werden. Aktueller Endverbrauch über die letzten Wochen Der Endverbrauch ist die durch Wirtschaft, Verkehr und Privathaushalte verbrauchte elektrische Energie. Allfällige Anstrengungen zu Stromeinsparungen können aus dieser Grafik zwar interpretiert werden, müssen aber aufgrund der Datenlage als rein indikativ gelten. Die Grafik basiert vor allem auf den in der Vergangenheit durch Verteilnetzbetreiber an Swissgrid gemeldete und nachkorrigierte Daten. Aufgrund der Unsicherheiten in der Datenlage zum Endverbrauch hat das BFE eigens ein Modell des Endverbrauchs mit neuesten Data Science Methoden wie dem maschinellen Lernen entwickeln lassen. Expertengrafik zum Vergleich der Datenquellen zum Landesverbrauch inklusive Verbrauch der Speicherpumpen. Analysen zeigen, dass es verschiedene Unterschiede zwischen den wichtigsten Datenquellen zum Thema Verbrauch gibt. Diese Unterschiede werden veranschaulicht, damit eine Einschätzung der bisher kursierenden Information möglich wird. Die Unterschiede haben verschiedene Gründe, wie etwa unterschiedliche methodologische Ansätze und Abgrenzungen. Unterschiede kommen aber auch durch Korrekturen und Nachmeldungen aus der Branche zustande.  Zum Vergleich auf Monatsbasis wird die BFE Statistik als Grundlage und Messlatte herangezogen. Disclaimer Daten Die Datenlage zum Verbrauch ist nicht zufriedenstellend. Es existieren unterschiedliche Quellen, die unterschiedliche methodologische Ansätze verfolgen. Davon ist die belastbarste Quelle die BFE Statistik, welche jedoch nur Werte auf Monatsbasis bietet und derzeit mit Verzug von etwa 2 Monaten erscheint.  Daneben gibt es Daten der Swissgrid, die auf Meldungen der Verteilnetzbetreiber basieren. Diese Daten basieren auf Messwerten sind mit Unsicherheiten behaftet, da es immer wieder zu Fehlmeldungen, Nachmeldungen und Korrekturen seitens der Verteilnetzbetreiber kommt, teilweise bis zu 6 Monate nach der Veröffentlichung. Damit aktuelle Werte angegeben werden können muss mit Modellen gearbeitet werden. Diese berücksichtigen Daten der Vergangenheit und insbesondere der BFE Statistik. Für eine aktuelle Schätzung des Endverbrauchs hat das BFE ein Data Science Modell unter Nutzung modernen Maschinenlernens entwickeln lassen. Es prognostiziert den Endverbrauch, vermag aber grosse Verhaltensänderungen in der Bevölkerung nur ansatzweise nachzubilden. Das BFE arbeitet derzeit an besseren Ansätzen mit der Strombranche.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-swissgrid)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://energiedashboard.ch)
+
+Auto generated R starter code for data set 103@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['ogd103-bfe', 'versorgungssicherheit', 'landesverbrauch-strom', 'endverbrauch-strom']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2022-12-14T05:09:48.204417`
+- **Metadata_modified** `2023-01-10T13:05:21.448904`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0b9b12cc-8fad-47b2-a6fa-1fdd7f6a20a4
+# Description              : Zeitnahe Daten sind nicht verfügbar, weshalb mit einem Modell der Verbrauch auf Basis der Vergangenheit geschätzt werden muss.
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd103_stromverbrauch_geschaetzt_swissgrid.csv')
+
+# Distribution 1
+# Package_id               : 0b9b12cc-8fad-47b2-a6fa-1fdd7f6a20a4
+# Description              : Der Landesverbrauch inklusive des Verbrauchs der Speicherpumpen ist ein wichtiger Indikator in Bezug auf die Stromversorgung. Der Verlauf wird zunächst auf Basis von durch Verteilnetzbetreiber an Swissgrid gemeldeten Daten dargestellt. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert. Der Endverbrauch gibt an, wieviel Strom durch Haushalte, Gewerbe, Landwirtschaft, Dienstleistungen, Industrie und Verkehr verbraucht wird. Wenn es um Sparbemühungen der Schweizer geht ist er die massgebliche Grösse. Der Verlauf wird zunächst auf Basis von durch Verteilnetzbetreiber an Swissgrid gemeldeten Daten dargestellt. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert.
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Digital Innovation Office | Digitalisierung@bfe.admin.ch

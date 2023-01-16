@@ -1,0 +1,679 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: COVID-19 Schweiz
+
+Kennzahlen zu laborbestätigten Fällen, Hospitalisationen, Todesfällen, Tests, Impfungen, relevanten Virusvarianten, Re-Werten, Contact Tracing (Isolation und Quarantäne), Spitalkapazitäten und zur internationalen Lage.
+### Dokumentation
+- [Daten Dokumentation](https://www.covid19.admin.ch/api/data/documentation)
+- [Release Notes](https://www.covid19.admin.ch/api/data/documentation#releases)
+- [data context API](https://www.covid19.admin.ch/api/data/documentation#data-context-api)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/covid-19-schweiz)<br>
+[Direct link by **Bundesamt für Gesundheit BAG** for dataset](https://www.covid19.admin.ch)
+
+Auto generated R starter code for data set covid-19@bundesamt-fur-gesundheit-bag.
+
+## Metadata
+
+- **Publisher** `Communicable Diseases Division, Abteilung Übertragbare Krankheiten, Division Maladies transmissibles, Divisione malattie trasmissibili`
+- **Organization.display_name.de** `Bundesamt für Gesundheit BAG`
+- **Organization.url** ``
+- **Maintainer** `Communicable Diseases Division, Abteilung Übertragbare Krankheiten, Division Maladies transmissibles, Divisione malattie trasmissibili`
+- **Maintainer_email** `epi@bag.admin.ch`
+- **Keywords.de** `['impfungen', 'covid-19', 'laborbestatigte-falle', 'relevante-virusvarianten', 'epidemiologischer-verlauf', 'laborbestatigte-todesfalle', 'laborbestatigte-hospitalisationen', 'spitalkapazitaten', 'coronavirus', 'internationale-lage', 'quarantane', 'reproduktionszahl', 'bag', 'contact-tracing', 'intensivstationen', 'tests']`
+- **Issued** `2020-11-05T00:00:00`
+- **Metadata_created** `2021-03-31T05:40:53.875057`
+- **Metadata_modified** `2023-01-16T14:55:10.773906`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 67 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion (aggregated by canton/country of residence) and sex for vaccinated persons. This file has been deprecated and will no longer be updated after 04.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccpersonsweeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccPersons_sex_w_v2.csv')
+
+# Distribution 1
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion (aggregated by canton/country of residence) and age brackets for vaccinated persons. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccpersonsweeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccPersons_AKL10_w_v2.csv')
+
+# Distribution 2
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines by geoRegion for deaths. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_geoRegion.csv')
+
+# Distribution 3
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for hospitalisations of fully vaccinated persons by vaccine and sex. Data only available for geoRegion CHFL. This file has been deprecated and will no longer be updated after 04.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyhospvaccpersonssexincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_vaccpersons_sex_w.csv')
+
+# Distribution 4
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily hospital capacity data timelines of certified/ad-hoc status of operational ICU beds by geoRegion. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-hospcapacitycertstatusincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19HospCapacity_geoRegion_certStatus.csv')
+
+# Distribution 5
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Virus variant data by geoRegion (source WGS & MSys). This file has been deprecated and will no longer be updated after 18.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-virusvariantswgsdailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Variants_wgs.csv')
+
+# Distribution 6
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Population data by geoRegion (cantons + FL), age brackets & sex. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-populationagerangesexdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/PopulationAgeRangeSexData.csv')
+
+# Distribution 7
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for deaths of fully vaccinated persons by vaccine and age brackets. Data only available for geoRegion CHFL. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklydeathvaccpersonsagerangeincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_vaccpersons_AKL10_w.csv')
+
+# Distribution 8
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Contact tracing data (current record by geoRegion where available). This file has been deprecated and will no longer be updated after 05.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-contacttracingincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19QuarantineIsolation_geoRegion_d.csv')
+
+# Distribution 9
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for hospitalisations of fully vaccinated persons by vaccine and age brackets. Data only available for geoRegion CHFL. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyhospvaccpersonsagerangeincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_vaccpersons_AKL10_w.csv')
+
+# Distribution 10
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Weekly report texts by Iso-Week. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyreportincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19WeeklyReportText.csv')
+
+# Distribution 11
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines by (additonal) geographical units for cases. Contains data for CH, cantons, greater regions & greater labor market regions. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-additionalgeoregiondailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_extraGeoRegions_d.csv')
+
+# Distribution 12
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : International quarantine data (mandatory quarantine requirement when entering Switzerland). This file has been deprecated and will no longer be updated after 05.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-internationalquarantineincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19IntQua.csv')
+
+# Distribution 13
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines for cases of fully vaccinated persons by vaccine. Data only available for geoRegion CHFL. This file has been deprecated and will no longer be updated after 11.11.2021. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailycasesvaccpersonsincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_vaccpersons.csv')
+
+# Distribution 14
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and location for vaccine doses administered. This file has been deprecated and will no longer be updated after 26.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationweeklylocationincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesAdministered_location_w.csv')
+
+# Distribution 15
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines by geoRegion and test type (pcr/antigen) for tests. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Test_geoRegion_PCR_Antigen.csv')
+
+# Distribution 16
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and vacc indication (reason) for vaccine doses administered. This file has been deprecated and will no longer be updated after 04.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationweeklyindicationincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesAdministered_indication_w.csv')
+
+# Distribution 17
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Data for suspected cases of adverse vaccination reactions based on reports from Swissmedic. This file has been deprecated and will no longer be updated after 26.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationsymptomsincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccSymptoms.csv')
+
+# Distribution 18
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Vaccine doses administered data by geoRegion. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesAdministered.csv')
+
+# Distribution 19
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines by geoRegion for hospitalisations. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_geoRegion.csv')
+
+# Distribution 20
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for cases of fully vaccinated persons by vaccine and age brackets. Data only available for geoRegion CHFL. This file has been deprecated and will no longer be updated after 11.11.2021. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklycasesvaccpersonsagerangeincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_vaccpersons_AKL10_w.csv')
+
+# Distribution 21
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion for deaths. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_geoRegion_w.csv')
+
+# Distribution 22
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Vaccine doses delivered/received data by geoRegion. This file has been deprecated and will no longer be updated after 26.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesDelivered.csv')
+
+# Distribution 23
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for cases of fully vaccinated persons by vaccine and sex. Data only available for geoRegion CHFL. This file has been deprecated and will no longer be updated after 11.11.2021. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklycasesvaccpersonssexincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_vaccpersons_sex_w.csv')
+
+# Distribution 24
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and age brackets for cases. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_geoRegion_AKL10_w.csv')
+
+# Distribution 25
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Vaccinated persons data by geoRegion (aggregated by canton/country of residence) and vaccine (type). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccpersonsvaccineincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccPersons_vaccine.csv')
+
+# Distribution 26
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : 14d aggregated record timelines by (additional) geographical units for cases. Contains data for CH, labor market regions & districts. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-additionalgeoregion14dperiodincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_extraGeoRegions_14d.csv')
+
+# Distribution 27
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Weekly hospital capacity data timelines by geoRegion. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-hospcapacityweeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19HospCapacity_geoRegion_w.csv')
+
+# Distribution 28
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Weekly record timeline for hospitalisations by vaccination status ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyhospbreakthroughvaccpersonsagerangeincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_vaccpersons_AKL10_w_v2.csv')
+
+# Distribution 29
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and age brackets for hospitalisations. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_geoRegion_AKL10_w.csv')
+
+# Distribution 30
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Vaccine doses administered data by geoRegion and vaccine (type). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationvaccineincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19AdministeredDoses_vaccine.csv')
+
+# Distribution 31
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Weekly record timeline for deaths by vaccination status. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklydeathbreakthroughvaccpersonsagerangeincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_vaccpersons_AKL10_w_v2.csv')
+
+# Distribution 32
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines by geoRegion for tests (all test types combined). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Test_geoRegion_all.csv')
+
+# Distribution 33
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily waste water viral load measurement record timelines by waste water treatment facility. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-wastewaterdailyviralloaddata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Wastewater_vl.csv')
+
+# Distribution 34
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Combined daily record timelines for cases, hosp & death by geoRegion. Minimal content without pre-calculated values. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyepirawincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19EpiRawData_d.csv')
+
+# Distribution 35
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines for cases by geoRegion and age brackets. Minimal content without pre-calculated values. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailycasesagerangerawincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19CasesRawData_AKL10_d.csv')
+
+# Distribution 36
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Combined Iso-Week record timelines for cases, hosp & deaths by geoRegion, age brackets and sex. Minimal content without pre-calculated values. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyepiagerangesexrawincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19EpiRawData_AKL10_sex_w.csv')
+
+# Distribution 37
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion (aggregated by canton/country of residence) and vacc indication (reason) for fully vaccinated persons. This file has been deprecated and will no longer be updated after 04.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccpersonsweeklyindicationincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19FullyVaccPersons_indication_w_v2.csv')
+
+# Distribution 38
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and sex for tests (all test types). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Test_geoRegion_sex_w.csv')
+
+# Distribution 39
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and sex for cases. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_geoRegion_sex_w.csv')
+
+# Distribution 40
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and sex for hospitalisations. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_geoRegion_sex_w.csv')
+
+# Distribution 41
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily hospital capacity data timelines by geoRegion. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-hospcapacitydailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19HospCapacity_geoRegion.csv')
+
+# Distribution 42
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion for tests. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Test_geoRegion_w.csv')
+
+# Distribution 43
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines for deaths of fully vaccinated persons by vaccine. Data only available for geoRegion CHFL. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailydeathvaccpersonsincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_vaccpersons.csv')
+
+# Distribution 44
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Vaccine doses delivered/received data by geoRegion and vaccine (type). This file has been deprecated and will no longer be updated after 26.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationdosesreceiveddeliveredvaccineincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesDelivered_vaccine.csv')
+
+# Distribution 45
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion (aggregated by canton/country of residence), age brackets and vaccine for vaccinated persons. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccpersonsweeklyagerangevaccineincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccPersons_AKL10_vaccine_w.csv')
+
+# Distribution 46
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and sex for vaccine doses administered. This file has been deprecated and will no longer be updated after 04.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationweeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesAdministered_sex_w.csv')
+
+# Distribution 47
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for ddeaths by geoRegion, age brackets and primary death reason. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklydeathreasonincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_reason_AKL10_w.csv')
+
+# Distribution 48
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Optional extra texts for daily report (PDF). This file has been deprecated and will no longer be updated after 05.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyreportincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19EvalTextDaily.csv')
+
+# Distribution 49
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and age brackets for vaccine doses administered. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationweeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesAdministered_AKL10_w.csv')
+
+# Distribution 50
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines of virus variant data for hospitalisations (including subvariants). Data only available for geoRegion CHFL. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-virusvariantshospweeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Variants_hosp_w.csv')
+
+# Distribution 51
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Vaccinated persons data by geoRegion (aggregated by canton/country of residence). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccpersonsincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccPersons_v2.csv')
+
+# Distribution 52
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and test type (pcr/antigen) for tests. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Test_geoRegion_PCR_Antigen_w.csv')
+
+# Distribution 53
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines by geoRegion for cases. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_geoRegion.csv')
+
+# Distribution 54
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for deaths of fully vaccinated persons by vaccine and sex. Data only available for geoRegion CHFL. This file has been deprecated and will no longer be updated after 04.10.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklydeathvaccpersonssexincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_vaccpersons_sex_w.csv')
+
+# Distribution 55
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Issued COVID certificates data. This file has been deprecated and will no longer be updated after 08.03.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-covidcertificatesdailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Certificates.csv')
+
+# Distribution 56
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily R<sub>e</sub> value data timelines by geoRegion. This file has been deprecated and will no longer be updated after 05.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-redailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Re_geoRegion.csv')
+
+# Distribution 57
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and age brackets for tests (all test types). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Test_geoRegion_AKL10_w.csv')
+
+# Distribution 58
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion for cases. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Cases_geoRegion_w.csv')
+
+# Distribution 59
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Overview of the current percentile & difference to previous week of the waste water facilities by geoRegion (cantons, FL, CH & CHFL). ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-wastewaterviralloadoverview.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Wastewater_vlOverview.csv')
+
+# Distribution 60
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : International daily data (cases). This file has been deprecated and will no longer be updated after 05.04.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-internationaldailyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19IntCases.csv')
+
+# Distribution 61
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and age brackets for deaths. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_geoRegion_AKL10_w.csv')
+
+# Distribution 62
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Allotted vaccination doses contingent data by geoRegion. This file has been deprecated and will no longer be updated after 10.03.2022. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-vaccinationcontingentincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19VaccDosesContingent.csv')
+
+# Distribution 63
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines for hospitalisations by geoRegion, age brackets and primary hospitalisation reason. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyhospreasonincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_reason_AKL10_w.csv')
+
+# Distribution 64
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion for hospitalisations. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_geoRegion_w.csv')
+
+# Distribution 65
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Iso-Week record timelines by geoRegion and sex for deaths. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-weeklyincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Death_geoRegion_sex_w.csv')
+
+# Distribution 66
+# Package_id               : 93b90c27-8665-45d2-a602-b46ce9fcbc30
+# Description              : Daily record timelines for hospitalisations of fully vaccinated persons by vaccine. Data only available for geoRegion CHFL. ### Documentation - [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyhospvaccpersonsincomingdata.md) - [general documentation](https://www.covid19.admin.ch/api/data/documentation)
+# Issued                   : 2020-11-05T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.covid19.admin.ch/api/data/20230110-l0uxu2mx/sources/COVID19Hosp_vaccpersons.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+epi@bag.admin.ch | Communicable Diseases Division, Abteilung Übertragbare Krankheiten, Division Maladies transmissibles, Divisione malattie trasmissibili

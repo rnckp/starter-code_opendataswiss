@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Schülerprognose Riehen und Bettingen
+
+Das Statistische Amt erstellt kleinräumige Prognosen zu den Schülerzahlen in den öffentlichen Schulen der Gemeinden Riehen und Bettingen. Die Schülerzahlen werden für die ersten 8 Schulstufen (Kindergarten und Primarschule), 13 Schulperimeter und 5 Schuljahre in die Zukunft prognostiziert. Die Perimeter dienen als Planungsgrundlage und nicht als effektive Einzugsgebiete. Die Prognosen werden im Auftrag der Gemeinde Riehen erstellt und jährlich aktualisiert. Die Prognosen 2022 wurden vor Ausbruch des Ukraine-Krieges erstellt, SuS aus dem Kriegsgebiet sind somit nicht mitberücksichtigt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/schulerprognose-riehen-und-bettingen)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100122/)
+
+Auto generated R starter code for data set 100122@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['bildung', 'schule', 'gemeinden', 'schuler', 'prognose', 'zeitreihe']`
+- **Issued** `2021-03-23T00:00:00`
+- **Metadata_created** `2021-09-03T09:18:16.518226`
+- **Metadata_modified** `2023-01-16T00:22:16.703817`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 076f7312-3687-41e4-a8a0-0e388ec57983
+# Description              : Schülerprognose Riehen und Bettingen (csv)
+# Issued                   : 2021-03-23T00:00:00
+# Modified                 : 2022-11-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100122/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

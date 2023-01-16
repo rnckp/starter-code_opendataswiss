@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: COVID_19 Belegung Intensivpflege Kanton Zürich ab 29.10.2020
+
+Anzahl zertifizierte Intensivpflege-Betten und deren aktuelle Belegung auf Spitalebene im Kanton Zürich (Stand jeweils am Mittwoch). Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert. Variabeln: 'Name des Spitals', 'Anzahl Covid-19-PatientInnen auf der Intensivpflegestation, an deren Behandlung sich das Spital derzeit beteiligen müsste (die Sollwerte werden von der Gesundheitsdirektion zusammen mit den Spitälern definiert)', 'Anzahl Covid-19-PatientInnen auf der Intensivpflegestation', 'Anzahl andere PatientInnen auf der Intensivpflegestation' und (seit 2021-12-10) 'Anzahl zertifizierte Intensivpflege-Betten, die aktuell mit dem verfügbaren Pflegepersonal betrieben werden können'.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/covid_19-belegung-intensivpflege-kanton-zurich)<br>
+[Direct link by **Gesundheitsdirektion Kanton Zürich** for dataset](https://github.com/openZH/covid_19/tree/master/fallzahlen_kanton_zh)
+
+Auto generated R starter code for data set 706@gesundheitsdirektion-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Gesundheitsdirektion des Kantons Zürich`
+- **Organization.display_name.de** `Gesundheitsdirektion Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
+- **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
+- **Maintainer_email** `gdstab@gd.zh.ch`
+- **Keywords.de** `['spitalpatient', 'spitalpatientinnen', 'covid-19', 'corona', 'kantonzuerich', 'spitaeler']`
+- **Issued** `2020-11-06T00:00:00`
+- **Metadata_created** `2021-01-14T16:34:52.422923`
+- **Metadata_modified** `2023-01-16T03:09:07.510310`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 76c9964b-5c30-4f5f-9dff-46cd4c041ac1
+# Description              : Variabeln: 'hospital_name' = Name des Spitals; 'current_icu_service_certified' = Anzahl zertifizierte Intensivpflege-Betten; 'current_icu_target_covid' = Anzahl Covid-19-PatientInnen auf der Intensivpflegestation, an deren Behandlung sich das Spital derzeit beteiligen müsste (die Sollwerte werden von der Gesundheitsdirektion zusammen mit den Spitälern definiert); 'current_icu_covid' = Anzahl Covid-19-PatientInnen auf der Intensivpflegestation; 'current_icu_not_covid' = Anzahl andere PatientInnen auf der Intensivpflegestation; 'current_icu_service_certified_operated' (seit 2021-12-10) = Anzahl zertifizierte Intensivpflege-Betten, die aktuell mit dem verfügbaren Pflegepersonal betrieben werden können.
+# Issued                   : 2020-11-06T00:00:00
+# Modified                 : 2021-12-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_zh/COVID19_Belegung_Intensivpflege.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+gdstab@gd.zh.ch | Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline

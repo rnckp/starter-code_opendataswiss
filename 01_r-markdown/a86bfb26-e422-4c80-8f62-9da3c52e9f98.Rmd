@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Strassennamen
+
+Der Datensatz beinhaltet die Namen aller Strassen im Kanton Basel-Stadt sowie kurze Erläuterungen zur Bedeutung der Strassennamen der Stadt Basel. Die Felder zu den Erklärungen sind ausserhalb des Stadtgebietes leer.Der Datensatz darf für Open Street Map verwendet werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/strassennamen1)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100189/)
+
+Auto generated R starter code for data set 100189@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Grundbuch- und Vermessungsamt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['name', 'strasse', 'nomenklatur']`
+- **Issued** `2022-04-11T00:00:00`
+- **Metadata_created** `2022-06-09T08:39:53.579337`
+- **Metadata_modified** `2023-01-16T00:23:17.730163`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a86bfb26-e422-4c80-8f62-9da3c52e9f98
+# Description              : Strassennamen (csv)
+# Issued                   : 2022-04-11T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100189/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Coronavirus (Covid-19): Massentests an Schulen
+
+Dieser Datensatz zeigt die SARS-CoV-2-Tests, welche ab Mitte März 2022 an Schülerinnen und Schülern (SuS) sowie Lehrpersonen an baselstädtischen Schulen durchgeführt wurden. Es werden die Anzahl durchgeführter Tests sowie die Test-Positivitätsrate pro Woche aufgeführt. Weitere Informationen zum Testen an Schulen: https://www.coronavirus.bs.ch/testen/testen-in-schulen.htmlDaten zu Massentests an Schulen vor Mitte März 2022, sowie in Betrieben im Kanton Basel-Stadt sind hier zu finden: https://data.bs.ch/explore/?sort=modified&q=massentests
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/coronavirus-covid-19-massentests-an-schulen1)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100183/)
+
+Auto generated R starter code for data set 100183@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Medizinische Dienste`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['coronavirus', 'corona', 'pcr', 'test', 'covid-19', 'sars-cov-2']`
+- **Issued** `2022-06-22T00:00:00`
+- **Metadata_created** `2022-06-23T14:09:59.588817`
+- **Metadata_modified** `2023-01-16T00:22:57.417605`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 41b161da-899a-4363-82b9-393c557f38ba
+# Description              : Coronavirus (Covid-19): Massentests an Schulen (csv)
+# Issued                   : 2022-06-22T00:00:00
+# Modified                 : 2023-01-03T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100183/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

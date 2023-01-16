@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Verkehrszähldaten motorisierter Individualverkehr
+
+Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Motorisierten Individualverkehr. Aus Kostengründen sind nur die Werte des aktuellen und des letzten Jahres als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar. Die vollständigen Daten ab dem Jahr 2014 können hier heruntergeladen werden: Leicht aufbereiteter Datensatz: https://data-bs.ch/mobilitaet/converted_MIV_Class_10_1.csv Rohdaten: https://data-bs.ch/mobilitaet/MIV_Class_10_1.csvDie Daten einzelner Jahre ab dem Jahr 2014 können heruntergeladen werden unter der URL mit dem Muster https://data-bs.ch/mobilitaet/[JAHR]_MIV_Class_10_1.csv, also zum Beispiel für das Jahr 2020 hier: https://data-bs.ch/mobilitaet/2020_MIV_Class_10_1.csv.Die Zählstellen sind auf MET eingestellt (Spalten TimeFrom und TimeTo), d.h. die Zeitumstellung wird wie in Mitteleuropa ausgeführt. Bei der Umstellung von Winter- auf Sommerzeit fehlt die Stunde der Umstellung, dieser Tag hat dann 23 Stunden. Bei der Umstellung von Sommer- auf Winterzeit ist eine Stunde zu viel enthalten (der Tag hat dann 25 Stunden), die Stunde der Umstellung ist dann doppelt, aber mit unterschiedlichen Verkehrsdaten (da die gleiche Stunde zweimal durchlaufen wird).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrszahldaten-motorisierter-individualverkehr)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100006/)
+
+Auto generated R starter code for data set 100006@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Mobilität`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['lieferwagen', 'motorrader', 'verkehr', 'anhanger', 'verkehrszahlung', 'erhebung', 'autos', 'busse', 'lastwagen']`
+- **Issued** `2019-11-05T00:00:00`
+- **Metadata_created** `2021-09-03T09:17:05.332696`
+- **Metadata_modified** `2023-01-16T00:22:26.207339`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2fbfeab1-bb33-4cb7-a2cc-b04d5780439a
+# Description              : Verkehrszähldaten motorisierter Individualverkehr (csv)
+# Issued                   : 2019-11-05T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100006/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

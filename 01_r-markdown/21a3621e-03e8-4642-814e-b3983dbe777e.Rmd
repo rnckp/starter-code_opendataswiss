@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Resultate der kantonalen Abstimmungen im Kanton Thurgau ab 2004 nach Gemeinden
+
+Der Datensatz beinhaltet die Abstimmungsresultate aller kantonalen Abstimmungen ab 2004 auf Gemeindeebene. Nebst dem Datum, dem genauen Wortlaut der Abstimmung und den Ergebnissen (Ja-/Nein-Stimmen) sind in den Daten auch Angaben zum Abstimmungstyp (Volksinitiative, Volksinitiative mit Gegenentwurf, Obligatorisches Referendum, Fakultatives Referendum, Beschluss Grosser Rat), zur Anzahl Stimmberechtigter, den eingelegten Stimmzetteln, den gültigen, ungültigen sowie leeren Stimmen und der Stimmbeteiligung für jede Thurgauer Gemeinde enthalten.Datenstand: Abstimmungstag
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/resultate-der-kantonalen-abstimmungen-im-kanton-thurgau-ab-2004-nach-gemeinden)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-52/)
+
+Auto generated R starter code for data set sk-stat-52@kanton-thurgau.
+
+## Metadata
+
+- **Publisher** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['abstimmung', 'politische-gemeinde', 'beschluss', 'initiative', 'obligatorisch', 'referendum', 'kantonale-abstimmung', 'fakultativ', 'gemeinde', 'stimmberechtigte', 'gemeinden']`
+- **Issued** `2018-01-18T00:00:00`
+- **Metadata_created** `2022-02-28T11:06:35.578150`
+- **Metadata_modified** `2023-01-16T11:02:30.384601`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 21a3621e-03e8-4642-814e-b3983dbe777e
+# Description              : Resultate der kantonalen Abstimmungen im Kanton Thurgau ab 2004 nach Gemeinden (csv)
+# Issued                   : 2018-01-18T00:00:00
+# Modified                 : 2022-11-28T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-52/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

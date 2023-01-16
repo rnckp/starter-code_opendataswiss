@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Grünflächen
+
+Beschreibt die internen Zuständigkeiten nach Produkten und Erfassungseinheiten in den vom Geschäftsbereich Park- und Grünanlagen GSZ verwalteten oder bewirtschafteten Flächen.
+
+**Zweck**: GSZ setzt das Flächenmanagementsystem (FMS) zur Verwaltung von Grünflächen, zur Auskunft von Zuständigkeiten innerhalb von GSZ oder zur Ermittlung von Kennzahlen und Benchmarks ein.
+Der Geodatensatz Grünflächen stellt einen vereinfachten Auszug aus dem FMS dar, welcher Auskunft über die Bezeichnungen sowie Produkt- und Teilproduktzuteilungen der vom Geschäftsbereich Park- und Grünanlagen verwalteten oder bewirtschafteten Grünanlagen gibt.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/grunflachen1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_gruenflaechen)
+
+Auto generated R starter code for data set bd414dec-59b2-4555-b91d-8a2e2ec931d1@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Produkteverantw.  & Unterstützungsfunk., Grün Stadt Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['grunflachen', 'geschaftsbereich-park--und-grunanlagen', 'polygondaten', 'zustandigkeit', 'stzh', 'grun-stadt-zurich', 'geodaten', 'teilprodukte', 'vektordaten', 'geoportal', 'produkte']`
+- **Issued** `nan`
+- **Metadata_created** `2022-11-09T01:31:20.001411`
+- **Metadata_modified** `2023-01-16T00:53:26.468789`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1fdca8d9-4306-43a2-a7d5-d47ff65ef174
+# Description              : 
+# Issued                   : 2022-11-08T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Gruenflaechen?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

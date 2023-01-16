@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Schafe - Alter von Auen bei der Schlachtung
+
+Verteilung des Alters (in Monaten) von Auen bei der Schlachtung (AS) nach Jahr der Schlachtung und Rassentyp (Milchrassen oder Fleischrassen). Das AS wird im Bereich von 10-300 Monaten in Form eines Boxplots wiedergegeben. Die Einzeltieridentifikation und -registrierung von Kleinwiederkäuern wurden im Januar 2020 eingeführt. Analysen auf dieser Datenbasis können noch Verzerrungen aufweisen. Die Anzahl Beobachtungen pro Rassentyp und Jahr findet sich im .csv.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/schafe-alter-von-auen-bei-der-schlachtung)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set sheep-ageSlaughter@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['schlachtungen', 'nutztiere', 'schafe', 'alter']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:22:19.820594`
+- **Metadata_modified** `2023-01-10T01:11:02.814874`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9ebb3132-a22e-4ecb-bd22-6b9dee00da0e
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/sheep-ageSlaughter.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

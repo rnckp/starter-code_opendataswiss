@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Staatssteuern der natürlichen Personen nach Einkommensklasse und Jahr (ab 2013)
+
+Steuerstatistik
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/staatssteuern-der-naturlichen-personen-nach-einkommensklasse-und-jahr-ab-2013)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/10590/)
+
+Auto generated R starter code for data set 10590@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.bl.ch`
+- **Maintainer** `Pascal Rigotti`
+- **Maintainer_email** `pascal.rigotti@bl.ch`
+- **Keywords.de** `['steuerpflichtige', 'steuerbares-einkommen', 'steuerertrag']`
+- **Issued** `2022-09-05T00:00:00`
+- **Metadata_created** `2022-12-13T15:07:25.599569`
+- **Metadata_modified** `2023-01-16T01:12:21.631434`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cb737c9c-7d89-42ad-8bf4-f945e95c3be2
+# Description              : Staatssteuern der natürlichen Personen nach Einkommensklasse und Jahr (ab 2013) (csv)
+# Issued                   : 2022-09-05T00:00:00
+# Modified                 : 2022-12-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/10590/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+pascal.rigotti@bl.ch | Pascal Rigotti

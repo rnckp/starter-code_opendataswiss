@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Vollzugsresultate der CO2-Emissionsvorschriften für Lieferwagen und leichte Sattelschlepper
+
+Seit dem 1. Januar 2020 gelten in der Schweiz - analog zur EU - CO2-Emissionsvorschriften für Lieferwagen und leichte Sattelschlepper. Sie verpflichten die Schweizer Auto-Importeure, die Emissionen der erstmals zum Verkehr in der Schweiz zugelassenen Lieferwagen und leichte Sattelschlepper zu senken. Bis Ende 2022 müssen diese im Durchschnitt auf 147 Gramm CO2 pro Kilometer gesenkt werden müssen. Im Zuge der Umstellung des Messverfahrens der CO2-Emissionen, wurde der CO2-Zielwert per 1. Januar 2021 von 147 g CO2/km, auf 186 g CO2/km angepasst. Überschreitungen werden mit einer Sanktionsabgabe gebüsst.
+
+Kurzbericht über die Vollzugsresultate des Vorjahres inkl. aggregierten Kennzahlen.
+Datengrundlage sind Zulassungsdaten (MOFIS), ergänzt um technische Daten (Typengenehmigungsdatenbank TARGA und vom ASTRA eigens erfasst Daten) sowie Verknüpfungen mit Daten zu registrierten Grossimporteuren.
+
+Rechtsgrundlage: CO2-Verordnung, Art. 36, Abs. 3
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/vollzugsresultate-der-co2-emissionsvorschriften-fur-lieferwagen-und-leichte-sattelschlepper)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/bfe/de/home/effizienz/mobilitaet/co2-emissionsvorschriften-fuer-neue-personen-und-lieferwagen/lieferwagen-und-leichte-sattelschlepper.html)
+
+Auto generated R starter code for data set ogd61@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['ogd61-bfe']`
+- **Issued** `2021-07-02T00:00:00`
+- **Metadata_created** `2021-06-28T07:06:39.095558`
+- **Metadata_modified** `2022-11-24T04:01:26.235148`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6c5a601c-3c1a-4f81-bb43-07e31d4fa6cc
+# Description              : 
+# Issued                   : 2021-07-02T00:00:00
+# Modified                 : 2021-07-02T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/61/ogd61_vollzugsresultate_lnf.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@bfe.admin.ch | Bundesamt für Energie BFE

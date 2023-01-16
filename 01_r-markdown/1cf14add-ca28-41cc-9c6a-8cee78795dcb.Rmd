@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Equiden - Eigentümer:innen in der Schweiz und im Ausland
+
+Anzahl Eigentümerinnen und Eigentümer der registrierten und lebenden Equiden in der Schweiz, Liechtenstein und im Ausland. Eigentümerinnen und Eigentümer, welche Equiden sowohl in der Schweiz, als auch in  Liechtenstein oder im Ausland besitzen, werden mehrfach gezählt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/equiden-eigentumer-innen-in-der-schweiz-und-im-ausland)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set equids-owners@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['equiden', 'heimtiere', 'eigentumerinnen', 'nutztiere']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:19:20.916367`
+- **Metadata_modified** `2023-01-10T01:10:27.694325`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1cf14add-ca28-41cc-9c6a-8cee78795dcb
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/equids-owners.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

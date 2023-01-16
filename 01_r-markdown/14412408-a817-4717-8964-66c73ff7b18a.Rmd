@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Coronavirus (Covid-19): Für Impfung angemeldete Personen nach Altersklasse
+
+Dieser Datensatz zeigt die Anzahl Personen, welche sich im Kanton Basel-Stadt für eine Impfung gegen SARS-CoV-2 angemeldet, aber noch keine Impfung erhalten haben nach Altersklasse («Warteliste»). Zudem wird angegeben, ob die Person bereits einen Termin für die Impfung hat oder noch nicht. Ab dem 25. Juni können sich auch Personen im Alter zwischen 12 und 15 Jahren für die Impfung anmelden. Entsprechend wird diese Altersklasse im Datensatz auch geführt. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/coronavirus-covid-19-fur-impfung-angemeldete-personen-nach-altersklasse)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100136/)
+
+Auto generated R starter code for data set 100136@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Medizinische Dienste`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['corona', 'warteliste', 'sars-cov-2', 'geimpft', 'impfung', 'vaccination', 'impftermin', 'coronavirus', 'covid-19']`
+- **Issued** `2021-06-11T00:00:00`
+- **Metadata_created** `2021-09-03T09:17:18.526709`
+- **Metadata_modified** `2023-01-16T00:23:05.992604`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 14412408-a817-4717-8964-66c73ff7b18a
+# Description              : Coronavirus (Covid-19): Für Impfung angemeldete Personen nach Altersklasse (csv)
+# Issued                   : 2021-06-11T00:00:00
+# Modified                 : 2021-12-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100136/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

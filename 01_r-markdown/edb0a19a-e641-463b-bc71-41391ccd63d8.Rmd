@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Grundstückspreise (Median) der im Freihandkauf umgesetzten bebauten Grundstücke abzüglich Gebäudeversicherungswert nach Stadtquartier und Zonenart (ohne StWE, nur BZO99), bis 2018
+
+
+Diese Daten beinhalten die Medianpreise pro Quadratmeter Bauland abzüglich des Gebäudeversicherungswerts der Bebauung von gehandelten Grundstücken in der Stadt Zürich nach Handänderungsjahr, Stadtquartier und Zonenart. Aufgrund der Einführung der neuen Bau- und Zonenordnung im November 2018 endet die Zeitreihe im November 2018.
+
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/grundstuckspreise-median-der-im-freihandkauf-umgesetzten-bebauten-grundstucke-abzuglich-ge-20181-2)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_hae_preis_quartier_zonenart_ohne_stwe_bzo99_bis2018_ohnegvz_od5183)
+
+Auto generated R starter code for data set 39b23583-10a0-46da-9b57-f942cb55543e@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['zonenart', 'tabelle', 'zeitreihe', 'handanderungen', 'liegenschaftenhandel', 'sachdaten']`
+- **Issued** `2019-10-15T00:00:00`
+- **Metadata_created** `2022-11-13T17:14:55.583055`
+- **Metadata_modified** `2023-01-16T00:50:52.609600`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : edb0a19a-e641-463b-bc71-41391ccd63d8
+# Description              : 
+# Issued                   : 2022-11-11T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_hae_preis_quartier_zonenart_ohne_stwe_bzo99_bis2018_ohnegvz_od5183/download/BAU518OD5183.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

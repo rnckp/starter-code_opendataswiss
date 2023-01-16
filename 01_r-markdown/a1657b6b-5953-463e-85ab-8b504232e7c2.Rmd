@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Haltestelle: Sektortafel
+
+Mittels der Sektoren werden Perrons in kleinere Bereiche aufgeteilt.SectorboardsWith the use of sectors the platform is divided in smaller areas.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/haltestelle-sektortafel1)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/sektortafel/)
+
+Auto generated R starter code for data set sektortafel@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['infrastruktur', 'bahnhof']`
+- **Issued** `2023-01-10T00:00:00`
+- **Metadata_created** `2019-09-11T10:49:37.254996`
+- **Metadata_modified** `2023-01-16T00:28:31.937120`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a1657b6b-5953-463e-85ab-8b504232e7c2
+# Description              : Haltestelle: Sektortafel (csv)
+# Issued                   : 2023-01-10T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/sektortafel/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

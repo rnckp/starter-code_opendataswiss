@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Stromlandschaft Schweiz
+
+In vielen Schweizer Gemeinden haben private Endverbraucher die Wahl zwischen verschiedenen Stromprodukten. Indem sie sich auf regionaler Ebene für Naturstromprodukte, z.B. aus Sonnen-, Wind- oder Wasserkraft, entscheiden, tragen die Verbraucher/innen aktiv zur Energietransition bei. Die Daten der 'Stromlandschaft Schweiz' zeigen für die meisten Gemeinden in der Schweiz die Qualität des Standardstroms des lokalen Stromversorgers auf und geben Auskunft über den Anteil der verschiedenen Energieträger.
+Die interaktive Karte https://stromlandschaft.mynewenergy.ch/ hilft dabei, den Nachhaltigkeitsgrad der in den Gemeinden angebotenen Produkte visuell zu vergleichen. Durch weiterführende Infos können Konsumierende zu Produkten mit ökologischem Mehrwert wechseln.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/stromlandschaft-schweiz)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://stromlandschaft.mynewenergy.ch/)
+
+Auto generated R starter code for data set ogd85@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['ogd85-bfe']`
+- **Issued** `2022-04-04T00:00:00`
+- **Metadata_created** `2022-04-04T08:00:21.300400`
+- **Metadata_modified** `2022-11-24T04:01:26.512967`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e5e5cc97-4241-417c-86bc-20e87c912448
+# Description              : 
+# Issued                   : 2022-03-23T00:00:00
+# Modified                 : 2022-04-04T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/85/ogd85_stromlandschaft.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@bfe.admin.ch | Bundesamt für Energie BFE

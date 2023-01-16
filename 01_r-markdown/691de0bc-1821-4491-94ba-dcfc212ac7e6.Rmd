@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Regionale Fahrpläne
+
+Taschenfahrplan
+In den Regionen wird eine spezielle Aufbereitung der Fahrplandaten gemacht, so dass der öffentliche Verkehr handlich in einem Büchlein dargestellt werden kann.
+	Es werden nur Dokumente zum Download angeboten, welche durch die SBB produziert werden.
+	Aus technischen Gründen können wir diese Dokumente derzeit leider nicht für alle Bahnhöfe und Haltestellen der Schweiz anbieten.Letzter Update/Last Update: Januar 2020In the regions a special preparation of the timetable data is made, so that the public traffic can be represented handy in a booklet.Only documents produced by SBB are available for download.For technical reasons, we cannot currently offer these documents for all stations and stops in Switzerland.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/regionale-fahrplane)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/regionale-fahrplane/)
+
+Auto generated R starter code for data set regionale-fahrplane@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['verkehr']`
+- **Issued** `2017-08-16T00:00:00`
+- **Metadata_created** `2019-09-11T10:51:16.148028`
+- **Metadata_modified** `2023-01-16T00:28:05.913292`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 691de0bc-1821-4491-94ba-dcfc212ac7e6
+# Description              : Regionale Fahrpläne (csv)
+# Issued                   : 2017-08-16T00:00:00
+# Modified                 : 2021-05-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/regionale-fahrplane/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Entsorgungskalender Sonderabfall
+
+Sammeltage Sonderabfall nach Station / PLZ
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/entsorgungskalender-sonderabfall1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_sonderabfall)
+
+Auto generated R starter code for data set 2886fe2d-9acf-48c3-8414-d4ee6af7460a@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Entsorgung + Recycling Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['entsorgungskalender', 'tabellen', 'kalender', 'sachdaten', 'abfall', 'entsorgung']`
+- **Issued** `2012-06-25T00:00:00`
+- **Metadata_created** `2020-12-23T15:28:39.247406`
+- **Metadata_modified** `2023-01-16T00:51:48.546739`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cef44c69-840d-4335-9955-a36ad149f9f1
+# Description              : 
+# Issued                   : 2022-12-20T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_sonderabfall/download/entsorgungskalender_sonderabfall_2023.csv')
+
+# Distribution 1
+# Package_id               : cef44c69-840d-4335-9955-a36ad149f9f1
+# Description              : 
+# Issued                   : 2021-12-23T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_sonderabfall/download/entsorgungskalender_sonderabfall_2022.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

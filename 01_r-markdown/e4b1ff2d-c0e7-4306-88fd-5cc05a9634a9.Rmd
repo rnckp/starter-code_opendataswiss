@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Gemeinderatswahlen 2010: Resultate aller Kandidierenden und Herkunft der Stimmen
+
+Detaillierte Resultate der erhaltenen Stimmen aller 1160 Kandidierenden für die Gemeinderatswahlen 2010 nach Vor- und Nachname, Wahlkreis, Liste, Total Stimmen, parteieigener Stimmen, parteieigenen Stimmen aus unveränderten Wahllisten, parteifremden Stimmen, Stimmen aus veränderten Wahllisten, etc.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gemeinderatswahlen-2010-resultate-aller-kandidierenden-und-herkunft-der-stimmen1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/politik_gemeinderatswahlen_2010_resultate)
+
+Auto generated R starter code for data set 2a18bbf2-aaea-4344-ada5-e69c9bc17482@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Stadtkanzlei, Allgemeine Verwaltung`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['sachdaten', 'gemeinderat', 'tabellen', 'einzeldaten', 'wahlen']`
+- **Issued** `2013-12-19T00:00:00`
+- **Metadata_created** `2022-12-13T01:08:35.721074`
+- **Metadata_modified** `2023-01-16T00:51:55.689846`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e4b1ff2d-c0e7-4306-88fd-5cc05a9634a9
+# Description              : 
+# Issued                   : 2022-12-12T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/politik_gemeinderatswahlen_2010_resultate/download/GRW_2010_resultate_kandidierende_und_herkunft_der_stimmen.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

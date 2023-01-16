@@ -1,0 +1,127 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Einwanderung der ständigen und nicht ständigen ausländischen Wohnbevölkerung mit Erwerb
+
+Der Datensatz enthält die Anzahl an Einwanderungen der ständigen und nicht ständigen Wohnbevölkerung mit Erwerb aufgeschlüsselt nach Erwerbssektor, Ausländergruppe, Arbeitskanton und Nation.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/einwanderung-der-standigen-und-nicht-standigen-auslandischen-wohnbevolkerung-mit-erwerb)<br>
+[Direct link by **Staatssekretariat für Migration SEM** for dataset](https://www.sem.admin.ch/sem/de/home/publiservice/statistik/auslaenderstatistik.html)
+
+Auto generated R starter code for data set 3-42-Bew-Erw@staatssekretariat-fuer-migration-sem.
+
+## Metadata
+
+- **Publisher** `Staatssekretariat für Migration`
+- **Organization.display_name.de** `Staatssekretariat für Migration SEM`
+- **Organization.url** `https://www.sem.admin.ch/sem/de/home.html`
+- **Maintainer** `Statistikdienst SEM`
+- **Maintainer_email** `statistik@sem.admin.ch`
+- **Keywords.de** `['auslaender', 'einwanderung', 'arbeitskanton', 'erwerb']`
+- **Issued** `2020-10-07T00:00:00`
+- **Metadata_created** `2021-08-09T14:25:00.558608`
+- **Metadata_modified** `2022-07-18T13:11:32.518440`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 6 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : baecd8d2-9478-4e9e-925c-a5479e072966
+# Description              : Der Datensatz enthält die Anzahl an Einwanderungen der ständigen und nicht ständigen Wohnbevölkerung mit Erwerb aufgeschlüsselt nach Erwerbssektor, Ausländergruppe, Arbeitskanton und Nation für das Jahr 2019.
+# Issued                   : 2020-10-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.sem.admin.ch/dam/sem/de/data/publiservice/statistik/auslaenderstatistik/2019/csv/3-42-Bew-Erw-d-J-2019.csv.download.csv/3-42-Bew-Erw-d-J-2019.csv')
+
+# Distribution 1
+# Package_id               : baecd8d2-9478-4e9e-925c-a5479e072966
+# Description              : 
+# Issued                   : 2019-01-25T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.sem.admin.ch/dam/sem/de/data/publiservice/statistik/auslaenderstatistik/2019/csv/3-42-Mouve-ActLuc-f-A-2019.csv.download.csv/3-42-Mouve-ActLuc-f-A-2019.csv')
+
+# Distribution 2
+# Package_id               : baecd8d2-9478-4e9e-925c-a5479e072966
+# Description              : Der Datensatz enthält die Anzahl an Einwanderungen der ständigen und nicht ständigen ausländischen Wohnbevölkerung mit Erwerb nach Ausländergruppe, Arbeitssektor, Geschlecht, Arbeitskanton, Nation und Kontinent im Jahr 2020. 
+# Issued                   : 2022-07-18T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.sem.admin.ch/dam/sem/de/data/publiservice/statistik/auslaenderstatistik/2020/csv/3-42-Bew-Erw-d-J-2020.csv.download.csv/3-42-Bew-Erw-d-J-2020.csv')
+
+# Distribution 3
+# Package_id               : baecd8d2-9478-4e9e-925c-a5479e072966
+# Description              : 
+# Issued                   : 2022-07-18T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.sem.admin.ch/dam/sem/de/data/publiservice/statistik/auslaenderstatistik/2020/csv/3-42-Mouve-ActLuc-f-A-2020.csv.download.csv/3-42-Mouve-ActLuc-f-A-2020.csv')
+
+# Distribution 4
+# Package_id               : baecd8d2-9478-4e9e-925c-a5479e072966
+# Description              : Der Datensatz enthält die Anzahl an Einwanderungen der ständigen und nicht ständigen ausländischen Wohnbevölkerung mit Erwerb nach Ausländergruppe, Arbeitssektor, Geschlecht, Arbeitskanton, Nation und Kontinent im Jahr 2021.  Anmerkung: Vereinigtes Königreich wird neu den Drittstaaten angegliedert. 
+# Issued                   : 2022-07-18T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.sem.admin.ch/dam/sem/de/data/publiservice/statistik/auslaenderstatistik/2021/csv/3-42-Bew-Erw-d-J-2021.csv.download.csv/3-42-Bew-Erw-d-J-2021.csv')
+
+# Distribution 5
+# Package_id               : baecd8d2-9478-4e9e-925c-a5479e072966
+# Description              : 
+# Issued                   : 2022-07-18T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.sem.admin.ch/dam/sem/de/data/publiservice/statistik/auslaenderstatistik/2021/csv/3-42-Mouve-ActLuc-f-A-2021.csv.download.csv/3-42-Mouve-ActLuc-f-A-2021.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Statistikdienst SEM | statistik@sem.admin.ch

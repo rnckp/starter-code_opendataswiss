@@ -1,0 +1,479 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Statistik der Schweizer Städte 2020
+
+Die 81. Ausgabe der «Statistik der Schweizer Städte» erscheint bereits zum fünften Mal in gemeinsamer Herausgeberschaft mit dem Bundesamt für Statistik (BFS). Es gibt eine gedruckte Version, ein PDF und eine interaktive digitale Version. Die Daten, die für diese Publikation verwendet worden sind, bilden 162 statistische Städte und 9 weitere Mitglieder des Schweizerischen Städteverbands (SSV) ab, welche infolge ihrer Tradition oder Entwicklung städtisch geprägt sind.
+Die diesjährige Ausgabe zeichnet mithilfe detaillierter Daten zu Bevölkerung, Arbeit und Erwerb, Bau und Wohnungswesen, Tourismus und Mobilität ein umfassenderes Bild der Agglomerationen.
+Die Tabellen dieser Publikation werden im CSV-Format bereitgestellt. Eine Excel-Metadatendatei enthält Erläuterungen zur Verwendung der Daten.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/statistics-on-swiss-cities-and-towns-2020)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/bfs/de/home.gnpdetail.2020-0466.html)
+
+Auto generated R starter code for data set statistik-der-schweizer-staedte-2020@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Statistik BFS, Office fédéral de la statistique OFS, Ufficio federale di statistica UST`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `ThemaKart - Bundesamt für Statistik`
+- **Maintainer_email** `ThemaKart@bfs.admin.ch`
+- **Keywords.de** `['agglomerationen', 'arbeit', 'bauwesen', 'bevoelkerung', 'bildung', 'energie', 'erwerb', 'mobilitat', 'offentliche-finanzen', 'politik', 'raum', 'soziale-sicherheit', 'statistik-der-schweizer-stadte', 'tourismus', 'verkehr', 'wohnungswesen']`
+- **Issued** `2020-05-12T00:00:00`
+- **Metadata_created** `2020-05-12T05:50:38.694528`
+- **Metadata_modified** `2022-05-03T15:07:21.704452`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 45 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Schwerpunkt Agglomerationen: Wohnbevölkerung - Total 2018; Wohnbevölkerung - Total 2000; Wohnbevölkerung - Total 1980; Wohnbevölkerung - Veränderung 1980 - 1999; Wohnbevölkerung - Veränderung 2000 - 2018 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647726/appendix')
+
+# Distribution 1
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Schwerpunkt Agglomerationen: Ausländer - Total; Ausländer - %; Alter 0-19 - Total; Alter 0-19 - %; Alter 65+ - Total; Alter 65+ - %; Zivilstand - Ledig - Total; Zivilstand - Ledig - %; Zivilstand - Heiratete - Total; Zivilstand - Heiratete - % 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647718/appendix')
+
+# Distribution 2
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Schwerpunkt Agglomerationen: Arbeitssstätten; Beschäftigte im 1. Sektor - total; Beschäftigte im 1. Sektor - %; Beschäftigte im 2. Sektor - total; Beschäftigte im 2. Sektor - %; Beschäftigte im 3. Sektor - total; Beschäftigte im 3. Sektor - %; Beschäftigte - Total; Arbeitslose; Arbeitslosenquote 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647724/appendix')
+
+# Distribution 3
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Schwerpunkt Agglomerationen: Wohnungen 2018; Baulicher Zugang - 2000-2009; Baulicher Zugang - 2010-2017; Durchschnittliche Wohnfläche 2018; Leerwohnungsziffer (%) - 2019 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647722/appendix')
+
+# Distribution 4
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Schwerpunkt Agglomerationen: Ankünfte - Total; Ankünfte - Auslandsgäste; Ankünfte - Ausländeranteil (%); Logiernächte - Total; Logiernächte - Auslandsgäste; Logiernächte - Ausländeranteil (%); Mittlere Aufenthaltsdauer (Nächte); Logiernächte pro 1000 Einwohner/innen 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647721/appendix')
+
+# Distribution 5
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Schwerpunkt Agglomerationen: Binnenpendler - absolut; Binnenpendler - Vertrauensintervalle (IV); Zupendler - absolut; Zupendler - Vertrauensintervalle (IV); Wegpendler - absolut; Wegpendler - Vertrauensintervalle (IV); Personenwagen je 1000 Einwohner/innen
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647725/appendix')
+
+# Distribution 6
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Ständige Wohnbevölkerung - Total 2018; Ständige Wohnbevölkerung - Total 2008; Ständige Wohnbevölkerung - Veränderung 2008-2018; Bevölkerungsdichte 2018; Wohnbevölkerung gemäss Volkszählung 2000; Wohnbevölkerung gemäss Volkszählung 1990; Wohnbevölkerung gemäss Volkszählung 1980; Wohnbevölkerung gemäss Volkszählung 1970; Wohnbevölkerung gemäss Volkszählung 1930 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647632/appendix')
+
+# Distribution 7
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung: Geschlecht - Frauen; Geschlecht - Männer; Zivilstand - Ledig; Zivilstand - Verheiratet, in eingetragener Partnerschaft; Zivilstand - Partnerschaft Verwitwet, durch Tod aufgelöste Partnerschaft; Zivilstand - Geschieden, unverheiratet, gerichtlich aufgelöste Partnerschaft; Heiraten; Scheidungen
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647642/appendix')
+
+# Distribution 8
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Altersklassen - Total; 0-4; 5-9; 10-14; 15-19; 20-24; 25-29; 30-34; 35-39; 40-44; 45-49; 50-54; 55-59; 60-64; 65-69; 70-74; 75-79; 80-84; 85-89; 90-94; 95-99; 100+ 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647640/appendix')
+
+# Distribution 9
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Staatsangehörigkeit; Geburtsort
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647653/appendix')
+
+# Distribution 10
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Ständige Wohnbevölkerung am 1.1.2018; Lebendgeburten; Todesfälle; Geburtenüberschuss; Zuzüge; Wegzüge; Wanderungssaldo; Gesamtzu- bzw. -abnahme; Veränderung (%); Ständige Wohnbevölkerung am 31.12.2018
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647651/appendix')
+
+# Distribution 11
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Haushalte - total; Haushalte nach Haushaltsgrösse; Durchschnittliche Haushaltsgrösse (Anzahl Personen) 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647639/appendix')
+
+# Distribution 12
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Ausländer/innen; Aufenthalter (B); Niedergelassene ( C); Vorläufig Aufgenommene (F); Kurzaufenthalter (L); Asylsuchender (N); Diplomat, Internationaler Funktionär; Übrige 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647654/appendix')
+
+# Distribution 13
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bevölkerung:  Ausländer/innen; Ausländeranteil (%); EU/EFTA-Staaten - Total; EU/EFTA-Staaten - Deutschland; EU/EFTA-Staaten - Frankreich; EU/EFTA-Staaten - Italien; EU/EFTA-Staaten - Österreich; EU/EFTA-Staaten - Spanien; EU/EFTA-Staaten - Portugal; Übrige europäische Staaten - Total; Übrige europäische Staaten - Serbien; Übrige europäische Staaten - Türkei; Übrige europäische Staaten - Nordmazedonien; Übrige europäische Staaten - Russland; Asien - Total; Asien - Sri Lanka; Asien - Indien; Asien - China; Afrika; Nord- und Südamerika; Australasien; Übrige Länder- Staatenlos - nichtzuteilbar gemäss den aktuellen Grenzen - ohne Angabe 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647669/appendix')
+
+# Distribution 14
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Raum:  Total Fläche; Siedlungsflächen; Bestockte Flächen; Landwirtschaftsflächen; Unproduktive Flächen - Gewässer; Unproduktive Flächen - Andere unproduktive Flächen 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647676/appendix')
+
+# Distribution 15
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Arbeit und Erwerb:  Arbeitsstätten - total; Arbeitsstätten - Grössenklasse Beschäftigte: 1-9; Arbeitsstätten - Grössenklasse Beschäftigte: 10-49; Arbeitsstätten - Grössenklasse Beschäftigte: 50-249; Arbeitsstätten - Grössenklasse Beschäftigte: 1-249; Arbeitsstätten - Grössenklasse Beschäftigte: 250 und mehr; Beschäftigte - 1. Sektor; Beschäftigte - 2. Sektor; Beschäftigte - 3. Sektor; Beschäftigte - Total 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647641/appendix')
+
+# Distribution 16
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Arbeit und Erwerb:  Arbeitslose - Total; Arbeitslose - Frauen; Arbeitslose - 2. Sektor; Arbeitslose - 3. Sektor ; Arbeitslose - Ganzzeitarbeitslose: Total; Arbeitslose - Ganzzeitarbeitslose: Frauen; Arbeitslose - Teilzeitarbeitslose: Total; Arbeitslose - Teilzeitarbeitslose: Frauen; Arbeitslosenquote %; Arbeitslosenquote - Variationskoeffizient 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647636/appendix')
+
+# Distribution 17
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Energie:  Jährliche Wassergewinnung (in 1000 m3) - Total; Jährliche Wassergewinnung (in 1000 m3) - Quellwasser; Jährliche Wassergewinnung (in 1000 m3) - Grundwasser ; Jährliche Wassergewinnung (in 1000 m3) - See- und Flusswasser; Tägliche Wasserabgabe (m3)  - Mittel; Tägliche Wasserabgabe (m3)  - Maximum; Liter je Einwohner/in und Tag des Versorgungsgebietes - Mittel; Liter je Einwohner/in und Tag des Versorgungsgebietes - Maximum; Gasverkauf (in 1000 kWh) - Total 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647652/appendix')
+
+# Distribution 18
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Zugang durch Neubau; Zugang durch Umbau; Abgang durch Abbrüche; Abgang durch Umbau; Baulicher Zugang; Wohnungen am 31.12.2017 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647657/appendix')
+
+# Distribution 19
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Leerwohnungen - Total; Leerwohnungen - 1 Zimmer; Leerwohnungen - 2 Zimmer; Leerwohnungen - 3 Zimmer; Leerwohnungen - 4 Zimmer; Leerwohnungen - 5 Zimmer; Leerwohnungen - 6 Zimmer und mehr; Leerwohnungen - zu vermieten; Leerwohnungen - zu verkaufen; Leerwohnungsziffer (%) 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/12647666/appendix')
+
+# Distribution 20
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter nach Anzahl Zimmer; Belegungsdichte; Wohndichte; Anteil Personen, die keiner Wohnung zugeordnet sind (in %) 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647658/appendix')
+
+# Distribution 21
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Einfamilienhaus; Mehrfamilienhaus; Wohngebäude mit Nebennutzung; Gebäude mit teilweiser Wohnnutzung 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647656/appendix')
+
+# Distribution 22
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Wohnungen nach Anzahl Zimmer 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647682/appendix')
+
+# Distribution 23
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Wohnungen und Gebäude mit Wohnnutzung; Bauperiode: vor 1946; 1946-1980; 1981-2000; 2001-2018
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647655/appendix')
+
+# Distribution 24
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bau- und Wohnungswesen:  Gebäude mit Wohnnutzung nach Geschosszahl
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647665/appendix')
+
+# Distribution 25
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Tourismus:  Geöffnete Betriebe (Anzahl); Verfügbare Zimmer (Anzahl); Verfügbare Betten (Anzahl); Ankünfte - Total; Ankünfte - Auslandsgäste; Ankünfte - Auslandanteil (%); Logiernächte - Total; Logiernächte - Auslandsgäste; Logiernächte - Auslandanteil (%); Mittlere Aufenthaltsdauer (Nächte); Logiernächte je 1000 Einwohner/innen 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647686/appendix')
+
+# Distribution 26
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Mobilität und Verkehr:  Motorfahrzeuge: Total; Motorwagen - Personentransporter; Motorfahrzeuge - Motorwagen - Sachtransporter; Motorwagen - Landwirtschaftsfahrzeuge; Motorwagen - Industriefahrzeuge; Motorfahrzeuge - Motorräder; Personenwagen je 1000 Einwohner/-innen 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647685/appendix')
+
+# Distribution 27
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Mobilität und Verkehr:  Pendler - Total; Pendler - Öffentlicher Verkehr (OEV); Pendler - Motorisierter Individual Verkehr (MIV); Vertrauensinterval 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647677/appendix')
+
+# Distribution 28
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Soziale Sicherheit:  Anteil der unterstützten Personen an der Wohnbevölkerung, 2010-2018; Sozialhilfebeziehende,2010-2018
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647670/appendix')
+
+# Distribution 29
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Bildung:  Schüler - Total: 1995/96, 2005/06, 2015/16, 2016/17, 2017/18; Obligatorische Schule 2017/18; Sekundarstufe II 2017/18
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647663/appendix')
+
+# Distribution 30
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Politik:  Legislative - Sitze pro Partei, Sitze Frauen
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647684/appendix')
+
+# Distribution 31
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Politik:  Exekutive - Sitze pro Partie, Sitze Frauen, Sitze Vollamt, Geschlecht Präsidium
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647680/appendix')
+
+# Distribution 32
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen  Kommunale Aktiven; Finanzvermögen; Verwaltungsvermögen; 
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647664/appendix')
+
+# Distribution 33
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen  Kommunale Passiven; Fremdkapital; Eigenkapital
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647693/appendix')
+
+# Distribution 34
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen  Kommunale Einnahmen; Betriebliche Einnahmen und Finanzeinnahmen; Ausserordentliche Einnahmen; Investitionseinnahmen
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647691/appendix')
+
+# Distribution 35
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen  Kommunale Ausgaben; Betriebliche Ausgaben und Finanzausgaben; Ausserordentliche Ausgaben; Investitionsausgaben
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647692/appendix')
+
+# Distribution 36
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen  Einnahmen Kultur (inkl. Investitionseinnahmen); Investitionseinnahmen Kultur
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647704/appendix')
+
+# Distribution 37
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen  Allgemeine Verwaltung; Öffentliche Ordnung und Sicherheit, Verteidigung; Bildung; Kultur, Sport und Freizeit, Kirche; Gesundheit; Soziale Sicherheit; Verkehr und Nachrichten-übermittlung; Umweltschutz und Raumordnung; Volkswirtschaft; Finanzen und Steuern
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647705/appendix')
+
+# Distribution 38
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Ausgaben Kultur (inkl. Investitionsausgaben); Investitionsausgaben Kultur
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647678/appendix')
+
+# Distribution 39
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Direkte Bundessteuer (in Franken) - Natürliche Personen 2015; Natürliche Personen 2016; Veränderung 2015–2016 (%)
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647708/appendix')
+
+# Distribution 40
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Lediger, unselbstständig Erwerbender mit eigenem Haushalt - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647701/appendix')
+
+# Distribution 41
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Verheirateter Alleinverdiener ohne Kinder - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647707/appendix')
+
+# Distribution 42
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Verheirateter Alleinverdiener mit 2 Kindern - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647694/appendix')
+
+# Distribution 43
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Verheirateter Rentner, beide Ehegatten über 65 Jahre alt - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647703/appendix')
+
+# Distribution 44
+# Package_id               : 712677f2-da83-4cb4-a17a-ed4ec20f2bbb
+# Description              : Statistik der Schweizer Städte 2020 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen:  Erwerbsfähiger Verheirateter ohne Kinder - nach Reinvermögen (in 1000 Franken)
+# Issued                   : 2020-05-12T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://www.bfs.admin.ch/bfsstatic/dam/assets/12647706/appendix')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ThemaKart@bfs.admin.ch | ThemaKart - Bundesamt für Statistik

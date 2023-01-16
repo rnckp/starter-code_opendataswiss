@@ -1,0 +1,185 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Statistik der Schweizer Städte 2022
+
+Die Publikation «Statistik der Schweizer Städte» informiert über die Themen Bevölkerung, Arbeit, Beschäftigung, Finanzen, Mobilität und Bildung in den Städten. Die verwendeten Daten basieren auf 162 statistischen Städten sowie acht weiteren Mitgliedern des Schweizerischen Städteverbands, die hinsichtlich ihrer Tradition oder Entwicklung städtisch geprägt sind. 
+
+Die 83. Ausgabe der «Statistik der Schweizer Städte», die zum siebten Mal in Zusammenarbeit mit dem Bundesamt für Statistik (BFS) herausgegeben wird, ist dieses Jahr dem Schwerpunkt «Bodennutzung in den Städten» gewidmet. Sie liefert unter anderem detaillierte Informationen zur Veränderung von städtischen Gebieten und Grünflächen.
+
+Die Daten nach Themen werden im CSV-Format bereitgestellt. Die Metadatendateien enthalten Erläuterungen zur Verwendung der Daten.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/statistik-der-schweizer-staedte-2022)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/bfs/de/home.gnpdetail.2022-0420.html)
+
+Auto generated R starter code for data set statistik-der-schweizer-staedte-2022@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Statistik BFS, Office fédéral de la statistique OFS, Ufficio federale di statistica UST`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `ThemaKart - Bundesamt für Statistik`
+- **Maintainer_email** `ThemaKart@bfs.admin.ch`
+- **Keywords.de** `[]`
+- **Issued** `2022-04-26T00:00:00`
+- **Metadata_created** `2022-04-25T10:29:49.312290`
+- **Metadata_modified** `2022-04-26T06:21:02.556054`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 12 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Schwerpunkt: Bodennutzung in der Stadt: Gebäude- und Strassenareal, Besondere Siedlungsflächen und Erholungs- und Grünanlagen nach der Bodennutzungsart; Veränderungen der Siedlungflächen; Bodennutzungsart; Siedlungsflächen, Landwirtschaftsflächen und Bestockte und Unproduktive Flächen nach der Bodennutzungsart
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20844688/master')
+
+# Distribution 1
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Bevölkerung: Wohnbevölkerung; Wohnbevölkerung nach Geschlecht und Zivilstand; Wohnbevölkerung nachAltersklassen; Wohnbevölkerung nach Staatsangehörigkeit und Geburtsort; Bevölkerungsbilanz; Privathaushalte nach Haushaltsgrösse; Ausländer/innen nach Anwesenheitsbewilligung; Ausländer/innen nach Staatsangehörigkeit 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764979/master')
+
+# Distribution 2
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Raum: Bodennutzungsart gemäss Arealstatistik des BFS 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/21785368/master')
+
+# Distribution 3
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Arbeit und Erwerb: Arbeitsstätten nach Grössenklasse und Beschäftigte nach Sektor; Arbeitslose nach Geschlecht und Sektor 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764976/master')
+
+# Distribution 4
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Energie: Wasser- und Gasversorgung; Jährliche Wassergewinnung; Tägliche Wasserabgabe;Liter je einwohner/in und Tag des Versorgunsgebietes; Gasverkauf 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764974/master')
+
+# Distribution 5
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Bau- und Wohnungswesen: Jährlicher baulicher Zugang an Wohnungen, nach Typ der Arbeiten; Leerwohnungen, nach Zimmerzahl, am 1. Juni 2021; Wohnfläche, Belegungs- und Wohndichte; Gebäude nach Gebäudekategorie; Wohnungen, nach Anzahl Zimmer; Wohnungen und Gebäude, nach Bauperiode; Gebäude mit Wohnnutzung nach Geschosszahl 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764978/master')
+
+# Distribution 6
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Tourismus: Hotellerie, Betriebe, Ankünfte, Logiernächte 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764975/master')
+
+# Distribution 7
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Mobilität und Verkehr: Motorfahrzeuge; Weg- und Binnenpendler nach Hauptverkehrsmittel 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764980/master')
+
+# Distribution 8
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Soziale Sicherheit: Sozialhilfebeziehende 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764973/master')
+
+# Distribution 9
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Bildung: Schulwesen; Schüler Obligatorische Schule; Schüler Sekundarstufe II 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20784001/master')
+
+# Distribution 10
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Politik: Sitzverteilung in den städtischen Volksvertretungen; Sitzverteilung in den städtischen Exekutiven 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20784002/master')
+
+# Distribution 11
+# Package_id               : 780b7c9e-f9a0-49e4-9647-c503bfad4c91
+# Description              : Statistik der Schweizer Städte 2022 - Öffentliche Finanzen: Kommunale Aktiven und Passiven; Kommunale Einnahmen; Kommunale Ausgaben; Kommunale Einnahmen, Bereich Kultur, Sport und Freizeit; Kommunale Ausgaben nach Aufgabengebieten; Kommunale Ausgaben, Bereich Kultur, Sport und Freizeit; Direkte Bundessteuer natürliche und juristiche Personen; Steuerbelastung, Lediger, ein Einkommen, ohne Kinder; Steuerbelastung, Verheirateter ein Einkommen, ohne Kinder; Steuerbelastung, Verheirateter ein Einkommen, mit 2 Kindern; Steuerbelastung, Verheirateter Rentner; Steuerbelastung (Reinvermögen), Verheirateter, ohne Kinder 
+# Issued                   : 2022-04-26T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/20764977/master')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ThemaKart - Bundesamt für Statistik | ThemaKart@bfs.admin.ch

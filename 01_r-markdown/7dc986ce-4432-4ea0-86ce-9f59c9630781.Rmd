@@ -1,0 +1,91 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: COVID_19 Abwassermonitoring im Kanton Zürich ab 30.05.2021
+
+Dreimal* wöchentliche SARS-CoV-2-RNA-Messungen aus Proben von dreizehn über den Kanton Zürich verteilten Abwasserreinigungsanlagen (ARA). Die analysierten Werte werden einige Tage darauf publiziert (einmal wöchentlich jeweils am Mittwoch).  Daten enhalten: 'SARS-CoV-2 RNA im Rohabwasser pro 100'000 Personen', 'Zufluss zur ARA in Kubikmeter pro Tag', 'Einzugsgebiet (Anzahl an die ARA angeschlossene Einwohner:innen)'. Wichtiger Hinweis: Die Messungen von SARS-CoV-2-RNA im Abwasser unterliegen teilweise erheblichen Messfehlern. Eine Interpretation der Abwassermessungen von SARS-CoV-2 im Vergleich zu den Fallzahlen ist daher nur über längere Zeiträume aussagekräftig und hängt von der gewählten Skala ab. Die Daten sollten daher mit Vorsicht interpretiert werden, da ein grosser Spielraum für Fehlinterpretationen besteht. Im Zeitraum von Januar bis Anfang März 2022 wurde die Aktualisierung der Daten pausiert, um die Abweichungen des Abwassermonitorings von den gemeldeten positiven Fallzahlen zu untersuchen. Nachdem die Methode an die vorherrschende Virusvariante angepasst worden ist, werden die Daten rückwirkend ab Januar 2022 weiter aktualisiert.
+Ab Januar 2023 wird die Beprobung auf die ARAs Bülach, Dietikon, Illnau-Effretikon, Winterthur und Zürich (Werdhölzli) reduziert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/covid_19-abwassermonitoring-im-kanton-zurich-ab-30-05-2021)<br>
+[Direct link by **Gesundheitsdirektion Kanton Zürich** for dataset](https://github.com/openZH/covid_19_wastewater_monitoring_ZH)
+
+Auto generated R starter code for data set 728@gesundheitsdirektion-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Gesundheitsdirektion des Kantons Zürich`
+- **Organization.display_name.de** `Gesundheitsdirektion Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
+- **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
+- **Maintainer_email** `gdstab@gd.zh.ch`
+- **Keywords.de** `['gesundheit', 'sars-cov-2', 'corona', 'krankheiten', 'covid-19', 'wasser', 'bezirke', 'kantonzuerich']`
+- **Issued** `2021-07-06T00:00:00`
+- **Metadata_created** `2021-09-30T03:37:27.145370`
+- **Metadata_modified** `2023-01-16T03:09:02.304345`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 7dc986ce-4432-4ea0-86ce-9f59c9630781
+# Description              : SARS-CoV-2-RNA-Messungen aus Proben von dreizehn ins Monitoring integrierten Abwasserreinigungsanlagen (ARA). Variabeln: 'date' = Tag der Entnahme der Probe; 'SARS_CoV_2_RNA_copies_d_100000' = SARS-CoV-2 RNA im Rohabwasser pro 100'000 Personen; 'quantification_flag' = 'Q': über Quantifizierungsgrenze (>LOQ), 'D': über Nachweisgrenze (>LOD), 'N': unter Nachweisgrenze (<LOD); 'flow_m3_d' = Zufluss zur ARA in Kubikmeter pro Tag; 'sample_origin' = Abkürzung der ARA ('ARA_code' gemäss Ressource "Liste der Abwasserreinigungsanlagen mit Einzugsgebiet").
+# Issued                   : 2021-07-06T00:00:00
+# Modified                 : 2022-03-21T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_wastewater_monitoring_ZH/master/COVID19_Abwassermonitoring.csv')
+
+# Distribution 1
+# Package_id               : 7dc986ce-4432-4ea0-86ce-9f59c9630781
+# Description              : Ausgewählte, ins SARS-CoV-2-RNA-Abwassermonitoring integrierte Abwasserreinigungsanlagen (ARA). Variabeln: 'ARA_code' = Abkürzung der ARA; 'catchment_area' = Einzugsgebiet (Anzahl an die ARA angeschlossene Einwohner:innen); 'ARA_name' = Ausgeschriebener Name der ARA; 'district' = Kantonaler Bezirk, in dem die ARA liegt.
+# Issued                   : 2021-07-06T00:00:00
+# Modified                 : 2021-09-28T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_wastewater_monitoring_ZH/master/ara_einzugsgebiet.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+gdstab@gd.zh.ch | Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Kontaktpersonen des Volksschulamts des Kantons Zürich nach Schulgemeinde und Themen
+
+Für Schulbehörden, Schulleitungen, Schulverwaltungen und Lehrpersonen zusammengestellte Kontaktpersonen des Volksschulamts zu Primar- und Sekundarschulen und den Themen 'Personal', 'Lohn', 'Beratung' und 'Sonderpädagogik'.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kontaktpersonen-des-volksschulamts-des-kantons-zurich-nach-schulgemeinde-und-themen)<br>
+[Direct link by **Volksschulamt Kanton Zürich** for dataset](https://www.zh.ch/de/bildung/informationen-fuer-schulen/informationen-volksschule.html#-536456471)
+
+Auto generated R starter code for data set 735@volksschulamt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Volksschulamt des Kantons Zürich`
+- **Organization.display_name.de** `Volksschulamt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/bildungsdirektion/volksschulamt.html`
+- **Maintainer** `Volksschulamt des Kantons Zürich`
+- **Maintainer_email** `info@vsa.zh.ch`
+- **Keywords.de** `['bildung', 'volksschule', 'primarschule', 'sekundarschule', 'schulgemeinden', 'schulen']`
+- **Issued** `2021-09-06T00:00:00`
+- **Metadata_created** `2021-10-04T13:48:04.447309`
+- **Metadata_modified** `2023-01-16T03:10:31.650964`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b338e67e-7977-4801-be64-2c3f7f6d6349
+# Description              : Variabeln: 'Code_P' = Primarstufe, 'Name_P' = Name der Primarschulgemeinde, 'Personal_P' = Name der Kontaktperson für das Thema 'Personal', 'Lohn_P' = Name der Kontaktperson für das Thema 'Lohn', 'Beratung_P' = Name der Kontaktperson für das Thema 'Beratung', 'Sonderpädagogik_P' = Name der Kontaktperson für das Thema 'Sonderpädagogik', 'Code_O' = Oberstufe, 'Name_O' = Name der Oberstufenschulgemeinde, 'Personal_O' = Name der Kontaktperson für das Thema 'Personal', 'Lohn_O' = Name der Kontaktperson für das Thema 'Lohn', 'Beratung_O' = Name der Kontaktperson für das Thema 'Beratung', 'Sonderpädagogik_O' = Name der Kontaktperson für das Thema 'Sonderpädagogik'
+# Issued                   : 2021-09-06T00:00:00
+# Modified                 : 2021-09-20T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/statistikZH/Visualisierung_VSAKarte/main/Data/VSA_Kantonskarte.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@vsa.zh.ch | Volksschulamt des Kantons Zürich

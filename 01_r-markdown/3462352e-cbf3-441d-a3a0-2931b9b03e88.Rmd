@@ -1,0 +1,180 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Studie Winterstrom aus Photovoltaik - Produktionsprofile aller Schweizer Gemeinden
+
+Exportdaten der Studie 'Studie Winterstrom Schweiz - Was kann die heimische Photovoltaik beitragen?' (2019). In dieser Studie wird in drei Szenarien überprüft, wie gross der Anteil der Photovoltaik (PV) an der Winterstromversorgung der Schweiz sein könnte. In dieser Winterstromstudie werden für alle Gemeinden der Schweiz Produktionsprofile für PV-Anlagen für die Jahre 2004 – 2018 generiert. Für jedes der drei Szenarien besteht ein Set von Produktionsprofi-len. Zusätzlich wird das Produktionsprofil des Gesamtpotenzials (GP) von PV in der Schweiz abgespeichert, sowie das Produktionsprofil aller Flachdächer unter der Annahme, dass nach Süden ausgerichtete PV-Anlagen gebaut würden (FA).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/studie-winterstrom-aus-photovoltaik-produktionsprofile-aller-schweizer-gemeinden)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.html)
+
+Auto generated R starter code for data set ogd88@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['energie', 'strom', 'gemeinden', 'produktion', 'winterstrom', 'ogd88-bfe', 'photovoltaik']`
+- **Issued** `2019-08-21T00:00:00`
+- **Metadata_created** `2022-01-26T11:43:49.476295`
+- **Metadata_modified** `2022-05-02T06:38:59.869355`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 12 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario5_FA.zip')
+
+# Distribution 1
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario1_ZWB.zip')
+
+# Distribution 2
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario4_GP.zip')
+
+# Distribution 3
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario4_GP_2.zip')
+
+# Distribution 4
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario1_ZWB_1.zip')
+
+# Distribution 5
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario3_AWS_1.zip')
+
+# Distribution 6
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario1_ZWB_2.zip')
+
+# Distribution 7
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario3_AWS_2.zip')
+
+# Distribution 8
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario3_AWS.zip')
+
+# Distribution 9
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario2_MWP.zip')
+
+# Distribution 10
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Für jede Gemeinde der Schweiz ist pro Szenario eine CSV-Datei vorhanden. Die CSV-Datei beinhaltet die Zeitreihe der PV-Produktion aller PV-Anlagen dieser Gemeinde, die je Szenario berücksichtigt wurden. Dabei ist für jede Anlagenkategorie (jede Ausrichtung und jede Neigung) ein separates Produktionsprofil vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Szenario4_GP_1.zip')
+
+# Distribution 11
+# Package_id               : 3462352e-cbf3-441d-a3a0-2931b9b03e88
+# Description              : Pro Gemeinde ist hier eine CSV-Datei vorhanden, in welcher die verschiedenen Anlagenkategorien (Ausrichtung und Neigung) zu einer einzigen Zeitreihe aufsummiert werden. In dieser Datei sind entsprechend nur fünf Zeitreihen (eine Zeitreihe je Szenario) vorhanden.
+# Issued                   : 2019-08-21T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://s3-eu-west-1.amazonaws.com/data.geo.admin.ch/ch.bfe.solarenergie-eignung-daecher/StudieWinterstromSzenarien/csv/Output_Gemeinde.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Bundesamt für Energie BFE | ogd@bfe.admin.ch

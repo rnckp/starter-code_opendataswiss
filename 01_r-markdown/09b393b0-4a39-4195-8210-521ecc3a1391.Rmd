@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Sterberaten nach Alter, Geschlecht und Herkunft, von 1993 bis 2050.
+
+
+Sterberaten des Bundesamtes für Statistik (BFS) für die gesamte Schweiz nach Alter, Geschlecht, Herkunft; Vergangenheit (seit 1993) und Zukunft (bis 2050; BFS-Modellierung als Grundlage der SSZ-Bevölkerungsszenarien). Die BFS-Berechnungen basieren auf der ständigen Wohnbevölkerung.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sterberaten-nach-alter-geschlecht-und-herkunft-von-1993-bis-2050)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bfs_bev_sterberaten_jahr_alter_geschlecht_herkunft_od5708)
+
+Auto generated R starter code for data set 46509520-271b-4a41-900a-d304263f7fcf@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Statistik (BFS)`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zeitreihe', 'tabelle', 'sachdaten', 'sasa', 'bevszenarieninput']`
+- **Issued** `2021-04-07T00:00:00`
+- **Metadata_created** `2021-04-08T04:40:54.160149`
+- **Metadata_modified** `2023-01-16T00:50:06.273791`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 09b393b0-4a39-4195-8210-521ecc3a1391
+# Description              : 
+# Issued                   : 2021-04-07T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bfs_bev_sterberaten_jahr_alter_geschlecht_herkunft_od5708/download/BEV570OD5708.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

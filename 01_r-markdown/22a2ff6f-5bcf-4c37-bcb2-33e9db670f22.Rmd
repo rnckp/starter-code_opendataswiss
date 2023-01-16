@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Jahresformation
+
+Die Formation ist die Zusammenstellung von Fahrzeugtypen zu einem Zug der SBB. Die Formation sagt nicht aus in welcher Richtung die Wagen aufgereiht sind (ob die Lokomotive an der Zugspitze oder am Zugsende aufgereiht ist).Die Jahresformation ist die Zusammenstellung aller Formationen für eine Fahrplanperiode und wird mit dem Kursbuch veröffentlicht.The formation is the combination of vehicle types to form an SBB train. The formation does not say in which direction the wagons are lined up (whether the locomotive is lined up at the top of the train or at the end of the train).The annual formation is the compilation of all formations for a timetable period and is published with the timetable.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/jahresformation)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/jahresformation/)
+
+Auto generated R starter code for data set jahresformation@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['rollmaterial', 'verkehr']`
+- **Issued** `2022-12-01T00:00:00`
+- **Metadata_created** `2019-09-11T10:52:05.490436`
+- **Metadata_modified** `2023-01-16T00:28:55.432892`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 22a2ff6f-5bcf-4c37-bcb2-33e9db670f22
+# Description              : Jahresformation (csv)
+# Issued                   : 2022-12-01T00:00:00
+# Modified                 : 2022-12-01T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/jahresformation/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

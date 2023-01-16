@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Durch Umbau mit Leerkündigungen betroffene Wohnungen privater Eigentümerschaften, seit 2010
+
+
+Der Datensatz zeigt wie viele Wohnungen von einem Umbau betroffen waren und wieviele davon leergekündigt wurden. Die Auswertung basiert auf Gebäude von privaten Eigentümerschaften ohne Wohnbaugenossenschaften und Stockwerkeigentum seit 2009.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/durch-umbau-mit-leerkundigungen-betroffene-wohnungen-privater-eigentumerschaften-seit-2009)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_umbau_leerkuendigung_whg_baujahr_personen_od5051)
+
+Auto generated R starter code for data set 137dd7b9-fb97-4152-88d7-90908d61b3db@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['wohnen', 'bautatigkeit', 'grundangebot-bau', 'bauwesen', 'tabelle', 'leerkundigung', 'zeitreihe', 'gwz', 'sasa', 'gebaude', 'projektierte-wohnungen', 'sachdaten']`
+- **Issued** `2017-02-28T00:00:00`
+- **Metadata_created** `2020-12-08T10:52:37.664756`
+- **Metadata_modified** `2023-01-16T00:49:47.297537`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 176d640a-0683-4f7e-8e87-8bef2c2ad3f9
+# Description              : 
+# Issued                   : 2020-12-07T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_umbau_leerkuendigung_whg_baujahr_personen_od5051/download/BAU505OD5051.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

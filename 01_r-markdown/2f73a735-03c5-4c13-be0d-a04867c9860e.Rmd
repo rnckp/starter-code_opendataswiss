@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: ARAMIS
+
+Das Informationssystem ARAMIS ist seit 1997 in Betrieb und beinhaltet eine systematische Erfassung der Forschungs- Innovations- und Evaluationsprojekte, welche vom Bund finanziert oder durchgeführt werden. Der Einführung waren mehrere parlamentarische Vorstösse vorangegangen, die mehr Transparenz und eine Verbesserung der Kooperation in der Ressortforschung verlangten.
+ARAMIS funktioniert als Datenbankanwendung, in der die Forschungsvorhaben und Evaluationen der Bundesverwaltung als einzelne oder miteinander verknüpfte Projekte abgebildet werden. Diese Projekte enthalten dabei neben Grundinformationen wie Titel und Laufzeit auch beschreibende Angaben wie Projektziele oder Abschlussberichte sowie Finanzdaten. Die Datenbank dient zur Information der Öffentlichkeit sowie als Grundlage für statistische und weiterführende Auswertungen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/aramis)<br>
+[Direct link by **Staatssekretariat für Bildung, Forschung und Innovation SBFI** for dataset](https://www.aramis.admin.ch/)
+
+Auto generated R starter code for data set aramis@sbfi.
+
+## Metadata
+
+- **Publisher** `SBFI`
+- **Organization.display_name.de** `Staatssekretariat für Bildung, Forschung und Innovation SBFI`
+- **Organization.url** `https://www.sbfi.admin.ch`
+- **Maintainer** `Thomas Boschung`
+- **Maintainer_email** `aramis@sbfi.admin.ch`
+- **Keywords.de** `['forschung', 'innovation', 'evaluation', 'ressortforschung', 'externe-studien']`
+- **Issued** `2005-05-01T00:00:00`
+- **Metadata_created** `2021-04-14T09:41:13.020295`
+- **Metadata_modified** `2022-05-03T14:41:05.024331`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2f73a735-03c5-4c13-be0d-a04867c9860e
+# Description              : 
+# Issued                   : 1998-08-28T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://sar-service.sahli-interactive.ch/full_export.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+aramis@sbfi.admin.ch | Competence Center ARAMIS

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Gemeinderatswahlen Stimmenanteil nach Partei und Wahlkreis, seit 1913
+
+Gemeinderatswahlen Stimmenanteil nach Partei und Wahlkreis, seit 1913
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gemeinderatswahlen-stimmenanteil-nach-partei-und-wahlkreis-seit-19131)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/politik_gemeinderatswahlen_stimmant_seit1913_od7000)
+
+Auto generated R starter code for data set 44bd1560-ff99-4e54-bb08-b7def9406dc4@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zeitreihe', 'sachdaten', 'gemeinderat', 'politik', 'wahlen', 'sasa', 'tabelle', 'historische-wahldaten']`
+- **Issued** `2018-03-26T00:00:00`
+- **Metadata_created** `2019-07-30T00:45:31.674912`
+- **Metadata_modified** `2023-01-16T00:49:54.794910`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3d02b31b-89a9-4c2d-ae81-6735dd1a95e3
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/politik_gemeinderatswahlen_stimmant_seit1913_od7000/download/POL700OD7000.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

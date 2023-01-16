@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Denkmalpflegezuständigkeit
+
+Die Zuständigkeit für Denkmalpflegeobjekte in der Stadt Zürich ist aufgeteilt zwischen dem Amt für Städtebau Zürich und dem Kanton Zürich. Dieser Datensatz zeigt die Zuständigkeitsgebiete in der Stadt Zürich, welche im Wesentlichen den statistischen Quartieren folgen, mit Ausnahme der kantonalen Objekte. Der Datensatz enthält Angaben zu den zuständigen Ansprechpersonen der Bauberatung sowie der Inventarisation der Denkmalpflege des Amtes für Städtebau (Name, Telefonnummer, Email, Präsenzzeiten) sowie Angaben zur Abteilung Denkmalpflege des Kantons Zürich.
+
+**Zweck**: Der Datensatz bildet die Grundlage für eine Suchfunktion auf der Interseite des Amts für Städtebau. Sie ermöglicht es, über die Eingabe der Adresse die Zuständigkeit (Stadt oder Kanton) zu ermitteln und im Fall der Stadt Zürich direkt die entsprechende Ansprechperson zu finden. Die Suchfunktion ist ein Arbeitsinstrument für die Öffentlichkeit, für den Bereich Denkmalpflege des Amts für Städtebau, sowie für die Abteilung Denkmalpflege des Kantons Zürich.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/denkmalpflegezustandigkeit)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_denkmalpflegezustaendigkeit)
+
+Auto generated R starter code for data set d1ae14fd-9751-4732-91aa-58e0fc135f61@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Archäologie & Denkmalpflege, Amt für Städtebau, Hochbaudepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['geodaten', 'polygondaten', 'zustandigkeit', 'vektordaten', 'amt-fur-stadtebau', 'inventar', 'denkmalschutzobjekte', 'denkmalpflege', 'stzh', 'geoportal', 'kanton-zurich']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-11T01:12:01.223846`
+- **Metadata_modified** `2023-01-16T00:54:30.954632`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : fabf804c-a578-4af4-98d5-51af4a165f8f
+# Description              : 
+# Issued                   : 2022-05-10T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Denkmalpflegezustaendigkeit?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

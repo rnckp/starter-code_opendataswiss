@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Abfuhrzonen (Gemeinde Basel)
+
+Abfuhrzonen der Stadtreinigung (Tiefbauamt) für die Stadt Basel. Beinhaltet die Flächen der Abfuhrzonen (A bis H) der Stadt Basel.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/abfuhrzonen-gemeinde-basel1)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100095/)
+
+Auto generated R starter code for data set 100095@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Tiefbauamt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['abfall', 'grungut', 'recycling']`
+- **Issued** `2020-08-24T00:00:00`
+- **Metadata_created** `2021-09-03T09:36:38.061617`
+- **Metadata_modified** `2023-01-16T00:22:34.684641`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a3a44806-68d8-40df-a224-35d81aac32f6
+# Description              : Abfuhrzonen (Gemeinde Basel) (csv)
+# Issued                   : 2020-08-24T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100095/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

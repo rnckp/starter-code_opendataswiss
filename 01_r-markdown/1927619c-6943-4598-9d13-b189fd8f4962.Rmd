@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wanderungen (Zuzug, Wegzug und Umzug) Kanton Basel-Stadt
+
+Dieser Datensatz zeigt die Anzahl Personen, die in den Kanton Basel-Stadt zuwanderten (Zuzug), aus dem Kanton Basel-Stadt abwanderten (Wegzug) oder innerhalb des Kantons umgezogen sind (Umzug) nach Datum, Staatsangehörigkeit, Geschlecht, Alter und Detailangaben zum Zuzugs- und Wegzugsort.Die Wanderungsbewegungen sind seit 1985 verfügbar. Detailangaben der Zuzugs- und Wegzugsorte (Gemeinde, Kanton, Land) sind seit 2006 verfügbar.Die hier veröffentlichten Werte weichen aus methodischen Gründen von denjenigen in der kantonalen öffentlichen Statistik ab: In Letzterer werden nachträglich gemeldete Wanderungsereignisse während vier Monaten gesammelt, danach gelten die Zahlen als definitiv. Später eintreffende Meldungen werden im letzten noch nicht abgeschlossenen Monat gezählt. Die Ereignisse werden aufgrund vieler Nachmeldungen erst vier Monate nach dem Wanderungsdatum publiziert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wanderungen-zuzug-wegzug-und-umzug-kanton-basel-stadt)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100138/)
+
+Auto generated R starter code for data set 100138@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['staatsangehorigkeit', 'wanderungen', 'alter', 'zuzug', 'umzug', 'bevolkerungsbestand', 'geschlecht', 'wegzug', 'immigration']`
+- **Issued** `2022-01-27T00:00:00`
+- **Metadata_created** `2022-06-18T00:17:20.287189`
+- **Metadata_modified** `2023-01-16T00:21:33.045829`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1927619c-6943-4598-9d13-b189fd8f4962
+# Description              : Wanderungen (Zuzug, Wegzug und Umzug) Kanton Basel-Stadt (csv)
+# Issued                   : 2022-01-27T00:00:00
+# Modified                 : 2023-01-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100138/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

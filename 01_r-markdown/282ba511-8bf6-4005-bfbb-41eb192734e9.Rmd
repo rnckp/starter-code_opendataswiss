@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Todesfälle nach Stadtquartier, seit 1993
+
+
+Todesfälle von Personen der wirtschaftlichen Wohnbevölkerung der Stadt Zürich nach Statistischem Stadtquartier und Jahr, seit 1993.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/todesfalle-nach-stadtquartier-seit-19933)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev_todesfaelle_jahr_quartier_od4220)
+
+Auto generated R starter code for data set 2b080833-3475-4381-b4c9-4fb7feec304d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Bevölkerungsamt, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sasa', 'sterben', 'raum', 'sachdaten', 'tod', 'sterbefaelle', 'zeitreihe', 'tabelle']`
+- **Issued** `2012-06-26T00:00:00`
+- **Metadata_created** `2021-02-10T16:48:05.212233`
+- **Metadata_modified** `2023-01-16T00:50:39.537877`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 282ba511-8bf6-4005-bfbb-41eb192734e9
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev_todesfaelle_jahr_quartier_od4220/download/BEV422OD4220.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

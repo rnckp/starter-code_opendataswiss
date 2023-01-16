@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Abstimmungsparolen von kantonalzürcher und nationalen Parteien
+
+Parteiparolen von kantonalzürcher Parteien mit Einsitz im Zürcher Kantonsrat zu eidgenössischen und kantonalen Abstimmungen. Abweichende Parolen der jeweiligen nationalen Parteien sind ausgewiesen. Es besteht kein Anspruch auf Vollständigkeit. Im Zeitraum von 2011 bis 2016 fehlen die Parolen im Datensatz wegen eines Medienbruchs vollständig. Bitte senden Sie Ergänzungen zum Datensatz an die unter Kontakt angegebene E-Mail-Adresse.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/abstimmungsparolen-von-kantonalzurcher-und-nationalen-parteien)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/wahlen-abstimmungen/abstimmungen.html)
+
+Auto generated R starter code for data set 444@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Wahlen & Abstimmungen`
+- **Maintainer_email** `wahlen@statistik.ji.zh.ch`
+- **Keywords.de** `['eidgenoessischevolksabstimmungen', 'regierungsrat', 'kantonsrat', 'politik', 'abstimmungen', 'kantonalevolksabstimmungen']`
+- **Issued** `2019-07-02T00:00:00`
+- **Metadata_created** `2021-01-14T17:47:30.477325`
+- **Metadata_modified** `2023-01-16T03:04:53.085846`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 795998cc-7b27-4f7a-bd95-2d9c413bcd3f
+# Description              : NA
+# Issued                   : 2019-07-02T00:00:00
+# Modified                 : 2023-01-03T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_abstimmungsparolen.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+wahlen@statistik.ji.zh.ch | Statistisches Amt des Kantons Zürich, Wahlen & Abstimmungen

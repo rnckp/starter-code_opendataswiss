@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Liegenschaften-Markt Stadt Zürich: Umgruppierte Inhalte von BAU514OD5141.csv als Basis für die LIMA-Applikation auf der Website von Statistik Stadt Zürich (Medianpreise und Handänderungszahl nach Zonenart und Stadtquartier, seit 2008)
+
+
+Auswertungen aus der Handänderungsstatistik. Pro Stadtquartier sind sieben Reihen verfügbar, die auf drei verschieden berechneten Preisreihen und auf drei verschiedenen Datengrundlagen basieren, vgl. Attribute (weiter unten). Neben dem Medianpreis wird jeweils auch die Anzahl Handänderungen ausgewiesen.
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/liegenschaften-markt-stadt-zurich-umgruppierte-inhalte-von-bau514od5141-csv-als-basis-fur-20081)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_hae_lima_preise_anzahl_hae_art_gebiet_bzo_jahr_grpd_od5142)
+
+Auto generated R starter code for data set 7bfce452-48a3-4121-9272-ba62def6db0e@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, GWZ`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['tabelle', 'sasa', 'preis', 'grundangebot-bau', 'zeitreihe', 'sachdaten', 'zonenart', 'liegenschaft', 'bebaungsart', 'handanderung', 'wohnungsflache', 'lima', 'bodenpreis']`
+- **Issued** `2021-12-07T00:00:00`
+- **Metadata_created** `2022-09-08T01:45:10.431983`
+- **Metadata_modified** `2023-01-16T00:51:06.100378`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 75962724-c673-4556-be03-63e8ad3fef2f
+# Description              : 
+# Issued                   : 2022-09-07T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_hae_lima_preise_anzahl_hae_art_gebiet_bzo_jahr_grpd_od5142/download/BAU514OD5142.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

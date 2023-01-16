@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Rinder - Entwicklung nach Nutzungsarten
+
+Prozentuale Aufteilung sowie Gesamtbestand je Nutzungsart (Milchkuh, andere Kuh, nicht definiert) der registrierten, lebenden Rinder. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/rinder-entwicklung-nach-nutzungsarten)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set cattle-usage@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['nutztiere', 'nutzungsarten', 'rinder', 'populationsentwicklung']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:22:06.443529`
+- **Metadata_modified** `2023-01-10T01:10:49.672976`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5a5ba08a-a66c-4d1e-95fd-5ab99c755129
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/cattle-usage.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

@@ -1,0 +1,163 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Anstaltstopografie zur administrativen Versorgung in der Schweiz 1933-1980
+
+Der Datensatz umfasst fünf Verzeichnisse von Anstalten und Institutionen des Straf- und Massnahmenvollzugs in der Schweiz aus den Jahren 1933, den 1940er-Jahren, 1954, 1965 und 1980. Aus diesen fünf Verzeichnissen wurde als sechstes Dokument ein Index sämtlicher in den Quellen aufgeführter Anstalten zusammengestellt.
+Auf Grundlage dieser Daten wurden interaktive Visualisierungen und ein Glossar entwickelt, welche die Anstaltslandschaft der Schweiz in ihrer zeitlichen, regionalen, sozialräumlichen, geschlechtsspezifischen und konfessionellen Diversität zeigen (siehe Landing Page).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/anstaltstopografie)<br>
+[Direct link by **Unabhängige Expertenkommission (UEK) Administrative Versorgungen** for dataset](https://www.uek-administrative-versorgungen.ch/interactivereport/de/)
+
+Auto generated R starter code for data set anstaltstopografie@unabhangige-expertenkommission-uek-administrative-versorgungen.
+
+## Metadata
+
+- **Publisher** `Unabhängige Expertenkommission (UEK) Administrative Versorgungen; durch die wiss. Mitarbeit von Dr. Ernst Guggisberg und Marco Dal Molin`
+- **Organization.display_name.de** `Unabhängige Expertenkommission (UEK) Administrative Versorgungen`
+- **Organization.url** `https://www.uek-administrative-versorgungen.ch`
+- **Maintainer** `Generalsekretariat der Unabhängigen Expertenkommission (UEK) Administrative Versorgungen`
+- **Maintainer_email** `sekretariat@uek.admin.ch`
+- **Keywords.de** `[]`
+- **Issued** `2018-03-06T00:00:00`
+- **Metadata_created** `2018-03-06T08:20:46.512532`
+- **Metadata_modified** `2022-04-06T08:45:49.605835`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 10 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Die Liste wurde aus folgenden zwei Quellen zusammengestellt: «Wild, Albert: Handbuch der sozialen Arbeit in der Schweiz = Manuel du travail social en Suisse = Manuale del lavoro sociale nella Svizzera, Zürich 1933» sowie «Schweizerischer Verband für Schwererziehbare (Hg.): Heime für die schwererziehbare und verlassene Jugend in der Schweiz, Zürich 1933». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/dLXUooOmUplT6eu')
+
+# Distribution 1
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Die Liste wurde aus folgenden sechs Quellen zusammengestellt: «Bundesamt für Justiz: Uebersicht über die Strafanstalten, Gefängnisse, ihre Platzzahl, Belegschaft, Gewerbebetriebe usw., Schweizerisches Bundesarchiv, Signatur: E4112B#1991/201#226*», «Schwarz, Martin (Hg.): Verzeichnis der Anstalten in der Schweiz des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft, Basel 1954», «Schwarz, Martin (Hg.): Verzeichnis der Anstalten des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft in der Schweiz, Basel 1965», «Schweizerischer Verband für Schwererziehbare (Hg.): Heime für die schwererziehbare und verlassene Jugend in der Schweiz, Zürich 1933», «Wild, Albert: Handbuch der sozialen Arbeit in der Schweiz = Manuel du travail social en Suisse = Manuale del lavoro sociale nella Svizzera, Zürich 1933» und «Zentralsekretariat Pro Juventute (Hg.): Das schweizerische Anstaltswesen für die Jugend, Zürich 1944». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/NYLJe9UaZiFzCFW')
+
+# Distribution 2
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Schwarz, Martin (Hg.): Verzeichnis der Anstalten in der Schweiz des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft, Basel 1954». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/urVfdowX7SFsNXa')
+
+# Distribution 3
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Schwarz, Martin (Hg.): Verzeichnis der Anstalten in der Schweiz des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft, Basel 1954». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/3quP82sAPBpPve6')
+
+# Distribution 4
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Schwarz, Martin (Hg.): Verzeichnis der Anstalten in der Schweiz des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft, Basel 1954». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/iIQBN2dxbFMEsH1')
+
+# Distribution 5
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Schwarz, Martin (Hg.): Verzeichnis der Anstalten des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft in der Schweiz, Basel 1965». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/HNHGJ1iR0eYjvEq')
+
+# Distribution 6
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Schwarz, Martin (Hg.): Verzeichnis der Anstalten des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft in der Schweiz, Basel 1965». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/bBnwMUn0yMnfeNN')
+
+# Distribution 7
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Schwarz, Martin (Hg.): Verzeichnis der Anstalten des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft in der Schweiz, Basel 1965». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/RD7475R4VdeVVYQ')
+
+# Distribution 8
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Abschrift der Quelle: «Bundesamt für Justiz: Katalog der Einrichtungen des Straf- und Massnahmenvollzuges an Erwachsenen und der zuständigen Behörden, Bern 1982». Die Zelleninhalte sind Originalzitate. Die Liste wurde zur einheitlichen Auswertung mit Kategorien ergänzt.
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/C8bVnYHi2ifCf6O')
+
+# Distribution 9
+# Package_id               : 27effefa-356f-49fb-b674-dfbb40f1aa40
+# Description              : Zusammenzug der in folgenden Werken aufgeführten Anstalten und Institutionen des Straf- und Massnahmenvollzugs der Schweiz zwischen 1933 und 1980 mit inhaltlichem Fokus auf die administrative Zwangseinweisung: «Wild, Albert: Handbuch der sozialen Arbeit in der Schweiz = Manuel du travail social en Suisse = Manuale del lavoro sociale nella Svizzera, Zürich 1933», «Schweizerischer Verband für Schwererziehbare (Hg.): Heime für die schwererziehbare und verlassene Jugend in der Schweiz, Zürich 1933», «Bundesamt für Justiz: Uebersicht über die Strafanstalten, Gefängnisse, ihre Platzzahl, Belegschaft, Gewerbetbetriebe usw., Schweizerisches Bundesarchiv, Signatur: BAR E4112B#1991/201#226*», «Zentralsekretariat Pro Juventute (Hg.): Das schweizerische Anstaltswesen für die Jugend, Zürich 1944», «Schwarz, Martin (Hg.): Verzeichnis der Anstalten in der Schweiz des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft, Basel 1954», «Schwarz, Martin (Hg.): Verzeichnis der Anstalten des Straf- und Massnahmenvollzugs und der Untersuchungsgefangenschaft in der Schweiz, Basel 1965» sowie «Bundesamt für Justiz: Katalog der Einrichtungen des Straf- und Massnahmenvollzuges an Erwachsenen und der zuständigen Behörden, Bern 1982».
+# Issued                   : 2018-03-06T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bar-files.opendata.swiss/owncloud/index.php/s/deYDzMYmJMKMtkP')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+sekretariat@uek.admin.ch | Generalsekretariat der Unabhängigen Expertenkommission (UEK) Administrative Versorgungen

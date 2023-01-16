@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Privathaushalte nach Haushaltsform und Stadtquartier, seit 2013
+
+
+Anzahl Privathaushalte sowie die wirtschaftliche Wohnbevölkerung der Stadt Zürich in Privathaushalten nach Haushaltsform, Statistischem Stadtquartier und Jahr, seit 2013.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/privathaushalte-nach-haushaltsform-und-stadtquartier-seit-20131)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev_hh_haushaltsform_quartier_seit2013_od3805)
+
+Auto generated R starter code for data set c5488f1b-9a2d-490a-a3a3-739cb64a475d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['einelternhaushalte', 'wohngemeinschaften', 'bevolkerungsstand', 'eingetragene-paare', 'quartier', 'sasa', 'zeitreihe', 'ehepaare', 'alleinerziehende', 'tabelle', 'haushalt', 'sachdaten']`
+- **Issued** `2016-11-24T00:00:00`
+- **Metadata_created** `2019-07-30T01:00:11.522417`
+- **Metadata_modified** `2023-01-16T00:51:23.687717`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3f1a0546-de4b-48ba-9a6a-afcd6c4b7568
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev_hh_haushaltsform_quartier_seit2013_od3805/download/BEV380OD3805.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

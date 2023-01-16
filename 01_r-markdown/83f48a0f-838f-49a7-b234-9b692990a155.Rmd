@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Privathaushalte nach Haushaltsgrösse und Stadtquartier, seit 2013
+
+
+Anzahl Privathaushalte sowie die wirtschaftliche Bevölkerung der Stadt Zürich in Privathaushalten nach Haushaltsgrösse, Stadtkreis, Statistischem Stadtquartier und Jahr, seit 2013.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/privathaushalte-nach-haushaltsgrosse-und-stadtquartier-seit-20133)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev_hh_haushaltsgroesse_quartier_seit2013_od3806)
+
+Auto generated R starter code for data set 604c15d5-085f-4891-9b2b-f304cebaf31d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'haushalt', 'bevolkerungsstand', 'sasa', 'quartier', 'zeitreihe', 'tabelle', 'haushaltsgrosse']`
+- **Issued** `2016-11-24T00:00:00`
+- **Metadata_created** `2021-02-10T16:52:10.404811`
+- **Metadata_modified** `2023-01-16T00:50:39.945796`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 83f48a0f-838f-49a7-b234-9b692990a155
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev_hh_haushaltsgroesse_quartier_seit2013_od3806/download/BEV380OD3806.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

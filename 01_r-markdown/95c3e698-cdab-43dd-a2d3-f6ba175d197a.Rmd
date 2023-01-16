@@ -1,0 +1,87 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wohnungsbestand nach Art des Energieträgers, Statistischer Zone und Bauperiode seit 2017
+
+
+Diese Daten umfassen den Wohnungsbestand der Stadt Zürich nach Art des Energieträgers. Die Daten liegen ab dem Jahr 2017 jährlich vor.
+
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnungsbestand-nach-art-des-energietragers-statistischer-zone-und-bauperiode-seit-20172-1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_best_whg_energietraegerart_statzone_seit2017_od5331)
+
+Auto generated R starter code for data set 61078b36-b895-4d00-bac6-10549bb7d655@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Gebäude- und Wohnungsregister`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['energie', 'fernwaerme', 'holz', 'gas', 'zeitreihe', 'grundangebot-bau', 'sachdaten', 'tabelle', 'wohnungen', 'waermepumpe', 'sasa', 'oelheizung']`
+- **Issued** `2020-02-07T00:00:00`
+- **Metadata_created** `2021-02-06T06:07:59.856507`
+- **Metadata_modified** `2023-01-16T00:51:02.373450`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 95c3e698-cdab-43dd-a2d3-f6ba175d197a
+# Description              : 
+# Issued                   : 2021-02-05T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_best_whg_energietraegerart_statzone_seit2017_od5331/download/BAU533OD5331.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

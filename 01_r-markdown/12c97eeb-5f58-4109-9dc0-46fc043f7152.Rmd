@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Schnittstelle zum Portal 'Wahlen & Abstimmungen' des Kantons St.Gallen (wab.sg.ch)
+
+Das Portal 'Wahlen & Abstimmungen' des Kantons St.Gallen (wab.sg.ch) bietet eine Schnittstelle an, um auf die verfügbaren Abstimmungs- und Wahlresultate zugreifen zu können. Damit kann das gesamte Archiv oder auch die aktuellen Abstimmungs- oder Wahlresultate in Echtzeit abgefragt und genutzt werden.Unter folgendem Link ist die Nutzung der API-Schnittstelle ausführlich erklärt:https://github.com/OneGov/onegov-cloud/blob/master/docs/api/election_day/open_data_de.md
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/schnittstelle-zum-portal-wahlen-abstimmungen-des-kantons-st-gallen-wab-sg-ch)<br>
+[Direct link by **Staatskanzlei Kanton St.Gallen** for dataset](https://daten.sg.ch/explore/dataset/schnittstelle-zum-portal-wahlen-abstimmungen-des-kantons-stgallen-wabsgch/)
+
+Auto generated R starter code for data set schnittstelle-zum-portal-wahlen-abstimmungen-des-kantons-stgallen-wabsgch@staatskanzlei-kanton-st-gallen.
+
+## Metadata
+
+- **Publisher** `staatskanzlei-kanton-st-gallen`
+- **Organization.display_name.de** `Staatskanzlei Kanton St.Gallen`
+- **Organization.url** `https://www.sg.ch/politik-verwaltung/departemente-und-staatskanzlei/staatskanzlei.html`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `['real-time', 'resultate', 'wahlen', 'abstimmungen', 'api']`
+- **Issued** `2019-10-08T00:00:00`
+- **Metadata_created** `2021-02-24T13:54:09.996578`
+- **Metadata_modified** `2023-01-16T01:06:24.853343`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 12c97eeb-5f58-4109-9dc0-46fc043f7152
+# Description              : Schnittstelle zum Portal "Wahlen & Abstimmungen" des Kantons St.Gallen (wab.sg.ch) (csv)
+# Issued                   : 2019-10-08T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://daten.sg.ch/api/v2/catalog/datasets/schnittstelle-zum-portal-wahlen-abstimmungen-des-kantons-stgallen-wabsgch/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen

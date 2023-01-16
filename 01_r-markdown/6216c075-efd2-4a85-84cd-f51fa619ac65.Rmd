@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Jahresformation – 2018
+
+Datenset ist nur bis zum Fahrplanwechsel so vorhanden -> dann wird der Inhalt im Bestehenden drin sein.
+-----------
+Die Formation ist die Zusammenstellung von Fahrzeugtypen zu einem Zug der SBB. Die Formation sagt nicht aus in welcher Richtung die Wagen aufgereiht sind (ob die Lokomotive an der Zugspitze oder am Zugsende aufgereiht ist).Die Jahresformation ist die Zusammenstellung aller Formationen für eine Fahrplanperiode und wird mit dem Kursbuch veröffentlicht
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/jahresformation-20181)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/jahresformation-2018/)
+
+Auto generated R starter code for data set jahresformation-2018@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['rollmaterial', 'verkehr']`
+- **Issued** `2017-11-22T00:00:00`
+- **Metadata_created** `2019-09-11T10:48:00.667322`
+- **Metadata_modified** `2023-01-16T00:27:24.300904`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6216c075-efd2-4a85-84cd-f51fa619ac65
+# Description              : Jahresformation – 2018 (csv)
+# Issued                   : 2017-11-22T00:00:00
+# Modified                 : 2017-11-22T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/jahresformation-2018/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

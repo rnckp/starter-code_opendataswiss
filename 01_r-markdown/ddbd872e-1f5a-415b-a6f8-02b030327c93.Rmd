@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Rheinüberwachungsstation: Umweltanalyse Wasserphase
+
+Der Datensatz enthält die Analysedaten aus der binationalen Rheinüberwachungsstation (RÜS) in Weil am Rhein (Rhein-Kilometer 171,37) seit Bestehen der Station im Jahr 1993 aus der Matrix Wasser.Der Rhein wird aktuell auf 670 Schadstoffe untersucht, 420 davon täglich. Der Unterhalt der Anlage und die Analytik werden durch das Amt für Umwelt und Energie des Kantons Basel-Stadt (AUE) geleistet. Auftraggeber sind die Landesanstalt für Umwelt, Messungen und Naturschutz Baden-Württemberg (LUBW) und das schweizerische Bundesamt für Umwelt (BAFU).Weitere Informationen: http://www.aue.bs.ch/umweltanalytik/rheinueberwachungsstation-weil-am-rhein.htmlDie Daten einzelner Jahre ab dem Jahr 1993 können heruntergeladen werden unter der URL mit dem Muster https://data-bs.ch/umweltlabor/gew_rhein_rues_wasser_[JAHR].csv, also zum Beispiel für das Jahr 2020 hier: https://data-bs.ch/umweltlabor/gew_rhein_rues_wasser_2020.csv
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/rheinuberwachungsstation-umweltanalyse-wasserphase1)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100069/)
+
+Auto generated R starter code for data set 100069@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Umwelt und Energie`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['wasserqualitat', 'chemie', 'rhein', 'fluss', 'rus', 'bach', 'wassertemperatur', 'messwert']`
+- **Issued** `2020-04-06T00:00:00`
+- **Metadata_created** `2021-09-03T09:17:41.437825`
+- **Metadata_modified** `2023-01-16T00:22:08.512542`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ddbd872e-1f5a-415b-a6f8-02b030327c93
+# Description              : Rheinüberwachungsstation: Umweltanalyse Wasserphase (csv)
+# Issued                   : 2020-04-06T00:00:00
+# Modified                 : 2023-01-05T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100069/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

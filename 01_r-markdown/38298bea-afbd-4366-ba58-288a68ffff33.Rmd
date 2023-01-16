@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Finanzausgleich Politische Gemeinden: Komponenten
+
+Der Datensatz enthält Daten zum Finanzausgleich der Politischen Gemeinden des Kantons Thurgau seit 2004.
+Der Finanzausgleich der Politischen Gemeinden besteht aus einem Ressourcenausgleich und einem Lastenausgleich.
+Der Datensatz zeigt pro Gemeinde die einzelnen Komponenten des Finanzausgleichs. Er enthält Daten ab 2008.
+Für den Ressourcenausgleich beschreibt die Variable „Abschöpfung in CHF“ die Abschöpfung bei finanzstarken Gemeinden (positives Vorzeichen = Abschöpfung) und die Variable „Auszahlung Mindestausstattung in CHF“ die Auszahlung an finanzschwache Gemeinden (negatives Vorzeichen = Auszahlung).
+Für den Lastenausgleich beschreibt die Variable „Lastenausgleich Sozialhilfe in CHF“ den Lastenausgleich für übermässige Belastungen durch Sozialhilfekosten (negatives Vorzeichen = Auszahlung), die Variable „Lastenausgleich Fläche in CHF“ den Lastenausgleich für eine unterdurchschnittliche Bevölkerungsdichte (negatives Vorzeichen = Auszahlung) und die Variable „Lastenausgleich Besondere Belastungen in CHF“ die zusätzlichen Beitragsleistungen für besondere Belastungen (gemäss § 8 des Finanzausgleichsgesetzes).
+Zudem enthält der Datensatz die Gesamtauswirkungen des Finanzausgleichs: Insgesamt abgeschöpfter bzw. ausgezahlter Betrag (unter Berücksichtigung aller Komponenten und der übrigen im Finanzausgleichsgesetz enthaltenen Regelungen). Auszahlungen oder Abschöpfungen erfolgen nur, wenn sie mindestens 1'000 Franken betragen.Hinweis: Kein Wert bedeutet weder Auszahlung noch Abschöpfung.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/finanzausgleich-politische-gemeinden-komponenten)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-2/)
+
+Auto generated R starter code for data set sk-stat-2@kanton-thurgau.
+
+## Metadata
+
+- **Publisher** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['auszahlung', 'ressourcenausgleich', 'finanzen', 'gemeindesteuerfusse', 'finanzausgleich', 'lastenausgleich']`
+- **Issued** `2017-07-03T00:00:00`
+- **Metadata_created** `2022-02-28T11:06:22.527211`
+- **Metadata_modified** `2023-01-16T11:02:33.789894`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 38298bea-afbd-4366-ba58-288a68ffff33
+# Description              : Finanzausgleich Politische Gemeinden: Komponenten (csv)
+# Issued                   : 2017-07-03T00:00:00
+# Modified                 : 2022-08-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-2/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

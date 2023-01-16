@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Bevölkerungsbefragung im Kanton Zürich zur Zufriedenheit mit der Wohngemeinde
+
+Informationen zur Befindlichkeit der Bevölkerung bezüglich der eigenen Wohngemeinde. Die Befragten konnten sich dazu äussern, ob sie sich in ihren Wohngemeinden wohl fühlen, wie zufrieden sie mit den Leistungen der Gemeinden sind und wie sie deren finanzielle Situation einschätzen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bevolkerungsbefragung-im-kanton-zurich-zur-zufriedenheit-mit-der-wohngemeinde)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](nan)
+
+Auto generated R starter code for data set 1341@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wohngemeinde', 'gemeindesteuerfuesse', 'gemeinden', 'gemeindefinanzen', 'gemeindeleistungen', 'steuern', 'kantonzuerich', 'lebenszufriedenheit', 'staatsausgaben', 'nachbargemeinden', 'steuerfuss', 'wohnbevoelkerung', 'gemeindesteuern']`
+- **Issued** `2022-07-07T00:00:00`
+- **Metadata_created** `2022-07-08T03:05:12.012460`
+- **Metadata_modified** `2023-01-16T03:01:43.225940`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d31f3471-fd59-4531-9b5f-d78813891b7c
+# Description              : Antworten zu vier Themenblöcken (1-4): (1) Identifikation mit Wohnort und Zufriedenheit in der Wohngemeinde; (2) Gemeindeleistungen, Wichtigkeit dieser Aspekte und Zufriedenheit mit der Umsetzung durch Gemeinden; (3) Beurteilung Höhe der Steuern, kommunaler Steuerfuss und Bandbreite der kommunalen Steuerfüsse, in welche Themen sollen Steuergelder zukünftig investiert werden?; (4) Bereitschaft Dienstleistungen der Wohngemeinde in einer Nachbargemeinde zu beziehen, beziehungsweise welche Massnahmen zu ergreifen sind, wenn zentrale Dienstleistungen nicht mehr selbstständig von der Wohngemeinde erfüllt werden können.
+# Issued                   : 2022-07-07T00:00:00
+# Modified                 : 2022-07-07T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001341_00002759.csv')
+
+# Distribution 1
+# Package_id               : d31f3471-fd59-4531-9b5f-d78813891b7c
+# Description              : Im Codebook sind die erhobenen Variablen mit den möglichen Ausprägungen beschrieben. 
+# Issued                   : 2022-07-07T00:00:00
+# Modified                 : 2022-07-07T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001341_00002918.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+umfragen@statistik.ji.zh.ch | Statistisches Amt des Kantons Zürich, Befragungen und Sozialhilfestatistik

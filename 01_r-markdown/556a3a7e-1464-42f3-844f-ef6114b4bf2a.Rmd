@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Nachnamen der aktuellen Wohnbevölkerung der Stadt Zürich
+
+Anzahl Personen der wirtschaftlichen Wohnbevölkerung der Stadt Zürich nach Nachname, Stadtkreis und Stadtquartier.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/nachnamen-der-aktuellen-wohnbevolkerung-der-stadt-zurich2)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev_bestand_nachnamen_stadtquartier_od3710)
+
+Auto generated R starter code for data set ed6c017b-3c09-49f9-9a4f-71afa595983c@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Bevölkerungsamt, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['namenssuche', 'namen', 'nachnamen', 'tabelle', 'wohnbevoelkerung', 'sachdaten', 'familiennamen']`
+- **Issued** `2018-01-08T00:00:00`
+- **Metadata_created** `2019-11-09T22:54:32.322331`
+- **Metadata_modified** `2023-01-16T00:51:03.902645`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 556a3a7e-1464-42f3-844f-ef6114b4bf2a
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev_bestand_nachnamen_stadtquartier_od3710/download/BEV371OD3710.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

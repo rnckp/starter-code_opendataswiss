@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Todesfälle nach aggregierter Todesursache, Altersklasse und Geschlecht, seit 1995
+
+Diese Daten beinhalten aggregierte Todesursachen nach Altersklasse und Geschlecht seit 1995. Die Todesursachen stammen vom Bundesamt für Statistik und wurden mit den Daten des Bevölkerungsregisters der Stadt Zürich verknüpft.
+
+Bitte beachten Sie für das korrekte Verständnis der Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/todesfalle-nach-aggregierter-todesursache-altersklasse-und-geschlecht-seit-19952)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bfs_bevreg_todesursache-aggregiert_alter_geschlecht_seit1995_od3120)
+
+Auto generated R starter code for data set b706ed1f-ec5c-4969-8951-afbc59ad4e44@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Sektion Gesundheit, Bundesamt für Statistik`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zeitreihe', 'todesursache', 'todesfalle', 'sachdaten', 'tabelle', 'sasa']`
+- **Issued** `2016-11-10T00:00:00`
+- **Metadata_created** `2019-07-30T00:44:55.500978`
+- **Metadata_modified** `2023-01-16T00:51:12.170488`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 4bb88c21-fd85-454f-8205-a1c831358fbf
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bfs_bevreg_todesursache-aggregiert_alter_geschlecht_seit1995_od3120/download/BEV312OD3120.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

@@ -1,0 +1,155 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Daten der permanenten Velozählstellen - Stundenwerte (Nachführung eingestellt)
+
+**Die Nachführung dieses Datensatzes wurde eingestellt. Stattdessen kann der folgende, wöchentlich aktualisierte, Datensatz [«Daten der automatischen Fuss- und Velozählung - Viertelstundenwerte»](https://data.stadt-zuerich.ch/dataset/verkehrszaehlungen-werte-fussgaenger-velo) verwendet werden.**
+
+Die Zähldaten werden vom Tiefbauamt der Stadt Zürich in eigener Regie erhoben. Die permanenten Velozählstellen sind im gesamten Stadtgebiet installiert. Die Erfassung des Veloverkehrs erfolgt mittels im Strassenbelag eingelassenen Induktionsschlaufen. Bei der Überfahrt erzeugen die Felgen des Velos, sofern sie Metall enthalten, einen elektromagnetischen Impuls, wodurch die Zählung ausgelöst wird. Diese erfolgt vollständig anonym. Die Velodaten sind wichtige Analysegrundlagen zur Beurteilung des Veloaufkommens an den jeweiligen Standorten und deren langfristige Entwicklung. Sie bilden damit eine wichtige Datengrundlage zur Dokumentation der Bedeutung des Veloverkehrs und für die Erfolgskontrolle der Veloförderung.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/daten-der-permanenten-velozahlstellen-stundenwerte-nachfuhrung-eingestellt1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte)
+
+Auto generated R starter code for data set 291d051c-0edb-42f4-b2cf-dcaab6e88a68@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Abteilung Mobilität + Verkehr, Tiefbauamt, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['standort', 'sachdaten', 'punktdaten', 'messwerte', 'planung']`
+- **Issued** `2013-06-14T00:00:00`
+- **Metadata_created** `2019-07-30T00:37:19.615199`
+- **Metadata_modified** `2023-01-16T00:50:22.811074`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 9 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2011.csv')
+
+# Distribution 1
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2010-2015_Q3.csv')
+
+# Distribution 2
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_ausfallprotokoll.csv')
+
+# Distribution 3
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2013.csv')
+
+# Distribution 4
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2010.csv')
+
+# Distribution 5
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_mappingtabelle.csv')
+
+# Distribution 6
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2012.csv')
+
+# Distribution 7
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2015_Q1-Q3.csv')
+
+# Distribution 8
+# Package_id               : 1a550f00-53fe-4e61-a82c-7a86a1d1cbdd
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_velozaehlstellen_stundenwerte/download/velozaehlung_stundenwerte_2014.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

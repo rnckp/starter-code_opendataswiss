@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wohnbevölkerung nach Heimat und Bezirk
+
+Dieser Datensatz beinhaltet Angaben zur Wohnbevölkerung des Kantons Basel-Stadt am Jahresende nach Heimat (Schweiz/Ausland) und zur Kantonsbürgerschaft auf Ebene Bezirk. Personen an administrativen Meldeadressen sind nicht berücksichtigt. An administrativen Meldeadressen sind Personen aus administrativen Gründen gemeldet, welche dort aber keinen physischen Wohnsitz haben (z.B. KESB).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnbevolkerung-nach-heimat-und-bezirk)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100061/)
+
+Auto generated R starter code for data set 100061@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `[]`
+- **Issued** `2020-03-12T00:00:00`
+- **Metadata_created** `2021-09-03T09:15:28.908542`
+- **Metadata_modified** `2023-01-16T00:22:21.230165`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 362e68c5-dfc3-454a-b478-4b002966b01e
+# Description              : Wohnbevölkerung nach Heimat und Bezirk (csv)
+# Issued                   : 2020-03-12T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100061/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

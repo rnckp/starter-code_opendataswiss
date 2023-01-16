@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Strassen und Wege: Durchgangsstrassen
+
+Dieser Datensatz ist Teil des kantonalen Geodatenmodells des Kantons Basel-Stadt 'Strassen und Wege' und stellt die Durchgangsstrassen dar. Weitere Daten zu 'Strassen und Wege': https://data.bs.ch/explore/?sort=modified&q=tags=Strassen+und+Wege
+Die Durchgangsstrassen zeigen die Durchgangsstrassen gemäss Durchgangsverordnung unterteilt nach Hauptstrassen, Nationalstrassen (A) und Europastrassen (E).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/strassen-und-wege-durchgangsstrassen)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100242/)
+
+Auto generated R starter code for data set 100242@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Mobilität`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wegnetz', 'strasse', 'strassennetz', 'mobilitat', 'weg']`
+- **Issued** `2022-12-23T00:00:00`
+- **Metadata_created** `2022-12-24T00:36:19.715414`
+- **Metadata_modified** `2023-01-16T00:22:23.115199`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2a719100-99f4-4631-94a1-e5b7feb77b0e
+# Description              : Strassen und Wege: Durchgangsstrassen (csv)
+# Issued                   : 2022-12-23T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100242/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

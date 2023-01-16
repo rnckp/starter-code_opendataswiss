@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Dienststellen (DiDok) gemäss opentransportdata.swiss
+
+Liste der Haltestellen der Schweiz. Die Didok-Liste wird vom Bundesamt für Verkehr erstellt. Das Original kann unter https://opendata.swiss/de/dataset/haltestellen-des-offentlichen-verkehrs bezogen werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/dienststellen-gemass-opentransportdata-swiss)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/dienststellen-gemass-opentransportdataswiss/)
+
+Auto generated R starter code for data set dienststellen-gemass-opentransportdataswiss@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['infrastruktur', 'verkehr']`
+- **Issued** `2023-01-12T00:00:00`
+- **Metadata_created** `2019-11-27T20:30:37.082061`
+- **Metadata_modified** `2023-01-16T00:28:58.007966`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f0eed8fd-99ec-407f-8ef8-de566ce21655
+# Description              : Dienststellen (DiDok) gemäss opentransportdata.swiss (csv)
+# Issued                   : 2023-01-12T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/dienststellen-gemass-opentransportdataswiss/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

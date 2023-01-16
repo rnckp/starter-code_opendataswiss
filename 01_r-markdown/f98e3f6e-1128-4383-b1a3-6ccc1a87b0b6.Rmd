@@ -1,0 +1,542 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Statistik der Schweizer Städte 2021
+
+Die 82. Ausgabe der «Statistik der Schweizer Städte» erscheint bereits zum sechsten Mal in gemeinsamer Herausgeberschaft mit dem Bundesamt für Statistik (BFS). Es gibt eine gedruckte Version, ein PDF und eine interaktive digitale Version. Die Daten, die für diese Publikation verwendet worden sind, bilden 162 statistische Städte und 9 weitere Mitglieder des Schweizerischen Städteverbands (SSV) ab, welche infolge ihrer Tradition oder Entwicklung städtisch geprägt sind.
+Diese Ausgabe ist dieses Jahr dem Thema «Wohnen in der Stadt» gewidmet. Sie liefert detaillierte Informationen zur Struktur des Wohnungsmarkts, zur Wohnungstypologie sowie zur gerechten Wohnversorgung in den Schweizer Städten.
+Die Tabellen dieser Publikation werden im CSV-Format bereitgestellt. Eine Excel-Metadatendatei enthält Erläuterungen zur Verwendung der Daten.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/statistik-der-schweizer-staedte-2021)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/bfs/de/home.gnpdetail.2021-0278.html)
+
+Auto generated R starter code for data set statistik-der-schweizer-staedte-2021@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Statistik BFS, Office fédéral de la statistique OFS, Ufficio federale di statistica UST`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `ThemaKart - Bundesamt für Statistik`
+- **Maintainer_email** `ThemaKart@bfs.admin.ch`
+- **Keywords.de** `['bildung', 'arbeit', 'bauwesen', 'offentliche-finanzen', 'politik', 'verkehr', 'soziale-sicherheit', 'raum', 'erwerb', 'statistik-der-schweizer-stadte', 'tourismus', 'agglomerationen', 'mobilitat', 'wohnungswesen', 'energie', 'bevoelkerung']`
+- **Issued** `2021-04-20T00:00:00`
+- **Metadata_created** `2021-04-19T08:19:45.153795`
+- **Metadata_modified** `2022-05-03T14:36:44.680352`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 52 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Wohnungen - Total; gemeinnützige Wohnungen - Total; Wohnungen - Bauperiode - vor 1946 - Total; gemeinnützige Wohnungen - Bauperiode - vor 1946 - Total; Wohnungen - Bauperiode - 1946-1980 - Total; gemeinnützige Wohnungen - Bauperiode - 1946-1980 - Total; Wohnungen - Bauperiode - 1981-2000 - Total; gemeinnützige Wohnungen - Bauperiode - 1981-2000 - Total; Wohnungen - Bauperiode - 2001-2018 - Total; gemeinnützige Wohnungen - Bauperiode - 2001-2018 - Total; Gebäude mit Wohnnutzung - Total; gemeinnützige Gebäude mit Wohnnutzung - Total; Gebäude mit Wohnnutzung - Bauperiode - vor 1946 - Total; gemeinnützige Gebäude mit Wohnnutzung - Bauperiode - vor 1946 - Total; Gebäude mit Wohnnutzung - Bauperiode - 1946-1980 - Total; gemeinnützige Gebäude mit Wohnnutzung - Bauperiode - 1946-1980 - Total; Gebäude mit Wohnnutzung - Bauperiode - 1981-2000 - Total; gemeinnützige Gebäude mit Wohnnutzung - Bauperiode - 1981-2000 - Total; Gebäude mit Wohnnutzung - Bauperiode - 2001-2018 - Total; gemeinnützige Gebäude mit Wohnnutzung - Bauperiode - 2001-2018 - Total
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564247/master')
+
+# Distribution 1
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Bewohner - Total; Vertrauensintervall - %; Bewohner 1 Zimmer - Total; Vertrauensintervall - %; Bewohner 2 Zimmer - Total; Vertrauensintervall - %; Bewohner 3 Zimmer - Total; Vertrauensintervall - %; Bewohner 4 Zimmer - Total; Vertrauensintervall - %; Bewohner 5 Zimmer - Total; Vertrauensintervall - %; Bewohner 6+ Zimmer- Total; Vertrauensintervall - % 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564261/master')
+
+# Distribution 2
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Verheirateter Rentner, beide Ehegatten über 65 Jahre alt - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564371/master')
+
+# Distribution 3
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Ausgaben Kultur (inkl. Investitionsausgaben); Investitionsausgaben Kultur
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564351/master')
+
+# Distribution 4
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Gebäude mit Wohnnutzung nach Geschosszahl
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564242/master')
+
+# Distribution 5
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Haushalte - total; Haushalte nach Haushaltsgrösse; Durchschnittliche Haushaltsgrösse (Anzahl Personen) 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564190/master')
+
+# Distribution 6
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Bauinvestitionen - Total; Bauinvestitionen in Wohnungen - Total; Bauinvestitionen Öffentliche Aufftraggeber - Total; Bauinvestitionen in Wohnungen Öffentliche Aufftraggeber - Total; Bauinvestitionen in Wohnungen Öffentliche Aufftraggeber  - %
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564300/master')
+
+# Distribution 7
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt:  Durchschnittliche Wohnfläche pro Bewohner in den bewohnten Wohnungen- Total; Durchschnittliche Wohnfläche pro Bewohner (gemeinnützige Wohnungen) - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter, 1 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter (gemeinnützige Wohnungen), 1 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter, 2 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter (gemeinnützige Wohnungen), 2 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter, 3 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter (gemeinnützige Wohnungen), 3 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter, 4 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter (gemeinnützige Wohnungen), 4 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter, 5 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter (gemeinnützige Wohnungen), 5 Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter, 6+ Zimmer - Total; Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter (gemeinnützige Wohnungen), 6+ Zimmer - Total; Belegungsdichte; Belegungsdichte (gemeinnützige Wohnungen); Wohndichte; Wohndichte (gemeinnützige Wohnungen); Personen, die keiner Wohnung zugeordnet sind - %
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564304/master')
+
+# Distribution 8
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Soziale Sicherheit:  Anteil der unterstützten Personen an der Wohnbevölkerung, 2011-2019; Sozialhilfebeziehende,2011-2019
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564309/master')
+
+# Distribution 9
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Tourismus:  Geöffnete Betriebe (Anzahl); Verfügbare Zimmer (Anzahl); Verfügbare Betten (Anzahl); Ankünfte - Total; Ankünfte - Auslandsgäste; Ankünfte - Auslandanteil (%); Logiernächte - Total; Logiernächte - Auslandsgäste; Logiernächte - Auslandanteil (%); Mittlere Aufenthaltsdauer (Nächte); Logiernächte je 1000 Einwohner/innen 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564305/master')
+
+# Distribution 10
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bildung:  Schüler - Total: 1996/97, 2006/07, 2016/17, 2017/18, 2018/19; Obligatorische Schule 2018/19; Sekundarstufe II 2018/19
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564314/master')
+
+# Distribution 11
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Wohnbevölkerung - Total 2019; Alter 0-19 - Total; Alter 20-64 - Total; Alter 65+ - Total; Ledig - Total; Ledig - %; Ausländer - %
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564203/master')
+
+# Distribution 12
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Arbeit und Erwerb:  Arbeitslose - Total; Arbeitslose - Frauen; Arbeitslose - 2. Sektor; Arbeitslose - 3. Sektor ; Arbeitslose - Ganzzeitarbeitslose: Total; Arbeitslose - Ganzzeitarbeitslose: Frauen; Arbeitslose - Teilzeitarbeitslose: Total; Arbeitslose - Teilzeitarbeitslose: Frauen; Arbeitslosenquote %; Arbeitslosenquote - Variationskoeffizient 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564222/master')
+
+# Distribution 13
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Ausländer/innen; Aufenthalter (B); Niedergelassene ( C); Vorläufig Aufgenommene (F); Kurzaufenthalter (L); Asylsuchender (N); Diplomat, Internationaler Funktionär; Übrige 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564189/master')
+
+# Distribution 14
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Ausländer/innen; Ausländeranteil (%); EU/EFTA-Staaten - Total; EU/EFTA-Staaten - Deutschland; EU/EFTA-Staaten - Frankreich; EU/EFTA-Staaten - Italien; EU/EFTA-Staaten - Österreich; EU/EFTA-Staaten - Spanien; EU/EFTA-Staaten - Portugal; Übrige europäische Staaten - Total; Übrige europäische Staaten - Serbien; Übrige europäische Staaten - Türkei; Übrige europäische Staaten - Nordmazedonien; Übrige europäische Staaten - Russland; Asien - Total; Asien - Sri Lanka; Asien - Indien; Asien - China; Afrika; Nord- und Südamerika; Australasien; Übrige Länder- Staatenlos - nichtzuteilbar gemäss den aktuellen Grenzen - ohne Angabe 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564204/master')
+
+# Distribution 15
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Mobilität und Verkehr:  Motorfahrzeuge: Total; Motorwagen - Personentransporter; Motorfahrzeuge - Motorwagen - Sachtransporter; Motorwagen - Landwirtschaftsfahrzeuge; Motorwagen - Industriefahrzeuge; Motorfahrzeuge - Motorräder; Personenwagen je 1000 Einwohner/-innen 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564311/master')
+
+# Distribution 16
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen  Kommunale Ausgaben; Betriebliche Ausgaben und Finanzausgaben; Ausserordentliche Ausgaben; Investitionsausgaben
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564341/master')
+
+# Distribution 17
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Politik:  Exekutive - Sitze pro Partei, Sitze Frauen, Sitze Vollamt, Geschlecht Präsidium
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564333/master')
+
+# Distribution 18
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen  Kommunale Einnahmen; Betriebliche Einnahmen und Finanzeinnahmen; Ausserordentliche Einnahmen; Investitionseinnahmen
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564340/master')
+
+# Distribution 19
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Ständige Wohnbevölkerung - Total 2019; Ständige Wohnbevölkerung - Total 2009; Ständige Wohnbevölkerung - Veränderung 2009-2019; Bevölkerungsdichte 2019; Wohnbevölkerung gemäss Volkszählung 2000; Wohnbevölkerung gemäss Volkszählung 1990; Wohnbevölkerung gemäss Volkszählung 1980; Wohnbevölkerung gemäss Volkszählung 1970; Wohnbevölkerung gemäss Volkszählung 1930 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564186/master')
+
+# Distribution 20
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Gebäude mit Wohnnutzung - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau) - Total; Gebäude mit Wohnnutzung  Geschosszahl:1 - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau) Geschosszahl:1 - Total; Gebäude mit Wohnnutzung Geschosszahl:2  - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau) Geschosszahl:2 - Total; Gebäude mit Wohnnutzung Geschosszahl:3 - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau) Geschosszahl:3 - Total; Gebäude mit Wohnnutzung Geschosszahl:4 - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau) Geschosszahl:4 - Total; Gebäude mit Wohnnutzung Geschosszahl:5 - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau)Geschosszahl:5 - Total; Gebäude mit Wohnnutzung Geschosszahl:6+ - Total; Gebäude mit Wohnnutzung (gemeinnütziger Wohnungsbau) Geschosszahl:6+ - Total
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564217/master')
+
+# Distribution 21
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Bewohnte Wohnungen - Total; Vertrauensintervall - %; Bewohnte Wohnungen (Eigentümer/innen) - Total; Vertrauensintervall - %; Bewohnte Wohnungen (Eigentümer/innen) - %; Vertrauensintervall - %; Bewohnte Wohnungen (Mieter/innen) - Total; Vertrauensintervall - %; Bewohnte Wohnungen (Mieter/innen) - %; Vertrauensintervall - %; Bewohnte Wohnungen (Andere situation) - Total; Vertrauensintervall - %; Bewohnte Wohnungen (Andere situation) - %; Vertrauensintervall - %; Durchschnittlicher Mietpreis - Total (in Fr) ;  Vertrauensintervall - (in Fr)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564260/master')
+
+# Distribution 22
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Wohnungen und Gebäude mit Wohnnutzung; Bauperiode: vor 1946; 1946-1980; 1981-2000; 2001-2019
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564249/master')
+
+# Distribution 23
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen  Allgemeine Verwaltung; Öffentliche Ordnung und Sicherheit, Verteidigung; Bildung; Kultur, Sport und Freizeit, Kirche; Gesundheit; Soziale Sicherheit; Verkehr und Nachrichten-übermittlung; Umweltschutz und Raumordnung; Volkswirtschaft; Finanzen und Steuern
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564343/master')
+
+# Distribution 24
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Leerwohnungen - Total; Leerwohnungen - 1 Zimmer; Leerwohnungen - 2 Zimmer; Leerwohnungen - 3 Zimmer; Leerwohnungen - 4 Zimmer; Leerwohnungen - 5 Zimmer; Leerwohnungen - 6 Zimmer und mehr; Leerwohnungen - zu vermieten; Leerwohnungen - zu verkaufen; Leerwohnungsziffer (%) 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564248/master')
+
+# Distribution 25
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung: Geschlecht - Frauen; Geschlecht - Männer; Zivilstand - Ledig; Zivilstand - Verheiratet, in eingetragener Partnerschaft; Zivilstand - Partnerschaft Verwitwet, durch Tod aufgelöste Partnerschaft; Zivilstand - Geschieden, unverheiratet, gerichtlich aufgelöste Partnerschaft; Heiraten; Scheidungen
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564191/master')
+
+# Distribution 26
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Zugang durch Neubau; Zugang durch Umbau; Abgang durch Abbrüche; Abgang durch Umbau; Baulicher Zugang; Wohnungen am 31.12.2018 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564245/master')
+
+# Distribution 27
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt:  Wohnungen - Total; gemeinnützige Wohnungen - Total; Lgemeinnützige Wohnungen - %; Logements 1 Zimmer - Total; gemeinnützige Wohnungen 1 Zimmer - Total; gemeinnützige Wohnungen 1 Zimmer - %; Wohnungen 2 Zimmer - Total; gemeinnützige Wohnungen 2 Zimmer - Total; gemeinnützige Wohnungen 2 Zimmer - %; Wohnungen 3 Zimmer - Total; gemeinnützige Wohnungen 3 Zimmer - Total; gemeinnützige Wohnungen 3 Zimmer - %; Wohnungen 4 Zimmer - Total; gemeinnützige Wohnungen 4 Zimmer - Total; gemeinnützige Wohnungen 4 Zimmer - %; Wohnungen 5 Zimmer - Total; gemeinnützige Wohnungen 5 Zimmer - Total; gemeinnützige Wohnungen 5 Zimmer - %; Wohnungen 6+ Zimmer - Total; gemeinnützige Wohnungen 6+ Zimmer - Total; gemeinnützige Wohnungen 6+ Zimmer - %
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564299/master')
+
+# Distribution 28
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen:  Erwerbsfähiger Verheirateter ohne Kinder - nach Reinvermögen (in 1000 Franken)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564374/master')
+
+# Distribution 29
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Bewohner (Andere situation)- Total; Vertrauensintervall - %; Bewohner (Andere situation) 1 Zimmer - Total; Vertrauensintervall - %; Bewohner (Andere situation) 2 Zimmer - Total; Vertrauensintervall - %; Bewohner (Andere situation) 3 Zimmer - Total; Vertrauensintervall - %; Bewohner (Andere situation) 4 Zimmer - Total; Vertrauensintervall - %; Bewohner (Andere situation) 5 Zimmer - Total; Vertrauensintervall - %; Bewohner (Andere situation) 6+ Zimmer- Total; Vertrauensintervall - % 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564278/master')
+
+# Distribution 30
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Verheirateter Alleinverdiener mit 2 Kindern - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564372/master')
+
+# Distribution 31
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Raum:  Total Fläche; Siedlungsflächen; Bestockte Flächen; Landwirtschaftsflächen; Unproduktive Flächen - Gewässer; Unproduktive Flächen - Andere unproduktive Flächen 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564230/master')
+
+# Distribution 32
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Bewohner - Total; Vertrauensintervall - %; Bewohner (Eigentümer) - Total; Vertrauensintervall - %; Bewohner (Mieter) - Total; Vertrauensintervall - %; Bewohner (Andere Situation) - Total; Vertrauensintervall - % 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564281/master')
+
+# Distribution 33
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Energie:  Jährliche Wassergewinnung (in 1000 m3) - Total; Jährliche Wassergewinnung (in 1000 m3) - Quellwasser; Jährliche Wassergewinnung (in 1000 m3) - Grundwasser ; Jährliche Wassergewinnung (in 1000 m3) - See- und Flusswasser; Tägliche Wasserabgabe (m3)  - Mittel; Tägliche Wasserabgabe (m3)  - Maximum; Liter je Einwohner/in und Tag des Versorgungsgebietes - Mittel; Liter je Einwohner/in und Tag des Versorgungsgebietes - Maximum; Gasverkauf (in 1000 kWh) - Total 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564212/master')
+
+# Distribution 34
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Durchschnittliche Wohnfläche pro Bewohner in Quadratmeter nach Anzahl Zimmer; Belegungsdichte; Wohndichte; Anteil Personen, die keiner Wohnung zugeordnet sind (in %) 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564282/master')
+
+# Distribution 35
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Direkte Bundessteuer (in Franken) - Natürliche Personen 2016; Natürliche Personen 2017; Veränderung 2016–2017 (%)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564357/master')
+
+# Distribution 36
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Lediger, unselbstständig Erwerbender mit eigenem Haushalt - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564368/master')
+
+# Distribution 37
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen  Kommunale Aktiven; Finanzvermögen; Verwaltungsvermögen; 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564338/master')
+
+# Distribution 38
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Arbeit und Erwerb:  Arbeitsstätten - total; Arbeitsstätten - Grössenklasse Beschäftigte: 1-9; Arbeitsstätten - Grössenklasse Beschäftigte: 10-49; Arbeitsstätten - Grössenklasse Beschäftigte: 50-249; Arbeitsstätten - Grössenklasse Beschäftigte: 1-249; Arbeitsstätten - Grössenklasse Beschäftigte: 250 und mehr; Beschäftigte - 1. Sektor; Beschäftigte - 2. Sektor; Beschäftigte - 3. Sektor; Beschäftigte - Total 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564223/master')
+
+# Distribution 39
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Einfamilienhaus; Mehrfamilienhaus; Wohngebäude mit Nebennutzung; Gebäude mit teilweiser Wohnnutzung 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564229/master')
+
+# Distribution 40
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen:  Steuerbelastung natürliche Personen: Verheirateter Alleinverdiener ohne Kinder - nach Bruttoarbeitseinkommen (in 1000 Franken)
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564369/master')
+
+# Distribution 41
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Ständige Wohnbevölkerung am 1.1.2019; Lebendgeburten; Todesfälle; Geburtenüberschuss; Zuzüge; Wegzüge; Wanderungssaldo; Gesamtzu- bzw. -abnahme; Veränderung (%); Ständige Wohnbevölkerung am 31.12.2019
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564187/master')
+
+# Distribution 42
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Staatsangehörigkeit; Geburtsort
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564185/master')
+
+# Distribution 43
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Gebäude - Total; gemeinnützige Gebäude - Total; gemeinnützige Gebäude - %; Gebäudekategorie - Einfamilienhaus - Total; Gebäudekategorie - Einfamilienhaus (gemeinnütziger Wohnungsbau) - Total; Gebäudekategorie - Mehrfamilienhaus - Total; Gebäudekategorie - Mehrfamilienhaus (gemeinnütziger Wohnungsbau) - Total; Gebäudekategorie - Wohngebäude mit Nebennutzung  - Total; Gebäudekategorie - Wohngebäude mit Nebennutzung (gemeinnütziger Wohnungsbau) - Total; Gebäudekategorie - Gebäude mit teilweiser Wohnnutzung - Total; Gebäudekategorie - Gebäude mit teilweiser Wohnnutzung (gemeinnütziger Wohnungsbau) - Total 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564295/master')
+
+# Distribution 44
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Politik:  Legislative - Sitze pro Partei, Sitze Frauen
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564320/master')
+
+# Distribution 45
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bau- und Wohnungswesen:  Wohnungen nach Anzahl Zimmer 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564267/master')
+
+# Distribution 46
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Bevölkerung:  Altersklassen - Total; 0-4; 5-9; 10-14; 15-19; 20-24; 25-29; 30-34; 35-39; 40-44; 45-49; 50-54; 55-59; 60-64; 65-69; 70-74; 75-79; 80-84; 85-89; 90-94; 95-99; 100+ 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564188/master')
+
+# Distribution 47
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Tertiären Ausbildung ab 25 Jahren - %; Tertiären Ausbildung ab 25 Jahren Vertrauensintervall - %; Sozioprofessioneller Kategorie Oberstes Management - %; Sozioprofessioneller Kategorie Oberstes Management Vertrauensintervall - %; Sozioprofessioneller Kategorie Freie und gleichstellte Berufe - %; Sozioprofessioneller Kategorie Freie und gleichstellte Berufe Vertrauensintervall - %; Sozioprofessioneller Kategorie Andere Selbständige - %; Sozioprofessioneller Kategorie Andere Selbständige Vertrauensintervall - %; Sozioprofessioneller Kategorie Akademische Berufe und oberes Kader - %; Sozioprofessioneller Kategorie Akademische Berufe und oberes Kader Vertrauensintervall - %; Sozioprofessioneller Kategorie Intermediäre Berufe - %; Sozioprofessioneller Kategorie Intermediäre Berufe Vertrauensintervall - %; Sozioprofessioneller Kategorie Qualifizierte nichtmanuelle Berufe - %; Sozioprofessioneller Kategorie Qualifizierte nichtmanuelle Berufe Vertrauensintervall - %; Sozioprofessioneller Kategorie Qualifizierte manuelle Berufe - %; Sozioprofessioneller Kategorie Qualifizierte manuelle Berufe Vertrauensintervall - %; Sozioprofessioneller Kategorie Ungelernte Angestellte und Arbeiter - %; Sozioprofessioneller Kategorie Ungelernte Angestellte und Arbeiter Vertrauensintervall - %; Sozioprofessioneller KategorieLernende in dualer beruflicher Grundbildung (Lehrlinge)  - %; Sozioprofessioneller Kategorie Lernende in dualer beruflicher Grundbildung (Lehrlinge) Vertrauensintervall - %; Nicht zuteilbare Erwerbstätige (fehlende oder unklare Basisdaten oder unplausible Kombination)  - %; Nicht zuteilbare Erwerbstätige (fehlende oder unklare Basisdaten oder unplausible Kombination)  Vertrauensintervall - %
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564213/master')
+
+# Distribution 48
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Mieter - Total; Vertrauensintervall - %; Mieter 1 Zimmer - Total; Vertrauensintervall - %; Mieter 2 Zimmer - Total; Vertrauensintervall - %; Mieter 3 Zimmer - Total; Vertrauensintervall - %; Mieter 4 Zimmer - Total; Vertrauensintervall - %; Mieter 5 Zimmer - Total; Vertrauensintervall - %; Mieter 6+ Zimmer- Total; Vertrauensintervall - % 
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564270/master')
+
+# Distribution 49
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen  Kommunale Passiven; Fremdkapital; Eigenkapital
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564339/master')
+
+# Distribution 50
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Schwerpunkt Wohnen in der Stadt: Eigentümer - Total; Vertrauensintervall - %; Eigentümer 1 Zimmer - Total; Vertrauensintervall - %; Eigentümer 2 Zimmer - Total; Vertrauensintervall - %; Eigentümer 3 Zimmer - Total; Vertrauensintervall - %; Eigentümer 4 Zimmer - Total; Vertrauensintervall - %; Eigentümer 5 Zimmer - Total; Vertrauensintervall - %; Eigentümer 6+ Zimmer- Total; Vertrauensintervall - %
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564265/master')
+
+# Distribution 51
+# Package_id               : f98e3f6e-1128-4383-b1a3-6ccc1a87b0b6
+# Description              : Statistik der Schweizer Städte 2021 – Öffentliche Finanzen  Einnahmen Kultur (inkl. Investitionseinnahmen); Investitionseinnahmen Kultur
+# Issued                   : 2021-04-20T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/16564342/master')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ThemaKart@bfs.admin.ch | ThemaKart - Bundesamt für Statistik

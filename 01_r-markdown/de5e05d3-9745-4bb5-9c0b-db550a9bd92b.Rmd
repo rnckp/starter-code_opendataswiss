@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Bevölkerung nach Bildungsstand, Jahr und Aufenthaltsart seit 2010
+
+Diese Daten beschreiben die ständige Wohnbevölkerung der Stadt Zürich und basieren auf der Strukturerhebung des Bundesamts für Statistik.
+
+Es sind bloss 15-jährige und ältere Personen enthalten. Weitere Informationen finden Sie unter **Bemerkung**.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bevolkerung-nach-bildungsstand-jahr-und-aufenthaltsart-seit-2010)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bfs_bev_bildungsstand_jahr_aufenthaltsart_od1007)
+
+Auto generated R starter code for data set ddd0df84-a9cd-4d6a-8f2d-8f7c7ede5a65@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Sektion Bevölkerung, Bundesamt für Statistik`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'zeitreihe', 'sasa', 'bildung', 'strukturerhebung', 'tabelle', 'schulbildung']`
+- **Issued** `2021-10-26T00:00:00`
+- **Metadata_created** `2021-10-26T02:42:13.391130`
+- **Metadata_modified** `2023-01-16T00:50:53.884452`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : de5e05d3-9745-4bb5-9c0b-db550a9bd92b
+# Description              : 
+# Issued                   : 2021-10-25T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bfs_bev_bildungsstand_jahr_aufenthaltsart_od1007/download/BIL100OD1007.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

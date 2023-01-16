@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Geborene nach Geschlecht, Staatsangehörigkeit, Wohnviertel und Geburtsdatum
+
+Dieser Datensatz zeigt die Geborenen in Basel-Stadt nach Geschlecht, Staatsangehörigkeit, Wohnviertel und Geburtsdatum. Die Daten werden täglich aktualisiert, wobei nur Geburten berücksichtigt werden, welche mindestens 15 Tage zurückliegen. Aufgrund von Nachmeldungen kann es jederzeit zu Änderungen bei bereits veröffentlichten Werten kommen. In den Daten des laufenden Jahres und bis ca. Juli auch in jenen des zurückliegenden Jahres sind nicht nur die Lebendgeborenen berücksichtigt, weil die Angabe zur Lebensfähigkeit jeweils erst im Juli des Folgejahres verfügbar ist. Auch die Angabe zur Anzahl Kinder, die zusammen geboren wurden (Mehrlingsgeburten) ist jeweils erst im Juli des Folgejahrs verfügbar. Die hier veröffentlichten Werte können aus methodischen Gründen von denjenigen in der kantonalen öffentlichen Statistik abweichen: In Letzterer werden nachträglich gemeldete Geburten während vier Monaten gesammelt, danach gelten die Zahlen als definitiv. Später eintreffende Meldungen werden im letzten noch nicht abgeschlossenen Monat gezählt. In diesem Datensatz werden sie im Monat des Geburtsdatums gezählt.Aus Gründen des Persönlichkeitsschutzes können im monatlichen Datensatz mehr Attribute veröffentlicht werden als im vorliegenden Datensatz.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geborene-nach-geschlecht-staatsangehorigkeit-wohnviertel-und-geburtsdatum)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100092/)
+
+Auto generated R starter code for data set 100092@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['demographie', 'zeitreihe', 'alter', 'nationalitat', 'geburten', 'neugeboren']`
+- **Issued** `2020-09-25T00:00:00`
+- **Metadata_created** `2021-09-03T09:21:50.082921`
+- **Metadata_modified** `2023-01-16T00:23:18.988942`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b053ae2f-d6c2-4b0c-9010-3d5a286564b1
+# Description              : Geborene nach Geschlecht, Staatsangehörigkeit, Wohnviertel und Geburtsdatum (csv)
+# Issued                   : 2020-09-25T00:00:00
+# Modified                 : 2023-01-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100092/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

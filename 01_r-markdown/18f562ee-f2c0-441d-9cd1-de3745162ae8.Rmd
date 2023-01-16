@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wohnflächenpreise (Median) der im Freihandkauf umgesetzten Wohnungen im Stockwerkeigentum nach Zimmerzahl seit 2009
+
+
+Diese Daten beinhalten die Medianpreise pro Quadratmeter Wohnfläche von im Freihandkauf gehandelten Wohnungen im Stockwerkeigentum in der Stadt Zürich nach Handänderungsjahr und Zimmerzahl. Zusätzlich sind noch die absoluten Preise von im Freihandgekauf gehandelten Wohnungen im Stockwerkeigentum nach Zimmerzahl aufgeführt.
+
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnflachenpreise-median-der-im-freihandkauf-umgesetzten-wohnungen-im-stockwerkeigentum-na-20092)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_hae_preis_stwe_whg_zizahl_seit2009_od5152)
+
+Auto generated R starter code for data set c33a01f4-4102-4f86-bbb8-b933efb3c842@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zeitreihe', 'wohnungen-im-stockwerkeigentum', 'tabelle', 'sachdaten', 'liegenschaftenhandel', 'handanderungen']`
+- **Issued** `2019-12-15T00:00:00`
+- **Metadata_created** `2020-02-13T05:15:41.045602`
+- **Metadata_modified** `2023-01-16T00:50:23.414595`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 18f562ee-f2c0-441d-9cd1-de3745162ae8
+# Description              : 
+# Issued                   : 2020-02-10T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_hae_preis_stwe_whg_zizahl_seit2009_od5152/download/BAU515OD5152.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

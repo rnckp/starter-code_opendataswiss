@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Luftschadstoffemissionen im Kanton Zürich
+
+Emissionen der wichtigsten Luftschadstoffe (BC, CO, NH3, NMVOC, NOx, PM10, PM2.5, SO2) im Kanton Zürich. Die Emissionsbilanzierung liegt bis auf Stufe Gemeinde vor. Drei Zeitstände sind ausgewiesen. Hinweis: Die Städte Winterthur und Zürich verfügen über eigenen Bilanzierungen der Luftschadstoffe auf ihrem Gebiet. Detailliertere Angaben dazu sind unter 'weitere Informationen' verlinkt. Die Emissionsdaten der Stickoxide (NOx), Feinstaub (PM10 und PM2.5) sowie Russ (BC) wurden im Rahmen einer schweizweiten Aktualisierung der Karten für Luftschadstoffimmissionen Schweiz und Liechtenstein 2015, 2020, 2030 in Hektarrasterauflösung bilanziert. Die Datengrundlagen für die Emissionen bildet das Emissionsinformations-System Schweiz (EMIS) – die Datenbank des Bundesamts für Umwelt BAFU mit den nationalen Luftschadstoff- und Treibhausgasemissionen - zum Zeitpunkt Mitte 2019. In einer Ergänzungsstudie im Auftrag des BAFU wurden für dieselben Emittentengruppen anschliessend auch Emissionskataster in Hektarrasterauflösung für weitere Luftschadstoffe und Treibhausgase erstellt. Im Anschluss an die genannten Arbeiten hat die 'Luftqualitätsüberwachung der Ostschweizer Kantone und des Fürstentums Liechtenstein' (OSTLUFT) die Arbeitsgemeinschaft INFRAS/Meteotest damit beauftragt, die Emissionen aller genannten Substanzen auf Stufe Gemeinden des OSTLUFT-Gebiets zu aggregieren und die Daten in geeigneter Form aufzubereiten mit dem Ziel, für die OSTLUFT-Gemeinden eine mit dem schweizerischen Emissionskataster konsistente Datengrundlage zur Verfügung zu haben.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/luftschadstoffemissionen-im-kanton-zurich)<br>
+[Direct link by **Amt für Abfall, Wasser, Energie und Luft Kanton Zürich** for dataset](https://www.zh.ch/de/umwelt-tiere/luft-strahlung/daten-karten.html)
+
+Auto generated R starter code for data set 1363@awel-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich`
+- **Organization.display_name.de** `Amt für Abfall, Wasser, Energie und Luft Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-abfall-wasser-energie-luft.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['stickstoffdioxid', 'kantonzuerich', 'ammoniak', 'luftqualitaet', 'russ', 'kohlenmonoxid', 'luftschadstoffe', 'emissionen', 'gemeinden', 'schadstoffbelastung', 'luft', 'feinstaub', 'immissionen']`
+- **Issued** `2022-07-07T00:00:00`
+- **Metadata_created** `2022-07-08T03:13:18.547122`
+- **Metadata_modified** `2023-01-16T03:09:26.675751`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cfdb115e-2dd9-4813-a834-0fda47a3186b
+# Description              : Variabeln: 'jahr' = Die Emissionsdaten liegen für die drei Zeitstände 2015, 2020 (Covid-Effekt ist nicht berücksichtigt) und 2030 vor; 'substanz' = Bezeichnung des Luftschadstoffes; 'hauptgruppe' = Zusammenfassung der Hauptemittentengruppen; 'untergruppe' = detailliertere Quellenangabe (z.B. Landschaftspflege, Feuerungen Holz und Kohle, ...); 'gemeinde': Gemeindename; 'emission' = Emissionswert (in Tonnen pro Jahr); 'bfsnr' = BFS-Gemeindenummer gemäss amtlichem Gemeindeverzeichnis der Schweiz; 'kanton' = Kürzel des Kantons (Hinweis: Ein Teil der Emissionen (z.B. Schifffahrt, ...) sind dem Greifensee ('bfsnr': 9040) und dem Zürichsee ('bfsnr': 9051) zugewiesen, 'kanton': "ZH-See"); 'einheit' = Masseinheit der Emissionen, abgekürzt: 't/a'; 'einheit_lang' = Masseinheit der Emissionen, ausgeschrieben: 'Tonnen pro Jahr'.
+# Issued                   : 2022-07-07T00:00:00
+# Modified                 : 2022-07-07T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/awel/ostluft_emissionsbilanzen/emissionen_gemeinden_ostluft.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+gian-marco.alt@bd.zh.ch | Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich, Abteilung Luft, Klima und Strahlung

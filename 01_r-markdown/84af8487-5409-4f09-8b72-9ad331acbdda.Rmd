@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Regionaler Linienplan
+
+Visuelle Aufbereitung der Bahnstrecken einer Region, meist ein S-Bahnnetz.Letzter Update/Last Update:Dezember 23Visual processing of the railway lines of a region, usually an S-Bahn network. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/regionaler-linienplan)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/regionaler-linienplan/)
+
+Auto generated R starter code for data set regionaler-linienplan@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['verkehr']`
+- **Issued** `2017-08-16T00:00:00`
+- **Metadata_created** `2019-09-11T10:49:44.815517`
+- **Metadata_modified** `2023-01-16T00:28:26.931086`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 84af8487-5409-4f09-8b72-9ad331acbdda
+# Description              : Regionaler Linienplan (csv)
+# Issued                   : 2017-08-16T00:00:00
+# Modified                 : 2022-12-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/regionaler-linienplan/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

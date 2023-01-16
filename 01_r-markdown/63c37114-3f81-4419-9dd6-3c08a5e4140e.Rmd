@@ -1,0 +1,153 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Energiepreise
+
+Die Energiepreise an den Märkten sind ein wichtiger Indikator für die aktuelle Markt- und Versorgungssituation in Europa und der Schweiz. Angebot (Produktion) wird hier mit der Nachfrage (Verbrauch) zusammengeführt und ergibt letztlich einen Preis für ein bestimmtes Energieprodukt. Es gibt Märkte für unterschiedliche Produkte. Die Spotmärkte geben kurzfristige Signale des Marktes wieder: Der «Day Ahead»-Markt gibt den Grosshandelspreis für den Folgetag an. Die Preise des Produktes «Base» geben das arithmetische Mittel der Preise für eine Lieferung in den folgenden 24 Stunden an. Beim Intraday-Handel wird Energie gekauft und verkauft, die noch am gleichen Tag geliefert wird. Diese Datensammlung stellt Informationen zu verschiedenen Energieträgern bereit. Diese umfassen Elektrizität (Strom), Gas, Heizöl, Diesel und Benzin. Dabei werden unterschiedliche Daten herangezogen. Für Strom und Gas werden Daten der Börsen herangezogen. Die Daten zu den Gaspreisen sind im Gegensatz zu den Strompreise referenziert auf ein Basisjahr, da noch Lizenzfragen zu klären sind. Weitere Preisdaten werden vom Bundesamt für Statistik bezogen. Die Preise für Strom und Gas ergeben allerdings nicht direkt den Endverbraucherpreis, den die Privat- und Gewerbekunden ihrem lokalen Energieversorgungsunternehmen bezahlen. Diese Endkundenpreise hängen unter anderem von der Beschaffungsstrategie (langfristig eingekauft oder kurzfristig am Markt besorgt) des lokalen Energieversorgungsunternehmen ab. Beim Strom hängt der Endverbrauchpreis auch vom Anteil an in eigenen Kraftwerken produzierten Strom, von der Qualität des Stromes (erneuerbar oder nicht), von den Netzkosten und Abgaben ab. Hinsichtlich der Endkundenpreise ist der Landesindex der Konsumentenpreise (LIK) massgebend. Er misst die Preisentwicklung (Teuerung) der für die privaten Haushalte bedeutsamen Waren und Dienstleistungen (Warenkorb). Er zeigt, um wie viel die Konsumgüter gegenüber dem Vormonat, dem Vorjahr oder jedem anderen früheren Zeitpunkt teurer geworden sind. Der Index ist auf den Dezember 2020 bezogen. Die Preisentwicklung wird anhand des Warenkorbs gemessen, der auch die wichtigsten Energieträger - also auch Strom - enthält. Die Berechnungsmethodik wird durch das Bundesamt für Statistik verwaltet.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-energiepreise)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://energiedashboard.ch)
+
+Auto generated R starter code for data set 106@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Digital Innovation Office`
+- **Maintainer_email** `Digitalisierung@bfe.admin.ch`
+- **Keywords.de** `['ogd106-bfe', 'strom', 'gas', 'mineralol', 'treibstoffe']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2022-12-14T05:10:03.598936`
+- **Metadata_modified** `2023-01-12T09:44:24.482886`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 9 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise Diesel gemäss Landesindex der Konsumentenpreise in der Schweiz
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_diesel.csv')
+
+# Distribution 1
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Gaspreise auf dem TTF Handelspunkt für den Folgemonat, also die Gaspreise im Einkauf für die Lieferung im kommenden Monat. Die Preise sind indexiert auf den Durchschnittspreis 2019-2020.
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_gas_boerse.csv')
+
+# Distribution 2
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise Gas indexiert gemäss Landesindex der Konsumentenpreise in der Schweiz. Basis sind die Preise im Dezember 2020 (=100)
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_gas_endverbrauch.csv')
+
+# Distribution 3
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Strompreise auf den Spotmärkten für «day ahead» Preise, also die Strompreise im Einkauf für den Konsum morgen.
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_strom_boerse.csv')
+
+# Distribution 4
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise Heizöl indexiert gemäss Landesindex der Konsumentenpreise in der Schweiz. Basis sind die Preise im Dezember 2020 (=100)
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_heizol.csv')
+
+# Distribution 5
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise Benzin indexiert gemäss Landesindex der Konsumentenpreise in der Schweiz. Basis sind die Preise im Dezember 2020 (=100)
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_benzin.csv')
+
+# Distribution 6
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise Strom indexiert gemäss Landesindex der Konsumentenpreise in der Schweiz. Basis sind die Preise im Dezember 2020 (=100)
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_strom_endverbrauch.csv')
+
+# Distribution 7
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise Brennholz gemäss Landesindex der Konsumentenpreise in der Schweiz
+# Issued                   : 2023-01-12T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_brennholz.csv')
+
+# Distribution 8
+# Package_id               : 63c37114-3f81-4419-9dd6-3c08a5e4140e
+# Description              : Entwicklung der Endverbraucherpreise fernwärme gemäss Landesindex der Konsumentenpreise in der Schweiz
+# Issued                   : 2023-01-12T00:00:00
+# Modified                 : 2023-01-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd106_preise_fernwaerme.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Digitalisierung@bfe.admin.ch | Digital Innovation Office

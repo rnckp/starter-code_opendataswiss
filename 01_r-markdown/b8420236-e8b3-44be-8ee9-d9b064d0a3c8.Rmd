@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Beacons SBB Bahnhöfe
+
+Koordinaten und Standorte der Beacons in den SBB Bahnhöfen Basel, Zürich, Genf, Luzern und Bern.Die Genauigkeit der Beacon Technologie erlaubt keine präzise Navigation. Die SBB lehnt jede Haftung dabei ab.Coordinates and locations of the beacons in the SBB stations Basel, Zurich, Geneva, Lucerne and Bern.The accuracy of Beacon technology does not allow precise navigation. SBB declines any liability.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/beacons-sbb-bahnhofe)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/beacons-sbb-bahnhofe/)
+
+Auto generated R starter code for data set beacons-sbb-bahnhofe@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['infrastruktur', 'bahnhof']`
+- **Issued** `2019-01-03T00:00:00`
+- **Metadata_created** `2019-09-11T10:55:51.991472`
+- **Metadata_modified** `2023-01-16T00:28:51.017673`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b8420236-e8b3-44be-8ee9-d9b064d0a3c8
+# Description              : Beacons SBB Bahnhöfe (csv)
+# Issued                   : 2019-01-03T00:00:00
+# Modified                 : 2021-06-29T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/beacons-sbb-bahnhofe/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

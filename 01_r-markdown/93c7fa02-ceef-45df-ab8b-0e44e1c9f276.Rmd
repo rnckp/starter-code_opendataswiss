@@ -1,0 +1,126 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Jahresrechnungen der Körperschaften des Kantons Zürich
+
+Die Jahresrechnung beinhaltet die Nettoaufwendungen aus der Erfolgsrechnung aufgeschlüsselt nach Kontengruppen sowie nach Aufgabenstellen, die Nettoinvestitionen aus der Investitionsrechnung aufgeschlüsselt nach Kontengruppen sowie nach Aufgabenstellen und die Bilanz. Es sind alle Körperschaften des Kantons Zürich (politische Gemeinden, Schulgemeinden, Zweckverbände und Anstalten) enthalten. Zudem wurde zur besseren Vergleichbarkeit der Gemeinden eine konsolidierte Gemeinde berechnet.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/jahresrechnungen-der-korperschaften-des-kantons-zurich)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](nan)
+
+Auto generated R starter code for data set 395@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['oeffentlichefinanzen', 'gemeindefinanzen', 'kantonzuerich', 'gemeinden']`
+- **Issued** `2016-12-13T00:00:00`
+- **Metadata_created** `2021-01-14T17:27:05.873294`
+- **Metadata_modified** `2023-01-16T03:02:27.741762`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 6 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 93c7fa02-ceef-45df-ab8b-0e44e1c9f276
+# Description              : Gemeinden schliessen sich in Zweckverbänden zusammen, um gemeinsam eine Leistung zu erbringen. Sie dienen etwa dem Betreiben von Kläranlagen, der Regionalplanung oder der Abfallverwertung.
+# Issued                   : 2016-12-13T00:00:00
+# Modified                 : 2022-07-01T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_gpfi_Jahresrechung_Zweckverbaende.csv')
+
+# Distribution 1
+# Package_id               : 93c7fa02-ceef-45df-ab8b-0e44e1c9f276
+# Description              : Eine konsolidierte Gemeinde umfasst die Politische Gemeinde mit Primarschule und Sekundarschule auf dem Gebiet der Politischen Gemeinde.
+# Issued                   : 2016-12-13T00:00:00
+# Modified                 : 2019-02-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_gpfi_Jahresrechung_konsolidierteGemeinden.csv')
+
+# Distribution 2
+# Package_id               : 93c7fa02-ceef-45df-ab8b-0e44e1c9f276
+# Description              : Beinhaltet die Sekundarschulgemeinden oder die Vereinigten Schulgemeinden.
+# Issued                   : 2016-12-13T00:00:00
+# Modified                 : 2019-02-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_gpfi_Jahresrechung_SchulgemeindenMitSekundar.csv')
+
+# Distribution 3
+# Package_id               : 93c7fa02-ceef-45df-ab8b-0e44e1c9f276
+# Description              : Mit der Anstalt besteht für die politischen Gemeinden eine Alternative zum Zweckverband oder zu privatrechtlichen Rechtsformen, wie etwa der Aktiengesellschaft oder der Stiftung. Anders als der Zweckverband hat die Anstalt kein Legislativorgan, das aus den Stimmberechtigten oder einer Delegiertenversammlung besteht; in der Anstalt gibt es daher weder ein Initiativ- noch ein Referendumsrecht.
+# Issued                   : 2016-12-13T00:00:00
+# Modified                 : 2019-02-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_gpfi_Jahresrechung_Anstalten.csv')
+
+# Distribution 4
+# Package_id               : 93c7fa02-ceef-45df-ab8b-0e44e1c9f276
+# Description              : Die Jahresrechnung beinhaltet die Nettoaufwendungen aus der Erfolgsrechnung aufgeschlüsselt nach Kontengruppen sowie nach Aufgabenstellen, die Nettoinvestitionen aus der Investitionsrechnung aufgeschlüsselt nach Kontengruppen sowie nach Aufgabenstellen und die Bilanz. Es sind alle Körperschaften des Kantons Zürich (politische Gemeinden, Schulgemeinden, Zweckverbände und Anstalten) enthalten. Zudem wurde zur besseren Vergleichbarkeit der Gemeinden eine konsolidierte Gemeinde berechnet.
+# Issued                   : 2016-12-13T00:00:00
+# Modified                 : 2019-02-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_gpfi_jahresrechung_politischeGemeinden.csv')
+
+# Distribution 5
+# Package_id               : 93c7fa02-ceef-45df-ab8b-0e44e1c9f276
+# Description              : Beinhaltet die Primarschulgemeinden oder die Vereinigten Schulgemeinden.
+# Issued                   : 2016-12-13T00:00:00
+# Modified                 : 2019-02-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_gpfi_jahresrechung_SchulgemeindenMitPrimar.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

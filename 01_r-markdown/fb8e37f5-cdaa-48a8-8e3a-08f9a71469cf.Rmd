@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Strassen und Wege: Strassentypen und Wege
+
+Dieser Datensatz ist Teil des kantonalen Geodatenmodells des Kantons Basel-Stadt 'Strassen und Wege' und stellt die Strassentypen und Wege dar. Weitere Daten zu 'Strassen und Wege':  https://data.bs.ch/explore/?sort=modified&q=tags=Strassen+und+Wege
+Die Strassentypen und Wege zeigen die Strassentypen (nach VSS - Schweizerischer Verband der Strassen- und Verkehrsfachleute) und Wege im Kanton Basel-Stadt. Darunter fallen verkehrsorientierte Strassen, siedlungsorientierte Strassen und Wege im Kanton.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/strassen-und-wege-strassentypen-und-wege)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100250/)
+
+Auto generated R starter code for data set 100250@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Mobilität`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['strasse', 'mobilitat', 'wegnetz', 'weg', 'strassennetz']`
+- **Issued** `2022-12-23T00:00:00`
+- **Metadata_created** `2022-12-24T00:36:20.688669`
+- **Metadata_modified** `2023-01-16T00:22:04.708590`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : fb8e37f5-cdaa-48a8-8e3a-08f9a71469cf
+# Description              : Strassen und Wege: Strassentypen und Wege (csv)
+# Issued                   : 2022-12-23T00:00:00
+# Modified                 : 2023-01-09T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100250/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

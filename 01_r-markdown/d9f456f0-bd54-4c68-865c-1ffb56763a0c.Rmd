@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Produktion von Wärme und Strom aus erneuerbaren Energieträgern im Kanton Zürich ab 2010
+
+Die Daten weisen für die verschiedenen erneuerbaren Energieträger aus, wie viel sie seit 2010 insgesamt pro Jahr in Megawattstunden (MWh) zur Produktion von Wärme und Strom beigetragen haben. Die Daten stammen aus der Markterhebung Sonnenenergie vom Bundesamt für Energie (BFE), für Biomasse (einschliesslich Holz) von der UMWEKO GmbH, für Abwasser von den Elektrizitätswerken des Kantons Zürich (EKZ) sowie vom Elektrizitätswerk der Stadt Zürich (EWZ), für Kehricht, für Wasser und für Luft vom Amt für Abfall, Wasser, Energie und Luft (AWEL) des Kantons Zürich. Hinweise: Die Biomasse-Daten zur Produktion von Wärme sind erst ab 2015 verfügbar. Zur Produktion von Strom mittels Geothermie (tiefe Bohrungen) und Windkraft gibt es im Kanton Zürich aktuell keine oder nur sehr tiefe Werte; beide Energieträger sind als Stromquellen in den Daten bis 2020 mit dem Wert '0' enthalten.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/produktion-von-warme-und-strom-aus-erneuerbaren-energietragern-im-kanton-zurich-ab-2010)<br>
+[Direct link by **Amt für Abfall, Wasser, Energie und Luft Kanton Zürich** for dataset](nan)
+
+Auto generated R starter code for data set 1681@awel-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich`
+- **Organization.display_name.de** `Amt für Abfall, Wasser, Energie und Luft Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-abfall-wasser-energie-luft.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['photovoltaik', 'holz', 'waermepumpen', 'seen', 'strom', 'energie', 'windkraft', 'luft', 'energietraeger', 'waerme', 'elektrizitaet', 'sonnenkollektor', 'sonnenenergie', 'elektrizitaetsproduktion', 'kehricht', 'wasserkraft', 'biomasse', 'abfall', 'erneuerbareenergien', 'windenergie', 'energieressourcen', 'geothermie', 'abwasser', 'grundwasser', 'wasser', 'energieproduktion', 'sonne', 'wind']`
+- **Issued** `2022-08-25T00:00:00`
+- **Metadata_created** `2022-08-26T03:10:22.458255`
+- **Metadata_modified** `2023-01-16T03:09:25.851449`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d9f456f0-bd54-4c68-865c-1ffb56763a0c
+# Description              : Zur Produktion von Wärme in Megawattstunden (MWh) enthalten sind die Energieträger: Kehricht, Biomasse (einschliesslich Holz), Sonne, Wasser (umfasst Oberflächen- und Grundwasser), Geothermie (untiefe Bohrungen), Luft (umfasst Luft-Wärmepumpen) sowie Abwasser. Zur Produktion von Strom zusätzlich enthalten ist der Energieträger 'Windkraft', während bei 'Geothermie' keine 'untiefen', sondern nur 'tiefe' Bohrungen zur Stromproduktion beitragen; die Energieträger 'Luft' und 'Abwasser' werden zur Stromproduktion nicht genutzt.
+# Issued                   : 2022-08-25T00:00:00
+# Modified                 : 2022-08-25T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001681_00003140.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+mirjam.baumann@bd.zh.ch | Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich, Abteilung Energie

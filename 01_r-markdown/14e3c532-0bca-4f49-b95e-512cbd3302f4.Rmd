@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Umzüge nach Jahr, Quartier, Geschlecht, Altersgruppe, Zivilstand und Familienstellung (Nachführung eingestellt)
+
+Umzüge innerhalb der Stadt Zürich zwischen 2000 - 2012 nach Geschlecht, Altersgruppe, Zivilstand und Familienstellung.
+
+Das Attribut **Familienstellung** wird seit 2013 nicht mehr in dieser Form geführt. Daher wird diese Tabelle eingestellt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/umzuge-nach-jahr-quartier-geschlecht-altersgruppe-zivilstand-und-familienstellung-nachfuhrung-e)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev-umzuege-jahr-quartier-altersgruppe-zivilstand-famstellung)
+
+Auto generated R starter code for data set bev_umzuege_jahr_quartier_altersgruppe_zivilstand_famstellung@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Bevölkerungsamt, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['alter', 'migration', 'tabellen', 'zeitreihe', 'nachfuhrung-eingestellt', 'sachdaten']`
+- **Issued** `2013-11-07T00:00:00`
+- **Metadata_created** `2016-09-29T09:00:43.828249`
+- **Metadata_modified** `2023-01-16T00:55:29.324775`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 14e3c532-0bca-4f49-b95e-512cbd3302f4
+# Description              : 
+# Issued                   : 2015-07-08T00:00:00
+# Modified                 : 2016-09-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev-umzuege-jahr-quartier-altersgruppe-zivilstand-famstellung/download/bev_umzg_jahr_alter_geschlecht_ziv_famstell.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

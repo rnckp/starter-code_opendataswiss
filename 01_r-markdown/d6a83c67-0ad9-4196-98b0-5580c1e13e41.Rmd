@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Brücken
+
+Die Brücke ist ein Bauwerk, das über eine Strasse oder über ein Hindernis führt. Eine kleine Brücke bis 2 Meter wird als Durchlass bezeichnet. Brücken werden als Gesamtobjekt bestehend aus einzelnen Brückenbaueinheiten abgebildet. Letzter/last Update Juni 2021The bridge is a structure that crosses a road or an obstacle. A small bridge up to 2 meters is called a passage. Bridges are represented as a complete object consisting of individual bridge construction units.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/brucken1)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/brucken/)
+
+Auto generated R starter code for data set brucken@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['infrastruktur']`
+- **Issued** `2017-12-05T00:00:00`
+- **Metadata_created** `2019-09-11T10:47:48.290655`
+- **Metadata_modified** `2023-01-16T00:28:07.038500`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d6a83c67-0ad9-4196-98b0-5580c1e13e41
+# Description              : Brücken (csv)
+# Issued                   : 2017-12-05T00:00:00
+# Modified                 : 2022-06-02T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/brucken/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

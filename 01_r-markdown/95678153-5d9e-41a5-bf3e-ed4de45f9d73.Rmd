@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Ortschaftenverzeichnis Kanton Thurgau 2019
+
+Das Ortschaftenverzeichnis enthält die Ortschaften des Kantons Thurgau und ihre Zuordnung zu den Politischen Gemeinden. Zudem finden sich Angaben zur Wohnbevölkerung (Wohnbevölkerung nach Geschlecht, Alter, Nationalität und Konfession, Stand 31.12.2018).
+Im Ortschaftenverzeichnis finden sich Angaben zur Wohnbevölkerung der Ortschaften, welche sich ganz oder teilweise im Kanton Thurgau befinden. Bei kantonsübergreifenden Ortschaften beziehen sich die Zahlen jeweils nur auf das im Kanton Thurgau liegende Gebiet.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ortschaftenverzeichnis-kanton-thurgau-2019)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-46/)
+
+Auto generated R starter code for data set sk-stat-46@kanton-thurgau.
+
+## Metadata
+
+- **Publisher** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `{}`
+- **Maintainer_email** `odg@tg.ch`
+- **Keywords.de** `['altersklasse', 'politische-gemeinde', 'nationalitat', 'ortschaft', 'geschlecht', 'bevolkerung', 'gemeinde']`
+- **Issued** `2019-06-16T00:00:00`
+- **Metadata_created** `2022-02-28T11:05:32.576668`
+- **Metadata_modified** `2023-01-16T11:01:10.804739`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 95678153-5d9e-41a5-bf3e-ed4de45f9d73
+# Description              : Ortschaftenverzeichnis Kanton Thurgau 2019 (csv)
+# Issued                   : 2019-06-16T00:00:00
+# Modified                 : 2022-08-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-46/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+odg@tg.ch

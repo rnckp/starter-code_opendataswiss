@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Tägliche Flüsse in die und aus der Schweiz (Strom)
+
+Stromnetze sind als Bindeglied zwischen Produktion und Verbrauch von zentraler Bedeutung, um die Stromversorgungssicherheit zu gewährleisten. Das Stromnetz der Schweiz hört nicht einfach an der Grenze zum europäischen Ausland auf, sondern ist eng mit den benachbarten Stromnetzen verbunden. Dies ist für die Versorgungssicherheit zentral: Benötigt die Schweiz zusätzlichen Strom, kann dieser importiert werden. Als physikalischer Stromfluss oder Verbundaustausch wird die Energiemenge in Gigawattstunden pro Stunde (GWh/h) bezeichnet, die über die grenzüberschreitenden Stromleitungen zwischen dem Ausland und der Schweiz fliesst. Die Zahl zum Import / Export ist die Summe der importierten und exportierten Strommengen während eines Tages. Ein negativer Wert bedeutet, dass die Schweiz in der Summe Strom exportiert.  Der Trendpfeil gibt die Tendenz von Import & Export der Schweiz an. Dabei sind 4 Fälle zu unterscheiden: 1. Importiert die Schweiz insgesamt mehr Strom als durchschnittlich in den letzten 10 Tagen zeigt er nach oben. 2. Importiert die Schweiz weniger als durchschnittlich in den letzten 10 Tagen, zeigt er nach unten. 3. Für den Fall des Exportes gilt, dass der Pfeil nach unten zeigt, wenn die Schweiz mehr exportiert als durchschnittlich in den letzten 10 Tagen. 4. Wenn die Schweiz weniger exportiert als durchschnittlich in den letzten 10 Tagen, dann zeigt der Pfeil nach oben. Disclaimer Daten Die Daten stammen von der ENTSO-E. Sie sind pro Stunde verfügbar, werden aber der Einfachheit halber für das BFE Dashboard über den Tag aufsummiert und täglich aktualisiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://energiedashboard.ch)
+
+Auto generated R starter code for data set 107@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['ogd107-bfe', 'stromimport', 'stromexport', 'versorgungssicherheit', 'internationale-vernetzung']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2022-12-14T05:09:11.067898`
+- **Metadata_modified** `2023-01-10T12:41:21.347145`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 4b5cdb6f-5dae-4704-9bce-3b2297ce0b26
+# Description              : 
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd107_strom_import_export.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Digital Innovation Office | Digitalisierung@bfe.admin.ch

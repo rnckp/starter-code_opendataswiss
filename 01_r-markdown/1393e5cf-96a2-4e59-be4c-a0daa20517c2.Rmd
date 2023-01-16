@@ -1,0 +1,113 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Fahrgastfrequenzen an der VBZ-Haltestelle Hardbrücke
+
+Diese Daten beinhalten die Personenfrequenzen verschiedener Zähllinien an der VBZ-Haltestelle Hardbrücke, an der die Linie 33, 72, 83 und die Linie 8 verkehren.
+Mit diesem Test-System lassen sich Veränderungen an diesem speziellen Ort erkennen, welche aber nicht mit dem übrigen Netz oder dem Vorjahr verglichen werden können, um allfällige Effekte zu identifizieren.
+
+**Wichtiger Hinweis**: 
+
+Bitte beachten Sie die Hinweise unter **«Bekannte Sensorausfälle»** ob bei einer Datenanalyse im Untersuchungszeitraum ein Sensorausfall stattgefunden hat.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/fahrgastfrequenzen-an-der-vbz-haltestelle-hardbrucke)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke)
+
+Auto generated R starter code for data set 55c68924-bb53-40a4-8f62-69e063cb2afe@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Verkehrsbetriebe Zürich, Departement der Industriellen Betriebe`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['ov', 'hardbucke', 'fahrgastzahlen', 'bus', 'sachdaten', 'vbz', 'offentlicher-verkehr', 'pendler', 'passagiere', 'tabelle', 'frequenzen', 'tram']`
+- **Issued** `2020-03-27T00:00:00`
+- **Metadata_created** `2020-03-28T07:07:07.362796`
+- **Metadata_modified** `2023-01-16T00:49:53.096593`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1393e5cf-96a2-4e59-be4c-a0daa20517c2
+# Description              : 
+# Issued                   : 2022-01-04T00:00:00
+# Modified                 : 2022-12-31T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2022.csv')
+
+# Distribution 1
+# Package_id               : 1393e5cf-96a2-4e59-be4c-a0daa20517c2
+# Description              : 
+# Issued                   : 2021-01-05T00:00:00
+# Modified                 : 2022-01-04T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2021.csv')
+
+# Distribution 2
+# Package_id               : 1393e5cf-96a2-4e59-be4c-a0daa20517c2
+# Description              : 
+# Issued                   : 2023-01-03T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2023.csv')
+
+# Distribution 3
+# Package_id               : 1393e5cf-96a2-4e59-be4c-a0daa20517c2
+# Description              : 
+# Issued                   : 2020-04-07T00:00:00
+# Modified                 : 2021-01-05T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2020.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

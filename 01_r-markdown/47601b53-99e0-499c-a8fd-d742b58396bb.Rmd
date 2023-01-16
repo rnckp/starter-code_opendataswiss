@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: COVID_19 Sterbeorte Kanton Zürich pro Tag ab 15.03.2020
+
+Kumulierte Anzahl der Todesfälle im Kanton Zürich pro Tag seit Pandemiebeginn nach Art des Sterbeorts: 'Pflege- oder Altersheim', 'zuhause', 'Spital'. Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/covid_19-sterbeorte-kanton-zurich)<br>
+[Direct link by **Gesundheitsdirektion Kanton Zürich** for dataset](https://github.com/openZH/covid_19/tree/master/fallzahlen_kanton_zh)
+
+Auto generated R starter code for data set 710@gesundheitsdirektion-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Gesundheitsdirektion des Kantons Zürich`
+- **Organization.display_name.de** `Gesundheitsdirektion Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
+- **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
+- **Maintainer_email** `gdstab@gd.zh.ch`
+- **Keywords.de** `['sars-cov-2', 'altersheime', 'gesundheit', 'pflegeheime', 'spitaeler', 'krankheiten', 'kantonzuerich', 'todesfaelle', 'covid-19', 'alterspflegeheime', 'corona']`
+- **Issued** `2020-12-04T00:00:00`
+- **Metadata_created** `2021-01-14T16:34:10.771521`
+- **Metadata_modified** `2023-01-16T03:09:00.226452`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 47601b53-99e0-499c-a8fd-d742b58396bb
+# Description              : Variabeln: 'place_of_death' = Sterbeort ('care or nursing home' = Pflege- oder Altersheim, 'decedent's home' = zuhause, 'hospital' = Spital); 'ncumul_deceased' = Total der Todesfälle (kumuliert).
+# Issued                   : 2020-12-03T00:00:00
+# Modified                 : 2022-03-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_zh/COVID19_Sterbeorte_Kanton_ZH.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+gdstab@gd.zh.ch | Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline

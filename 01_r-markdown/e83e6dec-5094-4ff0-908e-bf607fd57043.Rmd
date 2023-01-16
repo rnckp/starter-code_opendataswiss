@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Todesfälle nach aggregierter Todesursache, seit 1974
+
+Diese Daten beinhalten aggregierte Todesursachen. Die Todesursachen stammen vom Bundesamt für Statistik und wurden mit den Daten des Bevölkerungsregisters der Stadt Zürich verknüpft.
+
+Bitte beachten Sie für das korrekte Verständnis der Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/todesfalle-nach-aggregierter-todesursache-seit-19743)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bfs_bevreg_todesursache_seit1974_od3100)
+
+Auto generated R starter code for data set f24b5f6e-cff6-4589-a74f-ce1db2f2dc8d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Sektion Gesundheit, Bundesamt für Statistik`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['tabelle', 'zeitreihe', 'sachdaten', 'todesursache', 'sasa', 'todesfalle']`
+- **Issued** `2016-11-10T00:00:00`
+- **Metadata_created** `2019-11-08T22:36:40.089750`
+- **Metadata_modified** `2023-01-16T00:50:37.152246`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e83e6dec-5094-4ff0-908e-bf607fd57043
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bfs_bevreg_todesursache_seit1974_od3100/download/BEV310OD3100.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

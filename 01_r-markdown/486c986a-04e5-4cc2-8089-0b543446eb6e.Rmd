@@ -1,0 +1,100 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Monatlich aktualisierte Luftqualitätsmessungen (Nachführung eingestellt)
+
+Diese Daten werden hier nicht mehr nachgeführt, da sie nun **neu strukturiert und täglich akualisiert** vorliegen unter:
+
+- [Täglich aktualisierte Luftqualitätsmessungen, seit 1983](https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte)
+- [Täglich aktualisierte Meteodaten, seit 1992](https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte)
+
+Die hier vorliegenden Datasets umfassen berechnete Tageswerte der **Luftqualitätsmessungen von 1983 - 30.10.2020** an den Stationen: 
+
+- Zch_Stampfenbachstrasse, 
+- Zch_Schimmelstrasse, 
+- Zch_Heubeeribüel und 
+- Zch_Rosengartenstrasse.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/monatlich-aktualisierte-luftqualitatsmessungen1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/luftqualitaet-historisierte-messungen)
+
+Auto generated R starter code for data set a5cd8c57-50c0-4f8d-b1e4-75a5a43c9d8d@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Fachbereich Labor, Umwelt- und Gesundheitsschutz, Gesundheits- und Umweltdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['lufttemperatur', 'regen', 'kohlenmonoxid', 'globalstrahlung', 'windgeschwindigkeit', 'regendauer', 'schwefeldioxid', 'twist2018', 'feinstaub', 'luft', 'co2', 'niederschlag', 'luftdruck', 'tabellen', 'stickstoffdioxid', 'messwerte', 'ozon', 'sachdaten', 'wetter', 'klima', 'zeitreihe', 'schadstoffe', 'temperatur', 'wind', 'luftfeuchte']`
+- **Issued** `2013-03-01T00:00:00`
+- **Metadata_created** `2019-07-31T00:32:51.404508`
+- **Metadata_modified** `2023-01-16T00:52:06.992229`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 486c986a-04e5-4cc2-8089-0b543446eb6e
+# Description              : 
+# Issued                   : 2019-07-30T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/luftqualitaet-historisierte-messungen/download/ugz_luftqualitaetsmessung_seit-2012.csv')
+
+# Distribution 1
+# Package_id               : 486c986a-04e5-4cc2-8089-0b543446eb6e
+# Description              : 
+# Issued                   : 2019-07-30T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/luftqualitaet-historisierte-messungen/download/ugz_luftqualitaetsmessungen_1983-2011.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

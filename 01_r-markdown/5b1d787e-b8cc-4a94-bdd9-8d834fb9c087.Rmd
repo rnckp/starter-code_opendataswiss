@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Baumkataster
+
+Im Baumkataster werden alle städtischen Bäume im Strassenraum erfasst, welche von Grün Stadt Zürich verwaltet oder gepflegt werden. Ergänzt wird das Baumkataster durch das Obstbauminventar sowie Bäume ausgewählter öffentlicher Grünanlagen und private Bäume.
+
+**Zweck**: Das Baumkataster dient der Verwaltung der Bäume im öffentlichen Raum. Es ist Hilfsmittel für die Pflege dieser Bäume und für den Ersatz 'alter' Bäume. Zudem ist es eine wichtige Informationsgrundlage für Planende, Projektierende die sich über die bestehenden Baumstandorte orientieren wollen. Interessierte sollen jederzeit aktuell und präzise über Baumarten und Baumstandorte informieren können.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/baumkataster)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_baumkataster)
+
+Auto generated R starter code for data set 4b769cc5-5518-45eb-9673-be72d00f1e01@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Produkteverantw.  & Unterstützungsfunk., Grün Stadt Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['obstbaum', 'geoportal', 'punktdaten', 'stzh', 'stassenbaum', 'geodaten', 'polygondaten', 'vektordaten', 'baum']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:13:57.820910`
+- **Metadata_modified** `2023-01-16T00:54:09.938892`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5b1d787e-b8cc-4a94-bdd9-8d834fb9c087
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Baumkataster?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

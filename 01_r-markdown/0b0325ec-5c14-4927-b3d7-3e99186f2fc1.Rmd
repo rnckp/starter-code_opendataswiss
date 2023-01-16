@@ -1,0 +1,111 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Passagierfrequenz
+
+Passagierfrequenzen der Bahnhöfe und Haltestellen SBB gemäss 'Ein-Aussteiger Datenbank'
+Letzter Update Sept.  2019 Zahlen 2018.
+In den Zahlen sind die Ein- und Aussteigenden folgender Transportunternehmen enthalten: 
+BLS, MGB, MOB, Oensingen-Balsthal-Bahn, RegionAlps, RhB, SBB, SBB GmbH, SOB, SZU, Thurbo, TILO, TRAVYS, Zentralbahn.  
+Für die grösseren Bahnhöfe ist in den Bemerkungen angegeben, welche Eisenbahntransportunternehmen am jeweiligen Bahnhof nicht in den Zahlen enthalten sind.  
+Die Liste umfasst alle Bahnhöfe, die der MGB, RhB, SBB, SOB, Thurbo oder Zentralbahn gehören und die in relevantem Masse von diesen Transportunternehmen oder einer ihrer Tochtergesellschaften bedient werden. 
+Bezeichnung ErklärungHaltestellen Abkürzung=  Didok-Code des Bahnhofes/der Haltestelle (Didok: Dienststellendokumentation).
+Bahnhof_Haltestelle =  Name des Bahnhofes/der Haltestelle.
+Kanton  = Kantonszugehörigkeit des Bahnhofs/der Haltestelle.
+Eigner  = Bahnhofseigner (Infrastrukturbetreiberin).
+DTV = Durchschnittlicher täglicher Verkehr (Montag bis Sonntag) im 2018.
+DWV = Durchschnittlicher werktäglicher Verkehr (Montag bis Freitag) im 2018.
+DNWV = Durchschnittlicher nicht-werktäglicher Verkehr (Samstage, Sonntage, Feiertage) im 2018.
+Bemerkungen Ergänzende Informationen zum Eintrag. 
+Detaillierte Informationen zu den Bahnhöfen und Haltestellen, beispielsweise deren Koordinaten, finden sich in der Liste der Stations- und Haltestellennamen, publiziert im Auftrag des BAV: https://opentransportdata.swiss/de/dataset/bav_liste 
+
+englisch:
+Passenger frequencies at SBB stations and stops according to 'Ein-Aussteiger Datenbank'
+last Update: September 2019 for the year 2018
+The figures include the number of boarding and alighting passengers for the following transport companies:  
+BLS, MGB, MOB, Oensingen-Balsthal-Bahn, RegionAlps, RhB, SBB, SBB GmbH, SOB, SZU, Thurbo, TILO, TRAVYS, Zentralbahn.   
+For larger stations, the comments state which rail transport companies are not included in the figures for which stations.   
+The list comprises all stations belonging to MGB, RhB, SBB, SOB, Thurbo or Zentralbahn that are operated to a relevant extent by these transport companies or one of their subsidiaries.  
+Term  Description 
+Haltestellen Abkürzung = 'Didok' code of the station/stop (Didok = department documentation). 
+Bahnhof_Haltestelle  = Name of the station/stop. 
+Kanton  = Canton to which the railway station/stop belongs. 
+Eigner = Station owner. 
+DTV = Average daily traffic (Monday to Sunday) in 2018. 
+DWV = Average traffic on weekdays (Monday to Friday) in 2018. 
+DNWV = Average non-work day traffic (Saturdays, Sundays and public holidays) in 2018.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/passagierfrequenz1)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/passagierfrequenz/)
+
+Auto generated R starter code for data set passagierfrequenz@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['verkehr']`
+- **Issued** `2021-05-07T00:00:00`
+- **Metadata_created** `2019-09-11T10:50:48.977531`
+- **Metadata_modified** `2023-01-16T00:28:49.681587`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0b0325ec-5c14-4927-b3d7-3e99186f2fc1
+# Description              : Passagierfrequenz (csv)
+# Issued                   : 2021-05-07T00:00:00
+# Modified                 : 2021-05-07T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/passagierfrequenz/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

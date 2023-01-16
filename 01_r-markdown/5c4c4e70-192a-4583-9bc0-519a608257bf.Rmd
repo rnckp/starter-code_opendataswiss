@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Kreisschulbehörde
+
+Standorte der Kreisschulbehörde
+
+**Zweck**: Lokalisation der Standorte der Kreisschulbehörde
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kreisschulbehorde)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_kreisschulbehoerde)
+
+Auto generated R starter code for data set 8bd7d578-89c0-483b-ac68-a7bb6148ffe4@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Infrastruktur, Schulamt, Schul- und Sportdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['geodaten', 'schule', 'stzh', 'bildung', 'punktdaten', 'geoportal', 'vektordaten']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:11:27.516321`
+- **Metadata_modified** `2023-01-16T00:53:53.675247`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5c4c4e70-192a-4583-9bc0-519a608257bf
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Kreisschulbehoerde?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

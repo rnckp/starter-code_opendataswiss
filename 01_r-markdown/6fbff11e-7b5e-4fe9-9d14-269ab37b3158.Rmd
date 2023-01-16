@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Kennzahlen zu den Basler Wohnvierteln und Landgemeinden
+
+Ausgewählte statistische Kennzahlen der 19 Wohnviertel der Stadt Basel sowie der zwei Gemeinden Riehen und Bettingen seit 2015. Aufgrund einer veränderten Datenlage können die Indikatoren 3 (Religionszugehörigkeit) und 18 (Arbeitslosenquote) ab der Ausgabe 2020 nicht mehr dargestellt werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kennzahlen-zu-den-basler-wohnvierteln-und-landgemeinden)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100011/)
+
+Auto generated R starter code for data set 100011@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['bevolkerungsbestand', 'erwerbstatige', 'bevolkerungsstruktur', 'wohnen', 'arbeitslosigkeit', 'grunraum']`
+- **Issued** `2019-11-06T00:00:00`
+- **Metadata_created** `2021-09-03T09:15:35.116336`
+- **Metadata_modified** `2023-01-16T00:22:43.945507`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6fbff11e-7b5e-4fe9-9d14-269ab37b3158
+# Description              : Kennzahlen zu den Basler Wohnvierteln und Landgemeinden (csv)
+# Issued                   : 2019-11-06T00:00:00
+# Modified                 : 2022-11-17T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100011/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

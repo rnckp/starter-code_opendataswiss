@@ -1,0 +1,94 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Strom-Marktpreis gemäss Art. 3 f, Abs. 3 EnV (2007-2014)
+
+Für aktuelle Daten bitte nutzen Sie diese Dataset: https://opendata.swiss/de/dataset/referenz-marktpreise-gemass-art-15-enfv
+
+Massgebend für die Festlegung der ungedeckten Kosten von Strom aus Erzeugungsanlagen mit Einspeisevergütung. Mengengewichteter Durchschnitt der Preise gemäss SWISSIX Base unter Berücksichtigung des Wechselkurses. 
+
+Wird nicht mehr aktualisiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/strom-marktpreis-gemass-art-3-f-abs-3-env)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](http://www.bfe.admin.ch/ogd43)
+
+Auto generated R starter code for data set ogd43@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `Bundesamt für Energie BFE`
+- **Maintainer_email** `ogd@bfe.admin.ch`
+- **Keywords.de** `['ogd43-bfe', 'kev-preis', 'strom-marktpreis', 'einspeisevergutung', 'kev']`
+- **Issued** `2017-12-12T00:00:00`
+- **Metadata_created** `2018-01-09T12:38:56.469858`
+- **Metadata_modified** `2022-11-24T04:01:26.825973`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 8138cca4-6567-431d-a791-f08e3e9ce5e3
+# Description              : 
+# Issued                   : 2022-04-11T00:00:00
+# Modified                 : 2022-04-11T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/43/ogd43_rmp_quartalspreise_2007-2014.csv')
+
+# Distribution 1
+# Package_id               : 8138cca4-6567-431d-a791-f08e3e9ce5e3
+# Description              : 
+# Issued                   : 2022-04-11T00:00:00
+# Modified                 : 2022-04-11T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/43/ogd43_rmp_jahrespreise_2007-2014.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@bfe.admin.ch | Bundesamt für Energie BFE

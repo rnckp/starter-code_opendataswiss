@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Zuzüge von auswärts nach Zuzugsort, Stadtquartier, Geschlecht, Altersgruppe und Zivilstand, seit 1993
+
+
+Anzahl Zuzüge von Personen, die von auswärts in die Stadt Zürich ziehen nach Zuzugsort, Geschlecht, Stadtkreis, Statistischem Stadtquartier, Altersgruppen, Zivilstand und Jahr, seit 1993. 
+
+Die Zuzugsorte sind auf Bezirks- und Kantonensebene aggregiert, von denen die Personen aus der Schweiz zugezogen sind. Wenn sie aus dem Ausland zugezogen sind, so ist eine Aggregierung nach Region und Kontinent möglich.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zuzuge-nach-zuzugsort-stadtquartier-geschlecht-altersgruppe-und-zivilstand-seit-19932)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bev_zuz_jahr_quartier_ag_zivilstand_od3512)
+
+Auto generated R starter code for data set 6439fcb2-b6b4-436c-b553-68f80c01f324@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Bevölkerungsamt, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'zeitreihe', 'quartier', 'sasa', 'migration', 'tabelle']`
+- **Issued** `2012-06-26T00:00:00`
+- **Metadata_created** `2019-07-30T00:42:15.987311`
+- **Metadata_modified** `2023-01-16T00:49:56.298131`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 8d4a2296-eb85-4d21-b0d2-31ebc32b55b8
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bev_zuz_jahr_quartier_ag_zivilstand_od3512/download/BEV351OD3512.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

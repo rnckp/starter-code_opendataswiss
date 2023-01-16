@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Haltestelle: Perronoberfläche
+
+Die Perronoberfläche ist die begehbare Fläche des Perronkörpers, sie wird in der Regel durch die Perronkante gegen das Gleis abgeschlossen. The platform surface is the part of the platform that people can walk on; it normally terminates in the platform edge which faces the tracks.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/haltestelle-perronoberflache1)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/perronoberflache/)
+
+Auto generated R starter code for data set perronoberflache@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['transferiert', 'infrastruktur']`
+- **Issued** `2023-01-10T00:00:00`
+- **Metadata_created** `2019-09-11T10:48:58.405431`
+- **Metadata_modified** `2023-01-16T00:28:38.414287`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : c3581d35-94bc-454c-aae8-d730caf5cbe2
+# Description              : Haltestelle: Perronoberfläche (csv)
+# Issued                   : 2023-01-10T00:00:00
+# Modified                 : 2023-01-10T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/perronoberflache/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

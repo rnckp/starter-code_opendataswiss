@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Haltestelle: Kontaktadressen
+
+Adresse, Mail, Fax zu den Services an der Haltestelle der SBB.Address, e-mail, fax to the services at the SBB stop.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/haltestelle-kontaktadressen)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/kontaktadressen/)
+
+Auto generated R starter code for data set kontaktadressen@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['dienstleistung']`
+- **Issued** `2023-01-15T00:00:00`
+- **Metadata_created** `2019-09-11T10:54:33.864404`
+- **Metadata_modified** `2023-01-16T00:27:38.906008`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cdb06c00-4c1e-4e2b-b182-a8cae8b8eca4
+# Description              : Haltestelle: Kontaktadressen (csv)
+# Issued                   : 2023-01-15T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/kontaktadressen/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wohnungen (Gebäude- und Wohnungsregister GWR)
+
+Wohnungen gemäss Gebäude- und Wohnungsregister (GWR)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnungen-gebaude-und-wohnungsregister-gwr)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100232/)
+
+Auto generated R starter code for data set 100232@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wohnen', 'wohnung', 'adresse', 'gebaude']`
+- **Issued** `2022-11-24T00:00:00`
+- **Metadata_created** `2022-11-25T00:35:59.517172`
+- **Metadata_modified** `2023-01-16T00:23:15.843499`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 579419bb-e496-4ffa-9847-907fab94aa13
+# Description              : Wohnungen (Gebäude- und Wohnungsregister GWR) (csv)
+# Issued                   : 2022-11-24T00:00:00
+# Modified                 : 2022-11-24T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100232/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

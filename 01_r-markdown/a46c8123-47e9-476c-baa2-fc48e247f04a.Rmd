@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Jahresabonnemente
+
+Liste mit Anzahl der sich im Umlauf befindenden Jahresverbundabonnemente je Verbund zusammengefasst nach PLZ des Wohnsitzes des Bezügers. Letzter Update per 31.03.2021 mit Daten 2020Nicht enthalten sind Angaben zu den Verbünden: FrimobilUniresoMobilis Erläuterungen zu den Spaltenbezeichnungen: Jahr_An_AnnoJahr des Stichdatums des Datenauszugs. Der Datenauszug erfolgt jeweils in Woche 52 des Bezugsjahres.PLZ_NPA Vierstellige Postleitzahl gemäss Ortschaftenverzeichnis von cadastre.ch.Verbund_Communaute_ComunitaVerbundAnzahl_Nombre_QuantitaAnzahl Abonnemente im Umlauf per Stichdatum. (Jahresabonnemente)FlagFalls 3: Angegeben ist aus Datenschutzgründen der Mittelwert der Anzahl Abonnemente über alle PLZ-Kreise, die in der ersten PLZ-Zahl übereinstimmen und weniger als 20 Abonnemente ausweisen.List with the number of annual group subscriptions in circulation per group, summarised by the postal code of the recipient's place of residence. Last update per 13.03.2020 with data 2019Not included are details of the associations: FrimobilUniresoMobilis
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/jahresabonnemente)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/verbunde/)
+
+Auto generated R starter code for data set verbunde@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['infrastruktur', 'verkehr']`
+- **Issued** `2018-10-12T00:00:00`
+- **Metadata_created** `2019-09-11T10:46:17.582766`
+- **Metadata_modified** `2023-01-16T00:27:44.786978`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a46c8123-47e9-476c-baa2-fc48e247f04a
+# Description              : Jahresabonnemente (csv)
+# Issued                   : 2018-10-12T00:00:00
+# Modified                 : 2021-03-31T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/verbunde/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

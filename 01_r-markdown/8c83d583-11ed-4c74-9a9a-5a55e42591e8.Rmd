@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Öffentlich zugängliche Parkhäuser
+
+Der Datensatz umfasst alle Parkhäuser auf dem Gebiet der Stadt Zürich, die Kunden und / oder Besuchern öffentlich zugängliche Parkplätze anbieten. Die Daten werden alle zwei Jahre manuell erhoben (2015, 2017, 2019 ...) und in der Datenbank nachgeführt. Die Daten sind somit nicht tagesaktuell und es bestehen auch keine Angaben über die Belegung der Parkfelder. Einzelne Parkfelder können zudem kurzfristig ummarkiert oder beispielsweise infolge von Baumassnahmen nicht zugänglich sein. 
+
+**Zweck**: Parkraumplanung, für Statistisches Jahrbuch / STIP, für Controlling 'Stadtverkehr 2025', für Bilanzierung des Historischen Parkplatzkompromisses
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/offentlich-zugangliche-parkhauser)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_oeffentlich_zugaengliche_parkhaeuser)
+
+Auto generated R starter code for data set ada09bed-6fde-416a-845e-821c3afd9a3e@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Grundlagen + Strategien, Tiefbauamt, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['geoportal', 'vektordaten', 'parkhaus-parkhauser-offentlich-stadt-zurich-parkierung-uberdacht', 'punktdaten', 'stzh', 'geodaten']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:13:51.907888`
+- **Metadata_modified** `2023-01-16T00:54:44.478919`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 8c83d583-11ed-4c74-9a9a-5a55e42591e8
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Oeffentlich_zugaengliche_Parkhaeuser?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

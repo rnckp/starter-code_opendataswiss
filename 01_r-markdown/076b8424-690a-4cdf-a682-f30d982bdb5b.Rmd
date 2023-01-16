@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Veloverleih
+
+Veloverleihstandorte
+
+**Zweck**: Visualisierung der Standorte in einer interaktiven Karte im Internet.  
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/veloverleih)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_veloverleih)
+
+Auto generated R starter code for data set 25918f6c-c98b-4098-bba4-6ef43fd88e47@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `AOZ / DIR / KOM, AOZ, Asyl Organisation Zürich`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['punktdaten', 'vektordaten', 'geoportal', 'geodaten', 'stzh', 'velo']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:12:10.115458`
+- **Metadata_modified** `2023-01-16T00:54:07.878646`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 076b8424-690a-4cdf-a682-f30d982bdb5b
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Veloverleih?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

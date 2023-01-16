@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Leerstehende Wohnungen nach Stadtquartier, Zimmerzahl, Gebäudeart, Bewohnungsart und Gebäudealter
+
+Der Datensatz enthält die leerstehenden Wohnungen gemäss der jährlichen Leerwohnungserhebung vom 1. Juni. Enthalten sind auch Angaben zum Gesamtwohnungsbestand, so dass auch für alle Untergruppen auch die Leerwohnungsziffer berechnet werden kann.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/leerstehende-wohnungen-nach-stadtquartier-zimmerzahl-gebaudeart-bewohnungsart-und-gebaudealter)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_leerwhg_whg_quartier_zizahl_efh_nb_we_od5427)
+
+Auto generated R starter code for data set 48ca73e1-6b67-4485-a2cc-35f8833b2735@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'wohnen', 'miete', 'leerstand', 'bauwesen', 'leerwohnung', 'sasa', 'quartier', 'tabelle', 'eigentum']`
+- **Issued** `2021-01-30T00:00:00`
+- **Metadata_created** `2021-02-03T16:25:20.829635`
+- **Metadata_modified** `2023-01-16T00:51:12.947045`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : fe980b2e-bf73-40f2-81f6-3326dd020581
+# Description              : 
+# Issued                   : 2021-02-02T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_leerwhg_whg_quartier_zizahl_efh_nb_we_od5427/download/BAU542OD5427.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

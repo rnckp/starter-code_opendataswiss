@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Denkmalpflege-Inventar
+
+Aufbereitung des Geodatensatzes 'Denkmalpflege-Inventar (Sachdaten)' für den Geoserver. Siehe dort für einen inhaltlichen Beschrieb.
+
+**Zweck**: z. B. Plananzeige in GIS-Applikationen des AfS
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/denkmalpflege-inventar)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_denkmalpflege_inventar)
+
+Auto generated R starter code for data set 79df17af-ce70-4777-af78-8f98cfbdd17e@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Archäologie & Denkmalpflege, Amt für Städtebau, Hochbaudepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['vektordaten', 'geodaten', 'punktdaten', 'geoportal', 'stzh']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:11:57.405662`
+- **Metadata_modified** `2023-01-16T00:54:02.949128`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 358550ed-d644-45d2-9757-ba1b86eca0a9
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Denkmalpflege_Inventar?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

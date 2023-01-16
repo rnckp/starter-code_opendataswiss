@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Bevölkerungsbilanz nach Gemeinde und Quartal (ab 2003)
+
+Kantonale Bevölkerungsstatistik
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bevolkerungsbilanz-nach-gemeinde-und-quartal-ab-2003)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/10680/)
+
+Auto generated R starter code for data set 10680@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.bl.ch`
+- **Maintainer** `Tamara Bobst`
+- **Maintainer_email** `tamara.bobst@bl.ch`
+- **Keywords.de** `['zuzuge', 'geburten', 'endbestand', 'burgerrechtswechsel', 'anfangsbestand', 'wegzuge', 'todesfalle', 'quartalsdaten', 'wanderungen']`
+- **Issued** `2022-12-06T00:00:00`
+- **Metadata_created** `2022-12-13T15:07:30.356169`
+- **Metadata_modified** `2023-01-16T01:12:22.130867`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : dcd9e1bf-b9ca-44fc-a6c5-00822428c7dd
+# Description              : Bevölkerungsbilanz nach Gemeinde und Quartal (ab 2003) (csv)
+# Issued                   : 2022-12-06T00:00:00
+# Modified                 : 2022-12-06T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/10680/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tamara.bobst@bl.ch | Tamara Bobst

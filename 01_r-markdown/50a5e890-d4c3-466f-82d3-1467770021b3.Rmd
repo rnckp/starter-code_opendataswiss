@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Spielgerätekataster
+
+Standorte der Spielplätze in der Stadt Zürich
+
+**Zweck**: Lokalisierung der Spielplätze
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/spielgeratekataster)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_spielgeraetekataster)
+
+Auto generated R starter code for data set c6287d11-fef3-4c9a-9375-852cdb8da2d8@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Produkteverantw.  & Unterstützungsfunk., Grün Stadt Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['spielplatz', 'punktdaten', 'stzh', 'geoportal', 'geodaten', 'vektordaten']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:14:26.617111`
+- **Metadata_modified** `2023-01-16T00:54:27.788421`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 50a5e890-d4c3-466f-82d3-1467770021b3
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Spielgeraetekataster?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

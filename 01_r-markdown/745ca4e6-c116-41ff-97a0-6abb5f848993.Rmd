@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Finanzdaten der Stadt Zürich
+
+Die Stadt Zürich mit allen Departementen und Institutionen publiziert für die Geschäfte Budget, Nachtragskredite (I und II), sowie die [Rechnung sämtlicher Konten auf Konzernstufe](https://www.stadt-zuerich.ch/fd/de/index/finanzen/rechnung.html). Diese Daten sind über ein API ab dem Zeitpunkt der Publikation der Zahlen online verfügbar. Dafür benötigen Sie einen **API-Key**, welcher unter «Bemerkungen» aufgeführt ist.
+
+Es sind Daten ab 2012 über das API verfügbar: In den Jahren 2012 – 2018 wurde die Rechnungslegung gemäss HRM1 geführt. Ab dem Jahr 2019 gilt der HRM2-Kontenrahmen. Dadurch ist eine Vergleichbarkeit der Konten zwischen 2018 und 2019 nicht mehr gegeben. Mehr Informationen zu den Anpassungen finden Sie in der Ressource 'Änderungen neue Rechnungslegung.pdf'.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/finanzdaten-der-stadt-zurich1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/fd_rpktool)
+
+Auto generated R starter code for data set ec6639c2-0a73-4263-9c89-0ad25501255e@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Finanzverwaltung, Finanzdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'rpk', 'tabelle', 'rechnung', 'finanzen', 'budget']`
+- **Issued** `2018-08-28T00:00:00`
+- **Metadata_created** `2019-07-30T00:43:58.482208`
+- **Metadata_modified** `2023-01-16T00:50:30.578142`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 745ca4e6-c116-41ff-97a0-6abb5f848993
+# Description              : Comma-Separated Values. Diese Datei beinhaltet die 1- und 2-stelligen Sachkontonummern und ihre Bezeichnung.
+# Issued                   : 2020-05-18T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/fd_rpktool/download/sachkonto_codes.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Scheidungen [pro 1000 Einw.]
+
+Anzahl Scheidungen pro 1000 Einwohner (Rohe Scheidungsziffer). Hinweise: Am 1.Januar 2000 trat das neue Scheidungsrecht in Kraft. Ab 2011 Wechsel der Datenquelle: Es werden nicht mehr alle Scheidungen von zwei ausländischen Personen ausgewiesen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/scheidungen-pro-1000-einw)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/gemeinden/gemeindeportraet.html)
+
+Auto generated R starter code for data set 310@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['scheidung', 'bevoelkerung', 'bezirke', 'ehe', 'gemeinden', 'kantonzuerich', 'ehescheidung']`
+- **Issued** `2016-01-20T00:00:00`
+- **Metadata_created** `2021-01-14T17:44:43.060718`
+- **Metadata_modified** `2023-01-16T03:03:35.976581`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b82f37b4-152b-4b6a-a513-8851c6b83549
+# Description              : 
+# Issued                   : 2016-01-21T00:00:00
+# Modified                 : 2022-06-27T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_448.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

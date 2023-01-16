@@ -1,0 +1,96 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Detaillierte Daten FS und GFS Modell: Standardauswertungen
+
+### GFS Modell
+Die __internationale Vergleichbarkeit__ der Schweizer Finanzstatistikdaten wird durch das __GFS-Modell__ sichergestellt, in welchem der finanzstatistische Standard des Internationalen Währungsfonds umgesetzt ist. Dieser Standard wird im Government Finance Statistics Manual GFSM2014 beschrieben.
+
+### FS Modell
+Die __nationale Vergleichbarkeit__ wird mit dem __FS-Modell__ sichergestellt, welches auf dem Harmonisierten Rechnungslegungsmodell der Kantone und Gemeinden (HRM2) basiert und sich damit an die International Public Sector Accounting Standards (IPSAS) anlehnt. Die Standardauswertungen im FS-Modell enthalten jeweils in der Artengliederung die Bilanz, die Erfolgsrechnung und die Finanzierungsrechnung. Zusätzlich werden in der Finanzierungsrechnung die Einnahmen und Ausgaben nach Funktionen ausgewiesen.
+
+Mit dem Rechnungsjahr 2008 wurde die Finanzstatistik an neue Standards angepasst. Deshalb ist die Vergleichbarkeit mit den Zahlen vor 2008 im nationalen FS-Modell eingeschränkt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/detaillierte-daten-fs-und-gfs-modell-standardauswertungen)<br>
+[Direct link by **Finanzstatistik EFV** for dataset](https://www.efv.admin.ch/efv/en/home/themen/finanzstatistik/daten.html)
+
+Auto generated R starter code for data set fs-gfs-model@efv_finanzstatistik.
+
+## Metadata
+
+- **Publisher** `Federal Finance Administration, Financial Statistic`
+- **Organization.display_name.de** `Finanzstatistik EFV`
+- **Organization.url** `https://www.efv.admin.ch/efv/en/home/themen/finanzstatistik/grundlagen.html`
+- **Maintainer** `Federal Finance Administration, Financial Statistic Contact Point`
+- **Maintainer_email** `finstat@efv.admin.ch`
+- **Keywords.de** `[]`
+- **Issued** `2022-08-30T00:00:00`
+- **Metadata_created** `2022-08-30T06:14:03.286531`
+- **Metadata_modified** `2022-10-13T07:35:10.923235`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 850fbb44-28ac-48fe-9bcd-d7faa0380fc3
+# Description              : Diese codelist kann als Hilfstabelle für die Dimensionen _arten_ und _funk_ des zugehörigen Datensets (identifier: resource_standardauswertung) verwendet werden.
+# Issued                   : 2022-08-30T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/standardauswertung_codelist.csv')
+
+# Distribution 1
+# Package_id               : 850fbb44-28ac-48fe-9bcd-d7faa0380fc3
+# Description              : Dieses Datenset zeigt detaillierte Daten zu öffentlichen Finanzen gemäss FS- und GFS-Modell. Folgende Dimensionen sind verfügbar: * arten: ermöglicht Artengliederung (siehe zugehörige codelist) * funk: ermöglicht funktionale Gliederung (siehe codelist) * jahr: zeigt das entsprechende Jahr * value: zeigt den Wert der entsprechenden Position * dim: zeigt die Kategorie, zu welcher die Position gehört (siehe https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/readme.xlsx.download.xlsx/readme.xlsx sheet "glossary", "GFS: Tabellenblätter" resp. "FS: Tabellenblätter") * hh: zeigt den entsprechenden öffentlichen Haushalt (siehe https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/readme.xlsx.download.xlsx/readme.xlsx sheet "file_structure") * unit: zeigt die Einheit des Wertes * model: zeigt das betrachtete Modell
+# Issued                   : 2022-08-30T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/standardauswertung.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Federal Finance Administration, Financial Statistic Contact Point | finstat@efv.admin.ch

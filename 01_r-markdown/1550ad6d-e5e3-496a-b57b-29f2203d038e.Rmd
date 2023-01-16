@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wärme-, Strom- und Treibstoffverbrauch im Kanton Zürich ab 2010
+
+Die Stromdaten stammen von der Eidgenössischen Elektrizitätskommission (ElCom), die Treibstoffdaten aus der schweizerischen Gesamtenergiestatistik des Bundesamts für Energie (BFE) und die Wärmedaten aus der kantonalen Statistik des Amts für Abfall, Wasser, Energie und Luft (AWEL). Die Erhebung der Daten dient dem AWEL dazu, den Energieverbrauch nach unterschiedlichen Energiesektoren für den Kanton Zürich aufzuzeichnen und beobachten zu können. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/warme-strom-und-treibstoffverbrauch-im-kanton-zurich-ab-2010)<br>
+[Direct link by **Amt für Abfall, Wasser, Energie und Luft Kanton Zürich** for dataset](nan)
+
+Auto generated R starter code for data set 1661@awel-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich`
+- **Organization.display_name.de** `Amt für Abfall, Wasser, Energie und Luft Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-abfall-wasser-energie-luft.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['energieverbrauch', 'strom', 'energie', 'treibstoff', 'stromverbrauch', 'waermeverbrauch', 'treibstoffverbrauch', 'elektrizitaet', 'waerme']`
+- **Issued** `2022-08-25T00:00:00`
+- **Metadata_created** `2022-08-26T03:10:24.250506`
+- **Metadata_modified** `2023-01-16T03:09:28.046388`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1550ad6d-e5e3-496a-b57b-29f2203d038e
+# Description              : Der Energieverbrauch wird in Gigawattstunden (GWh) ausgewiesen. Dabei wird unterschieden zwischen den Energiesektoren Wärme, Strom und Treibstoff.
+# Issued                   : 2022-08-25T00:00:00
+# Modified                 : 2022-12-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001661_00003118.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+mirjam.baumann@bd.zh.ch | Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich, Abteilung Energie

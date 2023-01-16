@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Temperatur Grundwasser: Langjährige Statistiken
+
+Der Datensatz enthält die absoluten extremalen Messwerte (kleinster Wert „10YMin“ bzw. grösster Wert „10YMax“) und den Mittelwert aller Messwerte („Mean“) der Grundwassertemperaturen in °C des kantonalen Grundwassermessnetzes und in der angegebenen Periode (startStatist bis endStatist, d.h. i. d. R. 10 Jahre).Weitere Informationen: https://www.aue.bs.ch/wasser/grundwasser/grundwasserpegel-grundwasserqualitaet.html
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/temperatur-grundwasser-langjahrige-statistiken)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100181/)
+
+Auto generated R starter code for data set 100181@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Umwelt und Energie`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['temperatur', 'wasser', 'bohrung', 'grundwasser', 'statistik', 'zeitreihe']`
+- **Issued** `2022-07-11T00:00:00`
+- **Metadata_created** `2022-07-11T13:12:17.104312`
+- **Metadata_modified** `2023-01-16T00:23:19.627780`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 94ce45a1-ae43-4ab1-aa15-117fabd87c8d
+# Description              : Temperatur Grundwasser: Langjährige Statistiken (csv)
+# Issued                   : 2022-07-11T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100181/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

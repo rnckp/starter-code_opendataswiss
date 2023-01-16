@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Neubautätigkeit nach Bauprojektstatus und Stadtquartier seit 2009
+
+Der Datensatz enthält Anzahl Gebäude, Bausumme, Rauminhalt und Anzahl Wohnungen von Neubauprojekten nach Bauprojektstatus und Stadtquartier seit 2009.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/neubautatigkeit-nach-bauprojektstatus-und-stadtquartier-seit-20091)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_neubau_whg_bausm_rinh_geb_projstatus_quartier_seit2009_od5011)
+
+Auto generated R starter code for data set 96cddde2-a1c7-429d-981f-48c3c56fef19@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['wohnen', 'gwz', 'tabelle', 'gebaude', 'sachdaten', 'sasa', 'neubau', 'bautatigkeit', 'quartier', 'bauwesen', 'grundangebot-bau', 'zeitreihe']`
+- **Issued** `2017-02-28T00:00:00`
+- **Metadata_created** `2019-07-30T00:44:48.351924`
+- **Metadata_modified** `2023-01-16T00:49:44.616600`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 202832a3-7aeb-4def-989b-d675fb163b69
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-16T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_neubau_whg_bausm_rinh_geb_projstatus_quartier_seit2009_od5011/download/BAU501OD5011.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

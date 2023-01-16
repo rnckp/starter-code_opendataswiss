@@ -1,0 +1,574 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Fahrzeiten der VBZ im SOLL-IST-Vergleich
+
+Diese Daten ermöglichen einen sehr genauen Vergleich zwischen den geplanten (SOLL) und den effektiv erfolgten (IST) Fahrzeiten jedes Fahrzeugs der Verkehrsbetriebe Zürich (VBZ). Die Haltestellenankünfte und -abfahrten jedes Fahrzeugs auf seiner Linie wird sekundengenau gemessen.
+
+Wir publizieren jede Woche einen neuen Datensatz  zu den geplanten (SOLL) und effektiven (IST) Fahrzeiten, da das Datenvolumen sonst schnell zu gross wird. Ein Datensatz einer Woche umfasst rund 250 MB. Die Dateinamen zeigen den Zeitraum der Fahrzeitenvergleiche an: «Fahrzeiten_SOLL_IST_***VON-DATUM***_***BIS-DATUM***.csv». 
+
+Die beiden Tabellen ***Haltepunkt.csv*** und ***Haltestelle.csv*** sind Matchingtabellen.
+
+Hier finden Sie die aktuellen Daten des laufenden Jahres ab dem **1. Januar 2023 **. Die wöchentlich nachgeführten Fahrzeiten der vergangenen Jahre (seit 2015) finden sie in den Datasets «[**Fahrzeiten *[JAHR]* der VBZ im SOLL-IST-Vergleich (Nachführung eingestellt)**](https://data.stadt-zuerich.ch/dataset?q=%22SOLL-IST-Vergleich%22&sort=title_string+desc)».
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/fahrzeiten-der-vbz-im-soll-ist-vergleich1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd)
+
+Auto generated R starter code for data set 92f198dc-b405-4234-ae17-09b3f2889092@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Verkehrsbetriebe Zürich, Departement der Industriellen Betriebe`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['offentlicher-verkehr', 'tabelle', 'hackzurich', 'verspatung', 'sachdaten', 'punktlichkeit', 'vbz', 'bus', 'tram']`
+- **Issued** `2015-11-11T00:00:00`
+- **Metadata_created** `2019-07-30T01:17:45.347817`
+- **Metadata_modified** `2023-01-16T00:51:52.575281`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 55 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd/download/Haltestelle.csv')
+
+# Distribution 1
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-02-06T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 2
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-05-22T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 3
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-06-05T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 4
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2023-01-01T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 5
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-11-27T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 6
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-03-06T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 7
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-10-30T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 8
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-05-15T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 9
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-02-13T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 10
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-07-03T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 11
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-12-11T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 12
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-07-31T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 13
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-08-07T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 14
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-10-23T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 15
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-09-11T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 16
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-05-08T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 17
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2023-01-08T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 18
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-10-09T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 19
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-04-24T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 20
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-04-17T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 21
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-09-04T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 22
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-09-25T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 23
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-11-13T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 24
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-04-03T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 25
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-06-12T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 26
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-11-06T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 27
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-02-27T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 28
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-10-16T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 29
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-04-03T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 30
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-02-20T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 31
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-07-17T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 32
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-06-19T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 33
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-03-13T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 34
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd/download/Haltepunkt.csv')
+
+# Distribution 35
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-01-16T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 36
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-12-04T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 37
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-08-23T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 38
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-01-30T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 39
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-03-20T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 40
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-05-01T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 41
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-10-02T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 42
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-07-10T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 43
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-08-23T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 44
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-08-28T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 45
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-01-23T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 46
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-04-17T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 47
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-06-05T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 48
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-07-31T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 49
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-06-26T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 50
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-09-18T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 51
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-11-20T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 52
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-12-25T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 53
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2022-12-18T00:00:00
+# Modified                 : 2023-01-08T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/filenotfound')
+
+# Distribution 54
+# Package_id               : 1115d7df-2e22-4062-ae91-31073e8544e5
+# Description              : 
+# Issued                   : 2023-01-15T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd/download/Fahrzeiten_SOLL_IST_20230101_20230107.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

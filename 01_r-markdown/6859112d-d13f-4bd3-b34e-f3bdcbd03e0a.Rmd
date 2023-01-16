@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Fahrgastzahlen BVB
+
+Die Daten geben die wöchentlichen Fahrgäste der BVB ab dem Jahr 2020 an. Sie beruhen auf Messungen mit dem automatischen Fahrgastzählsystem und anschliessender Hochrechnung, und zwar für das gesamte Liniennetz der BVB. Tramlinien: 1, 2, 3, 6, 8, 14, 15, 16, 21; Buslinien: 30, 31, 32, 33, 34, 35, 36, 38, 42, 45, 46, 48, 50, Tramersatzverkehr.Nicht enthalten sind hingegen die Fahrgastzahlen der SBB, BLT oder ausländischer Transportunternehmen.Die Daten werden jeweils am 10. jeden Monats resp. am darauffolgenden Werktag aktualisiert.In Ausnahmefällen kann es aus technischen Gründen zu Verzögerungen im Prozess der Bereitstellung und Auswertung von Zähldaten kommen. Nachträglich verfügbare Messdaten werden in der hier vorliegenden Auswertung berücksichtigt, was in diesem Fall zu rückwirkenden Korrekturen führen kann.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/fahrgastzahlen-bvb)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100075/)
+
+Auto generated R starter code for data set 100075@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Basler Verkehrs-Betriebe`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['passagier', 'bus', 'tram', 'fahrgaste', 'haltestelle', 'einsteiger']`
+- **Issued** `2020-05-16T00:00:00`
+- **Metadata_created** `2022-07-12T08:40:45.852333`
+- **Metadata_modified** `2023-01-16T00:22:48.224463`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6859112d-d13f-4bd3-b34e-f3bdcbd03e0a
+# Description              : Fahrgastzahlen BVB (csv)
+# Issued                   : 2020-05-16T00:00:00
+# Modified                 : 2022-12-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100075/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Qualitätsindikatoren der Schweizer Akutspitäler 2008/2009
+
+Die Qualitätsindikatoren der Schweizer Akutspitäler 2008/2009 beinhalten Angaben zu den Behandlungen in Schweizer Spitälern 2008 und 2009. Ausgewiesen werden Fallzahlen, Anteilswerte (z. B. Kaiserschnittrate) sowie die Mortalität bei bestimmten Krankheitsbildern und Eingriffen.
+Die Indikatoren bezwecken einerseits, der interessierten Öffentlichkeit einen Einblick in die Tätigkeit der Spitäler zu ermöglichen, die zu einem grossen Teil mittels Krankenkassenprämien sowie Steuergeldern finanziert sind, und dem Patienten die Möglichkeit zu geben, die Spitalwahl faktenbasiert zu treffen. Andererseits sollen Fachleute in- und ausserhalb der Spitäler die Möglichkeit erhalten, basierend auf Vergleichen zwischen Spitälern einen weiteren Aspekt in die Qualitätsdiskussion in Fachgesellschaften einzubringen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/qualitatsindikatoren-der-schweizer-akutspitaler-20082009)<br>
+[Direct link by **Bundesamt für Gesundheit BAG** for dataset](http://www.bag.admin.ch/qiss)
+
+Auto generated R starter code for data set qip09@bundesamt-fur-gesundheit-bag.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Gesundheit`
+- **Organization.display_name.de** `Bundesamt für Gesundheit BAG`
+- **Organization.url** ``
+- **Maintainer** `Bundesamt für Gesundheit, Sektion Datenmanagement und Statistik`
+- **Maintainer_email** `KUV-DMS@bag.admin.ch`
+- **Keywords.de** `['akutspitaler', 'bag', 'bundesamt-fuer-gesundheit', 'ch-iqi', 'fallzahlen', 'kvg', 'medizinische-statistik', 'mortalitaetsraten', 'qualitaetsindikatoren']`
+- **Issued** `2013-09-26T00:00:00`
+- **Metadata_created** `2016-01-22T10:55:39.913580`
+- **Metadata_modified** `2022-04-27T09:53:17.673115`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3745c459-606f-4b54-acba-78f435cc2a1b
+# Description              : 
+# Issued                   : 2013-09-26T00:00:00
+# Modified                 : 
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bag-files.opendata.swiss/owncloud/index.php/s/zaH5qtZ6S7R5AmY')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Bundesamt für Gesundheit, Sektion Datenmanagement und Statistik | KUV-DMS@bag.admin.ch

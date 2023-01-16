@@ -1,0 +1,88 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Liste der Informationstafeln an Denkmalschutz-Objekten
+
+Der Datensatz enthält die Adressen, textlichen Beschreibungen und die Standorte der blauen Informationstafeln an kunst- und kulturhistorischen Schutzobjekten in der Stadt Zürich.
+Die Tafeln können an Gebäuden, Gebäudeteilen, Brunnen, Brücken usw. angebracht sein. Voraussetzung für das Anbringen einer blauen Tafel ist in der Regel die formelle Unterschutzstellung des Objekts.
+
+Die Denkmalschutz-Tafeln beziehen sich auf ein oder mehrere kunst- und kulturhistorischen Schutzobjekte und sind teilweise auch an Nicht-Inventar-Objekten angebracht. Manchmal sind auch mehrere Tafeln an einem Objekt montiert. Es besteht daher keine 1:1 Beziehung zum Datensatz des Denkmalinventars. Auch die Georeferenzierung erfolgte unabhängig und nach unterschiedlichen Gesichtspunkten. Der Standort der Tafeln wurde nur in einzelnen Fällen präzise erfasst, oft wurde eine von mehreren Adressen des beschriebenen Objekts verwendet.
+Eine spätere logische Zusammenführung mit dem Denkmalinventar ist denkbar.  
+
+**Zweck**: Veröffentlichung einer Gesamtübersicht zu den bestehenden Denkmalschutztafeln in der Stadt Zürich.
+Arbeitsinstrument im Bereich Archäologie & Denkmalpflege des Amts für Städtebau (AfS).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/liste-der-informationstafeln-an-denkmalschutz-objekten)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_liste_der_informationstafeln_an_denkmalschutz_objekten)
+
+Auto generated R starter code for data set b164f543-4915-4cca-b5bc-edb6fb783fc9@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Archäologie & Denkmalpflege, Amt für Städtebau, Hochbaudepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['schutzobjekte', 'geodaten', 'inventar', 'geschutzte-bauten', 'denkmalschutz', 'stzh', 'heimatschutz', 'punktdaten', 'denkmalpflege', 'geoportal']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:12:51.231046`
+- **Metadata_modified** `2023-01-16T00:53:54.853510`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : aeb8d63f-9fca-481a-8bca-7d02a41dee35
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Liste_der_Informationstafeln_an_Denkmalschutz_Objekten?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

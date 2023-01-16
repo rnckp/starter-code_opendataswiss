@@ -1,0 +1,108 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: KOF Business Situation Indicator
+
+Die KOF Geschäftslage basiert auf mehr als 4500 Meldungen von Unternehmen in der Schweiz. Monatlich werden Unternehmen in den Wirtschaftsbereichen Industrie, Detailhandel, Baugewerbe, Projektierung sowie Finanz- und Versicherungsdienstleistungen befragt. Unternehmen im Gastgewerbe, im Grosshandel und in den übrigen Dienstleistungen werden vierteljährlich, jeweils im ersten Monat eines Quartals, befragt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kof-business-situation-indicator)<br>
+[Direct link by **KOF Konjunkturforschungsstelle** for dataset](https://kof.ethz.ch/prognosen-indikatoren/indikatoren/kof-geschaeftslageindikator.html)
+
+Auto generated R starter code for data set ch.kof.bts_total@kof-konjunkturforschungsstelle.
+
+## Metadata
+
+- **Publisher** `KOF Konjunkturforschungsstelle`
+- **Organization.display_name.de** `KOF Konjunkturforschungsstelle`
+- **Organization.url** `https://kof.ethz.ch/`
+- **Maintainer** `KOF Datenservice`
+- **Maintainer_email** `data@kof.ethz.ch`
+- **Keywords.de** `['schweiz', 'geschaftslageindikator']`
+- **Issued** `nan`
+- **Metadata_created** `2021-06-08T14:32:22.169109`
+- **Metadata_modified** `2023-01-16T01:08:03.942100`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f06e4f99-2675-4b5b-85fd-b83082bdf077
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.bts_total?mime=csv&locale=de')
+
+# Distribution 1
+# Package_id               : f06e4f99-2675-4b5b-85fd-b83082bdf077
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.bts_total?mime=csv&locale=en')
+
+# Distribution 2
+# Package_id               : f06e4f99-2675-4b5b-85fd-b83082bdf077
+# Description              : Die KOF Geschäftslage basiert auf mehr als 4500 Meldungen von Unternehmen in der Schweiz. Monatlich werden Unternehmen in den Wirtschaftsbereichen Industrie, Detailhandel, Baugewerbe, Projektierung sowie Finanz- und Versicherungsdienstleistungen befragt. Unternehmen im Gastgewerbe, im Grosshandel und in den übrigen Dienstleistungen werden vierteljährlich, jeweils im ersten Monat eines Quartals, befragt.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/collections/ogd_ch.kof.bts_total?mime=csv')
+
+# Distribution 3
+# Package_id               : f06e4f99-2675-4b5b-85fd-b83082bdf077
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.bts_total?mime=csv&locale=fr')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@kof.ethz.ch | KOF Datenservice

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Apotheken mit Betriebsbewilligung oder Impfberechtigung nach Standort (September 2022)
+
+Liste der vom Kanton BL bewilligten Apotheken
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/apotheken-mit-betriebsbewilligung-oder-impfberechtigung-nach-standort-september-2022)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/10320/)
+
+Auto generated R starter code for data set 10320@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.bl.ch`
+- **Maintainer** `Manuela Bürgin`
+- **Maintainer_email** `manuela.buergin@bl.ch`
+- **Keywords.de** `['pharmazie', 'impfung', 'heilmittel', 'impfen', 'apothekerinnen', 'points-of-interest']`
+- **Issued** `2022-09-05T00:00:00`
+- **Metadata_created** `2022-12-13T15:08:08.305769`
+- **Metadata_modified** `2023-01-16T01:12:11.800874`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ab782876-1a48-4e7d-8239-9c707a0ada4d
+# Description              : Apotheken mit Betriebsbewilligung oder Impfberechtigung nach Standort (September 2022) (csv)
+# Issued                   : 2022-09-05T00:00:00
+# Modified                 : 2022-12-13T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/10320/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+manuela.buergin@bl.ch | Manuela Bürgin

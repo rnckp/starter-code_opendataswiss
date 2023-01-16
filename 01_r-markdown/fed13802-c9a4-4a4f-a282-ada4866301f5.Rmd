@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: COVID_19 Massnahmen im Kanton Zürich
+
+Geltende Massnahmen auf dem Gebiet des Kantons Zürich sowie Schulferienzeiten im Bezirk Zürich. Spaltenüberschriften: 'Datum' = Beginn der Massnahme; 'Raum' = Gebiet auf das sich die Massnahme resp. Schulferienzeit bezieht; 'Kategorisierung' = Art der Massnahme (bzw. Schulferien)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/covid_19-massnahmen-im-kanton-zurich)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/gesundheit/coronavirus/zahlen-fakten-covid-19.html?keyword=covid19)
+
+Auto generated R starter code for data set 707@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['gastgewerbe', 'gewerbe', 'kantonzuerich', 'sars-cov-2', 'corona', 'mobilitaet', 'schulen', 'oeffentlicherverkehr', 'bezirke']`
+- **Issued** `2020-11-06T00:00:00`
+- **Metadata_created** `2021-01-14T17:37:27.308820`
+- **Metadata_modified** `2023-01-16T03:07:21.495021`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : fed13802-c9a4-4a4f-a282-ada4866301f5
+# Description              : 
+# Issued                   : 2020-11-06T00:00:00
+# Modified                 : 2022-02-24T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/statistikZH/covid19zeitmarker/master/covid19zeitmarker.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

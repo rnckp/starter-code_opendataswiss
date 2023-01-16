@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Verkehrsreiche Strassen (50 km/h oder mehr)
+
+Der Datensatz enthält die velorelevanten Grundlagedaten des Velostadtplans 'Basel und Umgebung' wie Veloverbindungen, Velofahrverbote, Steigungen etc.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrsreiche-strassen-50-km-h-oder-mehr)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100034/)
+
+Auto generated R starter code for data set 100034@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Amt für Mobilität`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['einbahnstrasse', 'velo', 'hugel', 'verkehr', 'veloweg', 'fahrrad', 'e-bike', 'steil', 'gefahrenstelle', 'berg', 'tempo', 'pedelec']`
+- **Issued** `2019-11-06T00:00:00`
+- **Metadata_created** `2021-09-03T09:14:14.103716`
+- **Metadata_modified** `2023-01-16T00:23:07.887772`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0e5990b1-4c17-464e-be8c-7853eaca25ef
+# Description              : Verkehrsreiche Strassen (50 km/h oder mehr) (csv)
+# Issued                   : 2019-11-06T00:00:00
+# Modified                 : 2022-06-06T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100034/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

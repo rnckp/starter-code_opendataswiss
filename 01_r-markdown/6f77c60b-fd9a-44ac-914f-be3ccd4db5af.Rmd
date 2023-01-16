@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Tägliche Flüsse in die und aus der Schweiz (Gas)
+
+Als Nettoimport versteht man den täglichen Unterschied zwischen den gesamten Gasflüssen in die Schweiz und den Gasflüssen aus der Schweiz in die Nachbarländer. Gas wird über zwölf Einspeisepunkte aus den umliegenden Ländern Deutschland, Frankreich, Italien und Österreich in die Schweiz importiert aber auch exportiert. Der wichtigste Einspeisepunkt in den letzten Jahren war Wallbach auf der Transitgasleitung, über den rund 80% der Erdgasimporte abgewickelt werden. Der Nettoimport ist ein Indikator für den Verbrauch in der Schweiz, da die Schweiz über keine namhaften eigenen Speicher verfügt. Es muss jedoch zwischen Nettoimport, Landesverbrauch und Endverbrauch unterschieden werden. Der Nettoimport umfasst den Landesverbrauch abzüglich der Biogaseinspeisung ins Erdgasnetz (Schweizer Produktion). Der Endverbrauch ergibt sich aus dem Landesverbrauch abzüglich dem Gaseinsatz für die Erzeugung von Elektrizität und Fernwärme (Umwandlung) und dem Eigenverbrauch des Gassektors sowie Transport- und Netzverlusten. Im Unterschied zum Endverbrauch von Gas sind Transportverluste, Eigenverbrauch des Gassektors oder Biogaseinspeisungen im Nettoimport enthalten. Für diese Posten sind aktuell keine Daten auf Monats-/Tagesbasis verfügbar, weshalb der Endverbrauch nicht abgeschätzt werden kann. Disclaimer Daten Die Daten werden aus unterschiedlichen Quellen bezogen. Tagesaktuelle Daten sind aus den öffentlichen Quellen der EU verfügbar. Sie werden mit einem Verzug von 3 Tagen angezeigt, da sie dann vollständig sind. Diese Quellen weisen aber für die Schweiz gewisse Qualitätsprobleme auf, indem manchmal physische, manchmal nur kommerzielle Flüsse verfügbar sind. Offensichtlich unterschiedlich aussagekräftig können sie übergangsweise für eine Näherung der Nettoimporte verwendet werden. An den groben Tendenzen des Nettoimportes ändert dies nicht viel. Belastbare tägliche Daten zu Nettoimporten, Landesverbrauch und Endverbräuch sind aktuell nicht verfügbar. Das BWL arbeitet unter Einbezug des BFE mit dem VSG an Lösungen. Die Daten zu den monatlichen Nettoimporten stammen vom Verband der Schweizerischen Gasindustrie (VSG).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-gas)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://energiedashboard.ch)
+
+Auto generated R starter code for data set ogd101@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie BFE`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['ogd101-bfe', 'versorgungssicherheit', 'gas', 'nettoimport', 'gasverbrauch']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2022-12-14T05:09:19.444849`
+- **Metadata_modified** `2023-01-10T13:09:29.466025`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6f77c60b-fd9a-44ac-914f-be3ccd4db5af
+# Description              : 
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 2022-12-14T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd101_gas_import_export.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Digital Innovation Office | Digitalisierung@bfe.admin.ch

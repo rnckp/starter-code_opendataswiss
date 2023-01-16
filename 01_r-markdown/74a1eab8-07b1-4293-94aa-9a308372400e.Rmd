@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Hunde - Anzahl Hunde pro Hunde-halter:innen
+
+Entwicklung der Anzahl Hundehalterinnen und Hundehalter der registrierten und lebenden Hunde in der Schweiz und in Liechtenstein nach Anzahl gehaltener Hunde.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/hunde-hundehalter-innen-nach-anzahl-hunde)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set dogs-perOwner@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['eigentumerinnen', 'hunde', 'heimtiere']`
+- **Issued** `nan`
+- **Metadata_created** `2022-06-07T11:22:03.319195`
+- **Metadata_modified** `2023-01-10T01:11:00.071352`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 74a1eab8-07b1-4293-94aa-9a308372400e
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/dogs-perOwner.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG

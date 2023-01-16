@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Baumersatz
+
+Im Baumersatz werden alle städtischen Bäume im Strassenraum und in Grünanlagen erfasst, welche von Grün Stadt Zürich in der aktuellen Periode (jährlich ab Dezember) neu gepflanzt oder ersetzt werden.
+
+**Zweck**: Der Baumersatzdatensatz widerspiegelt den Inhalt der Baumersatzliste. Diese dient der Bevölkerung zur Information, wo Bäume durch Grün Stadt Zürich neu gepflanzt oder  ersetzt werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/baumersatz1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_baumersatz)
+
+Auto generated R starter code for data set ab2bd492-1139-4c09-9f26-b6acff22f755@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Produkteverantw.  & Unterstützungsfunk., Grün Stadt Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['stadtbaume', 'stadtbaum', 'punktdaten', 'geoportal', 'baum', 'baumersatzliste', 'fallung', 'stzh', 'parkbaum', 'baumersatz', 'vektordaten', 'strassenbaum', 'geodaten']`
+- **Issued** `nan`
+- **Metadata_created** `2022-05-10T01:11:04.620008`
+- **Metadata_modified** `2023-01-16T00:52:40.486848`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e611c341-1ce8-4117-b767-0a6598be7e36
+# Description              : 
+# Issued                   : 2022-05-09T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Baumersatz?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

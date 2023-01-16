@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Volksrechte
+
+Schlussresultate der eidgenössischen Abstimmung 'Volksrechte', 9. Februar 2003, Kanton Basel-Landschaft, aufgeschlüsselt nach Gemeinden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/volksrechte)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://abstimmungen.bl.ch/vote/volksrechte/data)
+
+Auto generated R starter code for data set vote-volksrechte@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher** `Basel-Landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.bl.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['national', 'abstimmung']`
+- **Issued** `2003-02-09T00:00:00`
+- **Metadata_created** `2022-12-13T15:04:51.707540`
+- **Metadata_modified** `2023-01-16T01:11:27.527862`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 89d22f11-2794-428c-9880-070bea3ac6d2
+# Description              : 
+# Issued                   : 2021-09-01T00:00:00
+# Modified                 : 2022-01-19T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://abstimmungen.bl.ch/vote/volksrechte/data-csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+wahlen-abstimmungen@bl.ch | Basel-Landschaft

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Direktverbindungen im internationalen Personenverkehr
+
+Der Datensatz bildet alle Fernverkehrsverbindungen ab, welche direkt ab der Schweiz nach Europa verkehren. Auf der Karte können Informationen zu allen abgebildeten Linien mit einem Klick abgefragt werden. Es besteht die Option nur Tages- oder nur Nachtzuglinien anzuzeigen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/direct-trains-in-europe)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/direktverbindungen/)
+
+Auto generated R starter code for data set direktverbindungen@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `[]`
+- **Issued** `2022-05-12T00:00:00`
+- **Metadata_created** `2022-06-13T06:14:05.842063`
+- **Metadata_modified** `2023-01-16T00:28:01.486110`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 96d3aa35-c051-4a9d-b330-8f8fbef1e781
+# Description              : Direktverbindungen im internationalen Personenverkehr (csv)
+# Issued                   : 2022-05-12T00:00:00
+# Modified                 : 2022-05-12T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/direktverbindungen/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten

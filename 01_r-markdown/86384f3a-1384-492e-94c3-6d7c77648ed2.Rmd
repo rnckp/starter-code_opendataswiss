@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Beteiligung am Urnengang der Kantons- und Regierungsratswahlen nach Alter und Geschlecht, seit 2015
+
+
+Die hier ausgewiesenen Zahlen entsprechen der **Anzahl eingegangener Stimmrechtsausweise** den Kantons- und Regierungsratswahlen von 2015 und 2019, aufgeschlüsselt nach Geschlecht und Alter.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/beteiligung-am-urnengang-der-kantons-und-regierungsratswahlen-nach-alter-und-geschlecht-se-20152)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/politik_kantonsratswahlen_btg_urnengang_alter_geschl_od7029)
+
+Auto generated R starter code for data set 00fb174f-3b6b-4a50-82d5-0dd7069fb4f6@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Stadtkanzlei, Allgemeine Verwaltung`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['tabelle', 'zeitreihe', 'wahlen', 'alter', 'nichtwaehlende', 'sachdaten', 'kantonsrat', 'geschlecht']`
+- **Issued** `2015-04-21T00:00:00`
+- **Metadata_created** `2020-03-14T07:21:17.549322`
+- **Metadata_modified** `2023-01-16T00:50:55.505054`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 86384f3a-1384-492e-94c3-6d7c77648ed2
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/politik_kantonsratswahlen_btg_urnengang_alter_geschl_od7029/download/POL702OD7029.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Wohnungsbestand und Personenzahl in Gebäuden nach Statistischer Zone seit 2008
+
+
+Diese Daten umfassen den Wohnungsbestand (Anzahl Wohnungen und Wohnungsfläche) sowie die Personenzahl in der Stadt Zürich nach administrativer Einteilung. Die Daten liegen ab dem Jahr 2008 jährlich vor.
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnungsbestand-und-personenzahl-in-gebauden-nach-statistischer-zone-seit-2008)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_best_whg_geb_gebmwhg_wfl_pers_statzone_jahr_od6981)
+
+Auto generated R starter code for data set bb238b44-c3db-4de1-9604-63bed2eb7c2c@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['personen', 'wohnflache', 'wohnungsflache', 'bewohner', 'grundangebot-bau', 'sachdaten', 'zeitreihe', 'wohnung', 'quartier', 'sasa', 'tabelle']`
+- **Issued** `2021-04-15T00:00:00`
+- **Metadata_created** `2021-06-29T02:46:15.520933`
+- **Metadata_modified** `2023-01-16T00:50:42.302995`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 211199ee-879c-45af-8d78-fc4a32f6176f
+# Description              : 
+# Issued                   : 2021-06-28T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_best_whg_geb_gebmwhg_wfl_pers_statzone_jahr_od6981/download/BAU698OD6981.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

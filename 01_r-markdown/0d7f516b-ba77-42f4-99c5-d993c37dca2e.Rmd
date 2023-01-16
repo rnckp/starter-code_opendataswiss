@@ -1,0 +1,123 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Fahrgastzahlen VBZ
+
+Diese Daten beinhalten **berechnete Jahreswerte** zu den Ein- und Aussteigenden an den Haltestellen, sowie zur Besetzung in den Fahrzeugen der Verkehrsbetriebe Zürich (VBZ). Bei den hier zur Verfügung gestellten Daten handelt es sich um **berechnete Mittelwerte** einzelner Fahrplanfahrten, **nicht** um **permanent gemessene Werte** aus allen Fahrzeugen. 
+
+Die **Frequenzerhebung** erfolgt in den **Fahrzeugen mit einer Zähleinrichtung**, etwa **20% der Fahrzeuge** der VBZ sind entsprechend ausgerüstet. Es erfolgt eine **Schichtung nach Tagtyp**, die auf Tages- bzw. Periodensummen **hochgerechnet** werden. Falls eine Planfahrt an einem Tagtyp nicht gemessen wurde, **interpoliert das Zählsystem** aus den benachbarten Fahrten.
+
+Die Tabellen ***HALTESTELLE.csv***, ***LINIE.csv***, ***TAGTYP.csv*** und ***GEFAESSGROESSE.csv*** sind Matchingtabellen zur Hauptdatei mit den Fahrgastzähldaten namens ***REISENDE.csv***.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/fahrgastzahlen-vbz1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd)
+
+Auto generated R starter code for data set 560952ab-1028-4de6-ac54-cbb1e0f4e1d7@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Verkehrsbetriebe Zürich, Departement der Industriellen Betriebe`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'tabelle', 'pendler', 'tram', 'offentlicher-verkehr', 'vbz', 'covid', 'passagiere', 'bus']`
+- **Issued** `2015-11-11T00:00:00`
+- **Metadata_created** `2019-07-30T01:04:47.997911`
+- **Metadata_modified** `2023-01-16T00:51:57.997649`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 5 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/LINIE.csv')
+
+# Distribution 1
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/TAGTYP.csv')
+
+# Distribution 2
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
+# Issued                   : 2021-03-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/GEFAESSGROESSE.csv')
+
+# Distribution 3
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
+# Issued                   : 2019-07-29T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/HALTESTELLEN.csv')
+
+# Distribution 4
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
+# Issued                   : 2020-03-05T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/REISENDE.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

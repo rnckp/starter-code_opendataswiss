@@ -1,0 +1,87 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-01-16"
+output: html_document
+---
+
+## Dataset: Umgesetzte Grundstücke und Fläche nach Handänderungstyp und Bebauungsart, seit 2009
+
+
+Diese Daten beinhalten die **Anzahl Grundstücke**, die in irgendeiner Weise die Hand gewechselt haben. Dazu gehören auch Grundstücke, bei denen nur ein Stockwerkeigentumsanteil die Hand gewechselt hat (separat ausgewiesen) .
+
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/umgesetzte-grundstucke-und-flache-nach-handanderungstyp-und-bebauungsart-seit-2009)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_hae_anz_fl_haeart_bebart_seit2009_od5111)
+
+Auto generated R starter code for data set b89b07f4-6da6-411b-afd3-d3229b1c9c76@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['liegenschaftenhandel', 'sachdaten', 'tabelle', 'zeitreihe', 'sasa', 'handanderungen']`
+- **Issued** `2019-02-14T00:00:00`
+- **Metadata_created** `2020-02-11T05:07:59.018939`
+- **Metadata_modified** `2023-01-16T00:50:51.235784`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5961a22b-9f35-4272-b216-db600fd407dc
+# Description              : 
+# Issued                   : 2020-02-10T00:00:00
+# Modified                 : 2023-01-15T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_hae_anz_fl_haeart_bebart_seit2009_od5111/download/BAU511OD5111.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
