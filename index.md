@@ -12,7 +12,7 @@ Feedback is always very welcome – simply open an issue.
 
 👉 Here is the link to the [repository](https://www.github.com/rnckp/starter-code_opendataswiss) that contains currently 2 x 2651 code files (1 x R, 1 x Python) for all data sets (*«packages»*) that are available on [opendata.swiss](https://opendata.swiss/) and that contain one or several CSV distributions. This website is build from this repo.
 
-<sub>Latest update: **2023-01-31 08:12:59**</sub><br>
+<sub>Latest update: **2023-01-31 08:14:22**</sub><br>
 <sub>For all data licenses please refer to each data set's link (provided in list as well as in the notebooks).</sub>
 
 
