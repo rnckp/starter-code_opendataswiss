@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-02-15"
+date: "2023-02-16"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 740@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Analysen & Studien`
 - **Maintainer_email** `peter.moser@statistik.ji.zh.ch`
-- **Keywords.de** `['primarschule', 'handelsregister', 'bahn', 'vorschulstufe', 'gesundheitszustand', 'todesfaelle', 'verkehrsfrequenz', 'energie', 'verkehr', 'strassenverkehr', 'flughafen', 'langsamverkehr', 'stellensuchende', 'konsum', 'mobilitaet', 'kinderbetreuung', 'konkurse', 'sars-cov-2', 'luftverkehr', 'wirtschaft', 'corona', 'covid-19', 'kleinkinderbetreuung', 'internetnutzung', 'kinderkrippen', 'familienberatung', 'arbeitslose', 'ausbildung', 'lehrlinge', 'kindergarten', 'verkehrsmittelwahl', 'medien', 'flugverkehr', 'berufslehre', 'flugbewegungen', 'gesundheit', 'bus', 'oeffentlicheschulen', 'oeffentlicherverkehr', 'jugendberatung', 'kinder', 'strassenverkehrszaehlung', 's-bahn', 'psychosozial', 'soziales', 'suchtprobleme', 'volkswirtschaft', 'bildung']`
+- **Keywords.de** `['handelsregister', 'luftverkehr', 'kinderkrippen', 'ausbildung', 'covid-19', 'arbeitslose', 'stellensuchende', 'oeffentlicherverkehr', 'bahn', 'corona', 'primarschule', 'verkehrsfrequenz', 'flughafen', 's-bahn', 'konsum', 'medien', 'gesundheitszustand', 'strassenverkehr', 'kleinkinderbetreuung', 'kinderbetreuung', 'wirtschaft', 'internetnutzung', 'gesundheit', 'psychosozial', 'soziales', 'jugendberatung', 'bus', 'kindergarten', 'sars-cov-2', 'mobilitaet', 'volkswirtschaft', 'flugverkehr', 'konkurse', 'lehrlinge', 'langsamverkehr', 'flugbewegungen', 'bildung', 'verkehrsmittelwahl', 'strassenverkehrszaehlung', 'berufslehre', 'energie', 'todesfaelle', 'suchtprobleme', 'verkehr', 'familienberatung', 'vorschulstufe', 'kinder', 'oeffentlicheschulen']`
 - **Issued** `2021-10-04T00:00:00`
 - **Metadata_created** `2021-10-26T03:42:29.683204`
-- **Metadata_modified** `2023-02-15T03:07:21.631279`
+- **Metadata_modified** `2023-02-16T03:02:09.247830`
 
 
 # Load packages
@@ -44,21 +44,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : eeedc079-9491-4e6c-bda1-303d23743bcd
-# Description              : Variabeln: 'id' = Kombination von 'variable_short' und 'location' ergibt eindeutigen Identifkator; 'topic' = thematische Kategorie des Indikators; 'variable_short' = Kurzbezeichnung des Indikators (kein String); 'variable_long' = längere Bezeichnung des Indikators (String); 'location' = räumlicher Bezug der Erhebung, 'unit' = Masseinheit des erhobenen Werts; 'source' = Quelle der erhobenen Daten, 'update' = Aktualisierungsfrequenz, 'public' = Status der Veröffentlichung (ja/nein), 'description' = URL mit Beschreibung zur Grundlage der jeweiligen Datenerhebung, Hinweisen zur Methodik sowie Weiteren Informationen; 'last_modified' = Datum der letzten Aktualisierung; 'date_first_obs' = Startdatum der Zeitreihe (d.i. die erste erhobene Beobachtung); 'date_last_obs' = Enddatum der Zeitreihe (d.i. die letzte erhobene Beobachtung); 'sort' = alphabetische Sortierungsvariable nach 'topic' und 'variable_long'.
-# Issued                   : 2021-10-04T00:00:00
-# Modified                 : 2021-10-25T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/statistikZH/covid19monitoring/master/Metadata.csv')
-
-# Distribution 1
-# Package_id               : eeedc079-9491-4e6c-bda1-303d23743bcd
 # Description              : Variabeln: 'date' = Datum der Erhebung; 'value' = erhobener Wert; 'topic' = thematische Kategorie des Indikators (Liste aller Indikatoren siehe Readme unter "Weiterführende Informationen"); 'variable_short' = Kurzbezeichnung des Indikators (kein String); 'variable_long' = längere Bezeichnung des Indikators (String); 'location' = räumlicher Bezug der Erhebung, 'unit' = Masseinheit des erhobenen Werts; 'source' = Quelle der erhobenen Daten, 'update' = Aktualisierungsfrequenz, 'public' = Status der Veröffentlichung (ja/nein), 'description' = URL mit Beschreibung zur Grundlage der jeweiligen Datenerhebung, Hinweisen zur Methodik sowie Weiteren Informationen.
 # Issued                   : 2021-10-04T00:00:00
 # Modified                 : 2021-10-25T00:00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://raw.githubusercontent.com/statistikZH/covid19monitoring/master/covid19socialmonitoring.csv')
+
+# Distribution 1
+# Package_id               : eeedc079-9491-4e6c-bda1-303d23743bcd
+# Description              : Variabeln: 'id' = Kombination von 'variable_short' und 'location' ergibt eindeutigen Identifkator; 'topic' = thematische Kategorie des Indikators; 'variable_short' = Kurzbezeichnung des Indikators (kein String); 'variable_long' = längere Bezeichnung des Indikators (String); 'location' = räumlicher Bezug der Erhebung, 'unit' = Masseinheit des erhobenen Werts; 'source' = Quelle der erhobenen Daten, 'update' = Aktualisierungsfrequenz, 'public' = Status der Veröffentlichung (ja/nein), 'description' = URL mit Beschreibung zur Grundlage der jeweiligen Datenerhebung, Hinweisen zur Methodik sowie Weiteren Informationen; 'last_modified' = Datum der letzten Aktualisierung; 'date_first_obs' = Startdatum der Zeitreihe (d.i. die erste erhobene Beobachtung); 'date_last_obs' = Enddatum der Zeitreihe (d.i. die letzte erhobene Beobachtung); 'sort' = alphabetische Sortierungsvariable nach 'topic' und 'variable_long'.
+# Issued                   : 2021-10-04T00:00:00
+# Modified                 : 2021-10-25T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/statistikZH/covid19monitoring/master/Metadata.csv')
 
 
 
