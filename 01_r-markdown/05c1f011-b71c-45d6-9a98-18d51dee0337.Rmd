@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-03-29"
+date: "2023-03-30"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 714@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Wahlen & Abstimmungen`
 - **Maintainer_email** `wahlen@statistik.ji.zh.ch`
-- **Keywords.de** `['abstimmungsergebnisse', 'eidgenoessischevolksabstimmungen', 'gemeinden', 'politischegemeinden', 'politik', 'abstimmungen', 'kantonalevolksabstimmungen']`
+- **Keywords.de** `['kantonalevolksabstimmungen', 'politischegemeinden', 'gemeinden', 'politik', 'abstimmungsergebnisse', 'abstimmungen', 'eidgenoessischevolksabstimmungen']`
 - **Issued** `2016-02-26T00:00:00`
 - **Metadata_created** `2021-01-14T17:35:46.139491`
-- **Metadata_modified** `2023-03-29T03:03:16.006395`
+- **Metadata_modified** `2023-03-30T03:08:22.700002`
 
 
 # Load packages
@@ -44,21 +44,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 05c1f011-b71c-45d6-9a98-18d51dee0337
-# Description              : Alle Ergebnisse der kantonalen und eidgenössischen Abstimmungen pro Gemeinde.
-# Issued                   : 2016-02-26T00:00:00
-# Modified                 : 2022-11-29T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_abstimmungsarchiv_gemeinden.csv')
-
-# Distribution 1
-# Package_id               : 05c1f011-b71c-45d6-9a98-18d51dee0337
 # Description              : Ergebnisse der kantonalen und eidgenössischen Abstimmungen auf Ebene Kanton. Die Daten enthalten Links zu den jeweiligen Abstimmungszeitungen, Gesetzestexten und Publikationen im Amtsblatt.
 # Issued                   : 2016-02-26T00:00:00
 # Modified                 : 2022-11-29T00:00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_abstimmungsarchiv_kanton.csv')
+
+# Distribution 1
+# Package_id               : 05c1f011-b71c-45d6-9a98-18d51dee0337
+# Description              : Alle Ergebnisse der kantonalen und eidgenössischen Abstimmungen pro Gemeinde.
+# Issued                   : 2016-02-26T00:00:00
+# Modified                 : 2022-11-29T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_abstimmungsarchiv_gemeinden.csv')
 
 
 
