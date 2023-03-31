@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-03-31"
+output: html_document
+---
+
+## Dataset: Regierungsratswahlen, Landammannwahl, Landesstatthalterwahl 2008
+
+Schlussresultate der kantonalen Wahl 'Regierungsratswahlen 2008, Landammannwahl, Landesstatthalterwahl', 6. April 2008, Kanton Uri, aufgeschlüsselt nach Kandidaten und Gemeinden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/regierungsratswahlen-landammannwahl-landesstatthalterwahl-2008)<br>
+[Direct link by **Kanton Uri** for dataset](https://www.ur.ch/abstimmungen/termine/3532)
+
+Auto generated R starter code for data set regierungsratswahlen2008@kanton-uri.
+
+## Metadata
+
+- **Publisher** `Kanton Uri, Landammannamt`
+- **Organization.display_name.de** `Kanton Uri`
+- **Organization.url** `https://www.ur.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wahlergebnisse', 'regierungsratswahlen', 'kanton-uri', 'kanton', 'wahl', 'regierungsrat', 'politik']`
+- **Issued** `2023-03-31T00:00:00`
+- **Metadata_created** `2023-03-30T13:34:59.064490`
+- **Metadata_modified** `2023-03-30T13:36:29.206358`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6ee77519-dc4e-41e1-9373-bf21a1256a69
+# Description              : Wahlergebnisse der Regierungsräte in den einzelnen Urner Gemeinden
+# Issued                   : 2023-03-31T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.ur.ch/_doc/330847')
+
+# Distribution 1
+# Package_id               : 6ee77519-dc4e-41e1-9373-bf21a1256a69
+# Description              : Wahlergebnisse des Landammann in den einzelnen Urner Gemeinden
+# Issued                   : 2023-03-31T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.ur.ch/_doc/330772')
+
+# Distribution 2
+# Package_id               : 6ee77519-dc4e-41e1-9373-bf21a1256a69
+# Description              : Wahlergebnisse des Landesstatthalter in den einzelnen Urner Gemeinden
+# Issued                   : 2023-03-31T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.ur.ch/_doc/330784')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Kanton Uri, Landammannamt | markus.froesch@ur.ch
