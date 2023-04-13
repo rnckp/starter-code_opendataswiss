@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-04-12"
+date: "2023-04-13"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 696@gesundheitsdirektion-kanton-zueri
 - **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
 - **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
 - **Maintainer_email** `gdstab@gd.zh.ch`
-- **Keywords.de** `['krankheiten', 'covid-19', 'gesundheit', 'sars-cov-2', 'corona']`
+- **Keywords.de** `['sars-cov-2', 'krankheiten', 'corona', 'covid-19', 'gesundheit']`
 - **Issued** `2020-08-13T00:00:00`
 - **Metadata_created** `2021-01-14T16:34:24.583779`
-- **Metadata_modified** `2023-04-12T03:10:54.353753`
+- **Metadata_modified** `2023-04-13T03:11:01.202239`
 
 
 # Load packages
@@ -44,6 +44,15 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 939b6052-e3d3-4ddc-8ece-3c64f4e01a37
+# Description              : Die Daten wurden bis zum 21. Oktober 2020 wöchentlich aktualisiert und beziehen sich jeweils rollend auf die letzten 14 Tage. Als «nicht eindeutig» gilt ein Ansteckungskontext, wenn die befragte Person nicht weiss, bei wem sie sich angesteckt hat resp. die Frage, ob sie in Kontakt mit einer auf das Coronavirus positiv getesteten Person war, verneint. Nur wenn der Ansteckungsweg eindeutig ist, wird nach dem Ansteckungskontext (Eigener Haushalt, Arbeitsplatz, usw.) differenziert. Dass ein Ansteckungskontext als eindeutig klassifiziert wird, ist umso wahrscheinlicher, je klarer andere Personen zu diesem Ansteckungskontext zugeordnet werden können. Beispiel: Eine Ansteckung im eigenen Haushalt wird viel eher als eindeutig klassifiziert als eine Ansteckung beim Sport im Freien. Diese Daten erlauben keine Aussage über Ansteckungskontexte von Personen, die nicht eindeutig wissen, bei wem sie sich angesteckt haben. Die Interpretation der Daten soll folglich zurückhaltend erfolgen, da ein grosser Spielraum für Fehlinterpretationen besteht.
+# Issued                   : 2020-08-13T00:00:00
+# Modified                 : 2020-10-22T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_contact_tracing_ZH/master/data/Ansteckungswege_2020.csv')
+
+# Distribution 1
+# Package_id               : 939b6052-e3d3-4ddc-8ece-3c64f4e01a37
 # Description              : Die Daten stehen ab dem 4. Januar 2021 wöchentlich (bis dienstags) um die jeweils letzte Kalenderwoche aktualisiert bereit. Als «eindeutig» gilt ein Ansteckungskontext, wenn die befragte Person mit grosser Sicherheit sagen kann, bei wem sie sich angesteckt hat respektive weiss, dass sie in Kontakt mit einer positiv getesteten Person war. Als «vermutet» gilt ein Ansteckungskontext, wenn die befragte Person eine konkrete Vermutung über den Ansteckungsweg hat. Diese wird in einem strukturierten Gespräch erörtert, bleibt jedoch subjektiv und ist ensprechend vorsichtig zu interpretieren. Als «nicht befragt» werden positiv getestete Personen ausgewiesen, die telefonisch nicht erreicht werden konnten. Gründe dafür sind (fehlende Telefonnummer, unkooperatives Verhalten, Personen in Alters-/Pflegeheimen). Ob eine Ansteckung als eindeutig klassifiziert wird, hängt stark vom Kontext ab. Beispiel: Eine Ansteckung im eigenen Haushalt wird viel eher als eindeutig klassifiziert als eine Ansteckung beim Sport im Freien. Die Daten sind darum verzerrt. Einfach ermittelbare Ansteckungswege sind überdurchschnittlich vertreten. Ein Vergleich der Ansteckungskontexte ist darum nur sehr bedingt möglich. Möglich sind jedoch Aussagen über die zeitliche Entwicklung einzelner Kategorien. Die Interpretation der Daten soll folglich zurückhaltend erfolgen, da ein grosser Spielraum für Fehlinterpretationen besteht. Die Variabeln werden im Readme: Ansteckungswege (siehe unter "Weitere Informationen") erklärt.
 # Issued                   : 2021-04-20T00:00:00
 # Modified                 : 2022-05-25T00:00:00
@@ -51,7 +60,7 @@ library(skimr)
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_contact_tracing_ZH/master/data/Ansteckungswege_2021.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : 939b6052-e3d3-4ddc-8ece-3c64f4e01a37
 # Description              : Die Daten stehen ab dem 4. Januar 2021 wöchentlich (bis dienstags) aktualisiert bereit. Als «eindeutig» gilt ein Ansteckungskontext, wenn die befragte Person mit grosser Sicherheit sagen kann, bei wem sie sich angesteckt hat respektive weiss, dass sie in Kontakt mit einer positiv getesteten Person war. Als «vermutet» gilt ein Ansteckungskontext, wenn die befragte Person eine konkrete Vermutung über den Ansteckungsweg hat. Diese wird in einem strukturierten Gespräch erörtert, bleibt jedoch subjektiv und ist ensprechend vorsichtig zu interpretieren. Als «nicht befragt» werden positiv getestete Personen ausgewiesen, die telefonisch nicht erreicht werden konnten. Gründe dafür sind (fehlende Telefonnummer, unkooperatives Verhalten, Personen in Alters-/Pflegeheimen). Ob eine Ansteckung als eindeutig klassifiziert wird, hängt stark vom Kontext ab. Beispiel: Eine Ansteckung im eigenen Haushalt wird viel eher als eindeutig klassifiziert als eine Ansteckung beim Sport im Freien. Die Daten sind darum verzerrt. Einfach ermittelbare Ansteckungswege sind überdurchschnittlich vertreten. Ein Vergleich der Ansteckungskontexte ist darum nur sehr bedingt möglich. Möglich sind jedoch Aussagen über die zeitliche Entwicklung einzelner Kategorien. Die Interpretation der Daten soll folglich zurückhaltend erfolgen, da ein grosser Spielraum für Fehlinterpretationen besteht. Die Variabeln werden im Readme: Ansteckungswege (siehe unter "Weitere Informationen") erklärt.
 # Issued                   : 2021-04-20T00:00:00
@@ -59,15 +68,6 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_contact_trac
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_contact_tracing_ZH/master/data/Ansteckungswege_2021_total.csv')
-
-# Distribution 2
-# Package_id               : 939b6052-e3d3-4ddc-8ece-3c64f4e01a37
-# Description              : Die Daten wurden bis zum 21. Oktober 2020 wöchentlich aktualisiert und beziehen sich jeweils rollend auf die letzten 14 Tage. Als «nicht eindeutig» gilt ein Ansteckungskontext, wenn die befragte Person nicht weiss, bei wem sie sich angesteckt hat resp. die Frage, ob sie in Kontakt mit einer auf das Coronavirus positiv getesteten Person war, verneint. Nur wenn der Ansteckungsweg eindeutig ist, wird nach dem Ansteckungskontext (Eigener Haushalt, Arbeitsplatz, usw.) differenziert. Dass ein Ansteckungskontext als eindeutig klassifiziert wird, ist umso wahrscheinlicher, je klarer andere Personen zu diesem Ansteckungskontext zugeordnet werden können. Beispiel: Eine Ansteckung im eigenen Haushalt wird viel eher als eindeutig klassifiziert als eine Ansteckung beim Sport im Freien. Diese Daten erlauben keine Aussage über Ansteckungskontexte von Personen, die nicht eindeutig wissen, bei wem sie sich angesteckt haben. Die Interpretation der Daten soll folglich zurückhaltend erfolgen, da ein grosser Spielraum für Fehlinterpretationen besteht.
-# Issued                   : 2020-08-13T00:00:00
-# Modified                 : 2020-10-22T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_contact_tracing_ZH/master/data/Ansteckungswege_2020.csv')
 
 # Distribution 3
 # Package_id               : 939b6052-e3d3-4ddc-8ece-3c64f4e01a37
