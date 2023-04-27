@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-04-26"
+date: "2023-04-27"
 output: html_document
 ---
 
@@ -25,10 +25,10 @@ Auto generated R starter code for data set 55c68924-bb53-40a4-8f62-69e063cb2afe@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['bus', 'frequenzen', 'fahrgastzahlen', 'ov', 'sachdaten', 'offentlicher-verkehr', 'tabelle', 'pendler', 'tram', 'vbz', 'hardbucke', 'passagiere']`
+- **Keywords.de** `['bus', 'ov', 'tram', 'frequenzen', 'passagiere', 'sachdaten', 'hardbucke', 'pendler', 'offentlicher-verkehr', 'fahrgastzahlen', 'vbz', 'tabelle']`
 - **Issued** `2020-03-27T00:00:00`
 - **Metadata_created** `2023-02-14T00:55:25.512090`
-- **Metadata_modified** `2023-04-26T01:12:00.806248`
+- **Metadata_modified** `2023-04-27T01:00:05.906890`
 
 
 # Load packages
@@ -50,13 +50,22 @@ library(skimr)
 # Distribution 0
 # Package_id               : a6ea9ba5-44c2-464b-a19a-052f31f36a06
 # Description              : 
+# Issued                   : 2021-01-05T00:00:00
+# Modified                 : 2022-01-04T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2021.csv')
+
+# Distribution 1
+# Package_id               : a6ea9ba5-44c2-464b-a19a-052f31f36a06
+# Description              : 
 # Issued                   : 2022-01-04T00:00:00
 # Modified                 : 2022-12-31T00:00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2022.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : a6ea9ba5-44c2-464b-a19a-052f31f36a06
 # Description              : 
 # Issued                   : 2020-04-07T00:00:00
@@ -65,20 +74,11 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruec
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2020.csv')
 
-# Distribution 2
-# Package_id               : a6ea9ba5-44c2-464b-a19a-052f31f36a06
-# Description              : 
-# Issued                   : 2021-01-05T00:00:00
-# Modified                 : 2022-01-04T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2021.csv')
-
 # Distribution 3
 # Package_id               : a6ea9ba5-44c2-464b-a19a-052f31f36a06
 # Description              : 
 # Issued                   : 2023-01-03T00:00:00
-# Modified                 : 2023-04-26T00:00:00
+# Modified                 : 2023-04-27T00:00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_frequenzen_hardbruecke/download/frequenzen_hardbruecke_2023.csv')
