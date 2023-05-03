@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-05-02"
+date: "2023-05-03"
 output: html_document
 ---
 
@@ -21,10 +21,10 @@ Auto generated R starter code for data set 671@gesundheitsdirektion-kanton-zueri
 - **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
 - **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
 - **Maintainer_email** `gdstab@gd.zh.ch`
-- **Keywords.de** `['corona', 'altersklassen', 'kantonzuerich', 'sars-cov-2', 'alter', 'gesundheit', 'todesfaelle', 'krankheiten', 'bezirke', 'covid-19', 'geschlecht', 'altersgruppen', 'gemeinden']`
+- **Keywords.de** `['kantonzuerich', 'altersgruppen', 'todesfaelle', 'sars-cov-2', 'altersklassen', 'geschlecht', 'corona', 'alter', 'gesundheit', 'covid-19', 'bezirke', 'gemeinden', 'krankheiten']`
 - **Issued** `2020-03-05T00:00:00`
 - **Metadata_created** `2021-01-14T16:34:32.013427`
-- **Metadata_modified** `2023-05-02T03:09:46.550695`
+- **Metadata_modified** `2023-05-03T03:08:59.420112`
 
 
 # Load packages
@@ -63,24 +63,6 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallz
 
 # Distribution 2
 # Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
-# Description              : Bestätigt positive Fälle sowie die Todesfälle pro Kalenderwoche als 10-Jahres-Altersklassen je Geschlecht. Bis 08.07.2020 wurden täglich Einzelfallzahlen mit Alter und Geschlecht veröffentlicht (siehe Ressource "COVID_19 Fallzahlen Kanton Zuerich nach Alter und Geschlecht"). Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert. Variabeln: 'AgeYearCat' = 10-Jahres-Altersklasse (0-9 Jahre, 10-19 Jahre, 20-29 Jahre, usw.); 'NewConfCases' = Neue bestätigte Fälle; 'NewDeaths' = Neue Todesfälle.
-# Issued                   : 2020-07-09T00:00:00
-# Modified                 : 2023-01-04T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_alter_geschlecht_csv/COVID19_Fallzahlen_Kanton_ZH_altersklassen_geschlecht.csv')
-
-# Distribution 3
-# Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
-# Description              : Laborbestätigte positive Fälle mit Bezug zum Kanton Zürich. Für Variabeln-Definitionen siehe Readme unter "Weitere Informationen". Hinweis: Bei der Variable 'current_quarantined' handelt es sich um die Anzahl Kontaktpersonen, die theoretisch in Quarantäne sein müssten. Personen, die aufgrund eines vollständigen Impfschutzes nicht in Quarantäne müssen, werden nicht subtrahiert. Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert.
-# Issued                   : 2020-03-09T00:00:00
-# Modified                 : 2023-01-04T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_total_csv_v2/COVID19_Fallzahlen_Kanton_ZH_total.csv')
-
-# Distribution 4
-# Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
 # Description              : Anteil der positiven SARS-CoV-2 Tests pro Kalenderwoche. Variabeln: 'Woche_von' = Beginn der Kalenderwoche (Datum); 'Woche_bis' = Ende der Kalenderwoche (Datum); 'Anzahl_positiv' = Anzahl positiver Tests; 'Anzahl_negativ' = Anzahl negativer Tests; 'Anteil_positiv' = Anteil der positiven Tests an allen Tests. Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert.
 # Issued                   : 2020-08-22T00:00:00
 # Modified                 : 2023-01-04T00:00:00
@@ -88,7 +70,7 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallz
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_zh/COVID19_Anteil_positiver_Test_pro_KW.csv')
 
-# Distribution 5
+# Distribution 3
 # Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
 # Description              : Verteilung der neu bestätigt infizierten Fälle der jeweils letzten sieben Tage nach Postleitzahl. Postleitzahlen, die auf dem Gebiet des Kantons Zürich weniger als 100 EinwohnerInnen aufweisen, werden aus Gründen des Datenschutzes in der Kategorie 'PLZ_uebrige' zusammengefasst. Bei den Werten handelt es sich nicht um Einzelfallzahlen, sondern um Fallzahlklassen. Variabeln: 'PLZ' = Postleitzahl; 'Population' = EinwohnerInnen mit Hauptwohnsitz; 'NewConfCases_7days' = Neue bestätigte Fälle in den vergangenen sieben Tagen in Kategorien (0-3 Fälle, 4-6 Fälle, 7-9 Fälle, usw.). Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert.
 # Issued                   : 2020-07-09T00:00:00
@@ -96,6 +78,24 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallz
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_plz/fallzahlen_kanton_ZH_plz.csv')
+
+# Distribution 4
+# Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
+# Description              : Bestätigt positive Fälle sowie die Todesfälle pro Kalenderwoche als 10-Jahres-Altersklassen je Geschlecht. Bis 08.07.2020 wurden täglich Einzelfallzahlen mit Alter und Geschlecht veröffentlicht (siehe Ressource "COVID_19 Fallzahlen Kanton Zuerich nach Alter und Geschlecht"). Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert. Variabeln: 'AgeYearCat' = 10-Jahres-Altersklasse (0-9 Jahre, 10-19 Jahre, 20-29 Jahre, usw.); 'NewConfCases' = Neue bestätigte Fälle; 'NewDeaths' = Neue Todesfälle.
+# Issued                   : 2020-07-09T00:00:00
+# Modified                 : 2023-01-04T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_alter_geschlecht_csv/COVID19_Fallzahlen_Kanton_ZH_altersklassen_geschlecht.csv')
+
+# Distribution 5
+# Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
+# Description              : Laborbestätigte positive Fälle mit Bezug zum Kanton Zürich. Für Variabeln-Definitionen siehe Readme unter "Weitere Informationen". Hinweis: Bei der Variable 'current_quarantined' handelt es sich um die Anzahl Kontaktpersonen, die theoretisch in Quarantäne sein müssten. Personen, die aufgrund eines vollständigen Impfschutzes nicht in Quarantäne müssen, werden nicht subtrahiert. Die Daten werden einmal wöchentlich (jeweils am Mittwoch) aktualisiert.
+# Issued                   : 2020-03-09T00:00:00
+# Modified                 : 2023-01-04T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19/master/fallzahlen_kanton_total_csv_v2/COVID19_Fallzahlen_Kanton_ZH_total.csv')
 
 # Distribution 6
 # Package_id               : f35d401f-37b0-4d4f-a616-62fb8a4d8f01
