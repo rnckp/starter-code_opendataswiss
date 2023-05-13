@@ -1,0 +1,198 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-05-13"
+output: html_document
+---
+
+## Dataset: S3 Didok
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/s3-didok)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/s3-didok)
+
+Auto generated R starter code for data set s3-didok@oevch.
+
+## Metadata
+
+- **Publisher** `Publisher 1`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `[]`
+- **Issued** `2023-05-12T14:21:34.326003`
+- **Metadata_created** `2023-05-13T00:30:46.465365`
+- **Metadata_modified** `2023-05-13T00:30:46.465371`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 14 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:51.192210
+# Modified                 : 2023-05-12T14:21:51.192210
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/b34cfea8-9673-4ea6-8639-793ce720526d/download/verkehrspunktelemente_full.csv')
+
+# Distribution 1
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:45.959350
+# Modified                 : 2023-05-12T14:21:45.959350
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/80ccb720-a9c1-4396-982d-bed35f2ce279/download/prm_stop_places.csv')
+
+# Distribution 2
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:43.012481
+# Modified                 : 2023-05-12T14:21:43.012481
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/e903e4a4-d14b-4e25-96a3-15bdf0031ff6/download/prm_platforms.csv')
+
+# Distribution 3
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:46.875989
+# Modified                 : 2023-05-12T14:21:46.875989
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/19d00878-086d-4e80-8024-7da25e0b4794/download/prm_ticket_counters.csv')
+
+# Distribution 4
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:36.280138
+# Modified                 : 2023-05-12T14:21:36.280138
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/6f7d33f6-fd59-40a3-995e-d04b8dfb18df/download/dienststellen_full.csv')
+
+# Distribution 5
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:34.326003
+# Modified                 : 2023-05-12T14:21:34.326003
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/f6494d27-2c13-4706-9fdd-5f0e1d36c1d8/download/dienststellen_actualdate.csv')
+
+# Distribution 6
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:49.398674
+# Modified                 : 2023-05-12T14:21:49.398674
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/bce2c4b7-783c-4387-b422-2ded5ed79468/download/verkehrspunktelemente_actualdate.csv')
+
+# Distribution 7
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:40.765012
+# Modified                 : 2023-05-12T14:21:40.765012
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/1bb0da24-0068-4791-a1db-7875ab248439/download/prm_info_desks.csv')
+
+# Distribution 8
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:39.911901
+# Modified                 : 2023-05-12T14:21:39.911901
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/9ad8b06d-e7e3-45b5-adf9-d6f62ad2097b/download/prm_connections.csv')
+
+# Distribution 9
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:37.995801
+# Modified                 : 2023-05-12T14:21:37.995801
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/dbb2404d-de51-430d-ab50-90022b9cc011/download/dienststellen_future_timetable.csv')
+
+# Distribution 10
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:47.990466
+# Modified                 : 2023-05-12T14:21:47.990466
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/198f5731-4182-4e6e-8db0-079622ad92b5/download/prm_toilets.csv')
+
+# Distribution 11
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:44.910539
+# Modified                 : 2023-05-12T14:21:44.910539
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/fb3b7321-16ab-4bb8-9ece-32cbd2545633/download/prm_reference_points.csv')
+
+# Distribution 12
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:39.025034
+# Modified                 : 2023-05-12T14:21:39.025034
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/797a4dac-0f99-4227-8de7-2e44569a55a1/download/go-liste.csv')
+
+# Distribution 13
+# Package_id               : 0d7ecfaa-771e-4500-89b3-63a0be0f1065
+# Description              : 
+# Issued                   : 2023-05-12T14:21:41.677436
+# Modified                 : 2023-05-12T14:21:41.677436
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/030bb71d-bda3-40eb-8209-6b12c82aea9a/resource/57070437-32c7-4255-9583-e682f1b2ab03/download/prm_parking_lots.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+contact@example.com | Contact Name
