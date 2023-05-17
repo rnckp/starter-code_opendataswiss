@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-05-16"
+date: "2023-05-17"
 output: html_document
 ---
 
@@ -23,7 +23,7 @@ Auto generated R starter code for data set didok@oevch.
 - **Keywords.de** `['didok']`
 - **Issued** `2016-12-01T12:00:00`
 - **Metadata_created** `2017-03-02T09:11:49.328643`
-- **Metadata_modified** `2023-05-16T00:32:42.731513`
+- **Metadata_modified** `2023-05-17T00:42:35.805263`
 
 
 # Load packages
@@ -37,7 +37,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 1 distribution(s) in CSV format.
+-   The dataset has 2 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -45,11 +45,20 @@ library(skimr)
 # Distribution 0
 # Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
 # Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
-# Issued                   : 2020-04-06T11:16:29.936506
-# Modified                 : 2023-05-14T23:45:48.870538
+# Issued                   : 2020-04-06T11:16:53.933008
+# Modified                 : 2023-05-16T23:51:25.388321
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/bf7a60c6-32ff-42bf-8d29-8b815907340a/download/dienststellen_full.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/6c7e8c20-c624-4746-907d-dab20bb1e1db/download/dienststellen_future_timetable.csv')
+
+# Distribution 1
+# Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
+# Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
+# Issued                   : 2020-04-06T11:16:58.647203
+# Modified                 : 2023-05-16T23:51:57.409382
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/fa22683a-3670-443f-a1a5-986ea9d436b1/download/verkehrspunktelemente_actualdate.csv')
 
 
 
