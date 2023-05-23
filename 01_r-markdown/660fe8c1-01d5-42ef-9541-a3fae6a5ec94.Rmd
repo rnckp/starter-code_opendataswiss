@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-05-23"
+output: html_document
+---
+
+## Dataset: Temperatur Wiese
+
+Der Datensatz zeigt die stündlichen Temperaturwerte der Wiese an.Koordinaten: 47.581638577259945, 7.59193858146811
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/temperatur-wiese)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100269/)
+
+Auto generated R starter code for data set 100269@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Tiefbauamt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['fluss']`
+- **Issued** `2023-05-22T23:30:14.475000+00:00`
+- **Metadata_created** `2023-05-23T00:41:50.968064`
+- **Metadata_modified** `2023-05-23T00:41:50.968073`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 660fe8c1-01d5-42ef-9541-a3fae6a5ec94
+# Description              : Temperatur Wiese (csv)
+# Issued                   : 2023-05-22T23:30:14.475000+00:00
+# Modified                 : 2023-05-22T23:30:14.475000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100269/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt
