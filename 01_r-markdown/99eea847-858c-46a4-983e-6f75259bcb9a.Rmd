@@ -1,20 +1,19 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-05-26"
+date: "2023-05-27"
 output: html_document
 ---
 
-## Dataset: Viertelstundenwerte zur Stromabgabe in den Netzebenen 5 und 7 in der Stadt Zürich, seit 2010
+## Dataset: Viertelstundenwerte des Stromverbrauchs in den Netzebenen 5 und 7 in der Stadt Zürich, seit 2015
 
-Dieser Datensatz beinhaltet Stromverbrauchsdaten des ewz-Netzes in der Stadt Zürich.
+Dieser Datensatz beinhaltet Stromverbrauchsdaten des ewz-Netzes in der Stadt Zürich. Es handelt sich um die Bruttoenergie, das heisst der konsumierten Energie der Verbraucherinnen und Verbraucher. Netzverluste etc. sind in der Bruttoenergie nicht enthalten.
 
 Die Daten sind aufgeteilt in:
 
- - Haushalte, KMU's und Dienstleistungen (Niederspannung, Netzebene 7 -> NE7) 
- - Unternehmen und Dienstleistungen mit höherem Stromverbrauch (Mittelspannung, Netzebene 5 -> NE5).
+- Haushalte, KMU's und Dienstleistungen (Niederspannung, Netzebene 7 -> NE7) 
+- Unternehmen und Dienstleistungen mit höherem Stromverbrauch (Mittelspannung, Netzebene 5 -> NE5).
 
-Aus technischen Gründen beinhaltet die Zeitreihe für die Niederspannung auch die Netzverluste, ausserdem werden Einspeisungen auf der Niederspannung hier nicht berücksichtigt. Die Daten liegen als 15-Minuten Zeitreihe seit dem 1.1.2010 vor.
-Nächstes Jahr werden wir eine Zeitreihe für die Niederspannung aufschalten, die ohne Netzverluste aber mit allen Einspeisungen auf der Niederspannungsebene gebildet wird.
+Die Daten liegen als 15-Minuten Zeitreihe seit dem 1.1.2015 vor.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/viertelstundenwerte-zur-stromabgabe-in-den-netzebenen-5-und-7-in-der-stadt-zurich-seit-2010)<br>
 [Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/ewz_stromabgabe_netzebenen_stadt_zuerich)
@@ -28,10 +27,10 @@ Auto generated R starter code for data set ebfd54ba-4fd3-4b62-ab9e-11ddb667bdb6@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['sachdaten', 'tabelle', 'zeitreihe', 'energie']`
+- **Keywords.de** `['zeitreihe', 'tabelle', 'sachdaten', 'energie']`
 - **Issued** `2022-10-27T00:00:00`
 - **Metadata_created** `2022-10-27T01:19:31.251346`
-- **Metadata_modified** `2023-05-26T01:11:51.635318`
+- **Metadata_modified** `2023-05-27T01:12:40.192804`
 
 
 # Load packages
@@ -54,7 +53,7 @@ library(skimr)
 # Package_id               : 99eea847-858c-46a4-983e-6f75259bcb9a
 # Description              : 
 # Issued                   : 2022-10-26T18:50:30.371817
-# Modified                 : 2023-05-25T22:48:45.927641
+# Modified                 : 2023-05-26T22:54:43.774174
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_stromabgabe_netzebenen_stadt_zuerich/download/ewz_stromabgabe_netzebenen_stadt_zuerich.csv')
