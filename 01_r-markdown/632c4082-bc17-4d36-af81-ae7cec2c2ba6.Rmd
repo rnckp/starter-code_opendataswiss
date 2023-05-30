@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-05-29"
+date: "2023-05-30"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1321@personalamt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/finanzdirektion/personalamt.html`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['verwaltungspersonal', 'vollzeitaequivalente', 'beschaeftigungsgrad', 'frauenanteil', 'ausbildung', 'teilzeiterwerbstaetige', 'alter', 'vollzeiterwerbstaetige', 'geschlecht', 'lohnstruktur', 'beschaeftigte', 'staatspersonal']`
+- **Keywords.de** `['teilzeiterwerbstaetige', 'verwaltungspersonal', 'beschaeftigungsgrad', 'geschlecht', 'vollzeiterwerbstaetige', 'staatspersonal', 'beschaeftigte', 'frauenanteil', 'ausbildung', 'vollzeitaequivalente', 'lohnstruktur', 'alter']`
 - **Issued** `2022-09-27T10:26:52+01:00`
 - **Metadata_created** `2022-11-15T16:14:41.486406`
-- **Metadata_modified** `2023-05-29T03:14:08.211939`
+- **Metadata_modified** `2023-05-30T03:14:07.705937`
 
 
 # Load packages
@@ -62,21 +62,21 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 2
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Ausgewiesen als 'Beschaeftigungsumfang'*, gegliedert nach Personalgruppen gemäss den Funktionsbereichen ('funktionsbereich_name') und Funktionen ('funktion') des Personalrechts. *Der 'Beschaeftigungsumfang' einer Verwaltungseinheit umfasst die Gesamtzahl aller während eines Jahres Beschäftigten in Vollzeiteinheiten. Eine Vollzeiteinheit entspricht einer Anstellung vom 1. Januar bis 31. Dezember bei einem Beschäftigungsgrad von 100 Prozent. Aus einer Anstellung im Teilzeit-Pensum bzw. durch unterjährigen Aus-/Eintritt ergibt sich der entsprechende Anteil einer Vollzeiteinheit.
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2022-09-27T10:26:52+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002539.csv')
+
+# Distribution 3
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
 # Description              : Ausgewiesen als 'Beschaeftigungsumfang'*, gegliedert nach Variablen 'direktion_code', 'direktion_name', 'amt_bereich_code' und 'amt_bereich_name' (Code = "Amts-Nr."; sowie Name der Direktionen und Organisationseinheiten gemäss Personalamt), differenziert in 'Angestellte' (= in Vollzeiteinheiten: Anstellungen gemäss Personalverordnung (PVO) und Lehrpersonen (unbefristet und befristet) und in 'Uebriges Personal' (= Mitglieder von Behörden, Lernende, Praktikanten). *Der 'Beschäftigungsumfang' einer Verwaltungseinheit umfasst die Gesamtzahl aller während eines Jahres Beschäftigten in Vollzeiteinheiten. Eine Vollzeiteinheit entspricht einer Anstellung vom 1. Januar bis 31. Dezember bei einem Beschäftigungsgrad von 100 Prozent. Aus einer Anstellung im Teilzeit-Pensum bzw. durch unterjährigen Aus-/Eintritt ergibt sich der entsprechende Anteil einer Vollzeiteinheit.
 # Issued                   : 2022-09-27T10:26:52+01:00
 # Modified                 : 2022-09-29T17:10:17+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002559.csv')
-
-# Distribution 3
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Anzahl Anstellungsverhältnisse nach Lohnklasse ('01', '02', ..., '29'; weitere Informationen siehe Link "Kantonales Lohnsystem" in den Metadaten zum Datensatz) in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2022-09-27T10:26:52+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002565.csv')
 
 # Distribution 4
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
@@ -89,12 +89,12 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 5
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Ausgewiesen als 'Beschaeftigungsumfang'*, gegliedert nach Personalgruppen gemäss den Funktionsbereichen ('funktionsbereich_name') und Funktionen ('funktion') des Personalrechts. *Der 'Beschaeftigungsumfang' einer Verwaltungseinheit umfasst die Gesamtzahl aller während eines Jahres Beschäftigten in Vollzeiteinheiten. Eine Vollzeiteinheit entspricht einer Anstellung vom 1. Januar bis 31. Dezember bei einem Beschäftigungsgrad von 100 Prozent. Aus einer Anstellung im Teilzeit-Pensum bzw. durch unterjährigen Aus-/Eintritt ergibt sich der entsprechende Anteil einer Vollzeiteinheit.
+# Description              : Anzahl Anstellungsverhältnisse nach Lohnklasse ('01', '02', ..., '29'; weitere Informationen siehe Link "Kantonales Lohnsystem" in den Metadaten zum Datensatz) in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
 # Issued                   : 2022-09-27T10:26:52+01:00
 # Modified                 : 2022-09-27T10:26:52+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002539.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002565.csv')
 
 # Distribution 6
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6

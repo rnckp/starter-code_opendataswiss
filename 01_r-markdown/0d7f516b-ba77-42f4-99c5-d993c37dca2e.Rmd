@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-05-29"
+date: "2023-05-30"
 output: html_document
 ---
 
@@ -26,10 +26,10 @@ Auto generated R starter code for data set 560952ab-1028-4de6-ac54-cbb1e0f4e1d7@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['offentlicher-verkehr', 'passagiere', 'tram', 'pendler', 'vbz', 'sachdaten', 'covid', 'tabelle', 'bus']`
+- **Keywords.de** `['tabelle', 'covid', 'vbz', 'bus', 'passagiere', 'tram', 'pendler', 'offentlicher-verkehr', 'sachdaten']`
 - **Issued** `2015-11-11T00:00:00`
 - **Metadata_created** `2019-07-30T01:04:47.997911`
-- **Metadata_modified** `2023-05-29T01:09:32.929194`
+- **Metadata_modified** `2023-05-30T01:17:46.532469`
 
 
 # Load packages
@@ -51,13 +51,31 @@ library(skimr)
 # Distribution 0
 # Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
 # Description              : 
+# Issued                   : 2021-03-29T20:07:38.316279
+# Modified                 : 2023-05-28T20:12:25.054629
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/GEFAESSGROESSE.csv')
+
+# Distribution 1
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
 # Issued                   : 2019-07-29T15:02:50.772178
 # Modified                 : 2023-05-28T20:12:27.467220
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/LINIE.csv')
 
-# Distribution 1
+# Distribution 2
+# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
+# Description              : 
+# Issued                   : 2020-03-05T20:33:56.106804
+# Modified                 : 2023-05-28T20:12:28.789572
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/REISENDE.csv')
+
+# Distribution 3
 # Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
 # Description              : 
 # Issued                   : 2019-07-29T15:02:54.440859
@@ -66,7 +84,7 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/d
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/TAGTYP.csv')
 
-# Distribution 2
+# Distribution 4
 # Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
 # Description              : 
 # Issued                   : 2019-07-29T15:02:51.228548
@@ -74,24 +92,6 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/d
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/HALTESTELLEN.csv')
-
-# Distribution 3
-# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
-# Description              : 
-# Issued                   : 2021-03-29T20:07:38.316279
-# Modified                 : 2023-05-28T20:12:25.054629
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/GEFAESSGROESSE.csv')
-
-# Distribution 4
-# Package_id               : 0d7f516b-ba77-42f4-99c5-d993c37dca2e
-# Description              : 
-# Issued                   : 2020-03-05T20:33:56.106804
-# Modified                 : 2023-05-28T20:12:28.789572
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrgastzahlen_ogd/download/REISENDE.csv')
 
 
 
