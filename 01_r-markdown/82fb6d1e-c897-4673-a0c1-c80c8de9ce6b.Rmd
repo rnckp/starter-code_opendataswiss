@@ -1,10 +1,10 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-06-06"
+date: "2023-06-07"
 output: html_document
 ---
 
-## Dataset: Kennzahlen der Sozialhilfe nach Gemeinde und Jahr (ab 2005)
+## Dataset: Kennzahlen der Sozialhilfe nach Gemeinde und Jahr (seit 2005)
 
 Sozialhilfeempfängerstatistik (SHS), Bundesamt für Statistik; Kantonale Bevölkerungsstatistik und Gemeindefinanzstatistik, Statistisches Amt Basel-LandschaftMethodische HinweiseDie Kennzahlen der Sozialhilfe BL werden nur für Gemeinden mit 50 und mehr unterstützten Personen im Erhebungsjahr ausgewiesen. Die Anzahl ausgewiesener Gemeinden kann daher von Jahr zu Jahr variieren.Sozialhilfefall/unterstützte PersonGezählt werden alle Fälle/Personen, welche mindestens einmal im relevanten Jahr Sozialhilfeleistungen bezogen haben. Ein Fall kann mehrere unterstützte Personen umfassen. SozialhilfequoteDie Sozialhilfequote entspricht dem Anteil der Sozialhilfebeziehenden an der Wohnbevölkerung. Als Referenzbevölkerung für die Berechnung dient der Vorjahresendbestand der ständigen Wohnbevölkerung gemäss STATPOP (Bundesamt für Statistik; bis 2010 der Vorjahresendbestand der Wohnbevölkerung gemäss kantonaler Bevölkerungsstatistik).DoppelzählungenEine Unterstützungseinheit kann pro Jahr in mehreren Fällen unterstützt werden. Zum Beispiel, wenn ein Wohnortswechsel erfolgt. Bei den Sozialhilfefällen und den unterstützten Personen werden im Bezirks- und Kantonstotal Doppelzählungen ausgeklammert, jedoch nicht bei den neuen/abgeschlossenen Fällen und den neu eingetretenen/ausgetretenen Personen.AbschlüsseSozialhilfefälle werden abgeschlossen, wenn seit mehr als sechs Monaten keine Auszahlung mehr erfolgt ist. Es werden auch Abschlüsse von Fällen zum aktuellen Jahr gezählt, welche im Vorjahr eine letzte Auszahlung erhalten haben und im laufenden Jahr abgeschlossen wurden. Falls nach einem Unterbruch von mehr als sechs Monaten erneut ein Antrag auf Sozialhilfe gestellt wird, wird ein neuer Fall eröffnet.Nettoaufwand aus der GemeindefinanzstatistikAls Nettoaufwand gelten diejenigen Kosten (Aufwand), welche den Sozialhilfebeziehenden «direkt» zugutekommen abzüglich den erhaltenen Rückerstattungen (Ertrag). Darin enthalten sind auch Eingliederungsmassnahmen. Hingegen ist der Verwaltungsaufwand (Sozialdienst und Sozialhilfebehörde) nicht in der Auswertung enthalten. Die Kosten des vom Bund finanzierten Asylwesens sind nicht enthalten. Es werden somit die Kosten derjenigen Personen betrachtet, welche Sozialhilfeempfängerstatistik (SHS) des Bundesamts für Statistik geführt werden. Der Nettoaufwand steht ab dem Jahr 2014 zur Verfügung.
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 10300@kanton-basel-landschaft.
 - **Organization.url** `https://www.bl.ch`
 - **Maintainer** `Tamara Bobst`
 - **Maintainer_email** `tamara.bobst@bl.ch`
-- **Keywords.de** `['abgeschlossene-falle', 'neue-eingetretene-personen', 'ausgetretene-personen', 'nettoaufwand-pro-einwohnerin', 'neue-falle']`
+- **Keywords.de** `['abgeschlossene-falle', 'nettoaufwand-pro-einwohnerin', 'neue-falle', 'neue-eingetretene-personen', 'ausgetretene-personen']`
 - **Issued** `2022-11-30T00:00:00`
 - **Metadata_created** `2022-12-13T15:07:35.330549`
-- **Metadata_modified** `2023-06-06T02:15:42.117440`
+- **Metadata_modified** `2023-06-07T01:56:55.120872`
 
 
 # Load packages
@@ -44,9 +44,9 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 82fb6d1e-c897-4673-a0c1-c80c8de9ce6b
-# Description              : Kennzahlen der Sozialhilfe nach Gemeinde und Jahr (ab 2005) (csv)
+# Description              : Kennzahlen der Sozialhilfe nach Gemeinde und Jahr (seit 2005) (csv)
 # Issued                   : 2022-11-30T00:00:00
-# Modified                 : 2023-03-13T15:59:23.984000+00:00
+# Modified                 : 2023-06-06T11:10:03.987000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/10300/exports/csv')
