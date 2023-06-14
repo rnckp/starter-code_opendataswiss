@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-06-13"
+date: "2023-06-14"
 output: html_document
 ---
 
@@ -24,10 +24,10 @@ Auto generated R starter code for data set 6db44316-9717-4a98-8a83-577d4cb25afc@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['so2', 'echtzeit', 'feinstaub', 'stickstoffdioxid', 'o3', 'co', 'ozon', 'luft', 'no2', 'pm10', 'luftqualitat', 'pn', 'schwefeldioxid', 'stickstoffmonoxid', 'messwerte', 'kohlenmonoxid', 'zeitreihe', 'partikelanzahl', 'sachdaten', 'luftschadstoffe', 'schadstoffe', 'nox', 'pm25', 'no', 'stickoxide', 'tabelle']`
+- **Keywords.de** `['zeitreihe', 'feinstaub', 'no', 'stickoxide', 'no2', 'o3', 'sachdaten', 'luft', 'luftqualitat', 'stickstoffmonoxid', 'luftschadstoffe', 'pn', 'schadstoffe', 'so2', 'pm25', 'echtzeit', 'stickstoffdioxid', 'messwerte', 'kohlenmonoxid', 'schwefeldioxid', 'partikelanzahl', 'co', 'pm10', 'tabelle', 'ozon', 'nox']`
 - **Issued** `2015-06-16T00:00:00`
 - **Metadata_created** `2020-10-22T05:25:57.727648`
-- **Metadata_modified** `2023-06-13T01:12:19.559885`
+- **Metadata_modified** `2023-06-14T00:52:04.086319`
 
 
 # Load packages
@@ -49,371 +49,371 @@ library(skimr)
 # Distribution 0
 # Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
 # Description              : 
-# Issued                   : 2020-10-21T12:29:38.589186
-# Modified                 : 2023-06-12T23:39:02.654847
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2020.csv')
-
-# Distribution 1
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:28:57.711104
-# Modified                 : 2023-06-12T23:38:56.039819
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2018.csv')
-
-# Distribution 2
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:31:34.069935
-# Modified                 : 2023-06-12T23:38:41.612267
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2014.csv')
-
-# Distribution 3
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:32:21.554417
-# Modified                 : 2023-06-12T23:38:10.224043
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2005.csv')
-
-# Distribution 4
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:28:23.635174
-# Modified                 : 2023-06-12T23:36:44.776272
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1988.csv')
-
-# Distribution 5
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:30:11.666755
-# Modified                 : 2023-06-12T23:38:48.598129
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2016.csv')
-
-# Distribution 6
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:32:12.761785
-# Modified                 : 2023-06-12T23:37:57.969420
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2002.csv')
-
-# Distribution 7
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:30:46.852762
-# Modified                 : 2023-06-12T23:36:21.923813
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1985.csv')
-
-# Distribution 8
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
 # Issued                   : 2020-10-21T12:34:32.642030
-# Modified                 : 2023-06-12T23:37:51.234061
+# Modified                 : 2023-06-13T23:37:14.067772
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2001.csv')
 
-# Distribution 9
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:28:44.004816
-# Modified                 : 2023-06-12T23:38:24.680476
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2009.csv')
-
-# Distribution 10
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:34:12.837380
-# Modified                 : 2023-06-12T23:38:31.587589
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2011.csv')
-
-# Distribution 11
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:32:53.166973
-# Modified                 : 2023-06-12T23:35:36.765360
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1983.csv')
-
-# Distribution 12
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:32:02.588458
-# Modified                 : 2023-06-12T23:38:02.295280
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2003.csv')
-
-# Distribution 13
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:29:50.430998
-# Modified                 : 2023-06-12T23:37:29.269279
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1996.csv')
-
-# Distribution 14
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2023-01-02T00:22:07.024972
-# Modified                 : 2023-06-12T23:39:14.322486
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2023.csv')
-
-# Distribution 15
+# Distribution 1
 # Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
 # Description              : 
 # Issued                   : 2020-10-21T12:31:07.160349
-# Modified                 : 2023-06-12T23:38:13.644633
+# Modified                 : 2023-06-13T23:37:40.669638
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2006.csv')
 
-# Distribution 16
+# Distribution 2
 # Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
 # Description              : 
-# Issued                   : 2020-10-21T12:33:14.596672
-# Modified                 : 2023-06-12T23:38:06.107903
+# Issued                   : 2020-10-21T12:28:57.711104
+# Modified                 : 2023-06-13T23:38:37.238021
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2004.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2018.csv')
 
-# Distribution 17
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:31:43.710538
-# Modified                 : 2023-06-12T23:37:07.907544
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1992.csv')
-
-# Distribution 18
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:33:04.661162
-# Modified                 : 2023-06-12T23:37:20.883170
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1994.csv')
-
-# Distribution 19
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:33:36.028234
-# Modified                 : 2023-06-12T23:36:57.013455
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1990.csv')
-
-# Distribution 20
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:28:33.861871
-# Modified                 : 2023-06-12T23:37:33.752490
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1997.csv')
-
-# Distribution 21
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:33:46.130118
-# Modified                 : 2023-06-12T23:38:27.975944
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2010.csv')
-
-# Distribution 22
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:29:08.169022
-# Modified                 : 2023-06-12T23:37:01.561819
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1991.csv')
-
-# Distribution 23
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:34:03.729507
-# Modified                 : 2023-06-12T23:38:59.336242
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2019.csv')
-
-# Distribution 24
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:30:56.833839
-# Modified                 : 2023-06-12T23:38:34.938637
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2012.csv')
-
-# Distribution 25
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:29:27.625295
-# Modified                 : 2023-06-12T23:38:17.046896
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2007.csv')
-
-# Distribution 26
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:31:19.177318
-# Modified                 : 2023-06-12T23:37:45.954275
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2000.csv')
-
-# Distribution 27
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:32:40.826725
-# Modified                 : 2023-06-12T23:37:41.559858
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1999.csv')
-
-# Distribution 28
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:31:51.019832
-# Modified                 : 2023-06-12T23:37:37.893604
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1998.csv')
-
-# Distribution 29
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:29:58.608849
-# Modified                 : 2023-06-12T23:38:45.309143
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2015.csv')
-
-# Distribution 30
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:29:17.924146
-# Modified                 : 2023-06-12T23:38:38.114262
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2013.csv')
-
-# Distribution 31
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:30:28.847733
-# Modified                 : 2023-06-12T23:36:50.178631
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1989.csv')
-
-# Distribution 32
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2021-01-06T08:35:28.474619
-# Modified                 : 2023-06-12T23:39:06.898395
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2021.csv')
-
-# Distribution 33
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:34:20.572590
-# Modified                 : 2023-06-12T23:37:15.365100
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1993.csv')
-
-# Distribution 34
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:32:32.030052
-# Modified                 : 2023-06-12T23:38:52.546099
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2017.csv')
-
-# Distribution 35
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2022-01-01T23:37:18.881741
-# Modified                 : 2023-06-12T23:39:10.906635
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2022.csv')
-
-# Distribution 36
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:28:24.188416
-# Modified                 : 2023-06-12T23:38:20.762599
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2008.csv')
-
-# Distribution 37
-# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
-# Description              : 
-# Issued                   : 2020-10-21T12:30:37.017218
-# Modified                 : 2023-06-12T23:37:24.867652
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1995.csv')
-
-# Distribution 38
+# Distribution 3
 # Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
 # Description              : 
 # Issued                   : 2020-10-21T12:30:19.383360
-# Modified                 : 2023-06-12T23:36:38.640602
+# Modified                 : 2023-06-13T23:36:12.410270
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1987.csv')
 
-# Distribution 39
+# Distribution 4
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2022-01-01T23:37:18.881741
+# Modified                 : 2023-06-13T23:38:52.573073
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2022.csv')
+
+# Distribution 5
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:29:38.589186
+# Modified                 : 2023-06-13T23:38:43.576414
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2020.csv')
+
+# Distribution 6
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:30:28.847733
+# Modified                 : 2023-06-13T23:36:21.823432
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1989.csv')
+
+# Distribution 7
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:30:11.666755
+# Modified                 : 2023-06-13T23:38:30.615580
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2016.csv')
+
+# Distribution 8
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:28:23.635174
+# Modified                 : 2023-06-13T23:36:17.536533
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1988.csv')
+
+# Distribution 9
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:28:33.861871
+# Modified                 : 2023-06-13T23:36:54.464743
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1997.csv')
+
+# Distribution 10
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:34:03.729507
+# Modified                 : 2023-06-13T23:38:40.439960
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2019.csv')
+
+# Distribution 11
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:29:27.625295
+# Modified                 : 2023-06-13T23:37:46.497894
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2007.csv')
+
+# Distribution 12
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2023-01-02T00:22:07.024972
+# Modified                 : 2023-06-13T23:38:55.841083
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2023.csv')
+
+# Distribution 13
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:32:40.826725
+# Modified                 : 2023-06-13T23:37:03.371951
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1999.csv')
+
+# Distribution 14
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:34:12.837380
+# Modified                 : 2023-06-13T23:38:06.921506
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2011.csv')
+
+# Distribution 15
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:31:19.177318
+# Modified                 : 2023-06-13T23:37:08.064132
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2000.csv')
+
+# Distribution 16
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:32:12.761785
+# Modified                 : 2023-06-13T23:37:19.870365
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2002.csv')
+
+# Distribution 17
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:29:08.169022
+# Modified                 : 2023-06-13T23:36:29.716196
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1991.csv')
+
+# Distribution 18
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:31:43.710538
+# Modified                 : 2023-06-13T23:36:34.113395
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1992.csv')
+
+# Distribution 19
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:29:58.608849
+# Modified                 : 2023-06-13T23:38:27.301811
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2015.csv')
+
+# Distribution 20
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:32:21.554417
+# Modified                 : 2023-06-13T23:37:36.317147
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2005.csv')
+
+# Distribution 21
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:30:46.852762
+# Modified                 : 2023-06-13T23:36:01.395582
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1985.csv')
+
+# Distribution 22
 # Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
 # Description              : 
 # Issued                   : 2020-10-21T12:33:55.878534
-# Modified                 : 2023-06-12T23:36:31.273042
+# Modified                 : 2023-06-13T23:36:07.407307
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1986.csv')
 
-# Distribution 40
+# Distribution 23
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:28:44.004816
+# Modified                 : 2023-06-13T23:37:59.540943
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2009.csv')
+
+# Distribution 24
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:31:51.019832
+# Modified                 : 2023-06-13T23:36:59.069758
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1998.csv')
+
+# Distribution 25
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:30:56.833839
+# Modified                 : 2023-06-13T23:38:10.473253
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2012.csv')
+
+# Distribution 26
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:33:36.028234
+# Modified                 : 2023-06-13T23:36:26.015592
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1990.csv')
+
+# Distribution 27
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:30:37.017218
+# Modified                 : 2023-06-13T23:36:46.498956
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1995.csv')
+
+# Distribution 28
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:32:02.588458
+# Modified                 : 2023-06-13T23:37:24.951357
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2003.csv')
+
+# Distribution 29
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:29:17.924146
+# Modified                 : 2023-06-13T23:38:13.947956
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2013.csv')
+
+# Distribution 30
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:32:32.030052
+# Modified                 : 2023-06-13T23:38:33.856441
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2017.csv')
+
+# Distribution 31
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:29:50.430998
+# Modified                 : 2023-06-13T23:36:50.735524
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1996.csv')
+
+# Distribution 32
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:31:34.069935
+# Modified                 : 2023-06-13T23:38:17.786079
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2014.csv')
+
+# Distribution 33
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:33:46.130118
+# Modified                 : 2023-06-13T23:38:03.228304
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2010.csv')
+
+# Distribution 34
 # Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
 # Description              : 
 # Issued                   : 2020-10-21T12:33:24.060591
-# Modified                 : 2023-06-12T23:35:57.677596
+# Modified                 : 2023-06-13T23:35:42.444856
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1984.csv')
+
+# Distribution 35
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:33:04.661162
+# Modified                 : 2023-06-13T23:36:42.533397
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1994.csv')
+
+# Distribution 36
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2021-01-06T08:35:28.474619
+# Modified                 : 2023-06-13T23:38:48.363749
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2021.csv')
+
+# Distribution 37
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:32:53.166973
+# Modified                 : 2023-06-13T23:35:28.103871
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1983.csv')
+
+# Distribution 38
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:33:14.596672
+# Modified                 : 2023-06-13T23:37:31.576261
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2004.csv')
+
+# Distribution 39
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:34:20.572590
+# Modified                 : 2023-06-13T23:36:38.308765
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_1993.csv')
+
+# Distribution 40
+# Package_id               : 727afd9c-e293-4753-b1a0-decb58ae7e2d
+# Description              : 
+# Issued                   : 2020-10-21T12:28:24.188416
+# Modified                 : 2023-06-13T23:37:55.604677
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte/download/ugz_ogd_air_d1_2008.csv')
 
 
 
