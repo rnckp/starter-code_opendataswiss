@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-06-21"
+date: "2023-06-22"
 output: html_document
 ---
 
@@ -27,10 +27,10 @@ Auto generated R starter code for data set 67ab5ceb-26e4-413d-b03e-3ac66583af95@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['verspatung', 'offentlicher-verkehr', 'punktlichkeit', 'vbz', 'tabelle', 'tram', 'bus', 'sachdaten', 'hackzurich']`
+- **Keywords.de** `['sachdaten', 'punktlichkeit', 'verspatung', 'tabelle', 'vbz', 'hackzurich', 'bus', 'tram', 'offentlicher-verkehr']`
 - **Issued** `2015-11-11T00:00:00`
 - **Metadata_created** `2019-08-08T02:31:45.974613`
-- **Metadata_modified** `2023-06-21T01:37:47.473825`
+- **Metadata_modified** `2023-06-22T02:34:04.955145`
 
 
 # Load packages
@@ -52,13 +52,40 @@ library(skimr)
 # Distribution 0
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:46:24.623235
-# Modified                 : 2023-06-18T22:18:12.359169
+# Issued                   : 2019-08-07T12:45:28.075705
+# Modified                 : 2023-06-18T22:17:26.390004
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170709_20170715.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170521_20170527.csv')
 
 # Distribution 1
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T13:51:32.116285
+# Modified                 : 2023-06-18T22:20:53.438025
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171224_20171230.csv')
+
+# Distribution 2
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:47:43.973366
+# Modified                 : 2023-06-18T22:16:39.154265
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170402_20170408.csv')
+
+# Distribution 3
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:45:20.622124
+# Modified                 : 2023-06-18T22:16:45.393558
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170409_20170415.csv')
+
+# Distribution 4
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T12:47:17.438095
@@ -67,124 +94,25 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170319_20170325.csv')
 
-# Distribution 2
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:47:34.258529
-# Modified                 : 2023-06-18T22:16:51.554511
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170416_20170422.csv')
-
-# Distribution 3
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:46:41.713504
-# Modified                 : 2023-06-18T22:17:50.930372
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170618_20170624.csv')
-
-# Distribution 4
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T13:51:49.754616
-# Modified                 : 2023-06-18T22:20:24.034922
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171126_20171202.csv')
-
 # Distribution 5
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:46:59.666218
-# Modified                 : 2023-06-18T22:17:44.703739
+# Issued                   : 2019-08-07T12:44:37.847432
+# Modified                 : 2023-06-18T22:18:03.641810
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170611_20170617.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170702_20170708.csv')
 
 # Distribution 6
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:46:07.062512
-# Modified                 : 2023-06-18T22:18:37.315919
+# Issued                   : 2019-08-07T12:43:49.401474
+# Modified                 : 2023-06-18T22:18:18.247837
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170806_20170812.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170716_20170722.csv')
 
 # Distribution 7
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:48:21.329503
-# Modified                 : 2023-06-18T22:15:38.835484
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170129_20170204.csv')
-
-# Distribution 8
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:45:28.075705
-# Modified                 : 2023-06-18T22:17:26.390004
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170521_20170527.csv')
-
-# Distribution 9
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:48:02.598541
-# Modified                 : 2023-06-18T22:15:51.543908
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170212_20170218.csv')
-
-# Distribution 10
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T13:52:14.486968
-# Modified                 : 2023-06-18T22:19:55.981810
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171029_20171104.csv')
-
-# Distribution 11
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:44:19.337236
-# Modified                 : 2023-06-18T22:17:32.781840
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170528_20170603.csv')
-
-# Distribution 12
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:46:15.320130
-# Modified                 : 2023-06-18T22:17:19.723745
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170514_20170520.csv')
-
-# Distribution 13
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:46:50.898659
-# Modified                 : 2023-06-18T22:19:43.797844
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171015_20171021.csv')
-
-# Distribution 14
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:45:44.548384
-# Modified                 : 2023-06-18T22:18:30.879994
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170730_20170805.csv')
-
-# Distribution 15
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T12:48:38.505556
@@ -193,25 +121,79 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170122_20170128.csv')
 
+# Distribution 8
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:46:59.666218
+# Modified                 : 2023-06-18T22:17:44.703739
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170611_20170617.csv')
+
+# Distribution 9
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:44:01.592050
+# Modified                 : 2023-06-18T22:17:04.420555
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170430_20170506.csv')
+
+# Distribution 10
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:47:08.831667
+# Modified                 : 2023-06-18T22:19:30.274247
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171001_20171007.csv')
+
+# Distribution 11
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:46:07.062512
+# Modified                 : 2023-06-18T22:18:37.315919
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170806_20170812.csv')
+
+# Distribution 12
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:44:45.556866
+# Modified                 : 2023-06-18T22:17:57.047661
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170625_20170701.csv')
+
+# Distribution 13
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:48:46.889599
+# Modified                 : 2023-06-18T22:16:18.605749
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170312_20170318.csv')
+
+# Distribution 14
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T13:51:43.408447
+# Modified                 : 2023-06-18T22:20:46.355418
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171217_20171223.csv')
+
+# Distribution 15
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T13:52:14.486968
+# Modified                 : 2023-06-18T22:19:55.981810
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171029_20171104.csv')
+
 # Distribution 16
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:49:36.408870
-# Modified                 : 2023-06-18T22:15:18.038202
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170108_20170114.csv')
-
-# Distribution 17
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T13:51:55.681331
-# Modified                 : 2023-06-18T22:20:31.361244
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171203_20171209.csv')
-
-# Distribution 18
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T13:51:37.332961
@@ -220,23 +202,41 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171210_20171216.csv')
 
+# Distribution 17
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:44:19.337236
+# Modified                 : 2023-06-18T22:17:32.781840
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170528_20170603.csv')
+
+# Distribution 18
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:48:11.993117
+# Modified                 : 2023-06-18T22:15:10.809748
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170101_20170107.csv')
+
 # Distribution 19
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:44:31.375681
-# Modified                 : 2023-06-18T22:17:39.024830
+# Issued                   : 2019-08-07T12:47:26.113800
+# Modified                 : 2023-06-18T22:19:49.910004
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170604_20170610.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171022_20171028.csv')
 
 # Distribution 20
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:47:08.831667
-# Modified                 : 2023-06-18T22:19:30.274247
+# Issued                   : 2019-08-07T12:45:36.599238
+# Modified                 : 2023-06-18T22:18:56.346420
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171001_20171007.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170827_20170902.csv')
 
 # Distribution 21
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
@@ -250,148 +250,13 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 # Distribution 22
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:48:58.343363
-# Modified                 : 2023-06-18T22:15:24.832897
+# Issued                   : 2019-08-07T12:45:44.548384
+# Modified                 : 2023-06-18T22:18:30.879994
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170115_20170121.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170730_20170805.csv')
 
 # Distribution 23
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:45:36.599238
-# Modified                 : 2023-06-18T22:18:56.346420
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170827_20170902.csv')
-
-# Distribution 24
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:49:07.604786
-# Modified                 : 2023-06-18T22:16:12.288387
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170305_20170311.csv')
-
-# Distribution 25
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:44:12.989414
-# Modified                 : 2023-06-18T22:19:36.714629
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171008_20171014.csv')
-
-# Distribution 26
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:44:52.925617
-# Modified                 : 2023-06-18T22:19:09.330061
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170910_20170916.csv')
-
-# Distribution 27
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T13:52:20.499204
-# Modified                 : 2023-06-18T22:20:02.327459
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171105_20171111.csv')
-
-# Distribution 28
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:45:52.178019
-# Modified                 : 2023-06-18T22:16:58.024193
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170423_20170429.csv')
-
-# Distribution 29
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:45:01.820869
-# Modified                 : 2023-06-18T22:19:02.743178
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170903_20170909.csv')
-
-# Distribution 30
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:45:20.622124
-# Modified                 : 2023-06-18T22:16:45.393558
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170409_20170415.csv')
-
-# Distribution 31
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:47:43.973366
-# Modified                 : 2023-06-18T22:16:39.154265
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170402_20170408.csv')
-
-# Distribution 32
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:47:52.590269
-# Modified                 : 2023-06-18T22:19:16.953142
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170917_20170923.csv')
-
-# Distribution 33
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:44:01.592050
-# Modified                 : 2023-06-18T22:17:04.420555
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170430_20170506.csv')
-
-# Distribution 34
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:48:46.889599
-# Modified                 : 2023-06-18T22:16:18.605749
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170312_20170318.csv')
-
-# Distribution 35
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T12:47:26.113800
-# Modified                 : 2023-06-18T22:19:49.910004
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171022_20171028.csv')
-
-# Distribution 36
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T13:51:32.116285
-# Modified                 : 2023-06-18T22:20:53.438025
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171224_20171230.csv')
-
-# Distribution 37
-# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
-# Description              : 
-# Issued                   : 2019-08-07T13:51:43.408447
-# Modified                 : 2023-06-18T22:20:46.355418
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171217_20171223.csv')
-
-# Distribution 38
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T13:52:08.152804
@@ -400,43 +265,70 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171112_20171118.csv')
 
-# Distribution 39
+# Distribution 24
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:49:27.917695
-# Modified                 : 2023-06-18T22:15:57.811703
+# Issued                   : 2019-08-07T12:46:41.713504
+# Modified                 : 2023-06-18T22:17:50.930372
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170219_20170225.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170618_20170624.csv')
 
-# Distribution 40
+# Distribution 25
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:43:55.134609
-# Modified                 : 2023-06-18T22:18:50.076941
+# Issued                   : 2019-08-07T12:45:52.178019
+# Modified                 : 2023-06-18T22:16:58.024193
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170820_20170826.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170423_20170429.csv')
 
-# Distribution 41
+# Distribution 26
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:48:29.577687
-# Modified                 : 2023-06-18T22:15:45.009321
+# Issued                   : 2019-08-07T12:48:02.598541
+# Modified                 : 2023-06-18T22:15:51.543908
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170205_20170211.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170212_20170218.csv')
 
-# Distribution 42
+# Distribution 27
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:44:37.847432
-# Modified                 : 2023-06-18T22:18:03.641810
+# Issued                   : 2019-08-07T12:46:50.898659
+# Modified                 : 2023-06-18T22:19:43.797844
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170702_20170708.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171015_20171021.csv')
 
-# Distribution 43
+# Distribution 28
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T13:51:49.754616
+# Modified                 : 2023-06-18T22:20:24.034922
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171126_20171202.csv')
+
+# Distribution 29
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:47:52.590269
+# Modified                 : 2023-06-18T22:19:16.953142
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170917_20170923.csv')
+
+# Distribution 30
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T13:51:55.681331
+# Modified                 : 2023-06-18T22:20:31.361244
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171203_20171209.csv')
+
+# Distribution 31
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T12:44:25.341635
@@ -445,16 +337,43 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170924_20170930.csv')
 
-# Distribution 44
+# Distribution 32
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T13:52:01.850893
-# Modified                 : 2023-06-18T22:20:16.351012
+# Issued                   : 2019-08-07T12:44:52.925617
+# Modified                 : 2023-06-18T22:19:09.330061
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171119_20171125.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170910_20170916.csv')
 
-# Distribution 45
+# Distribution 33
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:49:36.408870
+# Modified                 : 2023-06-18T22:15:18.038202
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170108_20170114.csv')
+
+# Distribution 34
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:48:21.329503
+# Modified                 : 2023-06-18T22:15:38.835484
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170129_20170204.csv')
+
+# Distribution 35
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:45:01.820869
+# Modified                 : 2023-06-18T22:19:02.743178
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170903_20170909.csv')
+
+# Distribution 36
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T12:45:10.983409
@@ -463,61 +382,61 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170326_20170401.csv')
 
-# Distribution 46
+# Distribution 37
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T13:51:30.496427
-# Modified                 : 2023-06-18T22:21:01.743469
+# Issued                   : 2019-08-07T12:43:55.134609
+# Modified                 : 2023-06-18T22:18:50.076941
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Haltestelle.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170820_20170826.csv')
 
-# Distribution 47
+# Distribution 38
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:44:07.358412
-# Modified                 : 2023-06-18T22:17:12.872667
+# Issued                   : 2019-08-07T12:44:31.375681
+# Modified                 : 2023-06-18T22:17:39.024830
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170507_20170513.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170604_20170610.csv')
 
-# Distribution 48
+# Distribution 39
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:48:11.993117
-# Modified                 : 2023-06-18T22:15:10.809748
+# Issued                   : 2019-08-07T13:52:20.499204
+# Modified                 : 2023-06-18T22:20:02.327459
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170101_20170107.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171105_20171111.csv')
 
-# Distribution 49
+# Distribution 40
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:49:18.558632
-# Modified                 : 2023-06-18T22:16:04.916784
+# Issued                   : 2019-08-07T13:52:01.850893
+# Modified                 : 2023-06-18T22:20:16.351012
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170226_20170304.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171119_20171125.csv')
 
-# Distribution 50
+# Distribution 41
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:44:45.556866
-# Modified                 : 2023-06-18T22:17:57.047661
+# Issued                   : 2019-08-07T12:46:15.320130
+# Modified                 : 2023-06-18T22:17:19.723745
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170625_20170701.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170514_20170520.csv')
 
-# Distribution 51
+# Distribution 42
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:43:49.401474
-# Modified                 : 2023-06-18T22:18:18.247837
+# Issued                   : 2019-08-07T12:46:32.519808
+# Modified                 : 2023-06-18T22:18:43.900186
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170716_20170722.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170813_20170819.csv')
 
-# Distribution 52
+# Distribution 43
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
 # Issued                   : 2019-08-07T13:51:31.288239
@@ -526,14 +445,95 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Haltepunkt.csv')
 
+# Distribution 44
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:44:12.989414
+# Modified                 : 2023-06-18T22:19:36.714629
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20171008_20171014.csv')
+
+# Distribution 45
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:48:29.577687
+# Modified                 : 2023-06-18T22:15:45.009321
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170205_20170211.csv')
+
+# Distribution 46
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:48:58.343363
+# Modified                 : 2023-06-18T22:15:24.832897
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170115_20170121.csv')
+
+# Distribution 47
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T13:51:30.496427
+# Modified                 : 2023-06-18T22:21:01.743469
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Haltestelle.csv')
+
+# Distribution 48
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:46:24.623235
+# Modified                 : 2023-06-18T22:18:12.359169
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170709_20170715.csv')
+
+# Distribution 49
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:47:34.258529
+# Modified                 : 2023-06-18T22:16:51.554511
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170416_20170422.csv')
+
+# Distribution 50
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:49:18.558632
+# Modified                 : 2023-06-18T22:16:04.916784
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170226_20170304.csv')
+
+# Distribution 51
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:44:07.358412
+# Modified                 : 2023-06-18T22:17:12.872667
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170507_20170513.csv')
+
+# Distribution 52
+# Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
+# Description              : 
+# Issued                   : 2019-08-07T12:49:27.917695
+# Modified                 : 2023-06-18T22:15:57.811703
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170219_20170225.csv')
+
 # Distribution 53
 # Package_id               : 2e0e0ad9-24c4-4f6c-b102-0fe2a074d134
 # Description              : 
-# Issued                   : 2019-08-07T12:46:32.519808
-# Modified                 : 2023-06-18T22:18:43.900186
+# Issued                   : 2019-08-07T12:49:07.604786
+# Modified                 : 2023-06-18T22:16:12.288387
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170813_20170819.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/vbz_fahrzeiten_ogd_2017/download/Fahrzeiten_SOLL_IST_20170305_20170311.csv')
 
 
 
