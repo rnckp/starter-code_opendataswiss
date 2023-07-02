@@ -14,9 +14,25 @@ This repository provides currently 2 x 2784 code files (1 x R, 1 x Python) for a
 - **GitHub unfortunately doesn't render larger markdown files full length in the repo view.** The GitHub page aka «overview website» (link above) renders the list properly. 
 - Unfortunately you neither won't be able to view all 2.k+ files in the repo folders. Again GitHub truncates file lists longer than 1k files. Files beyond the limit are available but aren't listed. So either clone the repo or select individual files from the [overview website](https://rnckp.github.io/starter-code_opendataswiss/).
 
+## Dependencies
+
+The repository contains an ```environment.yml``` file, which can be utilized by conda:
+
+```bash
+# To create the environment:
+conda env create --file environment.yml
+
+# To activate the environment:
+conda activate opendataswiss
+
+# To update the environment after change of the environment.yml
+conda env update --file environment.yml  --prune
+
+# To delete the environment:
+conda remove --name opendataswiss --all
+```
 
 Feedback is always very welcome – simply open an issue! 🙌
 
 <sub>Latest update: **2023-07-01 03:40:55**</sub><br>
 <sub>For all data licenses please refer to each data set's link (provided in list as well as in the notebooks).</sub>
-
