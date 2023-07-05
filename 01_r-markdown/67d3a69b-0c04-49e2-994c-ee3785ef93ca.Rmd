@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-07-05"
+output: html_document
+---
+
+## Dataset: Kennzahlen der Abstimmung vom 29. November 2020
+
+Dieser Datensatz zeigt die Resultate der Volksabstimmungen vom 29. November 2020 für den Kanton Basel-Stadt. Es werden verschiedene Kennzahlen nach Gemeinde differenziert.Bitte beachten Sie, dass die offiziell gültigen Schlussresultate im Kantonsblatt des Kantons Basel-Stadt publiziert werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kennzahlen-der-abstimmung-vom-29-november-2020)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100104/)
+
+Auto generated R starter code for data set 100104@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Staatskanzlei`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['demokratie', 'abstimmung', 'teilhabe', 'wahlen']`
+- **Issued** `2020-11-29T00:00:00`
+- **Metadata_created** `2023-07-04T12:34:29.063779`
+- **Metadata_modified** `2023-07-05T00:33:35.692194`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 67d3a69b-0c04-49e2-994c-ee3785ef93ca
+# Description              : Kennzahlen der Abstimmung vom 29. November 2020 (csv)
+# Issued                   : 2020-11-29T00:00:00
+# Modified                 : 2020-12-02T08:54:15.523000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100104/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

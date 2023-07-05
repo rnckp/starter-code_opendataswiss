@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-07-05"
+output: html_document
+---
+
+## Dataset: Zeitreihe der Belegung öffentlicher Parkhäuser Basel
+
+Stündlich aktualisierte Belegungsdaten der öffentlichen Parkhäuser der Stadt Basel, bezogen über den RSS Feed des Parkleitsystems Basel. Historische Daten mit kleinerer zeitlicher Auflösung können auch über das API von ParkenDD bezogen werden, wie hier am Beispiel der Parkhäuser der Stadt Zürich beschrieben: https://opendatazurich.github.io/parkendd-api (die Parkhäuser von Basel sind über diese URL abrufbar: https://api.parkendd.de/Basel). Die Standorte der Parkhäuser sind in diesem Datensatz ersichtlich: https://data.bs.ch/explore/dataset/100044 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zeitreihe-der-belegung-offentlicher-parkhauser-basel)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100014/)
+
+Auto generated R starter code for data set 100014@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Parkhäuser Basel-Stadt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['elektroautos', 'autos', 'parkplatz', 'parkhaus', 'echtzeit', 'frei', 'realtime']`
+- **Issued** `2019-11-05T00:00:00`
+- **Metadata_created** `2023-07-04T12:36:00.955423`
+- **Metadata_modified** `2023-07-05T00:36:07.312892`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b195eb62-17aa-4641-8bfe-985043e95f49
+# Description              : Zeitreihe der Belegung öffentlicher Parkhäuser Basel (csv)
+# Issued                   : 2019-11-05T00:00:00
+# Modified                 : 2023-07-05T00:04:00.217000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100014/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt
