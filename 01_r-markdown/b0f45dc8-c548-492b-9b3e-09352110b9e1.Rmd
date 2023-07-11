@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-07-10"
+date: "2023-07-11"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1120@are-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-raumentwicklung.html`
 - **Maintainer** `Amt für Raumentwicklung des Kantons Zürich, Raumplanung`
 - **Maintainer_email** `raumbeobachtung@bd.zh.ch`
-- **Keywords.de** `['bauzonen', 'bauzonenverbrauch', 'raum']`
+- **Keywords.de** `['bauzonenverbrauch', 'bauzonen', 'raum']`
 - **Issued** `2022-02-15T10:01:05+01:00`
 - **Metadata_created** `2022-02-24T07:12:57.124182`
-- **Metadata_modified** `2023-07-10T03:12:09.257769`
+- **Metadata_modified** `2023-07-11T03:12:48.350343`
 
 
 # Load packages
@@ -44,23 +44,14 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : b0f45dc8-c548-492b-9b3e-09352110b9e1
-# Description              : Überbaute Bauzone in % der Bauzone. NULL-Werte bedeuten, dass für die betreffende Gemeinde oder Stadt keine Flächen in der entsprechenden Zonenkategorie im Zonenplan festgelegt sind. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich. Es können keine Totale aus den Werten gerechnet werden. 
+# Description              : Bauzonenverbrauch im Kanton Zürich, unterteilt in 1-, 5- und 15-Jahres-Verbrauch. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich.
 # Issued                   : 2022-02-15T10:01:05+01:00
-# Modified                 : 2023-06-30T11:28:28+01:00
+# Modified                 : 2023-06-30T11:28:45+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002162.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002163.csv')
 
 # Distribution 1
-# Package_id               : b0f45dc8-c548-492b-9b3e-09352110b9e1
-# Description              : Überbaute und nicht überbaute Bauzone, unterteilt in Wohnzone, Kernzone, Zentrumszone, Wohnzone mit Gewerbeerleichterung, Arbeitszone ohne Dienstleistungen, Arbeitszone mit Dienstleistungen sowie Zone für öffentliche Bauten. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich.
-# Issued                   : 2022-02-15T10:01:05+01:00
-# Modified                 : 2023-06-30T11:29:30+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002166.csv')
-
-# Distribution 2
 # Package_id               : b0f45dc8-c548-492b-9b3e-09352110b9e1
 # Description              : Überbaute und unüberbaute Bauzone, unterteilt in Wohnzone, Mischzone, Arbeitszone und Zone für öffentliche Bauten. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich.
 # Issued                   : 2022-02-15T10:01:05+01:00
@@ -69,14 +60,23 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002165.csv')
 
-# Distribution 3
+# Distribution 2
 # Package_id               : b0f45dc8-c548-492b-9b3e-09352110b9e1
-# Description              : Bauzonenverbrauch im Kanton Zürich, unterteilt in 1-, 5- und 15-Jahres-Verbrauch. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich.
+# Description              : Überbaute und nicht überbaute Bauzone, unterteilt in Wohnzone, Kernzone, Zentrumszone, Wohnzone mit Gewerbeerleichterung, Arbeitszone ohne Dienstleistungen, Arbeitszone mit Dienstleistungen sowie Zone für öffentliche Bauten. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich.
 # Issued                   : 2022-02-15T10:01:05+01:00
-# Modified                 : 2023-06-30T11:28:45+01:00
+# Modified                 : 2023-06-30T11:29:30+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002163.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002166.csv')
+
+# Distribution 3
+# Package_id               : b0f45dc8-c548-492b-9b3e-09352110b9e1
+# Description              : Überbaute Bauzone in % der Bauzone. NULL-Werte bedeuten, dass für die betreffende Gemeinde oder Stadt keine Flächen in der entsprechenden Zonenkategorie im Zonenplan festgelegt sind. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich. Es können keine Totale aus den Werten gerechnet werden. 
+# Issued                   : 2022-02-15T10:01:05+01:00
+# Modified                 : 2023-06-30T11:28:28+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002162.csv')
 
 
 
