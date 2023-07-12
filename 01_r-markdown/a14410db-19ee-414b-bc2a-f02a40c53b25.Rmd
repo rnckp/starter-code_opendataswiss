@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-07-11"
+date: "2023-07-12"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set go@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['sboid', 'vu', 'go', 'said', 'transportunternehmen', 'tu', 'geschaftsorganisation', 'verkehrsunternehmen']`
+- **Keywords.de** `['tu', 'verkehrsunternehmen', 'sboid', 'geschaftsorganisation', 'transportunternehmen', 'go', 'vu', 'said']`
 - **Issued** `2023-05-12T13:55:14.771637`
 - **Metadata_created** `2023-06-24T00:40:52.692588`
-- **Metadata_modified** `2023-07-11T00:47:36.975852`
+- **Metadata_modified** `2023-07-12T00:35:05.607906`
 
 
 # Load packages
@@ -37,7 +37,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 3 distribution(s) in CSV format.
+-   The dataset has 4 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -45,29 +45,38 @@ library(skimr)
 # Distribution 0
 # Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
 # Description              : 
+# Issued                   : 2023-07-11T09:10:12.079921
+# Modified                 : 2023-07-11T09:10:12.079921
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/f30c4662-3258-4dde-9cea-eefeaf9973de/download/full_business_organisation_versions_2023-07-11.csv')
+
+# Distribution 1
+# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
+# Description              : 
+# Issued                   : 2023-07-11T09:10:13.979393
+# Modified                 : 2023-07-11T09:10:13.979393
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/24bb9636-89b3-49ff-9192-dce1de5489cb/download/future_timetable_business_organisation_versions_2023-07-11.csv')
+
+# Distribution 2
+# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
+# Description              : 
+# Issued                   : 2023-07-11T09:10:10.163456
+# Modified                 : 2023-07-11T09:10:10.163456
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/b738cf2c-cb81-4dfe-981c-924a81af97ae/download/actual_date_business_organisation_versions_2023-07-11.csv')
+
+# Distribution 3
+# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
+# Description              : 
 # Issued                   : 2023-07-10T09:05:10.078980
 # Modified                 : 2023-07-10T09:05:10.078980
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/fdd563fe-49ae-4dbe-ae19-a605dd19950c/download/actual_date_business_organisation_versions_2023-07-10.csv')
-
-# Distribution 1
-# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
-# Description              : 
-# Issued                   : 2023-07-10T09:05:13.234831
-# Modified                 : 2023-07-10T09:05:13.234831
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/29c49283-f0a5-4aa0-b013-4a82809cd339/download/future_timetable_business_organisation_versions_2023-07-10.csv')
-
-# Distribution 2
-# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
-# Description              : 
-# Issued                   : 2023-07-10T09:05:11.605087
-# Modified                 : 2023-07-10T09:05:11.605087
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/7ab998ae-c951-4144-a74a-fb16ffaa4ec1/download/full_business_organisation_versions_2023-07-10.csv')
 
 
 
