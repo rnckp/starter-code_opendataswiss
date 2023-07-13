@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-07-12"
+date: "2023-07-13"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1742@statistisches-amt-kanton-zuerich
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['stiftungen', 'firmen', 'wirtschaft', 'branchen', 'unternehmensdaten', 'vereine', 'konkurse', 'einzelfirmen', 'shab', 'zefix', 'unternehmen', 'genossenschaften', 'handelsregister', 'gmbh', 'ehra']`
+- **Keywords.de** `['firmen', 'genossenschaften', 'gmbh', 'unternehmensdaten', 'branchen', 'wirtschaft', 'handelsregister', 'einzelfirmen', 'konkurse', 'vereine', 'zefix', 'shab', 'stiftungen', 'ehra', 'unternehmen']`
 - **Issued** `2022-09-06T14:13:35+01:00`
 - **Metadata_created** `2022-09-09T03:07:57.834653`
-- **Metadata_modified** `2023-07-12T03:02:24.517646`
+- **Metadata_modified** `2023-07-13T03:01:21.020189`
 
 
 # Load packages
@@ -44,21 +44,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 55b1f3b4-6dff-4a28-812d-8190fe5ac4ec
-# Description              : Anzahl der Eröffnungen von Konkursverfahren gegen Unternehmen und weitere Rechtseinheiten, wie sie im Zentralen Firmenindex (Zefix) mit Mutationstyp "KE Auflösung inf. Konkurs" ausgewiesenen sind. Die Meldungen werden mit den Branchenklassifikationen gemäss der Allgemeinen Systematik der Wirtschaftszweige (NOGA) angereichert und nach Branchen-Abschnitten (Grossbuchstaben) aggregiert. Aufgrund von Unterschieden bei der Datenerhebung kann es zu Abweichungen von anderen Auswertungen (zB. von kantonalen Handelsregisterämtern) kommen. Variabeln: 'br_abschnitt_red' = Auswahl von Branchen-Abschnitten (Grossbuchstaben) gemäss der Allgemeinen Systematik der Wirtschaftszweige (NOGA); 'location' = Kantonskürzel oder 'CH' für die Schweiz insgesamt; 'date' = Datum der Publikation im Schweizerischen Handelsamtsblatt (SHAB), die im Normalfall einige Tage nach der Publikation durch die kantonalen Ämter erfolgt; 'value' = Anzahl erstmaliger Konkursverfahrenseröffnungen per SHAB-Publikationsdatum; 'cumsum_diff' = Differenz der Anzahl Konkursverfahrenseröffnungen am SHAB-Publikationsdatum verglichen mit dem Durchschnitt Konkurseröffnungen der Vergleichsperiode 2017 bis 2019.
-# Issued                   : 2022-09-06T14:13:35+01:00
-# Modified                 : 2023-07-10T05:18:06+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_ZEFIX_Konkurse.csv')
-
-# Distribution 1
-# Package_id               : 55b1f3b4-6dff-4a28-812d-8190fe5ac4ec
 # Description              : keine
 # Issued                   : 2023-01-20T15:22:41+01:00
 # Modified                 : 2023-07-10T05:18:09+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_ZEFIX_Neugruendungen.csv')
+
+# Distribution 1
+# Package_id               : 55b1f3b4-6dff-4a28-812d-8190fe5ac4ec
+# Description              : Anzahl der Eröffnungen von Konkursverfahren gegen Unternehmen und weitere Rechtseinheiten, wie sie im Zentralen Firmenindex (Zefix) mit Mutationstyp "KE Auflösung inf. Konkurs" ausgewiesenen sind. Die Meldungen werden mit den Branchenklassifikationen gemäss der Allgemeinen Systematik der Wirtschaftszweige (NOGA) angereichert und nach Branchen-Abschnitten (Grossbuchstaben) aggregiert. Aufgrund von Unterschieden bei der Datenerhebung kann es zu Abweichungen von anderen Auswertungen (zB. von kantonalen Handelsregisterämtern) kommen. Variabeln: 'br_abschnitt_red' = Auswahl von Branchen-Abschnitten (Grossbuchstaben) gemäss der Allgemeinen Systematik der Wirtschaftszweige (NOGA); 'location' = Kantonskürzel oder 'CH' für die Schweiz insgesamt; 'date' = Datum der Publikation im Schweizerischen Handelsamtsblatt (SHAB), die im Normalfall einige Tage nach der Publikation durch die kantonalen Ämter erfolgt; 'value' = Anzahl erstmaliger Konkursverfahrenseröffnungen per SHAB-Publikationsdatum; 'cumsum_diff' = Differenz der Anzahl Konkursverfahrenseröffnungen am SHAB-Publikationsdatum verglichen mit dem Durchschnitt Konkurseröffnungen der Vergleichsperiode 2017 bis 2019.
+# Issued                   : 2022-09-06T14:13:35+01:00
+# Modified                 : 2023-07-10T05:18:06+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_ZEFIX_Konkurse.csv')
 
 
 
