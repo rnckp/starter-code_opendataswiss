@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-01"
+date: "2023-08-02"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set bd1b7dee-a392-477b-a129-88599538f2be@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['sachdaten', 'traffic', 'leistungsdaten', 'glasfasernetz']`
+- **Keywords.de** `['traffic', 'glasfasernetz', 'sachdaten', 'leistungsdaten']`
 - **Issued** `2017-10-01T00:00:00`
 - **Metadata_created** `2019-07-30T00:41:12.241753`
-- **Metadata_modified** `2023-08-01T01:27:44.065691`
+- **Metadata_modified** `2023-08-02T01:09:55.814694`
 
 
 # Load packages
@@ -37,7 +37,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 67 distribution(s) in CSV format.
+-   The dataset has 68 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -45,605 +45,614 @@ library(skimr)
 # Distribution 0
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
-# Issued                   : 2023-01-01T07:55:20.754091
-# Modified                 : 2023-07-31T23:08:54.757473
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-01.csv')
-
-# Distribution 1
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-06-01T05:14:25.303618
-# Modified                 : 2023-07-31T23:08:00.485010
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-06.csv')
-
-# Distribution 2
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2023-02-01T07:54:17.673993
-# Modified                 : 2023-07-31T23:08:56.744439
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-02.csv')
-
-# Distribution 3
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:03.292996
-# Modified                 : 2023-07-31T23:06:48.821959
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-10.csv')
-
-# Distribution 4
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-06-01T05:10:14.189759
-# Modified                 : 2023-07-31T23:08:37.519395
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-06.csv')
-
-# Distribution 5
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-08-01T05:17:52.560947
-# Modified                 : 2023-07-31T23:08:07.835878
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-08.csv')
-
-# Distribution 6
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:47:17.800161
-# Modified                 : 2023-07-31T23:06:27.747214
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-05.csv')
-
-# Distribution 7
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-11-01T06:19:58.865248
-# Modified                 : 2023-07-31T23:07:32.222133
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-11.csv')
-
-# Distribution 8
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:58.883713
-# Modified                 : 2023-07-31T23:06:36.190248
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-07.csv')
-
-# Distribution 9
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:22.934344
-# Modified                 : 2023-07-31T23:05:07.172937
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2017-11.csv')
-
-# Distribution 10
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:49:09.991435
-# Modified                 : 2023-07-31T23:05:59.526105
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-10.csv')
-
-# Distribution 11
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-03-01T12:47:01.394352
-# Modified                 : 2023-07-31T23:07:49.488983
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-03.csv')
-
-# Distribution 12
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-09-01T05:10:18.534043
-# Modified                 : 2023-07-31T23:08:45.469573
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-09.csv')
-
-# Distribution 13
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:50:47.841774
-# Modified                 : 2023-07-31T23:07:08.262773
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-06.csv')
-
-# Distribution 14
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:50:06.794324
-# Modified                 : 2023-07-31T23:05:32.540422
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-04.csv')
-
-# Distribution 15
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:49:21.498902
-# Modified                 : 2023-07-31T23:06:43.940570
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-09.csv')
-
-# Distribution 16
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-10-01T05:04:51.520096
-# Modified                 : 2023-07-31T23:07:28.705870
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-10.csv')
-
-# Distribution 17
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-10-01T05:10:38.711324
-# Modified                 : 2023-07-31T23:08:47.900606
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-10.csv')
-
-# Distribution 18
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-01-01T07:47:13.308517
-# Modified                 : 2023-07-31T23:08:22.899277
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-01.csv')
-
-# Distribution 19
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-09-01T05:06:24.512716
-# Modified                 : 2023-07-31T23:08:11.217767
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-09.csv')
-
-# Distribution 20
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:40.149392
-# Modified                 : 2023-07-31T23:06:03.840240
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-11.csv')
-
-# Distribution 21
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2023-03-01T11:34:27.990814
-# Modified                 : 2023-07-31T23:08:58.814415
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-03.csv')
-
-# Distribution 22
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2023-05-03T10:54:30.053956
-# Modified                 : 2023-07-31T23:09:02.770556
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-05.csv')
-
-# Distribution 23
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-12-01T06:15:33.551326
-# Modified                 : 2023-07-31T23:08:20.128200
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-12.csv')
-
-# Distribution 24
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:49:32.690858
-# Modified                 : 2023-07-31T23:05:24.749071
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-02.csv')
-
-# Distribution 25
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:50:23.344127
-# Modified                 : 2023-07-31T23:06:23.557359
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-04.csv')
-
-# Distribution 26
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:48:10.954912
-# Modified                 : 2023-07-31T23:05:28.654288
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-03.csv')
-
-# Distribution 27
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:13.192197
-# Modified                 : 2023-07-31T23:06:56.712662
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-03.csv')
-
-# Distribution 28
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-05-06T06:46:35.091535
-# Modified                 : 2023-07-31T23:07:57.181549
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-05.csv')
-
-# Distribution 29
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:47:28.622114
-# Modified                 : 2023-07-31T23:05:15.899763
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2017-12.csv')
-
-# Distribution 30
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:48:22.297444
-# Modified                 : 2023-07-31T23:07:14.771782
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-07.csv')
-
-# Distribution 31
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2023-04-01T06:55:49.792064
-# Modified                 : 2023-07-31T23:09:00.779344
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-04.csv')
-
-# Distribution 32
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
 # Issued                   : 2022-02-01T06:08:20.171416
-# Modified                 : 2023-07-31T23:08:25.665636
+# Modified                 : 2023-08-01T23:06:39.704741
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-02.csv')
 
-# Distribution 33
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:48:00.492802
-# Modified                 : 2023-07-31T23:05:50.016857
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-08.csv')
-
-# Distribution 34
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:48:41.512573
-# Modified                 : 2023-07-31T23:07:00.506904
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-04.csv')
-
-# Distribution 35
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:32.255180
-# Modified                 : 2023-07-31T23:06:08.287286
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-12.csv')
-
-# Distribution 36
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:49:42.953245
-# Modified                 : 2023-07-31T23:05:45.242388
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-07.csv')
-
-# Distribution 37
+# Distribution 1
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
 # Issued                   : 2022-04-01T05:06:49.723408
-# Modified                 : 2023-07-31T23:08:31.827298
+# Modified                 : 2023-08-01T23:06:46.916337
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-04.csv')
 
-# Distribution 38
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:48:53.577213
-# Modified                 : 2023-07-31T23:05:37.024876
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-05.csv')
-
-# Distribution 39
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-08-01T05:08:45.234739
-# Modified                 : 2023-07-31T23:08:43.149435
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-08.csv')
-
-# Distribution 40
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:45:30.376427
-# Modified                 : 2023-07-31T23:04:57.413750
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2017-10.csv')
-
-# Distribution 41
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:49:56.234156
-# Modified                 : 2023-07-31T23:06:12.513290
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-01.csv')
-
-# Distribution 42
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:45:47.677856
-# Modified                 : 2023-07-31T23:05:41.194706
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-06.csv')
-
-# Distribution 43
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-12-17T07:45:39.326340
-# Modified                 : 2023-07-31T23:07:37.276895
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-12.csv')
-
-# Distribution 44
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-07-01T05:10:32.419444
-# Modified                 : 2023-07-31T23:08:40.638979
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-07.csv')
-
-# Distribution 45
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-03-01T06:07:05.047590
-# Modified                 : 2023-07-31T23:08:28.998436
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-03.csv')
-
-# Distribution 46
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-11-01T07:52:20.602160
-# Modified                 : 2023-07-31T23:08:50.303914
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-11.csv')
-
-# Distribution 47
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2023-06-01T06:54:58.974033
-# Modified                 : 2023-07-31T23:09:04.782567
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-06.csv')
-
-# Distribution 48
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-02-01T06:52:09.510181
-# Modified                 : 2023-07-31T23:07:45.713888
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-02.csv')
-
-# Distribution 49
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-11-01T06:59:24.887240
-# Modified                 : 2023-07-31T23:08:17.043956
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-11.csv')
-
-# Distribution 50
+# Distribution 2
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
 # Issued                   : 2021-07-05T14:52:12.362405
-# Modified                 : 2023-07-31T23:08:04.164927
+# Modified                 : 2023-08-01T23:06:15.178350
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-07.csv')
 
-# Distribution 51
+# Distribution 3
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
-# Issued                   : 2020-09-12T08:45:31.429998
-# Modified                 : 2023-07-31T23:07:19.478872
+# Issued                   : 2023-04-01T06:55:49.792064
+# Modified                 : 2023-08-01T23:07:24.517140
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-08.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-04.csv')
 
-# Distribution 52
+# Distribution 4
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
-# Issued                   : 2021-04-01T06:46:26.286638
-# Modified                 : 2023-07-31T23:07:53.383079
+# Issued                   : 2020-09-12T08:49:32.690858
+# Modified                 : 2023-08-01T23:03:37.804489
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-04.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-02.csv')
 
-# Distribution 53
+# Distribution 5
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
-# Issued                   : 2020-09-12T08:47:08.415796
-# Modified                 : 2023-07-31T23:07:24.355774
+# Issued                   : 2020-09-12T08:46:40.149392
+# Modified                 : 2023-08-01T23:04:17.362555
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-09.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-11.csv')
 
-# Distribution 54
+# Distribution 6
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
-# Issued                   : 2020-09-12T08:49:00.816744
-# Modified                 : 2023-07-31T23:05:54.709014
+# Issued                   : 2021-09-01T05:06:24.512716
+# Modified                 : 2023-08-01T23:06:21.765066
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-09.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-09.csv')
 
-# Distribution 55
+# Distribution 7
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
 # Issued                   : 2020-09-12T08:45:39.229038
-# Modified                 : 2023-07-31T23:07:04.254031
+# Modified                 : 2023-08-01T23:05:23.335899
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-05.csv')
 
-# Distribution 56
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:47:49.177041
-# Modified                 : 2023-07-31T23:05:20.393215
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-01.csv')
-
-# Distribution 57
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-05-01T05:07:33.228507
-# Modified                 : 2023-07-31T23:08:34.453212
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-05.csv')
-
-# Distribution 58
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:47:38.501035
-# Modified                 : 2023-07-31T23:06:19.845300
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-03.csv')
-
-# Distribution 59
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:46:49.123066
-# Modified                 : 2023-07-31T23:06:53.065308
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-11.csv')
-
-# Distribution 60
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2023-07-01T07:03:54.360388
-# Modified                 : 2023-07-31T23:09:06.697687
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-07.csv')
-
-# Distribution 61
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2022-12-01T07:50:38.308454
-# Modified                 : 2023-07-31T23:08:52.513822
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-12.csv')
-
-# Distribution 62
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2020-09-12T08:48:31.263272
-# Modified                 : 2023-07-31T23:06:31.948650
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-06.csv')
-
-# Distribution 63
-# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
-# Description              : 
-# Issued                   : 2021-10-01T05:04:51.482389
-# Modified                 : 2023-07-31T23:08:14.158929
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-10.csv')
-
-# Distribution 64
+# Distribution 8
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
 # Issued                   : 2020-09-12T08:50:16.222683
-# Modified                 : 2023-07-31T23:06:16.183950
+# Modified                 : 2023-08-01T23:04:33.099897
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-02.csv')
 
-# Distribution 65
+# Distribution 9
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-07-01T05:10:32.419444
+# Modified                 : 2023-08-01T23:06:57.490424
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-07.csv')
+
+# Distribution 10
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-04-01T06:46:26.286638
+# Modified                 : 2023-08-01T23:06:04.835888
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-04.csv')
+
+# Distribution 11
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:49:42.953245
+# Modified                 : 2023-08-01T23:03:59.662973
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-07.csv')
+
+# Distribution 12
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-01-01T07:55:20.754091
+# Modified                 : 2023-08-01T23:07:16.354105
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-01.csv')
+
+# Distribution 13
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:48:31.263272
+# Modified                 : 2023-08-01T23:04:50.230506
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-06.csv')
+
+# Distribution 14
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-03-01T12:47:01.394352
+# Modified                 : 2023-08-01T23:06:01.039376
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-03.csv')
+
+# Distribution 15
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:46:58.883713
+# Modified                 : 2023-08-01T23:04:54.249860
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-07.csv')
+
+# Distribution 16
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-01-01T07:45:29.370891
+# Modified                 : 2023-08-01T23:05:53.995162
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-01.csv')
+
+# Distribution 17
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:45:30.376427
+# Modified                 : 2023-08-01T23:03:10.768763
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2017-10.csv')
+
+# Distribution 18
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-03-01T11:34:27.990814
+# Modified                 : 2023-08-01T23:07:21.516530
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-03.csv')
+
+# Distribution 19
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:46:03.292996
+# Modified                 : 2023-08-01T23:05:07.274691
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-10.csv')
+
+# Distribution 20
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:48:10.954912
+# Modified                 : 2023-08-01T23:03:43.075238
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-03.csv')
+
+# Distribution 21
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-11-01T06:19:58.865248
+# Modified                 : 2023-08-01T23:05:46.099183
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-11.csv')
+
+# Distribution 22
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-03-01T06:07:05.047590
+# Modified                 : 2023-08-01T23:06:43.220044
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-03.csv')
+
+# Distribution 23
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-07-01T07:03:54.360388
+# Modified                 : 2023-08-01T23:07:37.198793
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-07.csv')
+
+# Distribution 24
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-08-01T05:08:45.234739
+# Modified                 : 2023-08-01T23:07:00.651042
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-08.csv')
+
+# Distribution 25
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-06-01T05:10:14.189759
+# Modified                 : 2023-08-01T23:06:53.448363
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-06.csv')
+
+# Distribution 26
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:47:49.177041
+# Modified                 : 2023-08-01T23:03:33.465824
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-01.csv')
+
+# Distribution 27
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:48:22.297444
+# Modified                 : 2023-08-01T23:05:31.351026
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-07.csv')
+
+# Distribution 28
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-12-01T06:15:33.551326
+# Modified                 : 2023-08-01T23:06:30.713360
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-12.csv')
+
+# Distribution 29
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:46:22.934344
+# Modified                 : 2023-08-01T23:03:19.602122
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2017-11.csv')
+
+# Distribution 30
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-10-01T05:10:38.711324
+# Modified                 : 2023-08-01T23:07:07.491834
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-10.csv')
+
+# Distribution 31
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-08-01T07:05:12.455447
+# Modified                 : 2023-08-01T23:07:39.498976
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-08.csv')
+
+# Distribution 32
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-02-01T06:52:09.510181
+# Modified                 : 2023-08-01T23:05:57.470685
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-02.csv')
+
+# Distribution 33
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:49:00.816744
+# Modified                 : 2023-08-01T23:04:09.267282
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-09.csv')
+
+# Distribution 34
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:46:13.192197
+# Modified                 : 2023-08-01T23:05:15.191822
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-03.csv')
+
+# Distribution 35
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:45:31.429998
+# Modified                 : 2023-08-01T23:05:34.798933
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-08.csv')
+
+# Distribution 36
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-05-01T05:07:33.228507
+# Modified                 : 2023-08-01T23:06:50.149413
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-05.csv')
+
+# Distribution 37
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-06-01T06:54:58.974033
+# Modified                 : 2023-08-01T23:07:32.217125
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-06.csv')
+
+# Distribution 38
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:47:38.501035
+# Modified                 : 2023-08-01T23:04:37.354227
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-03.csv')
+
+# Distribution 39
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:47:28.622114
+# Modified                 : 2023-08-01T23:03:28.828439
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2017-12.csv')
+
+# Distribution 40
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-09-01T05:10:18.534043
+# Modified                 : 2023-08-01T23:07:04.374274
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-09.csv')
+
+# Distribution 41
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-11-01T06:59:24.887240
+# Modified                 : 2023-08-01T23:06:27.837927
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-11.csv')
+
+# Distribution 42
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:49:09.991435
+# Modified                 : 2023-08-01T23:04:13.296332
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-10.csv')
+
+# Distribution 43
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:45:47.677856
+# Modified                 : 2023-08-01T23:03:55.223822
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-06.csv')
+
+# Distribution 44
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:50:06.794324
+# Modified                 : 2023-08-01T23:03:46.557881
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-04.csv')
+
+# Distribution 45
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-11-01T07:52:20.602160
+# Modified                 : 2023-08-01T23:07:10.486841
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-11.csv')
+
+# Distribution 46
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
 # Issued                   : 2020-09-12T08:50:33.836903
-# Modified                 : 2023-07-31T23:06:39.740108
+# Modified                 : 2023-08-01T23:04:58.509744
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-08.csv')
 
+# Distribution 47
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:50:23.344127
+# Modified                 : 2023-08-01T23:04:41.429945
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-04.csv')
+
+# Distribution 48
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:47:17.800161
+# Modified                 : 2023-08-01T23:04:46.073457
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-05.csv')
+
+# Distribution 49
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-08-01T05:17:52.560947
+# Modified                 : 2023-08-01T23:06:18.477384
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-08.csv')
+
+# Distribution 50
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-05-03T10:54:30.053956
+# Modified                 : 2023-08-01T23:07:27.522925
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-05.csv')
+
+# Distribution 51
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:46:32.255180
+# Modified                 : 2023-08-01T23:04:21.220189
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-12.csv')
+
+# Distribution 52
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:48:00.492802
+# Modified                 : 2023-08-01T23:04:04.125103
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-08.csv')
+
+# Distribution 53
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-10-01T05:04:51.520096
+# Modified                 : 2023-08-01T23:05:42.042163
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-10.csv')
+
+# Distribution 54
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:46:49.123066
+# Modified                 : 2023-08-01T23:05:11.453155
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-11.csv')
+
+# Distribution 55
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-10-01T05:04:51.482389
+# Modified                 : 2023-08-01T23:06:24.705777
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-10.csv')
+
+# Distribution 56
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-12-01T07:50:38.308454
+# Modified                 : 2023-08-01T23:07:13.928172
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-12.csv')
+
+# Distribution 57
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:47:08.415796
+# Modified                 : 2023-08-01T23:05:38.251959
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-09.csv')
+
+# Distribution 58
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2021-06-01T05:14:25.303618
+# Modified                 : 2023-08-01T23:06:11.804533
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-06.csv')
+
+# Distribution 59
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2022-01-01T07:47:13.308517
+# Modified                 : 2023-08-01T23:06:35.725007
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2022-01.csv')
+
+# Distribution 60
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-12-17T07:45:39.326340
+# Modified                 : 2023-08-01T23:05:49.780555
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-12.csv')
+
+# Distribution 61
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:49:21.498902
+# Modified                 : 2023-08-01T23:05:03.012538
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-09.csv')
+
+# Distribution 62
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:48:53.577213
+# Modified                 : 2023-08-01T23:03:50.856423
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2018-05.csv')
+
+# Distribution 63
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:50:47.841774
+# Modified                 : 2023-08-01T23:05:27.172272
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-06.csv')
+
+# Distribution 64
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2023-02-01T07:54:17.673993
+# Modified                 : 2023-08-01T23:07:18.982981
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2023-02.csv')
+
+# Distribution 65
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:49:56.234156
+# Modified                 : 2023-08-01T23:04:28.615089
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2019-01.csv')
+
 # Distribution 66
 # Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
 # Description              : 
-# Issued                   : 2021-01-01T07:45:29.370891
-# Modified                 : 2023-07-31T23:07:41.907043
+# Issued                   : 2021-05-06T06:46:35.091535
+# Modified                 : 2023-08-01T23:06:08.691060
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-01.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2021-05.csv')
+
+# Distribution 67
+# Package_id               : 22960da1-74ed-4087-9981-6af4688b9bed
+# Description              : 
+# Issued                   : 2020-09-12T08:48:41.512573
+# Modified                 : 2023-08-01T23:05:18.866407
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet/download/zuerinet_leistungsdaten_2020-04.csv')
 
 
 
