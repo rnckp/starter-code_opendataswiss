@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-05"
+date: "2023-08-06"
 output: html_document
 ---
 
@@ -23,10 +23,10 @@ Auto generated R starter code for data set slnid@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `Fachstelle Atlas`
 - **Maintainer_email** `atlas@sbb.ch`
-- **Keywords.de** `['linienverzeichnis', 'swiss-line-directory', 'slnid']`
+- **Keywords.de** `['swiss-line-directory', 'slnid', 'linienverzeichnis']`
 - **Issued** `2023-03-10T10:43:16.079486`
 - **Metadata_created** `2023-03-11T00:35:39.912659`
-- **Metadata_modified** `2023-08-05T00:43:13.322600`
+- **Metadata_modified** `2023-08-06T00:41:52.237693`
 
 
 # Load packages
@@ -48,13 +48,22 @@ library(skimr)
 # Distribution 0
 # Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
 # Description              : 
+# Issued                   : 2023-03-10T10:43:19.534397
+# Modified                 : 2023-08-04T13:29:27.888170
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/b69d5697-4c29-48d3-b33a-2ce57ae056ab/download/full_subline.csv')
+
+# Distribution 1
+# Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
+# Description              : 
 # Issued                   : 2023-03-10T10:43:20.633058
 # Modified                 : 2023-08-04T13:29:30.503828
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/fec5ad8f-74a9-4fde-ba11-3b335a40ccff/download/future_timetable_line.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
 # Description              : 
 # Issued                   : 2023-03-10T10:43:21.493026
@@ -63,16 +72,16 @@ df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3a
 
 df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/4cd565ef-2436-4767-b294-e0d2a59c0abe/download/future_timetable_subline.csv')
 
-# Distribution 2
+# Distribution 3
 # Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
 # Description              : 
-# Issued                   : 2023-03-10T10:43:18.378698
-# Modified                 : 2023-08-04T13:29:25.304767
+# Issued                   : 2023-03-10T10:43:17.498734
+# Modified                 : 2023-08-04T13:29:22.511868
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/07a9efba-dee0-4372-b643-f5549f311229/download/full_line.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/52afd885-2648-42af-9762-771b9ad43797/download/actual_date_subline.csv')
 
-# Distribution 3
+# Distribution 4
 # Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
 # Description              : 
 # Issued                   : 2023-03-10T10:43:16.079486
@@ -81,23 +90,14 @@ df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3a
 
 df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/299d5e50-4459-4b9a-849c-f144fda08ba5/download/actual_date_line.csv')
 
-# Distribution 4
-# Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
-# Description              : 
-# Issued                   : 2023-03-10T10:43:19.534397
-# Modified                 : 2023-08-04T13:29:27.888170
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/b69d5697-4c29-48d3-b33a-2ce57ae056ab/download/full_subline.csv')
-
 # Distribution 5
 # Package_id               : f5ee562d-4067-45de-82fe-ef9dd8206d8e
 # Description              : 
-# Issued                   : 2023-03-10T10:43:17.498734
-# Modified                 : 2023-08-04T13:29:22.511868
+# Issued                   : 2023-03-10T10:43:18.378698
+# Modified                 : 2023-08-04T13:29:25.304767
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/52afd885-2648-42af-9762-771b9ad43797/download/actual_date_subline.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a9bdb6da-d9a8-4853-a3ab-7dace939969f/resource/07a9efba-dee0-4372-b643-f5549f311229/download/full_line.csv')
 
 
 

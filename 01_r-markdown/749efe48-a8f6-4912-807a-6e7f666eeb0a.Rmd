@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-05"
+date: "2023-08-06"
 output: html_document
 ---
 
@@ -23,7 +23,7 @@ Auto generated R starter code for data set prm_data@oevch.
 - **Keywords.de** `['behig', 'prm-data']`
 - **Issued** `2021-03-19T07:15:25.225671`
 - **Metadata_created** `2021-03-20T02:58:35.589811`
-- **Metadata_modified** `2023-08-05T00:41:50.457643`
+- **Metadata_modified** `2023-08-06T00:43:07.837946`
 
 
 # Load packages
@@ -44,23 +44,14 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten über die Zugänglichkeit von Verbindungen zwischen Referenzpunkten und Haltekanten, etc. 
-# Issued                   : 2021-03-19T07:15:38.116175
-# Modified                 : 2023-08-04T01:47:01.247818
+# Description              : Daten zur Zugänglichkeit von Referenzpunkten. 
+# Issued                   : 2021-03-19T07:15:26.896484
+# Modified                 : 2023-08-04T01:48:54.204331
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/066de20c-e690-4c54-848c-b5879a04d4df/download/prm_connections.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/b2402337-25a9-4940-8a20-90edf9c1782d/download/prm_reference_points.csv')
 
 # Distribution 1
-# Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Informationsschaltern.
-# Issued                   : 2021-03-19T07:15:34.473576
-# Modified                 : 2023-08-04T01:47:29.444653
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/cace5ac1-5bfe-4d4f-a42f-cd925cbc99c8/download/prm_info_desks.csv')
-
-# Distribution 2
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
 # Description              : Daten zur Zugänglichkeit von Parkplätzen. 
 # Issued                   : 2021-03-19T07:15:37.093404
@@ -68,6 +59,15 @@ df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-828
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/cf1a891f-7c53-4234-b711-1843336f7379/download/prm_parking_lots.csv')
+
+# Distribution 2
+# Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
+# Description              : Daten zur Zugänglichkeit von Haltekanten. 
+# Issued                   : 2021-03-19T07:15:28.455051
+# Modified                 : 2023-08-04T01:48:25.930899
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/198875b3-b4a3-41f0-ada3-2fffeb9d8aa8/download/prm_platforms.csv')
 
 # Distribution 3
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
@@ -80,30 +80,30 @@ df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-828
 
 # Distribution 4
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Haltekanten. 
-# Issued                   : 2021-03-19T07:15:28.455051
-# Modified                 : 2023-08-04T01:48:25.930899
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/198875b3-b4a3-41f0-ada3-2fffeb9d8aa8/download/prm_platforms.csv')
-
-# Distribution 5
-# Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Referenzpunkten. 
-# Issued                   : 2021-03-19T07:15:26.896484
-# Modified                 : 2023-08-04T01:48:54.204331
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/b2402337-25a9-4940-8a20-90edf9c1782d/download/prm_reference_points.csv')
-
-# Distribution 6
-# Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
 # Description              : Daten betreffend behindertengerechten Toiletten und deren Zugang. 
 # Issued                   : 2021-03-19T07:15:29.470226
 # Modified                 : 2023-08-04T01:50:19.578123
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/177c8680-57c4-4c21-90c5-6b1778ae00f1/download/prm_toilets.csv')
+
+# Distribution 5
+# Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
+# Description              : Daten zur Zugänglichkeit von Informationsschaltern.
+# Issued                   : 2021-03-19T07:15:34.473576
+# Modified                 : 2023-08-04T01:47:29.444653
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/cace5ac1-5bfe-4d4f-a42f-cd925cbc99c8/download/prm_info_desks.csv')
+
+# Distribution 6
+# Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
+# Description              : Daten über die Zugänglichkeit von Verbindungen zwischen Referenzpunkten und Haltekanten, etc. 
+# Issued                   : 2021-03-19T07:15:38.116175
+# Modified                 : 2023-08-04T01:47:01.247818
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/066de20c-e690-4c54-848c-b5879a04d4df/download/prm_connections.csv')
 
 # Distribution 7
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
