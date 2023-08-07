@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-06"
+date: "2023-08-07"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 725@gesundheitsdirektion-kanton-zueri
 - **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
 - **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
 - **Maintainer_email** `gdstab@gd.zh.ch`
-- **Keywords.de** `['covid-19', 'corona', 'altersklassen', 'geschlecht', 'alter', 'bezirke', 'wohnsitz', 'kantonzuerich', 'sars-cov-2', 'gesundheit', 'krankheiten', 'altersgruppen']`
+- **Keywords.de** `['gesundheit', 'alter', 'covid-19', 'bezirke', 'altersklassen', 'krankheiten', 'geschlecht', 'kantonzuerich', 'altersgruppen', 'wohnsitz', 'sars-cov-2', 'corona']`
 - **Issued** `2021-09-14T14:53:00+01:00`
 - **Metadata_created** `2021-09-15T03:07:30.907731`
-- **Metadata_modified** `2023-08-06T03:10:01.813658`
+- **Metadata_modified** `2023-08-07T03:10:08.573277`
 
 
 # Load packages
@@ -53,21 +53,21 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_
 
 # Distribution 1
 # Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
-# Description              : Anzahl Personen nach 1-Jahres-Altersklassen ('0', '1', '2', .., '100+'), die insgesamt im Kanton Zürich in der jeweils vergangenen Kalenderwoche eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Die Daten wurden bis zum 12. Oktober 2022 jeweils Montags für die Vorwoche aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
-# Issued                   : 2021-09-14T14:42:59+01:00
-# Modified                 : 2022-10-28T16:21:08+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_Alter_in_KTZH_wohnhaft_v2.csv')
-
-# Distribution 2
-# Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
 # Description              : Anzahl im Kanton Zürich wohnhafter Personen nach Postleitzahl, die insgesamt im Kanton Zürich ab dem 18.01.2021 bis und mit Stichtag eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Aus Datenschutzgründen sind die Daten der ersten paar Wochen auf die Kalenderwoche 3 aggregiert. Die Daten wurden bis zum 12. Oktober 2022 einmal wöchentlich aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
 # Issued                   : 2021-09-14T14:24:16+01:00
 # Modified                 : 2022-10-28T16:19:54+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_PLZ_v2.csv')
+
+# Distribution 2
+# Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
+# Description              : Anzahl Personen nach 1-Jahres-Altersklassen ('0', '1', '2', .., '100+'), die insgesamt im Kanton Zürich in der jeweils vergangenen Kalenderwoche eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Die Daten wurden bis zum 12. Oktober 2022 jeweils Montags für die Vorwoche aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
+# Issued                   : 2021-09-14T14:42:59+01:00
+# Modified                 : 2022-10-28T16:21:08+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_Alter_in_KTZH_wohnhaft_v2.csv')
 
 # Distribution 3
 # Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
