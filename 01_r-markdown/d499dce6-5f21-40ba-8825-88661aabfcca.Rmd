@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-08"
+date: "2023-08-09"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1421@handelsregisteramt-kanton-zueric
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/handelsregisteramt.html`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['branchen', 'handelsregister', 'unternehmensdaten', 'wirtschaft', 'sitzverlegungen', 'genossenschaften', 'firmen', 'vereine', 'konkurse', 'loeschungen', 'unternehmen']`
+- **Keywords.de** `['loeschungen', 'sitzverlegungen', 'wirtschaft', 'firmen', 'branchen', 'genossenschaften', 'konkurse', 'handelsregister', 'vereine', 'unternehmensdaten', 'unternehmen']`
 - **Issued** `2022-10-11T14:15:13+01:00`
 - **Metadata_created** `2022-11-15T16:17:44.830229`
-- **Metadata_modified** `2023-08-08T03:13:07.639364`
+- **Metadata_modified** `2023-08-09T03:13:07.920257`
 
 
 # Load packages
@@ -44,12 +44,12 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
-# Description              : Sobald das Konkursgericht über eine Firma den Konkurs eröffnet hat, wird ein Konkursfall registriert. Wird das Verfahren eingestellt und zu einem späteren Zeitpunkt ein neues Konkursverfahren eröffnet, wird diese  Konkurseröffnung erneut gezählt.
+# Description              : Als Löschungen werden Schliessungen von Unternehmen und weiteren Rechtseinheiten erfasst. Darunter fallen auch Löschungen von Amtes wegen sowie  aufgrund eines Fusionsverfahrens.
 # Issued                   : 2022-10-11T14:15:13+01:00
-# Modified                 : 2023-05-05T08:33:58+01:00
+# Modified                 : 2023-05-05T08:35:04+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Konkurse.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Loeschungen.csv')
 
 # Distribution 1
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
@@ -71,12 +71,12 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Si
 
 # Distribution 3
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
-# Description              : Als Löschungen werden Schliessungen von Unternehmen und weiteren Rechtseinheiten erfasst. Darunter fallen auch Löschungen von Amtes wegen sowie  aufgrund eines Fusionsverfahrens.
+# Description              : Sobald das Konkursgericht über eine Firma den Konkurs eröffnet hat, wird ein Konkursfall registriert. Wird das Verfahren eingestellt und zu einem späteren Zeitpunkt ein neues Konkursverfahren eröffnet, wird diese  Konkurseröffnung erneut gezählt.
 # Issued                   : 2022-10-11T14:15:13+01:00
-# Modified                 : 2023-05-05T08:35:04+01:00
+# Modified                 : 2023-05-05T08:33:58+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Loeschungen.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Konkurse.csv')
 
 
 
