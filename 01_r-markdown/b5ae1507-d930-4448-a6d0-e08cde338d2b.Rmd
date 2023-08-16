@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-15"
+date: "2023-08-16"
 output: html_document
 ---
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set 83ca481f-275c-417b-9598-3902c481e400@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['standort', 'zaehlung', 'fussverkehr', 'fussgaengerzaehlung', 'veloverkehr', 'sachdaten', 'langsamverkehr', 'velozaehlung', 'digitale-transparenz-im-oeffentlichen-raum', 'messwerte', 'planung', 'dtoer', 'punktdaten']`
+- **Keywords.de** `['standort', 'sachdaten', 'fussgaengerzaehlung', 'fussverkehr', 'velozaehlung', 'messwerte', 'zaehlung', 'langsamverkehr', 'veloverkehr', 'punktdaten', 'digitale-transparenz-im-oeffentlichen-raum', 'dtoer', 'planung']`
 - **Issued** `2015-12-10T00:00:00`
 - **Metadata_created** `2023-02-06T01:27:23.761183`
-- **Metadata_modified** `2023-08-15T01:14:45.475069`
+- **Metadata_modified** `2023-08-16T01:12:15.847374`
 
 
 # Load packages
@@ -47,137 +47,137 @@ library(skimr)
 # Distribution 0
 # Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
 # Description              : 
-# Issued                   : 2020-03-16T12:37:56.010725
-# Modified                 : 2023-08-14T23:10:10.501341
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2020_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 1
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:47.630781
-# Modified                 : 2023-08-14T23:09:34.062079
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2010_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 2
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:40.558222
-# Modified                 : 2023-08-14T23:10:02.147665
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2018_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 3
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:52.296534
-# Modified                 : 2023-08-14T23:09:48.110360
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2015_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 4
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2021-01-02T09:01:00.381502
-# Modified                 : 2023-08-14T23:10:16.290051
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2021_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 5
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:54.361144
-# Modified                 : 2023-08-14T23:09:37.160890
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2011_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 6
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:56.920773
-# Modified                 : 2023-08-14T23:09:30.417948
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2009_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 7
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:42.702389
-# Modified                 : 2023-08-14T23:09:41.347625
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2013_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 8
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
-# Issued                   : 2020-03-16T12:37:50.316107
-# Modified                 : 2023-08-14T23:09:52.107884
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2016_verkehrszaehlungen_werte_fussgaenger_velo.csv')
-
-# Distribution 9
-# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
-# Description              : 
 # Issued                   : 2020-03-16T12:37:43.849280
-# Modified                 : 2023-08-14T23:09:39.123430
+# Modified                 : 2023-08-15T23:24:27.460779
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2012_verkehrszaehlungen_werte_fussgaenger_velo.csv')
 
-# Distribution 10
+# Distribution 1
 # Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
 # Description              : 
-# Issued                   : 2020-03-16T12:37:57.540004
-# Modified                 : 2023-08-14T23:09:44.972044
+# Issued                   : 2020-03-16T12:37:50.316107
+# Modified                 : 2023-08-15T23:24:35.632839
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2014_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2016_verkehrszaehlungen_werte_fussgaenger_velo.csv')
 
-# Distribution 11
+# Distribution 2
 # Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
 # Description              : 
-# Issued                   : 2022-01-02T09:01:34.302417
-# Modified                 : 2023-08-14T23:10:18.929924
+# Issued                   : 2020-03-16T12:37:56.920773
+# Modified                 : 2023-08-15T23:24:19.095630
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2022_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2009_verkehrszaehlungen_werte_fussgaenger_velo.csv')
 
-# Distribution 12
+# Distribution 3
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:54.361144
+# Modified                 : 2023-08-15T23:24:25.406355
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2011_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 4
 # Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
 # Description              : 
 # Issued                   : 2020-03-16T12:37:45.094144
-# Modified                 : 2023-08-14T23:10:06.429240
+# Modified                 : 2023-08-15T23:24:47.240059
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2019_verkehrszaehlungen_werte_fussgaenger_velo.csv')
 
+# Distribution 5
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:42.702389
+# Modified                 : 2023-08-15T23:24:29.030762
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2013_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 6
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:56.010725
+# Modified                 : 2023-08-15T23:24:50.155357
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2020_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 7
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:57.540004
+# Modified                 : 2023-08-15T23:24:30.971839
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2014_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 8
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:48.240019
+# Modified                 : 2023-08-15T23:24:39.985665
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2017_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 9
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:40.558222
+# Modified                 : 2023-08-15T23:24:44.395636
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2018_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 10
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:52.296534
+# Modified                 : 2023-08-15T23:24:33.263706
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2015_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 11
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:47.630781
+# Modified                 : 2023-08-15T23:24:22.436713
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2010_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 12
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2021-01-02T09:01:00.381502
+# Modified                 : 2023-08-15T23:24:52.966352
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2021_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
 # Distribution 13
 # Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
 # Description              : 
-# Issued                   : 2023-01-02T09:02:15.637633
-# Modified                 : 2023-08-14T23:10:21.405686
+# Issued                   : 2022-01-02T09:01:34.302417
+# Modified                 : 2023-08-15T23:24:55.529080
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2023_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2022_verkehrszaehlungen_werte_fussgaenger_velo.csv')
 
 # Distribution 14
 # Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
 # Description              : 
-# Issued                   : 2020-03-16T12:37:48.240019
-# Modified                 : 2023-08-14T23:09:56.872649
+# Issued                   : 2023-01-02T09:02:15.637633
+# Modified                 : 2023-08-15T23:24:57.782298
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2017_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2023_verkehrszaehlungen_werte_fussgaenger_velo.csv')
 
 
 
