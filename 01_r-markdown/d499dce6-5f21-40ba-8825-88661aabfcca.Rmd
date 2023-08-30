@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-29"
+date: "2023-08-30"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1421@handelsregisteramt-kanton-zueric
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/handelsregisteramt.html`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['sitzverlegungen', 'konkurse', 'vereine', 'handelsregister', 'wirtschaft', 'unternehmensdaten', 'branchen', 'loeschungen', 'firmen', 'unternehmen', 'genossenschaften']`
+- **Keywords.de** `['firmen', 'wirtschaft', 'handelsregister', 'sitzverlegungen', 'unternehmen', 'konkurse', 'unternehmensdaten', 'branchen', 'vereine', 'loeschungen', 'genossenschaften']`
 - **Issued** `2022-10-11T14:15:13+01:00`
 - **Metadata_created** `2022-11-15T16:17:44.830229`
-- **Metadata_modified** `2023-08-29T03:13:40.160387`
+- **Metadata_modified** `2023-08-30T03:13:08.165816`
 
 
 # Load packages
@@ -44,6 +44,15 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
+# Description              : Unternehmen und weitere Rechtseinheiten können ihre Domiziladresse ändern. Sobald ein Wechsel über die Kantonsgrenzen erfolgt, wechselt die Zuständigkeit des kantonalen Handelsregisters. Verlegt ein im Zürcher Handelsregister eingetragenes Unternehmen sein Domizil in einen anderen Kanton, wird dies als Wegzug aus dem Kanton Zürich gezählt. Umgekehrt hat eine Domiziländerung in eine Zürcher Gemeinde einen Eintrag im Zürcher Handelsregister zur Folge, was als Zuzug in den Kanton Zürich ausgewiesen wird.
+# Issued                   : 2022-10-11T14:15:13+01:00
+# Modified                 : 2023-05-05T08:34:34+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Sitzverlegungen.csv')
+
+# Distribution 1
+# Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
 # Description              : Als Neueintragung versteht man die erstmalige Erfassung von Unternehmen und weiteren Rechtseinheiten im Handelsregister.
 # Issued                   : 2022-10-11T14:15:13+01:00
 # Modified                 : 2023-05-05T08:32:27+01:00
@@ -51,7 +60,7 @@ library(skimr)
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Neueintragungen.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
 # Description              : Als Löschungen werden Schliessungen von Unternehmen und weiteren Rechtseinheiten erfasst. Darunter fallen auch Löschungen von Amtes wegen sowie  aufgrund eines Fusionsverfahrens.
 # Issued                   : 2022-10-11T14:15:13+01:00
@@ -59,15 +68,6 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Ne
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Loeschungen.csv')
-
-# Distribution 2
-# Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
-# Description              : Unternehmen und weitere Rechtseinheiten können ihre Domiziladresse ändern. Sobald ein Wechsel über die Kantonsgrenzen erfolgt, wechselt die Zuständigkeit des kantonalen Handelsregisters. Verlegt ein im Zürcher Handelsregister eingetragenes Unternehmen sein Domizil in einen anderen Kanton, wird dies als Wegzug aus dem Kanton Zürich gezählt. Umgekehrt hat eine Domiziländerung in eine Zürcher Gemeinde einen Eintrag im Zürcher Handelsregister zur Folge, was als Zuzug in den Kanton Zürich ausgewiesen wird.
-# Issued                   : 2022-10-11T14:15:13+01:00
-# Modified                 : 2023-05-05T08:34:34+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Sitzverlegungen.csv')
 
 # Distribution 3
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
