@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-08-30"
+date: "2023-08-31"
 output: html_document
 ---
 
@@ -24,10 +24,10 @@ Auto generated R starter code for data set 0ece9cfa-49ad-4aef-b923-3a0ec2520736@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['regen', 'lufttemperatur', 'luftdruck', 'windgeschwindigkeit', 'p_', 'feuchte', 'messwerte', 'wetter', 'hr', 'wd', 'meteo', 'luft', 't_', 'wind', 'zeitreihe', 'echtzeit', 'global-strahlung', 'tabelle', 'regendauer', 'sachdaten', 'temperatur', 'wv', 'windrichtung', 'hitze', 'kalte', 'luftfeuchte', 'niederschlag', 'umweltdaten']`
+- **Keywords.de** `['wd', 'luftdruck', 'hitze', 'wv', 'wind', 'temperatur', 'hr', 'global-strahlung', 'umweltdaten', 'tabelle', 'p_', 'luftfeuchte', 'niederschlag', 'zeitreihe', 'meteo', 'sachdaten', 'windgeschwindigkeit', 'luft', 'windrichtung', 'messwerte', 'echtzeit', 'regendauer', 'feuchte', 't_', 'wetter', 'kalte', 'regen', 'lufttemperatur']`
 - **Issued** `nan`
 - **Metadata_created** `2022-12-20T00:47:52.287831`
-- **Metadata_modified** `2023-08-30T01:41:25.170010`
+- **Metadata_modified** `2023-08-31T01:22:53.920393`
 
 
 # Load packages
@@ -49,242 +49,242 @@ library(skimr)
 # Distribution 0
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:42:52.070200
-# Modified                 : 2023-08-29T23:44:28.066130
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1992.csv')
-
-# Distribution 1
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:46:45.753104
-# Modified                 : 2023-08-29T23:45:00.676512
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1997.csv')
-
-# Distribution 2
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:46:37.606403
-# Modified                 : 2023-08-29T23:45:53.311687
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2013.csv')
-
-# Distribution 3
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:43:59.151817
-# Modified                 : 2023-08-29T23:46:07.288157
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2017.csv')
-
-# Distribution 4
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2021-01-06T08:40:55.549543
-# Modified                 : 2023-08-29T23:46:23.524573
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2021.csv')
-
-# Distribution 5
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2022-01-01T23:41:08.017160
-# Modified                 : 2023-08-29T23:46:27.229435
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2022.csv')
-
-# Distribution 6
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:43:30.095840
-# Modified                 : 2023-08-29T23:44:37.550331
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1993.csv')
-
-# Distribution 7
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:45:54.791889
-# Modified                 : 2023-08-29T23:45:40.957159
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2009.csv')
-
-# Distribution 8
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:44:11.712671
-# Modified                 : 2023-08-29T23:45:28.576288
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2005.csv')
-
-# Distribution 9
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:43:51.432032
-# Modified                 : 2023-08-29T23:45:43.747563
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2010.csv')
-
-# Distribution 10
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:45:34.896217
-# Modified                 : 2023-08-29T23:45:15.532338
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2001.csv')
-
-# Distribution 11
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:45:17.864780
-# Modified                 : 2023-08-29T23:45:47.142241
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2011.csv')
-
-# Distribution 12
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:42:53.253827
-# Modified                 : 2023-08-29T23:46:11.296818
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2018.csv')
-
-# Distribution 13
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:44:24.808392
-# Modified                 : 2023-08-29T23:45:31.656886
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2006.csv')
-
-# Distribution 14
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:46:04.256179
-# Modified                 : 2023-08-29T23:44:53.291329
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1995.csv')
-
-# Distribution 15
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:45:43.564155
-# Modified                 : 2023-08-29T23:45:04.568178
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1998.csv')
-
-# Distribution 16
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:43:39.971210
-# Modified                 : 2023-08-29T23:46:19.196412
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2020.csv')
-
-# Distribution 17
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:44:35.818224
-# Modified                 : 2023-08-29T23:46:15.316664
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2019.csv')
-
-# Distribution 18
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:43:01.287690
-# Modified                 : 2023-08-29T23:45:34.742719
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2007.csv')
-
-# Distribution 19
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2023-01-02T00:26:49.847091
-# Modified                 : 2023-08-29T23:46:31.172228
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2023.csv')
-
-# Distribution 20
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:46:11.536393
-# Modified                 : 2023-08-29T23:45:08.446087
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1999.csv')
-
-# Distribution 21
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
-# Issued                   : 2020-10-21T12:47:07.205500
-# Modified                 : 2023-08-29T23:45:56.753092
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2014.csv')
-
-# Distribution 22
-# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
-# Description              : 
 # Issued                   : 2020-10-21T12:44:43.771243
-# Modified                 : 2023-08-29T23:46:04.012974
+# Modified                 : 2023-08-30T23:47:04.331947
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2016.csv')
 
-# Distribution 23
+# Distribution 1
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:45:54.791889
+# Modified                 : 2023-08-30T23:46:28.129499
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2009.csv')
+
+# Distribution 2
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:46:19.780109
+# Modified                 : 2023-08-30T23:47:00.369076
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2015.csv')
+
+# Distribution 3
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:47:07.205500
+# Modified                 : 2023-08-30T23:46:55.286798
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2014.csv')
+
+# Distribution 4
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
 # Issued                   : 2020-10-21T12:46:57.017365
-# Modified                 : 2023-08-29T23:44:56.445284
+# Modified                 : 2023-08-30T23:45:31.468760
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1996.csv')
 
-# Distribution 24
+# Distribution 5
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:42:53.253827
+# Modified                 : 2023-08-30T23:47:12.809658
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2018.csv')
+
+# Distribution 6
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:45:34.896217
+# Modified                 : 2023-08-30T23:45:51.565855
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2001.csv')
+
+# Distribution 7
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:43:39.971210
+# Modified                 : 2023-08-30T23:47:20.570525
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2020.csv')
+
+# Distribution 8
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:44:35.818224
+# Modified                 : 2023-08-30T23:47:16.804214
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2019.csv')
+
+# Distribution 9
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:44:11.712671
+# Modified                 : 2023-08-30T23:46:05.706103
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2005.csv')
+
+# Distribution 10
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:43:51.432032
+# Modified                 : 2023-08-30T23:46:33.367803
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2010.csv')
+
+# Distribution 11
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:43:30.095840
+# Modified                 : 2023-08-30T23:45:09.837695
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1993.csv')
+
+# Distribution 12
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:43:11.514219
+# Modified                 : 2023-08-30T23:46:01.977112
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2004.csv')
+
+# Distribution 13
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:46:11.536393
+# Modified                 : 2023-08-30T23:45:44.400322
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1999.csv')
+
+# Distribution 14
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:45:17.864780
+# Modified                 : 2023-08-30T23:46:38.623068
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2011.csv')
+
+# Distribution 15
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2022-01-01T23:41:08.017160
+# Modified                 : 2023-08-30T23:47:31.148804
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2022.csv')
+
+# Distribution 16
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2021-01-06T08:40:55.549543
+# Modified                 : 2023-08-30T23:47:25.278424
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2021.csv')
+
+# Distribution 17
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:43:01.287690
+# Modified                 : 2023-08-30T23:46:18.881968
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2007.csv')
+
+# Distribution 18
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
 # Issued                   : 2020-10-21T12:47:16.318740
-# Modified                 : 2023-08-29T23:45:22.658346
+# Modified                 : 2023-08-30T23:45:58.494940
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2003.csv')
 
+# Distribution 19
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:46:04.256179
+# Modified                 : 2023-08-30T23:45:27.304763
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1995.csv')
+
+# Distribution 20
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:46:29.599667
+# Modified                 : 2023-08-30T23:46:23.605567
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2008.csv')
+
+# Distribution 21
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:45:04.618755
+# Modified                 : 2023-08-30T23:45:48.114418
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2000.csv')
+
+# Distribution 22
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:42:52.070200
+# Modified                 : 2023-08-30T23:45:00.470966
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1992.csv')
+
+# Distribution 23
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:44:24.808392
+# Modified                 : 2023-08-30T23:46:09.259903
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2006.csv')
+
+# Distribution 24
+# Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
+# Description              : 
+# Issued                   : 2020-10-21T12:43:59.151817
+# Modified                 : 2023-08-30T23:47:08.174546
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2017.csv')
+
 # Distribution 25
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:46:19.780109
-# Modified                 : 2023-08-29T23:46:00.571815
+# Issued                   : 2020-10-21T12:45:25.994898
+# Modified                 : 2023-08-30T23:45:20.778807
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2015.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1994.csv')
 
 # Distribution 26
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
 # Issued                   : 2020-10-21T12:44:53.389457
-# Modified                 : 2023-08-29T23:45:50.129572
+# Modified                 : 2023-08-30T23:46:43.999979
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2012.csv')
@@ -292,47 +292,47 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmitt
 # Distribution 27
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:46:29.599667
-# Modified                 : 2023-08-29T23:45:37.773142
+# Issued                   : 2020-10-21T12:46:45.753104
+# Modified                 : 2023-08-30T23:45:35.866556
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2008.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1997.csv')
 
 # Distribution 28
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:45:25.994898
-# Modified                 : 2023-08-29T23:44:49.086804
+# Issued                   : 2020-10-21T12:43:22.160177
+# Modified                 : 2023-08-30T23:45:54.903210
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1994.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2002.csv')
 
 # Distribution 29
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:45:04.618755
-# Modified                 : 2023-08-29T23:45:12.128405
+# Issued                   : 2023-01-02T00:26:49.847091
+# Modified                 : 2023-08-30T23:47:34.523164
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2000.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2023.csv')
 
 # Distribution 30
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:43:11.514219
-# Modified                 : 2023-08-29T23:45:25.555495
+# Issued                   : 2020-10-21T12:46:37.606403
+# Modified                 : 2023-08-30T23:46:49.575680
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2004.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2013.csv')
 
 # Distribution 31
 # Package_id               : 81f2dff9-fad7-414d-8abf-81b71a694e7f
 # Description              : 
-# Issued                   : 2020-10-21T12:43:22.160177
-# Modified                 : 2023-08-29T23:45:19.140130
+# Issued                   : 2020-10-21T12:45:43.564155
+# Modified                 : 2023-08-30T23:45:40.049063
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2002.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_1998.csv')
 
 
 
