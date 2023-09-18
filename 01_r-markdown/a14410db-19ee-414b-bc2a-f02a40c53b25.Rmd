@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-09-17"
+date: "2023-09-18"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set go@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['transportunternehmen', 'sboid', 'said', 'geschaftsorganisation', 'vu', 'go', 'verkehrsunternehmen', 'tu']`
+- **Keywords.de** `['tu', 'verkehrsunternehmen', 'sboid', 'geschaftsorganisation', 'vu', 'said', 'go', 'transportunternehmen']`
 - **Issued** `2023-05-12T13:55:14.771637`
 - **Metadata_created** `2023-06-24T00:40:52.692588`
-- **Metadata_modified** `2023-09-17T00:43:16.860695`
+- **Metadata_modified** `2023-09-18T00:57:29.643761`
 
 
 # Load packages
@@ -37,21 +37,12 @@ library(skimr)
 
 # Load data
 
--   The dataset has 3 distribution(s) in CSV format.
+-   The dataset has 4 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
 
 # Distribution 0
-# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
-# Description              : 
-# Issued                   : 2023-09-16T12:55:13.000822
-# Modified                 : 2023-09-16T12:55:13.000822
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/38f7f5e6-943f-44bb-93ab-c47289f5c603/download/future_timetable_business_organisation_versions_2023-09-16.csv')
-
-# Distribution 1
 # Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
 # Description              : 
 # Issued                   : 2023-09-16T12:55:08.966849
@@ -60,14 +51,32 @@ df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a66
 
 df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/4bec2b37-a314-4ded-8606-2a843a06a821/download/actual_date_business_organisation_versions_2023-09-16.csv')
 
+# Distribution 1
+# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
+# Description              : 
+# Issued                   : 2023-09-17T13:00:14.527483
+# Modified                 : 2023-09-17T13:00:14.527483
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/ec6039a9-8a90-46fb-b1ff-d1b369c4d436/download/future_timetable_business_organisation_versions_2023-09-17.csv')
+
 # Distribution 2
 # Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
 # Description              : 
-# Issued                   : 2023-09-16T12:55:11.050296
-# Modified                 : 2023-09-16T12:55:11.050296
+# Issued                   : 2023-09-17T13:00:12.603488
+# Modified                 : 2023-09-17T13:00:12.603488
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/bb970774-07ba-4af4-ad97-ced57c11d9ae/download/full_business_organisation_versions_2023-09-16.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/ba2c8916-407d-4e8d-8565-9b5cc5e0c2e4/download/full_business_organisation_versions_2023-09-17.csv')
+
+# Distribution 3
+# Package_id               : a14410db-19ee-414b-bc2a-f02a40c53b25
+# Description              : 
+# Issued                   : 2023-09-17T13:00:10.637029
+# Modified                 : 2023-09-17T13:00:10.637029
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/3e0b4c84-853a-432c-ab14-4f2bd5c116c2/download/actual_date_business_organisation_versions_2023-09-17.csv')
 
 
 
