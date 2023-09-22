@@ -1,0 +1,93 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-09-22"
+output: html_document
+---
+
+## Dataset: Landkarten mit Titelkartuschen aus der Sammlung 'Prachtsatlanten'
+
+Aus der Kollektion «[Prachtsatlanten: Von den Anfängen bis ins Goldene Zeitalter](https://www.e-rara.ch/atlanten/nav/classification/26780995)» auf der Online-Plattform [e-rara](https://www.e-rara.ch/) wurde eine Auswahl von rund 1930 Landkarten aus reich illustrierten, alten Atlanten der Zentralbibliothek Zürich zusammengestellt. Die Karten stammen allesamt aus der Blütezeit der repräsentativen Atlasproduktion im 17. Jahrhundert. Die Verlagshäuser – vorab in den Niederlanden – versuchten sich damals gegenseitig mit aufwändig gestalteten Produkten zu übertrumpfen. Die ursprünglich einfarbigen Illustrationen und Karten wurden bisweilen von Hand koloriert.
+Diese Bücher dienten nicht nur der geografischen Orientierung, sondern waren überdies teure, repräsentative Luxusobjekte. Die in ihnen enthaltenen Landkarten sind oft reich ausgeschmückt mit Menschen- und Tierfiguren sowie weiteren dekorativen Elementen. Die Karten bieten dadurch Einblicke in Vorstellungen, Machtverhältnisse und Konflikte des 16. und 17. Jahrhunderts. Es ist eine Inszenierung von Welt, Herrschaft, Menschen und Ressourcen zur Zeit der europäischen Expansion ab Ende des 15. Jahrhunderts.
+Die Atlanten des 17. Jahrhunderts wurden zusammen mit älteren in den Jahren 2021-22 bis auf Kartenebene erschlossen und der Öffentlichkeit kostenlos online zugänglich gemacht. 2023 georeferenzierten Freiwillige online über 2900 Karten in einem [Citizen Science-Projekt](https://www.zb.uzh.ch/de/ueber-uns/citizen-science/prachtsatlanten-alte-landkarten-georeferenzieren) der ZB Zürich.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/landkarten-mit-titelkartuschen-aus-der-sammlung-prachtsatlanten)<br>
+[Direct link by **Zentralbibliothek Zürich** for dataset](https://www.e-rara.ch/atlanten/nav/classification/26780995)
+
+Auto generated R starter code for data set prachtsatlanten-landkarten@zb_zuerich.
+
+## Metadata
+
+- **Publisher** `Zentralbibliothek Zürich`
+- **Organization.display_name.de** `Zentralbibliothek Zürich`
+- **Organization.url** `https://www.zb.uzh.ch/de/`
+- **Maintainer** `Annabelle Wiegart`
+- **Maintainer_email** `bibliotheksinformatik@zb.uzh.ch`
+- **Keywords.de** `['glam', 'openglam']`
+- **Issued** `2023-09-18T00:00:00`
+- **Metadata_created** `2023-09-19T15:48:17.204464`
+- **Metadata_modified** `2023-09-21T07:27:07.283057`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e8d25b27-eeb8-4cc3-8461-e97c8592841b
+# Description              : Die csv-Datei enthält 1'880 Zeilen mit den folgenden Metadaten zu den Kartenseiten: 	• catalog_id_swisscovery 	• page_id_erara 	• erara_page_view 	• swisscovery_link 	• map_title 	• pubdate 	• pubdate_from 	• pubdate_to 	• creator 	• publisher     • reference Wenn Sie Bearbeitungen der in diesem Datenset enthaltenen Bilder veröffentlichen, geben Sie bitte pro Bild den in der Spalte "reference" enthaltenen Zitiervorschlag an.
+# Issued                   : 2023-09-18T00:00:00
+# Modified                 : 2023-09-18T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.zb.uzh.ch/sets/prachtsatlanten/glamhack23_prachtsatlanten_kartenseiten.csv')
+
+# Distribution 1
+# Package_id               : e8d25b27-eeb8-4cc3-8461-e97c8592841b
+# Description              : Die csv-Datei enthält 1'931 Zeilen mit Geopunkten zu den Landkarten. Die Geopunkte-Tabelle hat mehr Zeilen als Kartenseiten vorhanden sind, da Digitalisate mit 2 und mehr Karten darauf im [Citizen Science Projekt](https://www.zb.uzh.ch/de/ueber-uns/citizen-science/prachtsatlanten-alte-landkarten-georeferenzieren) getrennt und einzeln georeferenziert wurden.  Die zugehörige Bilddatei hat jeweils die Benennung {page_id_erara}.jpg. Spaltentitel: - map_title - erara_page_view - page_id_erara - location_0 - pixel_0 ... - location_99 - pixel_99 Zu einer Pixelkoordinate gibt es jeweils eine zugehörige Geokoordinaten-Spalte. Pro Karte sind bis zu 99 Punkte vorhanden, in vielen Fällen aber auch weniger.
+# Issued                   : 2023-09-18T00:00:00
+# Modified                 : 2023-09-18T00:00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://data.zb.uzh.ch/sets/prachtsatlanten/glamhack23_prachtsatlanten_geopoints.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Annabelle Wiegart | bibliotheksinformatik@zb.uzh.ch
