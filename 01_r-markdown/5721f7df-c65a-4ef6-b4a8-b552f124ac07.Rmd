@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-10-01"
+date: "2023-10-02"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 467@staatsarchiv-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/politik-staat/recherche-im-staatsarchiv.html#426283062`
 - **Maintainer** `Staatsarchiv des Kantons Zürich`
 - **Maintainer_email** `staatsarchivzh@ji.zh.ch`
-- **Keywords.de** `['kantonsrat', 'regierungsrat']`
+- **Keywords.de** `['regierungsrat', 'kantonsrat']`
 - **Issued** `2018-12-21T12:00:00+01:00`
 - **Metadata_created** `2021-01-14T16:52:49.485021`
-- **Metadata_modified** `2023-10-01T03:12:36.212482`
+- **Metadata_modified** `2023-10-02T03:18:21.636286`
 
 
 # Load packages
@@ -44,12 +44,12 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
-# Description              : Variabeln: ID_FUNKTION_NEW; ID_EINSITZ_NEW; ID_PERSON_NEW; ID_PERSON; FUNKTIONSBEZEICHNUNG; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
-# Issued                   : 2019-09-04T16:11:19+01:00
-# Modified                 : 2023-01-16T13:33:22+01:00
+# Description              : Variabeln: ID_EINSITZ_NEW; ID_PERSON_NEW; ID_PERSON; RAT; DATUM_EINTRITT_TAG; DATUM_EINTRITT_MONAT; DATUM_EINTRITT_JAHR; DATUM_AUSTRITT_TAG; DATUM_AUSTRITT_MONAT; DATUM_AUSTRITT_JAHR; WAHLKREIS; QUELLEN; BEMERKUNGEN
+# Issued                   : 2019-09-04T16:00:17+01:00
+# Modified                 : 2023-01-16T13:33:13+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/funktionen.csv')
+df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/einsitze.csv')
 
 # Distribution 1
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
@@ -62,23 +62,14 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/
 
 # Distribution 2
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
-# Description              : Variabeln: ID_WOHNORT_NEW; ID_PERSON_NEW; ID_PERSON; POSTLEITZAHL; GEMEINDENAME; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
-# Issued                   : 2019-09-04T15:08:21+01:00
-# Modified                 : 2023-01-16T13:32:51+01:00
+# Description              : Variabeln: ID_BUERGERORT_NEW; ID_PERSON_NEW; ID_PERSON; ORT; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
+# Issued                   : 2019-09-04T15:16:59+01:00
+# Modified                 : 2023-01-16T13:33:01+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/wohnorte.csv')
+df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/buergerorte.csv')
 
 # Distribution 3
-# Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
-# Description              : Variabeln: ID_PERSON_NEW; NACHNAME; VORNAME; GESCHLECHT; DATUM_GEBURT_TAG; DATUM_GEBURT_MONAT; DATUM_GEBURT_JAHR; DATUM_GEBURT; DATUM_TOD_TAG; DATUM_TOD_MONAT; DATUM_TOD_JAHR; DATUM_TOD; BERUF; AKAD_TITEL; KONFESSION; DIENSTGRAD; GND; HLS; MATRIKELZH; VIAF; QUELLEN; BEMERKUNGEN; BILD; BILDQUELLE
-# Issued                   : 2019-08-26T18:04:06+01:00
-# Modified                 : 2023-01-16T13:32:36+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/personen.csv')
-
-# Distribution 4
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
 # Description              : Variabeln: ID_BINDUNG_NEW; ID_PERSON_NEW; ID_PERSON; BINDUNGSKATEGORIE; INSTITUTION; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
 # Issued                   : 2019-09-04T15:58:40+01:00
@@ -87,16 +78,16 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/bindungen.csv')
 
-# Distribution 5
+# Distribution 4
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
-# Description              : Variabeln: ID_EINSITZ_NEW; ID_PERSON_NEW; ID_PERSON; RAT; DATUM_EINTRITT_TAG; DATUM_EINTRITT_MONAT; DATUM_EINTRITT_JAHR; DATUM_AUSTRITT_TAG; DATUM_AUSTRITT_MONAT; DATUM_AUSTRITT_JAHR; WAHLKREIS; QUELLEN; BEMERKUNGEN
-# Issued                   : 2019-09-04T16:00:17+01:00
-# Modified                 : 2023-01-16T13:33:13+01:00
+# Description              : Variabeln: ID_FUNKTION_NEW; ID_EINSITZ_NEW; ID_PERSON_NEW; ID_PERSON; FUNKTIONSBEZEICHNUNG; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
+# Issued                   : 2019-09-04T16:11:19+01:00
+# Modified                 : 2023-01-16T13:33:22+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/einsitze.csv')
+df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/funktionen.csv')
 
-# Distribution 6
+# Distribution 5
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
 # Description              : Variabeln: ID_ZIVILSTAND_NEW; ID_PERSON_NEW; ID_PERSON; ZIVILSTAND; PARTNER_NACHNAME; PARTNER_VORNAME; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
 # Issued                   : 2019-09-04T15:29:38+01:00
@@ -105,14 +96,23 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/zivilstaende.csv')
 
-# Distribution 7
+# Distribution 6
 # Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
-# Description              : Variabeln: ID_BUERGERORT_NEW; ID_PERSON_NEW; ID_PERSON; ORT; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
-# Issued                   : 2019-09-04T15:16:59+01:00
-# Modified                 : 2023-01-16T13:33:01+01:00
+# Description              : Variabeln: ID_PERSON_NEW; NACHNAME; VORNAME; GESCHLECHT; DATUM_GEBURT_TAG; DATUM_GEBURT_MONAT; DATUM_GEBURT_JAHR; DATUM_GEBURT; DATUM_TOD_TAG; DATUM_TOD_MONAT; DATUM_TOD_JAHR; DATUM_TOD; BERUF; AKAD_TITEL; KONFESSION; DIENSTGRAD; GND; HLS; MATRIKELZH; VIAF; QUELLEN; BEMERKUNGEN; BILD; BILDQUELLE
+# Issued                   : 2019-08-26T18:04:06+01:00
+# Modified                 : 2023-01-16T13:32:36+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/buergerorte.csv')
+df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/personen.csv')
+
+# Distribution 7
+# Package_id               : 5721f7df-c65a-4ef6-b4a8-b552f124ac07
+# Description              : Variabeln: ID_WOHNORT_NEW; ID_PERSON_NEW; ID_PERSON; POSTLEITZAHL; GEMEINDENAME; DATUM_VON_TAG; DATUM_VON_MONAT; DATUM_VON_JAHR; DATUM_BIS_TAG; DATUM_BIS_MONAT; DATUM_BIS_JAHR
+# Issued                   : 2019-09-04T15:08:21+01:00
+# Modified                 : 2023-01-16T13:32:51+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/krdb-lod/master/data/wohnorte.csv')
 
 
 
