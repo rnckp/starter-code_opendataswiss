@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-10-23"
+date: "2023-10-24"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 693@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Wahlen & Abstimmungen`
 - **Maintainer_email** `wahlen@statistik.ji.zh.ch`
-- **Keywords.de** `['nationalratswahlen', 'panaschierstimmen', 'wahlergebnisse', 'politischeparteien', 'nationalrat', 'wahlen', 'politik', 'kantonzuerich']`
+- **Keywords.de** `['nationalratswahlen', 'politik', 'panaschierstimmen', 'politischeparteien', 'wahlen', 'kantonzuerich', 'nationalrat', 'wahlergebnisse']`
 - **Issued** `2020-07-07T16:01:00+01:00`
 - **Metadata_created** `2021-01-14T17:28:31.348534`
-- **Metadata_modified** `2023-10-23T03:09:32.144662`
+- **Metadata_modified** `2023-10-24T03:02:00.373612`
 
 
 # Load packages
@@ -37,21 +37,12 @@ library(skimr)
 
 # Load data
 
--   The dataset has 17 distribution(s) in CSV format.
+-   The dataset has 20 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
 
 # Distribution 0
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2007
-# Issued                   : 2020-07-07T16:25:13+01:00
-# Modified                 : 2021-06-02T08:09:46+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001676.csv')
-
-# Distribution 1
 # Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
 # Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2015
 # Issued                   : 2020-07-07T16:28:22+01:00
@@ -60,106 +51,7 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001682.csv')
 
-# Distribution 2
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2023
-# Issued                   : 2023-09-04T11:43:54+01:00
-# Modified                 : 2023-09-04T11:43:54+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00004523.csv')
-
-# Distribution 3
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2019 pro Gemeinde
-# Issued                   : 2020-07-07T16:30:32+01:00
-# Modified                 : 2021-06-02T08:18:03+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001683.csv')
-
-# Distribution 4
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2019
-# Issued                   : 2020-07-07T16:31:03+01:00
-# Modified                 : 2021-06-02T08:18:28+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001684.csv')
-
-# Distribution 5
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2015
-# Issued                   : 2021-06-02T08:16:41+01:00
-# Modified                 : 2021-06-02T08:16:41+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001835.csv')
-
-# Distribution 6
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2011
-# Issued                   : 2020-07-07T16:26:51+01:00
-# Modified                 : 2021-06-02T08:11:25+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001679.csv')
-
-# Distribution 7
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2019
-# Issued                   : 2021-06-02T08:19:07+01:00
-# Modified                 : 2021-06-02T08:19:07+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001836.csv')
-
-# Distribution 8
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2011
-# Issued                   : 2020-07-07T16:26:25+01:00
-# Modified                 : 2021-06-02T08:11:06+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001678.csv')
-
-# Distribution 9
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2019
-# Issued                   : 2020-07-07T16:31:25+01:00
-# Modified                 : 2021-06-02T08:18:49+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001685.csv')
-
-# Distribution 10
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2007
-# Issued                   : 2020-07-07T16:24:49+01:00
-# Modified                 : 2021-06-02T08:09:29+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001675.csv')
-
-# Distribution 11
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2007 pro Gemeinde
-# Issued                   : 2020-07-07T16:24:18+01:00
-# Modified                 : 2021-06-02T08:08:36+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001674.csv')
-
-# Distribution 12
-# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2011
-# Issued                   : 2021-06-02T08:11:37+01:00
-# Modified                 : 2021-06-02T08:11:37+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001834.csv')
-
-# Distribution 13
+# Distribution 1
 # Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
 # Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2015
 # Issued                   : 2020-07-07T16:27:59+01:00
@@ -168,16 +60,25 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001681.csv')
 
-# Distribution 14
+# Distribution 2
 # Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
-# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2007
-# Issued                   : 2021-06-02T08:10:02+01:00
-# Modified                 : 2021-06-02T08:10:02+01:00
+# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2011
+# Issued                   : 2020-07-07T16:26:51+01:00
+# Modified                 : 2021-06-02T08:11:25+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001833.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001679.csv')
 
-# Distribution 15
+# Distribution 3
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2023
+# Issued                   : 2023-10-23T09:34:55+01:00
+# Modified                 : 2023-10-23T09:34:55+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00004703.csv')
+
+# Distribution 4
 # Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
 # Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2015 pro Gemeinde
 # Issued                   : 2020-07-07T16:27:16+01:00
@@ -186,7 +87,34 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001680.csv')
 
-# Distribution 16
+# Distribution 5
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2019
+# Issued                   : 2020-07-07T16:31:25+01:00
+# Modified                 : 2021-06-02T08:18:49+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001685.csv')
+
+# Distribution 6
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2019
+# Issued                   : 2021-06-02T08:19:07+01:00
+# Modified                 : 2021-06-02T08:19:07+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001836.csv')
+
+# Distribution 7
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2011
+# Issued                   : 2020-07-07T16:26:25+01:00
+# Modified                 : 2021-06-02T08:11:06+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001678.csv')
+
+# Distribution 8
 # Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
 # Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2011 pro Gemeinde
 # Issued                   : 2020-07-07T16:25:45+01:00
@@ -194,6 +122,105 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001677.csv')
+
+# Distribution 9
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2019
+# Issued                   : 2020-07-07T16:31:03+01:00
+# Modified                 : 2021-06-02T08:18:28+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001684.csv')
+
+# Distribution 10
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2023 pro Gemeinde
+# Issued                   : 2023-10-23T09:47:19+01:00
+# Modified                 : 2023-10-23T09:47:19+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00004705.csv')
+
+# Distribution 11
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2007
+# Issued                   : 2020-07-07T16:24:49+01:00
+# Modified                 : 2021-06-02T08:09:29+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001675.csv')
+
+# Distribution 12
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Nationalratswahl 2023
+# Issued                   : 2023-10-23T09:37:40+01:00
+# Modified                 : 2023-10-23T09:37:40+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00004704.csv')
+
+# Distribution 13
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2015
+# Issued                   : 2021-06-02T08:16:41+01:00
+# Modified                 : 2021-06-02T08:16:41+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001835.csv')
+
+# Distribution 14
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2007
+# Issued                   : 2020-07-07T16:25:13+01:00
+# Modified                 : 2021-06-02T08:09:46+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001676.csv')
+
+# Distribution 15
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2019 pro Gemeinde
+# Issued                   : 2020-07-07T16:30:32+01:00
+# Modified                 : 2021-06-02T08:18:03+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001683.csv')
+
+# Distribution 16
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Listenverbindungen und Unterlistenverbindungen der Nationalratswahl 2023
+# Issued                   : 2023-09-04T11:43:54+01:00
+# Modified                 : 2023-09-04T11:43:54+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00004523.csv')
+
+# Distribution 17
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2011
+# Issued                   : 2021-06-02T08:11:37+01:00
+# Modified                 : 2021-06-02T08:11:37+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001834.csv')
+
+# Distribution 18
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Nationalratswahl 2007 pro Gemeinde
+# Issued                   : 2020-07-07T16:24:18+01:00
+# Modified                 : 2021-06-02T08:08:36+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001674.csv')
+
+# Distribution 19
+# Package_id               : e9eea49b-83d7-4e08-ba44-6488eb83bacd
+# Description              : Informationen zu den Kandidierenden der Nationalratswahl 2007
+# Issued                   : 2021-06-02T08:10:02+01:00
+# Modified                 : 2021-06-02T08:10:02+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000693_00001833.csv')
 
 
 
