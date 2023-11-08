@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-11-08"
+output: html_document
+---
+
+## Dataset: Stimmlokale
+
+Stimmlokale in der Stadt Zürich.
+
+**Zweck**: Darstellung im Stadtplan und im städtischen Internetauftritt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/stimmlokale)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_stimmlokale)
+
+Auto generated R starter code for data set 563eda31-bbeb-433c-9426-741b1e9fbce0@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `GIS-Zentrum, Geomatik + Vermessung, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['geoportal', 'punktdaten', 'geodaten', 'stzh']`
+- **Issued** `nan`
+- **Metadata_created** `2023-11-07T03:41:21.670743`
+- **Metadata_modified** `2023-11-08T03:32:25.062707`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 84bb4b0f-3c89-4334-a0ee-2f1f6c4d935e
+# Description              : 
+# Issued                   : 2023-11-06T03:28:29.088598
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Stimmlokale?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
