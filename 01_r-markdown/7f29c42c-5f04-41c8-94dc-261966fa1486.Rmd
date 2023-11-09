@@ -1,13 +1,13 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-11-08"
+date: "2023-11-09"
 output: html_document
 ---
 
 ## Dataset: Öffentlicher Archivkatalog in RDF
 
 
-Das Staatsarchiv des Kantons Basel-Stadt fungiert als Gedächtnis von Staat und Stadt. Die reichhaltigen Bestände widerspiegeln die Geschichte Basels seit dem Mittelalter. Seit 1999 wird das Archivgut in einem Archivinformationssystem (scopeArchiv) erschlossen, zur Suche und Benutzung steht ein Digitaler Lesesaal (DLS) zur Verfügung (https://dls.staatsarchiv.bs.ch). Das hier publizierte Datenset umfasst sämtliche öffentlich zugänglichen Informationen aus dem Archivsystem, transformiert in ein RDF-Datenmodell auf der Basis der archivspezifischen Ontologie Records in Context (RiC-O) (https://www.ica.org/standards/RiC/ontology).  SPARQL-Endpoint zur Datenabfrage: https://ld.staatsarchiv.bs.ch/sparql    Dokumentation des Datenmodells: https://github.com/Staatsarchiv-Basel-Stadt/StABS-scope2RDF/wiki  Das Datenset wird permanent weiterentwickelt. Sowohl das Mapping nach RiC-O wie auch die Inhalte können ändern, Rückwärtskompatabilität kann nicht garantiert werden. Falls eine stabile Einbindung in Services geplant wird, bitten wir um Kontaktaufnahme. Das Mapping zur Transformation der Daten nach RDF erfolgt primär durch R2RML  (https://www.w3.org/TR/r2rml/) und nachgelagert auch mit SPARQL (http://www.w3.org/TR/rdf-sparql-query/). Sämtliche Mappings finden sich im öffentlichen Repository StABS-scope2RDF (https://github.com/Staatsarchiv-Basel-Stadt/StABS-scope2RDF). Die Transformation erfolgt in einer ETL-Pipeline (https://github.com/Staatsarchiv-Basel-Stadt/RDF-Pipeline) der Firma zazuko (https://zazuko.com/), deren Quellcode ebenfalls öffentlich ist. 
+Das Staatsarchiv des Kantons Basel-Stadt fungiert als Gedächtnis von Staat und Stadt. Die reichhaltigen Bestände widerspiegeln die Geschichte Basels seit dem Mittelalter. Seit 1999 wird das Archivgut in einem Archivinformationssystem (scopeArchiv) erschlossen, zur Suche und Benutzung steht ein Digitaler Lesesaal (DLS) zur Verfügung (https://dls.staatsarchiv.bs.ch). Das hier publizierte Datenset (https://ld.bs.ch/set/archival-catalog) umfasst sämtliche öffentlich zugänglichen Informationen aus dem Archivsystem, transformiert in ein RDF-Datenmodell auf der Basis der archivspezifischen Ontologie Records in Context (RiC-O) (https://www.ica.org/standards/RiC/ontology).  SPARQL-Endpoint zur Datenabfrage: https://ld.bs.ch/sparql    Dokumentation des Datenmodells: https://github.com/Staatsarchiv-Basel-Stadt/StABS-scope2RDF/wiki  Das Datenset wird permanent weiterentwickelt. Sowohl das Mapping nach RiC-O wie auch die Inhalte können ändern, Rückwärtskompatabilität kann nicht garantiert werden. Falls eine stabile Einbindung in Services geplant wird, bitten wir um Kontaktaufnahme.Das Mapping zur Transformation der Daten nach RDF erfolgt primär durch die Mappingsprache RML (https://rml.io/specs/rml/). Die Transformation erfolgt in einer ETL-Pipeline mit entsprechend integrierten Mappings (https://github.com/Staatsarchiv-Basel-Stadt/LOD-Pipeline) der Firma zazuko (https://zazuko.com/), deren Quellcode öffentlich ist. 
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/offentlicher-archivkatalog-in-rdf)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100177/)
@@ -21,10 +21,10 @@ Auto generated R starter code for data set 100177@kanton-basel-stadt.
 - **Organization.url** `https://www.opendata.bs.ch`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['linked', 'lod', 'archiv', 'linked-data', 'archivkatalog', 'sparql', 'geschichte-basels', 'linked-open-data', 'ld']`
+- **Keywords.de** `['linked-data', 'sparql', 'geschichte-basels', 'lod', 'ld', 'linked-open-data', 'linked', 'archivkatalog', 'archiv']`
 - **Issued** `2022-05-03T00:00:00`
 - **Metadata_created** `2022-05-04T12:59:18.435186`
-- **Metadata_modified** `2023-11-08T02:07:36.068086`
+- **Metadata_modified** `2023-11-09T01:30:21.668392`
 
 
 # Load packages
@@ -47,7 +47,7 @@ library(skimr)
 # Package_id               : 7f29c42c-5f04-41c8-94dc-261966fa1486
 # Description              : Öffentlicher Archivkatalog in RDF (csv)
 # Issued                   : 2022-05-03T00:00:00
-# Modified                 : 2022-12-08T09:46:53.148000+00:00
+# Modified                 : 2023-11-08T13:21:33.600000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100177/exports/csv')

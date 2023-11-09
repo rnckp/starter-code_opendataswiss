@@ -1,0 +1,108 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-11-09"
+output: html_document
+---
+
+## Dataset: Influenza
+
+Daten zur Verbreitung und zeitlichen Entwicklung von Influenza Infektionen und Grippe Erkrankungsfällen in der Schweiz und im Fürstentum Liechtenstein. Sie finden Daten zu ambulanten Konsultationen aus dem Sentinella-Meldesystem, zu laborbestätigten Fällen aus dem obligatorischen Meldesystem und zur Viruslast im Abwasser aus dem Abwassermonitoring.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/influenza)<br>
+[Direct link by **Abteilung Übertragbare Krankheiten** for dataset]()
+
+Auto generated R starter code for data set influenza@abteilung-uebertragbare-krankheiten.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten`
+- **Organization.display_name.de** `Abteilung Übertragbare Krankheiten`
+- **Organization.url** `https://www.bag.admin.ch/`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['grippe', 'influenza', 'bag']`
+- **Issued** `2023-11-08T00:00:00`
+- **Metadata_created** `2023-11-08T07:45:58.747258`
+- **Metadata_modified** `2023-11-08T10:03:45.556707`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f69b130e-edc4-4e5c-ae20-8008688ce7bf
+# Description              : Die hier veröffentlichten Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Juli 2023 die Viruslast von Influenza in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/unwrap-csv/RESPVIRUSES_abwasser.zip')
+
+# Distribution 1
+# Package_id               : f69b130e-edc4-4e5c-ae20-8008688ce7bf
+# Description              : Die hier veröffentlichten Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte Informationen zu Erstkonsultationen aufgrund akuter respiratorischer Infektion (ARI) oder grippeähnlicher Erkrankung (ILI) in Arztpraxen und bei Hausbesuchen.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/unwrap-csv/RESPVIRUSES_sentinella.zip')
+
+# Distribution 2
+# Package_id               : f69b130e-edc4-4e5c-ae20-8008688ce7bf
+# Description              : Die hier veröffentlichten Daten basieren auf Informationen, die Laboratorien in der Schweiz und im Fürstentum Liechtenstein dem BAG im Rahmen der Meldepflicht übermittelt haben (Obligatorisches Meldesystem). 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/unwrap-csv/INFLUENZA_oblig.zip')
+
+# Distribution 3
+# Package_id               : f69b130e-edc4-4e5c-ae20-8008688ce7bf
+# Description              : Die hier veröffentlichten Daten basieren auf Informationen aus dem Sentinella ⁠Erhebungssystem. Ambulant tätige Ärztinnen und Ärzte übermitteln seit 1987 Informationen zu Erstkonsultationen von Patientinnen und Patienten mit einer grippeähnlichen Erkrankung (influenza-like illness, ILI) in Arztpraxen und bei Hausbesuchen.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/unwrap-csv/INFLUENZA_sentinella.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten | idd@bag.admin.ch
