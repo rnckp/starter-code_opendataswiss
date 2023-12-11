@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-12-10"
+date: "2023-12-11"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 2022@fachstelle-ogd-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt/open-government-data.html`
 - **Maintainer** `Amt für Raumentwicklung des Kantons Zürich, Fachstelle Datenlogistik, Koordinationsstelle GWR-ZH`
 - **Maintainer_email** `datenlogistik@bd.zh.ch`
-- **Keywords.de** `['heizungsart', 'strassen', 'wohnungsbestand', 'gebaeude', 'gemeinden', 'wohnungen', 'heizung', 'gebaeudeart', 'wohnung']`
+- **Keywords.de** `['gebaeudeart', 'wohnungen', 'gebaeude', 'heizungsart', 'strassen', 'gemeinden', 'heizung', 'wohnung', 'wohnungsbestand']`
 - **Issued** `2023-04-24T09:55:58+01:00`
 - **Metadata_created** `2023-04-25T03:09:12.891949`
-- **Metadata_modified** `2023-12-09T04:31:03.960132`
+- **Metadata_modified** `2023-12-10T04:20:01.287915`
 
 
 # Load packages
@@ -44,6 +44,15 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 4b3a2443-10cc-4ce6-8bb5-e8df74c655da
+# Description              : Daten des eidg. GWR mit Bezug zu den einzelnen Eingängen zu einem Gebäude. Adressen beziehen sich auf einzelne Gebäudeeingänge und sind deswegen pro Eingang in diesem File zu finden. Die Merkmale entsprechen denen im Merkmalskatalogs des eidg. GWR (siehe Link unter 'weitere Informationen' im Datensatzbeschrieb) und sind dort beschrieben. Leerwerte wurden in den Gemeinden nicht ausgefüllt, ihr Wert ist unbekannt.
+# Issued                   : 2023-04-24T09:55:58+01:00
+# Modified                 : 2023-11-02T10:48:25+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002022_00004066.csv')
+
+# Distribution 1
+# Package_id               : 4b3a2443-10cc-4ce6-8bb5-e8df74c655da
 # Description              : Daten des eidg. GWR mit Bezug zu ganzen Gebäuden und ihrer Haustechnik. Aus den Daten lassen sich umfassende Angaben zum Gebäudebestand ablesen, beispielsweise zum Gebäudealter oder den Wärme- und Energiequellen. Die Merkmale entsprechen denen im Merkmalskatalogs des eidg. GWR (siehe Link unter "weitere Informationen" im Datensatzbeschrieb) und sind dort beschrieben. Leerwerte wurden in den Gemeinden nicht ausgefüllt, ihr Wert ist unbekannt. Für die einfachere Nutzung fügt die Fach- und Koordinationsstelle OGD vor der Publikation folgende Merkmale hinzu: Für das Merkmal 'Kanton' wird für alle Beobachtungen ZH abgefüllt. Das Merkmal 'Gemeindename' wird mittels BFS-Nummer entsprechend der Gemeindetabelle des Statistischen Amts ausgegeben. Das Merkmal 'Anzahl_Wohnungen' wird anhand der Ressource Wohnungen berechnet.
 # Issued                   : 2023-04-24T09:55:58+01:00
 # Modified                 : 2023-11-02T10:48:23+01:00
@@ -51,7 +60,7 @@ library(skimr)
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002022_00004064.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : 4b3a2443-10cc-4ce6-8bb5-e8df74c655da
 # Description              : Daten des eidg. GWR mit Bezug zu den einzelnen Wohnungen in einem Gebäude. Aus den Daten lassen sich beispielsweise Alter, Fläche, Lage im Gebäude und Ausstattungsangaben herauslesen. Die Merkmale entsprechen denen im Merkmalskatalogs des eidg. GWR (siehe Link unter "weitere Informationen" im Datensatzbeschrieb) und sind dort beschrieben. Leerwerte wurden in den Gemeinden nicht ausgefüllt, ihr Wert ist unbekannt.
 # Issued                   : 2023-04-24T09:55:58+01:00
@@ -59,15 +68,6 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002022_00004065.csv')
-
-# Distribution 2
-# Package_id               : 4b3a2443-10cc-4ce6-8bb5-e8df74c655da
-# Description              : Daten des eidg. GWR mit Bezug zu den einzelnen Eingängen zu einem Gebäude. Adressen beziehen sich auf einzelne Gebäudeeingänge und sind deswegen pro Eingang in diesem File zu finden. Die Merkmale entsprechen denen im Merkmalskatalogs des eidg. GWR (siehe Link unter 'weitere Informationen' im Datensatzbeschrieb) und sind dort beschrieben. Leerwerte wurden in den Gemeinden nicht ausgefüllt, ihr Wert ist unbekannt.
-# Issued                   : 2023-04-24T09:55:58+01:00
-# Modified                 : 2023-11-02T10:48:25+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002022_00004066.csv')
 
 
 
