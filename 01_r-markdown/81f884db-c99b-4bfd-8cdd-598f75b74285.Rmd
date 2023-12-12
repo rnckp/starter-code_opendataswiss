@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2023-12-11"
+date: "2023-12-12"
 output: html_document
 ---
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set istdaten@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `Specialist office Open Data`
 - **Maintainer_email** `opendata@sbb.ch`
-- **Keywords.de** `['kundeninformation', 'verspatung', 'ist', 'ist-daten', 'punktlichkeit', 'bpuic']`
+- **Keywords.de** `['ist', 'ist-daten', 'verspatung', 'punktlichkeit', 'bpuic', 'kundeninformation']`
 - **Issued** `2016-12-01T12:00:00`
 - **Metadata_created** `2017-03-02T09:12:01.220199`
-- **Metadata_modified** `2023-12-11T02:42:11.081023`
+- **Metadata_modified** `2023-12-12T02:18:02.091437`
 
 
 # Load packages
@@ -47,139 +47,58 @@ library(skimr)
 # Distribution 0
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-23T00:51:13.557229
-# Modified                 : 2023-10-30T03:50:04.881571
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/1aa18f2f-9d3d-48a7-a95a-a90ee7fbaaf4/download/2023-10-22_istdaten.csv')
-
-# Distribution 1
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-12T02:06:35.899642
-# Modified                 : 2023-11-18T01:10:24.572555
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5b588b38-d698-4101-b549-26fb080ce8da/download/2023-11-11_istdaten.csv')
-
-# Distribution 2
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-22T01:12:01.518646
-# Modified                 : 2023-10-30T03:48:43.458570
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/ee90789e-bb4f-42ef-8c4e-76376ae7b583/download/2023-10-21_istdaten.csv')
-
-# Distribution 3
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-14T01:51:31.605979
-# Modified                 : 2023-11-18T01:13:43.759716
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/cbbf8851-0fff-4941-a232-0cd7a8ac1470/download/2023-11-13_istdaten.csv')
-
-# Distribution 4
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-03T02:51:34.356586
-# Modified                 : 2023-12-03T02:51:34.356586
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/694eda30-462a-4450-bb16-494019481d7b/download/2023-12-02_istdaten.csv')
-
-# Distribution 5
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-18T02:05:00.605659
-# Modified                 : 2023-11-18T02:05:00.605659
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/0b814d8a-beb8-4e49-a2d6-aee49f12ec83/download/2023-11-17_istdaten.csv')
-
-# Distribution 6
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-09T03:56:52.661820
-# Modified                 : 2023-11-18T01:04:37.366817
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/8f90544d-669e-4ca0-b016-6c88879ca829/download/2023-11-08_istdaten.csv')
-
-# Distribution 7
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-09T02:13:10.131071
-# Modified                 : 2023-12-09T02:13:10.131071
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4bddaf0a-1fe7-47dd-9ea7-392aa86978a7/download/2023-12-08_istdaten.csv')
-
-# Distribution 8
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-07T02:38:18.777482
-# Modified                 : 2023-11-18T01:00:16.271943
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/b7f7f6c7-c5d8-4477-8697-c4e9a3527ecc/download/2023-11-06_istdaten.csv')
-
-# Distribution 9
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-20T02:21:14.585012
-# Modified                 : 2023-11-20T02:21:14.585012
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/3d82c342-feba-4af2-9f22-8571109e538f/download/2023-11-19_istdaten.csv')
-
-# Distribution 10
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-08T02:26:57.837970
-# Modified                 : 2023-12-08T02:26:57.837970
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/14d40afb-c884-43d5-914f-14d0d3f635b6/download/2023-12-07_istdaten.csv')
-
-# Distribution 11
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-24T02:36:53.038177
-# Modified                 : 2023-11-24T02:36:53.038177
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/00a10a20-221c-473d-8b3a-9d746c2d041b/download/2023-11-23_istdaten.csv')
-
-# Distribution 12
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-07T02:38:13.648823
-# Modified                 : 2023-12-07T02:38:13.648823
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/3496b929-25f7-4b13-b406-a5438ff2f54b/download/2023-12-06_istdaten.csv')
-
-# Distribution 13
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-10-26T01:35:05.288415
 # Modified                 : 2023-10-30T03:57:20.579544
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/d81ec1df-75db-4d38-a9c7-c3c361091b04/download/2023-10-25_istdaten.csv')
 
-# Distribution 14
+# Distribution 1
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-02T02:51:47.518368
-# Modified                 : 2023-11-02T02:51:47.518368
+# Issued                   : 2023-11-13T01:56:11.300214
+# Modified                 : 2023-11-18T01:11:40.886994
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/c498b172-9012-4e1f-a73c-cfdb07648e6c/download/2023-11-01_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/96f12a27-0f98-4b96-97bd-1df47383a742/download/2023-11-12_istdaten.csv')
 
-# Distribution 15
+# Distribution 2
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-05T02:05:06.827024
+# Modified                 : 2023-11-05T02:05:06.827024
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/79d0289e-27c0-4006-806c-4a5ffa181ec3/download/2023-11-04_istdaten.csv')
+
+# Distribution 3
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-27T01:56:18.190455
+# Modified                 : 2023-11-27T01:56:18.190455
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5b3cccbf-7322-4b34-980a-71b1acaffe16/download/2023-11-26_istdaten.csv')
+
+# Distribution 4
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-10-23T00:51:13.557229
+# Modified                 : 2023-10-30T03:50:04.881571
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/1aa18f2f-9d3d-48a7-a95a-a90ee7fbaaf4/download/2023-10-22_istdaten.csv')
+
+# Distribution 5
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-17T02:36:02.714184
+# Modified                 : 2023-11-18T01:20:07.128870
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5a1fd9fd-eedb-4b28-93cd-dad5e714c383/download/2023-11-16_istdaten.csv')
+
+# Distribution 6
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-11-28T02:51:57.605646
@@ -188,23 +107,104 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4ac21d45-c389-4f87-b232-c47cc45d7d43/download/2023-11-27_istdaten.csv')
 
+# Distribution 7
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-20T02:21:14.585012
+# Modified                 : 2023-11-20T02:21:14.585012
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/3d82c342-feba-4af2-9f22-8571109e538f/download/2023-11-19_istdaten.csv')
+
+# Distribution 8
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-12T02:06:35.899642
+# Modified                 : 2023-11-18T01:10:24.572555
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5b588b38-d698-4101-b549-26fb080ce8da/download/2023-11-11_istdaten.csv')
+
+# Distribution 9
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-07T02:38:18.777482
+# Modified                 : 2023-11-18T01:00:16.271943
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/b7f7f6c7-c5d8-4477-8697-c4e9a3527ecc/download/2023-11-06_istdaten.csv')
+
+# Distribution 10
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-05T02:08:04.924765
+# Modified                 : 2023-12-05T02:08:04.924765
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/b351ac59-a2f1-4339-b319-d6cc255b705a/download/2023-12-04_istdaten.csv')
+
+# Distribution 11
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-01T02:38:31.884753
+# Modified                 : 2023-12-01T02:38:31.884753
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/ec49172d-d135-459b-be88-2f1c9a5525ab/download/2023-11-30_istdaten.csv')
+
+# Distribution 12
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-10-28T00:51:58.422495
+# Modified                 : 2023-10-30T04:02:59.128825
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/ed337104-2481-4376-9f57-13821a820e6a/download/2023-10-27_istdaten.csv')
+
+# Distribution 13
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-03T02:36:54.392005
+# Modified                 : 2023-11-03T02:36:54.392005
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/a582f2ad-37a3-47a2-b2f5-b1f5415741ef/download/2023-11-02_istdaten.csv')
+
+# Distribution 14
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-10T02:05:10.975677
+# Modified                 : 2023-12-10T02:05:10.975677
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/38cdfb75-419c-4eba-b2b6-f786756ded43/download/2023-12-09_istdaten.csv')
+
+# Distribution 15
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-10-30T15:24:50.675360
+# Modified                 : 2023-10-30T15:24:50.675360
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/e7147dd4-a942-4b77-ab62-f03928014144/download/2023-10-29_istdaten.csv')
+
 # Distribution 16
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-27T01:06:56.687841
-# Modified                 : 2023-10-30T04:00:06.340410
+# Issued                   : 2023-10-29T03:52:47.285848
+# Modified                 : 2023-10-30T04:05:25.019972
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/1e04621c-cd7d-452c-8c13-c253cf747c82/download/2023-10-26_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/b8db540f-88ed-4abd-8d4f-815e5cf051af/download/2023-10-28_istdaten.csv')
 
 # Distribution 17
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-25T01:37:01.331409
-# Modified                 : 2023-10-30T03:54:40.411372
+# Issued                   : 2023-12-09T02:13:10.131071
+# Modified                 : 2023-12-09T02:13:10.131071
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4112d0c6-dae2-436e-b92a-a565c6a77849/download/2023-10-24_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4bddaf0a-1fe7-47dd-9ea7-392aa86978a7/download/2023-12-08_istdaten.csv')
 
 # Distribution 18
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
@@ -218,175 +218,13 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 # Distribution 19
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-10T02:05:10.975677
-# Modified                 : 2023-12-10T02:05:10.975677
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/38cdfb75-419c-4eba-b2b6-f786756ded43/download/2023-12-09_istdaten.csv')
-
-# Distribution 20
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-29T02:42:01.537078
-# Modified                 : 2023-11-29T02:42:01.537078
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/518d980d-6ff5-43b4-9105-40d3053d60ab/download/2023-11-28_istdaten.csv')
-
-# Distribution 21
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-19T02:46:31.983829
-# Modified                 : 2023-11-19T02:46:31.983829
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5d4b751f-e1a5-46c0-ad0c-9ed0bb37af12/download/2023-11-18_istdaten.csv')
-
-# Distribution 22
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-01T01:56:53.468620
-# Modified                 : 2023-11-01T01:56:53.468620
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/1431d9b2-370c-4d11-9bf9-9e139665503d/download/2023-10-31_istdaten.csv')
-
-# Distribution 23
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-30T02:32:10.391531
-# Modified                 : 2023-11-30T02:32:10.391531
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/896c6229-6ba5-4581-a894-ed896923b20c/download/2023-11-29_istdaten.csv')
-
-# Distribution 24
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-05T02:08:04.924765
-# Modified                 : 2023-12-05T02:08:04.924765
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/b351ac59-a2f1-4339-b319-d6cc255b705a/download/2023-12-04_istdaten.csv')
-
-# Distribution 25
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-11-25T02:40:24.349719
 # Modified                 : 2023-11-25T02:40:24.349719
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/95e6b739-ee7d-47fb-8af3-212b5301bffa/download/2023-11-24_istdaten.csv')
 
-# Distribution 26
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-26T02:11:42.325316
-# Modified                 : 2023-11-26T02:11:42.325316
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/08929adf-ff92-49d2-aaef-ac5bd9cc7b8c/download/2023-11-25_istdaten.csv')
-
-# Distribution 27
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-24T01:43:17.183307
-# Modified                 : 2023-10-30T03:52:08.207447
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/0d3b555d-d03c-4df4-9516-87e2113d8ab2/download/2023-10-23_istdaten.csv')
-
-# Distribution 28
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-27T01:56:18.190455
-# Modified                 : 2023-11-27T01:56:18.190455
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5b3cccbf-7322-4b34-980a-71b1acaffe16/download/2023-11-26_istdaten.csv')
-
-# Distribution 29
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-06T01:46:05.718369
-# Modified                 : 2023-11-18T00:56:55.313457
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/aa61b921-c118-49d7-b91f-89e9d7d9f120/download/2023-11-05_istdaten.csv')
-
-# Distribution 30
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-10T02:41:53.907549
-# Modified                 : 2023-11-18T01:06:39.309777
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4e9191b6-a7f4-409a-92fd-3702d3d919bd/download/2023-11-09_istdaten.csv')
-
-# Distribution 31
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-17T02:36:02.714184
-# Modified                 : 2023-11-18T01:20:07.128870
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5a1fd9fd-eedb-4b28-93cd-dad5e714c383/download/2023-11-16_istdaten.csv')
-
-# Distribution 32
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-13T01:56:11.300214
-# Modified                 : 2023-11-18T01:11:40.886994
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/96f12a27-0f98-4b96-97bd-1df47383a742/download/2023-11-12_istdaten.csv')
-
-# Distribution 33
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-11T02:16:56.910636
-# Modified                 : 2023-11-18T01:08:45.661379
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/c90a50f5-f4b3-4850-8777-b2c3d9429826/download/2023-11-10_istdaten.csv')
-
-# Distribution 34
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-22T01:56:57.622371
-# Modified                 : 2023-11-22T01:56:57.622371
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/463f3a77-abad-4f1b-a9f7-18fd498d2c41/download/2023-11-21_istdaten.csv')
-
-# Distribution 35
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-29T03:52:47.285848
-# Modified                 : 2023-10-30T04:05:25.019972
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/b8db540f-88ed-4abd-8d4f-815e5cf051af/download/2023-10-28_istdaten.csv')
-
-# Distribution 36
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-08T02:06:52.742463
-# Modified                 : 2023-11-18T01:02:35.176520
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/d4ccc040-eeaa-417c-9d58-23acc83ee95e/download/2023-11-07_istdaten.csv')
-
-# Distribution 37
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-04T02:26:22.021696
-# Modified                 : 2023-12-04T02:26:22.021696
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/93446c7b-569c-4311-891b-b92ec0b85b6f/download/2023-12-03_istdaten.csv')
-
-# Distribution 38
+# Distribution 20
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-12-02T02:37:22.940787
@@ -395,7 +233,25 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/30fb9926-39f2-4851-bfd8-ee8097a7cb90/download/2023-12-01_istdaten.csv')
 
-# Distribution 39
+# Distribution 21
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-30T02:32:10.391531
+# Modified                 : 2023-11-30T02:32:10.391531
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/896c6229-6ba5-4581-a894-ed896923b20c/download/2023-11-29_istdaten.csv')
+
+# Distribution 22
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-08T02:06:52.742463
+# Modified                 : 2023-11-18T01:02:35.176520
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/d4ccc040-eeaa-417c-9d58-23acc83ee95e/download/2023-11-07_istdaten.csv')
+
+# Distribution 23
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-11-15T02:36:53.966797
@@ -404,16 +260,115 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4f4b43ee-8435-40a9-954a-02e4c63ce6cb/download/2023-11-14_istdaten.csv')
 
-# Distribution 40
+# Distribution 24
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-28T00:51:58.422495
-# Modified                 : 2023-10-30T04:02:59.128825
+# Issued                   : 2023-11-22T01:56:57.622371
+# Modified                 : 2023-11-22T01:56:57.622371
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/ed337104-2481-4376-9f57-13821a820e6a/download/2023-10-27_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/463f3a77-abad-4f1b-a9f7-18fd498d2c41/download/2023-11-21_istdaten.csv')
 
-# Distribution 41
+# Distribution 25
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-04T02:26:22.021696
+# Modified                 : 2023-12-04T02:26:22.021696
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/93446c7b-569c-4311-891b-b92ec0b85b6f/download/2023-12-03_istdaten.csv')
+
+# Distribution 26
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-10-27T01:06:56.687841
+# Modified                 : 2023-10-30T04:00:06.340410
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/1e04621c-cd7d-452c-8c13-c253cf747c82/download/2023-10-26_istdaten.csv')
+
+# Distribution 27
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-14T01:51:31.605979
+# Modified                 : 2023-11-18T01:13:43.759716
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/cbbf8851-0fff-4941-a232-0cd7a8ac1470/download/2023-11-13_istdaten.csv')
+
+# Distribution 28
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-01T01:56:53.468620
+# Modified                 : 2023-11-01T01:56:53.468620
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/1431d9b2-370c-4d11-9bf9-9e139665503d/download/2023-10-31_istdaten.csv')
+
+# Distribution 29
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-18T02:05:00.605659
+# Modified                 : 2023-11-18T02:05:00.605659
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/0b814d8a-beb8-4e49-a2d6-aee49f12ec83/download/2023-11-17_istdaten.csv')
+
+# Distribution 30
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-09T03:56:52.661820
+# Modified                 : 2023-11-18T01:04:37.366817
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/8f90544d-669e-4ca0-b016-6c88879ca829/download/2023-11-08_istdaten.csv')
+
+# Distribution 31
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-24T02:36:53.038177
+# Modified                 : 2023-11-24T02:36:53.038177
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/00a10a20-221c-473d-8b3a-9d746c2d041b/download/2023-11-23_istdaten.csv')
+
+# Distribution 32
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-06T01:46:05.718369
+# Modified                 : 2023-11-18T00:56:55.313457
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/aa61b921-c118-49d7-b91f-89e9d7d9f120/download/2023-11-05_istdaten.csv')
+
+# Distribution 33
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-08T02:26:57.837970
+# Modified                 : 2023-12-08T02:26:57.837970
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/14d40afb-c884-43d5-914f-14d0d3f635b6/download/2023-12-07_istdaten.csv')
+
+# Distribution 34
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-10-24T01:43:17.183307
+# Modified                 : 2023-10-30T03:52:08.207447
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/0d3b555d-d03c-4df4-9516-87e2113d8ab2/download/2023-10-23_istdaten.csv')
+
+# Distribution 35
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-11T02:16:56.910636
+# Modified                 : 2023-11-18T01:08:45.661379
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/c90a50f5-f4b3-4850-8777-b2c3d9429826/download/2023-11-10_istdaten.csv')
+
+# Distribution 36
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-12-06T01:51:59.518793
@@ -422,14 +377,59 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/2c369dc5-a8c1-47d6-abc5-8aadfeeea7ca/download/2023-12-05_istdaten.csv')
 
+# Distribution 37
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-29T02:42:01.537078
+# Modified                 : 2023-11-29T02:42:01.537078
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/518d980d-6ff5-43b4-9105-40d3053d60ab/download/2023-11-28_istdaten.csv')
+
+# Distribution 38
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-07T02:38:13.648823
+# Modified                 : 2023-12-07T02:38:13.648823
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/3496b929-25f7-4b13-b406-a5438ff2f54b/download/2023-12-06_istdaten.csv')
+
+# Distribution 39
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-02T02:51:47.518368
+# Modified                 : 2023-11-02T02:51:47.518368
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/c498b172-9012-4e1f-a73c-cfdb07648e6c/download/2023-11-01_istdaten.csv')
+
+# Distribution 40
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-03T02:51:34.356586
+# Modified                 : 2023-12-03T02:51:34.356586
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/694eda30-462a-4450-bb16-494019481d7b/download/2023-12-02_istdaten.csv')
+
+# Distribution 41
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-10-31T05:37:57.115204
+# Modified                 : 2023-10-31T05:37:57.115204
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/c082a674-2e0d-4adc-bbde-0cb528f2291b/download/2023-10-30_istdaten.csv')
+
 # Distribution 42
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-12-01T02:38:31.884753
-# Modified                 : 2023-12-01T02:38:31.884753
+# Issued                   : 2023-11-19T02:46:31.983829
+# Modified                 : 2023-11-19T02:46:31.983829
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/ec49172d-d135-459b-be88-2f1c9a5525ab/download/2023-11-30_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/5d4b751f-e1a5-46c0-ad0c-9ed0bb37af12/download/2023-11-18_istdaten.csv')
 
 # Distribution 43
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
@@ -443,20 +443,20 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 # Distribution 44
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-30T15:24:50.675360
-# Modified                 : 2023-10-30T15:24:50.675360
+# Issued                   : 2023-11-26T02:11:42.325316
+# Modified                 : 2023-11-26T02:11:42.325316
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/e7147dd4-a942-4b77-ab62-f03928014144/download/2023-10-29_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/08929adf-ff92-49d2-aaef-ac5bd9cc7b8c/download/2023-11-25_istdaten.csv')
 
 # Distribution 45
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-05T02:05:06.827024
-# Modified                 : 2023-11-05T02:05:06.827024
+# Issued                   : 2023-10-25T01:37:01.331409
+# Modified                 : 2023-10-30T03:54:40.411372
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/79d0289e-27c0-4006-806c-4a5ffa181ec3/download/2023-11-04_istdaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4112d0c6-dae2-436e-b92a-a565c6a77849/download/2023-10-24_istdaten.csv')
 
 # Distribution 46
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
@@ -470,29 +470,29 @@ df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-865
 # Distribution 47
 # Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
 # Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-11-03T02:36:54.392005
-# Modified                 : 2023-11-03T02:36:54.392005
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/a582f2ad-37a3-47a2-b2f5-b1f5415741ef/download/2023-11-02_istdaten.csv')
-
-# Distribution 48
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
-# Issued                   : 2023-10-31T05:37:57.115204
-# Modified                 : 2023-10-31T05:37:57.115204
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/c082a674-2e0d-4adc-bbde-0cb528f2291b/download/2023-10-30_istdaten.csv')
-
-# Distribution 49
-# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
-# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
 # Issued                   : 2023-11-16T02:22:15.082285
 # Modified                 : 2023-11-18T01:18:00.951016
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/0b0475fb-b629-4aad-959f-d514cbd87137/download/2023-11-15_istdaten.csv')
+
+# Distribution 48
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-12-11T02:51:58.972850
+# Modified                 : 2023-12-11T02:51:58.972850
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/51d07e7d-b2bb-4083-aaec-851fc958657f/download/2023-12-10_istdaten.csv')
+
+# Distribution 49
+# Package_id               : 81f884db-c99b-4bfd-8cdd-598f75b74285
+# Description              : The actual service provided is displayed. The final forecast is used where no actual data are available.
+# Issued                   : 2023-11-10T02:41:53.907549
+# Modified                 : 2023-11-18T01:06:39.309777
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/0edc74a3-ad4d-486e-8657-f8f3b34a0979/resource/4e9191b6-a7f4-409a-92fd-3702d3d919bd/download/2023-11-09_istdaten.csv')
 
 
 
