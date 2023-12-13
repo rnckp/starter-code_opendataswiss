@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-12-13"
+output: html_document
+---
+
+## Dataset: BfR Rollstuhlzugänglichkeit
+
+Auf Basis der Daten aus INFO+ Fahrplan und BehiG-Bestandsaufnahme aufbereitete BfR CSV pro Haltestelle und Haltekante, welche die Berechnung von Rollstuhlsymbolen in der von V580 Produkt 02 geforderten Granularität vereinfachen sollen. Siehe Leitfaden https://www.öv-info.ch/de/datenmanagement/barrierefreier-zugang/barrierefreiheit-der-fahrplanauskunft.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bfr-rollstuhlzuganglichkeit)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/bfr-rollstuhl)
+
+Auto generated R starter code for data set bfr-rollstuhl@oevch.
+
+## Metadata
+
+- **Publisher** `Fachstelle Open Data`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['behig', 'rollstuhlzuganglichkeit']`
+- **Issued** `2023-06-15T11:01:51.704407`
+- **Metadata_created** `2023-12-13T02:42:48.278807`
+- **Metadata_modified** `2023-12-13T02:46:21.710306`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
+# Description              : 
+# Issued                   : 2023-10-12T09:15:48.909425
+# Modified                 : 2023-10-12T09:15:48.909425
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/de/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/a9875902-6649-493a-8718-ae60997f35a9/download/bfr_haltestellendaten.csv')
+
+# Distribution 1
+# Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
+# Description              : 
+# Issued                   : 2023-10-12T09:15:46.601304
+# Modified                 : 2023-10-12T09:15:46.601304
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/de/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/ded2f59f-bb32-407c-93ff-726e9c279a46/download/bfr_fahrzeugmapping.csv')
+
+# Distribution 2
+# Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
+# Description              : 
+# Issued                   : 2023-10-12T09:15:50.044679
+# Modified                 : 2023-10-12T09:15:50.044679
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/de/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/e955b7d5-c70e-488b-96bf-cc469851164c/download/bfr_kombinationslogik.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+behig.ski@sbb.ch | SKI Fachstelle BehiG

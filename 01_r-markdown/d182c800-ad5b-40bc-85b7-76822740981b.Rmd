@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2023-12-13"
+output: html_document
+---
+
+## Dataset: Geschäftsorganisationen
+
+Die Geschäftsorganisationen stellen eine organisatorische Strukturierung der Transportunternehmen nach abrechnungstechnischen und kundinformativen Merkmalen dar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geschaftsorganisationen1)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/business-organisations)
+
+Auto generated R starter code for data set business-organisations@oevch.
+
+## Metadata
+
+- **Publisher** `Geschäftsstelle SKI`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['geschaftsorganisation', 'sboid', 'go', 'vu', 'verkehrsunternehmen', 'said', 'transportunternehmen', 'tu']`
+- **Issued** `2023-05-12T13:55:14.771637`
+- **Metadata_created** `2023-12-13T02:40:29.879558`
+- **Metadata_modified** `2023-12-13T02:45:51.120303`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d182c800-ad5b-40bc-85b7-76822740981b
+# Description              : 
+# Issued                   : 2023-12-12T18:45:11.523141
+# Modified                 : 2023-12-12T18:45:11.523141
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/409ceb0a-eee3-461e-bacf-e30dfaa54bac/download/full_business_organisation_versions_2023-12-12.csv')
+
+# Distribution 1
+# Package_id               : d182c800-ad5b-40bc-85b7-76822740981b
+# Description              : 
+# Issued                   : 2023-12-12T18:45:08.871572
+# Modified                 : 2023-12-12T18:45:08.871572
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/73f771b6-1e4c-492c-82a1-c9932b7b7717/download/actual_date_business_organisation_versions_2023-12-12.csv')
+
+# Distribution 2
+# Package_id               : d182c800-ad5b-40bc-85b7-76822740981b
+# Description              : 
+# Issued                   : 2023-12-12T18:45:14.027460
+# Modified                 : 2023-12-12T18:45:14.027460
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/11eaa47d-6f9d-4ddc-a660-02ad0eeaea8f/resource/29ba6d18-6ce9-4a43-bcff-6601ac44883b/download/future_timetable_business_organisation_versions_2023-12-12.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+atlas@sbb.ch | Fachstelle atlas
