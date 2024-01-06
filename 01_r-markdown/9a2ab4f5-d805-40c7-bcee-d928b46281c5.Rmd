@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-01-05"
+date: "2024-01-06"
 output: html_document
 ---
 
@@ -8,7 +8,7 @@ output: html_document
 
 Der Datensatz zeigt die Anzahl im Kanton Basel-Stadt gegen SARS-CoV-2 geimpfter Personen auf täglicher Basis. Zusätzlich wird angegeben, wie viele Personen im kantonalen Impfzentrum geimpft wurden und wie viele Impfungen durch baselstädtische Spitäler an ihr Gesundheitspersonal verabreicht wurden. Ebenso sind die Impfungen in Arzpraxen und Apotheken separat aufgeführt. Impfungen im Impfbus werden nicht separat ausgewiesen, sondern sind in der Anzahl im Impfzentrum verabreichten Impfungen integriert. Weiter finden Sie Angaben darüber, wie viele Personen mit einer ersten resp. einer zweiten Dosis geimpft wurden.  Die im Kanton Basel-Stadt geimpften Personen müssen nicht zwingend im Kanton Basel-Stadt wohnen. Angaben zu den geimpften Personen mit Wohnsitz im Kanton Basel-Stadt finden Sie in diesem Datensatz: https://data.bs.ch/explore/dataset/100135Die an dieser Stelle publizierten Zahlen können von jenen Zahlen abweichen, welche über Kanäle von Bundesstellen für den Kanton Basel-Stadt publiziert sind. Begründen lassen sich die Differenzen mit unterschiedlichen Aktualisierungszyklen. Es wird ab Montag, 10.5.2021 dieselbe Quelle (Vaccination Monitoring Data Lake, VMDL BAG) verwendet. Leider können aufgrund der Quellenänderung die Impfungen der mobilen Equipen nicht mehr separat ausgewiesen werden. Sie werden zu den im Impfzentrum verabreichten Impfungen hinzugezählt. Da die VMDL-Werte auch rückwirkend übernommen werden, kommt es zu Abweichungen bei den täglich publizierten Werten gegenüber früher in diesem Datensatz veröffentlichten Werten. 
 
-Ab 5. August 2021 können dritte Impfungen in den Daten enthalten sein. Initial sind ausschliesslich immundefiziente Personen oder Personen mit Stammzellentransplantation zu einer dritten Impfung berechtigt. Genauere Informationen werden zu gegebener Zeit auf https://coronavirus.bs.ch veröffentlicht. 
+Ab 5. August 2021 können dritte Impfungen in den Daten enthalten sein. Initial sind ausschliesslich immundefiziente Personen oder Personen mit Stammzellentransplantation zu einer dritten Impfung berechtigt. Genauere Informationen werden zu gegebener Zeit auf https://coronavirus.bs.ch veröffentlicht.Die Meldepflicht der COVID-Impfungen via VMDL Plattform des Bundes wurde per 1. Juli 2023 aufgehoben. Nach diesem Datum wurden Impfungen deshalb nicht mehr systematisch erfasst. Der vorliegende Datensatz zeigt deshalb Impfungen nur bis 1. Juli 2023.
 
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/coronavirus-covid-19-impfungen-basel-stadt)<br>
@@ -23,10 +23,10 @@ Auto generated R starter code for data set 100111@kanton-basel-stadt.
 - **Organization.url** `https://www.opendata.bs.ch`
 - **Maintainer** `Fachstelle OGD Basel-Stadt`
 - **Maintainer_email** `opendata@bs.ch`
-- **Keywords.de** `['prophylaxe', 'coronavirus', 'covid-19', 'lungenentzundung', 'vakzin', 'krankheit', 'corona', 'impfen']`
+- **Keywords.de** `['lungenentzundung', 'vakzin', 'impfen', 'covid-19', 'coronavirus', 'prophylaxe', 'krankheit', 'corona']`
 - **Issued** `2021-01-05T00:00:00`
 - **Metadata_created** `2021-09-03T09:15:39.536787`
-- **Metadata_modified** `2024-01-04T03:45:52.259649`
+- **Metadata_modified** `2024-01-06T01:09:52.158206`
 
 
 # Load packages
@@ -49,7 +49,7 @@ library(skimr)
 # Package_id               : 9a2ab4f5-d805-40c7-bcee-d928b46281c5
 # Description              : Coronavirus (COVID-19): In Basel-Stadt verabreichte Impfungen (csv)
 # Issued                   : 2021-01-05T00:00:00
-# Modified                 : 2023-12-01T00:16:40.726000+00:00
+# Modified                 : 2024-01-04T08:38:16.056000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100111/exports/csv')
