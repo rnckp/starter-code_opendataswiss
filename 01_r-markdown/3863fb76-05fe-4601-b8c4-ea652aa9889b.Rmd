@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-01-13"
+date: "2024-01-14"
 output: html_document
 ---
 
@@ -25,7 +25,7 @@ Auto generated R starter code for data set didok@oevch.
 - **Keywords.de** `['didok']`
 - **Issued** `2016-12-01T12:00:00`
 - **Metadata_created** `2017-03-02T09:11:49.328643`
-- **Metadata_modified** `2024-01-13T01:46:20.839293`
+- **Metadata_modified** `2024-01-14T01:45:34.624720`
 
 
 # Load packages
@@ -47,31 +47,40 @@ library(skimr)
 # Distribution 0
 # Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
 # Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
-# Issued                   : 2023-08-14T23:47:35.441883
-# Modified                 : 2024-01-13T01:21:39.714866
+# Issued                   : 2020-04-06T11:16:29.936506
+# Modified                 : 2024-01-14T00:40:17.343674
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/1f1a2b22-39e6-4445-9ead-aee993f8408c/download/verkehrspunktelemente_full.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/4fd4a752-f216-410b-a7f8-dec214d48612/download/dienststellen_full.csv')
 
 # Distribution 1
 # Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
 # Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
-# Issued                   : 2020-04-06T11:16:29.936506
-# Modified                 : 2024-01-13T01:20:21.982148
+# Issued                   : 2023-08-14T23:47:35.441883
+# Modified                 : 2024-01-14T00:41:31.172761
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/f8beb7ec-e885-4ca6-b6dd-36cfc41a5c72/download/dienststellen_full.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/9350d406-e1f8-489d-b4de-611435fbaa6b/download/verkehrspunktelemente_full.csv')
 
 # Distribution 2
 # Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
 # Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
-# Issued                   : 2020-04-06T11:16:53.933008
-# Modified                 : 2024-01-13T01:21:00.887789
+# Issued                   : 2020-04-06T11:16:58.647203
+# Modified                 : 2024-01-13T02:20:16.247331
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/0b77bf86-c9eb-4f4b-9c8f-109c6433f720/download/dienststellen_future_timetable.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/918d988f-9060-4d72-8ee8-4229aab4e67e/download/verkehrspunktelemente_actualdate.csv')
 
 # Distribution 3
+# Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
+# Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
+# Issued                   : 2020-04-06T11:16:53.933008
+# Modified                 : 2024-01-14T00:40:54.203311
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/7b00ee80-87d4-41dd-993c-db0abe3ac96d/download/dienststellen_future_timetable.csv')
+
+# Distribution 4
 # Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
 # Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
 # Issued                   : 2020-04-06T11:16:43.770911
@@ -79,15 +88,6 @@ df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac1
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/f0dbe329-67c7-4899-b54a-48624680ece1/download/dienststellen_actualdate.csv')
-
-# Distribution 4
-# Package_id               : 3863fb76-05fe-4601-b8c4-ea652aa9889b
-# Description              : DiDok steht für Dienststellendokumentation. Bei den Daten handelt es sich um einen Auszug aller in der Schweiz gültigen Betriebspunkte, inkl. aller Haltestellen.
-# Issued                   : 2020-04-06T11:16:58.647203
-# Modified                 : 2024-01-12T00:45:50.105629
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/f26dee75-1ed0-4c07-ac19-c98249e94bc5/resource/f8fbf9f1-67cb-41b9-bc39-e4f2171f8b77/download/verkehrspunktelemente_actualdate.csv')
 
 
 
