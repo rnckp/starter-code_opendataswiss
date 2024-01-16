@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-01-15"
+date: "2024-01-16"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 711@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Data Management`
 - **Maintainer_email** `daniel.cahn@statistik.ji.zh.ch`
-- **Keywords.de** `['natuerlichepersonen', 'juristischepersonen', 'gemeindesteuern', 'gemeindesteuerfuesse']`
+- **Keywords.de** `['natuerlichepersonen', 'gemeindesteuerfuesse', 'juristischepersonen', 'gemeindesteuern']`
 - **Issued** `2020-12-10T00:00:00+01:00`
 - **Metadata_created** `2021-01-14T17:26:24.465739`
-- **Metadata_modified** `2024-01-15T03:16:02.534948`
+- **Metadata_modified** `2024-01-16T03:27:34.680993`
 
 
 # Load packages
@@ -44,21 +44,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : bcb308af-b738-4577-af12-0d568322c227
+# Description              : Gemeindesteuerfüsse der laufenden Erhebung. Die Daten werden während der Erhebungsphase (Dezember bis ca. März) laufend aktualisiert.
+# Issued                   : 2020-12-10T15:35:17+01:00
+# Modified                 : 2024-01-15T16:48:38+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/steuerfuesse/kanton_zuerich_stf_aktuell.csv')
+
+# Distribution 1
+# Package_id               : bcb308af-b738-4577-af12-0d568322c227
 # Description              : Gemeindesteuerfüsse seit 2012, ohne aktuelle Erhebung
 # Issued                   : 2020-12-10T15:38:07+01:00
 # Modified                 : 2023-04-28T10:49:02+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/steuerfuesse/kanton_zuerich_stf_timeseries.csv')
-
-# Distribution 1
-# Package_id               : bcb308af-b738-4577-af12-0d568322c227
-# Description              : Gemeindesteuerfüsse der laufenden Erhebung. Die Daten werden während der Erhebungsphase (Dezember bis ca. März) laufend aktualisiert.
-# Issued                   : 2020-12-10T15:35:17+01:00
-# Modified                 : 2024-01-12T13:18:56+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/steuerfuesse/kanton_zuerich_stf_aktuell.csv')
 
 
 

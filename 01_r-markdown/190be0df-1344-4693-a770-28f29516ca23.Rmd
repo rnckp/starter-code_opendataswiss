@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-01-16"
+output: html_document
+---
+
+## Dataset: Erwerbstätige (Inlandkonzept) nach Geschlecht, Nationalität und Wirtschaftssektoren. Durchschnittliche Quartals- und Jahreswerte
+
+Dieses Dataset präsentiert die Quartalszahlen und jährlichen Zahlen der Erwerbstätigen (Inlandkonzept) nach Geschlecht, Nationalität und Wirtschaftssektoren, seit 1960. Die Beschreibungen der Variablen in der CSV-Datei sind im Anhang verfügbar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/erwerbstatige-inlandkonzept-nach-geschlecht-nationalitat-und-wirtschaftssektoren-durchschnittli1)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/asset/de/ts-x-03.02.01.07)
+
+Auto generated R starter code for data set 29165436@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher** `BFS/OFS`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['mann', 'frau', 'geschlecht', 'arbeit-und-erwerb']`
+- **Issued** `2023-12-12T07:30:00+00:00`
+- **Metadata_created** `2024-01-15T09:39:24.457879`
+- **Metadata_modified** `2024-01-15T10:54:25.712699`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 190be0df-1344-4693-a770-28f29516ca23
+# Description              : Dieses Dataset präsentiert die Quartalszahlen und jährlichen Zahlen der Erwerbstätigen (Inlandkonzept) nach Geschlecht, Nationalität und Wirtschaftssektoren, seit 1960. Die Beschreibungen der Variablen in der CSV-Datei sind im Anhang verfügbar.
+# Issued                   : 2023-12-12T07:30:00+00:00
+# Modified                 : 2024-01-15T06:50:58.565000+00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/29165458/master')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+auskunftsdienst@bfs.admin.ch | info@bfs.admin.ch
