@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-01"
+date: "2024-03-02"
 output: html_document
 ---
 
 ## Dataset: Verkehrszähldaten motorisierter Individualverkehr
 
-Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Motorisierten Individualverkehr. Aus Kostengründen sind nur die Werte des aktuellen und des letzten Jahres als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar. Die vollständigen Daten ab dem Jahr 2014 können hier heruntergeladen werden: Leicht aufbereiteter Datensatz: https://data-bs.ch/mobilitaet/converted_MIV_Class_10_1.csv Rohdaten: https://data-bs.ch/mobilitaet/MIV_Class_10_1.csvDie Daten einzelner Jahre ab dem Jahr 2014 können heruntergeladen werden unter der URL mit dem Muster https://data-bs.ch/mobilitaet/[JAHR]_MIV_Class_10_1.csv, also zum Beispiel für das Jahr 2020 hier: https://data-bs.ch/mobilitaet/2020_MIV_Class_10_1.csv.Die Zählstellen sind auf MET eingestellt (Spalten TimeFrom und TimeTo), d.h. die Zeitumstellung wird wie in Mitteleuropa ausgeführt. Bei der Umstellung von Winter- auf Sommerzeit fehlt die Stunde der Umstellung, dieser Tag hat dann 23 Stunden. Bei der Umstellung von Sommer- auf Winterzeit ist eine Stunde zu viel enthalten (der Tag hat dann 25 Stunden), die Stunde der Umstellung ist dann doppelt, aber mit unterschiedlichen Verkehrsdaten (da die gleiche Stunde zweimal durchlaufen wird).
+Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Motorisierten Individualverkehr. Aus Kostengründen sind nur die Werte des aktuellen Jahres und der letzten zwei Jahre als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar. Die vollständigen Daten ab dem Jahr 2014 können hier heruntergeladen werden: Leicht aufbereiteter Datensatz: https://data-bs.ch/mobilitaet/converted_MIV_Class_10_1.csv Rohdaten: https://data-bs.ch/mobilitaet/MIV_Class_10_1.csvDie Daten einzelner Jahre ab dem Jahr 2014 können heruntergeladen werden unter der URL mit dem Muster https://data-bs.ch/mobilitaet/[JAHR]_MIV_Class_10_1.csv, also zum Beispiel für das Jahr 2020 hier: https://data-bs.ch/mobilitaet/2020_MIV_Class_10_1.csv.Die Zählstellen sind auf MET eingestellt (Spalten TimeFrom und TimeTo), d.h. die Zeitumstellung wird wie in Mitteleuropa ausgeführt. Bei der Umstellung von Winter- auf Sommerzeit fehlt die Stunde der Umstellung, dieser Tag hat dann 23 Stunden. Bei der Umstellung von Sommer- auf Winterzeit ist eine Stunde zu viel enthalten (der Tag hat dann 25 Stunden), die Stunde der Umstellung ist dann doppelt, aber mit unterschiedlichen Verkehrsdaten (da die gleiche Stunde zweimal durchlaufen wird).
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrszahldaten-motorisierter-individualverkehr)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100006/)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 100006@kanton-basel-stadt.
 - **Organization.url** `https://www.opendata.bs.ch`
 - **Maintainer** `Fachstelle für OGD Basel-Stadt`
 - **Maintainer_email** `opendata@bs.ch`
-- **Keywords.de** `['erhebung', 'verkehrszahlung', 'verkehr', 'lieferwagen', 'lastwagen', 'busse', 'autos', 'motorrader', 'anhanger']`
+- **Keywords.de** `['autos', 'busse', 'lastwagen', 'lieferwagen', 'anhanger', 'verkehrszahlung', 'motorrader', 'erhebung', 'verkehr']`
 - **Issued** `2019-11-05T00:00:00`
 - **Metadata_created** `2021-09-03T09:17:05.332696`
-- **Metadata_modified** `2024-03-01T02:09:33.565875`
+- **Metadata_modified** `2024-03-02T02:02:50.909036`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : 2fbfeab1-bb33-4cb7-a2cc-b04d5780439a
 # Description              : Verkehrszähldaten motorisierter Individualverkehr (csv)
 # Issued                   : 2019-11-05T00:00:00
-# Modified                 : 2024-02-29T15:39:13.511000+00:00
+# Modified                 : 2024-03-01T06:12:46.811000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100006/exports/csv')
