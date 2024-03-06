@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-05"
+date: "2024-03-06"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set ch.kof.ie@kof-konjunkturforschungsste
 - **Organization.url** `https://kof.ethz.ch/`
 - **Maintainer** `KOF Datenservice`
 - **Maintainer_email** `data@kof.ethz.ch`
-- **Keywords.de** `['beschaftigung', 'arbeitsmarkt']`
+- **Keywords.de** `['arbeitsmarkt', 'beschaftigung']`
 - **Issued** `nan`
 - **Metadata_created** `2021-06-08T14:32:23.918885`
-- **Metadata_modified** `2024-03-04T04:23:09.618816`
+- **Metadata_modified** `2024-03-05T05:48:59.413706`
 
 
 # Load packages
@@ -49,9 +49,18 @@ library(skimr)
 # Modified                 : None
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.ie?mime=csv&locale=en')
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.ie?mime=csv&locale=de')
 
 # Distribution 1
+# Package_id               : c6f940e0-f97f-4aa3-8188-6306325d6ad9
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.ie?mime=csv&locale=fr')
+
+# Distribution 2
 # Package_id               : c6f940e0-f97f-4aa3-8188-6306325d6ad9
 # Description              : Der KOF Beschäftigungsindikator wird aus den vierteljährlichen Konjunkturumfragen der KOF berechnet. Im Rahmen dieser Umfragen befragt die KOF privatwirtschaftliche Unternehmen in der Schweiz, wie sie ihren gegenwärtigen Bestand an Beschäftigten beurteilen und ob sie diesen in den nächsten drei Monaten verändern wollen.
 # Issued                   : None
@@ -60,15 +69,6 @@ df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collec
 
 df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/collections/ogd_ch.kof.ie?mime=csv')
 
-# Distribution 2
-# Package_id               : c6f940e0-f97f-4aa3-8188-6306325d6ad9
-# Description              : 
-# Issued                   : None
-# Modified                 : None
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.ie?mime=csv&locale=de')
-
 # Distribution 3
 # Package_id               : c6f940e0-f97f-4aa3-8188-6306325d6ad9
 # Description              : 
@@ -76,7 +76,7 @@ df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collec
 # Modified                 : None
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.ie?mime=csv&locale=fr')
+df <- read_delim('https://datenservice.kof.ethz.ch/api/v1/public/metadata/collections/ogd_ch.kof.ie?mime=csv&locale=en')
 
 
 
