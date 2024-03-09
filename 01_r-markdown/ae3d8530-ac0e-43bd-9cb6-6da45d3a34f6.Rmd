@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-08"
+date: "2024-03-09"
 output: html_document
 ---
 
 ## Dataset: Ein- und Ausfahrten öffentlicher Parkhäuser Basel
 
-Der Datensatz zeigt die Anzahl Ein- und Ausfahrten pro Stunde in bzw. aus öffentlichen Parkhäusern Basel. Die Daten werden jährlich ergänzt. Aus technischen Gründen sind die Daten des Parkhauses City erst ab 2021 vorhanden. 
+Der Datensatz zeigt die Anzahl Ein- und Ausfahrten pro Stunde in bzw. aus öffentlichen Parkhäusern Basel. Die Daten werden jährlich ergänzt. Aus technischen Gründen sind die Daten des Parkhauses City erst ab 2021 vorhanden. Im Parkhaus St. Jakob werden manchmal bei Grossanlässen keine Ein- und Ausfahrten gezählt. Diese Metriken sind für dieses Parkhaus deshalb mit Vorsicht zu analysieren. 
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ein-und-ausfahrten-offentlicher-parkhauser-basel)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100198/)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 100198@kanton-basel-stadt.
 - **Organization.url** `https://www.opendata.bs.ch`
 - **Maintainer** `Fachstelle für OGD Basel-Stadt`
 - **Maintainer_email** `opendata@bs.ch`
-- **Keywords.de** `['auto', 'parkieren', 'ausfahrt', 'parkhaus', 'einfahrt', 'bewegungen', 'autos']`
+- **Keywords.de** `['ausfahrt', 'parkhaus', 'einfahrt', 'autos', 'auto', 'bewegungen', 'parkieren']`
 - **Issued** `2022-07-11T00:00:00`
 - **Metadata_created** `2022-07-12T13:00:19.891768`
-- **Metadata_modified** `2024-03-08T02:19:27.383841`
+- **Metadata_modified** `2024-03-09T01:49:56.423720`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : ae3d8530-ac0e-43bd-9cb6-6da45d3a34f6
 # Description              : Ein- und Ausfahrten öffentlicher Parkhäuser Basel (csv)
 # Issued                   : 2022-07-11T00:00:00
-# Modified                 : 2024-03-06T14:57:21.653000+00:00
+# Modified                 : 2024-03-08T11:14:38.105000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100198/exports/csv')
