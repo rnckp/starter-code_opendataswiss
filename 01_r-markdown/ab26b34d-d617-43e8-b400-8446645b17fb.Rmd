@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-03-27"
+output: html_document
+---
+
+## Dataset: Ziegen - Namen der Ziegenböcke
+
+Rang, Anzahl und nach Sprachregion die häufigsten Namen der registrierten, lebenden Böcke. Tiere ohne Namen oder mit «technischen» Namensbezeichnungen werden in der Darstellung nicht berücksichtigt. Die Mehrheit aller Namen kommt nur einmal vor und schafft es nicht unter die Top 10.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ziegen-namen-der-ziegenbocke)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set goats-topNamesMale@identitas.
+
+## Metadata
+
+- **Publisher** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `Team Tierstatistik Identitas AG`
+- **Maintainer_email** `tierstatistik@identitas.ch`
+- **Keywords.de** `['nutztiere', 'namenshitparade', 'bocke', 'ziegen']`
+- **Issued** `2024-02-29T00:00:00`
+- **Metadata_created** `2022-06-07T11:23:23.072035`
+- **Metadata_modified** `2024-03-26T03:38:19.548313`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ab26b34d-d617-43e8-b400-8446645b17fb
+# Description              : 
+# Issued                   : 2024-03-25T00:00:00
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/goats-topNamesMale.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG
