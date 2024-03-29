@@ -1,12 +1,14 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-28"
+date: "2024-03-29"
 output: html_document
 ---
 
-## Dataset: k
+## Dataset: Barrierefreies Reisen - Rollstuhlzugänglichkeit
 
-ü
+Dieser Datensatz enthält Informationen über die Rollstuhlzugänglichkeit pro Haltestelle und Haltekante, auf Basis der Fahrplandaten aus INFO+ und der BehiG-Bestandsaufnahme. Ausserdem enthalten ist die Zugänglichkeit für eine kleine Menge von Fahrzeugen, inklusive einer Erklärung wie diese bewertet wurden.
+
+Die Daten sind die Basis für ein barrierefreies Reisen (BfR) und vereinfachen die Berechnung von Rollstuhlsymbolen, entsprechend der in Richtlinie V580 (Produkt 02) geforderten Granularität.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bfr-rollstuhlzuganglichkeit)<br>
 [Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/bfr-rollstuhl)
@@ -20,10 +22,10 @@ Auto generated R starter code for data set bfr-rollstuhl@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `SKI Fachstelle BehiG`
 - **Maintainer_email** `behig.ski@sbb.ch`
-- **Keywords.de** `['bus', 'zug', 'proprietar', 'rollstuhlzuganglichkeit', 'haltekante', 'rollstuhlfahrer', 'passagier', 'daten', 'behig', 'haltestelle', 'verkehrsmittel']`
+- **Keywords.de** `['rollstuhlfahrer', 'bus', 'zug', 'daten', 'proprietar', 'rollstuhlzuganglichkeit', 'verkehrsmittel', 'haltekante', 'haltestelle', 'passagier', 'behig']`
 - **Issued** `2023-06-15T11:01:51.704407`
 - **Metadata_created** `2023-12-13T02:42:48.278807`
-- **Metadata_modified** `2024-03-28T02:20:21.154587`
+- **Metadata_modified** `2024-03-29T02:08:07.319484`
 
 
 # Load packages
@@ -45,29 +47,29 @@ library(skimr)
 # Distribution 0
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-03-27T08:13:09.315060
-# Modified                 : 2024-03-27T08:13:09.315060
+# Issued                   : 2024-03-28T08:44:00.559416
+# Modified                 : 2024-03-28T08:44:00.559416
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/1c675cf0-a7d3-4c46-94ad-8897ca4f0d09/download/bfr_haltestellendaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/ba81fd9e-bc83-4898-88e0-d7bba8b6f13b/download/bfr_kombinationslogik.csv')
 
 # Distribution 1
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-03-27T08:13:07.892822
-# Modified                 : 2024-03-27T08:13:07.892822
+# Issued                   : 2024-03-28T08:43:57.873662
+# Modified                 : 2024-03-28T08:43:57.873662
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/1851aca8-b678-414c-93a8-6aa8d1beac12/download/bfr_fahrzeugmapping.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/a625dd1e-20ff-4059-b791-b676c38b95c3/download/bfr_fahrzeugmapping.csv')
 
 # Distribution 2
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-03-27T08:13:10.662568
-# Modified                 : 2024-03-27T08:13:10.662568
+# Issued                   : 2024-03-28T08:43:59.330644
+# Modified                 : 2024-03-28T08:43:59.330644
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/3536dd25-43c4-4082-81ba-b6aeb679013c/download/bfr_kombinationslogik.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/5f5100b7-56b5-48f4-bafb-106c8a80c49e/download/bfr_haltestellendaten.csv')
 
 
 
