@@ -1,10 +1,10 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-29"
+date: "2024-03-30"
 output: html_document
 ---
 
-## Dataset: Wohnungsbestand nach Zimmerzahl und Quartier in der Stadt Winterthur ab 2020
+## Dataset: Wohnungsbestand nach Zimmerzahl und Quartier in der Stadt Winterthur ab 2015
 
 Zeitreihe des Wohnungsbestandes in der Stadt Winterthur nach Wohnungsgrösse (Zimmerzahl) und Quartier.
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1602@stadt-winterthur.
 - **Organization.url** `https://stadt.winterthur.ch/themen/die-stadt/winterthur/statistik`
 - **Maintainer** `Stadt Winterthur, Stadtentwicklung der Stadt Winterthur`
 - **Maintainer_email** `statistik@win.ch`
-- **Keywords.de** `['wohnungen', 'quartier', 'zimmerzahl', 'wohnungsbestand', 'gemeinden']`
+- **Keywords.de** `['wohnungen', 'gemeinden', 'quartier', 'zimmerzahl', 'wohnungsbestand']`
 - **Issued** `2022-09-20T17:27:44+01:00`
 - **Metadata_created** `2022-11-15T16:04:53.541863`
-- **Metadata_modified** `2024-03-28T05:06:33.125887`
+- **Metadata_modified** `2024-03-29T04:14:39.640197`
 
 
 # Load packages
@@ -44,9 +44,9 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : acb817ac-9ac1-4599-9417-c1e702796c6d
-# Description              : Variablen: 'NrQuartier' = offizielle Quartiernummer; 'NameQuartier' = Name des Quartiers; '1_ZWHG' = Anzahl Einzimmerwohnungen; '2_ZWHG' = Anzahl Zweizimmerwohnungen; …; '6_ZWHG' = Anzahl Sechszimmerwohnungen: 'Unbekannt' = Anzahl Wohnungen mit unbekannter Zimmerzahl; 'Gesamt' = Gesamtzahl der Wohnungen.
+# Description              : Variablen: 'jahr' = Endjahresbestand des Jahres; 'quartier_bfs_id' = Quartiernummer gem. BFS; 'quartier' = Name des Quartiers; 'stadtkreis_bfs_id' = Stadtkreisnummer gem. BFS; 'stadtkreis' = Name des Stadtkreises; 'whg_zim_group' = Gruppe gemäss Anzahl Zimmer (1.5-Zimmer-Wohnung zählt als 1); 'anzahl_wohnungen' = Gesamtzahl der Wohnungen.
 # Issued                   : 2022-09-20T17:27:44+01:00
-# Modified                 : 2022-09-20T17:27:44+01:00
+# Modified                 : 2024-03-28T13:30:43+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001602_00003060.csv')
