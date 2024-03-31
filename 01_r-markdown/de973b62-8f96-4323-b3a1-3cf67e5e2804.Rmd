@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-30"
+date: "2024-03-31"
 output: html_document
 ---
 
 ## Dataset: Geschossflächen im Kanton Zürich
 
-Übersicht über den Stand der Geschossflächen im Kanton Zürich. Die Geschossflächendefinition lehnt sich an die Definition der Geschossfläche GF gemäss SIA und der anrechenbare Geschossfläche gemäss Planungs- und Baugesetz (PBG) an. Die Erhebung der Geschossflächen leitet sich indirekt aus gesetzlichen Vorgaben von Bund und Kanton ab. Der Zweck der Erhebung der Geschossflächenreserven ist aufzuzeigen, welches Verdichtungspotential rechnerisch in Form von Geschossflächen in der Bauzone theoretisch vorhanden ist. Demgegenüber soll mit dem Geschossflächenbestand quantifiziert werden, wie viel Geschossfläche innerhalb der Bauzone bereits realisiert worden ist. Ab 2021 wird ein neues Berechnungsmodell verwendet, dadurch sind die Werte nur schwer mit jenen der Vorjahre vergleichbar. Aus technischen Gründen fand für 2020 keine Datenerhebung statt
+Übersicht über den Stand der Geschossflächen im Kanton Zürich. Die Geschossflächendefinition lehnt sich an die Definition der Geschossfläche GF gemäss SIA und der anrechenbare Geschossfläche gemäss Planungs- und Baugesetz (PBG) an. Die Erhebung der Geschossflächen leitet sich indirekt aus gesetzlichen Vorgaben von Bund und Kanton ab. Der Zweck der Erhebung der Geschossflächenreserven ist aufzuzeigen, welches Verdichtungspotential rechnerisch in Form von Geschossflächen in der Bauzone theoretisch vorhanden ist. Demgegenüber soll mit dem Geschossflächenbestand quantifiziert werden, wie viel Geschossfläche innerhalb der Bauzone bereits realisiert wurde. Ab 2021 wird ein neues Berechnungsmodell angewendet, daher sind die Werte mit den Vorjahren nur schwer vergleichbar. Für 2020 wurden aus technischen Gründen keine Daten erhoben.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geschossflachen-im-kanton-zurich)<br>
 [Direct link by **Amt für Raumentwicklung Kanton Zürich** for dataset](nan)
@@ -23,7 +23,7 @@ Auto generated R starter code for data set 1802@are-kanton-zuerich.
 - **Keywords.de** `['raumplanungsregionen', 'raum', 'geschossflaeche', 'gemeinden']`
 - **Issued** `2022-12-05T11:47:42+01:00`
 - **Metadata_created** `2022-12-06T03:12:49.914126`
-- **Metadata_modified** `2024-03-26T04:39:54.001283`
+- **Metadata_modified** `2024-03-30T06:53:51.372907`
 
 
 # Load packages
@@ -53,21 +53,21 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 1
 # Package_id               : de973b62-8f96-4323-b3a1-3cf67e5e2804
-# Description              : Ausbaugrad (gebaute Geschossfläche in % der zulässigen Geschossfläche innerhalb der überbauten Bauzone), unterteilt in Wohnzone, Mischzone und Arbeitszone. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalten "GEO_LEVEL_NR" und "GEO_LEVEL_LEVEL" sind für verwaltungsinterne Auswertungen vorgesehen. Es können keine Totale aus den Werten gerechnet werden. Ab 2021 wird das neue Berechnungsmodell verwendet. Aus technischen Gründen fand für 2020 keine Datenerhebung statt.
-# Issued                   : 2022-12-05T11:47:42+01:00
-# Modified                 : 2024-03-25T14:51:26+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001802_00003325.csv')
-
-# Distribution 2
-# Package_id               : de973b62-8f96-4323-b3a1-3cf67e5e2804
 # Description              : Geschossflächenreserven, unterteilt in Wohnzone, Mischzone und Arbeitszone sowie zusätzlich in überbaute und nicht überbaute Bauzone. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalten "GEO_LEVEL_NR" und "GEO_LEVEL_LEVEL" sind für verwaltungsinterne Auswertungen vorgesehen. Ab 2021 wird das neue Berechnungsmodell verwendet. Aus technischen Gründen fand für 2020 keine Datenerhebung statt. In der Berechnung für 2021 sind allfällige Ausnützungsboni aus den Bau- und Zonenordnungen für Wohn- und Gewerbezonen sowie Zentrumszonen eingerechnet, für 2022 und die darauffolgenden Jahre nicht mehr.
 # Issued                   : 2022-12-05T11:47:42+01:00
 # Modified                 : 2024-03-25T14:41:11+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001802_00003323.csv')
+
+# Distribution 2
+# Package_id               : de973b62-8f96-4323-b3a1-3cf67e5e2804
+# Description              : Ausbaugrad (gebaute Geschossfläche in % der zulässigen Geschossfläche innerhalb der überbauten Bauzone), unterteilt in Wohnzone, Mischzone und Arbeitszone. Die Spalte "ARE_NR" ist eine kantonsinterne Nummerierung, um im Vergleich zur Spalte "BFS_NR" neben den Gemeinden und Städten zusätzlich auch die Regionen und den Kanton Zürich als Ganzes identifizieren zu können. Die Spalten "GEO_LEVEL_NR" und "GEO_LEVEL_LEVEL" sind für verwaltungsinterne Auswertungen vorgesehen. Es können keine Totale aus den Werten gerechnet werden. Ab 2021 wird das neue Berechnungsmodell verwendet. Aus technischen Gründen fand für 2020 keine Datenerhebung statt.
+# Issued                   : 2022-12-05T11:47:42+01:00
+# Modified                 : 2024-03-25T14:51:26+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001802_00003325.csv')
 
 
 

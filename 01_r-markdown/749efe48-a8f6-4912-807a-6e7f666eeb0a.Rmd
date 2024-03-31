@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-03-30"
+date: "2024-03-31"
 output: html_document
 ---
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set prm_data@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `DiDok Fachstelle`
 - **Maintainer_email** `didok@sbb.ch`
-- **Keywords.de** `['dienstleistungsort', 'verbindung', 'referenzpunkt', 'toilette', 'parkplatz', 'behig', 'informationsschalter', 'passagier', 'bus', 'haltekante', 'proprietar', 'zug', 'billettschalter', 'ohne-beforderungsleistung', 'rollstuhlfahrer', 'daten', 'haltestelle', 'rollstuhlzuganglichkeit']`
+- **Keywords.de** `['dienstleistungsort', 'haltestelle', 'informationsschalter', 'rollstuhlzuganglichkeit', 'toilette', 'behig', 'daten', 'billettschalter', 'rollstuhlfahrer', 'haltekante', 'bus', 'verbindung', 'proprietar', 'passagier', 'referenzpunkt', 'zug', 'parkplatz', 'ohne-beforderungsleistung']`
 - **Issued** `2021-03-19T07:15:25.225671`
 - **Metadata_created** `2021-03-20T02:58:35.589811`
-- **Metadata_modified** `2024-03-29T02:09:43.327987`
+- **Metadata_modified** `2024-03-31T02:14:20.718624`
 
 
 # Load packages
@@ -46,75 +46,75 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Informationsschaltern.
-# Issued                   : 2024-03-29T02:33:00.289744
-# Modified                 : 2024-03-29T02:33:00.289744
+# Description              : Daten zur Zugänglichkeit von Billettschaltern.
+# Issued                   : 2024-03-30T03:15:23.540393
+# Modified                 : 2024-03-30T03:15:23.540393
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/9d860355-8cfe-4cf3-a506-f6a0b2b05d77/download/prm_info_desks.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/1e73a835-666d-4ca1-a6eb-38f3f8a423f2/download/prm_ticket_counters.csv')
 
 # Distribution 1
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Haltekanten. 
-# Issued                   : 2024-03-29T02:33:06.527673
-# Modified                 : 2024-03-29T02:33:06.527673
+# Description              : Daten zur Zugänglichkeit von Parkplätzen. 
+# Issued                   : 2024-03-30T03:15:13.832313
+# Modified                 : 2024-03-30T03:15:13.832313
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/15e4aa86-edf3-4d0e-8cd8-677a0ba25bf4/download/prm_platforms.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/ac359eba-b10a-46a9-a405-09a947521c80/download/prm_parking_lots.csv')
 
 # Distribution 2
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
 # Description              : Daten zur Zugänglichkeit von Referenzpunkten. 
-# Issued                   : 2024-03-29T02:33:07.803944
-# Modified                 : 2024-03-29T02:33:07.803944
+# Issued                   : 2024-03-30T03:15:20.292428
+# Modified                 : 2024-03-30T03:15:20.292428
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/7d59c696-5a37-425d-82c1-afdb697564a1/download/prm_reference_points.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/f2df26a1-6bce-4b09-946c-f4e6d0f1e9c0/download/prm_reference_points.csv')
 
 # Distribution 3
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten über die Zugänglichkeit von Verbindungen zwischen Referenzpunkten und Haltekanten, etc. 
-# Issued                   : 2024-03-29T02:32:59.047095
-# Modified                 : 2024-03-29T02:32:59.047095
+# Description              : Daten zur Zugänglichkeit von Informationsschaltern.
+# Issued                   : 2024-03-30T03:15:12.559903
+# Modified                 : 2024-03-30T03:15:12.559903
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/dee9ebed-e077-4501-8832-9cb9cdf48172/download/prm_connections.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/d2daf80a-21ef-4a9f-891c-5ca1861a6544/download/prm_info_desks.csv')
 
 # Distribution 4
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Parkplätzen. 
-# Issued                   : 2024-03-29T02:33:01.898848
-# Modified                 : 2024-03-29T02:33:01.898848
+# Description              : Daten zur Zugänglichkeit von Haltekanten. 
+# Issued                   : 2024-03-30T03:15:18.558628
+# Modified                 : 2024-03-30T03:15:18.558628
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/0abf5c85-29ea-46bf-b7f3-a046eb7a2fe8/download/prm_parking_lots.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/0e667a14-948d-4491-aa2c-8b67d948ed7d/download/prm_platforms.csv')
 
 # Distribution 5
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
-# Description              : Daten zur Zugänglichkeit von Billettschaltern.
-# Issued                   : 2024-03-29T02:33:11.279975
-# Modified                 : 2024-03-29T02:33:11.279975
+# Description              : Daten über die Zugänglichkeit von Verbindungen zwischen Referenzpunkten und Haltekanten, etc. 
+# Issued                   : 2024-03-30T03:15:11.144946
+# Modified                 : 2024-03-30T03:15:11.144946
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/e7cd83ce-63e0-40d7-87f1-522173e4ea7f/download/prm_ticket_counters.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/7f232770-b731-4798-a007-24856e13a69b/download/prm_connections.csv')
 
 # Distribution 6
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
 # Description              : Daten betreffend behindertengerechten Toiletten und deren Zugang. 
-# Issued                   : 2024-03-29T02:33:12.719720
-# Modified                 : 2024-03-29T02:33:12.719720
+# Issued                   : 2024-03-30T03:15:24.939884
+# Modified                 : 2024-03-30T03:15:24.939884
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/2ab3b759-1ccd-4671-9f6d-cca0f6000166/download/prm_toilets.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/d5173867-822c-4b72-893c-73311d6d7ea7/download/prm_toilets.csv')
 
 # Distribution 7
 # Package_id               : 749efe48-a8f6-4912-807a-6e7f666eeb0a
 # Description              : Daten zur Zugänglichkeit von Haltestellen.
-# Issued                   : 2024-03-29T02:33:09.762509
-# Modified                 : 2024-03-29T02:33:09.762509
+# Issued                   : 2024-03-30T03:15:22.323713
+# Modified                 : 2024-03-30T03:15:22.323713
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/c0f9d212-cd32-4666-9d01-3e02b0486a6b/download/prm_stop_places.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/a00b9bb8-fb1e-41a3-8280-343c4c0994ce/resource/21ec8bd9-c885-44c4-88d1-1f5de1f8cace/download/prm_stop_places.csv')
 
 
 
