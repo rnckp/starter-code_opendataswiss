@@ -1,13 +1,13 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-04-05"
+date: "2024-04-06"
 output: html_document
 ---
 
 ## Dataset: Stadtklimamessungen Winterthur
 
 Temperatur und Luftfeuchtigkeit sowie die Strahlung als Hilfswerte gemessen durch Sensoren von rund 25 Meteohelix-Messstationen im Stadtgebiet von Winterthur. Dieses Messnetz wurde im Sommer 2022 durch die Fachstelle Umwelt der Stadt Winterthur aufgebaut und seither betrieben. 
-Der Datensatz wird täglich aktualisiert und umfasst alle für die Standorte gültigen Messwerte im 10-Minuten-Mittel; die Standortinformationen sind in der Ressource 'Standorte-Stationen' abrufbar. Es handelt sich um Rohdaten, welche direkt von der meteoblue API (Produktbeschrieb unter 'Zusätzliche Informationen' verlinkt) bezogen wurden, und nicht plausibilisiert oder korrigiert sind. In der Ressource 'Datenbeschrieb' finden Sie die vollständige Beschreibung der Merkmale. Direkter Zugriff auf die meteoblue API ist möglich und kann direkt bei meteoblue angefragt werden.  
+Der Datensatz wird täglich aktualisiert und umfasst alle für die Standorte gültigen Messwerte im 10-Minuten-Mittel; die Standortinformationen sind in der Ressource 'Standorte-Stationen' abrufbar. Es handelt sich um Rohdaten, welche direkt von der meteoblue API (Produktbeschrieb unter 'Zusätzliche Informationen' verlinkt) bezogen wurden, und nicht plausibilisiert oder korrigiert sind. In der Ressource 'Datenbeschrieb' finden Sie die vollständige Beschreibung der Merkmale. Direkter Zugriff auf die meteoblue API ist möglich und kann direkt bei meteoblue angefragt werden.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/stadtklimamessungen-winterthur)<br>
 [Direct link by **Stadt Winterthur** for dataset](nan)
@@ -24,7 +24,7 @@ Auto generated R starter code for data set 2142@stadt-winterthur.
 - **Keywords.de** `['klima', 'luft', 'temperatur', 'lufttemperaturen']`
 - **Issued** `2023-08-28T16:46:58+01:00`
 - **Metadata_created** `2023-08-29T03:15:20.637597`
-- **Metadata_modified** `2024-04-04T04:57:00.684658`
+- **Metadata_modified** `2024-04-05T05:15:02.328841`
 
 
 # Load packages
@@ -45,14 +45,23 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
+# Description              : Die Messwerte sind in UTC (Coordinated Universal Time). Mithilfe dem Merkmal "station_id" können die Ressourcen: "Standorte-Stationen" und "Messdaten_XXXX" kombiniert werden. Wenn im Verlauf der Zeit neue Stationen dazu kommen oder wegfallen, ist dies in der Ressource "Standorte-Stationen" an den Merkmalen "daten_von" und "daten_bis" abzulesen. Die vollständige Dokumentation der Merkmale finden Sie in der Ressource Datenbeschrieb.txt. Die Daten können Lücken enthalten. 
+# Issued                   : 2023-08-28T16:46:58+01:00
+# Modified                 : 2024-01-02T03:48:20+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004246.csv')
+
+# Distribution 1
+# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
 # Description              : Informationen zu den Merkmalen findet man in der Ressource Datenbeschrieb.txt unter dem Datensatz. Die Daten können Lücken enthalten.
 # Issued                   : 2024-01-02T03:48:21+01:00
-# Modified                 : 2024-04-03T03:47:31+01:00
+# Modified                 : 2024-04-04T03:47:29+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00005084.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
 # Description              : Die Messwerte sind in UTC (Coordinated Universal Time). Mithilfe dem Merkmal "station_id" können die Ressourcen: "Standorte-Stationen" und "Messdaten_XXXX" kombiniert werden. Wenn im Verlauf der Zeit neue Stationen dazu kommen oder wegfallen, ist dies in der Ressource "Standorte-Stationen" an den Merkmalen "daten_von" und "daten_bis" abzulesen. Die vollständige Dokumentation der Merkmale finden Sie in der Ressource Datenbeschrieb.txt. Die Daten können Lücken enthalten. 
 # Issued                   : 2023-08-28T16:46:58+01:00
@@ -61,20 +70,11 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004245.csv')
 
-# Distribution 2
-# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
-# Description              : Die Messwerte sind in UTC (Coordinated Universal Time). Mithilfe dem Merkmal "station_id" können die Ressourcen: "Standorte-Stationen" und "Messdaten_XXXX" kombiniert werden. Wenn im Verlauf der Zeit neue Stationen dazu kommen oder wegfallen, ist dies in der Ressource "Standorte-Stationen" an den Merkmalen "daten_von" und "daten_bis" abzulesen. Die vollständige Dokumentation der Merkmale finden Sie in der Ressource Datenbeschrieb.txt. Die Daten können Lücken enthalten. 
-# Issued                   : 2023-08-28T16:46:58+01:00
-# Modified                 : 2024-01-02T03:48:20+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004246.csv')
-
 # Distribution 3
 # Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
 # Description              : Mess-Standorte der Stadtklima Winterthur Messdaten. Die Merkmale "laengengrad" und "breitengrad" sind im WGS 84 Koordinatensystem angegeben. Die Merkmale 'daten_von' und 'daten_bis' wurde aus den verfügbaren Messdaten bestimmt.
 # Issued                   : 2023-08-28T16:46:58+01:00
-# Modified                 : 2024-04-03T03:47:32+01:00
+# Modified                 : 2024-04-04T03:47:31+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004244.csv')
