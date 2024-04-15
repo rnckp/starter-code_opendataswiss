@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-04-14"
+date: "2024-04-15"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1362@gesundheitsdirektion-kanton-zuer
 - **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
 - **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Kantonales Labor`
 - **Maintainer_email** `davi@kl.zh.ch`
-- **Keywords.de** `['gemeinden', 'wasser', 'gesundheit', 'schwellenwert', 'wasserversorgung', 'trinkwasser', 'verunreinigung', 'lebensmittel', 'pestizide', 'pflanzenschutzmittel']`
+- **Keywords.de** `['gemeinden', 'gesundheit', 'pflanzenschutzmittel', 'trinkwasser', 'schwellenwert', 'pestizide', 'wasser', 'wasserversorgung', 'verunreinigung', 'lebensmittel']`
 - **Issued** `2023-03-24T10:10:26+01:00`
 - **Metadata_created** `2023-03-25T03:27:51.298739`
-- **Metadata_modified** `2024-04-13T05:48:25.038554`
+- **Metadata_modified** `2024-04-14T05:09:02.289609`
 
 
 # Load packages
@@ -44,21 +44,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 07c8b310-adfa-46da-9c68-7b116b852842
-# Description              : 
-# Issued                   : 2023-03-24T10:10:26+01:00
-# Modified                 : 2024-04-12T11:25:04+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/gesundheitsdirektion-kanton-zuerich/kl/twq-data/Trinkwasserqualitaetsexport.csv')
-
-# Distribution 1
-# Package_id               : 07c8b310-adfa-46da-9c68-7b116b852842
 # Description              : Kategorien von Konzentrationsbereichen pro Analyt zur Qualitätsbewertung. Variablen: 'analyt' = spezifische Bezeichnung des Indikators (z. B. Chlorothalonil "R471811"); 'kategorie' = Konzentrationsbereich von Messwerten; 'kategorie_sortierung' = Sortierung nach aufsteigender Konzentration; 'farbcode' = hexadezimaler Farbcode, der die Einfärbung der Kategorie in der Visualisierung des Kantonalen Labors bestimmt (siehe 'Trinkwasser' unter "Weitere Informationen"); 'start_datum' = Beginn der Gültigkeit des Konzentrationsbereichs; 'end_datum' = Ende der Gültigkeit des Konzentrationsbereichs; 'bemerkung' = Hinweise zum Grund der Änderung des Konzentrationsbereichs.
 # Issued                   : 2023-03-24T10:10:26+01:00
 # Modified                 : 2024-04-10T10:51:40+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/gesundheitsdirektion-kanton-zuerich/kl/twq-data/Konzentrationsbereiche.csv')
+
+# Distribution 1
+# Package_id               : 07c8b310-adfa-46da-9c68-7b116b852842
+# Description              : 
+# Issued                   : 2023-03-24T10:10:26+01:00
+# Modified                 : 2024-04-12T11:25:04+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/gesundheitsdirektion-kanton-zuerich/kl/twq-data/Trinkwasserqualitaetsexport.csv')
 
 
 
