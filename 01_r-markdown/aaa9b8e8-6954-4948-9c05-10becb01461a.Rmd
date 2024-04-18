@@ -1,0 +1,108 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-04-18"
+output: html_document
+---
+
+## Dataset: Wöchentliche Todesfälle, 2010-2024
+
+Dieses Dataset präsentiert die wöchentlichen Zahlen der Todesfälle, der erwarteten Todesfälle und der Übersterblichkeit nach Alter (0-64, 65+), 2010-2024.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wochentliche-todesfalle-2010-20241)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/asset/de/ts-d-14.03.04.03-wr)
+
+Auto generated R starter code for data set 31786108@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher** `BFS/OFS`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gesundheit']`
+- **Issued** `2024-04-16T12:00:00+00:00`
+- **Metadata_created** `2024-04-17T09:35:23.198251`
+- **Metadata_modified** `2024-04-17T09:35:23.198257`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : aaa9b8e8-6954-4948-9c05-10becb01461a
+# Description              : 
+# Issued                   : 2024-04-16T12:00:00+00:00
+# Modified                 : 2024-04-16T06:41:44.114000+00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/31786132/master')
+
+# Distribution 1
+# Package_id               : aaa9b8e8-6954-4948-9c05-10becb01461a
+# Description              : 
+# Issued                   : 2024-04-16T12:00:00+00:00
+# Modified                 : 2024-04-16T06:41:44.143000+00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/31786120/master')
+
+# Distribution 2
+# Package_id               : aaa9b8e8-6954-4948-9c05-10becb01461a
+# Description              : 
+# Issued                   : 2024-04-16T12:00:00+00:00
+# Modified                 : 2024-04-16T06:41:44.105000+00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/31786128/master')
+
+# Distribution 3
+# Package_id               : aaa9b8e8-6954-4948-9c05-10becb01461a
+# Description              : Dieses Dataset präsentiert die wöchentlichen Zahlen der Todesfälle, der erwarteten Todesfälle und der Übersterblichkeit nach Alter (0-64, 65+), 2010-2024.
+# Issued                   : 2024-04-16T12:00:00+00:00
+# Modified                 : 2024-04-16T06:41:44.112000+00:00
+# Rights                   : NonCommercialAllowed-CommercialWithPermission-ReferenceRequired
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/31786122/master')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+auskunftsdienst@bfs.admin.ch | info@bfs.admin.ch
