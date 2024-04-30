@@ -1,17 +1,19 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-04-29"
+date: "2024-04-30"
 output: html_document
 ---
 
-## Dataset: ISplus Gesamt-Adressverzeichnis der Archive, Bibliotheken und Museen, inklusive 'Repertorium der handschriftlichen Nachlässe'
+## Dataset: Schweizerisches ISIL-Verzeichnis
 
-In ISplus sind die Adressen aus dem Verzeichnis 'Information Schweiz', aus dem 'Repertorium der handschriftlichen Nachlässe in den Bibliotheken und Archiven der Schweiz' sowie des Interbibliothekarischen Leihverkehrs zu einem Gesamtverzeichnis der schweizerischen Gedächtnisinstitutionen zusammengeführt worden. ISplus ist die Datenbank des ISIL-Zentrums der Schweiz und wird von der Schweizerischen Nationalbibliothek NB betreut.  
+Für Gedächtnisinstitutionen (Bibliotheken, Archive, Dokumentationsstellen und Museen) aus der Schweiz und dem Fürstentum Liechtenstein unterhält die Schweizerische Nationalbibliothek (NB) das nationale ISIL-Zentrum.
 
-In der Online-Version des ISplus auf HelveticArchives sind ferner die handschriftlichen Nachlässe verzeichnet, soweit sie von diesen Institutionen gemeldet worden sind. Die Daten basieren auf der gedruckten Buchausgabe des 'Repertoriums der handschriftlichen Nachlässe' von 1992. In der Zwischenzeit haben die meisten Archive, Bibliotheken und Museen neue Archivbestände übernommen. Einige Institutionen haben ihre Neuzugänge weiterhin gemeldet, diese Bestände sind bis 2018 nachgeführt. Nicht alle Institutionen haben dies systematisch getan, so dass der Datenbestand bei den handschriftlichen Nachlässen unterdessen heterogen bzw. unvollständig geworden ist. Deshalb wird das Repertorium auch nicht weitergeführt und auf dem Stand von 2018 belassen. Um eine möglichst aktuelle und vollständige Übersicht zu den handschriftlichen Nachlässen zu erhalten, empfiehlt es sich die Websites und allenfalls dort aktuell geführte Bestandesübersichten der einzelnen Institutionen zu konsultieren. Die Links zu den Institutionen sind in ISplus auf HelveticArchives aufgeführt.
+
+Dieses vergibt die ISIL-Nummer und führt das Adressverzeichnis der registrierten Institutionen im ISIL-Verzeichnis:
+https://www.isil.nb.admin.ch/de/
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/isplus)<br>
-[Direct link by **Schweizerische Nationalbibliothek NB** for dataset](https://www.helveticarchives.ch/isplus.aspx)
+[Direct link by **Schweizerische Nationalbibliothek NB** for dataset](https://www.isil.nb.admin.ch)
 
 Auto generated R starter code for data set ISplus@schweizerische-nationalbibliothek-nb.
 
@@ -25,7 +27,7 @@ Auto generated R starter code for data set ISplus@schweizerische-nationalbibliot
 - **Keywords.de** `['glam', 'isplus', 'openglam']`
 - **Issued** `2017-03-20T00:00:00`
 - **Metadata_created** `2017-03-20T09:37:46.990470`
-- **Metadata_modified** `2024-02-19T07:56:19.660767`
+- **Metadata_modified** `2024-04-29T12:01:39.944474`
 
 
 # Load packages
@@ -46,12 +48,12 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 4875842a-a1d3-48e9-9ea7-746112bb277e
-# Description              : Die CSV-Datei umfasst die Daten sämtlicher in ISPlus nachgewiesenen Institutionen.   Sie ist für die Nutzung in Excel optimiert.
+# Description              : Die CSV-Datei umfasst die Daten sämtlicher im Schweizerischen ISIL-Verzeichnis nachgewiesenen Institutionen.
 # Issued                   : 2017-03-20T00:00:00
-# Modified                 : 2023-07-11T00:00:00
+# Modified                 : 2024-04-30T00:00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
-df <- read_delim('https://ead.nb.admin.ch/ogd/ISPlus_ISIL.csv')
+df <- read_delim('https://www.isil.nb.admin.ch/opendata/latest.csv')
 
 
 
