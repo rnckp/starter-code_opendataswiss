@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-05-21"
+date: "2024-05-22"
 output: html_document
 ---
 
@@ -23,10 +23,10 @@ Auto generated R starter code for data set timetablenetex_2024@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `Fachstelle Open-Data-Plattform Mobilität Schweiz`
 - **Maintainer_email** `opendata@sbb.ch`
-- **Keywords.de** `['verkehrsmittel', 'fahrt', 'geschaftsorganisation', 'seilbahn', 'linie', 'zug', 'mobilitatsdienstleister', 'haltestelle', 'passagier', 'daten', 'embag', 'bus', 'fahrplan', 'netex']`
+- **Keywords.de** `['haltestelle', 'bus', 'passagier', 'fahrplan', 'verkehrsmittel', 'mobilitatsdienstleister', 'fahrt', 'netex', 'seilbahn', 'zug', 'geschaftsorganisation', 'embag', 'linie', 'daten']`
 - **Issued** `2023-12-20T12:21:49.333919`
 - **Metadata_created** `2023-12-21T01:59:00.868145`
-- **Metadata_modified** `2024-05-21T02:05:20.228836`
+- **Metadata_modified** `2024-05-22T02:22:46.829275`
 
 
 # Load packages
@@ -40,7 +40,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 5 distribution(s) in CSV format.
+-   The dataset has 6 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -48,11 +48,11 @@ library(skimr)
 # Distribution 0
 # Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
 # Description              : 
-# Issued                   : 2024-05-16T00:25:43.821279
-# Modified                 : 2024-05-16T00:25:43.821279
+# Issued                   : 2024-05-16T00:25:40.766573
+# Modified                 : 2024-05-16T00:25:40.766573
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/4a38db26-1003-4fc6-b2d1-a9efc646f61a/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202405130905.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/75ea3049-1af1-4ef4-859a-87d4d4ed285a/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202405090905.csv')
 
 # Distribution 1
 # Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
@@ -66,29 +66,38 @@ df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec
 # Distribution 2
 # Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
 # Description              : 
-# Issued                   : 2024-05-16T00:25:30.910690
-# Modified                 : 2024-05-16T00:25:30.910690
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/df80e83e-0176-4792-bd9a-4a00d3a96255/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202404250904.csv')
-
-# Distribution 3
-# Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
-# Description              : 
 # Issued                   : 2024-05-16T00:25:37.611539
 # Modified                 : 2024-05-16T00:25:37.611539
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/858336c8-8dea-4ea1-b81b-846bb4a550db/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202405060905.csv')
 
+# Distribution 3
+# Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
+# Description              : 
+# Issued                   : 2024-05-16T00:25:43.821279
+# Modified                 : 2024-05-16T00:25:43.821279
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/4a38db26-1003-4fc6-b2d1-a9efc646f61a/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202405130905.csv')
+
 # Distribution 4
 # Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
 # Description              : 
-# Issued                   : 2024-05-16T00:25:40.766573
-# Modified                 : 2024-05-16T00:25:40.766573
+# Issued                   : 2024-05-16T00:25:30.910690
+# Modified                 : 2024-05-16T00:25:30.910690
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/75ea3049-1af1-4ef4-859a-87d4d4ed285a/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202405090905.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/df80e83e-0176-4792-bd9a-4a00d3a96255/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202404250904.csv')
+
+# Distribution 5
+# Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
+# Description              : 
+# Issued                   : 2024-05-22T00:45:50.329370
+# Modified                 : 2024-05-22T00:45:50.329370
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/a13bc838-6025-41e8-b619-86f3631504bc/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_readme_1_1_202404221704.csv')
 
 
 
