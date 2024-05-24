@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-05-23"
+date: "2024-05-24"
 output: html_document
 ---
 
@@ -25,10 +25,10 @@ Auto generated R starter code for data set d57268e5-1891-4321-9b5a-c3c5dc57ec5d@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['gebaudeeingange', 'gebaudeart', 'stzh', 'punktdaten', 'heizungsart', 'gebaude', 'zimmerzahl', 'geodaten', 'wohnungen', 'wohnungsflache', 'sasa', 'geoportal', 'gebaudealter', 'vektordaten']`
+- **Keywords.de** `['vektordaten', 'gebaude', 'zimmerzahl', 'geoportal', 'gebaudeeingange', 'gebaudeart', 'sasa', 'wohnungen', 'wohnungsflache', 'heizungsart', 'gebaudealter', 'geodaten', 'stzh', 'punktdaten']`
 - **Issued** `nan`
 - **Metadata_created** `2023-11-07T03:43:29.342577`
-- **Metadata_modified** `2024-05-23T02:54:22.465997`
+- **Metadata_modified** `2024-05-24T02:50:20.521694`
 
 
 # Load packages
@@ -50,13 +50,22 @@ library(skimr)
 # Distribution 0
 # Package_id               : ed859600-e4b3-4283-a230-8cb18e6274f7
 # Description              : 
+# Issued                   : 2023-06-11T03:13:08.296444
+# Modified                 : 2024-05-20T04:04:16.201077
+# Rights                   : None
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/geo_gebaeude__und_wohnungsregister_der_stadt_zuerich__gwz__gemaess_gwr_datenmodell/download/gwr_stzh_wohnungen.csv')
+
+# Distribution 1
+# Package_id               : ed859600-e4b3-4283-a230-8cb18e6274f7
+# Description              : 
 # Issued                   : 2023-06-11T03:13:06.439779
 # Modified                 : 2024-05-20T04:04:12.755693
 # Rights                   : None
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/geo_gebaeude__und_wohnungsregister_der_stadt_zuerich__gwz__gemaess_gwr_datenmodell/download/gwr_stzh_gebaeude.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : ed859600-e4b3-4283-a230-8cb18e6274f7
 # Description              : 
 # Issued                   : 2023-06-11T03:13:07.504166
@@ -64,15 +73,6 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/geo_gebaeude__und_wohnun
 # Rights                   : None
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/geo_gebaeude__und_wohnungsregister_der_stadt_zuerich__gwz__gemaess_gwr_datenmodell/download/gwr_stzh_gebaeudeeingaenge.csv')
-
-# Distribution 2
-# Package_id               : ed859600-e4b3-4283-a230-8cb18e6274f7
-# Description              : 
-# Issued                   : 2023-06-11T03:13:08.296444
-# Modified                 : 2024-05-20T04:04:16.201077
-# Rights                   : None
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/geo_gebaeude__und_wohnungsregister_der_stadt_zuerich__gwz__gemaess_gwr_datenmodell/download/gwr_stzh_wohnungen.csv')
 
 
 
