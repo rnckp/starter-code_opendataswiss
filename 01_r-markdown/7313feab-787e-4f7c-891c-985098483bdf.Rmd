@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-05-24"
+date: "2024-05-25"
 output: html_document
 ---
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set bfr-rollstuhl@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `SKI Fachstelle BehiG`
 - **Maintainer_email** `behig.ski@sbb.ch`
-- **Keywords.de** `['passagier', 'proprietar', 'daten', 'zug', 'bus', 'haltekante', 'behig', 'rollstuhlfahrer', 'verkehrsmittel', 'haltestelle', 'rollstuhlzuganglichkeit']`
+- **Keywords.de** `['proprietar', 'rollstuhlfahrer', 'zug', 'haltestelle', 'verkehrsmittel', 'behig', 'daten', 'bus', 'rollstuhlzuganglichkeit', 'passagier', 'haltekante']`
 - **Issued** `2023-06-15T11:01:51.704407`
 - **Metadata_created** `2023-12-13T02:42:48.278807`
-- **Metadata_modified** `2024-05-24T01:59:57.643053`
+- **Metadata_modified** `2024-05-25T01:59:53.346950`
 
 
 # Load packages
@@ -39,7 +39,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 4 distribution(s) in CSV format.
+-   The dataset has 3 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -47,38 +47,29 @@ library(skimr)
 # Distribution 0
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-05-23T06:00:17.561838
-# Modified                 : 2024-05-23T06:00:17.561838
+# Issued                   : 2024-05-24T05:45:08.934088
+# Modified                 : 2024-05-24T05:45:08.934088
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/9bd04558-b63e-4cb7-80c8-f647537ef2f1/download/bfr_haltestellendaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/9e74fa60-21bc-4796-acd9-2de402dabb9a/download/bfr_fahrzeugmapping.csv')
 
 # Distribution 1
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-05-24T03:35:10.032546
-# Modified                 : 2024-05-24T03:35:10.032546
+# Issued                   : 2024-05-24T05:45:11.793020
+# Modified                 : 2024-05-24T05:45:11.793020
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/94963585-3975-4b6b-ab22-b1923721a7b1/download/bfr_fahrzeugmapping.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/e687945f-18cf-4ac4-afa3-c595186a1072/download/bfr_kombinationslogik.csv')
 
 # Distribution 2
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-05-23T06:00:18.693546
-# Modified                 : 2024-05-23T06:00:18.693546
+# Issued                   : 2024-05-24T05:45:10.658786
+# Modified                 : 2024-05-24T05:45:10.658786
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/dc5b9552-c902-4385-a173-2530db40c42a/download/bfr_kombinationslogik.csv')
-
-# Distribution 3
-# Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
-# Description              : 
-# Issued                   : 2024-05-23T06:00:15.372727
-# Modified                 : 2024-05-23T06:00:15.372727
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/ed1959cc-a6a7-470b-a87b-3b241791fab0/download/bfr_fahrzeugmapping.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/f3731de0-a662-40dd-a453-412725f1eacd/download/bfr_haltestellendaten.csv')
 
 
 
