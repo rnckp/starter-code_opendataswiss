@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-05-31"
+output: html_document
+---
+
+## Dataset: Grossraumprofile Autozüge BLS
+
+Die BLS fährt Autotunnelzüge (ATZ) mit Grossraumprofil durch Lötschberg und Simplon. Dieser Datensatz beinhaltet die Zugnummern der Züge, die über das Grossraumprofil verfügen. Dies ist eine temporäre Massnahme, bis der neue Angebotshinweis 'GF' in die regulären Fahrplandaten eingefügt werden kann.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/grossraumprofile-autozuge-bls)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/atzgf)
+
+Auto generated R starter code for data set atzgf@oevch.
+
+## Metadata
+
+- **Publisher** `Publisher1`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['autozug', 'cartransportrail', 'atz', 'fahrplan', 'daten']`
+- **Issued** `2024-05-30T13:53:34.804252`
+- **Metadata_created** `2024-05-31T02:13:47.689280`
+- **Metadata_modified** `2024-05-31T02:13:47.689287`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 75b707d3-f22b-41c2-a67d-e8f292e8fbd4
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/fe05a34b-b20f-4513-b3b5-482ab13ef5f3/resource/764d1db4-87bc-4b6b-aa34-f543403f8260/download/bls_cartransportrail_g_2024.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@sbb.ch | Geschäftsstelle SKI+
