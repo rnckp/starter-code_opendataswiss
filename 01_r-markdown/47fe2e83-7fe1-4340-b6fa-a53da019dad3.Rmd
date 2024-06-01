@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-06-01"
+output: html_document
+---
+
+## Dataset: Kantonsblatt
+
+Das Kantonsblatt ist das offizielle Publikationsorgan des Kantons Basel-Stadt. Darin werden Meldungen (Gesetze, Verordnungen, Staatsverträge usw.) des Grossen Rats, des Regierungsrats und der Verwaltung veröffentlicht. Im vorliegenden Datensatz sind die aktuellen über das offizielle API des Kantonsblatts beziehbaren Meldungen in Tabellenform enthalten. Bitte beachten Sie auch die Datenschutzerklärung des Kantonsblattes und die Hinweise zur Rechtsgültigkeit der Meldungen unter https://kantonsblatt.ch/tenant-kabbs#!/search/info/privacy-policy. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/kantonsblatt)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100352/)
+
+Auto generated R starter code for data set 100352@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Staatskanzlei`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['kantonale-bekanntmachungen', 'publikation', 'bewilligungen', 'konkurse', 'veroffentlichung', 'verfugung', 'anordnung', 'baupublikationen', 'reglemente', 'gerichtliche-entscheide', 'grundbuch', 'beschlusse', 'zahlungsbefehl', 'handanderung', 'nutzungsgesuche', 'vorladungen', 'amtsblatt', 'erlasse', 'handelsregister']`
+- **Issued** `2024-05-31T00:00:00`
+- **Metadata_created** `2024-06-01T01:42:01.413815`
+- **Metadata_modified** `2024-06-01T01:42:01.413824`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 47fe2e83-7fe1-4340-b6fa-a53da019dad3
+# Description              : Kantonsblatt (csv)
+# Issued                   : 2024-05-31T00:00:00
+# Modified                 : 2024-06-01T00:34:17.744000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100352/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt
