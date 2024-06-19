@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-06-19"
+output: html_document
+---
+
+## Dataset: Verkehrszähldaten motorisierter Individualverkehr nach Fahrzeugklassen
+
+Beschreibung
+Der Datensatz beinhaltet die Messergebnisse der Zählstellen für den motorisierten Individualverkehr auf Kantonsstrassen im Kanton Thurgau auf Stundenbasis, aufgeschlüsselt nach verschiedenen Fahrzeugklassen.Verkehrszähler sind Teil des Verkehrsmonitorings und beinhalten die Datenerfassung an ausgewählten Strassenquerschnitten auf Kantonsstrassen sowie die Datenübertragung zu den Datenverarbeitungsstellen. Nutzendende der Verkehrsdaten sind unter anderem das Verkehrsmanagement und die Verkehrsstatistik.Datenbezug
+Aus Kostengründen können nur die Werte der letzten zwei Wochen direkt von data.tg.ch bezogen werden. Alle anderen Daten - hier für das Jahr 2024 - können auf Jahresbasis über folgenden Link heruntergeladen werden:https://ogdtg.ch/verkehrsdaten/fahrzeugklassen/2024_fzkl_data.csv.gzDie Daten sind verfügbar bis ins Jahr 2011 und die Link Struktur ist dabei jeweils gleich: https://ogdtg.ch/verkehrsdaten/fahrzeugklassen/[JAHR]_fzkl_data.csv.gz.Die Daten für das Jahr 2023 können also zum Beispiel über folgenden Link bezogen werden: https://ogdtg.ch/verkehrsdaten/fahrzeugklassen/2023_fzkl_data.csv.gzHinweise zur NutzungBei der Nutzung der Daten ist zu beachten das lediglich die Daten bis zum letzten abgeschlossenen Jahr validiert sind. Bei den Daten des aktuell laufenden Jahres handelt es sich um Rohdaten, welche zum Ende des Jahres validiert werden.Beachten Sie bei der Interpretation der Daten bitte auch eventuell vorliegende Verkehrsbehinderungen auf der entsprechenden Strasse, welche die Zählung beeinflussen können. Aktuelle Hinweise zu Verkehrsbehinderungen finden sie hier:https://tiefbauamt.tg.ch/publikationen-zum-verkehr/baustellen/verkehrsbehinderungen.html/4343Die Zählstellen sind auf MET eingestellt (Spalten zeit_von und zeit_bis), d.h. die Zeitumstellung wird wie in Mitteleuropa ausgeführt. Bei der Umstellung von Winter- auf Sommerzeit fehlt die Stunde der Umstellung, dieser Tag hat dann 23 Stunden. Bei der Umstellung von Sommer- auf Winterzeit ist eine Stunde zu viel enthalten (der Tag hat dann 25 Stunden), die Stunde der Umstellung ist dann doppelt, aber mit unterschiedlichen Verkehrsdaten (da die gleiche Stunde zweimal durchlaufen wird).Auf map.geo.tg.ch sind alle permanenten Messstellen inkl. einer Jahresübersicht zum Durchschnittlichen Täglichen Verkehr (DTV) dargestellt.Die Daten des laufenden Jahres sind nicht plausibilisiert, es besteht kein Anspruch auf Vollständigkeit
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verkehrszahldaten-motorisierter-individualverkehr-nach-fahrzeugklassen)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/dbu-tba-1/)
+
+Auto generated R starter code for data set dbu-tba-1@kanton-thurgau.
+
+## Metadata
+
+- **Publisher** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['motorisiert', 'verkehrszahldaten', 'pkw', 'verkehrszahlung', 'individualverkehr', 'zahlstelle', 'anhanger', 'motorrad', 'verkehr', 'lkw', 'lastwagen', 'auto', 'strasse']`
+- **Issued** `2024-06-17T11:01:32.604000+00:00`
+- **Metadata_created** `2024-06-18T13:01:26.650943`
+- **Metadata_modified** `2024-06-18T13:01:26.650951`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 673777ca-ca92-439c-a2e5-3ea9981ff596
+# Description              : Verkehrszähldaten motorisierter Individualverkehr nach Fahrzeugklassen (csv)
+# Issued                   : 2024-06-17T11:01:32.604000+00:00
+# Modified                 : 2024-06-17T11:01:32.604000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/dbu-tba-1/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau
