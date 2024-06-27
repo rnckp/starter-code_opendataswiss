@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-06-26"
+date: "2024-06-27"
 output: html_document
 ---
 
@@ -21,10 +21,10 @@ Auto generated R starter code for data set 728@gesundheitsdirektion-kanton-zueri
 - **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
 - **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
 - **Maintainer_email** `gdstab@gd.zh.ch`
-- **Keywords.de** `['covid-19', 'corona', 'wasser', 'krankheiten', 'kantonzuerich', 'sars-cov-2', 'bezirke', 'gesundheit']`
+- **Keywords.de** `['sars-cov-2', 'gesundheit', 'krankheiten', 'covid-19', 'wasser', 'kantonzuerich', 'corona', 'bezirke']`
 - **Issued** `2021-07-06T00:00:00+01:00`
 - **Metadata_created** `2021-09-30T03:37:27.145370`
-- **Metadata_modified** `2024-06-25T04:00:40.739845`
+- **Metadata_modified** `2024-06-26T03:56:36.230606`
 
 
 # Load packages
@@ -45,21 +45,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 7dc986ce-4432-4ea0-86ce-9f59c9630781
-# Description              : SARS-CoV-2-RNA-Messungen aus Proben von dreizehn ins Monitoring integrierten Abwasserreinigungsanlagen (ARA). Variabeln: 'date' = Tag der Entnahme der Probe; 'SARS_CoV_2_RNA_copies_d_100000' = SARS-CoV-2 RNA im Rohabwasser pro 100'000 Personen; 'quantification_flag' = 'Q': über Quantifizierungsgrenze (>LOQ), 'D': über Nachweisgrenze (>LOD), 'N': unter Nachweisgrenze (<LOD); 'flow_m3_d' = Zufluss zur ARA in Kubikmeter pro Tag; 'sample_origin' = Abkürzung der ARA ('ARA_code' gemäss Ressource "Liste der Abwasserreinigungsanlagen mit Einzugsgebiet").
-# Issued                   : 2021-07-06T11:41:06+01:00
-# Modified                 : 2022-03-21T10:05:15+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_wastewater_monitoring_ZH/master/COVID19_Abwassermonitoring.csv')
-
-# Distribution 1
-# Package_id               : 7dc986ce-4432-4ea0-86ce-9f59c9630781
 # Description              : Ausgewählte, ins SARS-CoV-2-RNA-Abwassermonitoring integrierte Abwasserreinigungsanlagen (ARA). Variabeln: 'ARA_code' = Abkürzung der ARA; 'catchment_area' = Einzugsgebiet (Anzahl an die ARA angeschlossene Einwohner:innen); 'ARA_name' = Ausgeschriebener Name der ARA; 'district' = Kantonaler Bezirk, in dem die ARA liegt.
 # Issued                   : 2021-07-06T10:11:03+01:00
 # Modified                 : 2021-09-28T08:00:01+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_wastewater_monitoring_ZH/master/ara_einzugsgebiet.csv')
+
+# Distribution 1
+# Package_id               : 7dc986ce-4432-4ea0-86ce-9f59c9630781
+# Description              : SARS-CoV-2-RNA-Messungen aus Proben von dreizehn ins Monitoring integrierten Abwasserreinigungsanlagen (ARA). Variabeln: 'date' = Tag der Entnahme der Probe; 'SARS_CoV_2_RNA_copies_d_100000' = SARS-CoV-2 RNA im Rohabwasser pro 100'000 Personen; 'quantification_flag' = 'Q': über Quantifizierungsgrenze (>LOQ), 'D': über Nachweisgrenze (>LOD), 'N': unter Nachweisgrenze (<LOD); 'flow_m3_d' = Zufluss zur ARA in Kubikmeter pro Tag; 'sample_origin' = Abkürzung der ARA ('ARA_code' gemäss Ressource "Liste der Abwasserreinigungsanlagen mit Einzugsgebiet").
+# Issued                   : 2021-07-06T11:41:06+01:00
+# Modified                 : 2022-03-21T10:05:15+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_wastewater_monitoring_ZH/master/COVID19_Abwassermonitoring.csv')
 
 
 
