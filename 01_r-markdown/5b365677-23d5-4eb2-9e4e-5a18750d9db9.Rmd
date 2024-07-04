@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-07-04"
+output: html_document
+---
+
+## Dataset: Newsfeed Medienmitteilungen Kanton St.Gallen
+
+Der Datensatz zeigt die Medienmitteilungen des Kantons St.Gallen per Newsfeed. Der Datensatz wird stündlich aktualisiert. Der Link zum RSS-Feed befindet sich unter 'Referenzen'.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/newsfeed-medienmitteilungen-kanton-st-gallen)<br>
+[Direct link by **Kanton St. Gallen** for dataset](https://daten.sg.ch/explore/dataset/newsfeed-medienmitteilungen-kanton-stgallen/)
+
+Auto generated R starter code for data set newsfeed-medienmitteilungen-kanton-stgallen@kanton-st-gallen.
+
+## Metadata
+
+- **Publisher** `kanton-st-gallen`
+- **Organization.display_name.de** `Kanton St. Gallen`
+- **Organization.url** `https://www.sg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['news', 'real-time', 'medien']`
+- **Issued** `2020-06-11T00:00:00`
+- **Metadata_created** `2024-03-01T17:11:30.748204`
+- **Metadata_modified** `2024-07-04T03:25:38.725541`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5b365677-23d5-4eb2-9e4e-5a18750d9db9
+# Description              : Newsfeed Medienmitteilungen Kanton St.Gallen (csv)
+# Issued                   : 2020-06-11T00:00:00
+# Modified                 : 2024-07-03T23:00:33.364000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://daten.sg.ch/api/v2/catalog/datasets/newsfeed-medienmitteilungen-kanton-stgallen/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen
