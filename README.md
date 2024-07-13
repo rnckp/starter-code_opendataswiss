@@ -1,6 +1,12 @@
 # Preconfigured starter code files for all CSV datasets of opendata.swiss
 
-### Open any tabular dataset of opendata.swiss with one click and get a fully configured Python Jupyter Notebook or R Markdown file. 
+**Open any tabular dataset of opendata.swiss with one click and get a fully configured Python Jupyter Notebook or R Markdown file.**
+
+[![PyPI - Python](https://img.shields.io/badge/python-v3.9+-blue.svg)](https://github.com/rnckp/starter-code_opendataswiss)
+[![GitHub Stars](https://img.shields.io/github/stars/rnckp/starter-code_opendataswiss.svg)](https://github.com/rnckp/starter-code_opendataswiss/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/rnckp/starter-code_opendataswiss.svg)](https://github.com/rnckp/starter-code_opendataswiss/issues)
+[![GitHub Issues](https://img.shields.io/github/issues-pr/rnckp/starter-code_opendataswiss.svg)](https://img.shields.io/github/issues-pr/rnckp/starter-code_opendataswiss) 
+[![Current Version](https://img.shields.io/badge/version-0.1.1-green.svg)](https://github.com/rnckp/starter-code_opendataswiss)
 
 ### Please go to this 👉 **[overview website](https://rnckp.github.io/starter-code_opendataswiss/) with the full list of datasets and links to all code files**. 
 
