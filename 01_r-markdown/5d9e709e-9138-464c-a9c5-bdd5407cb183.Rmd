@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-07-13"
+output: html_document
+---
+
+## Dataset: Geschäfte im Kantonsrat St.Gallen
+
+Der Datensatz zeigt die Geschäfte des Kantonsrates St.Gallen seit 2006, einzelne Geschäfte seit 1993. Die Originaldaten sind auf der offiziellen Webseite des Ratsinformationssystems des Kantons St.Gallen unter https://www.ratsinfo.sg.ch/geschaefte zu finden.Die Daten können mit einem anderen Datensatz, demjenigen zu den Abstimmungen im Kantonsrat St.Gallen aus https://www.ratsinfo.sg.ch/abstimmungen verbunden werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geschafte-im-kantonsrat-st-gallen)<br>
+[Direct link by **Kanton St. Gallen** for dataset](https://daten.sg.ch/explore/dataset/geschaefte-im-kantonsrat-st-gallen/)
+
+Auto generated R starter code for data set geschaefte-im-kantonsrat-st-gallen@kanton-st-gallen.
+
+## Metadata
+
+- **Publisher** `kanton-st-gallen`
+- **Organization.display_name.de** `Kanton St. Gallen`
+- **Organization.url** `https://www.sg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['vorstoss', 'kantonsrat', 'ratsinformationssystem']`
+- **Issued** `2024-05-30T00:00:00`
+- **Metadata_created** `2024-07-12T03:35:34.883209`
+- **Metadata_modified** `2024-07-12T03:35:34.883219`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5d9e709e-9138-464c-a9c5-bdd5407cb183
+# Description              : Geschäfte im Kantonsrat St.Gallen (csv)
+# Issued                   : 2024-05-30T00:00:00
+# Modified                 : 2024-07-11T13:14:37.613000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://daten.sg.ch/api/v2/catalog/datasets/geschaefte-im-kantonsrat-st-gallen/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen

@@ -1,0 +1,93 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-07-13"
+output: html_document
+---
+
+## Dataset: Vornamen der Neugeborenen, Kanton St.Gallen, seit 1987
+
+Der Datensatz enthält die Vornamen der Neugeborenen im Kanton St.Gallen (Wohnsitzkanton der Mutter). 
+
+
+
+
+
+Bei mehreren eingetragenen Vornamen wird der im amtlichen Register Infostar des Eidg. Amtes für das Zivilstandswesen (EAZW) erstgenannte Vorname ausgewertet. Vornamen mit Bindestrich werden als ein eigener Name (z.B. Anne-Sophie), ähnlich geschriebene Vornamen (z.B. Jannik und Jannick) als zwei unterschiedliche Vornamen gezählt.  Akzente (z.B. ï oder é) werden nicht berücksichtigt. Vornamen mit einer Häufigkeit von weniger als fünf pro Jahr und Geschlecht werden aus Datenschutzgründen in der Kategorie 'andere Namen' zusammengefasst. 
+
+
+
+
+
+Basis für die Daten bildet die Statistik der natürlichen Bevölkerungsbewegung BEVNAT des Bundesamtes für Statistik (BFS).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/vornamen-der-neugeborenen-kanton-st-gallen-seit-1987)<br>
+[Direct link by **Kanton St. Gallen** for dataset](https://daten.sg.ch/explore/dataset/vornamen-der-neugeborenen-kanton-stgallen-seit-1987/)
+
+Auto generated R starter code for data set vornamen-der-neugeborenen-kanton-stgallen-seit-1987@kanton-st-gallen.
+
+## Metadata
+
+- **Publisher** `kanton-st-gallen`
+- **Organization.display_name.de** `Kanton St. Gallen`
+- **Organization.url** `https://www.sg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['vornamen', 'geburten', 'neugeborene']`
+- **Issued** `2024-02-15T00:00:00`
+- **Metadata_created** `2024-03-05T05:36:23.512388`
+- **Metadata_modified** `2024-07-12T03:35:54.474009`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 94564194-7521-442e-8826-0349c969480c
+# Description              : Vornamen der Neugeborenen, Kanton St.Gallen, seit 1987 (csv)
+# Issued                   : 2024-02-15T00:00:00
+# Modified                 : 2024-03-04T09:47:10+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://daten.sg.ch/api/v2/catalog/datasets/vornamen-der-neugeborenen-kanton-stgallen-seit-1987/exports/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+statistik@sg.ch | Fachstelle für Statistik Kanton St.Gallen
