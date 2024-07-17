@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-07-16"
+date: "2024-07-17"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1421@handelsregisteramt-kanton-zueric
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/handelsregisteramt.html`
 - **Maintainer** `Handelsregisteramt des Kantons Zürich`
 - **Maintainer_email** `kanzlei.hra@ji.zh.ch`
-- **Keywords.de** `['sitzverlegungen', 'konkurse', 'vereine', 'firmen', 'genossenschaften', 'branchen', 'handelsregister', 'unternehmen', 'loeschungen', 'wirtschaft', 'unternehmensdaten']`
+- **Keywords.de** `['unternehmen', 'sitzverlegungen', 'handelsregister', 'unternehmensdaten', 'konkurse', 'vereine', 'branchen', 'loeschungen', 'genossenschaften', 'firmen', 'wirtschaft']`
 - **Issued** `2022-10-11T14:15:13+01:00`
 - **Metadata_created** `2022-11-15T16:17:44.830229`
-- **Metadata_modified** `2024-07-15T03:54:51.002521`
+- **Metadata_modified** `2024-07-16T04:26:44.966925`
 
 
 # Load packages
@@ -44,14 +44,23 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
-# Description              : Sobald das Konkursgericht über eine Firma den Konkurs eröffnet hat, wird ein Konkursfall registriert. Wird das Verfahren eingestellt und zu einem späteren Zeitpunkt ein neues Konkursverfahren eröffnet, wird diese  Konkurseröffnung erneut gezählt.
+# Description              : Als Löschungen werden Schliessungen von Unternehmen und weiteren Rechtseinheiten erfasst. Darunter fallen auch Löschungen von Amtes wegen sowie  aufgrund eines Fusionsverfahrens.
 # Issued                   : 2022-10-11T14:15:13+01:00
-# Modified                 : 2024-01-16T09:22:58+01:00
+# Modified                 : 2024-01-16T09:22:55+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Konkurse.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Loeschungen.csv')
 
 # Distribution 1
+# Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
+# Description              : Unternehmen und weitere Rechtseinheiten können ihre Domiziladresse ändern. Sobald ein Wechsel über die Kantonsgrenzen erfolgt, wechselt die Zuständigkeit des kantonalen Handelsregisters. Verlegt ein im Zürcher Handelsregister eingetragenes Unternehmen sein Domizil in einen anderen Kanton, wird dies als Wegzug aus dem Kanton Zürich gezählt. Umgekehrt hat eine Domiziländerung in eine Zürcher Gemeinde einen Eintrag im Zürcher Handelsregister zur Folge, was als Zuzug in den Kanton Zürich ausgewiesen wird.
+# Issued                   : 2022-10-11T14:15:13+01:00
+# Modified                 : 2024-01-16T09:23:00+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Sitzverlegungen.csv')
+
+# Distribution 2
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
 # Description              : Als Neueintragung versteht man die erstmalige Erfassung von Unternehmen und weiteren Rechtseinheiten im Handelsregister.
 # Issued                   : 2022-10-11T14:15:13+01:00
@@ -60,23 +69,14 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Ko
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Neueintragungen.csv')
 
-# Distribution 2
-# Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
-# Description              : Als Löschungen werden Schliessungen von Unternehmen und weiteren Rechtseinheiten erfasst. Darunter fallen auch Löschungen von Amtes wegen sowie  aufgrund eines Fusionsverfahrens.
-# Issued                   : 2022-10-11T14:15:13+01:00
-# Modified                 : 2024-01-16T09:22:55+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Loeschungen.csv')
-
 # Distribution 3
 # Package_id               : d499dce6-5f21-40ba-8825-88661aabfcca
-# Description              : Unternehmen und weitere Rechtseinheiten können ihre Domiziladresse ändern. Sobald ein Wechsel über die Kantonsgrenzen erfolgt, wechselt die Zuständigkeit des kantonalen Handelsregisters. Verlegt ein im Zürcher Handelsregister eingetragenes Unternehmen sein Domizil in einen anderen Kanton, wird dies als Wegzug aus dem Kanton Zürich gezählt. Umgekehrt hat eine Domiziländerung in eine Zürcher Gemeinde einen Eintrag im Zürcher Handelsregister zur Folge, was als Zuzug in den Kanton Zürich ausgewiesen wird.
+# Description              : Sobald das Konkursgericht über eine Firma den Konkurs eröffnet hat, wird ein Konkursfall registriert. Wird das Verfahren eingestellt und zu einem späteren Zeitpunkt ein neues Konkursverfahren eröffnet, wird diese  Konkurseröffnung erneut gezählt.
 # Issued                   : 2022-10-11T14:15:13+01:00
-# Modified                 : 2024-01-16T09:23:00+01:00
+# Modified                 : 2024-01-16T09:22:58+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Sitzverlegungen.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_HRA_Konkurse.csv')
 
 
 
