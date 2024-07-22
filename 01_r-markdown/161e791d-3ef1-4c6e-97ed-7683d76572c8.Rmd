@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-07-21"
+date: "2024-07-22"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1202@kantonspolizei-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/sicherheitsdirektion/kantonspolizei-zuerich.html`
 - **Maintainer** `Kantonspolizei des Kantons Zürich, Abteilung Kriminalpolizeiliches Datenmanagement`
 - **Maintainer_email** `kdm-kla@kapo.zh.ch`
-- **Keywords.de** `['cyberkriminalitaet', 'strafbarehandlungen', 'einbrueche', 'gewalt', 'kriminalitaet', 'gemeinden', 'straftaten', 'bezirke', 'kantonzuerich', 'strafdelikte', 'jugendkriminalitaet']`
+- **Keywords.de** `['kriminalitaet', 'bezirke', 'cyberkriminalitaet', 'einbrueche', 'kantonzuerich', 'strafbarehandlungen', 'straftaten', 'strafdelikte', 'gemeinden', 'jugendkriminalitaet', 'gewalt']`
 - **Issued** `2022-03-10T13:54:15+01:00`
 - **Metadata_created** `2023-01-17T08:14:12.977406`
-- **Metadata_modified** `2024-07-20T03:35:16.968988`
+- **Metadata_modified** `2024-07-21T03:47:08.095396`
 
 
 # Load packages
@@ -44,12 +44,12 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
-# Description              : Die Cyber-/Digitale Kriminalität wird anhand der Kombination "Straftat - Tatvorgehen (Modus Operandi)" ermittelt. Sie umfasst 33 verschiedene Tatvorgehen und 28 Straftaten des StGB, die in 5 Überkategorien mit  12 Unterkategorien gegliedert werden. In der Auswertung nicht berücksichtigt werden das Betäubungsmittelgesetz (BetmG) oder Bundesnebengesetze wie das Waffengesetz (WG), das Bundesgesetz gegen den unlauteren Wettbewerb (UWG) oder das Markenschutzgesetz (MSchG). Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
-# Issued                   : 2023-03-22T10:10:02+01:00
-# Modified                 : 2024-03-25T08:47:00+01:00
+# Description              : Anzahl Straftaten nach Tatbestand des StGB, AIG und BetmG seit 2009 nach Bezirken. Tatbestände werden nur in Jahren aufgeführt, in denen sie in Kraft waren. Die Unterscheidung zwischen versuchten und vollendeten Straftaten ist nur im Falle von Straftaten gegen das StGB möglich. Die Spalte Titel (und Reihenfolge_Titel) weist für StGB die Titel (und deren Reihenfolge) des 'Zweiten Buches: Besondere Bestimmungen' gemäss StGB, sowie für BetmG und AIG die Überkategorien (und deren Reihenfolge) gemäss Auswertungen im PKS Jahresbericht auf. Analog weist die Spalte Haupttitel (und Reihenfolge_Haupttitel) eine v.a. für die zahlreichen StGB-Titel generalisierte Kategorie der wichtigsten Titel und deren Reihenfolge auf. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
+# Issued                   : 2022-03-10T13:54:15+01:00
+# Modified                 : 2024-03-25T08:47:21+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003680.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00002318.csv')
 
 # Distribution 1
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
@@ -62,12 +62,12 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 2
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
-# Description              : Anzahl geschädigter Personen nach Tatbestandsgruppe (Haupttitel) des StGB seit 2009. Es wird in juristische und natürliche Personen und letztere in die Alterskategorien Minderjährige (<18) und Erwachsene sowie nach Geschlecht unterteilt. Jede Person wird im Total StGB bzw. pro Tatbestandsgruppe nur einfach gezählt. Das Zusammenzählen von Personenzahlen über mehrere Tatbestandsgruppen hinweg ist nicht zulässig, da sich eine Person über die verschiedenen Einheiten wiederholen kann. Die Anzahl Geschädigter lässt sich nicht direkt mit der Anzahl Straftaten vergleichen, da bei gewissen Straftaten mehrere Personen geschädigt sein können. Die Spalte Haupttitel (und Reihenfolge_Haupttitel) weist eine generalisierte Kategorie der wichtigsten StGB-Titel und deren Reihenfolge auf.
-# Issued                   : 2023-03-22T10:12:14+01:00
-# Modified                 : 2024-03-25T08:49:10+01:00
+# Description              : Unter Gewaltstraftaten werden die Tatbestände des StGB zusammengefasst, welche die vorsätzliche Anwendung oder Androhung von Gewalt gegen Personen beinhalten. Die aufgeführten Tatbestände und ihre Zuordnung zum Schweregrad  richten sich nach den Vorgaben des Bundesamts für Statistik. Das Total aller Gewaltstraftaten pro Jahr bzw. pro Schweregrad (und Jahr) entspricht der Summe der Anzahl der im Datensatz abgebildeten Straftatbestände. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
+# Issued                   : 2023-03-22T10:11:02+01:00
+# Modified                 : 2024-03-25T08:48:42+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003520.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003503.csv')
 
 # Distribution 3
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
@@ -80,14 +80,23 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 4
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
-# Description              : Anzahl Straftaten nach Tatbestand gegen StGB, BetmG und AIG seit 2009 auf Kantonsebene. Tatbestände werden nur in Jahren aufgeführt, in denen sie in Kraft waren. Die Unterscheidung zwischen versuchten und vollendeten Straftaten ist nur im Falle von Straftaten gegen das StGB möglich. Die Spalte Titel (und Reihenfolge_Titel) weist für StGB die Titel (und deren Reihenfolge) des Zweiten Buches: Besondere Bestimmungen gemäss StGB, sowie für BetmG und AIG die Überkategorien (und deren Reihenfolge) gemäss Auswertungen im PKS Jahresbericht auf. Analog weist die Spalte Haupttitel (und Reihenfolge_Haupttitel) eine v.a. für die zahlreichen StGB-Titel generalisierte Kategorie der wichtigsten Titel und deren Reihenfolge auf. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
-# Issued                   : 2022-03-10T13:54:15+01:00
-# Modified                 : 2024-03-25T08:48:08+01:00
+# Description              : Der Datensatz enthält Daten zu Gemeinden, die zum Zeitpunkt der Erstellung des Datensatzes (Oktober 2022) mehr als 10'000 Einwohner aufwiesen. Die Unterscheidung zwischen versuchten und vollendeten Straftaten ist nur im Falle von Straftaten gegen das StGB möglich. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). Die Spalte 'Reihenfolge_Titel weist für StGB die Reihenfolge der Titel des 'Zweiten Buches: Besondere Bestimmungen' gemäss StGB, sowie für BetmG und AIG die Überkategorien (und deren Reihenfolge) gemäss Auswertungen im PKS Jahresbericht auf. Analog weist die Spalte 'Haupttitel' eine v.a. für die zahlreichen StGB-Titel generalisierte Kategorie der wichtigsten Tatbestände aus. Die unter den jeweiligen Titeln zusammengefassten Tatbestände (nicht aber deren Anzahl pro Gemeinde) finden sich z.B. in folgendem Datensatz in der Spalte 'Artikel': https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00002278.csv
+# Issued                   : 2023-03-22T10:13:26+01:00
+# Modified                 : 2024-03-25T08:49:28+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00002278.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003600.csv')
 
 # Distribution 5
+# Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
+# Description              : Die Cyber-/Digitale Kriminalität wird anhand der Kombination "Straftat - Tatvorgehen (Modus Operandi)" ermittelt. Sie umfasst 33 verschiedene Tatvorgehen und 28 Straftaten des StGB, die in 5 Überkategorien mit  12 Unterkategorien gegliedert werden. In der Auswertung nicht berücksichtigt werden das Betäubungsmittelgesetz (BetmG) oder Bundesnebengesetze wie das Waffengesetz (WG), das Bundesgesetz gegen den unlauteren Wettbewerb (UWG) oder das Markenschutzgesetz (MSchG). Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
+# Issued                   : 2023-03-22T10:10:02+01:00
+# Modified                 : 2024-03-25T08:47:00+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003680.csv')
+
+# Distribution 6
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
 # Description              : Unter Gewaltstraftaten werden die Tatbestände des StGB zusammengefasst, welche die vorsätzliche Anwendung oder Androhung von Gewalt gegen Personen beinhalten. Die aufgeführten Tatbestände und ihre Zuordnung zum Schweregrad  richten sich nach den Vorgaben des Bundesamts für Statistik. Die Summe der Anzahl Straftaten nach Schweregrad entspricht nicht dem Total der Gewaltstraftaten pro Bezirk, da unter Umständen bei mehreren Straftaten pro Fall Subsummierungsregeln zum Zug kommen.  Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
 # Issued                   : 2023-03-22T10:11:48+01:00
@@ -96,32 +105,23 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003504.csv')
 
-# Distribution 6
-# Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
-# Description              : Unter Gewaltstraftaten werden die Tatbestände des StGB zusammengefasst, welche die vorsätzliche Anwendung oder Androhung von Gewalt gegen Personen beinhalten. Die aufgeführten Tatbestände und ihre Zuordnung zum Schweregrad  richten sich nach den Vorgaben des Bundesamts für Statistik. Das Total aller Gewaltstraftaten pro Jahr bzw. pro Schweregrad (und Jahr) entspricht der Summe der Anzahl der im Datensatz abgebildeten Straftatbestände. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
-# Issued                   : 2023-03-22T10:11:02+01:00
-# Modified                 : 2024-03-25T08:48:42+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003503.csv')
-
 # Distribution 7
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
-# Description              : Der Datensatz enthält Daten zu Gemeinden, die zum Zeitpunkt der Erstellung des Datensatzes (Oktober 2022) mehr als 10'000 Einwohner aufwiesen. Die Unterscheidung zwischen versuchten und vollendeten Straftaten ist nur im Falle von Straftaten gegen das StGB möglich. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). Die Spalte 'Reihenfolge_Titel weist für StGB die Reihenfolge der Titel des 'Zweiten Buches: Besondere Bestimmungen' gemäss StGB, sowie für BetmG und AIG die Überkategorien (und deren Reihenfolge) gemäss Auswertungen im PKS Jahresbericht auf. Analog weist die Spalte 'Haupttitel' eine v.a. für die zahlreichen StGB-Titel generalisierte Kategorie der wichtigsten Tatbestände aus. Die unter den jeweiligen Titeln zusammengefassten Tatbestände (nicht aber deren Anzahl pro Gemeinde) finden sich z.B. in folgendem Datensatz in der Spalte 'Artikel': https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00002278.csv
-# Issued                   : 2023-03-22T10:13:26+01:00
-# Modified                 : 2024-03-25T08:49:28+01:00
+# Description              : Anzahl Straftaten nach Tatbestand gegen StGB, BetmG und AIG seit 2009 auf Kantonsebene. Tatbestände werden nur in Jahren aufgeführt, in denen sie in Kraft waren. Die Unterscheidung zwischen versuchten und vollendeten Straftaten ist nur im Falle von Straftaten gegen das StGB möglich. Die Spalte Titel (und Reihenfolge_Titel) weist für StGB die Titel (und deren Reihenfolge) des Zweiten Buches: Besondere Bestimmungen gemäss StGB, sowie für BetmG und AIG die Überkategorien (und deren Reihenfolge) gemäss Auswertungen im PKS Jahresbericht auf. Analog weist die Spalte Haupttitel (und Reihenfolge_Haupttitel) eine v.a. für die zahlreichen StGB-Titel generalisierte Kategorie der wichtigsten Titel und deren Reihenfolge auf. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
+# Issued                   : 2022-03-10T13:54:15+01:00
+# Modified                 : 2024-03-25T08:48:08+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003600.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00002278.csv')
 
 # Distribution 8
 # Package_id               : 161e791d-3ef1-4c6e-97ed-7683d76572c8
-# Description              : Anzahl Straftaten nach Tatbestand des StGB, AIG und BetmG seit 2009 nach Bezirken. Tatbestände werden nur in Jahren aufgeführt, in denen sie in Kraft waren. Die Unterscheidung zwischen versuchten und vollendeten Straftaten ist nur im Falle von Straftaten gegen das StGB möglich. Die Spalte Titel (und Reihenfolge_Titel) weist für StGB die Titel (und deren Reihenfolge) des 'Zweiten Buches: Besondere Bestimmungen' gemäss StGB, sowie für BetmG und AIG die Überkategorien (und deren Reihenfolge) gemäss Auswertungen im PKS Jahresbericht auf. Analog weist die Spalte Haupttitel (und Reihenfolge_Haupttitel) eine v.a. für die zahlreichen StGB-Titel generalisierte Kategorie der wichtigsten Titel und deren Reihenfolge auf. Die Bevölkerungszahlen sind der Einwohnerstatistik des Bundes am Ende des Vorjahres entnommen (bis 2010 ESPOP, ab 2011 STATPOP). Damit wird die Häufigkeitszahl berechnet (Anzahl registrierten Straftaten pro 1000 Einwohner). 
-# Issued                   : 2022-03-10T13:54:15+01:00
-# Modified                 : 2024-03-25T08:47:21+01:00
+# Description              : Anzahl geschädigter Personen nach Tatbestandsgruppe (Haupttitel) des StGB seit 2009. Es wird in juristische und natürliche Personen und letztere in die Alterskategorien Minderjährige (<18) und Erwachsene sowie nach Geschlecht unterteilt. Jede Person wird im Total StGB bzw. pro Tatbestandsgruppe nur einfach gezählt. Das Zusammenzählen von Personenzahlen über mehrere Tatbestandsgruppen hinweg ist nicht zulässig, da sich eine Person über die verschiedenen Einheiten wiederholen kann. Die Anzahl Geschädigter lässt sich nicht direkt mit der Anzahl Straftaten vergleichen, da bei gewissen Straftaten mehrere Personen geschädigt sein können. Die Spalte Haupttitel (und Reihenfolge_Haupttitel) weist eine generalisierte Kategorie der wichtigsten StGB-Titel und deren Reihenfolge auf.
+# Issued                   : 2023-03-22T10:12:14+01:00
+# Modified                 : 2024-03-25T08:49:10+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00002318.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001202_00003520.csv')
 
 
 
