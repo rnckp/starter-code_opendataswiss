@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-07-25"
+date: "2024-07-26"
 output: html_document
 ---
 
 ## Dataset: SARS-CoV-2 (Covid-19)
 
-Daten zur Verbreitung und zeitlichen Entwicklung von SARS-CoV-2 Infektionen und Covid-19 Erkrankungsfällen in der Schweiz und im Fürstentum Liechtenstein. Sie finden Daten zur Viruslast im Abwasser aus dem Abwassermonitoring, zu ambulanten Konsultationen aus dem Sentinella-Meldesystem und zu Fällen, Hospitalisationen, Todesfällen und Tests aus dem obligatorischen Meldesystem.
+Daten zur Verbreitung und zeitlichen Entwicklung von SARS-CoV-2 Infektionen und Covid-19 Erkrankungsfällen in der Schweiz und im Fürstentum Liechtenstein. Sie finden Daten zur Viruslast im Abwasser aus dem Abwassermonitoring, zu ambulanten Konsultationen aus dem Sentinella-Meldesystem, zu Virusvarianten aus der genomischen Überwachung und zu Fällen, Hospitalisationen, Todesfällen und Tests aus dem obligatorischen Meldesystem.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sars-cov-2-covid-19)<br>
 [Direct link by **Abteilung Übertragbare Krankheiten** for dataset](https://idd.bag.admin.ch)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set covid19@abteilung-uebertragbare-krank
 - **Organization.url** `https://www.bag.admin.ch/`
 - **Maintainer** `Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten`
 - **Maintainer_email** `idd@bag.admin.ch`
-- **Keywords.de** `['coronavirus-relevante-virusvarianten-covid-19-bag-laborbestatigte-falle-tests-laborbestatigte-todesf']`
-- **Issued** `2023-11-08T00:00:00`
+- **Keywords.de** `['foph-coronavirus-covid-19-virus-variants']`
+- **Issued** `2023-11-08T12:00:00+00:00`
 - **Metadata_created** `2023-11-08T07:44:41.218084`
-- **Metadata_modified** `2024-04-17T09:26:56.898365`
+- **Metadata_modified** `2024-07-25T12:31:57.701968`
 
 
 # Load packages
@@ -44,48 +44,48 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
-# Description              : Die Daten basieren auf Informationen aus dem nationalen genomischen SARS-⁠CoV-⁠2 Überwachungsprogramm. An diesem beteiligen sich aktuell Laboratorien der Universitätsspitäler und grösserer Regionalspitäler der Schweiz sowie eine Sequenzierungsplattform.
+# Description              : Die Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte seit März 2020 Informationen zu Erstkonsultationen von Patientinnen und Patienten mit akuter respiratorischer Infektion (ARI) in Arztpraxen und bei Hausbesuchen.
 # Issued                   : None
-# Modified                 : None
+# Modified                 : 2024-07-23T00:00:00+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/COVID19_genomic_surveillance/csv')
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/COVID19_sentinella/csv')
 
 # Distribution 1
 # Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
-# Description              : Die hier veröffentlichten Daten basieren auf Informationen, die Laboratorien, Ärztinnen und Ärzte sowie Spitäler dem BAG im Rahmen der Meldepflicht übermittelt haben.
+# Description              : Die Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Januar 2022 die Viruslast von SARS-CoV-2 und seit Juli 2023 die Viruslast von Influenza und RSV in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
 # Issued                   : None
-# Modified                 : None
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/COVID19_oblig/csv')
-
-# Distribution 2
-# Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
-# Description              : Die hier veröffentlichten Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte Informationen zu Erstkonsultationen aufgrund akuter respiratorischer Infektion (ARI) oder grippeähnlicher Erkrankung (ILI) in Arztpraxen und bei Hausbesuchen.
-# Issued                   : None
-# Modified                 : None
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_sentinella/csv')
-
-# Distribution 3
-# Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
-# Description              : Die hier veröffentlichten Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Juli 2023 die Viruslast von Influenza in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
-# Issued                   : None
-# Modified                 : None
+# Modified                 : 2024-07-23T00:00:00+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_wastewater/csv')
 
-# Distribution 4
+# Distribution 2
 # Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
-# Description              : Die hier veröffentlichten Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte seit März 2020 Informationen zu Erstkonsultationen von Patientinnen und Patienten mit akuter respiratorischer Infektion (ARI) in Arztpraxen und bei Hausbesuchen.
+# Description              : Die Daten basieren auf Informationen, die Laboratorien, Ärztinnen und Ärzte sowie Spitäler dem BAG im Rahmen der Meldepflicht übermittelt haben.
 # Issued                   : None
-# Modified                 : None
+# Modified                 : 2024-07-23T00:00:00+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/COVID19_sentinella/csv')
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/COVID19_oblig/csv')
+
+# Distribution 3
+# Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
+# Description              : Die Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte Informationen zu Erstkonsultationen aufgrund akuter respiratorischer Infektion (ARI) oder grippeähnlicher Erkrankung (ILI) in Arztpraxen und bei Hausbesuchen.
+# Issued                   : None
+# Modified                 : 2024-07-23T00:00:00+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_sentinella/csv')
+
+# Distribution 4
+# Package_id               : 83331c9d-adc8-4bdd-812f-4af5ad3686e3
+# Description              : Die Daten basieren auf Informationen aus dem nationalen genomischen SARS-⁠CoV-⁠2 Überwachungsprogramm. An diesem beteiligen sich aktuell Laboratorien der Universitätsspitäler und grösserer Regionalspitäler der Schweiz sowie eine Sequenzierungsplattform.
+# Issued                   : None
+# Modified                 : 2024-07-23T00:00:00+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/COVID19_genomic_surveillance/csv')
 
 
 
@@ -114,4 +114,4 @@ tail(df)
 
 # Contact
 
-Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten | idd@bag.admin.ch
+idd@bag.admin.ch | Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten
