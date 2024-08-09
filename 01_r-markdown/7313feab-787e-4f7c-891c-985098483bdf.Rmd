@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-08-05"
+date: "2024-08-09"
 output: html_document
 ---
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set bfr-rollstuhl@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `SKI Fachstelle BehiG`
 - **Maintainer_email** `behig.ski@sbb.ch`
-- **Keywords.de** `['behig', 'passagier', 'haltestelle', 'zug', 'rollstuhlfahrer', 'daten', 'haltekante', 'rollstuhlzuganglichkeit', 'verkehrsmittel', 'proprietar', 'bus']`
+- **Keywords.de** `['daten', 'bus', 'proprietar', 'haltestelle', 'haltekante', 'passagier', 'verkehrsmittel', 'behig', 'rollstuhlzuganglichkeit', 'rollstuhlfahrer', 'zug']`
 - **Issued** `2023-06-15T11:01:51.704407`
 - **Metadata_created** `2023-12-13T02:42:48.278807`
-- **Metadata_modified** `2024-08-05T02:07:05.179988`
+- **Metadata_modified** `2024-08-08T02:21:37.496005`
 
 
 # Load packages
@@ -39,7 +39,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 2 distribution(s) in CSV format.
+-   The dataset has 3 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -47,20 +47,29 @@ library(skimr)
 # Distribution 0
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-08-04T01:50:15.349764
-# Modified                 : 2024-08-04T01:50:15.349764
+# Issued                   : 2024-08-07T01:25:06.275726
+# Modified                 : 2024-08-07T01:25:06.275726
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/d6dc5285-a546-484f-8169-385c6ce74329/download/bfr_kombinationslogik.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/df755c15-b34b-4aeb-b477-3eb5d9182dde/download/bfr_fahrzeugmapping.csv')
 
 # Distribution 1
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-08-04T01:50:14.321084
-# Modified                 : 2024-08-04T01:50:14.321084
+# Issued                   : 2024-08-07T01:25:08.350427
+# Modified                 : 2024-08-07T01:25:08.350427
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/44709910-368b-498a-ad42-7cc8cad82609/download/bfr_haltestellendaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/c4dba650-1201-4260-b354-a7d84993f8c5/download/bfr_haltestellendaten.csv')
+
+# Distribution 2
+# Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
+# Description              : 
+# Issued                   : 2024-08-07T01:25:09.194502
+# Modified                 : 2024-08-07T01:25:09.194502
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/aa791b15-5d23-4da3-bc17-26133fc914d9/download/bfr_kombinationslogik.csv')
 
 
 

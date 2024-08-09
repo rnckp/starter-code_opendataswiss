@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-08-05"
+date: "2024-08-09"
 output: html_document
 ---
 
@@ -9,7 +9,7 @@ output: html_document
 Liste aller Verwaltungseinheiten und -abteilungen (inkl. 'Publisher-Suffix' = URL-Slug der Organisation), die bis zum angegebenen Zeitpunkt offene Behördendaten (OGD) über die kantonale Metadatenverwaltung (MDV) publizieren. Davon ausgenommen sind Behörden, die ausschliesslich offene Geodaten publizieren, da diese nicht über die MDV bereitgestellt werden, sondern über die kantonale Geodateninfrastruktur (Geoinformation Kanton Zürich). Die Stadt Zürich als grösstes *kommunales* OGD-publizierendes Organ im Kanton ist ebenfalls ausgenommen, da sie über eine eigene OGD-Metadateninfrastruktur (Open Data Zürich) verfügt. Hinweis: Alle OGD, die über die MDV bereitgestellt werden, verfügen sowohl im öffentlichen kantonalen Datenkatalog (zh.ch/daten) wie auch im zentralen Portal für offene Daten der Schweizer Behörden (opendata.swiss) über eine permanente URL (Permalink): Das 'Publisher-Suffix' der Organisation, welche die Datenhoheit über die entsprechenden Daten hält, bildet zusammen mit einer numerischen ID den eindeutigen URL-Slug des Metadatensatzes.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ogd-publizierende-verwaltungseinheiten-im-kanton-zurich)<br>
-[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/opendata)
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset]()
 
 Auto generated R starter code for data set 1641@statistisches-amt-kanton-zuerich.
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1641@statistisches-amt-kanton-zuerich
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
 - **Maintainer_email** `datashop@statistik.zh.ch`
-- **Keywords.de** `['kantonzuerich', 'kantonaleverwaltung', 'gemeindeverwaltung', 'gemeinden']`
+- **Keywords.de** `['kantonaleverwaltung', 'gemeindeverwaltung', 'gemeinden', 'kantonzuerich']`
 - **Issued** `2022-08-17T10:43:44+01:00`
 - **Metadata_created** `2022-08-19T03:05:28.687375`
-- **Metadata_modified** `2024-08-04T04:33:03.462017`
+- **Metadata_modified** `2024-08-08T04:11:20.282929`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : fb0c0f7c-3339-4fb9-9b77-d56832682410
 # Description              : Spaltenüberschriften: 'PUBLISHER' = Bezeichnung der Organisation, unter deren Hoheit die publizierten Daten stehen; 'ABTEILUNG' = Bezeichnung der entsprechenden Abteilung der Organisation, welche die Datenhoheit besitzt (eine Abteilung kann angegeben sein, aber muss nicht); 'PUBLISHER_SUFFIX' = URL-Slug der Organisation (die Abteilung wird im Slug nicht repräsentiert).
 # Issued                   : 2022-08-17T10:43:44+01:00
-# Modified                 : 2024-07-26T12:49:28+01:00
+# Modified                 : 2024-08-07T10:55:31+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/kanton_zuerich_ogd_orgs.csv')
