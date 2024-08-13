@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-08-12"
+date: "2024-08-13"
 output: html_document
 ---
 
 ## Dataset: Abstimmungsarchiv nach Vorlage, Gemeinde und Datum (seit 2003)
 
-Gemeinderesultate aller eidgenössischen und kantonalen Vorlagentypeproposal = Vorschlagcounter-proposal = Gegenvorschlagtie-breaker = Stichfrageansweraccepted = Vorschlag oder Gegenvorschlag angenommenrejected = Vorschlag oder Gegenvorschlag abgelehntproposal = Stichentscheid für Vorschlagcounter-proposal = Stichentscheid für Gegenvorschlag 
+Gemeinderesultate aller eidgenössischen und kantonalen VorlagenHinweis: Der Datensatz wird an Abstimmungssonntagen viertelstündlich aktualisiert. Solange die Gemeinden nicht fertig ausgezählt sind, zeigen die Einträge lediglich den aktuellen Stand der Auszählung und nicht das definitive Ergebnis der Abstimmung. Die Spalte counted gibt an, ob die Gemeinde ausgezählt ist. Aggregierte Angaben auf Kantonsebene befinden sich im Datensatz Abstimmungsarchiv nach Vorlage und Datum (seit 2003).Spaltenbeschriebedate: Das Datum, an dem die Abstimmung stattgefunden hat.entity_id: Eine eindeutige Kennung für die Einheit (BFS Code).name: Der Name der  Gemeine.district: Der Bezirk, dem die Gemeinde angehört.vote_id: Eine eindeutige Identifikationsnummer für jede Abstimmungsvorlage bestehend aus dem Datum des Abstimmungstags und einem pro Abstimmungstag eindeutigen Kürzel.domain: Der Geltungsbereich der Abstimmung, z. B. 'federation' für nationale Abstimmungen oder 'canton' für kantonale Abstimmungen.type: Die Art der Vorlage: 'proposal' für einen Vorschlag, 'counter-proposal' für einen Gegenvorschlag oder 'tie-breaker' für eine Stichfrage.title_de_CH: Der Titel der Vorlage in deutscher Sprache.counted: Hat den Wert 'True' wenn gemeinde Ausgezählt ist.answer: Das Ergebnis der Abstimmung: 'accepted' = Vorschlag oder Gegenvorschlag angenommen, 'rejected' = Vorschlag oder Gegenvorschlag abgelehnt, 'proposal' = Stichentscheid für Vorschlag, 'counter-proposal' = Stichentscheid für Gegenvorschlag.percent_yeas: Der Prozentsatz der abgegebenen Stimmen, die für die Vorlage gestimmt haben.percent_nays: Der Prozentsatz der abgegebenen Stimmen, die gegen die Vorlage gestimmt haben.percent_turnout: Die Wahlbeteiligung, gemessen als Prozentsatz der Stimmberechtigten, die an der Abstimmung teilgenommen haben.eligible_voters: Die Anzahl der Personen, die wahlberechtigt waren.expats: Die Anzahl der stimmberechtigten Schweizer Bürger, die im Ausland leben und an der Abstimmung teilgenommen haben.empty: Die Anzahl der abgegebenen, aber leeren Stimmzettel.invalid: Die Anzahl der abgegebenen, aber ungültigen Stimmzettel.yeas: Die absolute Anzahl der Ja-Stimmen.nays: Die absolute Anzahl der Nein-Stimmen.url: Der Weblink zu den detaillierten Abstimmungsergebnissen auf wahlen.bl.ch.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/abstimmungsarchiv-nach-vorlage-gemeinde-und-datum-ab-20031)<br>
 [Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/11990/)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 11990@kanton-basel-landschaft.
 - **Organization.url** `https://www.baselland.ch`
 - **Maintainer** `Isabel Rabaglio`
 - **Maintainer_email** `wahlen-abstimmungen@bl.ch`
-- **Keywords.de** `['eidgenossische-abstimmung', 'kantonale-abstimmung', 'stimmbeteiligung', 'statistikdaten', 'stimmberechtigte', 'nein-stimmen', 'ja-stimmen']`
+- **Keywords.de** `['kantonale-abstimmung', 'statistikdaten', 'nein-stimmen', 'stimmbeteiligung', 'stimmberechtigte', 'eidgenossische-abstimmung', 'ja-stimmen']`
 - **Issued** `2023-03-22T00:00:00`
 - **Metadata_created** `2023-03-24T01:49:55.306132`
-- **Metadata_modified** `2024-08-11T04:07:27.896406`
+- **Metadata_modified** `2024-08-13T02:55:48.141610`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : 8a000992-bf87-438e-b39d-9b473579ff3a
 # Description              : Abstimmungsarchiv nach Vorlage, Gemeinde und Datum (seit 2003) (csv)
 # Issued                   : 2023-03-22T00:00:00
-# Modified                 : 2024-08-11T02:10:37.524000+00:00
+# Modified                 : 2024-08-12T10:08:44.883000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/11990/exports/csv?use_labels=true')
