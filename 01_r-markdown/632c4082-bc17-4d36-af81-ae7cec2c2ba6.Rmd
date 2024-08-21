@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-08-20"
+date: "2024-08-21"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1321@personalamt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/finanzdirektion/personalamt.html`
 - **Maintainer** `Personalamt des Kantons Zürich`
 - **Maintainer_email** `hr-controlling@pa.zh.ch`
-- **Keywords.de** `['teilzeiterwerbstaetige', 'staatspersonal', 'lohnstruktur', 'verwaltungspersonal', 'alter', 'amtlichesgeschlecht', 'beschaeftigte', 'vollzeitaequivalente', 'frauenanteil', 'ausbildung', 'beschaeftigungsgrad', 'vollzeiterwerbstaetige']`
+- **Keywords.de** `['staatspersonal', 'teilzeiterwerbstaetige', 'ausbildung', 'beschaeftigungsgrad', 'lohnstruktur', 'beschaeftigte', 'frauenanteil', 'verwaltungspersonal', 'vollzeitaequivalente', 'alter', 'amtlichesgeschlecht', 'vollzeiterwerbstaetige']`
 - **Issued** `2022-09-27T10:26:52+01:00`
 - **Metadata_created** `2022-11-15T16:14:41.486406`
-- **Metadata_modified** `2024-08-19T04:50:14.865285`
+- **Metadata_modified** `2024-08-20T04:04:18.945972`
 
 
 # Load packages
@@ -44,15 +44,6 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Anzahl Anstellungsverhältnisse per Stichtag 31. Dezember des Berichtjahres in absoluten Zahlen und in Prozent, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. Indikator 'Teilzeit' = Beschäftigungsgrad < 90%, 'Vollzeit' = Beschäftigungsgrad ≥ 90%. Variablen 'direktion_code', 'direktion_name', 'amt_bereich_code' und 'amt_bereich_name' (Code = "Amts-Nr."; sowie Name der Direktionen und Organisationseinheiten gemäss Personalamt).
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:18:26+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002560.csv')
-
-# Distribution 1
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
 # Description              : Ausgewiesen als 'Beschaeftigungsumfang'*, gegliedert nach Variablen 'direktion_code', 'direktion_name', 'amt_bereich_code' und 'amt_bereich_name' (Code = "Amts-Nr."; sowie Name der Direktionen und Organisationseinheiten gemäss Personalamt), differenziert in 'Angestellte' (= in Vollzeiteinheiten: Anstellungen gemäss Personalverordnung (PVO) und Lehrpersonen (unbefristet und befristet) und in 'Uebriges Personal' (= Mitglieder von Behörden, Lernende, Praktikanten). *Der 'Beschäftigungsumfang' einer Verwaltungseinheit umfasst die Gesamtzahl aller während eines Jahres Beschäftigten in Vollzeiteinheiten. Eine Vollzeiteinheit entspricht einer Anstellung vom 1. Januar bis 31. Dezember bei einem Beschäftigungsgrad von 100 Prozent. Aus einer Anstellung im Teilzeit-Pensum bzw. durch unterjährigen Aus-/Eintritt ergibt sich der entsprechende Anteil einer Vollzeiteinheit.
 # Issued                   : 2022-09-27T10:26:52+01:00
 # Modified                 : 2023-07-13T17:15:22+01:00
@@ -60,52 +51,7 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002559.csv')
 
-# Distribution 2
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Personalaufwand in CHF, differenziert in (1) Löhne*, (2) Zulagen*, (3) temporäre Arbeitskräfte, (4) Arbeitgeberbeiträge, (5) Arbeitgeberleistungen; (6) Aus- und Weiterbildung des Personals; (7) Personalwerbung; (8) Übriger Personalaufwand. *Löhne inkl. Zulagen gemäss Vollzugsverordnung zum Personalgesetz (VVO), § 57 c.). Variablen: 'konto_code'; 'konto_name'**; 'anmerkung'. **Werte der Variable 'konto_name': (1) Löhne ('Loehne Behoerden, Richter und Richterinnen'; 'Loehne des Verwaltungs- und Betriebspersonals'; 'Loehne der Lehrkraefte'); (2) Zulagen ('Verguetungen an Behoerden, Kommissionen, Richter' = Vergütungen für Nacht-, Sonntags-, Schicht- und Pikettdienst; 'Übrige Zulagen'); (3) 'Temporaere Arbeitskraefte'; (4) Arbeitgeberbeiträge ('AG-Beitraege AHV, IV, EO, ALV, Verwaltungskosten'; 'AG-Beitraege an andere Pensionskassen'; 'AG-Beitraege an Unfallversicherungen'; 'AG-Beitraege an Familienzulagekassen'; 'Uebrige AG-Beitraege'); (5) Arbeitgeberleistungen ('Ruhegehaelter'; 'Renten oder Rentenanteile'; 'Teuerungszulagen auf Renten und Rentenanteile'; 'Unfallrenten und Rentenabloesungen'; 'Ueberbrueckungsrenten'; 'Uebrige Arbeitgeberleistungen'); (6) 'Aus- und Weiterbildung des Personals'; (7) 'Personalwerbung'; (8) 'Uebriger Personalaufwand'.
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:13:17+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002538.csv')
-
-# Distribution 3
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Lohnaufwand in CHF ohne Sanierungsprogramme (Finanzdirektion), Berufsbildungsfonds (Bildungsdirektion) und Natur- und Heimatschutzfonds (Baudirektion). Variablen: 'direktion_code', 'direktion_name', 'amt_bereich_code', 'amt_bereich_name' = Code (Amts-Nr.) und Name der Direktionen und Organisationseinheiten gemäss Personalamt.
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:14:30+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002558.csv')
-
-# Distribution 4
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Anzahl Anstellungsverhältnisse per Stichtag 31. Dezember des Berichtjahres in absoluten Zahlen und in Prozent, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. Indikator 'Teilzeit < 50%' = Beschäftigungsgrad < 50%, 'Teilzeit ≥ 50%' = Beschäftigungsgrad ≥ 50%, 'Vollzeit' = Beschäftigungsgrad ≥ 90%.
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:18:56+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002566.csv')
-
-# Distribution 5
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Ausgewiesen als 'Beschaeftigungsumfang'*, gegliedert nach Personalgruppen gemäss den Funktionsbereichen ('funktionsbereich_name') und Funktionen ('funktion') des Personalrechts. *Der 'Beschaeftigungsumfang' einer Verwaltungseinheit umfasst die Gesamtzahl aller während eines Jahres Beschäftigten in Vollzeiteinheiten. Eine Vollzeiteinheit entspricht einer Anstellung vom 1. Januar bis 31. Dezember bei einem Beschäftigungsgrad von 100 Prozent. Aus einer Anstellung im Teilzeit-Pensum bzw. durch unterjährigen Aus-/Eintritt ergibt sich der entsprechende Anteil einer Vollzeiteinheit.
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:13:52+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002539.csv')
-
-# Distribution 6
-# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Anzahl Anstellungsverhältnisse nach 1-Jahres-Altersklassen (ab 75 Jahren = '75+') in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
-# Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:20:31+01:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002563.csv')
-
-# Distribution 7
+# Distribution 1
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
 # Description              : Anzahl Anstellungsverhältnisse nach Dienstjahren ('0' bis 'n' Jahren) in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
 # Issued                   : 2022-09-27T10:26:52+01:00
@@ -114,16 +60,16 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002564.csv')
 
-# Distribution 8
+# Distribution 2
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
-# Description              : Anzahl Anstellungsverhältnisse nach Lohnklasse ('01', '02', ..., '29'; weitere Informationen siehe Link "Kantonales Lohnsystem" in den Metadaten zum Datensatz) in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
+# Description              : Lohnaufwand in CHF ohne Sanierungsprogramme (Finanzdirektion), Berufsbildungsfonds (Bildungsdirektion) und Natur- und Heimatschutzfonds (Baudirektion). Variablen: 'direktion_code', 'direktion_name', 'amt_bereich_code', 'amt_bereich_name' = Code (Amts-Nr.) und Name der Direktionen und Organisationseinheiten gemäss Personalamt.
 # Issued                   : 2022-09-27T10:26:52+01:00
-# Modified                 : 2023-07-13T17:21:09+01:00
+# Modified                 : 2023-07-13T17:14:30+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002565.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002558.csv')
 
-# Distribution 9
+# Distribution 3
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
 # Description              : Personalgruppen/Berufsgruppen (Variable: 'ausbildung_name'): 'Lernende KV-Berufe', 'Lernende IT-Berufe', 'Lernende Betreuung', 'Lernende Handwerk und Technik', 'Andere Lernende nach BbG' (= Berufsbildungsgesetz), 'Praktikanten/Praktikantinnen', 'Studierende', 'Aspirant/in des Polizeikorps' oder 'Auditor/in'.
 # Issued                   : 2022-09-27T10:26:52+01:00
@@ -132,7 +78,43 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002562.csv')
 
-# Distribution 10
+# Distribution 4
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Personalaufwand in CHF, differenziert in (1) Löhne*, (2) Zulagen*, (3) temporäre Arbeitskräfte, (4) Arbeitgeberbeiträge, (5) Arbeitgeberleistungen; (6) Aus- und Weiterbildung des Personals; (7) Personalwerbung; (8) Übriger Personalaufwand. *Löhne inkl. Zulagen gemäss Vollzugsverordnung zum Personalgesetz (VVO), § 57 c.). Variablen: 'konto_code'; 'konto_name'**; 'anmerkung'. **Werte der Variable 'konto_name': (1) Löhne ('Loehne Behoerden, Richter und Richterinnen'; 'Loehne des Verwaltungs- und Betriebspersonals'; 'Loehne der Lehrkraefte'); (2) Zulagen ('Verguetungen an Behoerden, Kommissionen, Richter' = Vergütungen für Nacht-, Sonntags-, Schicht- und Pikettdienst; 'Übrige Zulagen'); (3) 'Temporaere Arbeitskraefte'; (4) Arbeitgeberbeiträge ('AG-Beitraege AHV, IV, EO, ALV, Verwaltungskosten'; 'AG-Beitraege an andere Pensionskassen'; 'AG-Beitraege an Unfallversicherungen'; 'AG-Beitraege an Familienzulagekassen'; 'Uebrige AG-Beitraege'); (5) Arbeitgeberleistungen ('Ruhegehaelter'; 'Renten oder Rentenanteile'; 'Teuerungszulagen auf Renten und Rentenanteile'; 'Unfallrenten und Rentenabloesungen'; 'Ueberbrueckungsrenten'; 'Uebrige Arbeitgeberleistungen'); (6) 'Aus- und Weiterbildung des Personals'; (7) 'Personalwerbung'; (8) 'Uebriger Personalaufwand'.
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2023-07-13T17:13:17+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002538.csv')
+
+# Distribution 5
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Anzahl Anstellungsverhältnisse per Stichtag 31. Dezember des Berichtjahres in absoluten Zahlen und in Prozent, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. Indikator 'Teilzeit < 50%' = Beschäftigungsgrad < 50%, 'Teilzeit ≥ 50%' = Beschäftigungsgrad ≥ 50%, 'Vollzeit' = Beschäftigungsgrad ≥ 90%.
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2023-07-13T17:18:56+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002566.csv')
+
+# Distribution 6
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Ausgewiesen als 'Beschaeftigungsumfang'*, gegliedert nach Personalgruppen gemäss den Funktionsbereichen ('funktionsbereich_name') und Funktionen ('funktion') des Personalrechts. *Der 'Beschaeftigungsumfang' einer Verwaltungseinheit umfasst die Gesamtzahl aller während eines Jahres Beschäftigten in Vollzeiteinheiten. Eine Vollzeiteinheit entspricht einer Anstellung vom 1. Januar bis 31. Dezember bei einem Beschäftigungsgrad von 100 Prozent. Aus einer Anstellung im Teilzeit-Pensum bzw. durch unterjährigen Aus-/Eintritt ergibt sich der entsprechende Anteil einer Vollzeiteinheit.
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2023-07-13T17:13:52+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002539.csv')
+
+# Distribution 7
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Anzahl Anstellungsverhältnisse nach Lohnklasse ('01', '02', ..., '29'; weitere Informationen siehe Link "Kantonales Lohnsystem" in den Metadaten zum Datensatz) in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2023-07-13T17:21:09+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002565.csv')
+
+# Distribution 8
 # Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
 # Description              : Werte der jährlichen UBS-Lohnumfragen im Vergleich zu den entsprechenden Lohnrunden des Kantons (mit Teuerung, ohne Einmalzulagen). Die Festlegungen zur Lohnentwicklung berücksichtigen die Lohnentwicklung bei Arbeitgebern mit Bedeutung für den Wirtschaftsraum Zürich (UBS-Lohnumfragen), den kantonalen Finanzhaushalt und die Vorjahres-Lohnrunden der deutschsprachigen kantonalen Verwaltungen.
 # Issued                   : 2022-09-27T10:26:52+01:00
@@ -140,6 +122,24 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002561.csv')
+
+# Distribution 9
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Anzahl Anstellungsverhältnisse per Stichtag 31. Dezember des Berichtjahres in absoluten Zahlen und in Prozent, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. Indikator 'Teilzeit' = Beschäftigungsgrad < 90%, 'Vollzeit' = Beschäftigungsgrad ≥ 90%. Variablen 'direktion_code', 'direktion_name', 'amt_bereich_code' und 'amt_bereich_name' (Code = "Amts-Nr."; sowie Name der Direktionen und Organisationseinheiten gemäss Personalamt).
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2023-07-13T17:18:26+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002560.csv')
+
+# Distribution 10
+# Package_id               : 632c4082-bc17-4d36-af81-ae7cec2c2ba6
+# Description              : Anzahl Anstellungsverhältnisse nach 1-Jahres-Altersklassen (ab 75 Jahren = '75+') in absoluten Zahlen, wobei jede Anstellung unabhängig ihres Beschäftigungsgrades voll gezählt wird. Die Anzahl Anstellungsverhältnisse ist höher als die Gesamtzahl der angestellten Personen, da eine Person mehrere Stellen innehaben kann (Mehrfachanstellung). Es werden nur die Anstellungsverhältnisse der Kategorie 'Angestellte' ausgewiesen, die Kategorie 'übriges Personal' wird in der Statistik nicht berücksichtigt. 
+# Issued                   : 2022-09-27T10:26:52+01:00
+# Modified                 : 2023-07-13T17:20:31+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001321_00002563.csv')
 
 
 

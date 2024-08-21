@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-08-21"
+output: html_document
+---
+
+## Dataset: Firmen nach Zweck, Rechtsform, NOGA-Einteilung und Standort
+
+Zentraler Firmenindex (Zefix). Tagesaktueller Auszug der im Handelsregister eingetragenen Rechtseinheiten.Die Daten werden täglich über die Zefix PublicREST API abgefragt.StatusActive = aktivBeing cancelled = in LiquidationZweckAngaben teilweise fehlend (z. B. bei Zweigniederlassungen)Allgemeine Systematik der Wirtschaftszweige (NOGA)Die NOGA-Codes und -Labels stammen aus dem Betriebs- und Unternehmensregister der Schweiz und werden über die entsprechende Schnittstelle (BurWeb API) abgefragt.Angaben teilweise fehlendNach NOGA-Code suchenGeolokalisierungsmethodenTreffer im kGWR: Die Adresse der Firma ist im kantonalen Gebäude- und Wohnungsregister erfasst.Treffer im kGWR mit angepasster Adresse: Die Adresse der Firma ist mit unterschiedlicher Strassennummer, Strassennamen, Postleitzahl oder Gemeindename im kantonalen Gebäude- und Wohnungsregister erfasst, konnte aber dennoch lokalisiert werden.Kein Treffer im kGWR: Die Adresse der Firma konnte keinem Eintrag im kantonalen Gebäude- und Wohnungsregister zugewiesen werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/firmen-nach-zweck-rechtsform-noga-einteilung-und-standort)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/12480/)
+
+Auto generated R starter code for data set 12480@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.baselland.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['verein', 'wirtschaftsabteilung', 'genossenschaft', 'standortdaten', 'gmbh', 'juristische-person', 'stiftung', 'geodaten', 'handelsregister', 'unternehmen', 'adresse', 'firmenadresse', 'adressdaten', 'noga', 'firmenverzeichnis', 'registerdaten', 'aktiengesellschaft', 'wirtschaft', 'wirtschaftsabschnitt', 'firma']`
+- **Issued** `2024-05-30T00:00:00`
+- **Metadata_created** `2024-06-07T03:22:36.005012`
+- **Metadata_modified** `2024-08-20T03:39:10.726457`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 48ac7edd-36ff-4dbe-b849-08335bc877f4
+# Description              : Firmen nach Zweck, Rechtsform, NOGA-Einteilung und Standort (csv)
+# Issued                   : 2024-05-30T00:00:00
+# Modified                 : 2024-08-19T06:04:26.221000+00:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/12480/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+zefix@bj.admin.ch | Eidgenössisches Amt für das Handelsregister

@@ -1,0 +1,102 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-08-21"
+output: html_document
+---
+
+## Dataset: (Beta) Fahrplan 2024 (NeTEx)
+
+Der Fahrplan enthält die grundlegenden topologischen, sowie die zeitlichen Element, die eine Fahrplandarstellung und -auskunft ermöglichen. Dies ist ein erster Testdatensatz in NeTEx. Er umfasst den westlichen Teil der Schweiz und beruht auf einem Schweizer Profil (s. weitere Angaben).
+
+Hinweis: die CSV Datei enthält nur eine Liste der Dateien im ZIP.
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/beta-fahrplan-2024-netex)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/timetablenetex_2024)
+
+Auto generated R starter code for data set timetablenetex_2024@oevch.
+
+## Metadata
+
+- **Publisher** `INFO+ via DIVA`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `Fachstelle Open-Data-Plattform Mobilität Schweiz`
+- **Maintainer_email** `opendata@sbb.ch`
+- **Keywords.de** `['fahrplan', 'seilbahn', 'netex', 'haltestelle', 'bus', 'fahrt', 'geschaftsorganisation', 'passagier', 'zug', 'verkehrsmittel', 'linie', 'embag', 'daten', 'mobilitatsdienstleister']`
+- **Issued** `2023-12-20T12:21:49.333919`
+- **Metadata_created** `2023-12-21T01:59:00.868145`
+- **Metadata_modified** `2024-08-21T02:21:10.874241`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
+# Description              : 
+# Issued                   : 2024-08-20T04:30:13.573218
+# Modified                 : 2024-08-20T04:30:13.573218
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/bbba996e-be6b-4f6b-934c-e1588bdbb04e/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_1_1_202407070707_readme.csv')
+
+# Distribution 1
+# Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
+# Description              : 
+# Issued                   : 2024-08-20T04:30:17.332182
+# Modified                 : 2024-08-20T04:30:17.332182
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/adcb6aa1-5196-4369-ba14-43e60c2e320f/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_1_1_202407250607_readme.csv')
+
+# Distribution 2
+# Package_id               : 8fb018cf-ad31-4527-b97d-5335dbe161de
+# Description              : 
+# Issued                   : 2024-08-20T04:30:08.492437
+# Modified                 : 2024-08-20T04:30:08.492437
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/c8dc868d-37f2-494e-8ec8-e2c9c0e2f5ce/resource/4ead8bfd-3257-4297-af24-16f6fe52422d/download/prod_netex_tt_1.10_che_ski_2024_oev-schweiz_1_1_202406200606_readme.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@sbb.ch | Open-Data-Plattform Mobilität Schweiz
