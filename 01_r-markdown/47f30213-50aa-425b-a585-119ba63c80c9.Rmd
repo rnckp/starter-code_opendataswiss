@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-08-24"
+date: "2024-08-25"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set list-sjyid@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['bus', 'zug', 'fahrt', 'proprietar', 'swiss-journey-id', 'daten', 'mobilitatsdienstleister', 'embag']`
+- **Keywords.de** `['proprietar', 'embag', 'zug', 'fahrt', 'daten', 'bus', 'swiss-journey-id', 'mobilitatsdienstleister']`
 - **Issued** `2023-12-21T07:14:42.380911`
 - **Metadata_created** `2024-01-18T01:24:19.394206`
-- **Metadata_modified** `2024-08-24T02:15:43.549262`
+- **Metadata_modified** `2024-08-25T02:03:06.858203`
 
 
 # Load packages
@@ -37,7 +37,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 9 distribution(s) in CSV format.
+-   The dataset has 10 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -54,31 +54,13 @@ df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bd
 # Distribution 1
 # Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
 # Description              : 
-# Issued                   : 2024-07-26T20:50:08.521341
-# Modified                 : 2024-07-26T20:50:08.521341
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/3585c784-2d97-4591-9b4f-2acc4fb5022f/download/listing-sjyid-fp-2024-202407262200.csv')
-
-# Distribution 2
-# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
-# Description              : 
 # Issued                   : 2024-08-02T21:00:07.263275
 # Modified                 : 2024-08-02T21:00:07.263275
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/89b5efa7-eb7c-4da7-a510-a7927411bd3d/download/listing-sjyid-fp-2024-202408022200.csv')
 
-# Distribution 3
-# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
-# Description              : 
-# Issued                   : 2024-07-24T20:50:07.248830
-# Modified                 : 2024-07-24T20:50:07.248830
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/09803a4f-25f9-4975-b70a-8d0de7ae467c/download/listing-sjyid-fp-2024-202407242200.csv')
-
-# Distribution 4
+# Distribution 2
 # Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
 # Description              : 
 # Issued                   : 2024-08-16T21:05:10.338018
@@ -86,6 +68,24 @@ df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bd
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/d1983cd3-a2b7-445f-a942-689d5209bd01/download/listing-sjyid-fp-2024-202408162200.csv')
+
+# Distribution 3
+# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
+# Description              : 
+# Issued                   : 2024-08-21T20:05:10.774236
+# Modified                 : 2024-08-21T20:05:10.774236
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/afdef960-30ec-4ed9-8f79-a30cc46f06d8/download/listing-sjyid-fp-2024-202408212200.csv')
+
+# Distribution 4
+# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
+# Description              : 
+# Issued                   : 2024-07-26T20:50:08.521341
+# Modified                 : 2024-07-26T20:50:08.521341
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/3585c784-2d97-4591-9b4f-2acc4fb5022f/download/listing-sjyid-fp-2024-202407262200.csv')
 
 # Distribution 5
 # Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
@@ -99,29 +99,38 @@ df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bd
 # Distribution 6
 # Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
 # Description              : 
+# Issued                   : 2024-08-16T09:20:36.151380
+# Modified                 : 2024-08-16T09:20:36.151380
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/02e6a4b8-01ff-41f1-b75a-7ea9c8deb39b/download/listing-sjyid-fp-2024-202408142200.csv')
+
+# Distribution 7
+# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
+# Description              : 
 # Issued                   : 2024-08-16T09:20:31.653649
 # Modified                 : 2024-08-16T09:20:31.653649
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/f788c711-cc72-47b1-a046-030e39343eab/download/listing-sjyid-fp-2024-202408072200.csv')
 
-# Distribution 7
-# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
-# Description              : 
-# Issued                   : 2024-08-21T20:05:10.774236
-# Modified                 : 2024-08-21T20:05:10.774236
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
-
-df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/afdef960-30ec-4ed9-8f79-a30cc46f06d8/download/listing-sjyid-fp-2024-202408212200.csv')
-
 # Distribution 8
 # Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
 # Description              : 
-# Issued                   : 2024-08-16T09:20:36.151380
-# Modified                 : 2024-08-16T09:20:36.151380
+# Issued                   : 2024-07-24T20:50:07.248830
+# Modified                 : 2024-07-24T20:50:07.248830
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
-df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/02e6a4b8-01ff-41f1-b75a-7ea9c8deb39b/download/listing-sjyid-fp-2024-202408142200.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/09803a4f-25f9-4975-b70a-8d0de7ae467c/download/listing-sjyid-fp-2024-202407242200.csv')
+
+# Distribution 9
+# Package_id               : 47f30213-50aa-425b-a585-119ba63c80c9
+# Description              : 
+# Issued                   : 2024-08-24T08:00:06.497414
+# Modified                 : 2024-08-24T08:00:06.497414
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/aab123ae-85e6-4b14-8bdf-cdd9d0755329/resource/4b4b97c7-6574-472d-9b32-f7bb2fcdc94c/download/listing-sjyid-fp-2024-202408232200.csv')
 
 
 

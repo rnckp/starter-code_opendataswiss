@@ -1,12 +1,13 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-08-24"
+date: "2024-08-25"
 output: html_document
 ---
 
 ## Dataset: Treibhausgasemissionen im Kanton Zürich
 
 Emissionen der wichtigsten Klimagase (CO2, CH4, N2O und synthetische Gase) im Kanton Zürich. 
+Die aufgeführten Treibhausgasemissionen sind als CO2-Äquivalente in Tonnen pro Jahr ausgewiesen und nach dem Territorialprinzip bilanziert. Das bedeutet, dass alle innerhalb des Kantons Zürich anfallenden Emissionen für die Bilanz berücksichtigt werden. 
 Die Emissionen liegen als jährliche Zeitreihe ab 1990 vor. Sie werden zudem für die fünf Hauptgruppen 'Abwasser und Abfall', 'Landwirtschaft', 'Verkehr', 'Industrie' und 'Gebäude' ausgewiesen. Bei Bedarf können sie auf differenziertere Untergruppen verfeinert werden.
 Die Emissionsdaten stammen hauptsächlich aus der jährlich nachgeführten kantonalen Bilanzierung mittels 'Ecospeed Region'. Die Emissionen aus dem Gebäudebereich stammen aus der zweijährlichen Berichterstattung zu den 'CO2-Emissionen aus dem Gebäudepark' zuhanden des Bundes.
 Detailliertere Angaben zu den Daten sind als eigene Ressource 'Datenbeschreibung Treibhausgasemissionen im Kanton Zürich' verlinkt.
@@ -23,10 +24,10 @@ Auto generated R starter code for data set 2683@awel-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-abfall-wasser-energie-luft.html`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['klima', 'emissionen']`
+- **Keywords.de** `['emissionen', 'klima']`
 - **Issued** `2024-08-21T12:40:30+01:00`
 - **Metadata_created** `2024-08-22T04:50:58.831976`
-- **Metadata_modified** `2024-08-23T03:44:22.785134`
+- **Metadata_modified** `2024-08-25T03:34:58.286158`
 
 
 # Load packages
@@ -47,9 +48,9 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : ea815911-6a15-4364-8635-f17736e071a1
-# Description              : Emissionen der wichtigsten Klimagase (CO2, CH4, N2O und synthetische Gase) im Kanton Zürich. Mehr Informationen zum Inhalt der Daten sind in der Ressource "Datenbeschreibung Treibhausgasemissionen im Kanton Zürich" enthalten.
+# Description              : Emissionen der wichtigsten Klimagase (CO2, CH4, N2O und synthetische Gase) im Kanton Zürich. Die aufgeführten Treibhausgasemissionen sind nach dem Territorialprinzip bilanziert und werden als CO2-Äquivalente in Tonnen pro Jahr ausgewiesen. Die Emissionen liegen als jährliche Zeitreihe ab 1990 vor. Mehr Informationen zum Inhalt der Daten sind in der Ressource "Datenbeschreibung Treibhausgasemissionen im Kanton Zürich" enthalten.
 # Issued                   : 2024-08-21T12:40:30+01:00
-# Modified                 : 2024-08-21T12:40:30+01:00
+# Modified                 : 2024-08-23T16:45:37+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002683_00005504.csv')
