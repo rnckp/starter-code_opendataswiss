@@ -1,12 +1,14 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-09-04"
+date: "2024-09-05"
 output: html_document
 ---
 
 ## Dataset: Leerwohnungszahlen
 
-Leerwohnungsdaten der Zürcher Gemeinden
+Leerwohnungsdaten der Gemeinden im Kanton Gemeinden. 
+
+Jährlich aktualisiert wird nur die Ressource 'Anzahl Leerwohnungen pro Gemeinde im Kanton Zürich seit 1994'. Weitere Informationen dieser Ressource finden sie in den dazugehörigen Metadaten
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/leerwohnungszahlen)<br>
 [Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/planen-bauen/raumplanung/immobilienmarkt/leerwohnungen.html)
@@ -20,10 +22,10 @@ Auto generated R starter code for data set 128@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Analysen & Studien`
 - **Maintainer_email** `basil.schlaepfer@statistik.ji.zh.ch`
-- **Keywords.de** `['leerwohnungsziffer', 'mietwohnungen', 'leerwohnungen']`
+- **Keywords.de** `['leerwohnungsziffer', 'leerwohnungen', 'mietwohnungen']`
 - **Issued** `2019-08-20T00:00:00+01:00`
 - **Metadata_created** `2021-11-24T03:43:47.206441`
-- **Metadata_modified** `2024-09-03T04:36:46.749591`
+- **Metadata_modified** `2024-09-05T03:29:29.064620`
 
 
 # Load packages
@@ -44,9 +46,9 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 1c9ea514-ae92-43d5-96da-8048d4839caf
-# Description              : Stichtag der Erhebung ist der 1. Juni, die Angaben beziehen sich auf den Gemeindestand (Variable bfs) zum Zeitpunkt der Erhebung
+# Description              : Stichtag der Erhebung ist der 1. Juni, die Angaben beziehen sich auf den Gemeindestand (Variable bfs) zum Zeitpunkt der Erhebung. Erhoben werden die Daten von den Gemeinden nach Vorgaben des BFS. Weiter Angaben zur Erhebung finden sich hier unter Methode: https://www.zh.ch/de/planen-bauen/raumplanung/immobilienmarkt/leerwohnungen.html#-291192554
 # Issued                   : 2021-11-23T11:01:23+01:00
-# Modified                 : 2024-08-14T07:47:45+01:00
+# Modified                 : 2024-09-03T17:06:34+01:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000128_00001978.csv')
