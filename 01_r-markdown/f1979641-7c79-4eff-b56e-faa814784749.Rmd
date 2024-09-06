@@ -1,0 +1,92 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-09-06"
+output: html_document
+---
+
+## Dataset: Jugendbefragung 2021 der Stadt Uster
+
+Befragung von Jugendlichen mit Wohnsitz in Uster zu den Schwerpunktthemen Social Media, Sicherheitsempfinden und Jugendgewalt im Jahr 2021.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/jugendbefragung-2021-der-stadt-uster1)<br>
+[Direct link by **Stadt Uster** for dataset](https://github.com/GesellschaftStadtUster/kind-jugend-fam_jugendbefragung2021)
+
+Auto generated R starter code for data set 1382@stadt-uster.
+
+## Metadata
+
+- **Publisher** `Stadt Uster`
+- **Organization.display_name.de** `Stadt Uster`
+- **Organization.url** `https://www.uster.ch`
+- **Maintainer** `Stadt Uster, Kindheit, Jugend und Familie`
+- **Maintainer_email** `kindheit@uster.ch`
+- **Keywords.de** `['raumentwicklung', 'beratungsangebote', 'jugendliche', 'internetnutzung', 'jugendundsport', 'jugendkriminalitaet']`
+- **Issued** `2022-05-15T00:00:00+01:00`
+- **Metadata_created** `2023-10-13T08:26:52.727512`
+- **Metadata_modified** `2024-09-05T03:38:33.320476`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f1979641-7c79-4eff-b56e-faa814784749
+# Description              : Antworten der Jugendbefragung 2021; Teilnehmende sind nach 'Alter', 'Geschlecht' und 'Schulstufe' kategorisiert.
+# Issued                   : 2022-05-15T16:00:33+01:00
+# Modified                 : 2022-05-15T16:00:33+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/GesellschaftStadtUster/kind-jugend-fam_jugendbefragung2021/main/opendata_jugendbefragung.csv')
+
+# Distribution 1
+# Package_id               : f1979641-7c79-4eff-b56e-faa814784749
+# Description              : Fragen der Jugendbefragung 2021.
+# Issued                   : 2022-05-15T16:00:18+01:00
+# Modified                 : 2022-05-15T16:00:18+01:00
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://raw.githubusercontent.com/GesellschaftStadtUster/kind-jugend-fam_jugendbefragung2021/main/variablen_fragen.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+kindheit@uster.ch | Stadt Uster, Kindheit, Jugend und Familie
