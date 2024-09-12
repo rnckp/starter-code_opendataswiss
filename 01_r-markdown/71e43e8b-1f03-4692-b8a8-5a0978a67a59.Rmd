@@ -1,0 +1,92 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-09-12"
+output: html_document
+---
+
+## Dataset: Geschäftsorganisationen mit Echtzeitdaten
+
+Die Liste enthält alle Geschäftsorganisationen, für die Echtzeitdaten zur Verfügung stehen.
+
+HINWEIS: Datensatz wurde grundlegend überarbeitet. Datensatz im alten Format wird nur noch bis Ende September 2024 publiziert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geschaftsorganisationen-mit-echtzeit)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/go-realtime)
+
+Auto generated R starter code for data set go-realtime@oevch.
+
+## Metadata
+
+- **Publisher** `FachBus SIRI-VDV`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `Fachstelle Open-Data-Plattfrm Mobilität Schweiz`
+- **Maintainer_email** `opendata@sbb.ch`
+- **Keywords.de** `['geschaftsregister', 'verkehrsunternehmen', 'on-demand-bus', 'echtzeit', 'embag', 'mobilitatsdienstleister', 'geschaftsorganisation', 'swiss-administration-id', 'transportunternehmen', 'swiss-business-organisation-id', 'proprietar', 'bus', 'daten', 'zug']`
+- **Issued** `2016-12-01T12:00:00`
+- **Metadata_created** `2017-03-02T09:12:37.744386`
+- **Metadata_modified** `2024-09-12T02:47:52.419096`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 71e43e8b-1f03-4692-b8a8-5a0978a67a59
+# Description              : Die Liste enthält alle Transportunternehmen/Geschäftsorganisationen, für die Echtzeit vorliegt.
+# Issued                   : 2024-09-11T13:52:30.206610
+# Modified                 : 2024-09-11T13:52:30.206610
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/27aba9bd-59ed-4d7c-bc71-a3813d1d1799/resource/71c9bd3f-86e3-40eb-9f7f-d62943d4da2b/download/business_organisation_realtime_2024-09-11.csv')
+
+# Distribution 1
+# Package_id               : 71e43e8b-1f03-4692-b8a8-5a0978a67a59
+# Description              : Die Liste enthält alle Transportunternehmen/Geschäftsorganisationen, für die Echtzeit vorliegt.
+# Issued                   : 2024-09-11T07:33:44.171929
+# Modified                 : 2024-09-11T07:33:44.171929
+# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
+
+df <- read_delim('https://opentransportdata.swiss/dataset/27aba9bd-59ed-4d7c-bc71-a3813d1d1799/resource/643a7c81-56ef-41c3-8dce-15fda031bf8c/download/business_organisation_realtime_2024-09-10.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+siri.vdv@sbb.ch | FachBus SIRI-VDV
