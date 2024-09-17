@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-09-16"
+date: "2024-09-17"
 output: html_document
 ---
 
@@ -28,7 +28,7 @@ Auto generated R starter code for data set tierseuchen@bundesamt-fur-lebensmitte
 - **Keywords.de** `['tierseuche', 'veterinarwesen', 'tier']`
 - **Issued** `2023-03-02T00:00:00`
 - **Metadata_created** `2023-05-05T06:30:17.188021`
-- **Metadata_modified** `2024-08-22T08:58:26.070204`
+- **Metadata_modified** `2024-09-16T07:39:35.778546`
 
 
 # Load packages
@@ -42,7 +42,7 @@ library(skimr)
 
 # Load data
 
--   The dataset has 1 distribution(s) in CSV format.
+-   The dataset has 2 distribution(s) in CSV format.
 -   All available CSV distributions are listed below and can be read into a tibble.
 
 ```{r}
@@ -55,6 +55,15 @@ library(skimr)
 # Rights                   : None
 
 df <- read_delim('https://www.infosm.blv.admin.ch')
+
+# Distribution 1
+# Package_id               : 702ddd5c-ca98-4a78-96ef-9aafdbea8f2d
+# Description              : Die Blauzungenkrankheit (Bluetongue BT) ist eine nicht ansteckende Viruserkrankung der Wiederkäuer und Kameliden, die durch stechende Insekten (Vektoren) übertragen wird. Für den Menschen ist die Krankheit nicht gefährlich.
+# Issued                   : 
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/animal_disease_notifications/disease_notifications_bluetongue_2024.csv')
 
 
 
