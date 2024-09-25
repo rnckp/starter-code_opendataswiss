@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-09-24"
+date: "2024-09-25"
 output: html_document
 ---
 
 ## Dataset: Effektiver und erwarteter täglicher Stromverbrauch
 
-Dieser Datensatz beinhaltet den täglichen Stromverbrauch sowie den mittels eines Modells berechneten, anhand des Kalendertages und der Witterung zu erwartenden Stromverbrauch.Der Stromverbrauch ist die Summe der elektrischen Energie, die im Kanton Basel-Stadt täglich aus dem Netz bezogen wird, inklusive Netzverluste. Der tägliche Stromverbrauch ergibt sich als Summe des viertelstündlich ausgewiesenen Stromverbrauchs im OGD-Datensatz 'Kantonaler Stromverbrauch' (https://data.bs.ch/explore/dataset/100233/).Lokal direkt am Ort der Produktion verbrauchte elektrische Energie (z.B. aus Photovoltaikanlagen), welche nicht ins öffentliche Netz eingespiesen wird, ist in den vorliegenden Daten nicht enthalten. Die Daten umfassen den an allen im Netz installierten fernausgelesenen Zählern gemessenen Verbrauch sowie ergänzend, da nicht 100% der Zähler fernauslesbar sind, Daten aus den ins Netz eingespeisten Strommengen.Für die Modellevaluierung wurde der Datensatz in drei Teile unterteilt. Der Trainingsdatensatz dient zum Trainieren des Modells, der Tesdatensatz zur Bewertung der Modellleistung. Der Prognosedatensatz enthält neue, unbekannte Daten zur Vorhersage durch das mit Training- und Testdatensatz trainierte Modell.Code zur Replikation:https://www.statistik.bs.ch/grundlagen/methodenberichte/stromverbrauchsprognose.html
+Dieser Datensatz beinhaltet den täglichen Stromverbrauch sowie den mittels eines Modells berechneten, anhand des Kalendertages und der Witterung zu erwartenden Stromverbrauch.Der Stromverbrauch ist die Summe der elektrischen Energie, die im Kanton Basel-Stadt täglich aus dem Netz bezogen wird, inklusive Netzverluste. Der tägliche Stromverbrauch ergibt sich als Summe des viertelstündlich ausgewiesenen Stromverbrauchs im OGD-Datensatz 'Kantonaler Stromverbrauch' (https://data.bs.ch/explore/dataset/100233/).Der Code des Modells kann selber ausgeführt und weiterentwickelt werden. Hierfür wird Renku verwendet. Renku ist eine Plattform, die verschiedene Werkzeuge für reproduzierbare und kollaborative Datenanalyseprojekte bündelt:https://renkulab.io/projects/statabs/reproducible-research/erwarteter-stromverbrauch-basel-stadt
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/effektiver-und-erwarteter-taglicher-stromverbrauch)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100245/)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 100245@kanton-basel-stadt.
 - **Organization.url** `https://www.opendata.bs.ch`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['watt', 'elektrizitat', 'stromverbrauch', 'strom', 'netzlast', 'elektro', 'stadtlast', 'kilowattstunden']`
+- **Keywords.de** `['stromverbrauch', 'netzlast', 'kilowattstunden', 'elektrizitat', 'stadtlast', 'elektro', 'strom', 'watt']`
 - **Issued** `2023-02-16T00:00:00`
 - **Metadata_created** `2023-12-20T12:01:33.484841`
-- **Metadata_modified** `2024-09-24T01:44:48.038080`
+- **Metadata_modified** `2024-09-25T02:40:44.769401`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : f2d3995c-0834-4f63-8f4e-1f5f02c4a8e6
 # Description              : Effektiver und erwarteter täglicher Stromverbrauch (csv)
 # Issued                   : 2023-02-16T00:00:00
-# Modified                 : 2024-09-24T01:16:13.196000+00:00
+# Modified                 : 2024-09-25T02:15:45.647000+00:00
 # Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceRequired
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100245/exports/csv?use_labels=true')
