@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-10-03"
+date: "2024-10-08"
 output: html_document
 ---
 
@@ -26,7 +26,7 @@ Auto generated R starter code for data set prachtsatlanten-landkarten@zb_zuerich
 - **Keywords.de** `['glam', 'openglam']`
 - **Issued** `2023-09-18T00:00:00`
 - **Metadata_created** `2023-09-19T15:48:17.204464`
-- **Metadata_modified** `2023-12-06T16:32:32.927933`
+- **Metadata_modified** `2024-10-04T06:21:21.774438`
 
 
 # Load packages
@@ -50,7 +50,7 @@ library(skimr)
 # Description              : Die csv-Datei enthält 1'880 Zeilen mit den folgenden Metadaten zu den Kartenseiten: 	• catalog_id_swisscovery 	• page_id_erara 	• erara_page_view 	• swisscovery_link 	• map_title 	• pubdate 	• pubdate_from 	• pubdate_to 	• creator 	• publisher     • reference Wenn Sie Bearbeitungen der in diesem Datenset enthaltenen Bilder veröffentlichen, geben Sie bitte pro Bild den in der Spalte "reference" enthaltenen Zitiervorschlag an.
 # Issued                   : 2023-09-18T00:00:00
 # Modified                 : 2023-09-18T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.zb.uzh.ch/sets/prachtsatlanten/glamhack23_prachtsatlanten_kartenseiten.csv')
 
@@ -59,7 +59,7 @@ df <- read_delim('https://data.zb.uzh.ch/sets/prachtsatlanten/glamhack23_prachts
 # Description              : Die csv-Datei enthält 1'931 Zeilen mit Geopunkten zu den Landkarten. Die Geopunkte-Tabelle hat mehr Zeilen als Kartenseiten vorhanden sind, da Digitalisate mit 2 und mehr Karten darauf im [Citizen Science Projekt](https://www.zb.uzh.ch/de/ueber-uns/citizen-science/prachtsatlanten-alte-landkarten-georeferenzieren) getrennt und einzeln georeferenziert wurden.  Die zugehörige Bilddatei hat jeweils die Benennung {page_id_erara}.jpg. Spaltentitel: - map_title - erara_page_view - page_id_erara - location_0 - pixel_0 ... - location_99 - pixel_99 Zu einer Pixelkoordinate gibt es jeweils eine zugehörige Geokoordinaten-Spalte. Pro Karte sind bis zu 99 Punkte vorhanden, in vielen Fällen aber auch weniger.
 # Issued                   : 2023-09-18T00:00:00
 # Modified                 : 2023-09-18T00:00:00
-# Rights                   : NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.zb.uzh.ch/sets/prachtsatlanten/glamhack23_prachtsatlanten_geopoints.csv')
 

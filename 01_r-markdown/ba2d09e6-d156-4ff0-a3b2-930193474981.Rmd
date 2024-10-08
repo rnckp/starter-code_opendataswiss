@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-10-08"
+output: html_document
+---
+
+## Dataset: Temperatur und relative Feuchtigkeit für Stadt und Region Bern
+
+Das Projekt Smart Urban Heatmap Bern stellt aktuelle und historische Messungen der Lufttemperatur- und der relative Luftfeuchtigkeit an über 100 Messtationen in der Stadt und Region Bern zur Verfügung. Gemessen wird alle 10 min. Die Daten des Messnetzes der Smart Urban Heat Map Bern können über eine REST API maschinenlesbar abgefragt werden. Diese bietet Zugang zu aktuellen Messwerten, Standortmetadaten sowie benutzerdefinierten Zeitreihen. Um die mögliche Temperaturabweichung im Fall einer direkten Sonneneinstrahlung zu verringern, werden alle Stationen vor der Messung belüftet. In einigen Fällen, insbesondere tagsüber, können die gemessenen Temperaturen jedoch immer noch etwas höher sein als die tatsächlichen Temperaturen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/temperatur-und-relative-feuchtigkeit-fur-stadt-und-region-bern)<br>
+[Direct link by **Institut Public Sector Transformation der Berner Fachhochschule** for dataset](https://meteotest.github.io/urban-heat-API-docs)
+
+Auto generated R starter code for data set aee1016a-212f-4576-be07-9b0f774ac08e@public-sector-transformation.
+
+## Metadata
+
+- **Publisher** `Institut Public Sector Transformation der Berner Fachhochschule`
+- **Organization.display_name.de** `Institut Public Sector Transformation der Berner Fachhochschule`
+- **Organization.url** `https://www.bfh.ch/de/forschung/forschungsbereiche/public-sector-transformation/`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['stadtklima', 'stadtklima', 'lokalklima', 'lokalklima', 'luftfeuchtigkeit', 'anpassung-an-den-klimawandel', 'lufttemperatur', 'wetter', 'klima']`
+- **Issued** `2023-10-09T00:00:00`
+- **Metadata_created** `2023-12-22T09:07:32.338839`
+- **Metadata_modified** `2024-10-03T19:16:42.164381`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ba2d09e6-d156-4ff0-a3b2-930193474981
+# Description              : Die Webseite zeigt eine interaktive Karte mit aktuell gemessene Lufttemperatur sowie pro Station Messreihen über die letzten zwei Tage. Über die Download-Seite können Zeitreihen der Messungen von Lufttemperatur- und relativer Luftfeuchtigkeit für individuelle Messtationen in der Stadt und Region Bern heruntergeladen werden. Die Daten sind als JSON oder als CSV verfügbar. Gemessen wird alle 10 min.
+# Issued                   : 2023-10-09T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://smart-urban-heat-map.ch/')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+jurek.mueller@bfh.ch | jurek.mueller@bfh.ch

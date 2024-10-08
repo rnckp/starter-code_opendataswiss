@@ -1,0 +1,117 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-10-08"
+output: html_document
+---
+
+## Dataset: Ladebedarf: Heimladeverfügbarkeit in der Ladewelt 'Geplant' für das Jahr 2035
+
+Die Karte zeigt je ausgewählte Gemeinde, den prozentualen Anteil an Steckerfahrzeugen (batterie-elektrische Fahrzeugen und Plug-in Hybride), die im Jahr 2035 weder zu Hause noch am Arbeitsplatz eine Lademöglichkeit haben. Weiter wird der prozentuale Anteil an Steckerfahrzeugen angegeben, die nicht zu Hause laden können (angegeben als Dezimalzahl). Die Verfügbarkeit von privaten Heimladepunkten sowie von Ladeangeboten am Arbeitsplatz hängt von verschiedenen, teils lokalen, Annahmen zur Umsetzungsstrategie ab. Um die Bandbreite möglicher Entwicklungen aufzuzeigen, wurde basierend auf gemeinsamen Branchenannahmen in der BFE-Studie «Verständnis Ladeinfrastruktur 2050» die drei Ladewelten «Bequem», «Geplant» und «Flexibel» entworfen, um zu zeigen, in welche Richtung sich die Ladeinfrastruktur in der Schweiz entwickeln könnte. In der Ladewelt «Geplant» können viele nicht zu Hause laden; sie laden vor allem an Schnelladepunkten.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ladebedarf-heimladeverfugbarkeit-in-der-ladewelt-geplant-fur-das-jahr-2035)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/ladebedarfsszenarien)
+
+Auto generated R starter code for data set 2c1a7345-fdd3-48ac-88fb-92afec7866b3@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher** `Bundesamt für Energie`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['bgdi-bundesgeodaten-infrastruktur', 'ubersichtskarte', 'gis-geografisches-informationssystem', 'verkehrsnetz', 'urbane-umwelt-urbane-belastungen', 'geographie', 'soziale-aspekte-bevolkerung', 'verkehr', 'energie', 'klima', 'allgemeine-angelegenheiten', 'wissen-wissenschaft-forschung-informationsgewinnung', 'ressourcen-ressourcennutzung', 'energie', 'verkehr', 'elektrofahrzeug', 'geographie']`
+- **Issued** `2023-12-31T00:00:00`
+- **Metadata_created** `2024-05-08T02:32:33.636609`
+- **Metadata_modified** `2024-10-04T01:24:59.860278`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 5 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 46d328fb-2099-4e78-a994-580c44403df0
+# Description              : Weiterführende Informationen: Fahrzeuge
+# Issued                   : 2023-12-31T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.bfe.ladebedarfswelt/ladebedarfswelt/ladebedarfswelt-fahrzeuge_2056.csv.zip')
+
+# Distribution 1
+# Package_id               : 46d328fb-2099-4e78-a994-580c44403df0
+# Description              : Weiterführende Informationen: Energie
+# Issued                   : 2023-12-31T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.bfe.ladebedarfswelt/ladebedarfswelt/ladebedarfswelt-energie_2056.csv.zip')
+
+# Distribution 2
+# Package_id               : 46d328fb-2099-4e78-a994-580c44403df0
+# Description              : Weiterführende Informationen: Ladeverfügbarkeit
+# Issued                   : 2023-12-31T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.bfe.ladebedarfswelt/ladebedarfswelt/ladebedarfswelt-verfuegbarkeit_2056.csv.zip')
+
+# Distribution 3
+# Package_id               : 46d328fb-2099-4e78-a994-580c44403df0
+# Description              : Weiterführende Informationen: Ladepunkte
+# Issued                   : 2023-12-31T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.bfe.ladebedarfswelt/ladebedarfswelt/ladebedarfswelt-ladepunkte_2056.csv.zip')
+
+# Distribution 4
+# Package_id               : 46d328fb-2099-4e78-a994-580c44403df0
+# Description              : Weiterführende Informationen: Weitere
+# Issued                   : 2023-12-31T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.bfe.ladebedarfswelt/ladebedarfswelt/ladebedarfswelt-weitere_2056.csv.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+geoinformation@bfe.admin.ch | geoinformation@bfe.admin.ch
