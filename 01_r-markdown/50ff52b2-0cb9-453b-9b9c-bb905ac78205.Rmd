@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-11-12"
+date: "2024-11-13"
 output: html_document
 ---
 
 ## Dataset: Messdaten zu ultrafeinen Partikeln in Kloten: Anzahl-Grössenverteilungen, Luftschadstoffe und Meteorologie
 
-Dieser Datensatz ist das Ergebnis einer Luftqualitäts-Messkampagne von OSTLUFT in den Jahren 2020 bis 2023, durchgeführt in der Stadt Kloten im Kanton Zürich. OSTLUFT ist die Luftqualitätsüberwachung der Ostschweizer Kantone und des Fürstentums Liechtenstein. Westlich von Kloten liegt der Flughafen Zürich-Kloten. Gleichzeitig gibt es in der Gegend auch hohe Strassenverkehrsaufkommen. Beides sind wichtige Quellen für ultrafeine Partikel (d.h., Aerosolpartikel mit einem Durchmesser kleiner als 100 nm). Mit Hilfe der erhobenen Messdaten kann die Frage beantwortet werden, wie sehr Luft- und Strassenverkehr in Kloten das Vorkommen und die Dynamik von ultrafeinen Partikeln am Messort beeinflussen. Dafür wurden mit einer Luftqualitäts-Messstation verschiedene Luftschadstoffe, meteorologische Parameter und die Anzahl-Grössenverteilungen ultrafeiner Partikel gemessen. Details zum Messort, zu den verwendeten Methoden, Messgrössen sowie der zeitlichen Datenabdeckung sind dem beigefügten Datensatzbeschrieb und dem verlinkten Fachbericht von OSTLUFT zu entnehmen.
+Dieser Datensatz ist das Ergebnis einer Luftqualitäts-Messkampagne von Ostluft in den Jahren 2020 bis 2023, durchgeführt in der Stadt Kloten im Kanton Zürich. Ostluft ist die Luftqualitätsüberwachung der Ostschweizer Kantone und des Fürstentums Liechtenstein. Westlich von Kloten liegt der Flughafen Zürich-Kloten. Gleichzeitig gibt es in der Gegend auch hohe Strassenverkehrsaufkommen. Beides sind wichtige Quellen für ultrafeine Partikel (d.h., Aerosolpartikel mit einem Durchmesser kleiner als 100 nm). Mit Hilfe der erhobenen Messdaten kann die Frage beantwortet werden, wie sehr Luft- und Strassenverkehr in Kloten das Vorkommen und die Dynamik von ultrafeinen Partikeln am Messort beeinflussen. Dafür wurden mit einer Luftqualitäts-Messstation verschiedene Luftschadstoffe, meteorologische Parameter und die Anzahl-Grössenverteilungen ultrafeiner Partikel gemessen. Details zum Messort, zu den verwendeten Methoden, Messgrössen sowie der zeitlichen Datenabdeckung sind dem beigefügten Datensatzbeschrieb und dem verlinkten Fachbericht von Ostluft zu entnehmen.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/messdaten-zu-ultrafeinen-partikeln-in-kloten-anzahl-grossenverteilungen-luftschadstoffe-und-met)<br>
 [Direct link by **Amt für Abfall, Wasser, Energie und Luft Kanton Zürich** for dataset](https://www.ostluft.ch)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 2383@awel-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-abfall-wasser-energie-luft.html`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['luftqualitaet', 'luftschadstoffe', 'feinstaub', 'strassenverkehr', 'flugverkehr']`
+- **Keywords.de** `['strassenverkehr', 'luftschadstoffe', 'luftqualitaet', 'flugverkehr', 'feinstaub']`
 - **Issued** `2024-07-31T09:03:23+01:00`
 - **Metadata_created** `2024-08-01T04:22:50.284989`
-- **Metadata_modified** `2024-11-11T04:48:46.812659`
+- **Metadata_modified** `2024-11-12T03:52:52.342245`
 
 
 # Load packages
@@ -64,21 +64,12 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Package_id               : 50ff52b2-0cb9-453b-9b9c-bb905ac78205
 # Description              : Informationen zum Datensatz siehe Datensatzbeschrieb
 # Issued                   : 2024-07-31T09:03:23+01:00
-# Modified                 : 2024-08-26T15:27:21+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002383_00005467.csv')
-
-# Distribution 3
-# Package_id               : 50ff52b2-0cb9-453b-9b9c-bb905ac78205
-# Description              : Informationen zum Datensatz siehe Datensatzbeschrieb
-# Issued                   : 2024-07-31T09:03:23+01:00
 # Modified                 : 2024-07-31T09:03:23+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002383_00005471.csv')
 
-# Distribution 4
+# Distribution 3
 # Package_id               : 50ff52b2-0cb9-453b-9b9c-bb905ac78205
 # Description              : Informationen zum Datensatz siehe Datensatzbeschrieb
 # Issued                   : 2024-07-31T09:03:23+01:00
@@ -87,7 +78,7 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002383_00005465.csv')
 
-# Distribution 5
+# Distribution 4
 # Package_id               : 50ff52b2-0cb9-453b-9b9c-bb905ac78205
 # Description              : Informationen zum Datensatz siehe Datensatzbeschrieb
 # Issued                   : 2024-07-31T09:03:23+01:00
@@ -95,6 +86,15 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002383_00005466.csv')
+
+# Distribution 5
+# Package_id               : 50ff52b2-0cb9-453b-9b9c-bb905ac78205
+# Description              : Informationen zum Datensatz siehe Datensatzbeschrieb
+# Issued                   : 2024-07-31T09:03:23+01:00
+# Modified                 : 2024-08-26T15:27:21+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002383_00005467.csv')
 
 # Distribution 6
 # Package_id               : 50ff52b2-0cb9-453b-9b9c-bb905ac78205
