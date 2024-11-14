@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-11-13"
+date: "2024-11-14"
 output: html_document
 ---
 
 ## Dataset: Fluglärmmonitoring Hinterthurgau (Balterswil TG) ab 2011
 
-Der vorliegende Datensatz beinhaltet die Resultate des Fluglärmmonitorings Hinterthurgau für die zweite Nachtstunde (23-24 Uhr, inkl. Flügen während des Nachtflugverbots zwischen 24 und 05 Uhr). Weil der Kanton Thurgau im An- und Abflugbereich des Flughafens Zürich liegt, hat das kantonale Departement für Bau und Umwelt die Sinus Engineering AG mit diesem lokalen Fluglärmmonitoring beauftragt. Die Messstation steht neben einer Wohnzone in Balterswil (TG).
+Der vorliegende Datensatz beinhaltet die Resultate des Fluglärmmonitorings Hinterthurgau.Die Daten wurden bisher pro Zeitintervall einzeln veröffentlicht und sin nun in diesem Datensatz zusammengefasst.Weil der Kanton Thurgau im An- und Abflugbereich des Flughafens Zürich liegt, hat das kantonale Departement für Bau und Umwelt die Sinus Engineering AG mit diesem lokalen Fluglärmmonitoring beauftragt. Die Messstation steht neben einer Wohnzone in Balterswil (TG).
 
 Ausgewertet werden die Tagesstunden von 6 bis 22 Uhr (Tag), die sensiblen Nachtstunden von 22 bis 24 Uhr (1. Nachtstunde und 2. Nachtstunde) sowie der frühe Morgen von 5 bis 6 Uhr (letzte Nachtstunde). Die Lärmmessungen unterstützen die Behörden in den verschiedenen Verfahren rund um den Betrieb des Flughafens Zürich und dienen den Lärmbetroffenen als Information. Die Messungen werden monatlich auf https://dbu.tg.ch unter Downloads publiziert und in einem Jahresbericht zusammengefasst.Hinweise:Werte für die Tagesstunden (6 bis 22 Uhr) und für die letzte Nachtstunde (5 bis 6 Uhr) werden erst ab November 2020 veröffentlicht. Fehlende Messwerte können mehrere Gründe haben. In der Spalte Bemerkung sind diese angegeben. Sie lauten generell: Ungültig wegen Fremdlärm, Ungültig wegen Windeinfluss, Ungültig wegen TechnikDes Weiteren gilt zu beachten, dass Werte in der Spalte leq_gesamtlärm durch Fremdlärm oder Windgeräusche an diesem Tag stark beeinflusst sein können und in den PDF Berichten daher nicht in der Monatsmittelwertbildung berücksichtigt werden. Derzeit ist es technisch nicht möglich, diese Werte in den OGD-Daten zu kennzeichnen, weshalb zur Überprüfung die Berichte unter https://dbu.tg.ch/downloads-services/fluglaermmonitoring.html/1452 beachtet werden müssen.
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set dbu-gs-2@kanton-thurgau.
 - **Organization.url** `https://ogd.tg.ch`
 - **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
 - **Maintainer_email** `ogd@tg.ch`
-- **Keywords.de** `['balterswil', 'umweltschutz', 'larmschutz', 'monitoring', 'fluglarm', 'hinterthurgau', 'larmschutzverordnung', 'fluglarmmonitoring', 'dezibel']`
+- **Keywords.de** `['umweltschutz', 'balterswil', 'fluglarmmonitoring', 'monitoring', 'hinterthurgau', 'larmschutzverordnung', 'dezibel', 'fluglarm', 'larmschutz']`
 - **Issued** `2019-06-16T00:00:00`
 - **Metadata_created** `2022-02-28T11:05:03.991079`
-- **Metadata_modified** `2024-11-12T11:20:18.589075`
+- **Metadata_modified** `2024-11-13T11:22:22.690949`
 
 
 # Load packages
@@ -48,7 +48,7 @@ library(skimr)
 # Package_id               : a9f04bcc-d176-471a-8e5f-98fd3043ed4f
 # Description              : Fluglärmmonitoring Hinterthurgau (Balterswil TG) ab 2011 (csv)
 # Issued                   : 2019-06-16T00:00:00
-# Modified                 : 2024-11-12T10:58:14.534000+00:00
+# Modified                 : 2024-11-13T08:26:23.431000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/dbu-gs-2/exports/csv?use_labels=true')
