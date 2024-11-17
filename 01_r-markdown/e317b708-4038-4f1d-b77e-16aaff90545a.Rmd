@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-11-17"
+output: html_document
+---
+
+## Dataset: Abstimmung vom 12. März 2023 Details
+
+Dieser Datensatz zeigt die Resultate der Volksabstimmung vom 12. März 2023 für den Kanton Basel-Stadt auf Ebene Wahllokal.Bitte beachten Sie, dass die offiziell gültigen Schlussresultate im Kantonsblatt des Kantons Basel-Stadt publiziert werden. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/abstimmung-vom-12-marz-2023-details)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100279/)
+
+Auto generated R starter code for data set 100279@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Staatskanzlei`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['teilhabe', 'wahlen', 'abstimmung', 'demokratie']`
+- **Issued** `2023-03-11T00:00:00`
+- **Metadata_created** `2023-03-13T00:29:14.794295`
+- **Metadata_modified** `2024-11-15T01:53:24.002758`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e317b708-4038-4f1d-b77e-16aaff90545a
+# Description              : Abstimmung vom 12. März 2023 Details (csv)
+# Issued                   : 2023-03-11T00:00:00
+# Modified                 : 2024-05-23T15:24:46.445000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100279/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

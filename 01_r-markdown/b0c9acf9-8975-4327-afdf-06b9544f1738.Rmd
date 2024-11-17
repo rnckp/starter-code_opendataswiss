@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-11-17"
+output: html_document
+---
+
+## Dataset: Empfohlene Schwimmbereiche im Rhein
+
+Der Datensatz enthält die empfohlenen Schwimmbereiche im Rhein.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/empfohlene-schwimmbereiche-im-rhein)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100270/)
+
+Auto generated R starter code for data set 100270@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Kantonspolizei`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['bachab', 'bachapp', 'treiben', 'rhein', 'schwimmen', 'schifffahrt', 'schwimmzone', 'paddeln', 'baden', 'sport', 'fluss', 'schiff', 'stand-up-paddeln', 'sup', 'boot']`
+- **Issued** `2023-05-15T00:00:00`
+- **Metadata_created** `2023-05-16T00:28:04.921614`
+- **Metadata_modified** `2024-11-17T01:20:05.673734`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b0c9acf9-8975-4327-afdf-06b9544f1738
+# Description              : Empfohlene Schwimmbereiche im Rhein (csv)
+# Issued                   : 2023-05-15T00:00:00
+# Modified                 : 2023-04-14T07:39:38.684000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100270/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-11-17"
+output: html_document
+---
+
+## Dataset: Coronavirus (COVID-19): Fallzahlen Basel-Stadt
+
+Anzahl Fälle der Coronavirus-Krankheit (COVID-19) in Basel-Stadt. Die Daten wurden zu Beginn der Pandemie durch Mitarbeiter der Fachstelle OGD Basel-Stadt von Hand aus öffentlich zugänglichen offiziellen Quellen eingetippt. Später wurden die Daten aus den Bulletins des Gesundheitsdepartements Basel-Stadt automatisiert ausgelesen. Mittlerweile stammen die Angaben direkt von den medizinischen Diensten des Gesundheitsdepartements Basel-Stadt.Die Quellenangabe der jeweiligen Zahlen sind direkt der Tabelle zu entnehmen. Die offiziellen Daten aller Kantone und des Fürstentums Liechtenstein (FL) sind hier zu finden: Interaktives Dashboard der Zahlen aller Kantone: [https://data.bs.ch/pages/covid-19-dashboard/](https://data.bs.ch/pages/covid-19-dashboard/)Alle Kantone und FL in einem File: [https://github.com/openZH/covid_19/blob/master/COVID19_Fallzahlen_CH_total_v2.csv](https://github.com/openZH/covid_19/blob/master/COVID19_Fallzahlen_CH_total_v2.csv)Ein File pro Kanton (z.T. sind in den einzelnen Files zusätzliche Spalten vorhanden gegenüber dem gesamtschweizerischen File): [https://github.com/openZH/covid_19/tree/master/fallzahlen_kanton_total_csv_v2](https://github.com/openZH/covid_19/tree/master/fallzahlen_kanton_total_csv_v2)[](https://github.com/openZH/covid_19/tree/master/fallzahlen_kanton_total_csv_v2)Informationen zu den durchgeführten Tests auf täglicher Basis gemäss Bundesamt für Gesundheit (BAG) finden sich neu in diesem Datensatz: [https://data.bs.ch/explore/dataset/100094/](https://data.bs.ch/explore/dataset/100094/)Daten zu Todesfällen von Personen mit SARS-CoV-2 mit Wohnsitz in Basel-Stadt sind in diesem Datensatz zu finden: [https://data.bs.ch/explore/dataset/100076/](https://data.bs.ch/explore/dataset/100076/)[](https://data.bs.ch/explore/dataset/100076////)Daten zu den 7- und 14-Tages Inzidenzen sowie den Fallzahlen pro Gemeinde (Basel, Riehen, Bettingen) sind in diesem Datensatz: [https://data.bs.ch/explore/dataset/100108/](https://data.bs.ch/explore/dataset/100108/)Änderungsprotokoll:Ab dem 5.11.2020 wurden keine Angaben mehr zu positiv getesteten Personen mit Wohnsitz ausserhalb des Kantons Basel-Stadt gemacht. Dies, weil die Tests mittlerweile durch eine grössere Anzahl Laboratorien durchgeführt wurden und nicht mehr alle Resultate der ausserkantonalen und internationalen Fälle dem kantonsärztlichen Dienst Basel-Stadt gemeldet wurden.Ab 18.6.2022 wurden am Samstag und Sonntag keine neuen Daten in diesen Datensatz publiziert. Ab 1. Februar 2023 wurden die Daten jeweils am Dienstag und am Freitag aktualisiert.Ab 4. April 2023 werden die Daten jeweils am Dienstag aktualisiert. Die Daten werden somit einmal wöchentlich aktualisiert.Die Erhebung der Fallzahlen wurde per 5. Juli 2023 sistiert. Der Datensatz wird nicht mehr aktualisiert. Aktualisierungsintervall von 'DAILY' auf 'NEVER' geändert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/coronavirus-covid-19-fallzahlen-basel-stadt)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100073/)
+
+Auto generated R starter code for data set 100073@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher** `Fachstelle für OGD Basel-Stadt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://www.opendata.bs.ch`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['pandemie', 'krankheit', 'todesfalle', 'quarantane', 'lungenentzundung', 'virus', 'coronavirus', 'corona', 'covid-19', 'spital']`
+- **Issued** `2020-04-06T00:00:00`
+- **Metadata_created** `2023-07-04T12:34:35.046145`
+- **Metadata_modified** `2024-11-15T01:42:32.177895`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 42b62a59-b598-4ebb-9095-91ed90c169ca
+# Description              : Coronavirus (COVID-19): Fallzahlen Basel-Stadt (csv)
+# Issued                   : 2020-04-06T00:00:00
+# Modified                 : 2023-07-05T07:40:31.547000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100073/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Fachstelle für OGD Basel-Stadt
