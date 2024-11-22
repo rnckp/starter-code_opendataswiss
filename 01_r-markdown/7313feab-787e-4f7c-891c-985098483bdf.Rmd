@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-11-21"
+date: "2024-11-22"
 output: html_document
 ---
 
@@ -8,7 +8,16 @@ output: html_document
 
 Dieser Datensatz enthält Informationen über die Rollstuhlzugänglichkeit pro Haltestelle und Haltekante, auf Basis der Fahrplandaten aus INFO+ und der BehiG-Bestandsaufnahme. Ausserdem enthalten ist die Zugänglichkeit für eine kleine Menge von Fahrzeugen, inklusive einer Erklärung wie diese bewertet wurden.
 
-Die Daten sind die Basis für ein barrierefreies Reisen (BfR) und vereinfachen die Berechnung von Rollstuhlsymbolen, entsprechend der in Richtlinie V580 (Produkt 02) geforderten Granularität.
+Die Daten sind die Basis für barrierefreies Reisen (BfR) und vereinfachen die Berechnung von Rollstuhlsymbolen, entsprechend der in Richtlinie V580 (Produkt 02) geforderten Granularität.
+
+Achtung:
+Seit 18. November 2024 werden die Rollstuhlzugänglichkeiten von Haltestellen oder Haltekanten in der Datei BfR_Haltestellendaten.csv mit Gültigkeiten versehen. Das heisst, jeder Eintrag enthält zusätzlich die zwei Spalten 'gültigVon' und 'gültigBis', welche festlegen, wie lange die fragliche Zugänglichkeit gültig ist. Dies bedeutet auch, dass für eine bestimmte Haltestelle oder Haltekante mehrere Einträge vorhanden sein können mit unterschiedlichen Zugänglichkeiten und Gültigkeiten. Ein Beispiel soll dies veranschaulichen, wobei der Einfachheit halber nicht alle Spalten aufgeführt werden:
+DIDOK      Name             sg_Autonomie  ug_Ersatztransport   sloid     gültigVon   gültigBis
+8503059    Zürich Stadelhofen, Bahnhof   1     0     ch:1:sloid:3059::1      18.11.2024  15.12.2024
+8503059    Zürich Stadelhofen, Bahnhof   0     1     ch:1:sloid:3059::1      16.12.2024  14.05.2025
+
+In diesem konstruierten Beispiel ist die Haltekante mit SwissLocationId 'ch:1:sloid:3059::1' bis 15. Dezember autonom zugänglich, aber aufgrund einer Baustelle ab dem 16. Dezember für Fahrgäste im Rollstuhl nur noch mittels Ersatz-Shuttle erreichbar.
+
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bfr-rollstuhlzuganglichkeit)<br>
 [Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://opentransportdata.swiss/dataset/bfr-rollstuhl)
@@ -22,10 +31,10 @@ Auto generated R starter code for data set bfr-rollstuhl@oevch.
 - **Organization.url** `https://www.opentransportdata.swiss`
 - **Maintainer** `SKI Fachstelle BehiG`
 - **Maintainer_email** `behig.ski@sbb.ch`
-- **Keywords.de** `['zug', 'passagier', 'behig', 'daten', 'haltekante', 'bus', 'rollstuhlfahrer', 'rollstuhlzuganglichkeit', 'verkehrsmittel', 'proprietar', 'haltestelle']`
+- **Keywords.de** `['rollstuhlfahrer', 'rollstuhlzuganglichkeit', 'behig', 'verkehrsmittel', 'haltekante', 'bus', 'daten', 'haltestelle', 'passagier', 'zug', 'proprietar']`
 - **Issued** `2023-06-15T11:01:51.704407`
 - **Metadata_created** `2023-12-13T02:42:48.278807`
-- **Metadata_modified** `2024-11-21T02:07:46.783720`
+- **Metadata_modified** `2024-11-22T02:08:00.164773`
 
 
 # Load packages
@@ -47,29 +56,29 @@ library(skimr)
 # Distribution 0
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-11-19T03:20:09.773509
-# Modified                 : 2024-11-19T03:20:09.773509
+# Issued                   : None
+# Modified                 : None
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/8c61a25c-fe79-4026-ba96-352913b4c04a/download/bfr_fahrzeugmapping.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/92b4009f-8e27-4d17-bc0e-59f220989e57/download/bfr_fahrzeugmapping.csv')
 
 # Distribution 1
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-11-19T03:20:11.361973
-# Modified                 : 2024-11-19T03:20:11.361973
+# Issued                   : 2024-11-21T03:15:13.020468
+# Modified                 : 2024-11-21T03:15:13.020468
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/055074e7-b501-43cb-99ad-c37b5b304063/download/bfr_haltestellendaten.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/4db0b166-c9b9-46e0-9abb-11ae743cccaa/download/bfr_haltestellendaten.csv')
 
 # Distribution 2
 # Package_id               : 7313feab-787e-4f7c-891c-985098483bdf
 # Description              : 
-# Issued                   : 2024-11-19T03:20:12.345790
-# Modified                 : 2024-11-19T03:20:12.345790
+# Issued                   : 2024-11-21T03:15:13.867667
+# Modified                 : 2024-11-21T03:15:13.867667
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/e6bbd9d9-e3cd-4db4-bc00-1032c40ae7b0/download/bfr_kombinationslogik.csv')
+df <- read_delim('https://opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/9602316a-5fb9-4b9a-910e-13496fa9eac2/download/bfr_kombinationslogik.csv')
 
 
 
