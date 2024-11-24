@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-11-23"
+date: "2024-11-24"
 output: html_document
 ---
 
@@ -23,7 +23,7 @@ Auto generated R starter code for data set 2522@statistisches-amt-kanton-zuerich
 - **Keywords.de** `[]`
 - **Issued** `2024-01-26T11:21:12+01:00`
 - **Metadata_created** `2024-01-30T03:57:26.805477`
-- **Metadata_modified** `2024-11-22T04:02:33.505870`
+- **Metadata_modified** `2024-11-23T04:04:36.511509`
 
 
 # Load packages
@@ -44,23 +44,14 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 4e32650d-3d84-463e-b9fb-fd18d9105553
-# Description              : Zeigt die Anzahl Klicks auf die 'Herunterladen' oder 'Konvertiere zu Excel' Schaltflächen und die Anzahl Besuchenden welche mindestens einen Klick auf die 'Herunterladen' oder 'Konvertiere zu Excel' Schaltfläche pro Ressource und Tag gemacht haben. 'Ressource' entspricht 'distribution' nach DCAP-AP CH. Zusätzlich wird die Anzahl Downloads (wie oft die Ressource aufgerufen wurde) ausgewiesen. In der Regel sollte die Anzahl Downloads immer höher oder gleich als die Anzahl Klicks auf die Schaltflächen im Datenkatalog sein. Da aber im Zeitraum von September 2023 bis heute aus nicht bekannten Gründen, nicht alle Zugriffe detektiert werden, sind die Zahlen zu den Downloads in diesem Zeitraum nicht abschliessend. Die Anzahl Downloads von Ressourcen, welche nicht auf unserem Webserver gespeichert sind, werden nicht gezählt und ist der Grund warum es bei den Anzahl Downloads zu leeren Werten kommen kann.
-# Issued                   : 2024-01-26T00:00:00+01:00
+# Description              : Zeigt die Anzahl Klicks und Besuchende pro verwandten Datensatz und Tag. 'Datensatz' entspricht 'dataset' nach DCAP-AP CH. Die Merkmale 'datensatz_id' und 'datensatz_titel' zeigen, von welchem Datensatz aus der Klick auf den verwandten Datensatz erfolgte. 
+# Issued                   : 2024-01-26T09:52:45+01:00
 # Modified                 : 2024-11-21T03:49:19+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005043.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005044.csv')
 
 # Distribution 1
-# Package_id               : 4e32650d-3d84-463e-b9fb-fd18d9105553
-# Description              : Zeigt die Anzahl Klicks und Besuchende pro Datensatz und Tag.  'Datensatz' entspricht 'dataset' nach DCAP-AP CH.
-# Issued                   : 2024-01-26T00:00:00+01:00
-# Modified                 : 2024-11-21T03:49:16+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005024.csv')
-
-# Distribution 2
 # Package_id               : 4e32650d-3d84-463e-b9fb-fd18d9105553
 # Description              : Zeigt die Anzahl Klicks und Besuchende der Informationsseite der Ressourcen (Klick auf "Details anzeigen") pro Ressource und Tag. 'Ressource' entspricht 'distribution' nach DCAP-AP CH.
 # Issued                   : 2024-01-26T09:53:13+01:00
@@ -69,14 +60,23 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005023.csv')
 
+# Distribution 2
+# Package_id               : 4e32650d-3d84-463e-b9fb-fd18d9105553
+# Description              : Zeigt die Anzahl Klicks und Besuchende pro Datensatz und Tag.  'Datensatz' entspricht 'dataset' nach DCAP-AP CH.
+# Issued                   : 2024-01-26T00:00:00+01:00
+# Modified                 : 2024-11-21T03:49:16+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005024.csv')
+
 # Distribution 3
 # Package_id               : 4e32650d-3d84-463e-b9fb-fd18d9105553
-# Description              : Zeigt die Anzahl Klicks und Besuchende pro verwandten Datensatz und Tag. 'Datensatz' entspricht 'dataset' nach DCAP-AP CH. Die Merkmale 'datensatz_id' und 'datensatz_titel' zeigen, von welchem Datensatz aus der Klick auf den verwandten Datensatz erfolgte. 
-# Issued                   : 2024-01-26T09:52:45+01:00
+# Description              : Zeigt die Anzahl Klicks auf die 'Herunterladen' oder 'Konvertiere zu Excel' Schaltflächen und die Anzahl Besuchenden welche mindestens einen Klick auf die 'Herunterladen' oder 'Konvertiere zu Excel' Schaltfläche pro Ressource und Tag gemacht haben. 'Ressource' entspricht 'distribution' nach DCAP-AP CH. Zusätzlich wird die Anzahl Downloads (wie oft die Ressource aufgerufen wurde) ausgewiesen. In der Regel sollte die Anzahl Downloads immer höher oder gleich als die Anzahl Klicks auf die Schaltflächen im Datenkatalog sein. Da aber im Zeitraum von September 2023 bis heute aus nicht bekannten Gründen, nicht alle Zugriffe detektiert werden, sind die Zahlen zu den Downloads in diesem Zeitraum nicht abschliessend. Die Anzahl Downloads von Ressourcen, welche nicht auf unserem Webserver gespeichert sind, werden nicht gezählt und ist der Grund warum es bei den Anzahl Downloads zu leeren Werten kommen kann.
+# Issued                   : 2024-01-26T00:00:00+01:00
 # Modified                 : 2024-11-21T03:49:19+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005044.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002522_00005043.csv')
 
 
 
