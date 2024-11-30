@@ -1,0 +1,94 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-11-30"
+output: html_document
+---
+
+## Dataset: Überbaute Fläche pro Person
+
+Überbaute Fläche pro Person aller Schweizer Kantone, 2018.
+
+Die überbaute Fläche ist in Hektar, die überbaute Fläche pro Person in m² angegeben. Die überbaute Fläche pro Person zeigt die bauliche Verdichtung nach Kantonen an (je niedriger, desto verdichteter). Die überbaute Fläche wird ermittelt, indem die Summe aus Industrie- und Gewerbearealen, Gebäudearealen, Verkehrsflächen und besonderen Siedlungsflächen in m² durch die ständige Wohnbevölkerung geteilt wird.
+
+(QUELLE: Bundesamt für Statistik, Arealstatistik und STATPOP)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/uberbaute-flache-pro-person)<br>
+[Direct link by **Kanton Zug** for dataset](https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/themen/raum-und-umwelt/raum)
+
+Auto generated R starter code for data set 9ea4d28a-59f1-47e2-8043-0d8956705950@kanton-zug.
+
+## Metadata
+
+- **Publisher** ``
+- **Organization.display_name.de** `Kanton Zug`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gewerbeareale', 'verkehrsflachen', 'gebaudeareale', 'siedlungsflachen']`
+- **Issued** `2024-08-20T00:00:00`
+- **Metadata_created** `2024-11-29T12:18:31.089244`
+- **Metadata_modified** `2024-11-29T12:18:31.089255`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 99fb7f39-0e33-48a0-b6db-d66b03d46b69
+# Description              : 
+# Issued                   : None
+# Modified                 : 2024-10-15T12:14:22.537000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.zg.ch/store/1/resource/277')
+
+# Distribution 1
+# Package_id               : 99fb7f39-0e33-48a0-b6db-d66b03d46b69
+# Description              : 
+# Issued                   : None
+# Modified                 : 2024-10-15T12:14:23.342000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.zg.ch/store/1/resource/1341')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zg.ch | Open Data Zug

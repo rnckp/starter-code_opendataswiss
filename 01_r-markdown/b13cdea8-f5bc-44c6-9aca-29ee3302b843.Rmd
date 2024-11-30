@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-11-30"
+output: html_document
+---
+
+## Dataset: Tagesdistanzen pro Person
+
+Durchschnittlich zurückgelegte Tagesdistanz (m) pro Person, Kanton Zug, 2000 bis 2021.
+
+Da der Mikrozensus eine Stichprobe ist, sind die durchschnittlich zurückgelegten Distanzen von Unsicherheit behaftet. Darum wurde um die geschätzten durchschnittlichen Distanzen ein 90%-Vertrauensintervall gebildet, in welchem der tatsächliche Wert mit hoher Wahrscheinlichkeit liegt. Dafür wurde der gewichtete Standardfehler der Stichprobe zu der gewichteten, durchschnittlichen Tagesdistanz addiert, beziehungsweise von dieser subtrahiert.
+
+(QUELLE: Bundesamt für Statistik, Mikrozensus Mobilität und Verkehr)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/tagesdistanzen-pro-person)<br>
+[Direct link by **Kanton Zug** for dataset](https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/themen/11-mobilitaet-und-verkehr/verkehr-1)
+
+Auto generated R starter code for data set 977fdbcf-b60c-4be9-920c-2d4f9be4a741@kanton-zug.
+
+## Metadata
+
+- **Publisher** ``
+- **Organization.display_name.de** `Kanton Zug`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['mobilitat']`
+- **Issued** `2024-08-21T00:00:00`
+- **Metadata_created** `2024-11-29T12:17:27.982726`
+- **Metadata_modified** `2024-11-29T12:17:27.982734`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b13cdea8-f5bc-44c6-9aca-29ee3302b843
+# Description              : 
+# Issued                   : None
+# Modified                 : 2024-10-03T15:07:02.831000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.zg.ch/store/1/resource/547')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zg.ch | Open Data Zug
