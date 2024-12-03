@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-12-03"
+output: html_document
+---
+
+## Dataset: Szenarien zur Bevölkerungsentwicklung der Luzerner Gemeinden
+
+Die LUSTAT-Bevölkerungsszenarien für den Kanton Luzern sind Modellberechnungen, welche die Entwicklung der ständigen Wohnbevölkerung auf kommunaler Ebene fortschreiben. Für die Szenarien wurden jeweils drei Varianten berechnet, welche sich in den zugrundeliegenden Hypothesen unterscheiden. Sie berücksichtigen Modellannahmen, welche auf demografischen und sozioökonomischen Trends der letzten Jahrzehnte beruhen. Das Berechnungsjahr der, bei den Berechnungen zugrundeliegenden, Kennziffern entspricht dem Jahr 2023. Als Anfangsbestand dient den Szenarien die ständige Wohnbevölkerung per 31.12.2022 plus die Personen mit Schutzstatus S.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/szenarien-zur-bevolkerungsentwicklung-der-luzerner-gemeinden)<br>
+[Direct link by **LUSTAT Statistik Luzern** for dataset](https://www.lustat.ch/daten?unterbereich=298)
+
+Auto generated R starter code for data set lustat-szbv-lu@lustat.
+
+## Metadata
+
+- **Publisher** `LUSTAT Statistik Luzern`
+- **Organization.display_name.de** `LUSTAT Statistik Luzern`
+- **Organization.url** `https://www.lustat.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wachstum', 'bevolkerungswachstum', 'bevolkerungsentwicklung', 'gemeinden', 'bevolkerungsszenarien', 'bevolkerung']`
+- **Issued** `2023-12-14T00:00:00`
+- **Metadata_created** `2024-12-02T14:35:18.963726`
+- **Metadata_modified** `2024-12-02T14:35:18.963733`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e3854dd9-19d0-4366-a22c-996ac0393718
+# Description              : Das mittlere Szenario (Referenzszenario) berücksichtigt Modellannahmen, welche die demografischen Entwicklungen der letzten Jahrzehnte fortschreiben. Es stellt dabei einen – aus gegenwärtiger Sicht – wahrscheinlichen Verlauf dar.
+# Issued                   : 2023-12-14T00:00:00
+# Modified                 : 2023-12-14T00:00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-referenz.csv')
+
+# Distribution 1
+# Package_id               : e3854dd9-19d0-4366-a22c-996ac0393718
+# Description              : Das tiefe Szenario basiert auf Hypothesen, welche das Bildungsniveau und das Wirtschaftswachstum weniger vorantreiben und somit das Bevölkerungswachstum im Vergleich zum Referenzszenario mindern.
+# Issued                   : 2023-12-14T00:00:00
+# Modified                 : 2023-12-14T00:00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-tief.csv')
+
+# Distribution 2
+# Package_id               : e3854dd9-19d0-4366-a22c-996ac0393718
+# Description              : Beim hohen Szenario werden Hypothesen kombiniert, die das Bevölkerungs- und Wirtschaftswachstum begünstigen. 
+# Issued                   : 2023-12-14T00:00:00
+# Modified                 : 2023-12-14T00:00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-hoch.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+sibylle.haas@lustat.ch | LUSTAT Statistik Luzern
