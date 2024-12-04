@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-12-03"
+date: "2024-12-04"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 1982@afm-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/volkswirtschaftsdirektion/amt-fuer-mobilitaet.html`
 - **Maintainer** `Amt für Mobilität des Kantons Zürich`
 - **Maintainer_email** `stefan.dasen@vd.zh.ch`
-- **Keywords.de** `['miv', 'oev', 'gemeinden', 'strassenverkehr', 'velo', 'raumplanungsregionen', 'verkehr', 'auto', 'verkehrsnachfrage', 'oeffentlicherverkehr', 'verkehrsmittelwahl']`
+- **Keywords.de** `['verkehrsmittelwahl', 'gemeinden', 'oev', 'strassenverkehr', 'raumplanungsregionen', 'verkehr', 'miv', 'oeffentlicherverkehr', 'verkehrsnachfrage', 'velo', 'auto']`
 - **Issued** `2023-02-13T13:33:05+01:00`
 - **Metadata_created** `2023-03-06T11:03:49.438018`
-- **Metadata_modified** `2024-12-02T03:11:10.875466`
+- **Metadata_modified** `2024-12-04T03:30:18.713054`
 
 
 # Load packages
@@ -44,21 +44,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 0777f0c4-b030-4767-89eb-b364d5e76580
-# Description              : Die Daten zeigen die modellierte Verkehrsnachfrage im öffentlichen Verkehr (‘oev’), im motorisierten Individualverkehr (‘miv’) und im Veloverkehr ('velo') als Summe aller Personenwege an einem durchschnittlichen Werktag (DWV). Die Daten beziehen sich auf die 11 Planungsregionen im Kanton Zürich. Die Verkehrsbeziehungen von und zu den Nachbarkantonen werden ebenfalls berücksichtigt («_gebietart» = Aussenkorridor). 'quelle_code' und 'ziel_code' entsprechen den Raumplanungsregionsnummern, die vom Bundesamt für Statistik für den angegebenen Gebietsstand ('gebietsstand_jahr') vergeben wurden. Die Daten wurden mit dem Gesamtverkehrsmodell des Kantons Zürich berechnet; es sind keine Mess- oder Zählwerte (‘zeithorizonttyp’ = modellierter Ist-Zustand). Die Daten für das Jahr 2040 sind Prognosewerte, ausgehend von einem Basisjahr (2018 oder 2019). Die Prognosen für das Jahr 2018 (‘zeithorizonttyp’ = Prognose auf Basis 2018) basieren auf älteren Annahmen aus den späten 2000er Jahren und zeigen daher ein starkes Wachstum. Die Prognosen für das Basisjahr 2019 liegen in zwei unterschiedlichen Szenarien (‘zeithorizonttyp’) vor: der Referenzprognose und der Strategieprognose.  Die Referenzprognose zeigt die erwartete Nachfrageentwicklung entlang etablierter Trends. Dabei werden nur beschlossene und finanzierte Ausbauprojekte für den motorisierten Individualverkehr, das Velo und den öffentlichen Verkehr berücksichtigt. Die Strategieprognose berücksichtigt deutlichere Veränderungen im Mobilitätsverhalten. Sie orientiert sich an der kantonalen Strategie und Zielsetzung zur Siedlungsentwicklung und Nachhaltigkeit im Verkehr sowie an längerfristig geplanten Ausbauprojekten für MIV, Velo und ÖV. Die Verkehrsströme können nach Binnenverkehr und nach Quell-Ziel-Verkehr unterschieden werden. Beginnen und enden die Verkehrsbeziehungen im gleichen Gebiet (Quelle und Ziel sind identisch), handelt es sich um Binnenverkehr. Beginnen die Verkehrsbeziehungen in einem Betrachtungsgebiet und führen nach ausserhalb bzw. umgekehrt so handelt es sich um Quell- bzw. Ziel-Verkehr. Aus modellierungstechnischen Gründen wird im Tagesverkehr von symmetrischen Verkehrsströmen ausgegangen, das bedeutet, dass Quell- und Zielverkehr gleich gross sind.
-# Issued                   : 2023-02-13T13:33:05+01:00
-# Modified                 : 2024-04-09T13:55:10+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001982_00003943.csv')
-
-# Distribution 1
-# Package_id               : 0777f0c4-b030-4767-89eb-b364d5e76580
 # Description              : Die Daten zeigen die modellierte Verkehrsnachfrage im öffentlichen Verkehr (‘oev’) und im motorisierten Individualverkehr (‘miv’) als Summe aller Personenwege an einem durchschnittlichen Werktag (DWV). Die Verkehrsbeziehungen von und zu den Nachbarkantonen werden ebenfalls berücksichtigt ("_gebietart" = Aussenkorridor). 'quelle_code' und 'ziel_code' entsprechen den Gemeindenummern, die vom Bundesamt für Statistik für den angegebenen Gebietsstand ('gebietsstand_jahr') vergeben wurden. Die Daten wurden mit dem Gesamtverkehrsmodell des Kantons Zürich berechnet; es sind keine Mess- oder Zählwerte (‘zeithorizonttyp’ = modellierter Ist-Zustand). Die Daten für das Jahr 2040 sind Prognosewerte, ausgehend von einem Basisjahr (2018 oder 2019). Die Prognosen für das Jahr 2018 (‘zeithorizonttyp’ = Prognose auf Basis 2018) basieren auf älteren Annahmen aus den späten 2000er Jahren und zeigen daher ein starkes Wachstum. Die Prognosen für das Basisjahr 2019 liegen in zwei unterschiedlichen Szenarien (‘zeithorizonttyp’) vor: der Referenzprognose und der Strategieprognose. Die Referenzprognose bildet die Nachfrageentwicklung entlang etablierter Entwicklungstrends ab und berücksichtigt nur beschlossene und finanzierte Ausbauprojekte für MIV, Velo und ÖV. Die Strategieprognose berücksichtigt hingegen deutlichere Veränderungen im Mobilitätsverhalten in Richtung der kantonalen Strategien und Zielsetzungen zur Siedlungsentwicklung und zur Nachhaltigkeit im Verkehr sowie längerfristig geplante Ausbauprojekte für MIV, Velo und ÖV. Die Verkehrsströme können nach Binnenverkehr und nach Quell-Ziel-Verkehr unterschieden werden. Beginnen und enden die Verkehrsbeziehungen im gleichen Gebiet (Quelle und Ziel sind identisch), handelt es sich um Binnenverkehr. Beginnen die Verkehrsbeziehungen in einem Betrachtungsgebiet und führen nach ausserhalb bzw. umgekehrt so handelt es sich um Quell- bzw. Ziel-Verkehr. Aus modellierungstechnischen Gründen wird im Tagesverkehr von symmetrischen Verkehrsströmen ausgegangen, das bedeutet, dass Quell- und Zielverkehr gleich gross sind.
 # Issued                   : 2023-02-13T13:33:05+01:00
 # Modified                 : 2024-04-09T13:59:59+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001982_00003903.csv')
+
+# Distribution 1
+# Package_id               : 0777f0c4-b030-4767-89eb-b364d5e76580
+# Description              : Die Daten zeigen die modellierte Verkehrsnachfrage im öffentlichen Verkehr (‘oev’), im motorisierten Individualverkehr (‘miv’) und im Veloverkehr ('velo') als Summe aller Personenwege an einem durchschnittlichen Werktag (DWV). Die Daten beziehen sich auf die 11 Planungsregionen im Kanton Zürich. Die Verkehrsbeziehungen von und zu den Nachbarkantonen werden ebenfalls berücksichtigt («_gebietart» = Aussenkorridor). 'quelle_code' und 'ziel_code' entsprechen den Raumplanungsregionsnummern, die vom Bundesamt für Statistik für den angegebenen Gebietsstand ('gebietsstand_jahr') vergeben wurden. Die Daten wurden mit dem Gesamtverkehrsmodell des Kantons Zürich berechnet; es sind keine Mess- oder Zählwerte (‘zeithorizonttyp’ = modellierter Ist-Zustand). Die Daten für das Jahr 2040 sind Prognosewerte, ausgehend von einem Basisjahr (2018 oder 2019). Die Prognosen für das Jahr 2018 (‘zeithorizonttyp’ = Prognose auf Basis 2018) basieren auf älteren Annahmen aus den späten 2000er Jahren und zeigen daher ein starkes Wachstum. Die Prognosen für das Basisjahr 2019 liegen in zwei unterschiedlichen Szenarien (‘zeithorizonttyp’) vor: der Referenzprognose und der Strategieprognose.  Die Referenzprognose zeigt die erwartete Nachfrageentwicklung entlang etablierter Trends. Dabei werden nur beschlossene und finanzierte Ausbauprojekte für den motorisierten Individualverkehr, das Velo und den öffentlichen Verkehr berücksichtigt. Die Strategieprognose berücksichtigt deutlichere Veränderungen im Mobilitätsverhalten. Sie orientiert sich an der kantonalen Strategie und Zielsetzung zur Siedlungsentwicklung und Nachhaltigkeit im Verkehr sowie an längerfristig geplanten Ausbauprojekten für MIV, Velo und ÖV. Die Verkehrsströme können nach Binnenverkehr und nach Quell-Ziel-Verkehr unterschieden werden. Beginnen und enden die Verkehrsbeziehungen im gleichen Gebiet (Quelle und Ziel sind identisch), handelt es sich um Binnenverkehr. Beginnen die Verkehrsbeziehungen in einem Betrachtungsgebiet und führen nach ausserhalb bzw. umgekehrt so handelt es sich um Quell- bzw. Ziel-Verkehr. Aus modellierungstechnischen Gründen wird im Tagesverkehr von symmetrischen Verkehrsströmen ausgegangen, das bedeutet, dass Quell- und Zielverkehr gleich gross sind.
+# Issued                   : 2023-02-13T13:33:05+01:00
+# Modified                 : 2024-04-09T13:55:10+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001982_00003943.csv')
 
 
 
