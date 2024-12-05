@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-12-04"
+date: "2024-12-05"
 output: html_document
 ---
 
 ## Dataset: Zeitreihe der Belegung öffentlicher Parkhäuser Basel
 
-Stündlich aktualisierte Belegungsdaten der öffentlichen Parkhäuser der Stadt Basel, bezogen über das [Parkleitsystems Basel](https://www.parkleitsystem-basel.ch). Historische Daten mit kleinerer zeitlicher Auflösung können auch über das API von ParkenDD bezogen werden, wie hier am Beispiel der Parkhäuser der Stadt Zürich beschrieben: [https://opendatazurich.github.io/parkendd-api//](https://opendatazurich.github.io/parkendd-api//) (die Parkhäuser von Basel sind über diese URL abrufbar: [https://api.parkendd.de/Basel](https://api.parkendd.de/Basel)). Die Standorte der Parkhäuser sind in diesem Datensatz ersichtlich: [https://data.bs.ch/explore/dataset/100044/](https://data.bs.ch/explore/dataset/100044/)Änderungsprotokoll:14.08.2023 - Neue Spalte 'auslastungen' wurde hinzugefügt.28.11.2024 - Es gibt eine Lücke vom 21. Oktober 2024 bis zum 28. November 2024.28.11.2024 - Centralbahnparking wurde Centralbahn umbenannt in den Spalten id, id2, name, title.
+Stündlich aktualisierte Belegungsdaten der öffentlichen Parkhäuser der Stadt Basel, bezogen über das [Parkleitsystems Basel](https://www.parkleitsystem-basel.ch). Historische Daten mit kleinerer zeitlicher Auflösung können auch über das API von ParkenDD bezogen werden, wie hier am Beispiel der Parkhäuser der Stadt Zürich beschrieben: [https://opendatazurich.github.io/parkendd-api//](https://opendatazurich.github.io/parkendd-api//) (die Parkhäuser von Basel sind über diese URL abrufbar: [https://api.parkendd.de/Basel](https://api.parkendd.de/Basel)). Die Standorte der Parkhäuser sind in diesem Datensatz ersichtlich: [https://data.bs.ch/explore/dataset/100044/](https://data.bs.ch/explore/dataset/100044/)[](https://data.bs.ch/explore/dataset/100044/)Änderungsprotokoll:14.08.2023 - Neue Spalte 'auslastungen' wurde hinzugefügt.28.11.2024 - Es gibt eine Lücke vom 21. Oktober 2024 bis zum 28. November 2024.28.11.2024 - Centralbahnparking wurde zu Centralbahn umbenannt in den Spalten id, id2, name, title.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zeitreihe-der-belegung-offentlicher-parkhauser-basel)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100014/)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 100014@kanton-basel-stadt.
 - **Organization.url** `https://www.opendata.bs.ch`
 - **Maintainer** `Fachstelle für OGD Basel-Stadt`
 - **Maintainer_email** `opendata@bs.ch`
-- **Keywords.de** `['parkplatz', 'parkhaus', 'autos', 'elektroautos', 'echtzeit', 'realtime', 'frei']`
+- **Keywords.de** `['parkplatz', 'elektroautos', 'autos', 'echtzeit', 'frei', 'realtime', 'parkhaus']`
 - **Issued** `2019-11-05T00:00:00`
 - **Metadata_created** `2023-07-04T12:36:00.955423`
-- **Metadata_modified** `2024-12-04T02:17:32.466246`
+- **Metadata_modified** `2024-12-05T02:36:54.484725`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : b195eb62-17aa-4641-8bfe-985043e95f49
 # Description              : Zeitreihe der Belegung öffentlicher Parkhäuser Basel (csv)
 # Issued                   : 2019-11-05T00:00:00
-# Modified                 : 2024-12-04T01:06:01.509000+00:00
+# Modified                 : 2024-12-05T02:06:37.404000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100014/exports/csv?use_labels=true')
