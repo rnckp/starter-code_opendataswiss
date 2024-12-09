@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-12-08"
+date: "2024-12-09"
 output: html_document
 ---
 
@@ -23,7 +23,7 @@ Auto generated R starter code for data set influenza@abteilung-uebertragbare-kra
 - **Keywords.de** `['bag-grippe-influenza']`
 - **Issued** `2023-11-08T12:00:00+00:00`
 - **Metadata_created** `2024-11-14T11:54:53.984010`
-- **Metadata_modified** `2024-12-07T04:05:23.312950`
+- **Metadata_modified** `2024-12-08T04:41:22.905097`
 
 
 # Load packages
@@ -53,6 +53,15 @@ df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_sen
 
 # Distribution 1
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
+# Description              : Die Daten basieren auf Informationen, die Laboratorien dem BAG im Rahmen der Meldepflicht übermittelt haben.
+# Issued                   : None
+# Modified                 : 2024-12-04T00:00:00+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/INFLUENZA_oblig/csv')
+
+# Distribution 2
+# Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
 # Description              : Die Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Januar 2022 die Viruslast von SARS-CoV-2 und seit Juli 2023 die Viruslast von Influenza und RSV in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
 # Issued                   : None
 # Modified                 : 2024-12-04T00:00:00+00:00
@@ -60,7 +69,7 @@ df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_sen
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_wastewater/csv')
 
-# Distribution 2
+# Distribution 3
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
 # Description              : The data are based on information from the Swiss Sentinel Surveillance Network (Sentinella, SSSN) monitoring system. Since 1987, outpatient doctors have been submitting information on initial consultations in medical practices and during home visits for patients with influenza-like illness (ILI).
 # Issued                   : None
@@ -68,15 +77,6 @@ df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/RESPVIRUSES_was
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/INFLUENZA_sentinella/csv')
-
-# Distribution 3
-# Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
-# Description              : Die Daten basieren auf Informationen, die Laboratorien dem BAG im Rahmen der Meldepflicht übermittelt haben.
-# Issued                   : None
-# Modified                 : 2024-12-04T00:00:00+00:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/current/INFLUENZA_oblig/csv')
 
 
 
