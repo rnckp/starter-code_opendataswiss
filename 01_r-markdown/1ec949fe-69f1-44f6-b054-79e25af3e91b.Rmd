@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2024-12-15"
+date: "2024-12-16"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 708@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
 - **Maintainer_email** `datashop@statistik.zh.ch`
-- **Keywords.de** `['gewinnsteuer', 'steuern', 'juristischepersonen', 'staatssteuer', 'gemeinden', 'kapitalsteuer', 'kantonzuerich', 'bezirke']`
+- **Keywords.de** `['kapitalsteuer', 'staatssteuer', 'gemeinden', 'steuern', 'bezirke', 'kantonzuerich', 'gewinnsteuer', 'juristischepersonen']`
 - **Issued** `2020-11-11T13:06:00+01:00`
 - **Metadata_created** `2021-01-14T17:33:00.266548`
-- **Metadata_modified** `2024-12-14T04:50:24.607959`
+- **Metadata_modified** `2024-12-16T03:01:37.506729`
 
 
 # Load packages
@@ -44,6 +44,15 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 1ec949fe-69f1-44f6-b054-79e25af3e91b
+# Description              : Steuerpflichtige, Steuerfaktoren (Reingewinn/Kapital) und Steuererträge der juristischen Personen. Bei den Steuererträgen handelt es sich um die einfache Staatssteuer, wenn nichts anderes angegeben ist. Die Daten stammen vom Kantonalen Steueramt. Rechtsformen sind: Aktiengesellschaften, GmbH, Genossenschaften, Vereine und Stiftungen. Stichtag: Gewinnsteuer und Kapitalsteuer werden jedes Jahr erhoben. Für die Bemessung der Gewinn-/Kapitalsteuer wird auf den Gewinn/das Kapital an einem bestimmten Stichtag (Gewinn/Kapital am Ende des Geschäftsjahres) abgestellt.
+# Issued                   : 2020-11-11T13:12:48+01:00
+# Modified                 : 2024-11-02T07:50:20+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000708_00001747.csv')
+
+# Distribution 1
+# Package_id               : 1ec949fe-69f1-44f6-b054-79e25af3e91b
 # Description              : Steuerpflichtige, Steuerfaktoren (Reingewinn/Kapital) und Steuererträge der juristischen Personen. Bei den Steuererträgen handelt es sich um die einfache Staatssteuer, wenn nichts anderes angegeben ist. Die Daten stammen vom Kantonalen Steueramt. Stichtag: Gewinnsteuer und Kapitalsteuer werden jedes Jahr erhoben. Für die Bemessung der Gewinn-/Kapitalsteuer wird auf den Gewinn/das Kapital an einem bestimmten Stichtag (Gewinn/Kapital am Ende des Geschäftsjahres) abgestellt.
 # Issued                   : 2020-11-11T13:13:47+01:00
 # Modified                 : 2024-10-30T13:42:09+01:00
@@ -51,7 +60,7 @@ library(skimr)
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000708_00001748.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : 1ec949fe-69f1-44f6-b054-79e25af3e91b
 # Description              : Steuerpflichtige, Steuerfaktoren (Reingewinn/Kapital) und Steuererträge der juristischen Personen. Bei den Steuererträgen handelt es sich um die einfache Staatssteuer, wenn nichts anderes angegeben ist. Die Daten stammen vom Kantonalen Steueramt. Stichtag: Gewinnsteuer und Kapitalsteuer werden jedes Jahr erhoben. Für die Bemessung der Gewinn-/Kapitalsteuer wird auf den Gewinn/das Kapital an einem bestimmten Stichtag (Gewinn/Kapital am Ende des Geschäftsjahres) abgestellt.
 # Issued                   : 2020-11-11T13:15:22+01:00
@@ -59,15 +68,6 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000708_00001749.csv')
-
-# Distribution 2
-# Package_id               : 1ec949fe-69f1-44f6-b054-79e25af3e91b
-# Description              : Steuerpflichtige, Steuerfaktoren (Reingewinn/Kapital) und Steuererträge der juristischen Personen. Bei den Steuererträgen handelt es sich um die einfache Staatssteuer, wenn nichts anderes angegeben ist. Die Daten stammen vom Kantonalen Steueramt. Rechtsformen sind: Aktiengesellschaften, GmbH, Genossenschaften, Vereine und Stiftungen. Stichtag: Gewinnsteuer und Kapitalsteuer werden jedes Jahr erhoben. Für die Bemessung der Gewinn-/Kapitalsteuer wird auf den Gewinn/das Kapital an einem bestimmten Stichtag (Gewinn/Kapital am Ende des Geschäftsjahres) abgestellt.
-# Issued                   : 2020-11-11T13:12:48+01:00
-# Modified                 : 2024-11-02T07:50:20+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000708_00001747.csv')
 
 # Distribution 3
 # Package_id               : 1ec949fe-69f1-44f6-b054-79e25af3e91b
