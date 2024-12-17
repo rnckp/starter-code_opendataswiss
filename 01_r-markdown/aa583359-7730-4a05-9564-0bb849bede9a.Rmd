@@ -1,0 +1,91 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-12-17"
+output: html_document
+---
+
+## Dataset: Stündlich aktualisierte Luftqualitätsmessungen (letzte 7 Tage)
+
+Die Stundenwerte werden stündlich, 10 Minuten nach der vollen Stunde, updated. Darin enthalten sind die Stundenwerte der letzten 7 Tage für die Stationen Stampfenbachstrasse, Schimmelstrasse, Rosengartenstrasse und Heubeeribüel. Gemessen wird Ozon (O3), Stickstoffdioxid (NO2), Feinstaub (PM10), Temperatur, Luftdruck, Windrichtung, Windgeschwindigkeit wo jeweils in genügender Qualität vorhanden.
+
+**Hinweis:**
+
+Die Meteo- und Luftqualitätsdaten der Stadt Zürich liegen seit Oktober 2020 detailierter, neu strukturiert und als lange **Zeitreihe seit 1983 resp. 1992** vor. Sie finden die neuen Datensätze unter:
+
+- [Stündlich aktualisierte Luftqualitätsmessungen, seit 1983](https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_stundenwerte) (Stundenwerte).
+- [Täglich aktualisierte Luftqualitätsmessungen, seit 1983](https://data.stadt-zuerich.ch/dataset/ugz_luftschadstoffmessung_tageswerte) (Tageswerte).
+- [Stündlich aktualisierte Meteodaten, seit 1992](https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_stundenmittelwerte) (Stundenwerte).
+- [Täglich aktualisierte Meteodaten, seit 1992](https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte) (Tageswerte).
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/stundlich-aktualisierte-luftqualitatsmessungen)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/luftqualitaet-stunden-aktuelle-messungen)
+
+Auto generated R starter code for data set luftqualitaet_stunden-aktuelle_messungen@stadt-zurich.
+
+## Metadata
+
+- **Publisher** `Fachbereich Labor, Umwelt- und Gesundheitsschutz, Gesundheits- und Umweltdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['luft', 'globalstrahlung', 'hackzurich', 'zeitreihe', 'schwefeldioxid', 'twist2018', 'ozon', 'luftfeuchte', 'klima', 'tabellen', 'sachdaten', 'stickstoffdioxid', 'wind', 'stickstoffmonoxid', 'umweltdaten', 'feinstaub', 'lufttemperatur', 'kohlenmonoxid', 'temperatur', 'wetter', 'regendauer', 'schadstoffe', 'luftdruck', 'pm10', 'messwerte', 'echtzeit']`
+- **Issued** `2015-06-16T18:30:00`
+- **Metadata_created** `2016-09-29T09:00:10.001579`
+- **Metadata_modified** `2024-12-14T03:50:47.074771`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : aa583359-7730-4a05-9564-0bb849bede9a
+# Description              : 
+# Issued                   : 2015-08-07T15:36:48.590737
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('http://ogd.zueriluft.ch/api/v1/h1.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
