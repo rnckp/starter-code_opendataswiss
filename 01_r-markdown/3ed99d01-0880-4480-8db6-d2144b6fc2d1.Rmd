@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2024-12-25"
+output: html_document
+---
+
+## Dataset: Medizinische Statistik der Krankenhäuser:Anzahl Fälle und durchschnittliche Aufenthaltsdauer (DAD) nach Altersklasse und Diagnosekode
+
+Dieses Dataset präsentiert die Anzahl Fälle (Medizinische Statistik der Krankenhäuser) und die durchschnittliche Aufenthaltsdauer (DAD) nach Altersklasse und Diagnosekode, seit 2014. Die Beschreibungen der Variablen in der CSV-Datei sind im Anhang verfügbar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/medizinische-statistik-der-krankenhauser-anzahl-falle-und-durchschnittliche-aufenthaltsdauer-da)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/asset/de/su-d-14.04.01.02-ICD)
+
+Auto generated R starter code for data set 33787449@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher** `BFS/OFS`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gesundheit']`
+- **Issued** `2024-12-23T13:53:00+00:00`
+- **Metadata_created** `2024-12-24T09:35:52.850855`
+- **Metadata_modified** `2024-12-24T09:35:52.850862`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3ed99d01-0880-4480-8db6-d2144b6fc2d1
+# Description              : 
+# Issued                   : 2024-12-23T13:53:00+00:00
+# Modified                 : 2024-12-23T13:51:13.882000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/33787451/master')
+
+# Distribution 1
+# Package_id               : 3ed99d01-0880-4480-8db6-d2144b6fc2d1
+# Description              : Dieses Dataset präsentiert die Anzahl Fälle (Medizinische Statistik der Krankenhäuser) und die durchschnittliche Aufenthaltsdauer (DAD) nach Altersklasse und Diagnosekode, seit 2014. Die Beschreibungen der Variablen in der CSV-Datei sind im Anhang verfügbar.
+# Issued                   : 2024-12-23T13:53:00+00:00
+# Modified                 : 2024-12-23T13:51:07.820000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/33787452/master')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+auskunftsdienst@bfs.admin.ch | info@bfs.admin.ch
