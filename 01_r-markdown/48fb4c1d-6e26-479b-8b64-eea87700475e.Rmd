@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-01-11"
+date: "2025-01-12"
 output: html_document
 ---
 
-## Dataset: Lernende der Volksschule im Kanton Zürich nach Staatsangehörigkeit auf Ebene Schulgemeinde ab 2000
+## Dataset: Lernende der Regelschule im Kanton Zürich nach Staatsangehörigkeit auf Ebene Schulgemeinde ab 2000
 
-Schüler/innen an öffentlichen Volksschulen im Kanton Zürich, die nach kantonalem Lehrplan unterrichtet werden. Mit Volksschule wird die Schulbildung während der obligatorischen Schulzeit bezeichnet. Die obligatorische Schulzeit umfasst den Kindergarten, sechs Jahre Primarschule und drei Jahre Sekundarstufe I. Nicht mitgezählt sind Lernende der Mittelschulen, Lernende in in Heim-/Sonderschulen, und Lernende in Privatschulen. Es gilt das Schulortprinzip, gezählt werden Schülerinnen und Schüler, welche eine Schule innerhalb des Kantons Zürich besuchen.
+Schüler/innen an öffentlichen Regelschulen im Kanton Zürich, die nach kantonalem Lehrplan unterrichtet werden. Mit Regelschule wird die Schulbildung während der obligatorischen Schulzeit bezeichnet. Die obligatorische Schulzeit umfasst den Kindergarten, sechs Jahre Primarschule und drei Jahre Sekundarstufe I. Nicht mitgezählt sind Lernende der Mittelschulen, Lernende in in Heim-/Sonderschulen, und Lernende in Privatschulen. Es gilt das Schulortprinzip, gezählt werden Schülerinnen und Schüler, welche eine Schule innerhalb des Kantons Zürich besuchen.
 
 Die Daten werden jährlich für den Stichtag 15.9. erhoben.
 
@@ -22,10 +22,10 @@ Auto generated R starter code for data set 525@bildungsstatistik-kanton-zuerich.
 - **Organization.url** `https://pub.bista.zh.ch`
 - **Maintainer** `Bildungsstatistik des Kantons Zürich`
 - **Maintainer_email** `bista@bi.zh.ch`
-- **Keywords.de** `['lernende', 'ausbildung', 'nationalitaet', 'staatsangehoerigkeit', 'schulgemeinden', 'kindergarten', 'bildung', 'schuelerinnen', 'primarschule', 'volksschule']`
+- **Keywords.de** `['bildung', 'staatsangehoerigkeit', 'primarschule', 'kindergarten', 'schuelerinnen', 'lernende', 'schulgemeinden', 'volksschule', 'nationalitaet', 'ausbildung']`
 - **Issued** `2019-12-02T13:12:00+01:00`
 - **Metadata_created** `2022-10-04T03:10:24.288112`
-- **Metadata_modified** `2025-01-10T04:33:21.509783`
+- **Metadata_modified** `2025-01-11T05:26:42.710494`
 
 
 # Load packages
@@ -46,9 +46,9 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 48fb4c1d-6e26-479b-8b64-eea87700475e
-# Description              : Die Daten sind differenziert nach Jahr, zuständiger Schulgemeinde und Staatsangehörigkeit.nnBei Zellen kleiner 5 wird die Staatsangehörigkeit zuerst auf Ebene Grossregion und, wenn nötig, auf Ebene Kontinent aggregiert.nnJahr: Das Jahr ist jeweils das Kalenderjahr der Erhebung, wobei der Stichtag der 15.9. ist. Die Daten für das Jahr 2023 sind somit im Schuljahr 2023/24 erhoben worden und zeigen den Datenstand am 15. September 2023.nSchulgemeinde: Es wird die zuständige Schulgemeinde dargestellt. Das ist üblicherweise die Schulgemeinde des Wohnort. Es entspricht aber nicht in jedem Fall der Schulgemeinde des Schulstandorts der effektiv besucht wird.nStaatsangehoerigkeit: Es wird pro Person nur eine Staatsangehörigkeit erhoben. Falls eine Person mehrere Staatsangehörigkeiten hat, und eine davon ist die Schweizerische, so wird diese prioritär erfasst. Bei anderen mehrfachen Staatsangehörigkeiten wir keine Vorgabe zur Priorisierung gemacht.nStaatsangehoerigkeit_ISO2_Code: Bei der Aggregation auf Grossregion und Kontinent bleibt der ISO2 Code leer.nAnzahl: Anzahl der Schülerinnen und Schüler mit der entsprechenden Merkmalskombination.
+# Description              : Ausgewiesen wird die Anzahl der Lernenden in der Regelschule im Kanton Zürich. Die Daten sind differenziert nach Jahr, zuständiger Schulgemeinde und Staatsangehörigkeit. Bei Zellen kleiner 5 wird die Staatsangehörigkeit zuerst auf Ebene Grossregion und, wenn nötig, auf Ebene Kontinent aggregiert. Jahr: Das Jahr ist jeweils das Kalenderjahr der Erhebung, wobei der Stichtag der 15.9. ist. Die Daten für das Jahr 2023 sind somit im Schuljahr 2023/24 erhoben worden und zeigen den Datenstand am 15. September 2023. Schulgemeinde: Es wird die zuständige Schulgemeinde dargestellt. Das ist üblicherweise die Schulgemeinde des Wohnort. Es entspricht aber nicht in jedem Fall der Schulgemeinde des Schulstandorts der effektiv besucht wird. Staatsangehoerigkeit: Es wird pro Person nur eine Staatsangehörigkeit erhoben. Falls eine Person mehrere Staatsangehörigkeiten hat, und eine davon ist die Schweizerische, so wird diese prioritär erfasst. Bei anderen mehrfachen Staatsangehörigkeiten wir keine Vorgabe zur Priorisierung gemacht. Staatsangehoerigkeit_ISO2_Code: Bei der Aggregation auf Grossregion und Kontinent bleibt der ISO2 Code leer. Anzahl: Anzahl der Schülerinnen und Schüler mit der entsprechenden Merkmalskombination. Die Daten werden im Rahmen der Statistik der Lernenden für das Bundesamtes für Statistik erhoben. Es handelt sich um eine Vollerhebung.
 # Issued                   : 2022-10-03T12:38:04+01:00
-# Modified                 : 2025-01-09T11:55:15+01:00
+# Modified                 : 2025-01-10T14:12:47+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/bista/ZH_Lernende_Volksschule_Regional_Staatsangehoerigkeit.csv')
