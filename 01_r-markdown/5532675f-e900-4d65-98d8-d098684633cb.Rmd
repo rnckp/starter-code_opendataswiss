@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-01-25"
+date: "2025-01-26"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 725@gesundheitsdirektion-kanton-zueri
 - **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
 - **Maintainer** `Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline`
 - **Maintainer_email** `gdstab@gd.zh.ch`
-- **Keywords.de** `['altersklassen', 'altersgruppen', 'amtlichesgeschlecht', 'gesundheit', 'wohnsitz', 'alter', 'krankheiten', 'kantonzuerich', 'corona', 'covid-19', 'bezirke']`
+- **Keywords.de** `['wohnsitz', 'altersklassen', 'amtlichesgeschlecht', 'corona', 'bezirke', 'krankheiten', 'gesundheit', 'covid-19', 'kantonzuerich', 'alter', 'altersgruppen']`
 - **Issued** `2021-09-14T14:53:00+01:00`
 - **Metadata_created** `2021-09-15T03:07:30.907731`
-- **Metadata_modified** `2025-01-24T05:06:49.252299`
+- **Metadata_modified** `2025-01-25T05:55:55.659711`
 
 
 # Load packages
@@ -44,6 +44,15 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
+# Description              : Anzahl Personen nach 1-Jahres-Altersklassen ('0', '1', '2', .., '100+'), die insgesamt im Kanton Zürich in der jeweils vergangenen Kalenderwoche eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Die Daten wurden bis zum 12. Oktober 2022 jeweils Montags für die Vorwoche aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
+# Issued                   : 2021-09-14T14:42:59+01:00
+# Modified                 : 2022-10-28T16:21:08+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_Alter_in_KTZH_wohnhaft_v2.csv')
+
+# Distribution 1
+# Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
 # Description              : Anzahl Personen nach 10-Jahres-Altersklassen ('0-9', '10-19', '20-29', .., '80+') und Geschlecht ('d'=divers, 'f'=weiblich, 'm'=männlich, 'NA'=unbekannt), die insgesamt im Kanton Zürich ab dem 18.01.2021 bis und mit Stichtag eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Aus Datenschutzgründen sind die Daten der ersten paar Tage auf den 18.01.2021 aggregiert. Die Daten wurden bis zum 12. Oktober 2022 einmal werktags aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
 # Issued                   : 2021-06-11T09:51:02+01:00
 # Modified                 : 2022-10-28T16:22:29+01:00
@@ -51,7 +60,7 @@ library(skimr)
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Datum_Altersklasse_Geschlecht_v2.csv')
 
-# Distribution 1
+# Distribution 2
 # Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
 # Description              : Anzahl im Kanton Zürich wohnhafter Personen nach Postleitzahl, die insgesamt im Kanton Zürich ab dem 18.01.2021 bis und mit Stichtag eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Aus Datenschutzgründen sind die Daten der ersten paar Wochen auf die Kalenderwoche 3 aggregiert. Die Daten wurden bis zum 12. Oktober 2022 einmal wöchentlich aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
 # Issued                   : 2021-09-14T14:24:16+01:00
@@ -60,7 +69,7 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_PLZ_v2.csv')
 
-# Distribution 2
+# Distribution 3
 # Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
 # Description              : Anzahl Personen nach Wohnsitz (Bezirke des Kantons Zürich ('bfsNumber' = BFS-Nummer des Bezirks), 'ZH aber ausserkantonal geimpft' (von Menschen mit Wohnsitz im Kanton ZH, die ausserkantonal geimpft wurden, sind keine Wohnsitzinformationen nach Bezirken vorhanden), 'Nachbarkantone', 'andere Kantone' oder 'unbekannt'), die insgesamt im Kanton Zürich ab dem 18.01.2021 bis und mit Kalenderwoche eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Aus Datenschutzgründen sind die Daten der ersten paar Wochen auf die Kalenderwoche 3 aggregiert. Die Daten wurden bis zum 12. Oktober 2022 einmal wöchentlich aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
 # Issued                   : 2021-06-11T10:08:09+01:00
@@ -68,15 +77,6 @@ df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_Wohnsitz_v2.csv')
-
-# Distribution 3
-# Package_id               : 5532675f-e900-4d65-98d8-d098684633cb
-# Description              : Anzahl Personen nach 1-Jahres-Altersklassen ('0', '1', '2', .., '100+'), die insgesamt im Kanton Zürich in der jeweils vergangenen Kalenderwoche eine Coronavirus-Impfung ('atLeastOneDose', 'completedBasicImmu' oder 'booster') erhalten haben. Die Daten wurden bis zum 12. Oktober 2022 jeweils Montags für die Vorwoche aktualisiert. Nützliche, weiterhin aktualisierte Daten stellt das Bundesamt für Gesundheit zur Verfügung (siehe Links im Datensatz unter "Weitere Informationen").
-# Issued                   : 2021-09-14T14:42:59+01:00
-# Modified                 : 2022-10-28T16:21:08+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://raw.githubusercontent.com/openZH/covid_19_vaccination_campaign_ZH/master/COVID19_Impfungen_pro_Woche_Alter_in_KTZH_wohnhaft_v2.csv')
 
 
 
