@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-01-31"
+output: html_document
+---
+
+## Dataset: Monitoring der Kosten in der obligatorischen Krankenpflegeversicherung (OKP), ab 1997
+
+Dieser Datensatz enthält die Aufteilung der durchschnittlichen Bruttokosten pro versicherte Person in der obligatorischen Krankenpflegeversicherung (OKP) nach Gender und Kostenkategorie.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/monitoring-der-kosten-in-der-obligatorischen-krankenpflegeversicherung-okp-ab-1997)<br>
+[Direct link by **Amt für Statistik Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/05_03_monitoring_couts/)
+
+Auto generated R starter code for data set 05_03_monitoring_couts@ssd.
+
+## Metadata
+
+- **Publisher** `ssd`
+- **Organization.display_name.de** `Amt für Statistik Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/sstat`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['kosten', 'krankenversicherung', 'gender', 'pramien', 'gesundheit']`
+- **Issued** `2024-11-29T00:00:00`
+- **Metadata_created** `2025-01-30T19:22:48.507288`
+- **Metadata_modified** `2025-01-30T19:22:48.507299`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : bf989259-7ad9-42dd-b988-13d22f913afd
+# Description              : Monitoring der Kosten in der obligatorischen Krankenpflegeversicherung (OKP), ab 1997 (csv)
+# Issued                   : 2024-11-29T00:00:00
+# Modified                 : 2024-11-29T07:12:23.255000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/05_03_monitoring_couts/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@fr.ch | Service de la statistique Fribourg
