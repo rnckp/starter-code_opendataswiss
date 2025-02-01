@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-01-31"
+date: "2025-02-01"
 output: html_document
 ---
 
@@ -8,7 +8,7 @@ output: html_document
 
 Die hier verfügbaren Datensätze beinhalten die **täglich aktualisierten** Messwerte zum motorisierten Individualverkehr (MIV) in der Stadt Zürich, welche von den zahlreichen Zählstellen der Dienstabteilung Verkehr (DAV) gemessen wurden.
 
-Die Aktualisierung beinhaltet jeweils die Daten vom **Vortag** (z.B. am 17.01.2025 werden die Daten bis und mit dem vollendeten 16.01.2025 geliefert). Bis spätestens 08:00 Uhr morgens sind die neuesten Daten verfügbar.
+Die Aktualisierung beinhaltet jeweils die Daten vom **Vortag**. Bis spätestens 07:00 Uhr morgens sind die neuesten Daten des Vortags verfügbar.
 
 Zu einer Zählstelle gehören mehrere Messstellen, welche wiederum Messungen mit sogenannten Detektoren vornehmen. In den vorliegenden Datensätzen sind die Messwerte pro Zählstelle enthalten. Für jede Zählstelle gibt es einen detaillierten PDF-Situationsplan in der Datei 'Zaehlstellen_Detail.zip', welcher u.a. die genaue Lage der Detektoren anzeigt.
 
@@ -24,10 +24,10 @@ Auto generated R starter code for data set 6212fd20-e816-4828-a67f-90f057f25ddb@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['auto', 'sasa', 'stau', 'verkehrszaehlung', 'motorrad', 'sachdaten', 'tabelle', 'zeitreihe', 'verkehr']`
+- **Keywords.de** `['sasa', 'sachdaten', 'auto', 'verkehr', 'motorrad', 'zeitreihe', 'verkehrszaehlung', 'stau', 'tabelle']`
 - **Issued** `2020-03-13T00:00:00`
 - **Metadata_created** `2020-03-12T07:18:11.679592`
-- **Metadata_modified** `2025-01-30T03:36:05.968190`
+- **Metadata_modified** `2025-01-31T04:14:57.244903`
 
 
 # Load packages
@@ -49,26 +49,26 @@ library(skimr)
 # Distribution 0
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2020-11-03T12:06:31.775777
-# Modified                 : 2025-01-29T02:46:21.785319
+# Issued                   : 2022-01-01T05:59:15.338190
+# Modified                 : 2025-01-31T02:47:45.860906
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2017.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2022.csv')
 
 # Distribution 1
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2025-03-01T06:52:24.320659
-# Modified                 : 2025-01-29T02:48:35.063029
+# Issued                   : 2020-11-03T12:06:54.770310
+# Modified                 : 2025-01-31T02:45:27.181039
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2025.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2013.csv')
 
 # Distribution 2
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
 # Issued                   : 2020-11-03T12:06:17.169871
-# Modified                 : 2025-01-29T02:46:36.389186
+# Modified                 : 2025-01-31T02:46:40.860956
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2018.csv')
@@ -76,35 +76,35 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung
 # Distribution 3
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2020-11-03T12:06:29.910316
-# Modified                 : 2025-01-29T02:47:07.756548
+# Issued                   : 2020-11-03T12:07:03.038170
+# Modified                 : 2025-01-31T02:45:17.569466
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2020.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2012.csv')
 
 # Distribution 4
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2020-11-03T12:06:08.651800
-# Modified                 : 2025-01-29T02:46:07.896214
+# Issued                   : 2020-11-03T12:06:01.347642
+# Modified                 : 2025-01-31T02:45:40.556172
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2016.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2014.csv')
 
 # Distribution 5
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2020-11-03T12:06:01.347642
-# Modified                 : 2025-01-29T02:45:40.878836
+# Issued                   : 2020-11-03T12:06:08.651800
+# Modified                 : 2025-01-31T02:46:12.779060
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2014.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2016.csv')
 
 # Distribution 6
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
 # Issued                   : 2023-01-01T06:13:36.021797
-# Modified                 : 2025-01-29T02:47:57.062491
+# Modified                 : 2025-01-31T02:48:05.511362
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2023.csv')
@@ -112,65 +112,65 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung
 # Distribution 7
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2024-01-01T07:16:55.636997
-# Modified                 : 2025-01-29T02:48:14.591484
+# Issued                   : 2020-11-03T12:06:29.910316
+# Modified                 : 2025-01-31T02:47:15.060226
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2024.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2020.csv')
 
 # Distribution 8
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2022-01-01T05:59:15.338190
-# Modified                 : 2025-01-29T02:47:39.464753
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2022.csv')
-
-# Distribution 9
-# Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
-# Description              : 
-# Issued                   : 2021-01-01T05:57:10.630765
-# Modified                 : 2025-01-29T02:47:23.369099
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2021.csv')
-
-# Distribution 10
-# Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
-# Description              : 
-# Issued                   : 2020-11-03T12:07:14.149316
-# Modified                 : 2025-01-29T02:45:52.589779
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2015.csv')
-
-# Distribution 11
-# Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
-# Description              : 
 # Issued                   : 2020-11-03T12:06:43.476235
-# Modified                 : 2025-01-29T02:46:51.957762
+# Modified                 : 2025-01-31T02:46:56.769024
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2019.csv')
 
+# Distribution 9
+# Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
+# Description              : 
+# Issued                   : 2020-11-03T12:07:14.149316
+# Modified                 : 2025-01-31T02:45:56.598426
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2015.csv')
+
+# Distribution 10
+# Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
+# Description              : 
+# Issued                   : 2020-11-03T12:06:31.775777
+# Modified                 : 2025-01-31T02:46:27.192555
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2017.csv')
+
+# Distribution 11
+# Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
+# Description              : 
+# Issued                   : 2024-01-01T07:16:55.636997
+# Modified                 : 2025-01-31T02:48:33.805044
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2024.csv')
+
 # Distribution 12
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2020-11-03T12:07:03.038170
-# Modified                 : 2025-01-29T02:45:19.968866
+# Issued                   : 2021-01-01T05:57:10.630765
+# Modified                 : 2025-01-31T02:47:30.486498
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2012.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2021.csv')
 
 # Distribution 13
 # Package_id               : f80fd59a-e52a-4caa-8b39-287662c0c517
 # Description              : 
-# Issued                   : 2020-11-03T12:06:54.770310
-# Modified                 : 2025-01-29T02:45:30.107855
+# Issued                   : 2025-03-01T06:52:24.320659
+# Modified                 : 2025-01-31T02:48:55.790176
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2013.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2025.csv')
 
 
 
