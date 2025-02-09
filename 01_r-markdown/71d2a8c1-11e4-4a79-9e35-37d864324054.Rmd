@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-02-09"
+output: html_document
+---
+
+## Dataset: CO2-Emissionen nach Energieträger, Gemeinde und Jahr (seit 2018)
+
+EnergiestatistikCO2-Emissionen in Tonnen und pro Einwohner/in, die durch Energiegewinnung und -verbrauch innerhalb des Kantons Basel-Landschaft entstehen. CO2-Emissionen aus Treibstoffen (Benzin, Diesel) sind darin nicht berücksichtigt, da diese nur auf Ebene des gesamten Kantons bekannt sind. Der Datensatz ist Teil der kantonalen Energiestatistik, die alle zwei Jahre durchgeführt wird.Die CO2-Emissionen pro Einwohner/in werden aufgrund der mittleren Wohnbevölkerung berechnet. Die Umrechnung von Energieverbrauch zu CO2-Emissionen wird anhand der Emissionsfaktoren gemäss dem nationalen Treibhausgasinventar gemacht. Erneuerbare Energieträger gelten als klimaneutral, da über den gesamten Zyklus die gleiche Menge CO2 gebunden wie emittiert wird. Deshalb werden sie hier nicht aufgeführt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/co2-emissionen-nach-energietrager-gemeinde-und-jahr-ab-2018)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/12020/)
+
+Auto generated R starter code for data set 12020@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.baselland.ch`
+- **Maintainer** `Fachbereich Raum, Umwelt`
+- **Maintainer_email** `statistik@bl.ch`
+- **Keywords.de** `['statistikdaten', 'industrieabfall', 'ausstoss', 'klima', 'heizol', 'erdgas', 'flussiggas', 'emission', 'treibhausgas', 'co2']`
+- **Issued** `2023-05-09T00:00:00`
+- **Metadata_created** `2023-05-16T01:47:27.286918`
+- **Metadata_modified** `2025-02-08T03:37:42.658286`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 71d2a8c1-11e4-4a79-9e35-37d864324054
+# Description              : CO2-Emissionen nach Energieträger, Gemeinde und Jahr (seit 2018) (csv)
+# Issued                   : 2023-05-09T00:00:00
+# Modified                 : 2024-08-29T15:29:26.846000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/12020/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+statistik@bl.ch | Fachbereich Raum, Umwelt
