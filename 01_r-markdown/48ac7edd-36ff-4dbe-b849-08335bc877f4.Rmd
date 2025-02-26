@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-02-25"
+date: "2025-02-26"
 output: html_document
 ---
 
-## Dataset: Firmen nach Zweck, Rechtsform, NOGA-Einteilung und Standort
+## Dataset: Firmen nach Zweck, Rechtsform und Standort
 
-Zentraler Firmenindex (Zefix). Tagesaktueller Auszug der im Handelsregister eingetragenen Rechtseinheiten.Die Daten werden täglich über die [Zefix PublicREST API](https://www.zefix.admin.ch/ZefixPublicREST/swagger-ui/index.html) abgefragt.StatusActive = aktivBeing cancelled = in LiquidationZweckAngaben teilweise fehlend (z. B. bei Zweigniederlassungen)Allgemeine Systematik der Wirtschaftszweige (NOGA)Die NOGA-Codes und -Labels stammen aus dem [Betriebs- und Unternehmensregister der Schweiz](https://www.bfs.admin.ch/bfs/de/home/register/unternehmensregister/betriebs-unternehmensregister.html) und werden über die entsprechende Schnittstelle ([BurWeb API](https://www.bfs.admin.ch/bfs/de/home/register/unternehmensregister/betriebs-unternehmensregister/burweb.html#-2080172010)) abgefragt.Angaben teilweise fehlendNach [NOGA-Code](https://www.kubb-tool.bfs.admin.ch/de/search) suchenGeolokalisierungsmethodenTreffer im kGWR: Die Adresse der Firma ist im [kantonalen Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180) erfasst.Treffer im kGWR mit angepasster Adresse: Die Adresse der Firma ist mit unterschiedlicher/m Strassennummer, Strassennamen, Postleitzahl oder Gemeindenamen im [kantonalen Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180) erfasst, konnte aber dennoch lokalisiert werden.Kein Treffer im kGWR: Die Adresse der Firma konnte keinem Eintrag im [kantonalen Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180) zugewiesen werden.
+Zentraler Firmenindex (Zefix). Tagesaktueller Auszug der im Handelsregister eingetragenen Rechtseinheiten.Die Daten werden täglich über die [Zefix PublicREST API](https://www.zefix.admin.ch/ZefixPublicREST/swagger-ui/index.html) abgefragt.StatusActive = aktivBeing cancelled = in LiquidationZweckAngaben teilweise fehlend (z. B. bei Zweigniederlassungen)Allgemeine Systematik der Wirtschaftszweige (NOGA)Die NOGA-Codes können aufgrund einer rechtlichen Praxisänderung beim Bundesamt für Statistik mittelfristig nicht mehr ausgewiesen werden.GeolokalisierungsmethodenTreffer im kGWR: Die Adresse der Firma ist im [kantonalen Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180) erfasst.Treffer im kGWR mit angepasster Adresse: Die Adresse der Firma ist mit unterschiedlicher/m Strassennummer, Strassennamen, Postleitzahl oder Gemeindenamen im [kantonalen Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180) erfasst, konnte aber dennoch lokalisiert werden.Kein Treffer im kGWR: Die Adresse der Firma konnte keinem Eintrag im [kantonalen Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180) zugewiesen werden.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/firmen-nach-zweck-rechtsform-noga-einteilung-und-standort)<br>
 [Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/12480/)
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 12480@kanton-basel-landschaft.
 - **Organization.url** `https://www.baselland.ch`
 - **Maintainer** `None`
 - **Maintainer_email** `None`
-- **Keywords.de** `['handelsregister', 'verein', 'adressdaten', 'firmenadresse', 'standortdaten', 'genossenschaft', 'fimenbestand', 'firma', 'noga', 'aktiengesellschaft', 'adresse', 'geodaten', 'firmenverzeichnis', 'wirtschaft', 'juristische-person', 'unternehmen', 'gmbh', 'wirtschaftsabteilung', 'stiftung', 'wirtschaftsabschnitt', 'registerdaten']`
+- **Keywords.de** `['genossenschaft', 'adresse', 'firmenadresse', 'aktiengesellschaft', 'verein', 'fimenbestand', 'firma', 'standortdaten', 'juristische-person', 'stiftung', 'wirtschaft', 'geodaten', 'handelsregister', 'unternehmen', 'gmbh', 'registerdaten', 'adressdaten', 'firmenverzeichnis']`
 - **Issued** `2024-05-30T00:00:00`
 - **Metadata_created** `2024-06-07T03:22:36.005012`
-- **Metadata_modified** `2025-02-24T04:27:12.889430`
+- **Metadata_modified** `2025-02-25T03:41:28.824212`
 
 
 # Load packages
@@ -44,9 +44,9 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 48ac7edd-36ff-4dbe-b849-08335bc877f4
-# Description              : Firmen nach Zweck, Rechtsform, NOGA-Einteilung und Standort (csv)
+# Description              : Firmen nach Zweck, Rechtsform und Standort (csv)
 # Issued                   : 2024-05-30T00:00:00
-# Modified                 : 2025-02-23T07:00:58.724000+00:00
+# Modified                 : 2025-02-24T08:22:48.898000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/12480/exports/csv?use_labels=true')
