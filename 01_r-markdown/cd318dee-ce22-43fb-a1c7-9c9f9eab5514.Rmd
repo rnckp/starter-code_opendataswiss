@@ -1,12 +1,13 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-03-18"
+date: "2025-04-02"
 output: html_document
 ---
 
 ## Dataset: Rechnung der Stadt St.Gallen
 
-Der Datensatz zeigt die Rechnung der Stadt St.Gallen nach Konto 3-Stellig, Direktion und Dienststellen und funktionaler Gliederung.
+Der Datensatz zeigt die Rechnung der Stadt St.Gallen nach Konto 3-Stellig, Direktion und Dienststellen und funktionaler Gliederung. Seit der Rechnung 2024 werden Aufwände negativ und Erträge positiv dargestellt. Deshalb wurde, zur Vergleichbarkeit innerhalb des Datensatzes, die Rechnung 2022 und 2023 auch dieser neuen Logik angepasst. Die Rechnung 2024 wurde noch nicht durch das Stadtparlament
+bestätigt.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/rechnung-der-stadt-st-gallen)<br>
 [Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/rechnung-stadt-stgallen/)
@@ -15,15 +16,15 @@ Auto generated R starter code for data set rechnung-stadt-stgallen@stadt-st-gall
 
 ## Metadata
 
-- **Publisher** `stadt-st-gallen`
+- **Publisher.name** `stadt-st-gallen`
 - **Organization.display_name.de** `Stadt St.Gallen`
 - **Organization.url** `https://www.stadt.sg.ch/`
-- **Maintainer** `None`
-- **Maintainer_email** `None`
-- **Keywords.de** `['funktionen', 'finanzen', 'rechnung', 'funktionale-gliederung']`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `['finanzen', 'rechnung', 'funktionale-gliederung', 'funktionen']`
 - **Issued** `2023-06-20T00:00:00`
 - **Metadata_created** `2023-12-21T12:46:35.828060`
-- **Metadata_modified** `2025-03-14T05:12:22.083488`
+- **Metadata_modified** `2025-03-28T05:06:28.662529`
 
 
 # Load packages
@@ -46,7 +47,7 @@ library(skimr)
 # Package_id               : cd318dee-ce22-43fb-a1c7-9c9f9eab5514
 # Description              : Rechnung der Stadt St.Gallen (csv)
 # Issued                   : 2023-06-20T00:00:00
-# Modified                 : 2024-05-14T06:43:12.374000+00:00
+# Modified                 : 2025-03-27T15:41:08.133000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/rechnung-stadt-stgallen/exports/csv?use_labels=true')

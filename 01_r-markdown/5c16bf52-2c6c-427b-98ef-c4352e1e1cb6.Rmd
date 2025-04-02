@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-04-02"
+output: html_document
+---
+
+## Dataset: Sanitätseinsätze
+
+Sanitätseinsätze von Schutz und Rettung nach Kategorie und Jahr.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sanitatseinsatze)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/sid_srz_od1032_sanitaetseinsaetze_jahr_kategorie)
+
+Auto generated R starter code for data set 0a1b0c91-7b1f-449c-99b8-b61ae190f3c2@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Schutz und Rettung, Sicherheitsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['sasa', 'gesundheit', 'sachdaten', 'sicherheit', 'zeitreihe', 'tabelle', 'sanitaet']`
+- **Issued** `2024-08-31T00:00:00`
+- **Metadata_created** `2025-03-25T03:51:30.307006`
+- **Metadata_modified** `2025-04-02T03:23:02.211715`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 5c16bf52-2c6c-427b-98ef-c4352e1e1cb6
+# Description              : 
+# Issued                   : 2024-01-12T11:17:12.469429
+# Modified                 : 2025-01-04T15:00:32.332473
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_srz_od1032_sanitaetseinsaetze_jahr_kategorie/download/GES103OD1032.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

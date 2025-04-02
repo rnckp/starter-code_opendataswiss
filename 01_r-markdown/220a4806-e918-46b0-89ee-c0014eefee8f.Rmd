@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-04-02"
+output: html_document
+---
+
+## Dataset: Hilfsfristen der Rettungsdienste
+
+Hilfsfristen der Rettungsdienste nach Stadtkreis und Jahr. Dieser Datensatz gibt Auskunft über die Hilfsfristen der rettungsdienstlichen Versorgung in der Stadt Zürich nach Stadtkreis. Die Hilfsfrist sagt etwas darüber aus, wie viel Zeit von der Disposition der Einsatzkräfte durch die Einsatzleitzentrale 144 bis zu ihrem Eintreffen am Notfallort verstreicht. Betrachtet werden nur die dringlichen Einsätze, bei denen die Fahrzeuge mit Sondersignal ausrücken. Gemäss Vorgabe des Interverbands für Rettungswesen muss die Hilfsfrist bei mindestens 90 Prozent der Einsätze unter 15 Minuten liegen, aus medizinischen Gründen ist auf eine Hilfsfrist von 10 Minuten hinzuarbeiten. Der Datensatz umfasst Aussagen zu Hilfsfristen aller auf Stadtgebiet geleisteten Einsätze, unabhängig vom ausführenden Rettungsdienst.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/hilfsfristen-der-rettungsdienste)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/sid_srz_od1036_hilfsfristen_rettungsdienste_jahr_stadtkreis)
+
+Auto generated R starter code for data set 1a7cb8e4-d48a-4437-8ee4-b1003264fc1f@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Schutz und Rettung, Sicherheitsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['sanitaet', 'tabelle', 'zeitreihe', 'sicherheit', 'gesundheit', 'sachdaten', 'sasa']`
+- **Issued** `2022-02-24T00:00:00`
+- **Metadata_created** `2025-03-25T03:51:43.305586`
+- **Metadata_modified** `2025-04-02T03:22:50.226268`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 220a4806-e918-46b0-89ee-c0014eefee8f
+# Description              : 
+# Issued                   : 2024-01-12T11:17:10.586791
+# Modified                 : 2025-01-04T15:00:30.439880
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_srz_od1036_hilfsfristen_rettungsdienste_jahr_stadtkreis/download/GES103OD1036.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
