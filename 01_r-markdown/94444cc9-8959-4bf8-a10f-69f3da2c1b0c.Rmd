@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-04-09"
+date: "2025-04-10"
 output: html_document
 ---
 
@@ -23,7 +23,7 @@ Auto generated R starter code for data set influenza@abteilung-uebertragbare-kra
 - **Keywords.de** `['bag-grippe-influenza']`
 - **Issued** `2023-11-08T12:00:00+00:00`
 - **Metadata_created** `2024-11-14T11:54:53.984010`
-- **Metadata_modified** `2025-04-08T06:08:06.365676`
+- **Metadata_modified** `2025-04-09T04:24:46.024225`
 
 
 # Load packages
@@ -44,23 +44,14 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
-# Description              : Die Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Januar 2022 die Viruslast von SARS-CoV-2 und seit Juli 2023 die Viruslast von Influenza und RSV in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
+# Description              : $XML_TRANS_{EN}_{CatalogDistributions}_{INFLUENZA_SENTINELLA_DESCRIPTION}
 # Issued                   : None
 # Modified                 : 2025-04-02T00:00:00+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/RESPVIRUSES_wastewater/csv')
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_sentinella/csv')
 
 # Distribution 1
-# Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
-# Description              : Die Daten basieren auf Informationen, die Laboratorien dem BAG im Rahmen der Meldepflicht übermittelt haben.
-# Issued                   : None
-# Modified                 : 2025-04-02T00:00:00+00:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_oblig/csv')
-
-# Distribution 2
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
 # Description              : Die Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte Informationen zu Erstkonsultationen aufgrund akuter respiratorischer Infektion (ARI) oder grippeähnlicher Erkrankung (ILI) in Arztpraxen und bei Hausbesuchen.
 # Issued                   : None
@@ -69,14 +60,23 @@ df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_oblig/
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/RESPVIRUSES_sentinella/csv')
 
-# Distribution 3
+# Distribution 2
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
-# Description              : $XML_TRANS_{EN}_{CatalogDistributions}_{INFLUENZA_SENTINELLA_DESCRIPTION}
+# Description              : Die Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Januar 2022 die Viruslast von SARS-CoV-2 und seit Juli 2023 die Viruslast von Influenza und RSV in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
 # Issued                   : None
 # Modified                 : 2025-04-02T00:00:00+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_sentinella/csv')
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/RESPVIRUSES_wastewater/csv')
+
+# Distribution 3
+# Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
+# Description              : Die Daten basieren auf Informationen, die Laboratorien dem BAG im Rahmen der Meldepflicht übermittelt haben.
+# Issued                   : None
+# Modified                 : 2025-04-02T00:00:00+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_oblig/csv')
 
 
 
