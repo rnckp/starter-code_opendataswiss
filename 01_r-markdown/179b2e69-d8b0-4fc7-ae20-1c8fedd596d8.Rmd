@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-04-19"
+output: html_document
+---
+
+## Dataset: Wohnbautätigkeit in den Gemeinden des Kantons Zürich
+
+Anzahl der Neubau- und Abbruchwohnungen sowie des Wohnbausaldos pro Gemeinde sowie beim CSV zusätzlich nach Zimmerzahl und Gebäudekategorie. Weitere Erläuterungen zur Auswertung (inkl. GWR-Stichtag) finden sich in den Excel-Datei oder beim CSV in den Metadaten. Die Rohdaten zur Bezifferung der Wohnbautätigkeit sind OGD (siehe 'Verwandte Datensätze') . Eine Auswertungsvorlage ist unten verlinkt (siehe 'Weitere Informationen').
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnbautatigkeit-in-den-gemeinden-des-kantons-zurich)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/planen-bauen/raumplanung/immobilienmarkt/wohnbautaetigkeit.html)
+
+Auto generated R starter code for data set 2922@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['wohnbautaetigkeit', 'gemeinden']`
+- **Issued** `2025-04-17T14:22:39+01:00`
+- **Metadata_created** `2025-04-18T04:34:54.185443`
+- **Metadata_modified** `2025-04-18T04:34:54.185451`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 179b2e69-d8b0-4fc7-ae20-1c8fedd596d8
+# Description              : Der Stichtag der Datengrundlage ist jeweils der 31. Dezember des letzten ausgewiesenen Jahres. Wohnungen in neuen/abgebrochenen Gebäuden. Aufstockungen bzw. Umbauten wurden nicht berücksichtigt.																	 Aufgrund von Registernachführungen können sich die Zahlen insbsondere für Zeiträume nahe beim Stichtag bei zukünftigen Auswertungen noch ändern.																	 Die Datenaufbereitung basiert auf der Schablone hier: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002162_00004263.html
+# Issued                   : 2025-04-17T14:22:39+01:00
+# Modified                 : 2025-04-17T14:22:39+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002922_00006203.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+basil.schlaepfer@statistik.ji.zh.ch | Statistisches Amt des Kantons Zürich, Analysen & Studien
