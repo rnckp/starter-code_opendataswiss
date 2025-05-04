@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-05-03"
+date: "2025-05-04"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set 690@statistisches-amt-kanton-zuerich.
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Wahlen & Abstimmungen`
 - **Maintainer_email** `wahlen@statistik.ji.zh.ch`
-- **Keywords.de** `['politik', 'kantonzuerich', 'kantonsratswahlen', 'wahlen', 'wahlergebnisse', 'kantonsrat', 'panaschierstimmen', 'politischeparteien', 'exekutive']`
+- **Keywords.de** `['kantonzuerich', 'panaschierstimmen', 'exekutive', 'politischeparteien', 'kantonsratswahlen', 'wahlen', 'politik', 'wahlergebnisse', 'kantonsrat']`
 - **Issued** `2020-06-05T08:30:00+01:00`
 - **Metadata_created** `2021-01-14T17:31:38.250744`
-- **Metadata_modified** `2025-05-02T05:28:10.866191`
+- **Metadata_modified** `2025-05-03T07:05:08.783042`
 
 
 # Load packages
@@ -45,20 +45,20 @@ library(skimr)
 # Distribution 0
 # Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
 # Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
-# Issued                   : 2023-11-29T11:46:14+01:00
-# Modified                 : 2023-11-29T11:46:14+01:00
+# Issued                   : 2023-11-29T11:46:04+01:00
+# Modified                 : 2023-11-29T11:46:04+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004961.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004963.csv')
 
 # Distribution 1
 # Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2015
-# Issued                   : 2021-06-02T08:36:14+01:00
-# Modified                 : 2023-02-13T14:00:54+01:00
+# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
+# Issued                   : 2023-11-29T11:46:09+01:00
+# Modified                 : 2023-11-29T11:46:09+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001839.csv')
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004964.csv')
 
 # Distribution 2
 # Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
@@ -71,114 +71,6 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 3
 # Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2007 pro Gemeinde
-# Issued                   : 2020-07-07T15:36:39+01:00
-# Modified                 : 2023-11-22T13:41:33+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001660.csv')
-
-# Distribution 4
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
-# Issued                   : 2023-11-29T11:45:56+01:00
-# Modified                 : 2023-11-29T11:45:56+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004965.csv')
-
-# Distribution 5
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
-# Issued                   : 2023-11-29T11:46:32+01:00
-# Modified                 : 2023-11-29T11:46:32+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004960.csv')
-
-# Distribution 6
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
-# Issued                   : 2023-11-29T11:46:09+01:00
-# Modified                 : 2023-11-29T11:46:09+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004964.csv')
-
-# Distribution 7
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2015 pro Gemeinde
-# Issued                   : 2020-07-07T15:49:47+01:00
-# Modified                 : 2023-11-22T13:39:25+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001664.csv')
-
-# Distribution 8
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2011 pro Gemeinde
-# Issued                   : 2020-07-07T15:48:59+01:00
-# Modified                 : 2023-11-22T13:40:36+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001662.csv')
-
-# Distribution 9
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2007
-# Issued                   : 2020-07-07T15:44:54+01:00
-# Modified                 : 2023-11-22T13:41:58+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001661.csv')
-
-# Distribution 10
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2007
-# Issued                   : 2021-06-02T08:22:01+01:00
-# Modified                 : 2023-02-13T14:02:02+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001837.csv')
-
-# Distribution 11
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
-# Issued                   : 2023-11-29T11:46:18+01:00
-# Modified                 : 2023-11-29T11:46:18+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004962.csv')
-
-# Distribution 12
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
-# Issued                   : 2023-11-29T11:46:04+01:00
-# Modified                 : 2023-11-29T11:46:04+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004963.csv')
-
-# Distribution 13
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
-# Issued                   : 2023-11-29T11:45:46+01:00
-# Modified                 : 2023-11-29T11:45:46+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004967.csv')
-
-# Distribution 14
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
-# Issued                   : 2023-11-29T11:46:00+01:00
-# Modified                 : 2023-11-29T11:46:00+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004966.csv')
-
-# Distribution 15
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
 # Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2019
 # Issued                   : 2020-07-07T15:51:21+01:00
 # Modified                 : 2023-11-22T13:38:17+01:00
@@ -186,70 +78,7 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001667.csv')
 
-# Distribution 16
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2015
-# Issued                   : 2020-07-07T15:50:09+01:00
-# Modified                 : 2023-11-22T13:39:49+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001665.csv')
-
-# Distribution 17
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2023 pro Gemeinde
-# Issued                   : 2023-02-21T09:37:19+01:00
-# Modified                 : 2023-11-22T13:38:40+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00003946.csv')
-
-# Distribution 18
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2019
-# Issued                   : 2021-06-02T08:38:16+01:00
-# Modified                 : 2023-02-13T14:00:24+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001840.csv')
-
-# Distribution 19
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2011
-# Issued                   : 2021-06-02T08:35:07+01:00
-# Modified                 : 2023-02-13T14:01:29+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001838.csv')
-
-# Distribution 20
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Tabelle für die Zuordnung von Listen zu Parteien bei Zürcher Kantonsratswahlen. Die ausgewiesenen Parteien sind an die vom Bundesamt für Statistik (BFS) in Zeitreihen separat ausgewiesenen Parteien angelehnt.
-# Issued                   : 2023-11-22T13:49:12+01:00
-# Modified                 : 2023-11-29T09:24:04+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004843.csv')
-
-# Distribution 21
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
-# Issued                   : 2023-11-29T11:45:51+01:00
-# Modified                 : 2023-11-29T11:45:51+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004968.csv')
-
-# Distribution 22
-# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
-# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2023
-# Issued                   : 2023-02-21T09:36:30+01:00
-# Modified                 : 2023-11-22T13:38:50+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00003948.csv')
-
-# Distribution 23
+# Distribution 4
 # Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
 # Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2019 pro Gemeinde
 # Issued                   : 2020-07-07T15:51:01+01:00
@@ -258,7 +87,142 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001666.csv')
 
-# Distribution 24
+# Distribution 5
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
+# Issued                   : 2023-11-29T11:46:14+01:00
+# Modified                 : 2023-11-29T11:46:14+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004961.csv')
+
+# Distribution 6
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2023 pro Gemeinde
+# Issued                   : 2023-02-21T09:37:19+01:00
+# Modified                 : 2023-11-22T13:38:40+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00003946.csv')
+
+# Distribution 7
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2019
+# Issued                   : 2021-06-02T08:38:16+01:00
+# Modified                 : 2023-02-13T14:00:24+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001840.csv')
+
+# Distribution 8
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2007
+# Issued                   : 2020-07-07T15:44:54+01:00
+# Modified                 : 2023-11-22T13:41:58+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001661.csv')
+
+# Distribution 9
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
+# Issued                   : 2023-11-29T11:45:51+01:00
+# Modified                 : 2023-11-29T11:45:51+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004968.csv')
+
+# Distribution 10
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2015
+# Issued                   : 2021-06-02T08:36:14+01:00
+# Modified                 : 2023-02-13T14:00:54+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001839.csv')
+
+# Distribution 11
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2011
+# Issued                   : 2021-06-02T08:35:07+01:00
+# Modified                 : 2023-02-13T14:01:29+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001838.csv')
+
+# Distribution 12
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2011 pro Gemeinde
+# Issued                   : 2020-07-07T15:48:59+01:00
+# Modified                 : 2023-11-22T13:40:36+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001662.csv')
+
+# Distribution 13
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2007 pro Gemeinde
+# Issued                   : 2020-07-07T15:36:39+01:00
+# Modified                 : 2023-11-22T13:41:33+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001660.csv')
+
+# Distribution 14
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
+# Issued                   : 2023-11-29T11:45:46+01:00
+# Modified                 : 2023-11-29T11:45:46+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004967.csv')
+
+# Distribution 15
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Partei und Gebiet. Die Zuteilung der Listen zu einer Partei erfolgt gemäss der Ressource "Zuordnungstabelle Listen – Parteien" dieses Datasets.
+# Issued                   : 2023-11-29T11:45:56+01:00
+# Modified                 : 2023-11-29T11:45:56+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004965.csv')
+
+# Distribution 16
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
+# Issued                   : 2023-11-29T11:46:18+01:00
+# Modified                 : 2023-11-29T11:46:18+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004962.csv')
+
+# Distribution 17
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2023
+# Issued                   : 2023-02-21T09:36:30+01:00
+# Modified                 : 2023-11-22T13:38:50+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00003948.csv')
+
+# Distribution 18
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Stimmen nach Herkunft für alle Kandidierenden der Kantonsratswahl 2015 pro Gemeinde
+# Issued                   : 2020-07-07T15:49:47+01:00
+# Modified                 : 2023-11-22T13:39:25+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001664.csv')
+
+# Distribution 19
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Informationen zu den Kandidierenden der Kantonsratswahl 2007
+# Issued                   : 2021-06-02T08:22:01+01:00
+# Modified                 : 2023-02-13T14:02:02+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001837.csv')
+
+# Distribution 20
 # Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
 # Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2011
 # Issued                   : 2020-07-07T15:49:26+01:00
@@ -266,6 +230,42 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001663.csv')
+
+# Distribution 21
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Gemeindespezifische Informationen wie BFS-Nummer und Stimmbeteiligung für die Kantonsratswahl 2015
+# Issued                   : 2020-07-07T15:50:09+01:00
+# Modified                 : 2023-11-22T13:39:49+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00001665.csv')
+
+# Distribution 22
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Tabelle für die Zuordnung von Listen zu Parteien bei Zürcher Kantonsratswahlen. Die ausgewiesenen Parteien sind an die vom Bundesamt für Statistik (BFS) in Zeitreihen separat ausgewiesenen Parteien angelehnt.
+# Issued                   : 2023-11-22T13:49:12+01:00
+# Modified                 : 2023-11-29T09:24:04+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004843.csv')
+
+# Distribution 23
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
+# Issued                   : 2023-11-29T11:46:00+01:00
+# Modified                 : 2023-11-29T11:46:00+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004966.csv')
+
+# Distribution 24
+# Package_id               : 7b408560-e765-4c39-8634-bb9b73be504f
+# Description              : Anzahl erhaltener Stimmen pro Liste und Gebiet
+# Issued                   : 2023-11-29T11:46:32+01:00
+# Modified                 : 2023-11-29T11:46:32+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000690_00004960.csv')
 
 
 
