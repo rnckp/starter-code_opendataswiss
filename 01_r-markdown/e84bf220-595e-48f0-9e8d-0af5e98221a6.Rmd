@@ -1,13 +1,13 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-05-22"
+date: "2025-05-24"
 output: html_document
 ---
 
 ## Dataset: Stadtklima Zürich - bereinigte Temperaturmessungen Messnetz meteoblue
 
 
-Dieses Dataset umfasst **Temperatur-Messwerte seit August 2019 bis zum letzten abgeschlossenen Monat**, aufgeteilt in Jahresdateien. Darin enthalten sind die **15-Minuten-Mittelwerte** des entsprechenden Jahres für rund 90 Stationen auf dem Gebiet der Stadt Zürich. Gemessen wird die Temperatur, wo jeweils in genügender Qualität vorhanden.
+Dieses Dataset umfasst **Temperatur-Messwerte seit August 2019 bis zum letzten abgeschlossenen Monat**, aufgeteilt in Jahresdateien und einmal als kompletter Datensatz im parquet-Format. Darin enthalten sind die **15-Minuten-Mittelwerte** des entsprechenden Jahres für rund 90 Stationen auf dem Gebiet der Stadt Zürich. Gemessen wird die Temperatur, wo jeweils in genügender Qualität vorhanden.
 
 Die Messwerte des laufenden Jahres werden jeweils nach Abschluss eines Monats ergänzt.
 
@@ -24,10 +24,10 @@ Auto generated R starter code for data set 5abb5df3-1786-45fa-bf1f-ce3962886f42@
 - **Organization.url** `http://www.stadt-zuerich.ch/opendata`
 - **Maintainer** `Open Data Zürich`
 - **Maintainer_email** `opendata@zuerich.ch`
-- **Keywords.de** `['temperatur', 'stadtklima', 'meteoblue', 'kaelte', 'meteo', 'wetter', 'zeitreihe', 'messwerte', 'tabelle', 'sachdaten', 'hitze']`
-- **Issued** `2023-07-14T00:00:00`
+- **Keywords.de** `['meteo', 'meteoblue', 'messwerte', 'tabelle', 'zeitreihe', 'stadtklima', 'kaelte', 'hitze', 'sachdaten', 'temperatur', 'wetter']`
+- **Issued** `2023-07-10T00:00:00`
 - **Metadata_created** `2024-11-28T02:49:02.662699`
-- **Metadata_modified** `2025-05-22T03:12:18.861395`
+- **Metadata_modified** `2025-05-24T03:29:09.610372`
 
 
 # Load packages
@@ -50,7 +50,7 @@ library(skimr)
 # Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
 # Description              : 
 # Issued                   : 2024-11-27T11:15:37.585150
-# Modified                 : 2025-05-22T01:44:18.455475
+# Modified                 : 2025-05-24T01:46:01.253222
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2022.csv')
@@ -58,65 +58,65 @@ df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_t
 # Distribution 1
 # Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
 # Description              : 
-# Issued                   : 2024-11-27T11:15:47.534609
-# Modified                 : 2025-05-22T01:44:33.421562
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2024.csv')
-
-# Distribution 2
-# Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
-# Description              : 
-# Issued                   : 2024-11-27T11:15:28.342428
-# Modified                 : 2025-05-22T01:44:01.464072
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2020.csv')
-
-# Distribution 3
-# Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
-# Description              : 
 # Issued                   : 2025-04-02T12:44:31.856310
-# Modified                 : 2025-05-22T01:44:42.526182
+# Modified                 : 2025-05-24T01:46:25.699013
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2025.csv')
 
-# Distribution 4
+# Distribution 2
 # Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
 # Description              : 
-# Issued                   : 2024-11-27T11:15:25.684253
-# Modified                 : 2025-05-22T01:43:56.911358
+# Issued                   : 2024-11-27T11:15:33.177988
+# Modified                 : 2025-05-24T01:45:52.118472
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2019.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2021.csv')
 
-# Distribution 5
+# Distribution 3
 # Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
 # Description              : 
 # Issued                   : 2024-11-27T11:15:42.279317
-# Modified                 : 2025-05-22T01:44:23.856337
+# Modified                 : 2025-05-24T01:46:08.296827
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2023.csv')
 
-# Distribution 6
+# Distribution 4
+# Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
+# Description              : 
+# Issued                   : 2024-11-27T11:15:47.534609
+# Modified                 : 2025-05-24T01:46:17.391472
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2024.csv')
+
+# Distribution 5
 # Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
 # Description              : 
 # Issued                   : 2024-11-27T11:15:52.513909
-# Modified                 : 2025-05-22T01:44:46.340988
+# Modified                 : 2025-05-24T01:46:29.596469
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_metadaten_qa.csv')
 
+# Distribution 6
+# Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
+# Description              : 
+# Issued                   : 2024-11-27T11:15:28.342428
+# Modified                 : 2025-05-24T01:45:43.204580
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2020.csv')
+
 # Distribution 7
 # Package_id               : e84bf220-595e-48f0-9e8d-0af5e98221a6
 # Description              : 
-# Issued                   : 2024-11-27T11:15:33.177988
-# Modified                 : 2025-05-22T01:44:08.374517
+# Issued                   : 2024-11-27T11:15:25.684253
+# Modified                 : 2025-05-24T01:45:38.511897
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2021.csv')
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue/download/ugz_stadtklima_zuerich_temperaturmessungen_messnetz_meteoblue_2019.csv')
 
 
 
