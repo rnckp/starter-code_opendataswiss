@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-08"
+output: html_document
+---
+
+## Dataset: Gesamtsteuerfüsse der Thurgauer Gemeinden
+
+Der Datensatz beinhalten Daten zu den Gesamtsteuerfüssen nach Politischen Gemeinden des
+Kantons Thurgau ab 2004. Sie wurden von der Steuerverwaltung
+Kanton Thurgau erhoben. 
+
+Quellenangabe: Steuerverwaltung Kanton Thurgau. Die Daten umfassen die Gesamtsteuerfüsse für natürliche Personen (evangelische Steuerpflichtige, katholische Steuerpflichtige, Steuerpflichtige ohne Konfession resp. Angehörige anderer Religionen oder Konfessionen) und für juristische Personen nach den Politischen Gemeinden des Kantons Thurgau ab 2004 (nicht-katholische oder -evangelische natürliche Steuerpflichtige ab 2016). Der Gesamtsteuerfuss ist die Summe aus Staatssteuerfuss, Gemeindesteuerfuss, Schulsteuerfuss und Steuerfuss der evangelischen Kirchgemeinde. Die Gebiete der Politischen, Schul- und Kirchgemeinden sind im Kanton Thurgau nicht deckungsgleich. Gehört eine Politische Gemeinde zu mehreren Schul- und/oder Kirchgemeinden, wird der Steuerfuss der einwohnerstärksten Ortsteile mit gleichem Steuerfuss verwendet.  
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gesamtsteuerfusse-der-thurgauer-gemeinden1)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-70/)
+
+Auto generated R starter code for data set sk-stat-70@kanton-thurgau.
+
+## Metadata
+
+- **Publisher.name** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['steuerfusse', 'gemeinde', 'steuerbelastung', 'gesamtsteuerfusse', 'steuerfuss', 'gesamtsteuerfuss', 'gemeindesteuerfuss', 'naturliche-personen', 'gemeindesteuerfusse', 'juristische-personen']`
+- **Issued** `2017-07-03T00:00:00`
+- **Metadata_created** `2022-02-28T11:03:38.715024`
+- **Metadata_modified** `2025-06-06T11:31:24.497322`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 99d594e6-6cc2-4ef0-bbd2-543496e6ff91
+# Description              : Gesamtsteuerfüsse der Thurgauer Gemeinden (csv)
+# Issued                   : 2017-07-03T00:00:00
+# Modified                 : 2025-01-16T14:13:29.373000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-70/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

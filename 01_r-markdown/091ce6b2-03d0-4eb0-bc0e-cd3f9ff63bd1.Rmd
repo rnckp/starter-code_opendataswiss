@@ -1,0 +1,82 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-08"
+output: html_document
+---
+
+## Dataset: Vorstösse im Grossen Rat Kanton Thurgau nach Departementen und Fraktion
+
+Der Datensatz enthält die Anzahl Vorstösse des Grossen Rates ab 2011 nach Jahr, Departement, Art des Vorstosses und Fraktion. Die Vorstösse sind unterteilt nach parlamentarischer Initiative, Motion, Leistungsmotion, Interpellation, einfacher Anfrage und Antrag nach § 52 der Geschäftsordnung des Grossen Rates. Falls Vorstösse einer Fraktion mit anderen Parteien eingereicht wurde, ist dies in der Spalte 'Bemerkungen' ausgewiesen. Gleiches gilt für jene Vorstösse, die nur von einer Partei einer Fraktion eingereicht wurden (bei Fraktionen, die aus mehreren Parteien zusammengesetzt sind).Hinweis zu den Fraktionsbezeichnungen: Es gilt die Fraktion zum Zeitpunkt des Eingangs eines Vorstosses. Hinweis zur Parteibezeichnung: Die CVP änderte per 1. September 2021 ihre Parteibezeichnung (neu: Die Mitte). Die Fraktionsbezeichnung hat sich entsprechend ebenfalls per 1. September 2021 geändert. 
+Hinweis: Dieser Datensatz wird nicht mehr aktualisiert. Sie finden die Daten zu den Vorstössen des Grossen Rates laufend aktualisiert in folgenden drei Datensätzen:[Politische Geschäfte des Grossen Rats des Kantons Thurgau](https://data.tg.ch/explore/dataset/sk-stat-140/table/): Auflistung der Geschäfte, die im Grossen Rat behandelt werden[Vorstösserinnen und Vorstösser im Grossen Rat des Kantons Thurgau](https://data.tg.ch/explore/dataset/sk-stat-141/table/): Auflistungen der Vorstösserinnen und Vorstösser pro Geschäft[Dokumente zu politischen Geschäften des Grossen Rats des Kantons Thurgau](https://data.tg.ch/explore/dataset/sk-stat-139/table/): URLs zu allen Dokumenten, welche zu Geschäften im Grossen Rat eingereicht wurdenDie Datensätze lassen sich über die Geschäftsnummer verbinden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/vorstosse-im-grossen-rat-kanton-thurgau-nach-departementen-und-fraktion)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-110/)
+
+Auto generated R starter code for data set sk-stat-110@kanton-thurgau.
+
+## Metadata
+
+- **Publisher.name** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['motion', 'vorstoss', 'fraktion', 'departement', 'antrag', 'grosser-rat', 'interpellation', 'parlamentarische-initiative', 'kantonsrat', 'partei', 'leistungsmotion']`
+- **Issued** `2022-04-04T00:00:00`
+- **Metadata_created** `2022-04-04T11:01:54.960913`
+- **Metadata_modified** `2025-06-06T11:30:19.582387`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 091ce6b2-03d0-4eb0-bc0e-cd3f9ff63bd1
+# Description              : Vorstösse im Grossen Rat Kanton Thurgau nach Departementen und Fraktion (csv)
+# Issued                   : 2022-04-04T00:00:00
+# Modified                 : 2025-01-21T08:17:26.545000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-110/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-08"
+output: html_document
+---
+
+## Dataset: Handelsregister Kanton Thurgau: Firmen mit Rechtsform und Standort
+
+Dieser Datensatz umfasst die Unternehmen im Thurgau, welche im Handelsregister des Zefix (Zentraler Firmenindex) registriert sind. Zefix ist ein öffentlich zugängliches Angebot des Eidgenössischen Amtes für das Handelsregister (EHRA). Es bietet die Daten des Zentralregisters über verschiedene Zugänge an: Zefix-Webapplikation ([https://www.zefix.admin.ch/](https://www.zefix.admin.ch/))Zefix REST API ([https://www.zefix.admin.ch/ZefixPublicREST](https://www.zefix.admin.ch/ZefixPublicREST))Zefix Mobile App ([https://www.zefixapp.ch/](https://www.zefixapp.ch/)) Linked Data in LINDAS ([https://lindas.admin.ch/](https://lindas.admin.ch/))Über Zefix können die Daten aller im Handelsregister eingetragenen Rechtseinheiten sowie die täglichen Handelsregisterpublikationen im SHAB (Schweizerisches Handelsamtsblatt, [https://www.shab.ch/](https://www.shab.ch/)) abgerufen werden. Der hier angebotene Datensatz enthält tagesaktuelle Kerndaten der aktiven, im Handelsregister eingetragenen Rechtseinheiten, wie Firma/Name, Sitz und Domiziladresse.Der Datensatz wird über den Linked Data Service LINDAS bezogen. Anschliessend werden die Adressen mit dem aktuellen Stand des Gebäude- und Wohnungsregisters (GWR) abgeglichen und die entsprechenden Koordinaten zugewiesenEs ist zu beachten, dass die Koordinaten nur dann zugeordnet werden, wenn eine eindeutige Zuordnung über das GWR möglich ist. Ist keine eindeutige Zuordnung möglich, so werden keine Koordinaten angegeben.Auch andere Kantone veröffentlichen die Daten des jeweiligen Handelsregisters:[Kanton Basel-Stadt](https://data.bs.ch/explore/dataset/100330/information/?disjunctive.company_type_de&disjunctive.municipality&disjunctive.plz&disjunctive.locality&disjunctive.address&sort=company_legal_name): Hier können auch die Handelsregisterauszüge aller Kantone heruntergeladen werden.[Kanton Basel-Land](https://data.bl.ch/explore/dataset/12480/information/?disjunctive.firmensitz&disjunctive.firmensitz_bezirk&disjunctive.rechtsform&disjunctive.noga_abschnitt&disjunctive.noga_abteilung&disjunctive.lokalisierungsmethode&sort=firmensitz_code)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/handelsregister-kanton-thurgau-firmen-mit-rechtsform-und-standort)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/sk-stat-142/)
+
+Auto generated R starter code for data set sk-stat-142@kanton-thurgau.
+
+## Metadata
+
+- **Publisher.name** `kanton-thurgau`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['firmenindex', 'standort', 'handelsregister', 'zefix', 'wohnung', 'gwr', 'gebaude', 'unternehmensstruktur', 'linked-data', 'firma', 'lindas', 'koordinaten', 'firmenkonkurs', 'amtsblatt', 'unternehmen']`
+- **Issued** `2025-06-06T20:00:40.120000+00:00`
+- **Metadata_created** `2024-08-26T11:05:45.297113`
+- **Metadata_modified** `2025-06-07T11:07:31.180884`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 87182a41-abc1-4963-8e10-e4665bce2397
+# Description              : Handelsregister Kanton Thurgau: Firmen mit Rechtsform und Standort (csv)
+# Issued                   : 2025-06-06T20:00:40.120000+00:00
+# Modified                 : 2025-06-06T20:00:40.120000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/sk-stat-142/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

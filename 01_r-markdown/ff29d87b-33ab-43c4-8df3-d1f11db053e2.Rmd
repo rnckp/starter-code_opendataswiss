@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-08"
+output: html_document
+---
+
+## Dataset: Geschäftsorganisationen mit Ereignisdaten
+
+Die Liste umfasst alle Geschäftsorganisationen, für die Ereignisdaten zur Verfügung stehen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geschaftsorganisationen-mit-ereignisinformationen-siri-sx-vdv736)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://data.opentransportdata.swiss/dataset/go-siri-sx)
+
+Auto generated R starter code for data set go-siri-sx@oevch.
+
+## Metadata
+
+- **Publisher.name** `FachBus SIRI-VDV`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `FachBus SIRI-VDV`
+- **Maintainer_email** `cus.vdv@sbb.ch`
+- **Keywords.de** `['transportunternehmen', 'storung', 'ereignis', 'geschaftsorganisation', 'zug', 'ojp', 'passagier', 'linie', 'verkehrsunternehmen', 'bus', 'ereignismanagement', 'fahrt', 'siri-sx', 'daten', 'gtfs-sa', 'vdv-736']`
+- **Issued** `2022-04-01T12:00:00`
+- **Metadata_created** `2023-01-24T00:38:11.233974`
+- **Metadata_modified** `2025-06-06T02:19:58.117650`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ff29d87b-33ab-43c4-8df3-d1f11db053e2
+# Description              : Die Liste umfasst alle Geschäftsorganisationen, für die Ereignisdaten zur Verfügung stehen. Letztes Update: 27.05.2025
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/b3ac097b-ff72-4a1f-9d69-76e72962d769/resource/a8312f3a-18a6-4e92-9906-bbb623a24369/download/go-siri-sx.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+siri.vdv@sbb.ch | FachBus SIRI-VDV
