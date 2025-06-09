@@ -1,0 +1,88 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-09"
+output: html_document
+---
+
+## Dataset: Points of Interest und deren Behindertengerechtigkeit in der Stadt St.Gallen
+
+Der Datensatz zeigt die Points of Interest der Stadt
+St.Gallen aus dem [digitalen Stadtplan](https://map.stadt.sg.ch/) und deren Behindertengerechtigkeit. Dazu gehören folgende Kategorien:
+Apotheke, Drogerie; Aus- und Weiterbildung; Banken; Bar, Dancing, Disco; Beratungsstellen;
+Friedhöfe; Heime, Spitäler; Historische Objekte; Hotel; Kantonale Verwaltung; Kinder-
+und Jugendtreff; Kindergärten; Kino; Krippen, Freiwilliges Schul-Angebot (FSA) und Tagesbetreuungen; Kulturelles;
+Mobility; Öffentliche WC; Öffentlicher Verkehr; Parkplätze, Parkhäuser; Post; Religiöse
+Bauten; Restaurant; Schulhäuser; Spielgruppen; Spielplätze; Sportanlagen; Stadtverwaltung;
+Tankstellen; Velo
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/points-of-interest-und-deren-behindertengerechtigkeit-in-der-stadt-st-gallen)<br>
+[Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/points-of-interest-/)
+
+Auto generated R starter code for data set points-of-interest-@stadt-st-gallen.
+
+## Metadata
+
+- **Publisher.name** `stadt-st-gallen`
+- **Organization.display_name.de** `Stadt St.Gallen`
+- **Organization.url** `https://www.stadt.sg.ch/`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `[]`
+- **Issued** `2024-01-15T12:31:05+00:00`
+- **Metadata_created** `2023-12-21T12:47:04.482895`
+- **Metadata_modified** `2025-06-06T05:03:11.948025`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a308d9d2-8e27-41da-b834-f2867aebd7bb
+# Description              : Points of Interest und deren Behindertengerechtigkeit in der Stadt St.Gallen (csv)
+# Issued                   : 2024-01-15T12:31:05+00:00
+# Modified                 : 2024-01-15T12:31:05+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/points-of-interest-/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen
