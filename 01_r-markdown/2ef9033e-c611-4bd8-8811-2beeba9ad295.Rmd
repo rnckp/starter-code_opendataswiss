@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-10"
+output: html_document
+---
+
+## Dataset: Gebäudeadressen und -informationen
+
+Gebäudeadressen aller im kantonalen Datenmarkt geführten Gebäude (siehe [https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/153.310](https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/153.310)).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gebaudeadressen-und-informationen1)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100259/)
+
+Auto generated R starter code for data set 100259@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Grundbuch- und Vermessungsamt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Open Data Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['abfuhrzone', 'wohnen', 'gebaude', 'adresse', 'wohnung']`
+- **Issued** `2023-12-13T00:00:00`
+- **Metadata_created** `2023-12-20T11:57:45.073180`
+- **Metadata_modified** `2025-06-06T02:13:16.473856`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2ef9033e-c611-4bd8-8811-2beeba9ad295
+# Description              : Gebäudeadressen und -informationen (csv)
+# Issued                   : 2023-12-13T00:00:00
+# Modified                 : 2025-06-05T05:04:42.251000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100259/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt
