@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-11"
+output: html_document
+---
+
+## Dataset: Inverkehrsetzungen neuer Personenwagen ab 2006
+
+Dieser Datensatz enthält eine monatliche Übersicht über die Neuzulassungen von neuen Personenwagen im Kanton Freiburg und in der gesamten Schweiz seit 2006.Die Resultate des laufenden Jahres sind immer provisorisch. Nachmeldungen für vergangene Monate sind wahrscheinlich.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/inverkehrsetzung-neuer-personenwagen-ab-2006)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/11_02_mise_en_circulations_mensuelles/)
+
+Auto generated R starter code for data set 11_02_mise_en_circulations_mensuelles@ssd.
+
+## Metadata
+
+- **Publisher.name** `ssd`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD`
+- **Maintainer_email** `opendata@fr.ch`
+- **Keywords.de** `['konjunkturindikatoren', 'freiburger-konjunkturspiegel', 'inverkehrsetzungen', 'neue-personenwagen']`
+- **Issued** `2025-05-12T00:00:00`
+- **Metadata_created** `2025-01-30T19:23:21.172957`
+- **Metadata_modified** `2025-06-08T03:53:13.148800`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 419c68c0-0753-49a3-9ef1-ec4c64adc085
+# Description              : Inverkehrsetzungen neuer Personenwagen ab 2006 (csv)
+# Issued                   : 2025-05-12T00:00:00
+# Modified                 : 2025-05-12T09:33:50.809000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/11_02_mise_en_circulations_mensuelles/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

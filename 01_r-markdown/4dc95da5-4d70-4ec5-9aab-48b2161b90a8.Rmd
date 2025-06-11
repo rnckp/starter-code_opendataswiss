@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-11"
+output: html_document
+---
+
+## Dataset: Baumkronenbedeckung
+
+Dieser Datensatz zeigt die gesamte durch Bäume beschattete Fläche (Baumkronenbedeckung) im Kanton Basel-Stadt in verschiedenen Jahren. Der Kanton Basel-Stadt erhebt durch Laserabtastung der Oberfläche (LiDAR) Daten zur Baumkronenbedeckung (durch Bäume beschattete Fläche) über die gesamte Kantonsfläche. Die von LiDAR abgeleitete Baumkronenbedeckung und Kennzahlen wurden für 2012 und 2021 berechnet. Die Nachführung wird in Zukunft alle drei Jahre stattfinden (2024 und 2027), so dass die Entwicklung der Baumkronendeckung in Basel genau verfolgt werden kann.Der Flug für die Erhebung neuer Daten in 2024 hat bereits stattgefunden, die Daten zu den Bäumen werden ausgewertet und im Herbst publiziert. In Zukunft werden, für ein genaues Monitoring, alle 3 Jahre neue Daten erhoben.Die Stadtgärtnerei stellt der interessierten Öffentlichkeit dieses digitale Wissen zur Verfügung: [Stadtgärtnerei des Kantons Basel-Stadt - Baumkronenbedeckung (https://www.bs.ch/bvd/stadtgaertnerei/unsere-abteilungen/gruenflaechenunterhalt/staedtischer-baumbestand)](https://www.bs.ch/bvd/stadtgaertnerei/unsere-abteilungen/gruenflaechenunterhalt/staedtischer-baumbestand)
+
+
+Man kann die LiDAR-Daten in Form einer png- und pgw-Datei in der Tabellenansicht herunterladen. Eine PGW-Datei ist eine Weltdatei, die Georeferenzierungsdaten für ein zugehöriges Bild im PNG-Format enthält, um dessen genaue Positionierung auf einer Karte zu ermöglichen.Hier finden Sie die URLs zu den Zip-Dateien, die beide Dateien enthalten:
+[https://data-bs.ch/stata/stadtgaertnerei/Baumkronenbedeckung_2012.zip](https://data-bs.ch/stata/stadtgaertnerei/Baumkronenbedeckung_2012.zip)[https://data-bs.ch/stata/stadtgaertnerei/Baumkronenbedeckung_2021.zip](https://data-bs.ch/stata/stadtgaertnerei/Baumkronenbedeckung_2021.zip)Auf der Website des Tiefbauamts können Sie die Daten mit dem GeoViewer betrachten: [https://tiefbauamt-bs.ch/geoviewer/lidar](https://tiefbauamt-bs.ch/geoviewer/lidar)Detailinformationen zur LiDAR-Technologie finden Sie hier: [https://www.swisstopo.admin.ch/de/lidar-daten-swisstopo](https://www.swisstopo.admin.ch/de/lidar-daten-swisstopo) 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/baumkronenbedeckung)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100357/)
+
+Auto generated R starter code for data set 100357@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Stadtgärtnerei`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Open Data Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['baum', 'baumbestand', 'kronenbedeckung', 'baumkrone', 'lidar', 'vegetation']`
+- **Issued** `2024-03-23T00:00:00`
+- **Metadata_created** `2024-03-24T01:55:39.142094`
+- **Metadata_modified** `2025-06-07T02:21:54.136152`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 4dc95da5-4d70-4ec5-9aab-48b2161b90a8
+# Description              : Baumkronenbedeckung (csv)
+# Issued                   : 2024-03-23T00:00:00
+# Modified                 : 2025-02-27T15:27:12.558000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100357/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt
