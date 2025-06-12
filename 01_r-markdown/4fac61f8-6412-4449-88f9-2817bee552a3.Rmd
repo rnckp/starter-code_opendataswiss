@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-12"
+output: html_document
+---
+
+## Dataset: Sauberkeitsindex pro Monat und Strassenabschnitt
+
+Dieser Datensatz enthält den Sauberkeitsindex für alle Strassenabschnitte in der Stadt Basel. Zur Berechnung des Sauberkeitsindex wird wie folgt vorgegangen:Auf den Kehrrichtfahrzeugen sind Kameras installiert, die während der Einsätze Videoaufnahmen der Strassen machen. Ein Computer durchsucht anschliessend diese Videoaufnahmen nach Abfällen. Dieser sortiert die Abfälle in verschiedene Abfallkategorien (Zigarettenstummel, Papier, PET-Flaschen etc.) und zählt die Anzahl der gefundenen Abfälle jeder Kategorie. Zusätzlich wird für jede Abfallkategorie der Verschmutzungsgrad und der Störfaktor bestimmt. Daraus wird der Sauberkeitsindex berechnet. Danach werden die Videoaufnahmen aus Datenschutzgründen umgehend gelöscht.Der Sauberkeitsindex wird auf einer Skala von 0 bis 5 angegeben, wobei die Werte folgendermassen beurteilt werden:Kleiner als 3: schlechtZwischen 3 und 4: mittelGrösser als 4: gut
+Der Grosse Rat beauftragt das Tiefbauamt mit dem Erreichen eines Indexes für die gesamte Stadt von mindestens 4.5.
+Der Datensatz wird monatlich mit den Daten des Vormonats aktualisiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/sauberkeitsindex-pro-monat-und-strassenabschnitt)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100288/)
+
+Auto generated R starter code for data set 100288@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Stadtreinigung`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Open Data Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['kehrricht', 'abfall', 'stadtreinigung', 'mull', 'strassennetz', 'sauberkeit', 'reinigung', 'stadthygiene', 'verschmutzung']`
+- **Issued** `2024-07-15T00:00:00`
+- **Metadata_created** `2024-07-16T02:00:08.976512`
+- **Metadata_modified** `2025-06-11T01:55:28.518743`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 4fac61f8-6412-4449-88f9-2817bee552a3
+# Description              : Sauberkeitsindex pro Monat und Strassenabschnitt (csv)
+# Issued                   : 2024-07-15T00:00:00
+# Modified                 : 2025-06-01T07:02:11.008000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100288/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

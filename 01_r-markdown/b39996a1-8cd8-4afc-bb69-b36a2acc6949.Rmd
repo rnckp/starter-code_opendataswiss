@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-12"
+output: html_document
+---
+
+## Dataset: Smart Climate Luftklima
+
+Der Datensatz zeigt stündlich aktualisierte Angaben zu Lufttemperatur und Niederschlag, welche über Sensoren von meteoblue gemessen werden. Es handelt sich um Rohdaten, welche nicht plausibilisiert oder korrigiert sind.Die geografischen Koordinaten der Sensoren sind im Datensatz [«Standorte der Mess-Stationen Luftklima Smart Regio Basel»](https://data.bs.ch/explore/dataset/100082/) verfügbar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/smart-climate-luftklima)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100009/)
+
+Auto generated R starter code for data set 100009@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `meteoblue AG`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['wolf-areal', 'smart-city-lab', 'temperatur', 'sensoren', 'klima', 'regen', 'wetter', 'niederschlag']`
+- **Issued** `2020-05-13T00:00:00`
+- **Metadata_created** `2023-07-05T14:13:35.332557`
+- **Metadata_modified** `2025-06-11T02:05:11.610464`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b39996a1-8cd8-4afc-bb69-b36a2acc6949
+# Description              : Smart Climate Luftklima (csv)
+# Issued                   : 2020-05-13T00:00:00
+# Modified                 : 2025-06-11T01:11:32.954000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100009/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt
