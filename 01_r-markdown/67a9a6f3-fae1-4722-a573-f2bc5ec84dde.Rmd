@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Amtshaus
+
+Standorte der Amtshäuser in der Stadt Zürich
+
+**Zweck**: Auffinden und Darstellen der Daten im Kontaktparagraphen der städtischen Internetseiten sowie im Stadtplan.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/amtshaus1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_amtshaus)
+
+Auto generated R starter code for data set 147a5c53-7b81-4d1a-8b90-39f6fc12b71a@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `GIS-Zentrum, Geomatik + Vermessung, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['vektordaten', 'geoportal', 'geodaten', 'punktdaten', 'verwaltung', 'amtshaus', 'stzh']`
+- **Issued** `nan`
+- **Metadata_created** `2023-11-07T03:42:21.608154`
+- **Metadata_modified** `2025-06-13T03:41:17.398265`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 67a9a6f3-fae1-4722-a573-f2bc5ec84dde
+# Description              : 
+# Issued                   : 2023-06-11T03:19:56.098594
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Amtshaus?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Entsorgungsdaten Wertstoff-Sammelstellen
+
+Sammelstellen nach PLZ
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/entsorgungsdaten-wertstoff-sammelstellen)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_sammelstellen)
+
+Auto generated R starter code for data set 679aab45-d5b3-4890-974f-1af8f2683443@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Entsorgung + Recycling Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['abfall', 'sachdaten', 'entsorgung', 'tabellen', 'entsorgungsdaten', 'entsorgungskalender']`
+- **Issued** `2012-06-25T00:00:00`
+- **Metadata_created** `2024-12-03T03:45:04.866893`
+- **Metadata_modified** `2025-06-13T03:30:09.101362`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 81fa766c-2c37-437f-8eba-6b2851cfdaf4
+# Description              : 
+# Issued                   : 2024-02-12T07:59:55.247694
+# Modified                 : 2025-12-06T16:11:09.818979
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_sammelstellen/download/entsorgungskalender_sammelstellen_2025.csv')
+
+# Distribution 1
+# Package_id               : 81fa766c-2c37-437f-8eba-6b2851cfdaf4
+# Description              : 
+# Issued                   : 2024-02-12T07:59:54.483624
+# Modified                 : 2025-12-06T16:11:08.559781
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_sammelstellen/download/entsorgungskalender_sammelstellen_2024.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

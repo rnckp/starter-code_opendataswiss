@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Städtische Liegenschaften Stadt St.Gallen
+
+Städtische Liegenschaften Stadt St.Gallen
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/stadtische-liegenschaften)<br>
+[Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/stadtische-liegenschaften/)
+
+Auto generated R starter code for data set stadtische-liegenschaften@stadt-st-gallen.
+
+## Metadata
+
+- **Publisher.name** `stadt-st-gallen`
+- **Organization.display_name.de** `Stadt St.Gallen`
+- **Organization.url** `https://www.stadt.sg.ch/`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `[]`
+- **Issued** `2020-04-02T00:00:00`
+- **Metadata_created** `2023-12-21T12:48:01.498054`
+- **Metadata_modified** `2025-06-06T05:01:29.516220`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 885e74fc-3180-476d-9734-a6723517f4f5
+# Description              : Städtische Liegenschaften Stadt St.Gallen (csv)
+# Issued                   : 2020-04-02T00:00:00
+# Modified                 : 2024-01-15T12:31:04+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/stadtische-liegenschaften/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen

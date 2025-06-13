@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Wohnungsbestand nach Zimmerzahl, Miete/Eigentum, Bauperiode, Eigentumsart und Stadtquartier
+
+
+Diese Daten umfassen den Wohnungsbestand der Stadt Zürich (Anzahl Wohnungen und Wohnungsfläche) nach Zimmerzahl, Miete/Eigentum, Bauperiode und Eigentumsart sowie nach administrativer Einteilung.
+
+Bitte beachten Sie für das korrekte Verständnis zu den Daten die unten aufgeführten weiteren Erläuterungen in der Rubrik **«Bemerkungen»**.
+
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wohnungsbestand-nach-zimmerzahl-miete-eigentum-bauperiode-eigentumsart-und-stadtquartier-s-2008)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_best_whg_zizahl_wfl_bauperi_ea_quartier_jahr_od5831)
+
+Auto generated R starter code for data set b74c6997-70a9-4eed-8b3c-fd3f8ed4e6de@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['bauperiode', 'miete', 'sachdaten', 'wohnung', 'eigentum', 'tabelle', 'privat', 'zeitreihe', 'wohnflaeche', 'wohnungsflaeche', 'gemeinnuetzig', 'sasa']`
+- **Issued** `2021-04-15T00:00:00`
+- **Metadata_created** `2023-05-13T00:52:29.061338`
+- **Metadata_modified** `2025-06-13T03:26:32.950317`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 67e71c59-a45c-4533-b230-042207c466be
+# Description              : 
+# Issued                   : 2023-12-05T18:53:15.955587
+# Modified                 : 2025-12-06T21:12:05.905248
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_best_whg_zizahl_wfl_bauperi_ea_quartier_jahr_od5831/download/BAU583OD5831.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

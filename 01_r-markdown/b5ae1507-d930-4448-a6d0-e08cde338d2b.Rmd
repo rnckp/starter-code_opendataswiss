@@ -1,0 +1,227 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Daten der automatischen Fussgänger- und Velozählung - Viertelstundenwerte
+
+
+Die täglich aktualisierten **Zähldaten** werden vom Tiefbauamt der Stadt Zürich in eigener Regie erhoben. Die Zählstellen sind über das Stadtgebiet verteilt. Die Standorte sind auch über das [Geodatenportal](https://www.stadt-zuerich.ch/geodaten/download/Standorte_der_automatischen_Fuss__und_Velozaehlungen) erhältlich und können über das Attribut FK_ZAEHLER in Beziehung gesetzt werden. Die Erfassung des **Veloverkehrs** erfolgt mittels im Strassenbelag eingelassenen **Induktionsschlaufen**. Der **Fussverkehr** wird durch **passive Infrarotstrahlung** gezählt. 
+		
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/daten-der-automatischen-fussganger-und-velozahlung-viertelstundenwerte2)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo)
+
+Auto generated R starter code for data set 83ca481f-275c-417b-9598-3902c481e400@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Tiefbauamt, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['punktdaten', 'veloverkehr', 'fussverkehr', 'velozaehlung', 'zaehlung', 'langsamverkehr', 'dtoer', 'sachdaten', 'fussgaengerzaehlung', 'standort', 'digitale-transparenz-im-oeffentlichen-raum', 'messwerte', 'planung']`
+- **Issued** `2015-12-10T00:00:00`
+- **Metadata_created** `2023-02-06T01:27:23.761183`
+- **Metadata_modified** `2025-06-13T03:26:42.281547`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 17 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:52.296534
+# Modified                 : 2025-06-13T01:05:31.472471
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2015_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 1
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:48.240019
+# Modified                 : 2025-06-13T01:05:40.790191
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2017_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 2
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:56.010725
+# Modified                 : 2025-06-13T01:05:57.050101
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2020_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 3
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:43.849280
+# Modified                 : 2025-06-13T01:05:20.853818
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2012_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 4
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:50.316107
+# Modified                 : 2025-06-13T01:05:35.317526
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2016_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 5
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:56.920773
+# Modified                 : 2025-06-13T01:05:13.940728
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2009_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 6
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:40.558222
+# Modified                 : 2025-06-13T01:05:47.198166
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2018_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 7
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2021-02-01T09:01:00.381502
+# Modified                 : 2025-06-13T01:06:00.673289
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2021_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 8
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:57.540004
+# Modified                 : 2025-06-13T01:05:26.548579
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2014_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 9
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2022-02-01T09:01:34.302417
+# Modified                 : 2025-06-13T01:06:03.897097
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2022_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 10
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2023-02-01T09:02:15.637633
+# Modified                 : 2025-06-13T01:06:08.684927
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2023_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 11
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:45.094144
+# Modified                 : 2025-06-13T01:05:52.673196
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2019_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 12
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2024-02-01T10:02:51.604336
+# Modified                 : 2025-06-13T01:06:12.463394
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2024_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 13
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:54.361144
+# Modified                 : 2025-06-13T01:05:18.022901
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2011_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 14
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2025-02-01T10:03:04.008960
+# Modified                 : 2025-06-13T01:06:18.197368
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2025_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 15
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:42.702389
+# Modified                 : 2025-06-13T01:05:23.561487
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2013_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+# Distribution 16
+# Package_id               : b5ae1507-d930-4448-a6d0-e08cde338d2b
+# Description              : 
+# Issued                   : 2020-03-16T12:37:47.630781
+# Modified                 : 2025-06-13T01:05:15.785734
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/ted_taz_verkehrszaehlungen_werte_fussgaenger_velo/download/2010_verkehrszaehlungen_werte_fussgaenger_velo.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

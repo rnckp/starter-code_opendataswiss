@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Passantenfrequenz Vadianstrasse, Stadt St.Gallen (Höhe St.Galler Stadtwerke, Tagesaggregation) - Archivdaten (2019 - Juni 2024)
+
+Die Stadt St.Gallen verfügt an der Vadianstrasse (Höhe St.Galler Stadtwerke) über einen Sensor, der die Anzahl vorbeigehender Fussgänger misst. Dieser Datensatz zeigt die Anzahl Personen von rechts (Neumarkt) und links (Multergasse) kommend, sowie deren Summe. In diesem Datensatz werden die Sensormesswerte auf Tagesbasis aggregiert, weshalb der Datensatz täglich aktualisiert wird. Der Datensatz besteht aus Archivdaten aus den Jahren 2019-2024. Die aktuellen, tagesaggregierten Daten finden Sie unter: [https://daten.stadt.sg.ch/explore/dataset/fussganger-stgaller-innenstadt-vadianstrasse-tagesaggregation](https://daten.stadt.sg.ch/explore/dataset/fussganger-stgaller-innenstadt-vadianstrasse-tagesaggregation)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/passantenfrequenz-vadianstrasse-stadt-st-gallen-hohe-st-galler-stadtwerke-tagesaggregation-2024)<br>
+[Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/fussganger-stgaller-innenstadt-vadianstrasse-archivdaten-tagesaggregation/)
+
+Auto generated R starter code for data set fussganger-stgaller-innenstadt-vadianstrasse-archivdaten-tagesaggregation@stadt-st-gallen.
+
+## Metadata
+
+- **Publisher.name** `stadt-st-gallen`
+- **Organization.display_name.de** `Stadt St.Gallen`
+- **Organization.url** `https://www.stadt.sg.ch/`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `['aggregation', 'real-time', 'sensor', 'passanten', 'fussganger']`
+- **Issued** `2021-08-13T00:00:00`
+- **Metadata_created** `2024-08-23T05:00:47.439496`
+- **Metadata_modified** `2025-06-06T05:02:49.354633`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2c08a6e9-659f-49a1-9372-94bc70ddc90c
+# Description              : Passantenfrequenz Vadianstrasse, Stadt St.Gallen (Höhe St.Galler Stadtwerke, Tagesaggregation) - Archivdaten (2019 - Juni 2024) (csv)
+# Issued                   : 2021-08-13T00:00:00
+# Modified                 : 2024-11-28T01:00:11.350000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/fussganger-stgaller-innenstadt-vadianstrasse-archivdaten-tagesaggregation/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen

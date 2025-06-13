@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-13"
+output: html_document
+---
+
+## Dataset: Anzahl SBB-Bahnhofbenutzer (Tagesverlauf)
+
+Als Bahnhofbenutzer gelten Passagiere der Bahn respektive des öffentlichen Verkehrs, Kunden der Geschäfte im Bahnhof und Passanten. Gezählt werden Personenbewegungen als Abfolge des Betretens und Verlassens des Bahnhofes durch eine Person. Passagiere, die von einem Zug zu einem anderen umsteigen, zählen somit als eine Personenbewegung. Durchschnittliche Aufteilung auf die Stunden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/anzahl-sbb-bahnhofbenutzer-tagesverlauf)<br>
+[Direct link by **Schweizerische Bundesbahnen SBB** for dataset](https://data.sbb.ch/explore/dataset/anzahl-sbb-bahnhofbenutzer-tagesverlauf/)
+
+Auto generated R starter code for data set anzahl-sbb-bahnhofbenutzer-tagesverlauf@schweizerische-bundesbahnen-sbb.
+
+## Metadata
+
+- **Publisher.name** `schweizerische-bundesbahnen-sbb`
+- **Organization.display_name.de** `Schweizerische Bundesbahnen SBB`
+- **Organization.url** ``
+- **Maintainer** `Ansprechsstelle für Daten`
+- **Maintainer_email** `data@sbb.ch`
+- **Keywords.de** `['bahnhof']`
+- **Issued** `2024-04-05T00:00:00`
+- **Metadata_created** `2024-04-06T03:13:33.960141`
+- **Metadata_modified** `2025-06-13T02:52:50.165058`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e124a65a-74cb-479a-9f3b-49ca303f3fce
+# Description              : Anzahl SBB-Bahnhofbenutzer (Tagesverlauf) (csv)
+# Issued                   : 2024-04-05T00:00:00
+# Modified                 : 2024-04-05T05:59:12+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.sbb.ch/api/v2/catalog/datasets/anzahl-sbb-bahnhofbenutzer-tagesverlauf/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@sbb.ch | Ansprechsstelle für Daten
