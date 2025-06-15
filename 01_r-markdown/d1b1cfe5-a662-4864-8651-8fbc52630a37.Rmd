@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-15"
+output: html_document
+---
+
+## Dataset: Witterung
+
+Dieser Datensatz zeigt für die Messstation Basel-Binningen am Observatorium St. Margarethen für jeden Monat die in Bezug auf Temperatur, Niederschlag und Bewölkung registrierten Witterungserscheinungen seit 1921.Methodischer Hinweis:Daten von 1921 bis 1940 stammen von der astronomisch-meteorologischen Anstalt im Bernoullianum.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/witterung)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100227/)
+
+Auto generated R starter code for data set 100227@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Open Data Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['hagel', 'zeitreihe', 'reif', 'frosttage', 'luft', 'hitzetage', 'schneedecke', 'eistage', 'nebel', 'heizgradtage', 'wind', 'schneefall', 'gewitter', 'sommertage', 'klima', 'tage-ohne-sonne']`
+- **Issued** `2022-11-17T00:00:00`
+- **Metadata_created** `2023-12-20T12:01:40.913171`
+- **Metadata_modified** `2025-06-15T00:59:42.494063`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d1b1cfe5-a662-4864-8651-8fbc52630a37
+# Description              : Witterung (csv)
+# Issued                   : 2022-11-17T00:00:00
+# Modified                 : 2025-05-30T10:15:41.969000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100227/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

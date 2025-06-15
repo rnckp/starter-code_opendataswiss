@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-15"
+output: html_document
+---
+
+## Dataset: Strassennamen
+
+Der Datensatz beinhaltet die Namen aller Strassen im Kanton Basel-Stadt sowie kurze Erläuterungen zur Bedeutung der Strassennamen der Stadt Basel. Die Felder zu den Erklärungen sind ausserhalb des Stadtgebietes leer.Der Datensatz darf für Open Street Map verwendet werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/strassennamen1)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100189/)
+
+Auto generated R starter code for data set 100189@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Nomenklaturkommission`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['nomenklatur', 'name', 'strasse']`
+- **Issued** `2022-04-11T00:00:00`
+- **Metadata_created** `2022-06-09T08:39:53.579337`
+- **Metadata_modified** `2025-06-15T00:46:10.165355`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a86bfb26-e422-4c80-8f62-9da3c52e9f98
+# Description              : Strassennamen (csv)
+# Issued                   : 2022-04-11T00:00:00
+# Modified                 : 2025-06-14T05:05:29.248000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100189/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-15"
+output: html_document
+---
+
+## Dataset: Befragung 55plus (2023)
+
+Antworten der kantonalen Bevölkerunsgbefragung von Personen ab 55 Jahren, wird alle vier Jahre durchgeführt.  Dieser Datensatz enthält pro Zeile eine Antwort einer Person zu einer Frage der Befragung. Die Daten können in anderen Formaten als ZIP Datei hier heruntergeladen werden: [https://data-bs.ch/stata/befragungen/55plus/2023.zip](https://data-bs.ch/stata/befragungen/55plus/2023.zip)  Weitere Informationen zur Befragung sind im Statistikportal abgebildet:  [https://statistik.bs.ch/suche?search={'query':'2023','filterTheme':'successor-50.4'}](https://statistik.bs.ch/suche?search={'query':'2023','filterTheme':'successor-50.4'})
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/befragung-55plus-2023)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100412/)
+
+Auto generated R starter code for data set 100412@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Statistisches Amt`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['alter', 'einkommen', 'geschlecht']`
+- **Issued** `2025-06-13T00:00:00`
+- **Metadata_created** `2025-06-14T01:42:19.682217`
+- **Metadata_modified** `2025-06-14T01:42:19.682225`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 06537bd7-8192-4823-82a5-1663358c2106
+# Description              : Befragung 55plus (2023) (csv)
+# Issued                   : 2025-06-13T00:00:00
+# Modified                 : 2025-05-12T13:44:00.406000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100412/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-15"
+output: html_document
+---
+
+## Dataset: Schulwegsicherheit: Strassenquerungen
+
+Die Daten zur Schulwegsicherheit zeigen auf, wo Strassenübergänge für Kinder im Kindergarten- und Schulalter übersichtlich und einfach sind, bzw. wo erhöhte Anforderungen an das Überqueren der Strasse gestellt werden. Der Datensatz enthält die Daten zu den Strassenübergängen (Querungen), also alle Verbindungen der Fusswegachsen. Es werden nicht nur die geeigneten Querungen erfasst, sondern alle. Erfasst wird immer die am schlechtesten bewertete Richtung, da jede Querung von zwei Seiten begehbar ist. Die Digitalisierungsrichtung entspricht demnach der schlechter bewerteten Richtung. Start und Ende müssen auf einer Fusswegachse liegen. Jede Strassenquerung wird systematisch von einem Schulwegsinstruktor bewertet. Die Daten wurden in Basel, Bettingen und Riehen erhoben.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/schulwegsicherheit-strassenquerungen)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100053/)
+
+Auto generated R starter code for data set 100053@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Kantonspolizei`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['sekundarschule', 'fussgangerstreifen', 'primarschule', 'trottoir', 'uberqueren', 'kindergarten', 'pravention', 'schulerin', 'fussweg', 'sicherheit', 'strasse', 'schulweg', 'querung', 'unfall', 'schuler', 'gehsteig']`
+- **Issued** `2019-12-02T00:00:00`
+- **Metadata_created** `2022-06-09T08:40:19.040552`
+- **Metadata_modified** `2025-06-15T00:49:25.659074`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : c39fca0c-e8a5-4ec8-8162-b82c35397cc0
+# Description              : Schulwegsicherheit: Strassenquerungen (csv)
+# Issued                   : 2019-12-02T00:00:00
+# Modified                 : 2025-06-14T05:04:28.189000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100053/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

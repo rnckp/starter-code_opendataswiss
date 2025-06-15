@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-15"
+output: html_document
+---
+
+## Dataset: Nationalratswahlen 2015
+
+Schlussresultate der eidgenössischen Wahl 'Nationalratswahlen 2015', 18. Oktober 2015, Kanton Basel-Landschaft, aufgeschlüsselt nach Kandidaten und Gemeinden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/nationalratswahlen-20152)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://abstimmungen.bl.ch/election/nationalratswahlen-2015/data)
+
+Auto generated R starter code for data set election-nationalratswahlen-2015@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher.name** `Basel-Landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.baselland.ch`
+- **Maintainer** `Basel-Landschaft`
+- **Maintainer_email** `wahlen-abstimmungen@bl.ch`
+- **Keywords.de** `['wahl', 'national']`
+- **Issued** `2015-10-18T00:00:00`
+- **Metadata_created** `2023-01-17T01:24:08.920530`
+- **Metadata_modified** `2025-06-15T02:13:42.099516`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6777b475-57f9-4cb2-bdba-e0547ee2b4da
+# Description              : 
+# Issued                   : 2023-01-16T07:03:06+00:00
+# Modified                 : 2023-07-05T06:32:05+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://abstimmungen.bl.ch/election/nationalratswahlen-2015/data-csv')
+
+# Distribution 1
+# Package_id               : 6777b475-57f9-4cb2-bdba-e0547ee2b4da
+# Description              : 
+# Issued                   : 2023-01-16T07:03:06+00:00
+# Modified                 : 2023-07-05T06:32:05+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://abstimmungen.bl.ch/election/nationalratswahlen-2015/data-parties-csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+wahlen-abstimmungen@bl.ch | Basel-Landschaft
