@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-17"
+output: html_document
+---
+
+## Dataset: Öffentlich zugängliche Gastwirtschaften nach Betriebsart und Standort
+
+Liste der vom Kanton BL bewilligten und öffentlich zugänglichen Gastwirtschaften. Stand: 26. November 2024Eingangskoordinaten gemäss [kantonalem Gebäude- und Wohnungsregister](https://data.bl.ch/explore/dataset/12180)Für die Führung eines Restaurants, Bistros, Cafés, etc. ist eine Betriebsbewilligung erforderlich.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/offentlich-zugangliche-gastwirtschaften-nach-betriebsart-und-standort-juli-2022)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/10170/)
+
+Auto generated R starter code for data set 10170@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher.name** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.baselland.ch`
+- **Maintainer** `Dominik Hänggi Maini`
+- **Maintainer_email** `dominik.haenggi@bl.ch`
+- **Keywords.de** `['adressdaten', 'cafe', 'restaurants', 'geodaten', 'alkohol', 'adresse', 'imbiss', 'points-of-interest', 'firmenadresse', 'bistro', 'gewerbe', 'gasthofe', 'discothek', 'hotel', 'standortdaten', 'take-away', 'gastronomie', 'bar', 'pub']`
+- **Issued** `2022-09-05T00:00:00`
+- **Metadata_created** `2022-12-13T15:07:27.403408`
+- **Metadata_modified** `2025-06-13T05:06:29.232159`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a3acaf80-12d2-4292-9772-c6b167f228f9
+# Description              : Öffentlich zugängliche Gastwirtschaften nach Betriebsart und Standort (csv)
+# Issued                   : 2022-09-05T00:00:00
+# Modified                 : 2025-06-04T08:16:55.319000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/10170/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+sid.bewilligungen@bl.ch | Dominik Hänggi Maini

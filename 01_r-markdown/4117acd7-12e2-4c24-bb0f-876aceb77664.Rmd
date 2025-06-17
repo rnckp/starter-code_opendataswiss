@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-17"
+output: html_document
+---
+
+## Dataset: Wahrgenommene Sicherheit der Strassen in der Stadt St.Gallen (Streetwise)
+
+Der Datensatz zeigt die wahrgenommene Sicherheit der Strassen in der Stadt St.Gallen. Die Daten basieren auf einer Analyse von Streetwise, welche mittels Algorithmus Fotos der Strassenabschnitte nach ihrer Sicherheitswahrnehmung analysieren. Mehr Informationen unter: [https://streetwise.space/](https://streetwise.space/)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wahrgenommene-sicherheit-der-strassen-in-der-stadt-st-gallen-streetwise)<br>
+[Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/wahrgenommene-sicherheit-stadt-stgallen-streetwise/)
+
+Auto generated R starter code for data set wahrgenommene-sicherheit-stadt-stgallen-streetwise@stadt-st-gallen.
+
+## Metadata
+
+- **Publisher.name** `stadt-st-gallen`
+- **Organization.display_name.de** `Stadt St.Gallen`
+- **Organization.url** `https://www.stadt.sg.ch/`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `['sicherheit', 'wahrnehmung', 'algorithmus', 'foto', 'strassen']`
+- **Issued** `2021-11-03T00:00:00`
+- **Metadata_created** `2023-12-21T12:46:46.698964`
+- **Metadata_modified** `2025-06-13T05:57:20.268115`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 4117acd7-12e2-4c24-bb0f-876aceb77664
+# Description              : Wahrgenommene Sicherheit der Strassen in der Stadt St.Gallen (Streetwise) (csv)
+# Issued                   : 2021-11-03T00:00:00
+# Modified                 : 2021-11-05T08:53:10.024000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/wahrgenommene-sicherheit-stadt-stgallen-streetwise/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen

@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-06-16"
+date: "2025-06-17"
 output: html_document
 ---
 
@@ -20,10 +20,10 @@ Auto generated R starter code for data set lustat-szbv-lu@lustat.
 - **Organization.url** `https://www.lustat.ch`
 - **Maintainer** `LUSTAT Statistik Luzern`
 - **Maintainer_email** `sibylle.haas@lustat.ch`
-- **Keywords.de** `['bevolkerung', 'bevolkerungsentwicklung', 'bevolkerungswachstum', 'wachstum', 'gemeinden', 'bevolkerungsszenarien']`
+- **Keywords.de** `['bevolkerungswachstum', 'bevolkerung', 'gemeinden', 'bevolkerungsszenarien', 'bevolkerungsentwicklung', 'wachstum']`
 - **Issued** `2023-12-14T00:00:00`
 - **Metadata_created** `2024-12-02T14:35:18.963726`
-- **Metadata_modified** `2025-06-15T02:35:37.257250`
+- **Metadata_modified** `2025-06-13T05:26:36.313204`
 
 
 # Load packages
@@ -44,12 +44,12 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : e3854dd9-19d0-4366-a22c-996ac0393718
-# Description              : Das mittlere Szenario (Referenzszenario) berücksichtigt Modellannahmen, welche die demografischen Entwicklungen der letzten Jahrzehnte fortschreiben. Es stellt dabei einen – aus gegenwärtiger Sicht – wahrscheinlichen Verlauf dar.
+# Description              : Das tiefe Szenario basiert auf Hypothesen, welche das Bildungsniveau und das Wirtschaftswachstum weniger vorantreiben und somit das Bevölkerungswachstum im Vergleich zum Referenzszenario mindern.
 # Issued                   : 2023-12-14T00:00:00
 # Modified                 : 2023-12-14T00:00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
 
-df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-referenz.csv')
+df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-tief.csv')
 
 # Distribution 1
 # Package_id               : e3854dd9-19d0-4366-a22c-996ac0393718
@@ -62,12 +62,12 @@ df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-hoch.csv')
 
 # Distribution 2
 # Package_id               : e3854dd9-19d0-4366-a22c-996ac0393718
-# Description              : Das tiefe Szenario basiert auf Hypothesen, welche das Bildungsniveau und das Wirtschaftswachstum weniger vorantreiben und somit das Bevölkerungswachstum im Vergleich zum Referenzszenario mindern.
+# Description              : Das mittlere Szenario (Referenzszenario) berücksichtigt Modellannahmen, welche die demografischen Entwicklungen der letzten Jahrzehnte fortschreiben. Es stellt dabei einen – aus gegenwärtiger Sicht – wahrscheinlichen Verlauf dar.
 # Issued                   : 2023-12-14T00:00:00
 # Modified                 : 2023-12-14T00:00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
 
-df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-tief.csv')
+df <- read_delim('https://www.data.lustat.ch/szbv-lu-2023-2050-referenz.csv')
 
 
 

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-17"
+output: html_document
+---
+
+## Dataset: Füllstandsensoren Glassammelstellen (Braunglas) Stadt St.Gallen
+
+Die Stadt St.Gallen verfügt über Sensoren in verschiedenen Glassammelstellen der Stadt, welche den Füllstand der Container messen. Dieser Datensatz zeigt die Messwerte der Braunglas-Sammelstellen stündlich aggregiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/fullstandsensoren-glassammelstellen-braunglas)<br>
+[Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/fuellstandsensoren-glassammelstellen-braunglas/)
+
+Auto generated R starter code for data set fuellstandsensoren-glassammelstellen-braunglas@stadt-st-gallen.
+
+## Metadata
+
+- **Publisher.name** `stadt-st-gallen`
+- **Organization.display_name.de** `Stadt St.Gallen`
+- **Organization.url** `https://www.stadt.sg.ch/`
+- **Maintainer** `OGD-Koordinationsstelle St.Gallen`
+- **Maintainer_email** `opendata@stadt.sg.ch`
+- **Keywords.de** `['offene-sensordaten', 'fullstand', 'entsorgung', 'sensor']`
+- **Issued** `2019-08-26T00:00:00`
+- **Metadata_created** `2023-12-21T12:46:38.361688`
+- **Metadata_modified** `2025-06-13T05:57:37.843682`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ad9d619b-3ed0-4007-8437-7fdf601faa46
+# Description              : Füllstandsensoren Glassammelstellen (Braunglas) Stadt St.Gallen (csv)
+# Issued                   : 2019-08-26T00:00:00
+# Modified                 : 2024-11-07T17:00:08.806000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/fuellstandsensoren-glassammelstellen-braunglas/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationsstelle St.Gallen
