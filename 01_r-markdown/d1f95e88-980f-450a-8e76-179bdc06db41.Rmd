@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-18"
+output: html_document
+---
+
+## Dataset: Secondhand-Angebote / Wiederverwendungsstellen
+
+Dieser Datensatz enthält die Standorte verschiedener
+Secondhand-Waren in der Region Basel, die entweder verkauft oder kostenlos
+weitergegeben werden. Diese Standorte können Secondhand-Läden, Brockenhäuser,
+Buchhandlungen, Bücherschränke, Lebensmittelverteilschränke oder
+Elektrofachgeschäfte umfassen. Bei einigen Standorten sind zusätzliche
+Informationen wie Telefonnummern und Links zu ihren Internetseiten verfügbar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wiederverwendungsstellen)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100363/)
+
+Auto generated R starter code for data set 100363@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Amt für Umwelt und Energie`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Open Data Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['recycling', 'lebensmittel', 'brockenhaus', 'flohmarkt', 'brauchbares', 'elektrogerate', 'secondhand-shop', 'textilien', 'bucher', 'kleidung', 'antiquitaten', 'entsorgung', 'kleider']`
+- **Issued** `2024-04-09T00:00:00`
+- **Metadata_created** `2024-04-11T02:11:24.686003`
+- **Metadata_modified** `2025-06-18T01:36:14.976362`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d1f95e88-980f-450a-8e76-179bdc06db41
+# Description              : Secondhand-Angebote / Wiederverwendungsstellen (csv)
+# Issued                   : 2024-04-09T00:00:00
+# Modified                 : 2025-06-17T05:05:13.134000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100363/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

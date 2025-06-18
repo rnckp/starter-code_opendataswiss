@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-18"
+output: html_document
+---
+
+## Dataset: Reales Bruttoinlandsprodukt - saisonbereinigte Quartalswerte ab 1998
+
+Dieser Datensatz enthält vierteljährliche Schätzungen des realen Bruttoinlandsprodukts (BIP) für den Kanton Freiburg und die gesamte Schweiz seit 1998.csa (calendar and seasonally adjusted) : saison- und
+kalenderbereinigte Werte
+cssa (calendar, seasonally and sport event adjusted) :
+saison-, kalender- und Sportevent-bereinigte Werte
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/reales-bruttoinlandsprodukt-saisonbereinigte-quartalswerte-ab-1998)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/04_02_conjoncture_pib/)
+
+Auto generated R starter code for data set 04_02_conjoncture_pib@ssd.
+
+## Metadata
+
+- **Publisher.name** `ssd`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD`
+- **Maintainer_email** `statfr@fr.ch`
+- **Keywords.de** `['konjunkturindikatoren', 'freiburger-konjunkturspiegel', 'crea', 'bip', 'seco', 'wachstumsrate']`
+- **Issued** `2025-05-23T00:00:00`
+- **Metadata_created** `2025-01-30T19:22:28.636443`
+- **Metadata_modified** `2025-06-13T05:40:12.243832`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1ac0f317-2756-47fe-a721-39abf31f77c1
+# Description              : Reales Bruttoinlandsprodukt - saisonbereinigte Quartalswerte ab 1998 (csv)
+# Issued                   : 2025-05-23T00:00:00
+# Modified                 : 2025-05-23T06:46:56.275000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/04_02_conjoncture_pib/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+statfr@fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

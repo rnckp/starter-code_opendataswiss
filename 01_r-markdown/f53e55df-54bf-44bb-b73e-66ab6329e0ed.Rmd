@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-18"
+output: html_document
+---
+
+## Dataset: ZL-Bezügerquote der Personen ab 65 Jahren [%]
+
+Der Datensatz enthält Informationen über die Bezügerquote von Zusatzleistungen zur Altersrente (ZL) für Personen ab 65 Jahren im Kanton Zürich seit 2010. Diese Quote zeigt den Anteil der Rentnerinnen und Rentner, die im Erhebungsjahr während mindestens eines Monats Zusatzleistungen zur Altersrente erhalten haben, im Verhältnis zur Gesamtbevölkerung ab 65 Jahren. Die Zusatzleistungen umfassen Ergänzungsleistungen (EL) gemäss Bundesrecht, kantonale Beihilfen (kBH) und Gemeindezuschüsse (GZ). Kantonale Zuschüsse für Personen mit ausserordentlichem Bedarf in Heimen oder Spitälern sind in dieser Statistik nicht berücksichtigt. 
+Die Daten werden jährlich vom Bundesamt für Statistik (BFS) erhoben und stammen von den Sozialdiensten auf Dossier-Ebene. Diese Erhebung ist Teil der Sozialhilfeempfängerstatistik. Die Bevölkerungsdaten, die für die Berechnung der Quoten verwendet werden, stammen aus der kantonalen Bevölkerungserhebung des Statistischen Amtes und beziehen sich auf das jeweilige Jahr. Auch das BFS berechnet Quoten. Es nutzt aber als Referenzpopulation Daten aus dem Vorjahr von der Quelle STATPOP. Die Ergebnisse für den Kanton Zürich werden jeweils im November zusammen mit dem Sozialbericht des Kantons Zürich veröffentlicht. 
+Die Datenqualität ist hoch, jedoch gibt es einige Einschränkungen. Bei Gemeinden mit weniger als fünf Fällen wird keine Quote ausgewiesen. Die Daten mussten für 16 Gemeinden im Jahr 2017 und für fünf Gemeinden im Jahr 2020 gewichtet werden, da die Gemeinden nicht für das gesamte Jahr Daten geliefert haben. Der räumliche Bezug des Datensatzes umfasst den Kanton Zürich sowie seine Bezirke und Gemeinden. Die Daten sind auf diese geografischen Einheiten aggregiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/zl-bezugerquote-der-personen-ab-65-jahren)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/gemeinden/gemeindeportraet.html)
+
+Auto generated R starter code for data set 334@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `Statistisches Amt des Kantons Zürich, Data Shop`
+- **Maintainer_email** `datashop@statistik.zh.ch`
+- **Keywords.de** `['gemeinden', 'zusatzrenten', 'sozialleistungen', 'quote', 'bezirke', 'ahv', 'kantonzuerich']`
+- **Issued** `2016-01-20T20:16:00+01:00`
+- **Metadata_created** `2021-01-14T18:06:40.549712`
+- **Metadata_modified** `2025-06-17T10:36:58.789287`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f53e55df-54bf-44bb-b73e-66ab6329e0ed
+# Description              : 
+# Issued                   : 2016-01-21T16:30:35+01:00
+# Modified                 : 2023-11-28T15:57:59+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/data/KANTON_ZUERICH_817.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+datashop@statistik.zh.ch | Statistisches Amt des Kantons Zürich, Data Shop

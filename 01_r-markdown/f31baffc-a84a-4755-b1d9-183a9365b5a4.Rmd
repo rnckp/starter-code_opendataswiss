@@ -1,0 +1,84 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-18"
+output: html_document
+---
+
+## Dataset: Rohdaten-Zeitreihe der Belegung der Elektroauto-Ladestationen der IWB
+
+IWB baut im Kanton Basel-Stadt ein Netz leistungsfähiger öffentlich zugänglicher Ladestationen auf, um der umweltfreundlichen und gerade für Ballungsgebiete idealen Elektromobilität entscheidende Impulse zu geben. 
+In der Pilotphase wurden die Parkplätze mit LoRa-angebunden Sensoren ausgestattet. Ziel war es festzustellen, ob Parkplätze durch Fahrzeuge besetzt werden, ohne dass diese einen aktiven Ladevorgang vornehmen. Nach internen Abstimmungen wird die IWB die Übermittlung der Daten ab ca. Mitte September 2022 nicht weiterführen. Gründe dafür sind Schwierigkeiten bei der Übertragung der Werte sowie eine fehlende Relevanz für die Praxis. Beim Roll-Out der weiteren öffentlichen Ladestationen auf Allmend werden voraussichtlich keine LoRa-Sensoren mehr verbaut.
+Echtzeitdaten zur Belegung der Elektroauto-Ladestationen der gesamten Schweiz basierend auf dem Status des Ladevorgangs sind hier zu finden: [https://opendata.swiss/de/dataset/ladestationen](https://opendata.swiss/de/dataset/ladestationen)
+Hier finden Sie die Zeitreihe der Rohdaten zur Belegung der Ladestationen. Die vorliegenden Rohdaten enthalten insbesondere ab Mai 2021 viele doppelte Einträge, da die Sensoren ihre Belegung jeweils mehrfach und in verschiedenen Abständen melden, auch ohne dass eine Statusänderung (belegt/frei) erfolgt ist. Die deduplizierte Zeitreihe ist hier zu finden: [https://data.bs.ch/explore/dataset/100196/](https://data.bs.ch/explore/dataset/100196/). Diese zeigt alle Statusänderungen. [](https://data.bs.ch/explore/dataset/100196//)Der Datensatz mit nur den aktuellsten Statusmeldungen ist hier zu finden: [https://data.bs.ch/explore/dataset/100004//](https://data.bs.ch/explore/dataset/100004//)[](https://data.bs.ch/explore/dataset/100004//)Änderungsprotokoll:20.09.2022 - Aktualisierungsintervall von 'CONT' auf 'NEVER' geändert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/rohdaten-zeitreihe-der-belegung-der-elektroauto-ladestationen-der-iwb)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100149/)
+
+Auto generated R starter code for data set 100149@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `Industrielle Werke Basel`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Fachstelle Open Government Data Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['elektromobilitat', 'elektroautos', 'elektroladestation', 'iwb', 'ladestationen', 'echtzeit', 'realtime', 'tankstellen']`
+- **Issued** `2022-06-02T00:00:00`
+- **Metadata_created** `2023-07-04T12:36:17.446843`
+- **Metadata_modified** `2025-06-18T01:26:10.111128`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f31baffc-a84a-4755-b1d9-183a9365b5a4
+# Description              : Rohdaten-Zeitreihe der Belegung der Elektroauto-Ladestationen der IWB (csv)
+# Issued                   : 2022-06-02T00:00:00
+# Modified                 : 2024-02-29T14:17:13.615000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100149/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt
