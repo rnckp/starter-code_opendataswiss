@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-21"
+output: html_document
+---
+
+## Dataset: Luftfahrthindernisdaten Schweiz - Flugplatzhindernisse < 25 / 60 m
+
+Der Layer beinhaltet sicherheitsrelevante Hindernisse in der Umgebung von Flugplätzen, welche weniger als 25 Meter in unbebautem Gebiet und weniger als 60 Meter in bebautem Gebiet betragen. Dies sind Hindernisse, welche in einer Sicherheitszone liegen und/oder eine Hindernisbegrenzungsfläche durchstossen, oder aus anderen Gründen für den Flugbetrieb als relevant bezeichnet wurden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/luftfahrthindernisdaten-schweiz-flugplatzhindernisse-25-60-m)<br>
+[Direct link by **Bundesamt für Zivilluftfahrt BAZL** for dataset](https://www.bazl.admin.ch/bazl/de/home/infrastruktur/luftfahrthindernisse/luftfahrtinformationen/digitale-luftfahrthinderniskarten.html)
+
+Auto generated R starter code for data set 9d11574a-6b9a-4a5e-863f-0f1ad0dfcd90@bundesamt-fur-zivilluftfahrt-bazl.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Zivilluftfahrt BAZL`
+- **Organization.url** `http://www.bazl.admin.ch`
+- **Maintainer** `obstacles@bazl.admin.ch`
+- **Maintainer_email** `obstacles@bazl.admin.ch`
+- **Keywords.de** `['luftfahrthindernis', 'luftfahrt', 'hohe', 'verkehrsnetze', 'bgdi-bundesgeodaten-infrastruktur']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2022-12-13T00:21:31.584116`
+- **Metadata_modified** `2025-06-13T00:45:31.156118`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1fca4a59-779a-4c86-a0e6-73f1d68f3623
+# Description              : Link für Datenbezug
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.bazl.luftfahrthindernis/luftfahrthindernis/luftfahrthindernis_4326.csv.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+obstacles@bazl.admin.ch | obstacles@bazl.admin.ch

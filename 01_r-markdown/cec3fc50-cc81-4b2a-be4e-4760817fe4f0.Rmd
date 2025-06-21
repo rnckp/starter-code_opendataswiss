@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-21"
+output: html_document
+---
+
+## Dataset: Verzeichnis der Personenstammdaten der zentralen Verwaltung des Kantons Zürich
+
+Im Rahmen des Impulsprojekts 3.1 'Strategie Datenmanagement und Data-Governance' wurde ein - nicht abschliessendes - Verzeichnis der Personenstammdaten erarbeitet, die von Einheiten der zentralen Verwaltung des Kantons Zürich zu ihrer fachspezifischen Aufgabenerfüllung verwaltet und/oder genutzt werden. Das Verzeichnis ist eine Grundlage für die Einführung eines koordinierten Stammdatenmanagements. Es wird in maschinenlesbarer Form zur Verfügung gestellt, um zweckmässige Anwendungen zu ermöglichen, mit denen es verwaltet und/oder genutzt werden kann. Das Verzeichnis wird unregelmässig aktualisiert. Die Verwaltungseinheiten sind für ihre Angaben verantwortlich. Bei Fragen, Korrekturen und Ergänzungen wenden Sie sich bitte an die Kontaktstelle.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/verzeichnis-der-personenstammdaten-der-zentralen-verwaltung-des-kantons-zurich)<br>
+[Direct link by **Fach- und Koordinationsstelle Open Government Data Kanton Zürich** for dataset](https://www.zh.ch/de/politik-staat/kanton/kantonale-verwaltung/digitale-verwaltung/digitalisierungsprojekte.html#1124425435)
+
+Auto generated R starter code for data set 700@fachstelle-ogd-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Fachstelle Open Government Data des Kantons Zürich`
+- **Organization.display_name.de** `Fach- und Koordinationsstelle Open Government Data Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt/open-government-data.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['kantonaleverwaltung', 'kantonzuerich']`
+- **Issued** `2020-09-29T14:45:00+01:00`
+- **Metadata_created** `2025-06-11T20:58:15.440841`
+- **Metadata_modified** `2025-06-20T04:28:54.480921`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : cec3fc50-cc81-4b2a-be4e-4760817fe4f0
+# Description              : 
+# Issued                   : 2020-09-17T15:19:34+01:00
+# Modified                 : 2020-09-29T17:56:31+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000700_00001723.csv')
+
+# Distribution 1
+# Package_id               : cec3fc50-cc81-4b2a-be4e-4760817fe4f0
+# Description              : Abkürzungen und Definitionen sind in der Ressource "Verzeichnis der Personenstammdaten ZH - Abkürzungen und Definitionen" erklärt.
+# Issued                   : 2020-09-17T15:31:37+01:00
+# Modified                 : 2020-10-01T11:32:36+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000700_00001725.csv')
+
+# Distribution 2
+# Package_id               : cec3fc50-cc81-4b2a-be4e-4760817fe4f0
+# Description              : Abkürzungen und Definitionen sind in der Ressource "Verzeichnis der Personenstammdaten ZH - Abkürzungen und Definitionen" erklärt.
+# Issued                   : 2020-09-17T15:27:53+01:00
+# Modified                 : 2020-10-01T11:32:26+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000700_00001724.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@open.zh.ch | Fachstelle Open Government Data des Kantons Zürich

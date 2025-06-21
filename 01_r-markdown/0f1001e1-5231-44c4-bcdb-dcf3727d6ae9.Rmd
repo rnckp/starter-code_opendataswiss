@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-21"
+output: html_document
+---
+
+## Dataset: Nationalratswahlen (Parteistimmen und Parteistärke seit 1971: Bezirke und Gemeinden)
+
+Dieser Datensatz zeigt die Parteistimmen und die Parteistärke nach Gemeinde (Stand 31.12.2023), seit 1971. Für die Freiburger im Ausland sind zwischen 1971 und 2011 keine Daten verfügbar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/nationalratswahlen-parteistimmen-und-parteistarke-seit-1971-bezirke-und-gemeinden)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/17_03_election_conseil_national/)
+
+Auto generated R starter code for data set 17_03_election_conseil_national@ssd.
+
+## Metadata
+
+- **Publisher.name** `ssd`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD`
+- **Maintainer_email** `opendata@fr.ch`
+- **Keywords.de** `['parteistarke', 'politik', 'stimmen']`
+- **Issued** `2025-05-16T00:00:00`
+- **Metadata_created** `2025-01-30T19:22:22.316458`
+- **Metadata_modified** `2025-06-20T04:16:08.479372`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0f1001e1-5231-44c4-bcdb-dcf3727d6ae9
+# Description              : Nationalratswahlen (Parteistimmen und Parteistärke seit 1971: Bezirke und Gemeinden) (csv)
+# Issued                   : 2025-05-16T00:00:00
+# Modified                 : 2025-05-16T07:14:45.483000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/17_03_election_conseil_national/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

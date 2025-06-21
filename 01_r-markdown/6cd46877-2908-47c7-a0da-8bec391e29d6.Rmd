@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-21"
+output: html_document
+---
+
+## Dataset: Nachnamen der ständigen Wohnbevölkerung nach Kanton
+
+Dieses Dataset präsentiert die Nachnamen der ständigen Wohnbevölkerung nach Kanton für das Jahr 2022. Die Beschreibungen der Variablen in der CSV-Datei sind im Anhang verfügbar.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/nachnamen-der-standigen-wohnbevolkerung-nach-kanton1)<br>
+[Direct link by **Bundesamt für Statistik BFS** for dataset](https://www.bfs.admin.ch/asset/de/ts-x-01.04.00.14)
+
+Auto generated R starter code for data set 26925055@bundesamt-fur-statistik-bfs.
+
+## Metadata
+
+- **Publisher.name** `BFS/OFS`
+- **Organization.display_name.de** `Bundesamt für Statistik BFS`
+- **Organization.url** `https://www.bfs.admin.ch`
+- **Maintainer** `info@bfs.admin.ch`
+- **Maintainer_email** `auskunftsdienst@bfs.admin.ch`
+- **Keywords.de** `['bevolkerung']`
+- **Issued** `2023-08-22T06:30:00+00:00`
+- **Metadata_created** `2023-08-22T09:35:52.156803`
+- **Metadata_modified** `2025-06-20T10:30:06.755894`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6cd46877-2908-47c7-a0da-8bec391e29d6
+# Description              : Dieses Dataset präsentiert die Nachnamen der ständigen Wohnbevölkerung nach Kanton für das Jahr 2022. Die Beschreibungen der Variablen in der CSV-Datei sind im Anhang verfügbar.
+# Issued                   : 2023-08-22T06:30:00+00:00
+# Modified                 : 2023-07-25T09:49:10.867000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://dam-api.bfs.admin.ch/hub/api/dam/assets/26925060/master')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+auskunftsdienst@bfs.admin.ch | info@bfs.admin.ch
