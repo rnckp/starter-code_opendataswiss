@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-06-29"
+output: html_document
+---
+
+## Dataset: Windmessungen - Côte du Glâney
+
+Dieser Datensatz enthält Windmessungen, die alle 10 Minuten für das Gebiet « Côte du Glâney » im Kanton Freiburg aufgezeichnet werden. Diese Daten wurden im Rahmen des Mandats des Grossen Rates für die kantonale Windenergieplanung erhoben und umfassen Windgeschwindigkeit und -richtung, Temperatur, relative Luftfeuchtigkeit in verschiedenen Höhen sowie das Potenzial für die Windenergieerzeugung (Windenergieertrag). Diese Informationen sind für die Energieplanung von entscheidender Bedeutung und werden im Sinne der Transparenz und des Zugangs zu Informationen für alle auf der Open Government Data Plattform des Kantons Freiburg frei zugänglich gemacht. Das Gebiet «Côte du Glâney» liegt im Bezirk Glâne, auf rund 800 Metern Höhe, westlich und südwestlich der Gemeinde Romont.Die UTC-Zeit (koordinierte Weltzeit) dient als weltweite Referenz und ändert sich nicht mit den Jahreszeiten. Um die Ortszeit zu erhalten, addieren Sie im Winter 1 Stunde (UTC+1) und im Sommer 2 Stunden (UTC+2).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/windmessungen-cote-du-glaney)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/08_02_eolien_glaney/)
+
+Auto generated R starter code for data set 08_02_eolien_glaney@ssd.
+
+## Metadata
+
+- **Publisher.name** `ssd`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['energie', 'windenergie', 'wind', 'messungen']`
+- **Issued** `2025-06-27T00:00:00`
+- **Metadata_created** `2025-06-28T04:11:30.110354`
+- **Metadata_modified** `2025-06-28T04:12:38.169346`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9ad416f1-6e3c-4428-b5d0-8856004d17e5
+# Description              : Windmessungen - Côte du Glâney (csv)
+# Issued                   : 2025-06-27T00:00:00
+# Modified                 : 2025-06-27T09:31:24.848000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/08_02_eolien_glaney/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD
