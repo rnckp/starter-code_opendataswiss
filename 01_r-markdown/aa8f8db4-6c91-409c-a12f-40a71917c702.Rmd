@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-07-01"
+output: html_document
+---
+
+## Dataset: Hunde - Tierheime
+
+Anzahl Tierheime, die registrierte, lebende Hunde halten.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/hunde-tierheime)<br>
+[Direct link by **Identitas AG** for dataset](https://tierstatistik.identitas.ch/)
+
+Auto generated R starter code for data set dogs-Centres@identitas.
+
+## Metadata
+
+- **Publisher.name** `Identitas AG`
+- **Organization.display_name.de** `Identitas AG`
+- **Organization.url** `http://www.identitas.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['hunde', 'tierheime', 'heimtiere']`
+- **Issued** `2025-05-31T00:00:00`
+- **Metadata_created** `2025-07-01T03:20:52.990414`
+- **Metadata_modified** `2025-07-01T03:20:52.990421`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : aa8f8db4-6c91-409c-a12f-40a71917c702
+# Description              : 
+# Issued                   : 2025-06-30T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://tierstatistik.identitas.ch/data/dogs-Centres.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+tierstatistik@identitas.ch | Team Tierstatistik Identitas AG
