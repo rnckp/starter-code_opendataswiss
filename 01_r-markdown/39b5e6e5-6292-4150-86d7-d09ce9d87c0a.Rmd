@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-07-12"
+output: html_document
+---
+
+## Dataset: Mittlere Wohnbevölkerung nach Nationalität, Gemeinde und Jahr (seit 1980)
+
+Kantonale Bevölkerungsstatistik, BevölkerungsbestandDie mittlere Wohnbevölkerung entspricht dem gewichteten Durchschnitt der Quartalsbestände aus der kantonalen Bevölkerungsstatistik. Sie hat damit einen anderen zeitlichen Bezug als der in der kantonalen Bevölkerungsstatistik übliche Jahresendbestand. Die mittlere Wohnbevölkerung dient als Grundlage, wenn das Mittel der im Kanton niedergelassenen Personen über das gesamte Jahr interessiert und wird beispielsweise für die Berechnung des Baselbieter Finanzausgleichs verwendet. Die Berechnungsformel lautet von unten nach oben gerechnet wie folgt: ((1 x 4. Quartal Vorjahr) + (2 x 1. Quartal Jahr) + (2 x 2. Quartal Jahr) + (2 x 3. Quartal Jahr) + (1 x 4. Quartal Jahr)) / 8.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/mittlere-wohnbevolkerung-nach-nationalitat-gemeinde-und-jahr-ab-1980)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/10080/)
+
+Auto generated R starter code for data set 10080@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher.name** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.baselland.ch`
+- **Maintainer** `Tamara Bobst`
+- **Maintainer_email** `tamara.bobst@bl.ch`
+- **Keywords.de** `['schweizerinnen', 'einwohnerinnen', 'statistikdaten', 'auslanderinnen']`
+- **Issued** `2022-11-14T00:00:00`
+- **Metadata_created** `2022-12-13T15:07:40.118449`
+- **Metadata_modified** `2025-07-12T03:19:31.981053`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 39b5e6e5-6292-4150-86d7-d09ce9d87c0a
+# Description              : Mittlere Wohnbevölkerung nach Nationalität, Gemeinde und Jahr (seit 1980) (csv)
+# Issued                   : 2022-11-14T00:00:00
+# Modified                 : 2025-04-30T08:31:06.220000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/10080/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+statistik@bl.ch | Fachbereich Demografie

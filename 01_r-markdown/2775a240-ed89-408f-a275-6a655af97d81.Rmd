@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-07-12"
+output: html_document
+---
+
+## Dataset: Landratswahlen 2023: Panaschierstimmen der Kandidierenden
+
+Kantonale Wahlen vom 12. Februar 2023. Die jeweilige Spalte mit den Panaschierstimmen der eigenen Partei enthält auch die unveränderten Stimmen der kandidierenden Person.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/landratswahlen-2023-panaschierstimmen-der-kandidierenden)<br>
+[Direct link by **Kanton Basel-Landschaft** for dataset](https://data.bl.ch/explore/dataset/11610/)
+
+Auto generated R starter code for data set 11610@kanton-basel-landschaft.
+
+## Metadata
+
+- **Publisher.name** `kanton-basel-landschaft`
+- **Organization.display_name.de** `Kanton Basel-Landschaft`
+- **Organization.url** `https://www.baselland.ch`
+- **Maintainer** `Isabel Rabaglio`
+- **Maintainer_email** `wahlen-abstimmungen@bl.ch`
+- **Keywords.de** `['politische-parteien', 'alter', 'geschlecht', 'wahlresultate', 'wahlergebnisse', 'panaschierstatistik', 'wahltermin', 'name', 'parlament', 'partei', 'vorname']`
+- **Issued** `2023-02-17T00:00:00`
+- **Metadata_created** `2023-02-17T11:03:03.868234`
+- **Metadata_modified** `2025-07-12T03:20:43.161540`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2775a240-ed89-408f-a275-6a655af97d81
+# Description              : Landratswahlen 2023: Panaschierstimmen der Kandidierenden (csv)
+# Issued                   : 2023-02-17T00:00:00
+# Modified                 : 2025-02-24T09:47:19.090000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bl.ch/api/v2/catalog/datasets/11610/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+wahlen-abstimmungen@bl.ch | Isabel Rabaglio
