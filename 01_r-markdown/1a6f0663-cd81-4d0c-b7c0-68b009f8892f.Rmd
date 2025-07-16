@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-07-15"
+date: "2025-07-16"
 output: html_document
 ---
 
@@ -8,8 +8,8 @@ output: html_document
 
 Die Daten stammen aus der Finanzberichterstattung des Bundes. Das Budget (oder Voranschlag) wird jährlich im August publiziert. Es zeigt die erwarteten Einnahmen und die vom Bundesrat geplanten Ausgaben für das kommende Jahr. Ergänzend zum Budget gibt der Finanzplan einen Ausblick über die mutmassliche Entwicklung von Einnahmen und Ausgaben in den Folgejahren. Die Rechnung wird jedes Jahr im März veröffentlicht. Sie zeigt das Rechnungswesen der Bundesverwaltung während dem vergangenen Jahr.
 
-[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/federal-finances-overall-budget)<br>
-[Direct link by **Eidgenössische Finanzverwaltung EFV** for dataset](https://www.efv.admin.ch/efv/de/home/finanzberichterstattung/daten/open_gov_data1.html)
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bundesfinanzen-gesamthaushalt)<br>
+[Direct link by **Eidgenössische Finanzverwaltung EFV** for dataset]()
 
 Auto generated R starter code for data set bundesfinanzen_gesamthaushalt@eidgenossische-finanzverwaltung-efv.
 
@@ -18,12 +18,12 @@ Auto generated R starter code for data set bundesfinanzen_gesamthaushalt@eidgeno
 - **Publisher.name** `nan`
 - **Organization.display_name.de** `Eidgenössische Finanzverwaltung EFV`
 - **Organization.url** `https://www.efv.admin.ch/efv/de/home.html`
-- **Maintainer** `info@efv.admin.ch`
-- **Maintainer_email** `info@efv.admin.ch`
-- **Keywords.de** `['budget', 'bund', 'bundesbeschluss', 'finanzen', 'staatsrechnung', 'voranschlag']`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['budget']`
 - **Issued** `2023-04-06T00:00:00`
-- **Metadata_created** `2017-05-02T07:50:30.694914`
-- **Metadata_modified** `2025-06-03T12:35:54.129351`
+- **Metadata_created** `2025-07-15T08:28:52.116164`
+- **Metadata_modified** `2025-07-15T08:28:52.116173`
 
 
 # Load packages
@@ -43,31 +43,31 @@ library(skimr)
 ```{r}
 
 # Distribution 0
-# Package_id               : 5876ad9f-79c5-43d8-b59a-92b6090cecb9
+# Package_id               : 1a6f0663-cd81-4d0c-b7c0-68b009f8892f
+# Description              : 
+# Issued                   : 2023-04-06T00:00:00
+# Modified                 : 2025-03-24T00:00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.efv.admin.ch/efv/fr/home/finanzberichterstattung/daten/open_gov_data1.html')
+
+# Distribution 1
+# Package_id               : 1a6f0663-cd81-4d0c-b7c0-68b009f8892f
 # Description              : Daten aus der Finanzberichterstattung des Bundes: Einnahmen, Ausgaben nach Art, Ausgaben nach Aufgabengebiet, Erfolgsrechnung, Investitionsrechnung, Finanzierungsrechnung, Bilanz, Kennzahlen, volkswirtschaftliche Referenzwerte, Schulden, Schuldenbremse
 # Issued                   : 2023-04-06T00:00:00
 # Modified                 : 2025-03-24T00:00:00
-# Rights                   : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/Finanzberichte/Daten/OGD/bundeshaushalt.csv.download.csv/bundeshaushalt_de.csv')
-
-# Distribution 1
-# Package_id               : 5876ad9f-79c5-43d8-b59a-92b6090cecb9
-# Description              : 
-# Issued                   : 2023-04-06T00:00:00
-# Modified                 : 2025-03-24T00:00:00
-# Rights                   : None
-
-df <- read_delim('https://www.efv.admin.ch/dam/efv/fr/dokumente/Finanzberichte/Daten/OGD/bundeshaushalt.csv.download.csv/bundeshaushalt_fr.csv')
+df <- read_delim('https://www.efv.admin.ch/efv/de/home/finanzberichterstattung/daten/open_gov_data1.html')
 
 # Distribution 2
-# Package_id               : 5876ad9f-79c5-43d8-b59a-92b6090cecb9
+# Package_id               : 1a6f0663-cd81-4d0c-b7c0-68b009f8892f
 # Description              : 
 # Issued                   : 2023-04-06T00:00:00
 # Modified                 : 2025-03-24T00:00:00
-# Rights                   : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://www.efv.admin.ch/dam/efv/it/dokumente/Finanzberichte/Daten/OGD/bundeshaushalt.csv.download.csv/bundeshaushalt_it.csv')
+df <- read_delim('https://www.efv.admin.ch/efv/it/home/finanzberichterstattung/daten/open_gov_data1.html')
 
 
 
@@ -96,4 +96,4 @@ tail(df)
 
 # Contact
 
-info@efv.admin.ch | info@efv.admin.ch
+info@efv.admin.ch | Amministrazione federale delle finanze AFF
