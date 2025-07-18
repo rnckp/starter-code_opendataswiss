@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-07-18"
+output: html_document
+---
+
+## Dataset: Unternehmensgründungen und neugeschaffene Arbeitsstellen nach Gemeinde ab 2013
+
+Dieser Datensatz enthält die jährlichen Zahlen der Neugründungen von Unternehmen und Arbeitsplätzen im Kanton Freiburg nach Gemeinde, seit 2013. Zur Erhebung gehören nur wirklich neue - „ex nihilo“ gegründete - Unternehmen, die eine marktwirtschaftliche Tätigkeit ausüben. Unternehmen, die aus einer Fusion, Auflösung oder Spaltung bereits bestehender Unternehmen hervorgegangen sind, werden nicht berücksichtigt. Der Primärsektor ist aus den Daten ausgeschlossen.Die 'GDPr'-Werte im Datensatz sind enthalten, um dem neuen Datenschutzgesetz (nLPD, wirksam seit dem 1. September 2023) zu entsprechen.Die Daten von Clavaleyres, einer ehemals bernischen Gemeinde, die am 1. Januar 2022 mit Murten fusionierte, sind rückwirkend für den gesamten Beobachtungszeitraum in die Daten des Kantons Freiburg bzw. der Gemeinde Murten integriert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/unternehmensgrundungen-und-neugeschaffene-arbeitsstellen-nach-gemeinde-ab-2013)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/06_02_nouvelles_entreprises_totaux/)
+
+Auto generated R starter code for data set 06_02_nouvelles_entreprises_totaux@ssd.
+
+## Metadata
+
+- **Publisher.name** `ssd`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gemeinde', 'beschaftigte', 'unternehmen']`
+- **Issued** `2025-01-16T00:00:00`
+- **Metadata_created** `2025-01-30T19:22:42.730623`
+- **Metadata_modified** `2025-07-17T03:53:59.218312`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 010261c1-9ab8-4b54-a474-9377485f79f2
+# Description              : Unternehmensgründungen und neugeschaffene Arbeitsstellen nach Gemeinde ab 2013 (csv)
+# Issued                   : 2025-01-16T00:00:00
+# Modified                 : 2025-01-16T13:25:49.917000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/06_02_nouvelles_entreprises_totaux/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata.fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD
