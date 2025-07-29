@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-07-28"
+date: "2025-07-29"
 output: html_document
 ---
 
@@ -23,10 +23,10 @@ Auto generated R starter code for data set 1282@statistisches-amt-kanton-zuerich
 - **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
 - **Maintainer** `Statistisches Amt des Kantons Zürich, Wahlen & Abstimmungen`
 - **Maintainer_email** `wahlen@statistik.ji.zh.ch`
-- **Keywords.de** `['politik', 'kantonzuerich', 'gemeindewahlen', 'politischegemeinden', 'wahlergebnisse', 'gemeinden', 'politischeparteien', 'wahlen']`
+- **Keywords.de** `['politik', 'kantonzuerich', 'wahlen', 'politischegemeinden', 'politischeparteien', 'wahlergebnisse', 'gemeinden', 'gemeindewahlen']`
 - **Issued** `2022-03-24T10:22:23+01:00`
 - **Metadata_created** `2022-03-25T03:02:05.492253`
-- **Metadata_modified** `2025-07-27T06:19:42.029275`
+- **Metadata_modified** `2025-07-28T06:42:24.329519`
 
 
 # Load packages
@@ -47,21 +47,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
-# Description              : Gesamter Datensatz mit allen Ergebnissen und Informationen, inklusive Stimmen und Sitze aller Kandidierenden und Listen
-# Issued                   : 2022-04-12T12:27:37+01:00
-# Modified                 : 2025-06-20T14:24:23+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00002438.csv')
-
-# Distribution 1
-# Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
 # Description              : Ergebnisse der Kandidierenden
 # Issued                   : 2022-03-24T10:22:23+01:00
 # Modified                 : 2025-06-20T14:23:03+01:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00002418.csv')
+
+# Distribution 1
+# Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
+# Description              : Gesamter Datensatz mit allen Ergebnissen und Informationen, inklusive Stimmen und Sitze aller Kandidierenden und Listen
+# Issued                   : 2022-04-12T12:27:37+01:00
+# Modified                 : 2025-06-20T14:24:23+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00002438.csv')
 
 # Distribution 2
 # Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
@@ -74,6 +74,15 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 # Distribution 3
 # Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
+# Description              : Ergebnisse der Listen
+# Issued                   : 2022-03-24T10:22:23+01:00
+# Modified                 : 2025-06-20T14:23:23+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00002420.csv')
+
+# Distribution 4
+# Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
 # Description              : Gesamter Datensatz mit allen Ergebnissen und Informationen, inklusive Stimmen und Sitze aller Kandidierenden und Listen
 # Issued                   : 2025-06-20T14:26:12+01:00
 # Modified                 : 2025-06-20T14:26:12+01:00
@@ -81,7 +90,7 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00006363.csv')
 
-# Distribution 4
+# Distribution 5
 # Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
 # Description              : Ergebnisse der Listen
 # Issued                   : 2025-06-20T14:26:04+01:00
@@ -89,15 +98,6 @@ df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_0000
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00006365.csv')
-
-# Distribution 5
-# Package_id               : fe0dbec8-e792-43cc-80da-36242f3574ef
-# Description              : Ergebnisse der Listen
-# Issued                   : 2022-03-24T10:22:23+01:00
-# Modified                 : 2025-06-20T14:23:23+01:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001282_00002420.csv')
 
 
 
