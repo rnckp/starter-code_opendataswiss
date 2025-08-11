@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-11"
+output: html_document
+---
+
+## Dataset: Daten der Bevölkerungsbefragung der Stadt Zürich 2019 bis 2023
+
+Dieser Datensatz enthält die Daten der Bevölkerungsbefragungen 2019 bis 2023. Weil ab 2019 die Stichprobe vergrössert wurde, konnte dieser Datensatz mit vier soziodemografischen Variablen aus dem Bevölkerungsregister der Stadt Zürich angereichert werden: die Stadtquartiere (`A1BVSQuar03`), das Alter (`A1BVSAlterV03`) in drei Alterskategorien sowie das amtliche Geschlecht (`A1BVSSex01`) der Befragten. Eine Datensatz-Version mit sämtlichen Erhebungsjahren (1999 bis 2023) finden Sie [unter diesem Link](https://data.stadt-zuerich.ch/dataset/prd_stez_bevoelkerungsbefragungen_seit1999_od4731), wobei dort aus datenschutzrechtlichen Gründen als soziodemografische Variablen «lediglich» die Stadtkreise (`A1BVSKreis01`) und das amtliche Geschlecht (`A1BVSSex01`) der befragten Personen ausgewiesen werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/daten-der-bevolkerungsbefragung-der-stadt-zurich-2019-bis-2023)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/prd_stez_bevoelkerungsbefragungen_seit2019_od4732)
+
+Auto generated R starter code for data set 1fdd4943-022d-4afe-832e-80bd7b679ce6@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Stadtentwicklung, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['sachdaten', 'stadtentwicklung', 'verkehr', 'wohnen', 'zufriedenheit', 'befragung', 'tabelle', 'umfrage', 'stichprobe', 'lebensqualitat', 'zeitreihe', 'bvb']`
+- **Issued** `2019-12-12T00:00:00`
+- **Metadata_created** `2023-12-09T02:59:25.984664`
+- **Metadata_modified** `2025-08-11T03:04:15.853296`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 832dff79-dfbb-4cdb-8d14-b47618902de8
+# Description              : 
+# Issued                   : 2023-08-12T09:02:48.826986
+# Modified                 : 2025-10-08T20:59:31.075538
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/prd_stez_bevoelkerungsbefragungen_seit2019_od4732/download/BEV473OD4732.csv')
+
+# Distribution 1
+# Package_id               : 832dff79-dfbb-4cdb-8d14-b47618902de8
+# Description              : 
+# Issued                   : 2023-08-12T09:02:52.987851
+# Modified                 : 2025-10-08T20:59:36.528958
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/prd_stez_bevoelkerungsbefragungen_seit2019_od4732/download/Codeliste_BVB_OGD.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
