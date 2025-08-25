@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-25"
+output: html_document
+---
+
+## Dataset: Ein- und Ausfahrten öffentlicher Parkhäuser Basel
+
+Der Datensatz zeigt die Anzahl Ein- und Ausfahrten pro Stunde in bzw. aus öffentlichen Parkhäusern Basel. Die Daten werden jährlich ergänzt. Aus technischen Gründen sind die Daten des Parkhauses City erst ab 2021 vorhanden. Im Parkhaus St. Jakob werden manchmal bei Grossanlässen keine Ein- und Ausfahrten gezählt. Diese Metriken sind für dieses Parkhaus deshalb mit Vorsicht zu analysieren. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/ein-und-ausfahrten-offentlicher-parkhauser-basel)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100198/)
+
+Auto generated R starter code for data set 100198@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch/pages/home/`
+- **Maintainer** `Fachstelle für OGD Basel-Stadt`
+- **Maintainer_email** `opendata@bs.ch`
+- **Keywords.de** `['auto', 'parkhaus', 'parkieren', 'einfahrt', 'ausfahrt', 'bewegungen', 'autos']`
+- **Issued** `2022-07-11T00:00:00`
+- **Metadata_created** `2022-07-12T13:00:19.891768`
+- **Metadata_modified** `2025-08-24T00:49:55.454811`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ae3d8530-ac0e-43bd-9cb6-6da45d3a34f6
+# Description              : Ein- und Ausfahrten öffentlicher Parkhäuser Basel (csv)
+# Issued                   : 2022-07-11T00:00:00
+# Modified                 : 2025-04-22T15:19:49.629000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100198/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

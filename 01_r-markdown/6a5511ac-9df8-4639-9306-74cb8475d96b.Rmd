@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-25"
+output: html_document
+---
+
+## Dataset: Konkurse im Kanton Thurgau
+
+Der Datensatz beinhaltet alle erfassten Firmen-, Privat- und Nachlasskonkurse des kantonalen Konkursamtes aufgeschlüsselt auf Monatsebene.Datenquelle: Amt für Betreibungs- und Konkurswesen
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/konkurse-im-kanton-thurgau)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/djs-ka-2/)
+
+Auto generated R starter code for data set djs-ka-2@kanton-thurgau.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `OGD-Koordinationsstelle Kanton Thurgau`
+- **Maintainer_email** `ogd@tg.ch`
+- **Keywords.de** `['konkurs', 'privatkonkurs', 'nachlass', 'notariat', 'konkurse', 'nachlassliquidation', 'firmenkonkurs', 'betreibung']`
+- **Issued** `2021-06-30T00:00:00`
+- **Metadata_created** `2022-02-28T11:03:49.623781`
+- **Metadata_modified** `2025-08-23T11:08:15.628076`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 6a5511ac-9df8-4639-9306-74cb8475d96b
+# Description              : Konkurse im Kanton Thurgau (csv)
+# Issued                   : 2021-06-30T00:00:00
+# Modified                 : 2025-08-19T10:11:38.228000+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by/
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/djs-ka-2/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

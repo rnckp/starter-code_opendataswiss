@@ -1,0 +1,118 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-25"
+output: html_document
+---
+
+## Dataset: Stadtklimamessungen Winterthur
+
+Temperatur und Luftfeuchtigkeit sowie die Strahlung als Hilfswerte gemessen durch Sensoren von rund 25 Meteohelix-Messstationen im Stadtgebiet von Winterthur. Dieses Messnetz wurde im Sommer 2022 durch die Fachstelle Umwelt der Stadt Winterthur aufgebaut und seither betrieben. 
+Der Datensatz wird täglich aktualisiert und umfasst alle für die Standorte gültigen Messwerte im 10-Minuten-Mittel; die Standortinformationen sind in der Ressource 'Standorte-Stationen' abrufbar. Es handelt sich um Rohdaten, welche direkt von der meteoblue API (Produktbeschrieb unter 'Zusätzliche Informationen' verlinkt) bezogen wurden, und nicht plausibilisiert oder korrigiert sind. In der Ressource 'Datenbeschrieb' finden Sie die vollständige Beschreibung der Merkmale. Direkter Zugriff auf die meteoblue API ist möglich und kann direkt bei meteoblue angefragt werden.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/stadtklimamessungen-winterthur)<br>
+[Direct link by **Stadt Winterthur** for dataset]()
+
+Auto generated R starter code for data set 2142@stadt-winterthur.
+
+## Metadata
+
+- **Publisher.name** `Stadt Winterthur`
+- **Organization.display_name.de** `Stadt Winterthur`
+- **Organization.url** `https://stadt.winterthur.ch/themen/die-stadt/winterthur/statistik`
+- **Maintainer** `Stadt Winterthur, Umwelt und Gesundheitsschutz, Fachstelle Umwelt`
+- **Maintainer_email** `umwelt@win.ch`
+- **Keywords.de** `['lufttemperaturen', 'klima', 'temperatur', 'luft']`
+- **Issued** `2023-08-28T16:46:58+01:00`
+- **Metadata_created** `2023-08-29T03:15:20.637597`
+- **Metadata_modified** `2025-08-25T03:29:12.879007`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 5 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
+# Description              : Mess-Standorte der Stadtklima Winterthur Messdaten. Die Merkmale "laengengrad" und "breitengrad" sind im WGS 84 Koordinatensystem angegeben. Die Merkmale 'daten_von' und 'daten_bis' wurde aus den verfügbaren Messdaten bestimmt.
+# Issued                   : 2023-08-28T16:46:58+01:00
+# Modified                 : 2025-08-24T07:01:37+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004244.csv')
+
+# Distribution 1
+# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
+# Description              : Die Messwerte sind in UTC (Coordinated Universal Time). Mithilfe dem Merkmal "station_id" können die Ressourcen: "Standorte-Stationen" und "Messdaten_XXXX" kombiniert werden. Wenn im Verlauf der Zeit neue Stationen dazu kommen oder wegfallen, ist dies in der Ressource "Standorte-Stationen" an den Merkmalen "daten_von" und "daten_bis" abzulesen. Die vollständige Dokumentation der Merkmale finden Sie in der Ressource Datenbeschrieb.txt. Die Daten können Lücken enthalten. 
+# Issued                   : 2023-08-28T16:46:58+01:00
+# Modified                 : 2025-01-21T10:12:09+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004246.csv')
+
+# Distribution 2
+# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
+# Description              : Die Messwerte sind in UTC (Coordinated Universal Time). Mithilfe dem Merkmal "station_id" können die Ressourcen: "Standorte-Stationen" und "Messdaten_XXXX" kombiniert werden. Wenn im Verlauf der Zeit neue Stationen dazu kommen oder wegfallen, ist dies in der Ressource "Standorte-Stationen" an den Merkmalen "daten_von" und "daten_bis" abzulesen. Die vollständige Dokumentation der Merkmale finden Sie in der Ressource Datenbeschrieb.txt. Die Daten können Lücken enthalten. 
+# Issued                   : 2023-08-28T16:46:58+01:00
+# Modified                 : 2025-01-21T09:36:00+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00004245.csv')
+
+# Distribution 3
+# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
+# Description              : Informationen zu den Merkmalen findet man in der Ressource Datenbeschrieb.txt unter dem Datensatz. Die Daten können Lücken enthalten.
+# Issued                   : 2024-01-02T03:48:21+01:00
+# Modified                 : 2025-01-21T10:14:37+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00005084.csv')
+
+# Distribution 4
+# Package_id               : dc60bfdd-77e5-483d-bed3-e655e5529210
+# Description              : Informationen zu den Merkmalen findet man in der Ressource Datenbeschrieb.txt unter dem Datensatz. Die Daten können Lücken enthalten.
+# Issued                   : 2025-01-09T09:10:56+01:00
+# Modified                 : 2025-08-24T07:02:00+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002142_00005883.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+umwelt@win.ch | Stadt Winterthur, Umwelt und Gesundheitsschutz, Fachstelle Umwelt

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-25"
+output: html_document
+---
+
+## Dataset: Nutzungsdichte im Kanton Zürich
+
+Mit der Nutzungsdichte wird aufgezeigt, wie viele Einwohner und Beschäftige pro Hektare Bauzone (Wohn-, Misch- und Arbeitszonen) durchschnittlich wohnen bzw. arbeiten. Es werden Daten auf Stufe Gemeinde, Planungsregion und für den Kanton Zürich als Ganzes bereitgestellt. Datenquellen sind die Einwohnerdaten des Statistischen Amts Kanton Zürich, Beschäftigtendaten des Bundesamts für Statistik (BFS) und die Nutzungszonen gemäss ÖREB-Kataster des Kantons Zürich.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/nutzungsdichte-im-kanton-zurich)<br>
+[Direct link by **Amt für Raumentwicklung Kanton Zürich** for dataset]()
+
+Auto generated R starter code for data set 2622@are-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Amt für Raumentwicklung des Kantons Zürich`
+- **Organization.display_name.de** `Amt für Raumentwicklung Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/baudirektion/amt-fuer-raumentwicklung.html`
+- **Maintainer** `Amt für Raumentwicklung des Kantons Zürich, Raumplanung`
+- **Maintainer_email** `raumbeobachtung@bd.zh.ch`
+- **Keywords.de** `['raumentwicklung', 'gemeinden']`
+- **Issued** `2024-05-30T11:16:47+01:00`
+- **Metadata_created** `2024-05-31T04:19:07.497051`
+- **Metadata_modified** `2025-08-23T04:02:12.070311`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 802db400-694f-4f84-ab63-457fa21176df
+# Description              : Durchschnittliche Anzahl Einwohner und Beschäftigte pro Hektare überbaute Wohn-, Misch- und Arbeitszonen im Kanton Zürich. Mit der Spalte «GEO_LEVEL_LEVEL» können im Vergleich zur Spalte «BFS_NR» neben den Gemeinden und Städten (3) zusätzlich auch die Regionen (6) und der Kanton Zürich (1) als Ganzes identifiziert werden Die Spalte GEBIET_NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich. Bei der Berechnung der Werte wurden Wohn-, Misch- und Arbeitszonen auf Stufe Gemeinde im Umfang von weniger als 2 Hektare nicht berücksichtigt.
+# Issued                   : 2024-05-30T11:16:47+01:00
+# Modified                 : 2025-07-30T10:56:18+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00002622_00005364.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+raumbeobachtung@bd.zh.ch | Amt für Raumentwicklung des Kantons Zürich, Raumplanung
