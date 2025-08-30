@@ -1,0 +1,117 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-30"
+output: html_document
+---
+
+## Dataset: Gebietsstammdaten Kanton Zürich
+
+Der Datensatz enthält Gebietsstammdaten des Kantons Zürich - das heisst Informationen (insbesondere offizielle Codes und Namen) zu Gemeinden, Bezirken und Raumplanungsregionen. Der Datensatz besteht aus drei Code-Tabellen zu Gemeinden, Bezirke und Raumplanungsregionen und aus zwei Tabellen mit ergänzenden Informationen: Eine Tabelle zu Mutationen von Gemeinden (Namensänderungen und Fusionen) seit 1990 und eine Tabelle mit den Zuweisungen der Gemeinden zu deren Bezirk und Raumplanungsregion. Die Kombination aus gebietstyp_code und [gebiet]_code ist eindeutig. Die Codes für Gemeinden und Bezirke werden vom Bundesamt für Statistik vergeben (Bfs-Nummer). Die Abgrenzung der Raumplanungsregionen erfolgt durch das Bundesamt für Raumentwicklung sowie die kantonalen Raumplanungsfachstellen und wird periodisch überarbeitet. Die Daten sind aktuell, vollständig und stabil und werden im Falle von Änderungen aktualisiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/gebietsstammdaten-kanton-zurich)<br>
+[Direct link by **Statistisches Amt Kanton Zürich** for dataset](https://github.com/statistikZH/gebietsstammdaten_zh)
+
+Auto generated R starter code for data set 3082@statistisches-amt-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Statistisches Amt des Kantons Zürich`
+- **Organization.display_name.de** `Statistisches Amt Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['raumplanungsregionen', 'gemeinden', 'stammdaten', 'bezirke']`
+- **Issued** `2025-08-28T15:06:16+01:00`
+- **Metadata_created** `2025-08-29T05:30:37.890346`
+- **Metadata_modified** `2025-08-29T05:30:37.890354`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 5 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : c12b85b1-b49b-41c9-8a4e-df6eaf068bd0
+# Description              : Für eine Beschreibung der einzelnen Variablen siehe "weitere Informationen" auf der Startseite des Datensatzes.
+# Issued                   : 2025-08-28T15:06:16+01:00
+# Modified                 : 2025-08-28T15:06:16+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003082_00006505.csv')
+
+# Distribution 1
+# Package_id               : c12b85b1-b49b-41c9-8a4e-df6eaf068bd0
+# Description              : Gemeindemutationen Kanton Zürich (Namensänderungen und Fusionen) seit 1990.  Für eine Beschreibung der einzelnen Variablen siehe "weitere Informationen" auf der Startseite des Datensatzes.
+# Issued                   : 2025-08-28T15:06:16+01:00
+# Modified                 : 2025-08-28T15:06:16+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003082_00006504.csv')
+
+# Distribution 2
+# Package_id               : c12b85b1-b49b-41c9-8a4e-df6eaf068bd0
+# Description              : Für eine Beschreibung der einzelnen Variablen siehe "weitere Informationen" auf der Startseite des Datensatzes.
+# Issued                   : 2025-08-28T15:06:16+01:00
+# Modified                 : 2025-08-28T15:06:16+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003082_00006503.csv')
+
+# Distribution 3
+# Package_id               : c12b85b1-b49b-41c9-8a4e-df6eaf068bd0
+# Description              : Für eine Beschreibung der einzelnen Variablen siehe "weitere Informationen" auf der Startseite des Datensatzes.
+# Issued                   : 2025-08-28T15:06:16+01:00
+# Modified                 : 2025-08-28T15:06:16+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003082_00006563.csv')
+
+# Distribution 4
+# Package_id               : c12b85b1-b49b-41c9-8a4e-df6eaf068bd0
+# Description              : Für eine Beschreibung der einzelnen Variablen siehe "weitere Informationen" auf der Startseite des Datensatzes.
+# Issued                   : 2025-08-28T15:06:16+01:00
+# Modified                 : 2025-08-28T15:06:16+01:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003082_00006506.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+rebekka.pluess@zh.ch | Statistisches Amt des Kantons Zürich, Data Management

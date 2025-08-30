@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-08-30"
+output: html_document
+---
+
+## Dataset: Syphilis
+
+Daten zur Verbreitung und zeitlichen Entwicklung von Syphilis Erkrankungsfällen in der Schweiz und im Fürstentum Liechtenstein. Sie finden Daten zu Fällen aus dem obligatorischen Meldesystem.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/syphilis)<br>
+[Direct link by **Abteilung Übertragbare Krankheiten** for dataset](https://idd.bag.admin.ch)
+
+Auto generated R starter code for data set syphilis@abteilung-uebertragbare-krankheiten.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Abteilung Übertragbare Krankheiten`
+- **Organization.url** `https://www.bag.admin.ch/`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['syphilis-bag']`
+- **Issued** `2025-07-01T00:00:00+00:00`
+- **Metadata_created** `2025-08-29T05:15:06.020540`
+- **Metadata_modified** `2025-08-29T05:15:06.020549`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 11ed7d6f-02f1-46cd-b8c7-99ca363ea37b
+# Description              : Die Daten basieren auf Informationen, die Laboratorien, Ärztinnen und Ärzte sowie Spitäler dem BAG im Rahmen der Meldepflicht übermittelt haben.
+# Issued                   : 2025-07-01T00:00:00+00:00
+# Modified                 : 2025-08-28T00:00:00+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by/
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/SYPHILIS_oblig/csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+idd@bag.admin.ch | Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten
