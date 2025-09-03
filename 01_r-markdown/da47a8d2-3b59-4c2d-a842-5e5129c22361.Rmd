@@ -1,0 +1,93 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-09-03"
+output: html_document
+---
+
+## Dataset: Luftqualitätsmessungen Ostluft Thurgau – Stundenwerte
+
+Die hier veröffentlichten Datensätze für die Messstationen Weinfelden und Konstanz stammen aus dem automatischen Messnetz von Ostluft, das kontinuierlich verschie-dene Luftschadstoffe (z.B. NO₂, PM₁₀, O₃) und teilweise meteorologische Parame-ter (z.B. Temperatur, Luftdruck, Wind) erfasst.
+Jeder Datensatz enthält zeitlich aufgelöste Einzelmesswerte im Halbstunden-, Stun-den- oder Tagesintervall, je nach Version. Die Daten geben an: Start- und Endzeit der Messung, die bezeichnende Messstelle, den Messwert, sowie den zugehöri-gen Indikator (z.B. „Luftdruck“, „NO₂“) und eine eindeutige Stations-ID (Messstation-ID).
+Die Daten werden direkt aus dem standardisierten Ostluft Messnetz übernommen. Die Qualitätssicherung erfolgt gemäß den Richtlinien der Schweizer Luftreinhaltever-ordnung (LRV). Es handelt sich bei den exportierten Daten um vorläufige Werte, die erst mit der Veröffentlichung des Jahresberichts definitiv bestätigt werden. In der Regel ist die vollständige Datenbereinigung Ende April des Folgejahres abgeschlossen.
+Aus Speicherplatzgründen finden sich hier nur die Daten für die letzten 365 Tage. Vollständige Datensätze für ganze Jahre können über folgenden Link als gezippte CSV heruntergeladen werden:
+
+[https://ogdtg.ch/ostluft/stundenwert_JAHR.csv.gz](https://ogdtg.ch/ostluft/stundenwert_JAHR.csv.gz)
+Beispiel 2023: [https://ogdtg.ch/ostluft/stundenwert_2023.csv.gz](https://ogdtg.ch/ostluft/stundenwert_2023.csv.gz)
+Alle verfügbaren Jahre: [https://ogdtg.ch/ostluft/stundenwert_full.csv.gz](https://ogdtg.ch/ostluft/stundenwert_full.csv.gz)
+
+Gemäss Ostluft Messkonzept wird die Messstation beim Berufsbildungszentrum in Weinfelden alle zwei Jahre (gerade Jahre; Wechselstandort), die Messstation Konstanz Wallgutstrasse alljährlich betrieben.
+Die Daten können außerdem über [ostluft.ch/messwerte/datenabfrage](https://www.ostluft.ch/messwerte/datenabfrage) individuell gefiltert und als CSV-Datei heruntergeladen werden.
+Weitere Informationen zu den gemessenen Schadstoffen und Indikatoren finden Sie [hier](https://www.ostluft.ch/grundlagen).
+Bei Fragen wenden Sie sich an die Ostluft Datenzentrale: [datenezentrale@ostluft.ch](mailto:datenezentrale@ostluft.ch)
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/luftqualitatsmessungen-ostluft-thurgau-stundenwerte)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/dbu-afu-18/)
+
+Auto generated R starter code for data set dbu-afu-18@kanton-thurgau.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['luftdruck', 'luftschadstoff', 'ostluft', 'luft', 'schadstoff', 'schadstoffbelastung', 'feinstaub', 'temperatur', 'ozon', 'wind', 'stickstoff', 'luftqualitat']`
+- **Issued** `2025-09-02T08:04:15.763000+00:00`
+- **Metadata_created** `2025-09-02T12:13:46.519196`
+- **Metadata_modified** `2025-09-02T12:13:46.519205`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : da47a8d2-3b59-4c2d-a842-5e5129c22361
+# Description              : Luftqualitätsmessungen Ostluft Thurgau – Stundenwerte (csv)
+# Issued                   : 2025-09-02T08:04:15.763000+00:00
+# Modified                 : 2025-09-02T08:04:15.763000+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by/
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/dbu-afu-18/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau
