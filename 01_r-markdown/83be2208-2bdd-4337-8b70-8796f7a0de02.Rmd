@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-09-18"
+output: html_document
+---
+
+## Dataset: Fertiggestellte und abgebrochene Wohnungen nach Eigentumsart und statistischer Zone
+
+Der Datensatz enthält die Anzahl fertiggestellter und abgebrochener Wohnungen nach Eigentumsart und statistischer Zone.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/fertiggestellte-und-abgebrochene-wohnungen-nach-eigentumsart-und-statistischer-zone-seit-2009)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/bau_neubau_whg_abbr_neu_eigart_statzone_quartier_od5021)
+
+Auto generated R starter code for data set c58cefc6-1ea8-43b3-aadd-d41c40b3a3bc@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Statistik Stadt Zürich, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['zeitreihe', 'abbruch', 'bautaetigkeit', 'eigentum', 'tabelle', 'sasa', 'neubau', 'wohnung', 'sachdaten']`
+- **Issued** `2017-02-28T00:00:00`
+- **Metadata_created** `2023-04-21T01:07:28.358463`
+- **Metadata_modified** `2025-09-18T03:35:18.200517`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 83be2208-2bdd-4337-8b70-8796f7a0de02
+# Description              : 
+# Issued                   : 2021-05-02T19:47:13.545786
+# Modified                 : 2025-09-17T21:11:11.002252
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/bau_neubau_whg_abbr_neu_eigart_statzone_quartier_od5021/download/BAU502OD5021.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
