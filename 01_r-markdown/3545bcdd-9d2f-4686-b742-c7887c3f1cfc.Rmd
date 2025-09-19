@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-09-19"
+output: html_document
+---
+
+## Dataset: Energieverbräuche Portfolio Immobilien Stadt Zürich
+
+Enthält den Energieverbrauch je Energieträger bzw. Energieart für das Portfolio von Immobilien Stadt Zürich ab 2018.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energieverbrauche-portfolio-immobilien-stadt-zurich)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/hbd_immo_portfolio_energieverbrauch)
+
+Auto generated R starter code for data set 8f671d4b-4fd5-4fd1-977d-a182ab707778@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Immobilien, Hochbaudepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `Open Data Zürich`
+- **Maintainer_email** `opendata@zuerich.ch`
+- **Keywords.de** `['entergietraeger', 'tabelle', 'energie', 'sachdaten', 'zeitreihe', 'gebaeude']`
+- **Issued** `2023-02-18T00:00:00`
+- **Metadata_created** `2023-03-07T01:00:19.914207`
+- **Metadata_modified** `2025-09-19T03:40:50.007721`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3545bcdd-9d2f-4686-b742-c7887c3f1cfc
+# Description              : 
+# Issued                   : 2023-06-03T19:53:55.325376
+# Modified                 : 2025-09-18T20:57:21.998889
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/hbd_immo_portfolio_energieverbrauch/download/exp_IMMO_OGD_2021.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
