@@ -1,0 +1,88 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Bauzonen und Stand der Überbauung
+
+Dieser Datensatz zeigt die rechtskräftigen Bauzonenflächen nach Hauptnutzung mit ihrem Stand der Überbauung.
+Datengrundlagen: Diese Statistik basiert auf den rechtskräftigen Bauzonen der kommunalen Nutzungsplanung und dem Stand der Überbauung gemäss der Übersicht über den Stand der Überbauung, der Erschliessung und der Baureife (UEB). Diese Datengrundlagen liegen in der Zuständigkeit der Gemeinde als Planungsträgerin (Art. 3 KRG). Die Flächenangaben in m² können aufgrund geometrischer Operationen und der Summierung Rundungsdifferenzen aufweisen.
+Aktualität: Die Genauigkeit dieser Statistik hängt von der Aktualität der Datengrundlagen und den entsprechenden Nachführungsregeln ab. Für Bauzonen bzw. Hauptnutzungen gilt grundsätzlich eine 30-tägige Nachführungsfrist nach Inkrafttreten der Zonenfestlegung in der Nutzungsplanung (Art. 20 KGeoIV). Der Stand der Überbauung unterliegt den Nachführungsregeln der Übersicht UEB. Diese können aufgrund verschiedener Aspekte variieren, wodurch die Daten mehrere Jahre alt sein können (weitere Informationen dazu siehe Kapitel 3 der Datendokumentation Übersicht UEB und Nutzungsreserven).
+Weitere Informationsquellen:
+
+Bauzonen Graubünden (BZ_GR): [Detailbeschreibung](https://katalog.geo.gr.ch/gis-tools/gdds/inventar/openinventar.php?datenbestand_kuerzel=BZ_GR&doku_typ_id=1) und [interaktive Karte](https://map.geo.gr.ch/theme/Bauzonen_Graubuenden)
+Kommunale Nutzungsplanung (NUP): [Detailbeschreibung](https://www.gr.ch/DE/institutionen/verwaltung/dvs/are/nutzungsplanung/Weisung D aktuell ohne Aenderungsmarkierungen.pdf) und [interaktive Karte](https://map.geo.gr.ch/theme/Nutzungsplanung_Kommunaler_Darstellungsdienst)
+Übersicht über den Stand der Überbauung: [Detailbeschreibung](https://www.gr.ch/DE/institutionen/verwaltung/dvs/are/nutzungsplanung/Datendokumentation_UEB_NR_de.pdf) und [interaktive Karte](https://map.geo.gr.ch/theme/UEB_Nutzungsreserven)[Dokumentation Datenfelder und Aggregationslogik](https://www.gr.ch/DE/institutionen/verwaltung/dvs/are/Grundlagen/Dokumentation Datenfelder und Aggregationslogik %E2%80%93 Bauzonen und Stand der %C3%9Cberbauung.pdf) des Datensatzes 'Bauzonen und Stand der Überbauung'
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/bauzonen-und-stand-der-uberbauung)<br>
+[Direct link by **Kanton Graubünden** for dataset](https://data.gr.ch/explore/dataset/dvs_are_soci_20250224/)
+
+Auto generated R starter code for data set dvs_are_soci_20250224@kanton-graubuenden.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Graubünden`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['uberbauungsstand', 'bauzonen']`
+- **Issued** `2025-06-01T00:00:00`
+- **Metadata_created** `2025-10-22T06:59:11.282105`
+- **Metadata_modified** `2025-12-12T17:30:22.344033`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : ef924e0f-0fc9-4a86-8ac8-a0941bf47686
+# Description              : Bauzonen und Stand der Überbauung (csv)
+# Issued                   : 2025-06-01T00:00:00
+# Modified                 : 2025-09-30T08:19:00+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.gr.ch/api/explore/v2.1/catalog/datasets/dvs_are_soci_20250224/exports/csv?use_labels=false')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@awt.gr.ch | Amt für Wirtschaft und Tourismus

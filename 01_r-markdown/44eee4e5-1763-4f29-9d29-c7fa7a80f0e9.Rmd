@@ -1,0 +1,127 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Waren: Aussenhandel nach Warenart / Land
+
+Waren: Aussenhandel aggregiert nach Warenart und Ländern
+Monatliche Daten / Ab 1988 erhältlich
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/waren-aussenhandel-nach-warenart-land)<br>
+[Direct link by **Bundesamt für Zoll und Grenzsicherheit BAZG** for dataset]()
+
+Auto generated R starter code for data set BAZG_WA_LAND@eidgenoessische_zollverwaltung_ezv.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Zoll und Grenzsicherheit BAZG`
+- **Organization.url** `https://www.bazg.admin.ch/bazg/de/home.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['aussenhandel', 'bazg', 'exporte', 'importe', 'warenart']`
+- **Issued** `nan`
+- **Metadata_created** `2025-12-24T14:24:06.773805`
+- **Metadata_modified** `2025-12-24T14:24:06.773810`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 6 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 44eee4e5-1763-4f29-9d29-c7fa7a80f0e9
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/fr/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Waren/ogd_imp_warenart.zip')
+
+# Distribution 1
+# Package_id               : 44eee4e5-1763-4f29-9d29-c7fa7a80f0e9
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/fr/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Waren/ogd_exp_warenart.zip')
+
+# Distribution 2
+# Package_id               : 44eee4e5-1763-4f29-9d29-c7fa7a80f0e9
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/en/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Waren/ogd_exp_warenart.zip')
+
+# Distribution 3
+# Package_id               : 44eee4e5-1763-4f29-9d29-c7fa7a80f0e9
+# Description              : WA_IMP
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Waren/ogd_imp_warenart.zip')
+
+# Distribution 4
+# Package_id               : 44eee4e5-1763-4f29-9d29-c7fa7a80f0e9
+# Description              : WA_EXP
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Waren/ogd_exp_warenart.zip')
+
+# Distribution 5
+# Package_id               : 44eee4e5-1763-4f29-9d29-c7fa7a80f0e9
+# Description              : 
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/en/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Waren/ogd_imp_warenart.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+stat@bazg.admin.ch | Bundesamt für Zoll und Grenzsicherheit

@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-09-24"
+date: "2025-12-27"
 output: html_document
 ---
 
@@ -29,7 +29,7 @@ Auto generated R starter code for data set fs-gfs-model@eidgenossische-finanzver
 - **Keywords.de** `['eidgenossische-finanzverwaltung-efv']`
 - **Issued** `2023-03-23T00:00:00`
 - **Metadata_created** `2025-07-15T08:28:47.152555`
-- **Metadata_modified** `2025-07-30T22:10:04.843368`
+- **Metadata_modified** `2025-12-19T02:51:14.656326`
 
 
 # Load packages
@@ -50,21 +50,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : ec27fac8-cd62-4717-9b4c-8cd49e192c37
-# Description              : Diese codelist kann als Hilfstabelle für die Dimensionen _arten_ und _funk_ des zugehörigen Datensets (identifier: resource_standardauswertung) verwendet werden.
-# Issued                   : None
-# Modified                 : None
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
-
-df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/standardauswertung_codelist.csv')
-
-# Distribution 1
-# Package_id               : ec27fac8-cd62-4717-9b4c-8cd49e192c37
 # Description              : Dieses Datenset zeigt detaillierte Daten zu öffentlichen Finanzen gemäss FS- und GFS-Modell. Folgende Dimensionen sind verfügbar: * arten: ermöglicht Artengliederung (siehe zugehörige codelist) * funk: ermöglicht funktionale Gliederung (siehe codelist) * jahr: zeigt das entsprechende Jahr * value: zeigt den Wert der entsprechenden Position * dim: zeigt die Kategorie, zu welcher die Position gehört (siehe https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/readme.xlsx.download.xlsx/readme.xlsx sheet "glossary", "GFS: Tabellenblätter" resp. "FS: Tabellenblätter") * hh: zeigt den entsprechenden öffentlichen Haushalt (siehe https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/readme.xlsx.download.xlsx/readme.xlsx sheet "file_structure") * unit: zeigt die Einheit des Wertes * model: zeigt das betrachtete Modell
 # Issued                   : None
 # Modified                 : None
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/standardauswertung.csv')
+df <- read_delim('https://www.data.finance.admin.ch/static/assets/datasets/fs_dashboard/standardauswertung.csv')
+
+# Distribution 1
+# Package_id               : ec27fac8-cd62-4717-9b4c-8cd49e192c37
+# Description              : Diese codelist kann als Hilfstabelle für die Dimensionen _arten_ und _funk_ des zugehörigen Datensets (identifier: resource_standardauswertung) verwendet werden.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.data.finance.admin.ch/static/assets/datasets/fs_dashboard/standardauswertung_codelist.csv')
 
 
 
@@ -93,4 +93,4 @@ tail(df)
 
 # Contact
 
-finstat@efv.admin.ch | Administration fédérale des finances AFF
+finstat@efv.admin.ch | Eidgenössische Finanzverwaltung EFV

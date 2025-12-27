@@ -1,0 +1,126 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Waren: Aussenhandel - Transitdaten durch die Schweiz
+
+Die Transitstatistik erfasst sämtliche ausländischen Waren, welche die Schweiz beim Transport durchqueren. 
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/waren-aussenhandel-transitdaten-durch-die-schweiz)<br>
+[Direct link by **Bundesamt für Zoll und Grenzsicherheit BAZG** for dataset]()
+
+Auto generated R starter code for data set transit@eidgenoessische_zollverwaltung_ezv.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Zoll und Grenzsicherheit BAZG`
+- **Organization.url** `https://www.bazg.admin.ch/bazg/de/home.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['aussenhandel', 'bazg', 'transit']`
+- **Issued** `2025-02-20T00:00:00`
+- **Metadata_created** `2025-12-24T14:30:12.033279`
+- **Metadata_modified** `2025-12-24T14:30:12.033284`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 6 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 077be3e2-8105-4583-80c0-8d0d6c253b40
+# Description              :  (ZIP containing primarily CSV files) (ZIP containing primarily CSV files)
+# Issued                   : 2025-02-20T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Verkehrsmittel/ogd_transit_daten.zip.download.zip/ogd_transit_daten.zip')
+
+# Distribution 1
+# Package_id               : 077be3e2-8105-4583-80c0-8d0d6c253b40
+# Description              : In der Transitstatistik werden die Waren auf Basis von einer für die Schweiz spezifischen Nomenklatur klassifiziert. Die in der Zollanmeldung verfügbare Warenbeschreibung ermöglicht diese Klassifizierung.
+# Issued                   : 2024-09-26T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Verkehrsmittel/ogd_warengruppen_transit.csv.download.csv/ogd_warengruppen_transit.csv')
+
+# Distribution 2
+# Package_id               : 077be3e2-8105-4583-80c0-8d0d6c253b40
+# Description              :  Der Zoll verfügt über Dienststellen in der ganzen Schweiz. Im Dienststellenverzeichnis finden Sie alle Dienststellen mit den jeweiligen Informationen.
+# Issued                   : 2024-09-26T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Verkehrsmittel/ogd_zollstellen_transit.csv.download.csv/ogd_zollstellen_transit.csv')
+
+# Distribution 3
+# Package_id               : 077be3e2-8105-4583-80c0-8d0d6c253b40
+# Description              :  (ZIP containing primarily CSV files) (ZIP containing primarily CSV files) Durch die Umstellung auf das neue Warenverkehrssystem (Passar), das eine präzisere Datenerfassung gewährleistet, können bei detaillierten Datenauswertungen der Strasse im 2024 Veränderungen auftreten (z.B. Transportierte Ware nach inländischen/ausländischen Fahrzeugen).
+# Issued                   : 2025-09-30T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Verkehrsmittel/ogd_transit_daten_24.zip.download.zip/ogd_transit_daten_24.zip')
+
+# Distribution 4
+# Package_id               : 077be3e2-8105-4583-80c0-8d0d6c253b40
+# Description              : Beim Transit wird für alle Transporte dasjenige Verkehrsmittel aufgeführt, mit welchem die längste Wegstrecke innerhalb der Schweiz zurückgelegt wurde. Der Transit kann entweder auf der Schiene, Strasse oder per Pipeline erfolgen. Nicht erfasst werden Transite im Schiffs- und Luftverkehr.
+# Issued                   : 2025-02-20T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Verkehrsmittel/ogd_verkehrstraeger_transit.csv.download.csv/ogd_verkehrstraeger_transit.csv')
+
+# Distribution 5
+# Package_id               : 077be3e2-8105-4583-80c0-8d0d6c253b40
+# Description              : Das Länderverzeichnis der Aussenhandelsstatistik ist nur für statistische Zwecke bestimmt. Die verwendeten Bezeichnungen sowie der Umstand, ob einzelne Länder bzw. Regionen erwähnt sind oder nicht, kommt nicht einer Stellungnahme des BAZG oder einer anderen schweizerischen Behörde über den juristischen Status der Länder gleich
+# Issued                   : 2024-09-26T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bazg.admin.ch/dam/bazg/de/dokumente/abgaben/aussenhandelstatistik/diffusion/Daten/Verkehrsmittel/ogd_laender_transit.csv.download.csv/ogd_laender_transit.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+stat@bazg.admin.ch | Bundesamt für Zoll und Grenzsicherheit

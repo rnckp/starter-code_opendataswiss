@@ -1,10 +1,10 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-09-24"
+date: "2025-12-27"
 output: html_document
 ---
 
-## Dataset: Referenz-Marktpreise für die gleitende Marktprämie (gemäss Art. 30aquinquies EnFV)
+## Dataset: Referenz-Marktpreise für die gleitende Marktprämie gemäss Art. 30aquinquies EnFV
 
 Die Referenz-Marktpreise sind massgebend für die Festlegung der gleitenden Marktprämie
 als Differenz zwischen Vergütungssatz und Referenz-Marktpreis. Der Referenz-Marktpreis für
@@ -24,7 +24,7 @@ Publikation: jeweils in der zweiten Woche nach Quartalsende.
 
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/referenz-marktpreise-fur-die-gleitende-marktpramie-gemass-art-30aquinquies-enfv)<br>
-[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/bfe/de/home/foerderung/erneuerbare-energien/foerderung-photovoltaikanlagen.html)
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/bfe/de/home/foerderung/erneuerbare-energien/foerderung-biomasse.html/)
 
 Auto generated R starter code for data set BFE-DS-141@bundesamt-fur-energie-bfe.
 
@@ -33,12 +33,12 @@ Auto generated R starter code for data set BFE-DS-141@bundesamt-fur-energie-bfe.
 - **Publisher.name** `nan`
 - **Organization.display_name.de** `Bundesamt für Energie BFE`
 - **Organization.url** `http://www.bfe.admin.ch`
-- **Maintainer** `ERNEUERBARE ENERGIEN`
-- **Maintainer_email** `pv@bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
 - **Keywords.de** `['gleitende-marktpramie', 'referenz-marktpreis']`
 - **Issued** `2025-07-08T00:00:00`
 - **Metadata_created** `2025-07-10T14:31:25.021598`
-- **Metadata_modified** `2025-07-18T03:00:32.353376`
+- **Metadata_modified** `2025-12-19T02:58:57.959125`
 
 
 # Load packages
@@ -59,21 +59,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : 73c7f737-5a54-45f5-b263-532a7a793d13
-# Description              : Monatliche Referenz-Marktpreis gleitende Marktprämie
+# Description              : Vierteljahrliche Referenz-Marktpreis gleitende Marktprämie
 # Issued                   : 2025-07-10T00:00:00
-# Modified                 : 2025-07-10T00:00:00
+# Modified                 : None
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/125/ogd125_gmp_monatspreise.csv')
+df <- read_delim('https://www.bfe-ogd.ch/ogd125_gmp_quartalspreise.csv')
 
 # Distribution 1
 # Package_id               : 73c7f737-5a54-45f5-b263-532a7a793d13
-# Description              : Vierteljahrliche Referenz-Marktpreis gleitende Marktprämie
+# Description              : Monatliche Referenz-Marktpreis gleitende Marktprämie
 # Issued                   : 2025-07-10T00:00:00
-# Modified                 : 2025-07-10T00:00:00
+# Modified                 : None
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
-df <- read_delim('https://www.uvek-gis.admin.ch/BFE/ogd/125/ogd125_gmp_quartalspreise.csv')
+df <- read_delim('https://www.bfe-ogd.ch/ogd125_gmp_monatspreise.csv')
 
 
 
@@ -102,4 +102,4 @@ tail(df)
 
 # Contact
 
-pv@bfe.admin.ch | ENERGIE RINNOVABILI
+pv@bfe.admin.ch | ERNEUERBARE ENERGIEN

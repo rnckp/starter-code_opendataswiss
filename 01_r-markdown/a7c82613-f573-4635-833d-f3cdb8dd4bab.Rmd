@@ -1,0 +1,83 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch - Landesverbrauch und Endverbrauch
+
+Der Landesverbrauch inklusive des Verbrauchs der Speicherpumpen ist ein wichtiger Indikator in Bezug auf die Stromversorgung. Der Verlauf wird zunächst auf Basis von durch Verteilnetzbetreiber an Swissgrid gemeldeten Daten dargestellt. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert.
+
+Der Endverbrauch gibt an, wieviel Strom durch Haushalte, Gewerbe, Landwirtschaft, Dienstleistungen, Industrie und Verkehr verbraucht wird. Wenn es um Sparbemühungen der Schweizer geht ist er die massgebliche Grösse. Der Verlauf wird zunächst auf Basis von durch Verteilnetzbetreiber an Swissgrid gemeldeten Daten dargestellt. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert. Quelle: Swissgrid.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-landesverbrauch-und-endverbrauch)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://energiedashboard.admin.ch/dashboard)
+
+Auto generated R starter code for data set BFE-DS-0096@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['energiedashboard', 'stromverbrauch']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2025-11-11T07:32:27.809014`
+- **Metadata_modified** `2025-12-19T02:59:01.061754`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a7c82613-f573-4635-833d-f3cdb8dd4bab
+# Description              : Der Landesverbrauch inklusive des Verbrauchs der Speicherpumpen ist ein wichtiger Indikator in Bezug auf die Stromversorgung. Der Verlauf wird zunächst auf Basis von durch Verteilnetzbetreiber an Swissgrid gemeldeten Daten dargestellt. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert. Der Endverbrauch gibt an, wieviel Strom durch Haushalte, Gewerbe, Landwirtschaft, Dienstleistungen, Industrie und Verkehr verbraucht wird. Wenn es um Sparbemühungen der Schweizer geht ist er die massgebliche Grösse. Der Verlauf wird zunächst auf Basis von durch Verteilnetzbetreiber an Swissgrid gemeldeten Daten dargestellt. Diese Daten können unvollständig oder fehlerhaft sein und werden nachkorrigiert.
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@swissgrid.ch | Swissgrid

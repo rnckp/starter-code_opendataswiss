@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Stromproduktion Swissgrid
+
+In der Schweiz gibt es eine Vielzahl an Kraftwerken, die elektrische Energie (Strom) produzieren. Bei der Produktion werden die Kategorien Kernkraftwerke, thermische Kraftwerke, Flusswasserkraft, Speicherwasserkraft, Windkraft und Photovoltaik unterschieden. Die Produktion dieser Kraftwerke ist getrieben durch unterschiedliche Faktoren. Während beispielsweise Speicher- und Pumpspeicherkraftwerke stark marktgetrieben (anhand von Preissignalen) eingesetzt werden, produzieren die Kernkraftwerke Bandenergie. Photovoltaik und Wind sind hingegen abhängig von Sonne und Wind. Quelle: Swissgird.
+
+Die Produktion in der Schweiz zusammen mit Import und Export ergibt den Landesverbrauch inklusive des Verbrauchs der Pumpspeicher.
+
+Der Trend gibt die Entwicklung der Schweizer Gesamtproduktion im Vergleich zum Durchschnitt der letzten 10 Tage an.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid1)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.energiedashboard.admin.ch/dashboard)
+
+Auto generated R starter code for data set BFE-DS-0093@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['energiedashboard', 'stromproduktion']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2025-11-11T07:38:33.171133`
+- **Metadata_modified** `2025-12-19T02:58:59.332882`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1c07cdd1-6b34-487d-80ad-f1d7beebd7a0
+# Description              : energiedashboard.ch: Stromproduktion Swissgrid
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd104_stromproduktion_swissgrid.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+info@swissgrid.ch | Swissgrid

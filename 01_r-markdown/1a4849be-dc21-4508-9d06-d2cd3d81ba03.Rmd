@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Eintritte Thurgauer Museen
+
+Der Datensatz enthält die Anzahl Eintritte aller Thurgauer Museen und Sammlungen. Berücksichtigt werden alle Museen, die im entsprechenden Kalenderjahr 500 und mehr Eintritte verzeichnet haben.  Die Daten werden vom Verein MUSE.TG gesammelt. Weitere Informationen zum Verein finden Sie auf deren Webseite unter https://www.muse.tg/ueber-uns.html.Datenquelle: Kulturamt Kanton Thurgau und MUSE.TG
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/eintritte-thurgauer-museen)<br>
+[Direct link by **Kanton Thurgau** for dataset](https://data.tg.ch/explore/dataset/dek-kul-2/)
+
+Auto generated R starter code for data set dek-kul-2@kanton-thurgau.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Thurgau`
+- **Organization.url** `https://ogd.tg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['museen', 'thurgau', 'eintritte', 'sammlung', 'museum', 'kultur']`
+- **Issued** `2025-11-21T08:52:38.948000+00:00`
+- **Metadata_created** `2025-11-10T11:13:23.460680`
+- **Metadata_modified** `2025-12-19T12:33:29.190137`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 1a4849be-dc21-4508-9d06-d2cd3d81ba03
+# Description              : Eintritte Thurgauer Museen (csv)
+# Issued                   : 2025-11-21T08:52:38.948000+00:00
+# Modified                 : 2025-11-21T08:52:38.948000+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-zero
+
+df <- read_delim('https://data.tg.ch/api/v2/catalog/datasets/dek-kul-2/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+ogd@tg.ch | OGD-Koordinationsstelle Kanton Thurgau

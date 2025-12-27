@@ -1,17 +1,14 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-09-24"
+date: "2025-12-27"
 output: html_document
 ---
 
-## Dataset: Strassenlänge nach Typ
+## Dataset: Entwicklung der Bodennutzung
 
-Strassenlängen nach Typ im Kanton Zug in km, 2024:
-- Nationalstrassen
-- Kantonsstrassen
-- Gemeinde- und Privatstrassen
+Entwicklung der Bodennutzung im Kanton Zug 1979 bis 2018.
 
-(QUELLE: Bundesamt für Statistik, Strassenlängen)
+Bestockten Flächen= Wald und Gehölz; Unproduktive Flächen: Fels, Geröll, Gewässer und ungenutzte Vegetation. Da die Gemeindeflächen ohne Seen ausgewiesen werden, sind die Kantonsflächen grösser als die Summe der Gemeindeflächen.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/entwicklung-der-bodennutzung1)<br>
 [Direct link by **Kanton Zug** for dataset](https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/themen/raum-und-umwelt/raum)
@@ -25,10 +22,10 @@ Auto generated R starter code for data set 3b00597b-3195-4715-b7bc-469185031c86@
 - **Organization.url** ``
 - **Maintainer** `Open Data Zug`
 - **Maintainer_email** `opendata@zg.ch`
-- **Keywords.de** `['strassen', 'verkehrsflachen']`
+- **Keywords.de** `['unproduktive-flachen', 'bestockte-flachen']`
 - **Issued** `2024-12-02T00:00:00`
 - **Metadata_created** `2024-11-29T12:17:40.659242`
-- **Metadata_modified** `2025-03-18T10:24:00.773170`
+- **Metadata_modified** `2025-11-07T09:01:53.853710`
 
 
 # Load packages
@@ -51,10 +48,10 @@ library(skimr)
 # Package_id               : 726f4325-e456-4638-993d-171f61128cc3
 # Description              : 
 # Issued                   : None
-# Modified                 : 2024-10-15T12:14:24.165000+00:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+# Modified                 : 2024-10-15T12:14:21.725000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://data.zg.ch/store/1/resource/282')
+df <- read_delim('https://data.zg.ch/store/1/resource/273')
 
 
 

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Überschwemmungsmeldungen
+
+Der Datensatz umfasst Übrschwemmungsmeldungen in der Stadt Zürich, die bei Schutz & Rettung Zürich sowie Entsorgung & Recycling Zürich eingehen. Mögliche Ursachen sind Verstopfungen, Starkregen, Oberflächenabfluss, Baustellen, Armaturen, Probleme in der Liegenschaftsentwässerung, Grundwasser oder Ausuferungen. Sehr oft ist die Ursache unbekannt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/uberschwemmungsmeldungen1)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/erz_ent_ueberschwemmungsmeldungen)
+
+Auto generated R starter code for data set 5f07180c-9f5f-4fea-9f6c-33174068a62f@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Entsorgung + Recycling Zürich, Tiefbau- und Entsorgungsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['niederschlag', 'regen', 'gitlab', 'sachdaten', 'tabelle', 'zeitreihe', 'uberschwemmung']`
+- **Issued** `2025-02-25T00:00:00`
+- **Metadata_created** `2025-10-07T02:34:59.617005`
+- **Metadata_modified** `2025-12-25T00:46:12.731589`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 2e1fecba-d39b-4825-8b43-1e6b2819fd98
+# Description              : 
+# Issued                   : 2025-06-10T13:50:31.463493
+# Modified                 : 2025-12-24T08:23:35.139994
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/erz_ent_ueberschwemmungsmeldungen/download/erz_ent_ueberschwemmungsmeldungen.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

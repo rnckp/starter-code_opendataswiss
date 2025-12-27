@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Hate Crime
+
+Anzahl Hate Crime Ereignisse
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/hate-crime)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/sid_stapo_sicherheitsbericht_hate_crime_od1012)
+
+Auto generated R starter code for data set 1765a620-1739-45e4-baff-9d2d3e39a698@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Stadtpolizei Zürich, Sicherheitsdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['kriminalitaet', 'sachdaten', 'sasa', 'stadtpolizei', 'tabelle', 'zeitreihe']`
+- **Issued** `nan`
+- **Metadata_created** `2025-11-13T01:16:30.461269`
+- **Metadata_modified** `2025-12-27T00:53:04.136566`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 0e37f4e2-ef6f-4572-ae38-90eefdbb4211
+# Description              : 
+# Issued                   : 2025-10-11T16:04:06.746729
+# Modified                 : 2025-12-26T11:08:54.942384
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/sid_stapo_sicherheitsbericht_hate_crime_od1012/download/RCH101OD1012.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich

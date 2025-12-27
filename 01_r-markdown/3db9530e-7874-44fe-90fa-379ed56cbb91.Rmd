@@ -1,0 +1,150 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Wasserqualität an Badeplätzen
+
+Messwerte zur Beurteilung der Wasserqualität an Badeplätzen im Kanton Zug, 2006 bis 2024. 
+
+Untersuchungen erfolgten auf: 
+- Escherichia coli 
+- Enterokokken (ab 2011)
+- Salmonellen (bis 2012) 
+
+Masseinheit:
+KBE/100ml = Kolonie-bildende Einheiten pro 100 Milliliter
+
+Erläuterung: 
+'n.n.' = nicht nachweisbar (in Probe keine Keime der gesuchten Spezies/Genus pro 100 ml nachweisbar) 
+
+Mikrobiologische Untersuchungen anhand Indikatorkeimen bestimmen den Grad der Verunreinigung durch Abschwemmung von Oberflächen, Erdreich und möglicher Eintrag von Fäkalien tierischen und menschlichen Ursprungs. Daraus ergibt sich ein Hinweis auf möglicherweise vorhandene, krankheitserregende Bakterien und Viren. 
+
+------------------------------------------------------------------------------------------------------------
+Auf Grund der Untersuchungsergebnisse wird das Badewasser in die Qualitätsklassen A - D eingeteilt (siehe auch 'Dokumentation: Übersichtsgrafik Qualitätsklassen'): 
+
+A/B
+Beurteilung: gut, eine gesundheitliche Beeinträchtigung ist nicht zu erwarten.
+
+C
+Beurteilung: akzeptabel, eine gesundheitliche Beeinträchtigung ist nicht auszuschliessen. Empfehlung: Nicht tauchen, nach dem Baden gründlich duschen.
+
+D
+Beurteilung: schlecht, eine gesundheitliche Beeinträchtigung ist möglich. Das Baden ist mit gesundheitlichen Risiken verbunden, es wird vom Baden abgeraten.
+
+------------------------------------------------------------------------------------------------------------
+
+Das Amt für Verbraucherschutz untersucht regelmässig die Badewasserqualität der öffentlichen Seebäder. Lorze, Sihl und Reuss gelten nicht als öffentliche Badegewässer. Badeplätze an diesen Flüssen sind aber in der Bevölkerung äusserst beliebt. Es wird deshalb an einigen Messstellen auch die Badewasserqualität dieser Flüsse untersucht.
+
+Resultate zu Probestellen unterhalb einer Abwasserreinigungsanlage (ARA):
+Die Probestellen «Sihl, Sihlbrugg, Sihlbruggstr. Parkplatz» und «Lorze, Hagendorn, Spielplatz» wurde bis 2023 als Badeplätze geführt. Sie befinden sich direkt unterhalb einer ARA. An diesen Wasserstellen gibt es eine erhöhte Konzentration von Bakterien durch das Einleiten von gereinigtem Abwasser. Darunter befinden sich auch krankheitserregende und antibiotikaresistente Keime. An diesen Stellen wird trotz möglicherweise genügender Qualitätsklasse vom Baden abgeraten.
+
+Risiken:
+-	Magen-Darm-Erkrankungen mit Durchfall und/oder Erbrechen
+-	Vereiterung von Wunden, Bindehautreizungen, Ohrenentzündungen
+-	Erschwerte Behandlung, wenn Infektion durch antibiotikaresistente Keime verursacht
+
+Trotzdem ins Wasser? Diese Massnahmen reduzieren Ihr Risiko:
+-	Möglichst wenig Wasser schlucken
+-	Hautverletzungen wasserdicht abdecken
+-	Nach dem Baden gründlich duschen
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/wasserqualitat-an-badeplatzen)<br>
+[Direct link by **Kanton Zug** for dataset](https://zg.ch/de/gesundheit/verbraucherschutz/wasser#oberflaechenwasserundbadeplaetze)
+
+Auto generated R starter code for data set 307c201c-58fb-4aed-a43d-a28a3a0d6de9@kanton-zug.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Zug`
+- **Organization.url** ``
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['badewasser', 'keime', 'freibad', 'wasserqualitat']`
+- **Issued** `nan`
+- **Metadata_created** `2025-11-07T09:01:01.952216`
+- **Metadata_modified** `2025-11-07T09:01:01.952224`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 3db9530e-7874-44fe-90fa-379ed56cbb91
+# Description              : 
+# Issued                   : None
+# Modified                 : 2025-03-18T10:30:36.377000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.zg.ch/store/1/resource/1841')
+
+# Distribution 1
+# Package_id               : 3db9530e-7874-44fe-90fa-379ed56cbb91
+# Description              : 
+# Issued                   : None
+# Modified                 : 2025-03-18T10:30:35.498000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.zg.ch/store/1/resource/1839')
+
+# Distribution 2
+# Package_id               : 3db9530e-7874-44fe-90fa-379ed56cbb91
+# Description              : 
+# Issued                   : None
+# Modified                 : 2025-03-18T10:30:28.609000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.zg.ch/store/1/resource/1837')
+
+# Distribution 3
+# Package_id               : 3db9530e-7874-44fe-90fa-379ed56cbb91
+# Description              : 
+# Issued                   : None
+# Modified                 : 2025-03-18T10:30:29.468000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.zg.ch/store/1/resource/1835')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zg.ch | Open Data Zug

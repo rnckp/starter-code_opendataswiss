@@ -1,0 +1,136 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Alters- und Pflegeheime Kanton Zürich
+
+Der Datensatz enthält betriebliche Daten zu den Alters- und Pflegeheimen im Kanton Zürich. Er umfasst aggregierte Informationen zum Leistungsangebot der Heime, zu den erbrachten Leistungen, zum Personal sowie zu den Klienten der Einrichtungen. Die Daten werden jeweils im Rahmen der jährlichen Erhebung der Statistik der sozialmedizinischen Institutionen (SOMED) im Kanton Zürich erhoben. Der Inhalt der Erhebung ist seit Jahren stabil. Dies ermöglicht verlässliche Vergleiche über die Jahre hinweg. 
+Die Daten beziehen sich ausschließlich auf die Alters- und Pflegeheime im Kanton Zürich und ermöglichen somit eine detaillierte Analyse der dortigen Versorgungssituation.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/alters-und-pflegeheime-kanton-zurich)<br>
+[Direct link by **Gesundheitsdirektion Kanton Zürich** for dataset](https://www.zh.ch/de/gesundheit/heime-spitex/zahlen-fakten-langzeitpflege.html)
+
+Auto generated R starter code for data set 3102@gesundheitsdirektion-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Gesundheitsdirektion des Kantons Zürich`
+- **Organization.display_name.de** `Gesundheitsdirektion Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['altersheime', 'pflegeheime']`
+- **Issued** `2025-10-02T00:00:00+02:00`
+- **Metadata_created** `2025-10-06T09:07:42.716643`
+- **Metadata_modified** `2025-12-26T03:03:17.693726`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 7 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Daten zum Leistungsangebot, zu den erbrachten Leistungen sowie die wichtigsten Kenngrössen zu den Kosten pro Heim. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-10T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006486.csv')
+
+# Distribution 1
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Anzahl Bewohnende per Ende Jahr pro Bezirk, Altersgruppe oder Pflegebedarfsstufe. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-06T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006603.csv')
+
+# Distribution 2
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Anzahl neu eingetretene Bewohnende pro Bezirk,  Pflegebedarfsstufe oder Aufenthaltsort vor Eintritt. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-06T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006604.csv')
+
+# Distribution 3
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Anzahl ausgetretene Bewohnende pro Bezirk, Pflegebedarfsstufe oder Aufenthaltsort nach Austritt. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-06T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006605.csv')
+
+# Distribution 4
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Daten zum Herkunftskanton der Bewohnenden und zum Standortbezirk des Pflegeheims.  Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-13T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006606.csv')
+
+# Distribution 5
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Anzahl Mitarbeitende und Anzahl VZÄ pro Geschlecht, Bezirk, Altersgruppe, Einsatzbereich oder Ausbildungstyp. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-06T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006607.csv')
+
+# Distribution 6
+# Package_id               : d39b9df3-a5a9-482c-b1c3-20f4bda56484
+# Description              : Kosten und Erträge pro Bezirk zu den wichtigsten Kostenstellen und Konten.  Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006484.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-06T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003102_00006608.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+statistik.langzeit@gd.zh.ch | Gesundheitsdirektion des Kantons Zürich, Daten & Analysen Langzeitpflege

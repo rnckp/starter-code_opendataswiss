@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-09-24"
+date: "2025-12-27"
 output: html_document
 ---
 
 ## Dataset: Geborene nach Geschlecht, Staatsangehörigkeit und Geburtsmonat
 
-Dieser Datensatz zeigt die Geborenen im Kanton Basel-Stadt nach Geschlecht, Staatsangehörigkeit und Geburtsmonat sowie nach Alter, Staatsangehörigkeit und Zivilstand der Eltern. Die Daten werden monatlich aktualisiert, wobei die Zahlen eines Monats jeweils am 16. Tag des nächsten Monats publiziert werden. Aufgrund von Nachmeldungen kann es jederzeit zu Änderungen bei bereits veröffentlichten Werten kommen. In den Daten der Jahre bis 2023 sind nur die Lebendgeborenen berücksichtigt, in denjenigen der Jahre seit 2024 auch die Totgeborenen. Dies liegt daran, dass die Angabe zur Lebensfähigkeit jeweils erst im Juli des Folgejahres verfügbar ist. Auch die Angaben zur Geburtenfolge und zum Zivilstand der Eltern sind jeweils erst im Juli des Folgejahres verfügbar. Die hier veröffentlichten Werte können aus methodischen Gründen von denjenigen in der [kantonalen öffentlichen Statistik (https://statistik.bs.ch/unterthema/3)](https://statistik.bs.ch/unterthema/3) abweichen: In Letzterer werden nachträglich gemeldete Geburten während vier Monaten gesammelt, danach gelten die Zahlen als definitiv. Später eintreffende Meldungen werden im letzten noch nicht abgeschlossenen Monat gezählt. In diesem Datensatz werden sie im Monat des Geburtsdatums gezählt. Aus Gründen des Persönlichkeitsschutzes können im [Datensatz mit dem Geburtsdatum (https://data.bs.ch/explore/dataset/100092/)](https://data.bs.ch/explore/dataset/100092/) weniger Attribute veröffentlicht werden als im vorliegenden Datensatz. Eine leere Zelle bedeutet «Wert unbekannt».
+Dieser Datensatz zeigt die Geborenen im Kanton Basel-Stadt nach Geschlecht, Staatsangehörigkeit und Geburtsmonat sowie nach Alter, Staatsangehörigkeit und Zivilstand der Eltern. Die Daten werden monatlich aktualisiert, wobei die Zahlen eines Monats jeweils am 16. Tag des nächsten Monats publiziert werden. Aufgrund von Nachmeldungen kann es jederzeit zu Änderungen bei bereits veröffentlichten Werten kommen. In den Daten des laufenden Jahres und bis ca. Juli auch in jenen des zurückliegenden Jahres sind ausser den Lebendgeborenen auch die Totgeborenen berücksichtigt, weil die Angabe zur Lebensfähigkeit jeweils erst im Juli des Folgejahres verfügbar ist. In weiter zurückliegenden Jahren sind nur die Lebendgeborenen berücksichtigt. Auch die Angaben zur Geburtenfolge und zum Zivilstand der Eltern sind jeweils erst im Juli des Folgejahres verfügbar.Die hier veröffentlichten Werte können aus methodischen Gründen von denjenigen in der kantonalen öffentlichen Statistik [(https://statistik.bs.ch/unterthema/3)](https://statistik.bs.ch/unterthema/3) abweichen: In Letzterer werden nachträglich gemeldete Geburten während vier Monaten gesammelt, danach gelten die Zahlen als definitiv. Später eintreffende Meldungen werden im letzten noch nicht abgeschlossenen Monat gezählt. In diesem Datensatz werden sie im Monat des Geburtsdatums gezählt.Aus Gründen des Persönlichkeitsschutzes können im Datensatz mit dem Geburtsdatum [(https://data.bs.ch/explore/dataset/100092/)](https://data.bs.ch/explore/dataset/100092/) weniger Attribute veröffentlicht werden als im vorliegenden Datensatz. Quelle: Statistisches Amt Basel-Stadt, Bevölkerungsstatistik.
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/geborene-nach-geschlecht-staatsangehorigkeit-und-geburtsmonat)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100099/)
@@ -18,12 +18,12 @@ Auto generated R starter code for data set 100099@kanton-basel-stadt.
 - **Publisher.name** `nan`
 - **Organization.display_name.de** `Kanton Basel-Stadt`
 - **Organization.url** `https://data.bs.ch`
-- **Maintainer** `Fachstelle für OGD Basel-Stadt`
-- **Maintainer_email** `opendata@bs.ch`
-- **Keywords.de** `['bevolkerungsbestand', 'haushalt', 'geburtsort', 'demographie', 'bevolkerungsstruktur', 'altersstruktur', 'neugeboren', 'familie', 'alter', 'geburten']`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['alter', 'altersstruktur', 'bevolkerungsbestand', 'demographie', 'geburtsort', 'familie', 'haushalt', 'geburten', 'bevolkerungsstruktur', 'neugeboren']`
 - **Issued** `2021-01-19T00:00:00`
 - **Metadata_created** `2021-09-03T09:14:05.383881`
-- **Metadata_modified** `2025-09-20T03:18:49.862332`
+- **Metadata_modified** `2025-12-27T00:30:57.814948`
 
 
 # Load packages
@@ -46,7 +46,7 @@ library(skimr)
 # Package_id               : 7b7d1210-070b-47ce-b27e-bb805e308d35
 # Description              : Geborene nach Geschlecht, Staatsangehörigkeit und Geburtsmonat (csv)
 # Issued                   : 2021-01-19T00:00:00
-# Modified                 : 2025-09-19T01:15:53.894000+00:00
+# Modified                 : 2025-12-26T02:16:15.464000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100099/exports/csv?use_labels=true')

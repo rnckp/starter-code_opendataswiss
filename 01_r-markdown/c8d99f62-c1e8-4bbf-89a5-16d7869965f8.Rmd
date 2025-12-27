@@ -1,0 +1,135 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Antibiotikaeinsatz in der Veterinärmedizin
+
+Das Informationssystem Antibiotika in der Veterinärmedizin (ISABV) erfasst detaillierte Daten zum Antibiotikaverbrauch in der Veterinärmedizin. Tierärzt:innen bzw. Tierarztpraxen in der Schweiz sind dazu verpflichtet, alle an Heim- und Nutztiere verabreichten oder verschriebenen Antibiotika zu melden. Diese Meldungen enthalten Informationen zu Spezies, der Anzahl der behandelten Tiere, dem Präparatnamen, den Wirkstoffen, den abgegebenen Mengen, der Dosis, der Behandlungsfrequenz, der Behandlungsdauer, der Indikation und dem betroffenen Organsystem. Die Vertriebs- und Verbrauchsdaten dienen der Überwachung des Antibiotikaverbrauchs und bilden eine zentrale Grundlage der Nationalen Strategie Antibiotikaresistenzen Schweiz (StAR). Sie ermöglichen es, Trends im Einsatz von Antibiotika zu erkennen, Risiken gezielt zu bewerten und regulatorische sowie präventive Massnahmen evidenzbasiert zu planen. Zudem sind die Daten für die internationale Berichterstattung (z. B. an die WOAH) erforderlich und tragen dazu bei, die Entwicklung von Resistenzen bei Tieren und die damit verbundenen Risiken für die öffentliche Gesundheit einzudämmen.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/antibiotikaeinsatz-in-der-veterinarmedizin)<br>
+[Direct link by **Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV** for dataset](https://www.blv.admin.ch/blv/de/home/tiere/tierarzneimittel/antibiotika/isabv.html?)
+
+Auto generated R starter code for data set  antibiotic_consumption@bundesamt-fur-lebensmittelsicherheit-und-veterinaerwesen-blv.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV`
+- **Organization.url** `http://www.blv.admin.ch/`
+- **Maintainer** `Kompetenzzentrum Daten (DCC)`
+- **Maintainer_email** `data@blv.admin.ch`
+- **Keywords.de** `['antibiotikaverbrauch', 'tiergesundheit', 'ueberwachung', 'veterinaermedizin']`
+- **Issued** `2025-11-11T00:00:00`
+- **Metadata_created** `2025-11-10T13:51:45.487122`
+- **Metadata_modified** `2025-11-11T13:36:59.757769`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 7 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/antibiotic_consumption/ISABV-Amount-Active-Substance-full.csv')
+
+# Distribution 1
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/antibiotic_consumption/ISABV-Animal-Treatments-Per-1000-full.csv')
+
+# Distribution 2
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/antibiotic_consumption/ISABV-Animal-Treatments-full.csv')
+
+# Distribution 3
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/antibiotic_consumption/ISABV-Monthly-Prescriptions-full.csv')
+
+# Distribution 4
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/antibiotic_consumption/ISABV-OrganSystem-full.csv')
+
+# Distribution 5
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/distribution/ISABV-Distribution-Amount-Active-Substance-full.csv')
+
+# Distribution 6
+# Package_id               : c8d99f62-c1e8-4bbf-89a5-16d7869965f8
+# Description              : 
+# Issued                   : 2025-11-11T00:00:00
+# Modified                 : 
+# Rights                   : None
+
+df <- read_delim('https://www.data.blv.admin.ch/ogd/veterinary_medicines/distribution/ISABV-Distribution-PCU-full.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+data@blv.admin.ch | Kompetenzzentrum Daten (DCC)

@@ -1,0 +1,110 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Spitex-Institutionen Kanton Zürich
+
+Der Datensatz enthält betriebliche Daten zu den Spitex-Institutionen mit einer Bewilligung im Kanton Zürich. Als Spitex-Institutionen gelten Leistungserbringer für Hilfe und/oder Pflege zu Hause, Leistungserbringer für Hilfe und/oder Pflege in Alterssiedlungen, Seniorenresidenzen und betreutes Wohnen (Inhouse), Leistungserbringer für Pflege in Tages- oder Nachtstrukturen (ToNS) oder Leistungserbringer, die Pflege in ihren Ambulatorium (Praxis) oder eigenen Lokalen durchführen.
+Der Datensatz umfasst aggregierte Informationen zum Leistungsangebot, zu den erbrachten Leistungen, zum Personal sowie zu den Klienten der verschiedenen Institutionen. Die Daten werden jeweils im Rahmen der jährlichen Erhebung der Statistik der Hilfe und Pflege zu Hause (Spitex) im Kanton Zürich erhoben. Der Inhalt der Erhebung ist seit Jahren stabil. Dies ermöglicht verlässliche Vergleiche über die Jahre hinweg. 
+Die Daten beziehen sich ausschliesslich auf Spitex-Leistungen im Kanton Zürich und ermöglichen somit eine detaillierte Analyse der dortigen Versorgungssituation.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/spitex-institutionen-kanton-zurich)<br>
+[Direct link by **Gesundheitsdirektion Kanton Zürich** for dataset](https://www.zh.ch/de/gesundheit/heime-spitex/zahlen-fakten-langzeitpflege.html)
+
+Auto generated R starter code for data set 3103@gesundheitsdirektion-kanton-zuerich.
+
+## Metadata
+
+- **Publisher.name** `Gesundheitsdirektion des Kantons Zürich`
+- **Organization.display_name.de** `Gesundheitsdirektion Kanton Zürich`
+- **Organization.url** `https://www.zh.ch/de/gesundheitsdirektion.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['spitexleistungen']`
+- **Issued** `2025-10-02T00:00:00+02:00`
+- **Metadata_created** `2025-10-06T09:07:59.418514`
+- **Metadata_modified** `2025-12-26T03:03:17.822450`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 4 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 32c26284-46d8-4539-87d3-0ec59d390519
+# Description              : Die wichtigsten Kenngrössen zu den erbrachten Leistungen und Kosten pro Spitex-Institution. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006623.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-13T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006624.csv')
+
+# Distribution 1
+# Package_id               : 32c26284-46d8-4539-87d3-0ec59d390519
+# Description              : Anzahl betreute Klientinnen und Klienten sowie die geleisteten Stunden pro Leistungsart. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006623.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-13T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006625.csv')
+
+# Distribution 2
+# Package_id               : 32c26284-46d8-4539-87d3-0ec59d390519
+# Description              : Anzahl Mitarbeitende und Anzahl VZÄ pro Bezirk, und Diplomart. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006623.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-13T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006626.csv')
+
+# Distribution 3
+# Package_id               : 32c26284-46d8-4539-87d3-0ec59d390519
+# Description              : Aufwände und Erträge pro Bezirk zu den wichtigsten Konten. Detailbeschreibung zu den einzelnen Variablen siehe separate Datei im Datensatz: https://www.web.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006623.txt
+# Issued                   : 2025-10-02T00:00:00+02:00
+# Modified                 : 2025-10-13T00:00:00+02:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00003103_00006627.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+statistik.langzeit@gd.zh.ch | Gesundheitsdirektion des Kantons Zürich, Daten & Analysen Langzeitpflege

@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Füllstände Gasspeicher EU
+
+Gasspeicher spielen eine wichtige Rolle für die Versorgungssicherheit mit Gas im Winter, wenn am meisten Gas verbraucht wird. Über das Jahr gesehen deckt die Schweiz rund 15% ihres Energiebedarfs mit Gas. Rund die Hälfte davon wird für die Beheizung von Gebäuden verbraucht. Die Schweiz ist beim Gas beinahe vollständig von Importen abhängig. Nur wenig Gas (Biogas) wird im Inland produziert. Ebenso verfügt die Schweiz über keine grossen eigenen Speicher im Inland. Sie ist auf die Nutzung der Gasspeicher in den Nachbarländern angewiesen.
+
+Der Bundesrat hat die Gasbranche verpflichtet, für den Winter 2022/23 Speicherkapazitäten in den Nachbarländern (15% des schweizerischen Jahresverbrauch) und Optionen für zusätzliche Gaslieferungen zu sichern. Ende August 2022 meldete die Gasbranche den erfolgreichen Vollzug dieser Aufgabe.
+
+Die Füllstände der Gasspeicher in Deutschland, Frankreich, Italien und Österreich sowie der gesamten EU sind in Prozent und in Terawattstunden (TWh) angegeben. Die Speicherstände basieren auf dem oberen Heizwert. Die Füllstände zeigen den Zustand der Gasspeicher des Vortags bis 23 Uhr. Quellen: GIE, AGSI.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-fullstande-gasspeicher-eu1)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.energiedashboard.admin.ch/dashboard)
+
+Auto generated R starter code for data set BFE-DS-0081@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['energiedashboard', 'gasspeicher']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2025-11-11T07:38:30.599179`
+- **Metadata_modified** `2025-12-19T02:58:56.865735`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e39d972b-4bab-482b-9272-e5a143c4cfb4
+# Description              : energiedashboard.ch: Füllstände Gasspeicher EU
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd102_fuellstand_gasspeicher.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+transparency@gie.eu | Aggregated Gaz Storage Inventory

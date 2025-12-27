@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Veranstaltungen im Raum St. Jakob
+
+Dieser Datensatz enthält Veranstaltungen im Raum St. Jakob
+mit höherer Besucherfrequenz. Er erfasst Events wie Sportveranstaltungen,
+Konzerte und Messen. Zu jedem Event sind Datum, Uhrzeit, Veranstaltungsort
+sowie, falls bekannt, Hinweise zu Strassensperrungen, Zusatzparkplätzen
+und Verkehrsmassnahmen enthalten. Der Datensatz ist eine wichtige
+Datengrundlage für die Planungsstellen in den Kantonen BS und BL.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/veranstaltungen-im-raum-st-jakob)<br>
+[Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100419/)
+
+Auto generated R starter code for data set 100419@kanton-basel-stadt.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Kanton Basel-Stadt`
+- **Organization.url** `https://data.bs.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['st-jakob', 'gartenbad', 'arena', 'parken', 'st-jakobshalle', 'st-jakob-park', 'st-jakob-arena', 'sportanlage', 'sperrung', 'parkplatze', 'verkehrsplanung']`
+- **Issued** `2025-12-04T00:00:00`
+- **Metadata_created** `2025-12-05T01:12:47.807885`
+- **Metadata_modified** `2025-12-19T00:58:36.861277`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 7a8f852b-d800-4d1d-a379-78eb77b810be
+# Description              : Veranstaltungen im Raum St. Jakob (csv)
+# Issued                   : 2025-12-04T00:00:00
+# Modified                 : 2025-12-16T15:15:43.439000+00:00
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100419/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@bs.ch | Open Data Basel-Stadt

@@ -1,0 +1,85 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: energiedashboard.ch: Tägliche Flüsse in die und aus der Schweiz (Strom)
+
+Stromnetze sind als Bindeglied zwischen Produktion und Verbrauch von zentraler Bedeutung, um die Stromversorgungssicherheit zu gewährleisten. Das Stromnetz der Schweiz hört nicht einfach an der Grenze zum europäischen Ausland auf, sondern ist eng mit den benachbarten Stromnetzen verbunden. Dies ist für die Versorgungssicherheit zentral: Benötigt die Schweiz zusätzlichen Strom, kann dieser importiert werden.
+
+Als physikalischer Stromfluss oder Verbundaustausch wird die Energiemenge in Gigawattstunden pro Stunde (GWh/h) bezeichnet, die über die grenzüberschreitenden Stromleitungen zwischen dem Ausland und der Schweiz fliesst.
+
+Die Zahl zum Import / Export ist die Summe der importierten und exportierten Strommengen während eines Tages. Ein negativer Wert bedeutet, dass die Schweiz in der Summe Strom exportiert. Der Trendpfeil gibt die Tendenz von Import & Export der Schweiz an. Dabei sind 4 Fälle zu unterscheiden: 1. Importiert die Schweiz insgesamt mehr Strom als durchschnittlich in den letzten 10 Tagen zeigt er nach oben. 2. Importiert die Schweiz weniger als durchschnittlich in den letzten 10 Tagen, zeigt er nach unten. 3. Für den Fall des Exportes gilt, dass der Pfeil nach unten zeigt, wenn die Schweiz mehr exportiert als durchschnittlich in den letzten 10 Tagen. 4. Wenn die Schweiz weniger exportiert als durchschnittlich in den letzten 10 Tagen, dann zeigt der Pfeil nach oben. Quelle: ENTSO-E.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom1)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.energiedashboard.admin.ch/dashboard)
+
+Auto generated R starter code for data set BFE-DS-0094@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['energiedashboard', 'stromexport', 'stromimport']`
+- **Issued** `2022-12-14T00:00:00`
+- **Metadata_created** `2025-11-11T07:32:32.212885`
+- **Metadata_modified** `2025-12-19T02:59:00.162697`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e8b42987-afe0-449d-803f-7d8b7e76d65d
+# Description              : energiedashboard.ch: Tägliche Flüsse in die und aus der Schweiz (Strom)
+# Issued                   : 2022-12-14T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd107_strom_import_export.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+transparency@entsoe.eu | ENTSO-E

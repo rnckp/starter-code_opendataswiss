@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-09-24"
+date: "2025-12-27"
 output: html_document
 ---
 
@@ -18,12 +18,12 @@ Auto generated R starter code for data set influenza@abteilung-uebertragbare-kra
 - **Publisher.name** `nan`
 - **Organization.display_name.de** `Abteilung Übertragbare Krankheiten`
 - **Organization.url** `https://www.bag.admin.ch/`
-- **Maintainer** `Bundesamt für Gesundheit, Abteilung Übertragbare Krankheiten`
-- **Maintainer_email** `idd@bag.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
 - **Keywords.de** `['bag-grippe-influenza']`
 - **Issued** `2025-08-12T00:00:00+00:00`
 - **Metadata_created** `2024-11-14T11:54:53.984010`
-- **Metadata_modified** `2025-09-19T05:38:34.540244`
+- **Metadata_modified** `2025-12-25T01:11:50.817164`
 
 
 # Load packages
@@ -46,37 +46,37 @@ library(skimr)
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
 # Description              : Die Daten basieren auf Informationen aus dem nationalen Abwassermonitoring der Schweiz und des Fürstentums Liechtenstein. Dieses Monitoring erfasst seit Januar 2022 die Viruslast von SARS-CoV-2 und seit Juli 2023 die Viruslast von Influenza und RSV in Abwasserproben der teilnehmenden Abwasserreinigungsanlagen (ARA).
 # Issued                   : 2025-08-12T00:00:00+00:00
-# Modified                 : 2025-09-17T00:00:00+00:00
+# Modified                 : 2025-12-24T00:00:00+00:00
 # Rights                   : http://www.opendefinition.org/licenses/cc-by/
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/RESPVIRUSES_wastewater/csv')
 
 # Distribution 1
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
+# Description              : Die Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte Informationen zu Erstkonsultationen aufgrund akuter respiratorischer Infektion (ARI) oder grippeähnlicher Erkrankung (ILI) in Arztpraxen und bei Hausbesuchen.
+# Issued                   : 2025-08-12T00:00:00+00:00
+# Modified                 : 2025-12-24T00:00:00+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by/
+
+df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/RESPVIRUSES_sentinella/csv')
+
+# Distribution 2
+# Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
 # Description              : Die Daten basieren auf Informationen, die Laboratorien dem BAG im Rahmen der Meldepflicht übermittelt haben.
 # Issued                   : 2025-08-12T00:00:00+00:00
-# Modified                 : 2025-09-17T00:00:00+00:00
+# Modified                 : 2025-12-24T00:00:00+00:00
 # Rights                   : http://www.opendefinition.org/licenses/cc-by/
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_oblig/csv')
 
-# Distribution 2
+# Distribution 3
 # Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
 # Description              : Die Daten basieren auf Informationen aus dem Sentinella ⁠Erhebungssystem. Ambulant tätige Ärztinnen und Ärzte übermitteln seit 1987 Informationen zu Erstkonsultationen von Patientinnen und Patienten mit einer grippeähnlichen Erkrankung (influenza-like illness, ILI) in Arztpraxen und bei Hausbesuchen.
 # Issued                   : 2025-08-12T00:00:00+00:00
-# Modified                 : 2025-09-17T00:00:00+00:00
+# Modified                 : 2025-12-24T00:00:00+00:00
 # Rights                   : http://www.opendefinition.org/licenses/cc-by/
 
 df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/INFLUENZA_sentinella/csv')
-
-# Distribution 3
-# Package_id               : 94444cc9-8959-4bf8-a10f-69f3da2c1b0c
-# Description              : Die Daten basieren auf Informationen aus dem Sentinella-⁠Meldesystem. Im Rahmen dieses Meldesystems übermitteln ambulant tätige Ärztinnen und Ärzte Informationen zu Erstkonsultationen aufgrund akuter respiratorischer Infektion (ARI) oder grippeähnlicher Erkrankung (ILI) in Arztpraxen und bei Hausbesuchen.
-# Issued                   : 2025-08-12T00:00:00+00:00
-# Modified                 : 2025-09-17T00:00:00+00:00
-# Rights                   : http://www.opendefinition.org/licenses/cc-by/
-
-df <- read_delim('https://idd.bag.admin.ch/api/v1/export/latest/RESPVIRUSES_sentinella/csv')
 
 
 

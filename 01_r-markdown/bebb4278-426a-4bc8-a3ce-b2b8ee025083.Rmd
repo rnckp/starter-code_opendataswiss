@@ -1,0 +1,130 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Referenz-Marktpreise gemäss Art. 15, EnFV
+
+Der Referenz-Marktpreis ist für die Festlegung der Einspeiseprämie für Erzeugungsanlagen mit Einspeisevergütung massgebend. Der Referenz-Marktpreis für Elektrizität aus Photovoltaik-, Wasserkraft-, Biomasse-, Windkraft- und Geothermieanlagen entspricht dem Durchschnitt der Preise, die an der Strombörse jeweils für den Folgetag für das Marktgebiet Schweiz festgesetzt werden, gewichtet nach der tatsächlichen viertelstündlichen Einspeisung der lastganggemessenen Anlagen der jeweiligen Technologie. Für Anlagen, deren Produktion monatlich gemeldet wird, gilt der monatliche Durchschnitt. Für Anlagen, deren Produktion vierteljährlich gemeldet wird, gilt der vierteljährliche Durchschnitt.
+
+Ausserdem bilden sie ab dem 1. Januar 2026 die Basis für die Bestimmung der Abnahme- und Vergütungspflicht nach Art. 15 EnG.
+
+Die Preise verstehen sich exklusive Mehrwertsteuer.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/referenz-marktpreise-gemass-art-15-enfv)<br>
+[Direct link by **Bundesamt für Energie BFE** for dataset](https://www.bfe.admin.ch/bfe/fr/home/mesures-d-encouragement/energies-renouvelables/retribution-de-injection.html/)
+
+Auto generated R starter code for data set BFE-DS-0020@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['einspeisevergutung', 'kev', 'referenz-marktpreis']`
+- **Issued** `2021-07-30T00:00:00`
+- **Metadata_created** `2025-12-17T02:08:15.123383`
+- **Metadata_modified** `2025-12-18T16:34:54.991204`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 6 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : bebb4278-426a-4bc8-a3ce-b2b8ee025083
+# Description              : Archivierte Daten aus den 2015-2017 Periode. Massgebend für die Festlegung der ungedeckten Kosten von Strom aus Erzeugungsanlagen mit Einspeisevergütung. Mengengewichteter Durchschnitt der Preise gemäss SWISSIX Base mit der stündlichen Einspeisung in die Bilanzgruppe für erneuerbare Energien (BG-EE) unter Berücksichtigung des Wechselkurses. Wird nicht mehr aktualisiert.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd60_rmp_2015_2017.zip')
+
+# Distribution 1
+# Package_id               : bebb4278-426a-4bc8-a3ce-b2b8ee025083
+# Description              : Referenz-Marktpreise gemäss Art. 15, EnFV
+# Issued                   : 2021-07-30T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd60_rmp_monatspreise.csv')
+
+# Distribution 2
+# Package_id               : bebb4278-426a-4bc8-a3ce-b2b8ee025083
+# Description              : Referenz-Marktpreise gemäss Art. 15, EnFV
+# Issued                   : 2022-04-13T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd60_rmp_quartalspreise.csv')
+
+# Distribution 3
+# Package_id               : bebb4278-426a-4bc8-a3ce-b2b8ee025083
+# Description              : Archivierte Daten aus den 2018-2023 (Q1 und Q2) Periode. Wird nicht mehr aktualisiert.
+# Issued                   : 2023-10-10T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd60_rmp_2018_2023_csv.zip')
+
+# Distribution 4
+# Package_id               : bebb4278-426a-4bc8-a3ce-b2b8ee025083
+# Description              : Archivierte Daten aus den 2018-2023 (Q1 und Q2) Periode. Wird nicht mehr aktualisiert.
+# Issued                   : 2023-10-10T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd60_rmp_2018_2023_csv.zip')
+
+# Distribution 5
+# Package_id               : bebb4278-426a-4bc8-a3ce-b2b8ee025083
+# Description              : Archivierte Daten aus den 2007-2014 Periode. Massgebend für die Festlegung der ungedeckten Kosten von Strom aus Erzeugungsanlagen mit Einspeisevergütung. Mengengewichteter Durchschnitt der Preise gemäss SWISSIX Base unter Berücksichtigung des Wechselkurses. Wird nicht mehr aktualisiert.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd60_rmp_2007_2014.zip')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+Erneuerbare Energien | media@bfe.admin.ch

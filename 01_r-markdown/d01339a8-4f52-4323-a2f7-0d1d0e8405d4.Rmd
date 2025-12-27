@@ -1,6 +1,6 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2025-09-24"
+date: "2025-12-27"
 output: html_document
 ---
 
@@ -29,7 +29,7 @@ Auto generated R starter code for data set main@eidgenossische-finanzverwaltung-
 - **Keywords.de** `['eidgenossische-finanzverwaltung-efv']`
 - **Issued** `2023-03-23T00:00:00`
 - **Metadata_created** `2025-07-15T08:28:48.566233`
-- **Metadata_modified** `2025-07-30T22:10:01.003076`
+- **Metadata_modified** `2025-12-19T02:51:17.501576`
 
 
 # Load packages
@@ -50,21 +50,21 @@ library(skimr)
 
 # Distribution 0
 # Package_id               : d01339a8-4f52-4323-a2f7-0d1d0e8405d4
-# Description              : Diese codelist kann als Hilfstabelle für die Dimensionen _hh_ und _variable_ des zugehörigen Datensets (identifier: resource_main) verwendet werden.
-# Issued                   : None
-# Modified                 : None
-# Rights                   : https://opendata.swiss/terms-of-use#terms_open
-
-df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/main_extern_codelist.csv')
-
-# Distribution 1
-# Package_id               : d01339a8-4f52-4323-a2f7-0d1d0e8405d4
 # Description              : Dieses Datenset zeigt Hauptaggregate und Prognosen im FS und GFS-Modell. Folgende Dimensionen sind verfügbar: * hh: zeigt den entsprechenden öffentlichen Haushalt * model: zeigt das betrachtete Modell * variable: Aggregat * jahr: zeigt das entsprechende Jahr * value: zeigt den Wert der entsprechenden Position (in Millionen CHF, für dim == gfs_quote in % des BIP)
 # Issued                   : None
 # Modified                 : None
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
-df <- read_delim('https://www.efv.admin.ch/dam/efv/de/dokumente/finanzstatistik/daten/main_extern.csv')
+df <- read_delim('https://www.data.finance.admin.ch/static/assets/datasets/fs_dashboard/main_extern.csv')
+
+# Distribution 1
+# Package_id               : d01339a8-4f52-4323-a2f7-0d1d0e8405d4
+# Description              : Diese codelist kann als Hilfstabelle für die Dimensionen _hh_ und _variable_ des zugehörigen Datensets (identifier: resource_main) verwendet werden.
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.data.finance.admin.ch/static/assets/datasets/gfs_dashboard/kennz_int_codelist.csv')
 
 
 
@@ -93,4 +93,4 @@ tail(df)
 
 # Contact
 
-finstat@efv.admin.ch | Administration fédérale des finances AFF
+finstat@efv.admin.ch | Eidgenössische Finanzverwaltung EFV

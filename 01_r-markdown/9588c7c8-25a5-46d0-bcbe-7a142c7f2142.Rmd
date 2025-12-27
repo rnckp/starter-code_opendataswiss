@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2025-12-27"
+output: html_document
+---
+
+## Dataset: Aktuelle und ehemalige Mitglieder des Stadtparlaments St.Gallen (RIS - Ratsinformationssystem)
+
+Der Datensatz ist Teil des Ratsinformationssystem (RIS) der Stadt St.Gallen. Er zeigt die aktuellen und ehemaligen Mitglieder des Stadtparlaments St.Gallen
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/aktuelle-und-ehemalige-mitglieder-des-stadtparlaments-st-gallen-ris-ratsinformationssystem)<br>
+[Direct link by **Stadt St.Gallen** for dataset](https://daten.stadt.sg.ch/explore/dataset/mitglieder-stadtparlament-stgallen/)
+
+Auto generated R starter code for data set mitglieder-stadtparlament-stgallen@stadt-st-gallen.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Stadt St.Gallen`
+- **Organization.url** `https://www.stadt.sg.ch/`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['ris', 'ratsinformationssystem', 'personen', 'mitglied', 'parlament', 'parlamentarier']`
+- **Issued** `2021-10-27T00:00:00`
+- **Metadata_created** `2025-11-14T05:01:09.930507`
+- **Metadata_modified** `2025-12-26T05:02:27.740091`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 9588c7c8-25a5-46d0-bcbe-7a142c7f2142
+# Description              : Aktuelle und ehemalige Mitglieder des Stadtparlaments St.Gallen (RIS - Ratsinformationssystem) (csv)
+# Issued                   : 2021-10-27T00:00:00
+# Modified                 : 2025-12-25T23:09:26.046000+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by/
+
+df <- read_delim('https://daten.stadt.sg.ch/api/v2/catalog/datasets/mitglieder-stadtparlament-stgallen/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@stadt.sg.ch | OGD-Koordinationstelle St.Gallen
