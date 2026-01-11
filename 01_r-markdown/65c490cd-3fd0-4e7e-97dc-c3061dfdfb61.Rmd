@@ -1,0 +1,90 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-11"
+output: html_document
+---
+
+## Dataset: Waren: Aussenhandel - Stammdaten - Tarifnummern
+
+Waren: Aussenhandel - Stammdaten - Tarifnummern gemäss dem schweizerischen Zolltarif und dem harmonisierten System
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/waren-aussenhandel-stammdaten-tarifnummern)<br>
+[Direct link by **Bundesamt für Zoll und Grenzsicherheit BAZG** for dataset]()
+
+Auto generated R starter code for data set BAZG_TN@eidgenoessische_zollverwaltung_ezv.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Zoll und Grenzsicherheit BAZG`
+- **Organization.url** `https://www.bazg.admin.ch/bazg/de/home.html`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['aussenhandel', 'bazg', 'harmonisiertes-system', 'tarifnummer', 'zolltarif']`
+- **Issued** `nan`
+- **Metadata_created** `2026-01-07T11:54:12.311746`
+- **Metadata_modified** `2026-01-07T11:54:12.311752`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 65c490cd-3fd0-4e7e-97dc-c3061dfdfb61
+# Description              : Tarifnummern 8-stellig mit statistischen Schlüsseln
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://ocean.nivel.bazg.admin.ch/open-data-reports/TN_CONTROLCODE_STRUCTURE_v1/TN_CONTROLCODE_STRUCTURE_v1.csv')
+
+# Distribution 1
+# Package_id               : 65c490cd-3fd0-4e7e-97dc-c3061dfdfb61
+# Description              : Tarifnummern gemäss dem schweizerischen Zolltarif und dem harmonisierten System
+# Issued                   : None
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by_ask
+
+df <- read_delim('https://ocean.nivel.bazg.admin.ch/open-data-reports/TN_STRUCTURE_v1/TN_STRUCTURE_v1.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+stat@bazg.admin.ch | Bundesamt für Zoll und Grenzsicherheit

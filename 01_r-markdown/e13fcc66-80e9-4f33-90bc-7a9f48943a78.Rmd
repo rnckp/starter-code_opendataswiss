@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-11"
+output: html_document
+---
+
+## Dataset: subline-v2
+
+Neue Version v2 der Stammdaten und Metadaten vom System atlas (https://atlas.app.sbb.ch), bereitgestellt seit 7. Januar 2026 (atlas-v2).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/subline-v2)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://data.opentransportdata.swiss/dataset/subline-v2)
+
+Auto generated R starter code for data set subline-v2@oevch.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `[]`
+- **Issued** `2026-01-05T23:00:00`
+- **Metadata_created** `2026-01-07T00:48:02.395829`
+- **Metadata_modified** `2026-01-11T00:22:36.766955`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : e13fcc66-80e9-4f33-90bc-7a9f48943a78
+# Description              : 
+# Issued                   : 2026-01-10T08:55:13.140323
+# Modified                 : 2026-01-10T08:55:13.140323
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/5605951a-0d40-44a6-b31a-730a2f503160/resource/088bc6ae-f5bc-4274-b1ac-d9363c912a61/download/timetable-years-subline.csv')
+
+# Distribution 1
+# Package_id               : e13fcc66-80e9-4f33-90bc-7a9f48943a78
+# Description              : 
+# Issued                   : 2026-01-10T08:55:10.732610
+# Modified                 : 2026-01-10T08:55:10.732610
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/5605951a-0d40-44a6-b31a-730a2f503160/resource/22a0dc6d-03e4-4ae2-8f95-6ac2bb309965/download/full-subline.csv')
+
+# Distribution 2
+# Package_id               : e13fcc66-80e9-4f33-90bc-7a9f48943a78
+# Description              : 
+# Issued                   : 2026-01-10T08:55:08.013277
+# Modified                 : 2026-01-10T08:55:08.013277
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/5605951a-0d40-44a6-b31a-730a2f503160/resource/6ae09c67-2821-42a4-aaf9-e032da6e916f/download/actual-date-subline.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@sbb.ch | Open data platform mobility Switzerland

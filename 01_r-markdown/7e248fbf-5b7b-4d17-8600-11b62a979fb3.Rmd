@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-11"
+output: html_document
+---
+
+## Dataset: parking-lot-v2
+
+Neue Version v2 der Stammdaten und Metadaten vom System atlas (https://atlas.app.sbb.ch), bereitgestellt seit 7. Januar 2026 (atlas-v2).
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/parking-lot-v2)<br>
+[Direct link by **Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)** for dataset](https://data.opentransportdata.swiss/dataset/parking-lot-v2)
+
+Auto generated R starter code for data set parking-lot-v2@oevch.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Geschäftsstelle Systemaufgaben Kundeninformation (SBB AG)`
+- **Organization.url** `https://www.opentransportdata.swiss`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `[]`
+- **Issued** `2026-01-05T23:00:00`
+- **Metadata_created** `2026-01-07T00:47:59.383939`
+- **Metadata_modified** `2026-01-11T00:22:42.368847`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 7e248fbf-5b7b-4d17-8600-11b62a979fb3
+# Description              : 
+# Issued                   : 2026-01-10T08:51:09.819504
+# Modified                 : 2026-01-10T08:51:09.819504
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/917db6c8-e240-4846-855f-fcc02856600e/resource/d198bce7-6fca-4334-bf69-07801fa02842/download/timetable-years-parking-lot.csv')
+
+# Distribution 1
+# Package_id               : 7e248fbf-5b7b-4d17-8600-11b62a979fb3
+# Description              : 
+# Issued                   : 2026-01-10T08:51:07.406491
+# Modified                 : 2026-01-10T08:51:07.406491
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/917db6c8-e240-4846-855f-fcc02856600e/resource/1b2e2e33-7d50-4c69-a434-33a5efe9ac75/download/full-parking-lot.csv')
+
+# Distribution 2
+# Package_id               : 7e248fbf-5b7b-4d17-8600-11b62a979fb3
+# Description              : 
+# Issued                   : 2026-01-10T08:51:05.216944
+# Modified                 : 2026-01-10T08:51:05.216944
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.opentransportdata.swiss/dataset/917db6c8-e240-4846-855f-fcc02856600e/resource/bc611246-c262-4105-821a-a197646ddd2a/download/actual-date-parking-lot.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@sbb.ch | Open data platform mobility Switzerland
