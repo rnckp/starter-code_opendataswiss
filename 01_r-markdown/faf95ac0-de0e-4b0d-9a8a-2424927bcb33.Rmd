@@ -1,0 +1,92 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-18"
+output: html_document
+---
+
+## Dataset: Daten der Firmenbefragung 2025 der Stadt Zürich
+
+Die Firmenbefragung der Stadt Zürich ist seit 2005 ein wichtiges Instrument, um die Einschätzungen von Unternehmen und Selbständigen zum Standort Zürich sowie ihre Anliegen und Bedürfnisse zu erfahren.
+
+Die Ergebnisse der im Sommer 2025 zum sechsten Mal von DemoSCOPE durchgeführten Firmenbefragung beruhen auf den Antworten von 1499 Unternehmen und Selbständigen. Die ersten beiden Befragungen von 2005 und 2008 wurden schriftlich mit einem per Post verschickten Fragebogen durchgeführt. Seit 2012 wird die Befragung online durchgeführt.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/daten-der-firmenbefragung-2025-der-stadt-zurich)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/prd_stez_firmenbefragung_2025)
+
+Auto generated R starter code for data set a637cb2a-2612-4d3f-b01e-73d1629a6565@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Stadtentwicklung, Präsidialdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['befragung', 'firma', 'firmenbefragung', 'sachdaten', 'stadtentwicklung', 'stichprobe', 'tabelle', 'zeitreihe', 'zufriedenheit']`
+- **Issued** `2025-01-13T00:00:00`
+- **Metadata_created** `2026-01-13T00:31:13.417704`
+- **Metadata_modified** `2026-01-18T00:32:33.895432`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 2 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : faf95ac0-de0e-4b0d-9a8a-2424927bcb33
+# Description              : 
+# Issued                   : 2026-12-01T20:58:04.872149
+# Modified                 : 2026-01-17T20:57:59.222161
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/prd_stez_firmenbefragung_2025/download/codeliste_2025.csv')
+
+# Distribution 1
+# Package_id               : faf95ac0-de0e-4b0d-9a8a-2424927bcb33
+# Description              : 
+# Issued                   : 2026-12-01T20:58:08.183324
+# Modified                 : 2026-01-17T20:58:02.452824
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://data.stadt-zuerich.ch/dataset/prd_stez_firmenbefragung_2025/download/Firmenbefragung_2025.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
