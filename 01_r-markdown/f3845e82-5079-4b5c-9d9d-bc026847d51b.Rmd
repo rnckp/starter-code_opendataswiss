@@ -1,0 +1,112 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-25"
+output: html_document
+---
+
+## Dataset: Direktzahlungen nach Beitragstyp und landwirtschaflicher Zone ab 2014
+
+Dieser
+Datensatz präsentiert die Details der Direktzahlungen, die seit 2014 an die
+Landwirtschaftsbetriebe im Kanton Freiburg ausbezahlt wurden.Die Daten
+enthalten die Finanzbeträge (in CHF) sowie die Anzahl der begünstigten
+Betriebe. Sie sind nach drei Hauptkategorien gegliedert:
+Beitragsart: (z. B. Biodiversität,
+     Landschaftsqualität, Versorgungssicherheit usw.)
+ 
+Rechtsgrundlage:
+     Die referenzierte Bundesverordnung:
+
+INV: Richtlinie für
+      den In-situ-Beitrag (In-situ-Richtlinie)
+OCCP: Einzelkulturbeitragsverordnung
+      (EKBV)
+OPD:
+      Direktzahlungsverordnung (DZV)
+SC: Getreidezulage gemäss der
+      Einzelkulturbeitragsverordnung (EKBV)
+
+ 
+Landwirtschaftliche Zone: Unterscheidung zwischen Tal-,
+     Hügel-, Berg- und Sömmerungszonen.
+
+Bergzone : Bergzonen I, II,
+      III und IV
+
+
+Diese
+gemeinwirtschaftlichen Leistungen werden vom Bund abgegolten, um eine
+nachhaltige und an die lokalen Verhältnisse angepasste Landwirtschaft zu
+fördern.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/direktzahlungen-nach-beitragstyp-und-landwirtschaflicher-zone-ab-2014)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/07_02_paiements_directs/)
+
+Auto generated R starter code for data set 07_02_paiements_directs@ssd.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `nan`
+- **Maintainer_email** `None`
+- **Keywords.de** `['direktzahlungen', 'subventionen', 'landwirtschaft']`
+- **Issued** `2026-01-22T00:00:00`
+- **Metadata_created** `2026-01-23T01:06:46.200124`
+- **Metadata_modified** `2026-01-23T01:06:46.200129`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : f3845e82-5079-4b5c-9d9d-bc026847d51b
+# Description              : Direktzahlungen nach Beitragstyp und landwirtschaflicher Zone ab 2014 (csv)
+# Issued                   : 2026-01-22T00:00:00
+# Modified                 : 2026-01-22T09:09:20.996000+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by-sa
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/07_02_paiements_directs/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD
