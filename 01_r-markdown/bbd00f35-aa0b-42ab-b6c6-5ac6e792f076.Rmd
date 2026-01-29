@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-29"
+output: html_document
+---
+
+## Dataset: Klimaszenarien CH2025 Gitter - DAILY-GRIDDED
+
+Die verfügbaren Datensätze der Schweizer Klimaszenarien CH2025 umfassen tägliche Zeitreihen mehrerer meteorologischer Grössen an Stationen (DAILY-LOCAL) und auf einem hochaufgelösten 1 km Gitter (DAILY-GRIDDED). Diese grossen Datensätze sind in erster Linie für die Weiterverarbeitung durch Computermodelle geeignet.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/klimaszenarien-ch2025-gitter-daily-gridded)<br>
+[Direct link by **Bundesamt für Meteorologie und Klimatologie MeteoSchweiz** for dataset](https://www.meteoschweiz.admin.ch/service-und-publikationen/service/open-data.html)
+
+Auto-generated R starter code for the dataset 2c5660d0-39ba-4a58-a7ed-76f2a89178d3@bundesamt-fur-meteorologie-und-klimatologie-meteoschweiz.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Meteorologie und Klimatologie MeteoSchweiz`
+- **Organization.url** `https://www.meteoschweiz.admin.ch`
+- **Maintainer** `nan`
+- **Maintainer_email** `None`
+- **Keywords.de** `['atmospharische-bedingungen', 'meteorologisch-geografische-kennwerte', 'luftfeuchtigkeit', 'klimatologie', 'temperatur', 'meteorologie', 'niederschlag', 'druck', 'luft-atmosphare', 'wind', 'klima', 'klimaanderung', 'strahlung', 'sonnenscheindauer', 'bgdi-bundesgeodaten-infrastruktur', 'opendata']`
+- **Issued** `2025-11-01T00:00:00`
+- **Metadata_created** `2026-01-27T00:22:25.419433`
+- **Metadata_modified** `2026-01-27T00:22:25.419439`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : bbd00f35-aa0b-42ab-b6c6-5ac6e792f076
+# Description              : Alle Parameter haben eine eindeutige Kennung, die von der zeitlichen Auflösung abhängig ist. Diese Ressource enthält eine Liste aller Parameterkennungen mit Erläuterung, Zeitintervall, Dezimalstellen, Datentyp und Masseinheit.
+# Issued                   : 2025-11-01T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://rgw.cscs.ch/mchogd:cscs.meteoswiss.ogd.climate/ogd-climate-scenarios-ch2025-grid/ogd-climate-scenarios-ch2025-grid_meta_parameters.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata.en@meteoswiss.ch | opendata.en@meteoswiss.ch

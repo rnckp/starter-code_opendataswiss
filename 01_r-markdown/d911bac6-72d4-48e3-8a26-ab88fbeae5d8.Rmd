@@ -1,0 +1,99 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-01-29"
+output: html_document
+---
+
+## Dataset: Radiosondierung Integraldaten - Messwerte
+
+Charakteristische Grössen der Ballonsondierung wie Höhe der Tropopause, Nullgradgrenze oder Wasserdampfsäule.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/radiosondierung-integraldaten-messwerte)<br>
+[Direct link by **Bundesamt für Meteorologie und Klimatologie MeteoSchweiz** for dataset](https://www.meteoschweiz.admin.ch/service-und-publikationen/service/open-data.html)
+
+Auto-generated R starter code for the dataset eee435ff-deda-44e9-8e8a-91da27217e38@bundesamt-fur-meteorologie-und-klimatologie-meteoschweiz.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Meteorologie und Klimatologie MeteoSchweiz`
+- **Organization.url** `https://www.meteoschweiz.admin.ch`
+- **Maintainer** `nan`
+- **Maintainer_email** `None`
+- **Keywords.de** `['atmospharische-bedingungen', 'meteorologisch-geografische-kennwerte', 'wetter', 'meteorologie', 'klimatologie', 'bgdi-bundesgeodaten-infrastruktur']`
+- **Issued** `2026-01-01T00:00:00`
+- **Metadata_created** `2026-01-27T00:22:30.293171`
+- **Metadata_modified** `2026-01-27T00:22:30.293175`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 3 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : d911bac6-72d4-48e3-8a26-ab88fbeae5d8
+# Description              : 
+# Issued                   : 2026-01-01T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-radiosounding-integral')
+
+# Distribution 1
+# Package_id               : d911bac6-72d4-48e3-8a26-ab88fbeae5d8
+# Description              : Alle Stationen haben eine aus drei Buchstaben bestehende Kennung (z.B. "BER" für "Bern/Zollikofen" oder "LUG" für "Lugano"). Diese Ressource enthält eine Liste aller Stationskennungen mit Namen, Kanton, Wigos ID, Stationstyp, Höhe, Koordinaten, Ausrichtung und URL der Stationsdetailseiten.
+# Issued                   : 2026-01-01T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.meteoschweiz.ogd-radiosounding-integral/ogd-radiosounding-integral_meta_stations.csv')
+
+# Distribution 2
+# Package_id               : d911bac6-72d4-48e3-8a26-ab88fbeae5d8
+# Description              : Alle Parameter haben eine eindeutige Kennung, die von der zeitlichen Auflösung abhängig ist (z.B. "dkl010z0" für "Windrichtung; Zehnminutenmittel"). Diese Ressource enthält eine Liste aller Parameterkennungen mit Erläuterung, Zeitintervall, Dezimalstellen, Datentyp und Masseinheit.
+# Issued                   : 2026-01-01T00:00:00
+# Modified                 : 
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://data.geo.admin.ch/ch.meteoschweiz.ogd-radiosounding-integral/ogd-radiosounding-integral_meta_parameters.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+kundendienst@meteoschweiz.ch | kundendienst@meteoschweiz.ch
