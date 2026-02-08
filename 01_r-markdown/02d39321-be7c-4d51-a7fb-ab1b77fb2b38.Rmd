@@ -1,0 +1,86 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-02-08"
+output: html_document
+---
+
+## Dataset: Monatliche Heizgradtage und Kühlgradtage in der Schweiz (gewichtet)
+
+Die Heizgradtage (HGT) ergeben sich aus der Summe der täglichen Abweichungen der mittleren Aussentemperatur von einer Raumtemperatur von 20°C, und zwar an jenen Tagen, an denen die mittlere Aussentemperatur 12 °C oder weniger beträgt. Dabei geht man von der Erfahrung aus, dass durchschnittlich ab einer Aussentemperatur von 12 °C geheizt werden muss, um eine Raumtemperatur von 20°C aufrechtzuerhalten. Die Heizgradtage werden für die gesamte Schweiz von MeteoSchweiz für jedes Postleitzahl-Gebiet berechnet und mit der aktuellen Bevölkerungszahl gewichtet.
+
+Kühlgradtage (CDD) ergeben sich aus der Summe der täglichen Abweichungen der mittleren Aussentemperatur von einer Raumlufttemperatur von 18.3 °C,  und zwar an jenen Tagen, an denen die mittlere Aussentemperatur 18.3 °C oder mehr beträgt. Kühlgradtage dienen als Indikator für den wetterbedingten Energiebedarf für die Gebäudekühlung. Kühlgradtage werden für die gesamte Schweiz ebenfalls von MeteoSchweiz für jedes Postleitzahl-Gebiet berechnet und mit der aktuellen Bevölkerungszahl gewichtet.
+
+Die Methode wurde im Jahr 2025 implementiert, und die revidierte Zeitreihe ist ab 1980 verfügbar. Detaillierte Informationen zur Methode sind in der Dokumentation «Energie Indikatoren an Postleitzahlen und für verschiedene institutionelle Ebenen» auf der MeteoSchweiz Website verfügbar (https://www.meteoschweiz.admin.ch/klima/klima-der-schweiz/raeumliche-klimaanalysen.html).
+
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/monatliche-heizgradtage-und-kuhlgradtage-in-der-schweiz-gewichtet)<br>
+
+
+Auto-generated R starter code for the dataset 9a59fe47-8be2-477b-bce8-81d53974ea29@bundesamt-fur-energie-bfe.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Bundesamt für Energie BFE`
+- **Organization.url** `http://www.bfe.admin.ch`
+- **Maintainer** `nan`
+- **Maintainer_email** `None`
+- **Keywords.de** `['heizgradtage', 'kuhlgradtage']`
+- **Issued** `2026-02-06T00:00:00`
+- **Metadata_created** `2026-02-06T01:12:29.150828`
+- **Metadata_modified** `2026-02-06T01:12:29.150834`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 02d39321-be7c-4d51-a7fb-ab1b77fb2b38
+# Description              : Die Heizgradtage (HGT) ergeben sich aus der Summe der täglichen Abweichungen der mittleren Aussentemperatur von einer Raumtemperatur von 20°C, und zwar an jenen Tagen, an denen die mittlere Aussentemperatur 12 °C oder weniger beträgt. Dabei geht man von der Erfahrung aus, dass durchschnittlich ab einer Aussentemperatur von 12 °C geheizt werden muss, um eine Raumtemperatur von 20°C aufrechtzuerhalten. Die Heizgradtage werden für die gesamte Schweiz von MeteoSchweiz für jedes Postleitzahl-Gebiet berechnet und mit der aktuellen Bevölkerungszahl gewichtet. Kühlgradtage (CDD) ergeben sich aus der Summe der täglichen Abweichungen der mittleren Aussentemperatur von einer Raumlufttemperatur von 18.3 °C,  und zwar an jenen Tagen, an denen die mittlere Aussentemperatur 18.3 °C oder mehr beträgt. Kühlgradtage dienen als Indikator für den wetterbedingten Energiebedarf für die Gebäudekühlung. Kühlgradtage werden für die gesamte Schweiz ebenfalls von MeteoSchweiz für jedes Postleitzahl-Gebiet berechnet und mit der aktuellen Bevölkerungszahl gewichtet. Die Methode wurde im Jahr 2025 implementiert, und die revidierte Zeitreihe ist ab 1980 verfügbar. Detaillierte Informationen zur Methode sind in der Dokumentation «Energie Indikatoren an Postleitzahlen und für verschiedene institutionelle Ebenen» auf der MeteoSchweiz Website verfügbar (https://www.meteoschweiz.admin.ch/klima/klima-der-schweiz/raeumliche-klimaanalysen.html). 
+# Issued                   : 2026-02-06T00:00:00
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+
+df <- read_delim('https://www.bfe-ogd.ch/ogd105_heizgradtage_k%C3%BChlgradtage.csv')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+contact@bfe.admin.ch | Analysen und Perspektiven

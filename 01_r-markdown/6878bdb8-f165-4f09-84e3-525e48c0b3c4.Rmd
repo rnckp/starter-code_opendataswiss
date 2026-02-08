@@ -1,12 +1,19 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2026-02-01"
+date: "2026-02-08"
 output: html_document
 ---
 
-## Dataset: Unternehmenseinheiten
+## Dataset: Handelsregisterzahlen
 
-Unternehmenseinheiten im Kanton Zug für die Jahre 2006 bis 2024.
+Zahlen des Handelsregister des Kantons Zug für die Jahre 1968 bis 2025.
+
+- Firmenbestand (ab 1990)
+- Eintragungen (Neueintragungen, Mutationen, Löschungen) (ab 1991)
+- Neueintragungen (ab 2015)
+- Konkurse (ab 1968)
+
+Achtung: Eintragungen sind nicht gleich Neueintragungen sondern beinhalten auch Mutationen und Löschungen.
 
 (QUELLE: Handelsregisteramt Kanton Zug)
 
@@ -20,12 +27,12 @@ Auto-generated R starter code for the dataset 870ec2c2-6fa7-4593-90e6-e82d90dea7
 - **Publisher.name** `nan`
 - **Organization.display_name.de** `Kanton Zug`
 - **Organization.url** `None provided`
-- **Maintainer** `Open Data Zug`
-- **Maintainer_email** `opendata@zg.ch`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
 - **Keywords.de** `[]`
 - **Issued** `2024-12-02T00:00:00`
 - **Metadata_created** `2024-11-29T12:17:58.695418`
-- **Metadata_modified** `2025-11-07T09:01:18.714643`
+- **Metadata_modified** `2026-02-03T07:13:13.083556`
 
 
 # Load packages
@@ -48,7 +55,7 @@ library(skimr)
 # Package_id               : 6878bdb8-f165-4f09-84e3-525e48c0b3c4
 # Description              : 
 # Issued                   : None
-# Modified                 : 2025-08-14T11:58:14.575000+00:00
+# Modified                 : 2026-02-02T08:32:27.075000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_by
 
 df <- read_delim('https://data.zg.ch/store/1/resource/329')

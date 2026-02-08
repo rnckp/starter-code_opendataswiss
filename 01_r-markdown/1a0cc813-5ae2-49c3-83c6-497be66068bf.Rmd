@@ -1,12 +1,12 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2026-02-01"
+date: "2026-02-08"
 output: html_document
 ---
 
 ## Dataset: Effektiver und erwarteter täglicher Gasverbrauch
 
-Dieser Datensatz beinhaltet den täglichen Gasverbrauch sowie den mittels eines Modells berechneten, anhand des Kalendertages und der Witterung zu erwartenden Gasverbrauch.Der tägliche Gasverbrauch ergibt sich als Summe des stündlich ausgewiesenen Gasverbrauchs im OGD-Datensatz 'Gasverbrauch im Versorgungsgebiet der IWB' ([https://data.bs.ch/explore/dataset/100304/](https://data.bs.ch/explore/dataset/100304/)).  Für die Modellevaluierung wurde der Datensatz in drei Teile unterteilt. Der Trainingsdatensatz dient zum Trainieren des Modells, der Tesdatensatz zur Bewertung der Modellleistung. Der Prognosedatensatz enthält neue, unbekannte Daten zur Vorhersage durch das mit Training- und Testdaten trainierte Modell.Mehr Informationen zu den gewonnenen Kentnissen findet man im Webartikel: [https://charts.basleratlas.ch/energie/webartikel_gasverbrauch.html](https://charts.basleratlas.ch/energie/webartikel_gasverbrauch.html)Der Code des Modells kann selber ausgeführt und weiterentwickelt werden. Hierfür wird Renku verwendet. Renku ist eine Plattform, die verschiedene Werkzeuge für reproduzierbare und kollaborative Datenanalyseprojekte bündelt: [https://renkulab.io/projects/statabs/reproducible-research/erwarteter-gasverbrauch-basel-stadt](https://renkulab.io/projects/statabs/reproducible-research/erwarteter-gasverbrauch-basel-stadt)
+Dieser Datensatz beinhaltet den täglichen Gasverbrauch sowie den mittels eines Modells berechneten, anhand des Kalendertages und der Witterung zu erwartenden Gasverbrauch.Der tägliche Gasverbrauch ergibt sich als Summe des stündlich ausgewiesenen Gasverbrauchs im OGD-Datensatz 'Gasverbrauch im Versorgungsgebiet der IWB' ([https://data.bs.ch/explore/dataset/100304/](https://data.bs.ch/explore/dataset/100304/)).  Für die Modellevaluierung wurde der Datensatz in drei Teile unterteilt. Der Trainingsdatensatz dient zum Trainieren des Modells, der Tesdatensatz zur Bewertung der Modellleistung. Der Prognosedatensatz enthält neue, unbekannte Daten zur Vorhersage durch das mit Training- und Testdaten trainierte Modell.Mehr Informationen zu den gewonnenen Kentnissen findet man im Webartikel: [https://charts.basleratlas.ch/energie/webartikel_gasverbrauch.html](https://charts.basleratlas.ch/energie/webartikel_gasverbrauch.html)Der Code des Modells kann selber ausgeführt und weiterentwickelt werden. Hierfür wird Renku verwendet. Renku ist eine Plattform, die verschiedene Werkzeuge für reproduzierbare und kollaborative Datenanalyseprojekte bündelt: [https://renkulab.io/p/statabs/erwarteter-gasverbrauch-basel-stadt](https://renkulab.io/p/statabs/erwarteter-gasverbrauch-basel-stadt)
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/effektiver-und-erwarteter-taglicher-gasverbrauch)<br>
 [Direct link by **Kanton Basel-Stadt** for dataset](https://data.bs.ch/explore/dataset/100353/)
@@ -18,12 +18,12 @@ Auto-generated R starter code for the dataset 100353@kanton-basel-stadt.
 - **Publisher.name** `nan`
 - **Organization.display_name.de** `Kanton Basel-Stadt`
 - **Organization.url** `https://data.bs.ch`
-- **Maintainer** `nan`
-- **Maintainer_email** `nan`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
 - **Keywords.de** `['strom', 'stadtlast', 'netzlast', 'elektrizitat', 'gas', 'warme', 'watt', 'kilowattstunden', 'gigawattstunden', 'gasverbrauch', 'iwb']`
 - **Issued** `2024-03-15T00:00:00`
 - **Metadata_created** `2024-04-18T01:22:38.451327`
-- **Metadata_modified** `2026-01-21T00:20:42.167878`
+- **Metadata_modified** `2026-02-08T00:21:09.513675`
 
 
 # Load packages
@@ -47,7 +47,7 @@ library(skimr)
 # Description              : Effektiver und erwarteter täglicher Gasverbrauch (csv)
 # Issued                   : 2024-03-15T00:00:00
 # Modified                 : 2025-11-03T13:15:34.892000+00:00
-# Rights                   : https://opendata.swiss/terms-of-use#terms_by
+# Rights                   : http://www.opendefinition.org/licenses/cc-by/
 
 df <- read_delim('https://data.bs.ch/api/v2/catalog/datasets/100353/exports/csv?use_labels=true')
 

@@ -1,0 +1,81 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-02-08"
+output: html_document
+---
+
+## Dataset: Indikatoren der regionalen Dynamik
+
+Dieser Datensatz umfasst Indikatoren zur regionalen Dynamik in den Bereichen Bevölkerung, Bildung und Wirtschaft.Die Daten wurden rückwirkend auf den Stand 2025 der Freiburger Gemeinden für die gesamte Zeitreihe aktualisiert.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/indikatoren-der-regionalen-dynamik)<br>
+[Direct link by **Amt für Statistik und Daten Freiburg** for dataset](https://opendata.fr.ch/explore/dataset/22_indicateurs_disparites/)
+
+Auto-generated R starter code for the dataset 22_indicateurs_disparites@ssd.
+
+## Metadata
+
+- **Publisher.name** `nan`
+- **Organization.display_name.de** `Amt für Statistik und Daten Freiburg`
+- **Organization.url** `https://www.fr.ch/deef/ssd`
+- **Maintainer** `nan`
+- **Maintainer_email** `None`
+- **Keywords.de** `['gemeinde', 'demografie', 'bevolkerung', 'wirtschaft', 'beschaftigte', 'schulbildung']`
+- **Issued** `2025-09-11T00:00:00`
+- **Metadata_created** `2026-02-05T01:11:49.262200`
+- **Metadata_modified** `2026-02-05T01:11:49.262207`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : 759c3250-71a4-4284-89df-2cab734ef9cb
+# Description              : Indikatoren der regionalen Dynamik (csv)
+# Issued                   : 2025-09-11T00:00:00
+# Modified                 : 2025-09-11T07:25:06.465000+00:00
+# Rights                   : http://www.opendefinition.org/licenses/cc-by-sa
+
+df <- read_delim('https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/22_indicateurs_disparites/exports/csv?use_labels=true')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@fr.ch | Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

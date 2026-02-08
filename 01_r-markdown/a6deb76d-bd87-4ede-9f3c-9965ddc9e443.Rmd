@@ -1,0 +1,106 @@
+---
+title: "Open Government Data, opendata.swiss"
+date: "2026-02-08"
+output: html_document
+---
+
+## Dataset: Strassenlärmkataster der Stadt Zürich
+
+GIS-gestützter Strassenlärmkataster der Stadt Zürich
+
+**Zweck**: Dieser Datensatz beinhaltet die Strassenlärmbelastung gemäss dem GIS-gestützten Strassenlärmbelastungskataster der Stadt Zürich (SR 814.41 Lärmschutz-Verordnung (LSV) Art. 37; GeoIV, Anhang 1, Lärmbelastungskataster für Haupt- und übrige Strassen, ID 144; KGeoIV, Anhang 1, Lärmbelastungskataster für Staatsstrassen nur Städte Zürich und Winterthur, ID 144V).
+
+Die ausgewiesene Strassenlärmbelastung am Immissionsort ist die Summe der Lärmbelastungen aller Strassen. In den Immissionen enthalten sind die Lärmimmissionen des öffentlichen Bus- und Tramverkehrs auf lärmrechtlich definiertem Mischtrassee. Lärm von Trams auf Eigentrassen sind im vorliegenden Datensatz nicht enthalten.
+
+Dargestellt ist der Strassenlärm-Beurteilungspegel (Lr) am Tag (6-22 Uhr) und in der Nacht (22-6 Uhr). Der Datensatz beinhaltet auch die Information, ob die massgebenden Belastungsgrenzwerte bei Wohnnutzung, namentlich Immissionsgrenzwerte (IGW) und Alarmwerte (AW), überschritten sind. Die Belastungsgrenzwerte sind strenger in der Nacht als am Tag und unterscheiden sich in Abhängigkeit der in der Nutzungsplanung zugewiesenen Lärm-Empfindlichkeitsstufe (ES).
+
+Die Lärmimmissionen werden gemäss dem Strassenlärmemissionsmodell sonROAD18 in Verbindung mit dem Ausbreitungsmodell ISO 9613-2 ermittelt und berücksichtigen die einschlägigen Vorgaben und Empfehlungen. Es sind Reflexionen bis und mit ersten Grades berücksichtigt.
+
+Es werden vier aufeinander aufbauende Zustände gezeigt:
+
+Zustand 2024
+IST-Situation gemäss Strassenlärmkataster
+
+Szenario 2035
+Die vom Stadtrat beschlossenen Geschwindigkeitsreduktionen (weitgehend Tempo 30) sind vollständig umgesetzt. Der politisch vorgegebene Geschwindigkeitsplan ist  rechnerisch umgesetzt, d.h. die für den spezifischen Strassenabschnitt vorgesehene Geschwindigkeit ist berücksichtigt. Bei den wenigen Strassen mit einem Prüfauftrag mit Rückfallebene wurde jeweils die Rückfallebene modelliert. Dort wo der Geschwindigkeitsplan keine Temporeduktion vorsieht, bleibt die heutige Signalisation bestehen.
+
+Szenario 2045
+Bei diesem Szenario ist zusätzlich zu Tempo 30 der vom Stadtrat beschlossene ergänzende Einbau lärmarmer Beläge vollständig umgesetzt. Überall, wo im Szenario 2035 Immissionsgrenzwertüberschreitungen verbleiben, wird der Einbau eines hochwertigen semidichten lärmarmen Belags vom Typ SDA 4 mit einem Kb-Endwert bei Tempo 50 von -3 dB angenommen. 
+
+Szenario 2050
+Bei diesem Szenario wird zusätzlich zu Tempo 30 und lärmärmen Belägen davon ausgegangen, dass der gesamte private und öffentliche Leicht- und Schwerverkehr auf Elektromobilität umgestellt ist. Vereinfachend wird ein genereller Abschlag bei den Lärmimmissionen von 2 dB berücksichtigt. 
+
+Die Szenarien widerspiegeln den Wissensstand vom 31.12.2025. Bei der realen Umsetzung der entsprechenden Stadtratsbeschlüsse zu den Geschwindigkeitsreduktionen und zu den lärmarmen Belägen werden die verschiedenen Massnahmen pro Strassenabschnitt im Einzelfall geprüft. Erweisen sich Massnahmen bei der konkreten Einzelfallprüfung als nicht verhältnismässig, wird darauf verzichtet; erweisen sich zusätzliche Massnahmen als verhältnismässig, werden diese zusätzlich umgesetzt. Die Immissionen können mit fortschreitender Zeit und im Einzelfall von den Szenarien abweichen.
+Weitere Informationen finden sich <a href='https://www.stadt-zuerich.ch/de/gesundheit/gesundheitsschutz/laerm.html'>hier</a>.
+
+[Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/strassenlarmkataster-der-stadt-zurich)<br>
+[Direct link by **Stadt Zürich** for dataset](https://data.stadt-zuerich.ch/dataset/geo_strassenlaermkataster_der_stadt_zuerich)
+
+Auto-generated R starter code for the dataset 6e148c98-6960-4a11-97d8-d33724ddf4af@stadt-zurich.
+
+## Metadata
+
+- **Publisher.name** `Lärmschutz, Umwelt- und Gesundheitsschutz, Gesundheits- und Umweltdepartement`
+- **Organization.display_name.de** `Stadt Zürich`
+- **Organization.url** `http://www.stadt-zuerich.ch/opendata`
+- **Maintainer** `None`
+- **Maintainer_email** `None`
+- **Keywords.de** `['bus', 'emissionen', 'geodaten', 'geoportal', 'immissionen', 'individualverkehr', 'miv', 'mov', 'ov', 'punktdaten', 'strassenlarm', 'stzh', 'tram', 'vektordaten', 'verkehr']`
+- **Issued** `nan`
+- **Metadata_created** `2026-02-04T00:33:19.933397`
+- **Metadata_modified** `2026-02-04T00:33:19.933403`
+
+
+# Load packages
+
+```{r}
+
+library(tidyverse)
+library(skimr)
+
+```
+
+# Load data
+
+-   The dataset has 1 distribution(s) in CSV format.
+-   All available CSV distributions are listed below and can be read into a tibble.
+
+```{r}
+
+# Distribution 0
+# Package_id               : a6deb76d-bd87-4ede-9f3c-9965ddc9e443
+# Description              : 
+# Issued                   : 2026-03-02T05:41:04.908010
+# Modified                 : None
+# Rights                   : https://opendata.swiss/terms-of-use#terms_open
+
+df <- read_delim('https://www.stadt-zuerich.ch/geodaten/download/Strassenlaermkataster_der_Stadt_Zuerich?format=10008')
+
+
+
+```
+
+# Analyze data
+
+```{r}
+
+glimpse(df)
+str(df)
+skim(df)
+
+head(df)
+tail(df)
+
+```
+
+# Continue your code here...
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Contact
+
+opendata@zuerich.ch | Open Data Zürich
