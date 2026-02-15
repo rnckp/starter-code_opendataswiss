@@ -1,16 +1,20 @@
 ---
 title: "Open Government Data, opendata.swiss"
-date: "2026-02-08"
+date: "2026-02-15"
 output: html_document
 ---
 
 ## Dataset: Motorisierungsgrad
 
-Motorisierungsgrad Kanton Zug und umliegende Kantone, 1970 bis 2024
+Motorisierungsgrad (Anzahl Personenwagen pro 1000 Einwohner/-innen) Kanton Zug und umliegende Kantone, 1970 bis 2025.
 
-Der Motorisierungsgrad gibt an, wie viele Personenwagen auf 1'000 Einwohner/-innen angemeldet sind.
+Wichtige Hinweise zur Vergleichbarkeit der Daten bis 2017 mit den Daten ab 2018:
+-  Bis und mit 2017 werden nur Fahrzeuge mit einer Halteradresse in der Schweiz berücksichtigt.
+- Ab dem Referenzjahr 2018 umfassen die Zahlen auch die Fahrzeuge mit einer Halteradresse im Ausland (rund 0,3% des Personenwagenbestandes 2018). Bis und mit 2017 werden nur Fahrzeuge mit einer Halteradresse in der Schweiz berücksichtigt.
+- Die Kantonszuordnung wird bis zum Jahr 2017 anhand der Adresse des Halters bzw. der Halterin vorgenommen und somit nicht anhand der Angaben auf dem Kontrollschild. Die Adresse des Halters oder der Halterin entspricht dabei nicht immer dem tatsächlichen «Standort» eines Fahrzeugs. So ist beispielsweise bei Unternehmen mit mehreren Niederlassungen zum Teil nur der Hauptsitz als Halteradresse registriert. Entsprechend können Kantone, in denen sich die Hauptsitze von Unternehmen mit grossem Fahrzeugpark (ganz besonders Autovermieter und Carsharing-Unternehmen) befinden, gemessen an ihrer Einwohnerzahl viele Fahrzeuge aufweisen.
+- Ab dem Referenzjahr 2018 (Einführung IVZ-Fahrzeuge) wird der Kanton gemäss den Angaben auf dem Kontrollschild bestimmt. In den Jahren bis und mit 2017 basiert die Kantonszuordnung dagegen auf der Halteradresse. Die Vergleichbarkeit der Kantonsdaten ab 2018 mit denen der Vorjahre ist daher eingeschränkt.
 
-(QUELLE: Bundesamt für Statistik, MFZ und STATPOP)
+(QUELLE: Bundesamt für Statistik & ASTRA: MFZ; Bundesamt für Statistik: STATPOP & ESPOP)
 
 [Direct link by **opendata.swiss** for dataset](https://opendata.swiss/de/dataset/motorisierungsgrad)<br>
 [Direct link by **Kanton Zug** for dataset](https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/themen/11-mobilitaet-und-verkehr/fahrzeuge)
@@ -27,7 +31,7 @@ Auto-generated R starter code for the dataset 8e3f129d-2d30-49ea-bb4a-eda98aac8a
 - **Keywords.de** `['mobilitat', 'motorisierung']`
 - **Issued** `2024-12-02T00:00:00`
 - **Metadata_created** `2024-11-29T12:17:04.875445`
-- **Metadata_modified** `2026-02-03T07:12:42.103214`
+- **Metadata_modified** `2026-02-10T07:16:22.017575`
 
 
 # Load packages
@@ -50,7 +54,7 @@ library(skimr)
 # Package_id               : a7a33ee9-d785-4f37-b0ad-69f7725a31f5
 # Description              : 
 # Issued                   : None
-# Modified                 : 2025-07-21T12:31:24.571000+00:00
+# Modified                 : 2026-02-09T07:27:31.451000+00:00
 # Rights                   : https://opendata.swiss/terms-of-use#terms_open
 
 df <- read_delim('https://data.zg.ch/store/1/resource/530')
