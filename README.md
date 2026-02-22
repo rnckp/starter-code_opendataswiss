@@ -4,7 +4,7 @@
 
 ### Please go to this 👉 **[overview website](https://rnckp.github.io/starter-code_opendataswiss/) with the full list of datasets and links to all code files**. 
 
-This repository currently provides 2 x 4060 code files (1 x R, 1 x Python) for all datasets (*«packages»*) that are available on [opendata.swiss](https://opendata.swiss/) and that contain one or more CSV distributions.
+This repository currently provides 2 x 4059 code files (1 x R, 1 x Python) for all datasets (*«packages»*) that are available on [opendata.swiss](https://opendata.swiss/) and that contain one or more CSV distributions.
 
 - The code files are configured with relevant metadata, descriptions, data links, and some starter code. 
 - The idea of this experiment is **that you can immediately start analyzing the data with R or Python.** 
@@ -17,6 +17,6 @@ This repository currently provides 2 x 4060 code files (1 x R, 1 x Python) for a
 
 Feedback is always very welcome – simply open an issue! 🙌
 
-<sub>Latest update: **2026-02-15 04:28:04**</sub><br>
+<sub>Latest update: **2026-02-22 04:26:21**</sub><br>
 <sub>For all data licenses, please refer to each dataset's link (provided in list as well as in the notebooks).</sub>
 
