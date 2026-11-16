@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Potentiel photovoltaïque &#40;PV&#41; par bâtiment
+
+Produit secondaire. La couche du potentiel photovoltaïque par bâtiment &#40;EGID&#41; représente et regroupe les informations relatives au potentiel d&#x27;énergie PV. Il est basé sur le potentiel solaire dont l&#x27;irradiation est au minimum de 800 kWh/m2/an sur les toitures, tenant compte des ombrages, de la pente et de l&#x27;orientation &#40;cf. données relatives à la répartition surfacique de ce potentiel dans la couche OCEN&#95;SOLAIRE&#95;BASE&#95;BATIMENT&#41;. Le seuil de 800 kWh/m2/an est choisi de sorte une garantir une production et rentabilité économique minimale. Cela permet d&#x27;éliminer les zones d&#x27;ombrages majeures, tout en laissant à disposition une grande partie des toitures, y compris celles orientées nord mais faiblement inclinées. La couche fournit les informations de potentiels sur la quantité d&#x27;énergie annuelle, la puissance électrique de crête, la surfaces des capteurs, le potentiel d&#x27;autoconsommation de l&#x27;électricité, les émissions de GES évitées, les données économiques &#40;frais d&#x27;investissement, charges, recettes&#41;. Ces données sont calculées dans le cas d&#x27;une rentabilité économique optimale &#40;temps de retour sur investissement&#41; liée à l&#x27;autoconsommation du courant produit, tenant compte des tarifs d&#x27;achat et de revente de l&#x27;électricité en vigueur dans les différentes parties du Grand Genève. L&#x27;élaboration de cette couche s&#x27;inscrit dans le cadre du programme INTERREG V France-Suisse et du projet G2 Solaire. Ce dernier a permis à la fois de mettre à jour le précédent cadastre solaire genevois de 2016 &#40;sous mandat de l&#x27;OCEN - Office cantonal de l&#x27;énergie - et des SIG - Services industriels genevois&#41;, et de l&#x27;étendre sur le reste du Grand Genève incluant le canton de Genève, le District de Nyon et les communes francaises limitrophes des départements de l&#x27;Ain et de Haute Savoie. Le cadastre solaire a été calculé sur le Grand Genève en juin 2019 &#40;sur la base des données LIDAR 2017 Genève, 2014 France, 2015 Vaud&#41;, puis mis à jour en janvier 2022 uniquement sur le District de Nyon avec les données LIDAR de 2019. Les données calculées ne tiennent pas compte de bâtiments construits après ces dates.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/potentiel-photovoltaique-pv-par-batiment1)
+
+Automatically generated R starter code for dataset e1d80b99-32b3-4f80-9185-e5560873f257.
+
+## Metadata
+
+- **identifier:** OCEN&#95;SOLAIRE&#95;PV&#95;BATIMENT@canton-geneve
+- **publisher.name:** Office cantonal de l&#x27;énergie
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:06:12.728582
+- **metadata&#95;modified:** 2026-10-31T04:16:23.217806
+- **Resource id:** 85e113dc-aa98-4ec8-a447-92b9c066c063
+- **Resource name:** CSV
+- **Resource package&#95;id:** e1d80b99-32b3-4f80-9185-e5560873f257
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-10-29 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/OCEN_SOLAIRE_PV_BATIMENT-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+Geraldine.Chollet@etat.ge.ch &#124; Office cantonal de l&#x27;énergie

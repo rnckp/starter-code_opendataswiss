@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Kinostandorte zwischen 1907 und 2018
+
+Diese Sammlung von historischen und aktuellen &#42;&#42;Kinostandorten&#42;&#42; zwischen 1907 und 2018 wurde speziell für den &#91;Webartikel «Kultur und Freizeit»&#93;&#40;https://www.stadt-zuerich.ch/de/stadtleben/stadtportraet/zuerichs-geschichte/digitale-zeitreise/kultur-und-freizeit.html&#41; der Serie &#91;«Digitale Zeitreise»&#93;&#40;https://www.stadt-zuerich.ch/de/stadtleben/stadtportraet/zuerichs-geschichte/digitale-zeitreise.html&#41; erstellt.<br><br>Die Daten wurden vom Stadtarchiv zusammengestellt und von Statistik Stadt Zürich räumlich verortet. Diese Daten können unvollständig oder ungenau sein, da die Rekonstruktion nicht immer eindeutig war. Dieses Daten können aber gut crowdsourced und laufend ergänzt werden. Seitens Verwaltung wird dieser Datensatz nicht mehr aktualisiert.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/kinostandorte-zwischen-1907-und-2018)
+
+Automatically generated R starter code for dataset 821d3a58-4ce6-430c-bc16-0aa083fc8dfc.
+
+## Metadata
+
+- **identifier:** cccd0e95-00fd-4a8a-b3ba-010b56179ed3@stadt-zurich
+- **publisher.name:** Stadtarchiv Zürich, Präsidialdepartement
+- **organization.display&#95;name:** Stadt Zürich
+- **organization.url:** http://www.stadt-zuerich.ch/opendata
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** archivdaten, freizeit, geodaten, movies, openglam, punktdaten, sachdaten, standort, tabellen, vektordaten, zeitreihe
+- **issued:** 2018-05-22 00:00:00
+- **metadata&#95;created:** 2018-05-23T05:08:09.071000
+- **metadata&#95;modified:** 2026-09-15T01:21:41.673437
+- **Resource id:** 73ad01eb-65af-485a-917f-d155ab48d7a1
+- **Resource name:** kinostandorte&#95;1907-2018.csv
+- **Resource package&#95;id:** 821d3a58-4ce6-430c-bc16-0aa083fc8dfc
+- **Resource description:** 
+- **Resource issued:** 2018-05-22 15:26:00.826590
+- **Resource modified:** 2018-05-22 15:26:00.748856
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **kinostandorte&#95;1907-2018.csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.stadt-zuerich.ch/dataset/kinostandorte-zwischen-1907-und-2018/download/kinostandorte_1907-2018.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@zuerich.ch &#124; Open Data Zürich

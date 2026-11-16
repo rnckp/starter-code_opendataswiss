@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: REFPU équipement adopté &#40;ligne&#41;
+
+Le référentiel des projets urbains &#40;RefPU&#41; est la version numérique des plans d&#x27;affectations produits par l&#x27;autorité compétente en matière d&#x27;aménagement du territoire du canton de Genève. Pour l&#x27;heure, seuls les plans localisés de quartier &#40;PLQ&#41; sont publiés dans ce référentiel. A terme, les modifications de zone &#40;MZ&#41; ainsi que les plans directeurs de zones industrielles &#40;PDZI&#41;, mais aussi les plans de site &#40;PS&#41; produits par l&#x27;office du patrimoine et des sites, pourraient également y être publiés. La thématique RefPU permet de consulter l&#x27;ensemble des données géographiques et alphanumériques contenues dans un PLQ et de les mettre en regard avec d&#x27;autres données territoriales issues d&#x27;autres politiques publiques ou des données de référence &#40;limites communales, cadastre, courbes de niveau, etc.&#41;. Les PLQ publiés sur ce thème font l&#x27;objet d&#x27;une consultation publique, conformément aux exigences légales en vigueur. Les données qu&#x27;ils contiennent sont mises à la disposition des partenaires du SITG et consultables sur ce guichet. Néanmoins, hormis le périmètre de validité d&#x27;un plan adopté qui a une valeur légale contraignante, les autres données géographiques et alphanumériques mises à disposition, ne créent aucun autre droit ou obligation que ceux découlant des textes et documents légalement mis en procédure, adoptés et publiés. En premier lieu, le RefPU permet de géoréférencer chaque plan, et par extension, chacun des éléments constitutifs du plan. Il offre également une unicité de représentation graphique standardisée pour l&#x27;ensemble des plans localisés de quartier grâce à une charte graphique et un modèle de données géomatique uniformisés. La thématique RefPU offre également la possibilité de représenter simultanément dans une carte numérique l&#x27;ensemble des PLQ numérisés sur tout le territoire genevois. Grand avantage par rapport au format papier ou pdf, le guichet numérique permet d&#x27;interroger la valeur de chaque donnée contenue dans une couche du modèle. Note: tout comme sur un plan en format papier ou pdf, les PLQ numériques se composent d&#x27;un plan d&#x27;aménagement et d&#x27;un plan des équipements, distincts. Les deux plans peuvent être consultés séparément.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/refpu-equipement-adopte-ligne)
+
+Automatically generated R starter code for dataset 9efa0c18-0933-4543-a0ad-d0b416976278.
+
+## Metadata
+
+- **identifier:** RPU&#95;EQUIPEMENT&#95;L&#95;ADOPT@canton-geneve
+- **publisher.name:** Office de l&#x27;urbanisme
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:06:48.609990
+- **metadata&#95;modified:** 2026-11-13T03:37:57.932709
+- **Resource id:** e76188ae-5175-40cc-886a-9c871cffc5bf
+- **Resource name:** CSV
+- **Resource package&#95;id:** 9efa0c18-0933-4543-a0ad-d0b416976278
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-11-11 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/RPU_EQUIPEMENT_L_ADOPT-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+alexandre.vacher@etat.ge.ch &#124; Office de l&#x27;urbanisme

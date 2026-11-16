@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Ouvertures de procédures de faillite, par année, dès 1994
+
+Ce jeu de<br>données présente le nombre d&#x27;ouvertures de procédures de faillite pour le<br>canton de Fribourg et pour la Suisse, par année, depuis 1994. Il inclut, depuis<br>2010, une ventilation par type : faillites d&#x27;entreprises selon la LP,<br>faillites de personnes privées &#40;art. 191 LP&#41;, successions répudiées, procédures<br>de dissolution pour cause de carence organisationnelle &#40;art. 731b, al. 1bis,<br>ch. 3, CO&#41;.Les données<br>proviennent de la Statistique des poursuites et des faillites de l&#x27;Office<br>fédéral de la statistique &#40;OFS&#41;, une enquête annuelle menée auprès des offices<br>cantonaux des poursuites et des faillites. Elle fournit des informations<br>détaillées sur les procédures définies par la Loi fédérale sur la poursuite<br>pour dettes et la faillite &#40;LP&#41;.Deux<br>changements sont entrés en vigueur au 1er janvier 2025 :<br>l&#x27;Instruction n° 10 du service Haute surveillance LP, qui a remanié le<br>questionnaire de collecte, et la révision de l&#x27;article 43 LP, qui soumet à la<br>procédure de faillite tous les débiteurs inscrits au registre du commerce, y<br>compris pour les créances de droit public &#40;impôts, contributions, amendes&#41;<br>auparavant exclues. Ces changements peuvent influencer l&#x27;évolution des chiffres<br>entre 2024 et 2025. Il convient de rester prudent lors de la comparaison avec<br>les années précédentes, notamment pour les faillites d’entreprises selon la LP.L&#x27;indicateur<br>« Ouvertures de faillites, y compris successions répudiées &#40;jusqu&#x27;en<br>2024&#41; » et le « Total des déclarations de faillite » &#40;depuis<br>2025&#41; sont publiés dans deux colonnes distinctes. La ventilation par type de<br>faillite, disponible depuis 2010, est publiée en une série unique. Les<br>changements de 2025 décrits ci-dessus peuvent s&#x27;y répercuter.Une cellule<br>vide signifie que l&#x27;indicateur n&#x27;a pas été relevé pour cette année et cette<br>région, soit parce qu&#x27;il n&#x27;existait pas encore, soit parce qu&#x27;il a été remplacé<br>depuis par un indicateur au périmètre différent. Ce n&#x27;est pas une valeur<br>manquante ou une erreur.<br>Pour plus d&#x27;informations : &#91;https://www.bfs.admin.ch/bfs/fr/home/statistiques/industrie-services/entreprises-emplois/demographie-entreprises/faillites.html&#93;&#40;https://www.bfs.admin.ch/bfs/fr/home/statistiques/industrie-services/entreprises-emplois/demographie-entreprises/faillites.html&#41;
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/ouvertures-de-procedures-de-faillite-par-annee-des-1994)
+
+Automatically generated R starter code for dataset 9a27a3b4-ee42-4158-983e-02919df31a52.
+
+## Metadata
+
+- **identifier:** 06&#95;02&#95;ouvertures&#95;faillites@ssd
+- **publisher.name:** ssd
+- **organization.display&#95;name:** Amt für Statistik und Daten Freiburg
+- **organization.url:** https://www.fr.ch/deef/ssd
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** faillites, entreprise, successsions-repudiees, personnes-privees
+- **issued:** 2026-10-15 00:00:00
+- **metadata&#95;created:** 2026-11-13T02:54:08.750089
+- **metadata&#95;modified:** 2026-11-13T02:54:08.750094
+- **Resource id:** 7e53945f-21c7-497a-bcd8-6aacc712e095
+- **Resource name:** csv
+- **Resource package&#95;id:** 9a27a3b4-ee42-4158-983e-02919df31a52
+- **Resource description:** Ouvertures de procédures de faillite, par année, dès 1994 &#40;csv&#41;
+- **Resource issued:** 2026-10-15 00:00:00
+- **Resource modified:** 2026-10-22 07:49:16.034000+00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/06_02_ouvertures_faillites/exports/csv?use_labels=true")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@fr.ch &#124; Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

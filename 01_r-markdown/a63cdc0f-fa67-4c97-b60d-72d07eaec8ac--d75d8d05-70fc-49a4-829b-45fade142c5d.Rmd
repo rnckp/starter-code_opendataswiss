@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Corona-Hilfen im Kulturbereich im Kanton Zürich
+
+Um die wirtschaftlichen Auswirkungen der Massnahmen zur Pandemiebekämpfung abzufedern und die kulturelle Vielfalt zu erhalten, können Kulturschaffende, nicht-gewinnorientierte sowie gewinnorientierte Kulturunternehmen finanzielle Unterstützung anfordern. Bei den Ausfallentschädigungen handelt es sich um nicht-rückzahlbare Beiträge für im Rahmen der COVID-19-Pandemie abgesagte Veranstaltungen oder Projekte und Betriebsschliessungen. Die Daten werden von der Direktion der Justiz und des Innern des Kantons Zürich, Fachstelle Kultur, ab dem 04.03.2021 in unregelmässiger Frequenz aktualisiert, sofern weitere Ausfallentschädigungsgesuche bewilligt werden können. Nachgefragte wie beschlossene Beträge sind gerundet auf 100 CHF; antragstellende natürliche oder juristische Personen sind anonymisiert.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/corona-hilfen-im-kulturbereich-im-kanton-zurich)
+
+Automatically generated R starter code for dataset a63cdc0f-fa67-4c97-b60d-72d07eaec8ac.
+
+## Metadata
+
+- **identifier:** 719@fachstelle-ogd-kanton-zuerich
+- **publisher.name:** Fachstelle Open Government Data des Kantons Zürich
+- **organization.display&#95;name:** Fach- und Koordinationsstelle Open Government Data Kanton Zürich
+- **organization.url:** https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt/open-government-data.html
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** covid-19, kultur, kulturfinanzierung, corona
+- **issued:** 2021-03-04 00:00:00+01:00
+- **metadata&#95;created:** 2025-06-12T14:01:12.086800
+- **metadata&#95;modified:** 2026-09-15T03:05:07.531418
+- **Resource id:** d75d8d05-70fc-49a4-829b-45fade142c5d
+- **Resource name:** Corona-Hilfen im Kulturbereich im Kanton Zürich
+- **Resource package&#95;id:** a63cdc0f-fa67-4c97-b60d-72d07eaec8ac
+- **Resource description:** Die Direktion der Justiz und des Innern des Kantons Zürich, Fachstelle Kultur, veröffentlicht ab dem 04.03.2021 anonymisierte Daten zu den nachgefragten, beschlossenen und ausbezahlten Ausfallentschädigungen. Die Zeitreihe beginnt am 06.04.2020 mit dem ersten eingegangenen Gesuch. Spaltenüberschriften: &#x27;Kategorie&#x27; = Antragstellende Kategorie &#40;&#x27;Kulturschaffende&#x27;, &#x27;Kulturunternehmen gemeinnützig&#x27; oder &#x27;Kulturunternehmen gewinnorientiert&#x27;&#41;; &#x27;Sparte&#x27; = Kultursparte &#40;&#x27;Bereichsübergreifend&#x27;, &#x27;Bildende Kunst&#x27;, &#x27;Design&#x27;, &#x27;Film&#x27;, &#x27;Kino&#x27;, &#x27;Klubs und Konzertlokale&#x27;, &#x27;Literatur&#x27;, &#x27;Museen&#x27;, &#x27;Musik&#x27; oder &#x27;Tanz/Theater&#x27;&#41;; &#x27;Nachgefragt&#x27; = Nachgefragter Betrag in CHF &#40;gerundet auf 100 CHF&#41;; &#x27;Beschluss&#x27; = Beschlossener Betrag in CHF &#40;gerundet auf 100 CHF, &#x27;NA&#x27; bei Ablehnung&#41;; &#x27;Status&#x27; = Status des Antrags &#40;&#x27;Ablehnung&#x27;, &#x27;Ausbezahlt&#x27; oder &#x27;Saldo offen&#x27;&#41;; &#x27;Eingangsdatum&#x27; = Datum des Eingangs des Gesuchs; &#x27;Beschlussdatum&#x27; = Datum des Beschlusses über das Gesuch; &#x27;ID&#x27; = anonymisierter Identifikator der antragstellenden natürlichen oder juristischen Person.
+- **Resource issued:** 2021-02-15 00:00:00+01:00
+- **Resource modified:** 2021-03-04 00:00:00+01:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Corona-Hilfen im Kulturbereich im Kanton Zürich** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00000719_00001790.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+fachstellekultur@ji.zh.ch &#124; Fachstelle Open Government Data des Kantons Zürich

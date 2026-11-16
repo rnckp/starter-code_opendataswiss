@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Etablissements, emplois et équivalents plein temps, par genre et activité économique, dès 2011
+
+Ce jeu de données présente le nombre d&#x27;établissements, d&#x27;emplois et d&#x27;emplois en équivalents plein temps &#40;EPT&#41; par secteur et activité économique dans le canton de Fribourg, par district et commune depuis 2011. Les données sont issues de la Statistique structurelle des entreprises &#40;STATENT&#41; de l&#x27;Office fédéral de la statistique &#40;OFS&#41;, qui couvre toutes les entreprises versant des cotisations AVS obligatoires pour leur personnel ainsi que pour leur propre compte &#40;indépendants&#41;. Il s&#x27;agit d&#x27;une statistique annuelle avec comme période de référence le mois de décembre.Les emplois et les EPT sont répartis selon le genre &#40;hommes/femmes&#41;. Un équivalent plein temps &#40;EPT&#41; correspond à un poste de travail occupé à 100% &#40;p.ex. un poste à 50% correspond à 0,5 EPT&#41;. Certaines données sur les EPT ne peuvent pas être divulguées pour des raisons de protection des données. Elles sont munies de la mention &quot;GDPr&quot;.Les activités économiques &#40;branches&#41; sont classées selon la Nomenclature générale des activités économiques &#40;NOGA 2008&#41; : &#91;https://www.kubb-tool.bfs.admin.ch/fr/noga/2008&#93;&#40;https://www.kubb-tool.bfs.admin.ch/fr/noga/2008&#41;Ces données reflètent l&#x27;état actuel des communes du canton. Pour les communes ayant fusionné, les données sont calculées rétroactivement sur l&#x27;ensemble de la période d&#x27;observation. Les données de Clavaleyres, commune anciennement bernoise fusionnée avec Morat au 1er janvier 2022, sont incluses à celles du canton de Fribourg et de la commune de Morat rétroactivement pour toute la période d&#x27;observation.Pour plus d&#x27;informations : &#91;https://www.bfs.admin.ch/bfs/fr/home/statistiques/industrie-services/enquetes/statent.html&#93;&#40;https://www.bfs.admin.ch/bfs/fr/home/statistiques/industrie-services/enquetes/statent.html&#41;
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/arbeitsstatten-beschaftigte-und-beschaftige-in-vollzeitaquivalenten-nach-geschlecht-und-wi-2011)
+
+Automatically generated R starter code for dataset 7d40c67c-88ff-4d63-b034-26ceb085e58f.
+
+## Metadata
+
+- **identifier:** 06&#95;02&#95;etablissements&#95;emplois&#95;branches@ssd
+- **publisher.name:** ssd
+- **organization.display&#95;name:** Amt für Statistik und Daten Freiburg
+- **organization.url:** https://www.fr.ch/deef/ssd
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** etablissements, emplois, equivalents-plein-temps, genre, activite-economique, commune
+- **issued:** 2026-09-21 00:00:00
+- **metadata&#95;created:** 2025-01-30T19:22:57.638126
+- **metadata&#95;modified:** 2026-09-22T03:09:56.308187
+- **Resource id:** 5f020c98-284c-4857-ba1d-8c56e974e147
+- **Resource name:** csv
+- **Resource package&#95;id:** 7d40c67c-88ff-4d63-b034-26ceb085e58f
+- **Resource description:** Etablissements, emplois et équivalents plein temps, par genre et activité économique, dès 2011 &#40;csv&#41;
+- **Resource issued:** 2026-09-21 00:00:00
+- **Resource modified:** 2026-09-21 06:01:56.179000+00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/06_02_etablissements_emplois_branches/exports/csv?use_labels=true")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@fr.ch &#124; Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

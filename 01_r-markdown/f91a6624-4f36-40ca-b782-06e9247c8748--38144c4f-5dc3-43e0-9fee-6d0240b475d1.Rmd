@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Indice d&#x27;écopotentialité urbaine par zone d&#x27;aménagement simplifié
+
+L&#x27;indice d&#x27;écopotentialité urbaine permet d&#x27;évaluer le degré potentiel de biodiversité d&#x27;un territoire. Il est constitué de 8 indicateurs et mesure la capacité d&#x27;accueil en biodiversité d&#x27;un milieu urbain en fonction de la présence de structures - naturelles ou aménagées - favorables à la biodiversité. Dans le milieu urbain, la biodiversité est contrainte par l&#x27;influence humaine dans un contexte de mutation territoriale. Il existe donc un enjeu fort de conservation et d&#x27;aménagement des espaces verts en ville, afin de lutter contre la perte et la banalisation des espèces, et de conserver la variété, la taille et la connectivité des espaces semi-naturels urbains. Dans ce contexte, les Conservatoire et Jardin Botaniques de la Ville de Genève &#40;CJB&#41; collaborent depuis 2014 avec l&#x27;Office cantonal de l&#x27;agriculture et de la nature &#40;OCAN&#41; dans le but de proposer des outils cartographiques utiles à la prise en considération de cette ressource au travers des planifications directrices et localisées. L&#x27;écopotentialité est un lot d&#x27;indicateurs synthétique de l&#x27;état de la biodiversité pour un périmètre donnée &#40;commune, quartier, zone d&#x27;affectation&#41;. Il a été réfléchi afin de mettre en avant les points forts et les points faibles de la zone d&#x27;étude et donc de faire un lien intéressant avec l&#x27;aménagement futur. L&#x27;indice est construit sur la base de 8 indicateurs normalisés, c&#x27;est-à-dire que chaque plage de valeur des indicateurs est ramenée à une plage normée entre 0 et 1 de manière à permettre une représentation agrégée des 8 indicateurs: 1&#41; Densité de toitures végétalisées &#40;m2/m2&#41; : évaluation de la proportion de surface de toiture végétalisée par rapport aux surfaces bâties d&#x27;un périmètre donné. 2&#41; Surface perméable &#40;%&#41; : évaluation du pourcentage de surface de milieux perméables par rapport aux surfaces imperméables 3&#41; Diversité des milieux verts : regroupement des milieux en 8 catégories assurant des fonctions différentes pour la biodiversité, puis calcul d&#x27;un indice de diversité en milieux verts. 4&#41; Densité d&#x27;arbres &#40;nb/ha&#41;: Nombre d&#x27;arbre issu de l&#x27;identification via des données LIDAR auxquels s&#x27;ajoutent les surfaces forestières &#40;densité moyenne de 370 arbres/ha&#41;. 5&#41; Fragmentation: Mesure la fragmentation du paysage par la présence de barrières physiques &#40;routes, zones bâties, etc.&#41; pour le déplacement de la faune et de la flore entre deux points. 6&#41; Naturalité : Indice compris entre +/- l&#x27;infini, qui distingue les milieux qui ont conservé leurs qualités naturelles &#40;valeurs positives élevées&#41;, des milieux affecté par les activités humaines &#40;valeurs négatives élevées&#41;. 7&#41; Diversité de milieux aquatiques et humides: regroupement des milieux aquatiques en 8 catégories assurant des fonctions différentes pour la biodiversité, puis calcul d&#x27;un indice de diversité en milieux aquatiques. 8&#41; Surface milieux aquatiques: évaluation de la surface de milieu aquatique et humide occupés par rapport à la surface de la zone d&#x27;intérêt. Les données de base utilisées lors des analyses sont notamment la carte des milieux naturels et la couche toitures végétalisées &#40;SIPV&#95;MN&#95;CARTO&#95;5, SIPV&#95;EV&#95;TOIT&#95;VERT&#41;. L&#x27;indice permet de faire un lien intéressant avec l&#x27;aménagement et la gestion du territoire en identifiant les facteurs manquants ou favorables à la biodiversité sur le périmètre considéré. Les périmètres d&#x27;étude vont de l&#x27;échelle de la commune, jusqu&#x27;à la zone d&#x27;aménagement &#40;1500m2&#41;. C&#x27;est pourquoi, cet indice a été intégré en annexe du guide de densification de la zone 5 &#40;zone villa&#41; publié par l&#x27;Office de l&#x27;urbanisme en 2017. Il est par ailleurs utilisé par les communes et leurs mandataires dans le cadre de la révision des plans directeurs communaux et des plans guides des Grands projets.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/indice-decopotentialite-urbaine-par-zone-damenagement-simplifie1)
+
+Automatically generated R starter code for dataset f91a6624-4f36-40ca-b782-06e9247c8748.
+
+## Metadata
+
+- **identifier:** SIPV&#95;ECOPOT&#95;ZA@canton-geneve
+- **publisher.name:** Office cantonal de l&#x27;agriculture et de la nature
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:08:08.844831
+- **metadata&#95;modified:** 2026-11-04T02:28:01.235380
+- **Resource id:** 38144c4f-5dc3-43e0-9fee-6d0240b475d1
+- **Resource name:** CSV
+- **Resource package&#95;id:** f91a6624-4f36-40ca-b782-06e9247c8748
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-10-29 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/SIPV_ECOPOT_ZA-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+joelle.kohler@etat.ge.ch &#124; Office cantonal de l&#x27;agriculture et de la nature

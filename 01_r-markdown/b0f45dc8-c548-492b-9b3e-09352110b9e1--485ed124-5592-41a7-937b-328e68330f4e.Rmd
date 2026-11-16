@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Bauzonen im Kanton Zürich
+
+Übersicht über den Bauzonenstand und den Bauzonenverbrauch im Kanton Zürich anhand der Indikatoren Bauzonen, Bauzonenverbrauch und Überbauungsgrad. Es werden Daten auf Stufe Gemeinde, Planungsregion und für den Kanton Zürich als Ganzes bereitgestellt. Die jährliche Nachführung des Überbauungs- und Erschliessungsstands durch die Gemeinden im Kanton Zürich stellt die Datengrundlage der Bauzonenstatistik dar. Die Koordination der Nachführung, der Datenzusammenzug, die Datenauswertung und die Datenaufbereitung übernimmt das Amt für Raumentwicklung des Kanton Zürich. Eine weitere Quelle ist der ÖREB-Kataster, aus dem die Nutzungszonen verwendet werden. Aus technischen Gründen können die Daten in den CSV-Dateien erst ab 1996 oder später bereitgestellt werden.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/bauzonen-im-kanton-zurich)
+
+Automatically generated R starter code for dataset b0f45dc8-c548-492b-9b3e-09352110b9e1.
+
+## Metadata
+
+- **identifier:** 1120@are-kanton-zuerich
+- **publisher.name:** Amt für Raumentwicklung des Kantons Zürich
+- **organization.display&#95;name:** Amt für Raumentwicklung Kanton Zürich
+- **organization.url:** https://www.zh.ch/de/baudirektion/amt-fuer-raumentwicklung.html
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** bauzonen, raumentwicklung
+- **issued:** 2022-02-15 00:00:00+01:00
+- **metadata&#95;created:** 2022-02-24T07:12:57.124182
+- **metadata&#95;modified:** 2026-10-03T04:19:34.620383
+- **Resource id:** 485ed124-5592-41a7-937b-328e68330f4e
+- **Resource name:** Überbauungsgrad ab 1996 in %
+- **Resource package&#95;id:** b0f45dc8-c548-492b-9b3e-09352110b9e1
+- **Resource description:** Überbaute Bauzone in % der Bauzone. Es wird in Wohnzone, Mischzone, Arbeitszone und Zone für öffentliche Bauten unterschieden. NULL-Werte bedeuten, dass für die betreffende Gemeinde oder Stadt keine Flächen in der entsprechenden Zonenkategorie im Zonenplan festgelegt sind. Mit der Spalte «GEO&#95;LEVEL&#95;LEVEL» können im Vergleich zur Spalte «BFS&#95;NR» neben den Gemeinden und Städten &#40;3&#41; zusätzlich auch die Regionen &#40;6&#41;, die Bezirke &#40;2&#41; und der Kanton Zürich &#40;1&#41; als Ganzes identifiziert werden. Die Spalte GEBIET&#95;NAME beinhaltet sowohl Gemeinden, Städte, Regionen als auch den ganzen Kanton Zürich. Es können keine Totale aus den Werten gerechnet werden.
+- **Resource issued:** 2022-02-15 00:00:00+01:00
+- **Resource modified:** 2026-10-02 15:44:56.875755+02:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Überbauungsgrad ab 1996 in %** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001120_00002162.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+raumbeobachtung@bd.zh.ch &#124; Amt für Raumentwicklung des Kantons Zürich, Raumplanung

@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Preis der Herkunftsnachweise zur Bestimmung des Referenz-Marktpreises für die gleitende Marktprämie
+
+Dieser Datensatz enthält die Preise der Herkunftsnachweise, die zur Bestimmung des Referenz-Marktpreises der gleitenden Marktprämie verwendet werden &#40;Art. 30a quinquies EnFV&#41;.<br>Der Preis der Herkunftsnachweise für Photovoltaikanlagen wird vom Bundesamt für Energie &#40;BFE&#41; für das gesamte Jahr in CHF/MWh festgelegt. Grundlage dafür sind die durchschnittlichen Preise, die im Vorjahr von den Schweizer Netzbetreibern bezahlt wurden.<br>Die Preise der Herkunftsnachweise für Wasserkraft-, Biomasse- und Windenergieanlagen werden als fester Prozentsatz des Referenz-Marktpreises gemäss Artikel 15 berechnet:<br><br>Wasserkraftanlagen: 5 % des Referenz-Marktpreises &#40;Art. 15 EnFV&#41;<br>Biomasse- und Windenergieanlagen: 10 % des Referenz-Marktpreises &#40;Art. 15 EnFV&#41;
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/preis-der-herkunftsnachweise-zur-bestimmung-des-referenz-marktpreises-fur-die-gleitende-marktpr)
+
+Automatically generated R starter code for dataset a023db6a-6e7b-47a5-bae9-45092fd5cb83.
+
+## Metadata
+
+- **identifier:** 3f190e12-1de5-4e00-81c8-623db767f697@bundesamt-fur-energie-bfe
+- **publisher.name:** Bundesamt für Energie &#40;BFE&#41;
+- **organization.display&#95;name:** Bundesamt für Energie BFE
+- **organization.url:** http://www.bfe.admin.ch
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** gleitende-marktpramie, herkunftsnachweise, referenz-marktpreis
+- **issued:** 2026-03-26 00:00:00
+- **metadata&#95;created:** 2026-07-21T06:14:37.008916
+- **metadata&#95;modified:** 2026-09-23T02:59:08.054203
+- **Resource id:** a46ce995-cf79-4401-8718-2964dd7f6d40
+- **Resource name:** Facteur des prix pour le calcul du prix fottant de référence du marché
+- **Resource package&#95;id:** a023db6a-6e7b-47a5-bae9-45092fd5cb83
+- **Resource description:** fichier csv avec la liste des facteurs
+- **Resource issued:** 2026-03-26 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Facteur des prix pour le calcul du prix fottant de référence du marché** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.bfe-ogd.ch/ogd132_factor_gmp_calculation.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+contact@bfe.admin.ch &#124; Erneuerbare Energien

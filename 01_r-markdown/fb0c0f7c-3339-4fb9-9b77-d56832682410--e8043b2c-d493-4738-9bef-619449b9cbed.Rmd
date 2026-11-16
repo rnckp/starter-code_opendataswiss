@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Open Government Data publizierende Verwaltungseinheiten und -abteilungen im Kanton Zürich
+
+Liste aller Verwaltungseinheiten und -abteilungen &#40;inkl. &#x27;Publisher-Suffix&#x27; = URL-Slug der Organisation&#41;, die bis zum angegebenen Zeitpunkt offene Behördendaten &#40;OGD&#41; über die kantonale Metadatenverwaltung &#40;MDV&#41; publizieren. Davon ausgenommen sind Behörden, die ausschliesslich offene Geodaten publizieren, da diese nicht über die MDV bereitgestellt werden, sondern über die kantonale Geodateninfrastruktur &#40;Geoinformation Kanton Zürich&#41;. Die Stadt Zürich als grösstes &#42;kommunales&#42; OGD-publizierendes Organ im Kanton ist ebenfalls ausgenommen, da sie über eine eigene OGD-Metadateninfrastruktur &#40;Open Data Zürich&#41; verfügt. Hinweis: Alle OGD, die über die MDV bereitgestellt werden, verfügen sowohl im öffentlichen kantonalen Datenkatalog &#40;zh.ch/daten&#41; wie auch im zentralen Portal für offene Daten der Schweizer Behörden &#40;opendata.swiss&#41; über eine permanente URL &#40;Permalink&#41;: Das &#x27;Publisher-Suffix&#x27; der Organisation, welche die Datenhoheit über die entsprechenden Daten hält, bildet zusammen mit einer numerischen ID den eindeutigen URL-Slug des Metadatensatzes.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/ogd-publizierende-verwaltungseinheiten-im-kanton-zurich)
+
+Automatically generated R starter code for dataset fb0c0f7c-3339-4fb9-9b77-d56832682410.
+
+## Metadata
+
+- **identifier:** 1641@statistisches-amt-kanton-zuerich
+- **publisher.name:** Amt für Statistik und Daten
+- **organization.display&#95;name:** Amt für Statistik und Daten Kanton Zürich
+- **organization.url:** https://www.zh.ch/amt-fuer-statistik-und-daten
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** kantonaleverwaltung, gemeindeverwaltung, gemeinden, kantonzuerich
+- **issued:** 2022-08-17 00:00:00+02:00
+- **metadata&#95;created:** 2022-08-19T03:05:28.687375
+- **metadata&#95;modified:** 2026-09-15T03:04:28.520543
+- **Resource id:** e8043b2c-d493-4738-9bef-619449b9cbed
+- **Resource name:** OGD-Publisher im Kanton Zürich
+- **Resource package&#95;id:** fb0c0f7c-3339-4fb9-9b77-d56832682410
+- **Resource description:** Spaltenüberschriften: &#x27;PUBLISHER&#x27; = Bezeichnung der Organisation, unter deren Hoheit die publizierten Daten stehen; &#x27;ABTEILUNG&#x27; = Bezeichnung der entsprechenden Abteilung der Organisation, welche die Datenhoheit besitzt &#40;eine Abteilung kann angegeben sein, aber muss nicht&#41;; &#x27;PUBLISHER&#95;SUFFIX&#x27; = URL-Slug der Organisation &#40;die Abteilung wird im Slug nicht repräsentiert&#41;.
+- **Resource issued:** 2022-08-17 00:00:00+02:00
+- **Resource modified:** 2025-10-24 00:00:00+02:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **OGD-Publisher im Kanton Zürich** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.web.statistik.zh.ch/ogd/data/kanton_zuerich_ogd_orgs.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+datashop@statistik.zh.ch &#124; Amt für Statistik und Daten, Data Shop

@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Greenland shrubs and microclimate
+
+Study Aim<br>We collected these data to alternatively train and validate high resolution &#40;&#126; 90 m&#41; Species Distribution Models &#40;SDMs&#41; and Species Abundance Models &#40;SAMs&#41; for &#95;Betula nana&#95; L. &#40;dwarf birch, Betulaceae&#41; and &#95;Salix glauca&#95; L. &#40;grey willow, Salicaceae&#41; in Southwest Greenland to assess how well such models can predict local-scale patterns.<br> Data Description<br>Individual &#40;presence-absence, abundance, maximum vegetative height&#41; and community &#40;species composition, maximum canopy height&#41; shrub data for two fjords near Nuuk, Southwest Greenland. Also provided are corresponding downscaled climate data as well as calculated topographic and terrain wetness indicator variables. <br> Nuup Kangerlua &#40;Godthåbsfjord&#41;<br>&#95;Betula nana&#95; and &#95;Salix glauca&#95; presence-absence, abundance, community species richness<br> Kangerluarsunnguaq &#40;Kobbefjord&#41;<br>Shrub presence-absence, abundance, maximum vegetative height, community composition, maximum shrub canopy height <br> Methods<br> Field survey in Nuup Kangerlua<br>We conducted a stratified systematic plant survey along the length of Nuup Kangerlua &#40;NK&#41; fjord in Soutwesth Greenland &#40;Fig. 1 in Chardon et al. 2022; following Nabe-Nielsen et al., 2017&#41;. At five distinct sites, we sampled along elevational gradients to collect data on presences, absences, abundance, and species composition of all woody species using a 0.7 x 0.7 m pin-point frame &#40;Fig. 1e in Chardon et al. 2022&#41;. For model training, we converted these pin-point data to percent cover estimates based on the number of pins dropped &#40;n = 25 per plot&#41; and averaged them across the 119 spatio-climatic grids &#40;see next section&#41; corresponding to the plot locations &#40;for details see Appendix S2 in Chardon et al. 2022&#41;. <br> Field survey in Kangerluarsunnguaq <br>We conducted a random stratified plant survey in Kangerluarsunnguaq &#40;K&#41; fjord in Southwest Greenland. We used a preliminary Species Abundance Model trained with summed pin counts of &#95;Betula nana&#95; in NK fjord &#40;see Fig. S1.3 in Chardon et al. 2022&#41; to stratify the &#126; 27 x 17 km fjord landscape into low, medium, and high abundances classes. We randomly selected 90 x 90 m spatio-climatic grids to survey in each class for a total of 200 grids, ensuring that they were accessible by foot or boat &#40;for details see Appendix S2 in Chardon et al. 2022&#41;. Within each grid, we sampled within three 1 m2 quadrats arranged in a randomly rotated equilateral triangle centered on the mid-point of the cell. We used a gridded sampling quadrat with 1% delineations &#40;Fig. 1h in Chardon et al. 2022&#41; to record woody species presences, absences, and composition, estimated percent cover, and measured maximum shrub species vegetatitve height. At every plot, we also visually scanned the area in a 20 m radius from the plot and recorded the presence of any additional shrub species to estimate grid-level species richness. As in NK fjord, we averaged these data at the grid level &#40;for details see Appendix S2 in Chardon et al. 2022&#41;.<br> Biotic variables<br>We calculated biotic microscale variables from the plant survey data collected in NK and K fjords. We calculated shrub species richness, diversity, and competition &#40;i.e. sum of non-B. nana or non-S. glauca pin hits or percent cover&#41;. In K fjord, we also calculated canopy height as the community weighted mean &#40;by abundance&#41; of maximum vegetative shrub height.<br> Climate variables <br>We computed high resolution temperature, precipitation, and insolation for local scale data for the study area by statistically downscaling climate time series &#40;1982 - 2013&#41; from the monthly CHELSA data &#40;Karger et al. 2017&#41;. We downscaled these data from 30 arc sec &#40;&#126; 400 m at the latitude of our study&#41; to our target grid size of &#126; 90 m with geographic weighted regression and using the MEaSUREs Greenland Ice Mapping Project &#40;GIMP&#41; Digital Elevation Model &#40;DEM&#41; v. 1 &#40;Howat et al., 2014, 2015&#41;. We then calculated 30-year averages of the climate parameters: average summer &#40;June – August&#41; maximum temperature, yearly maximum temperature, yearly minimum temperature, temperature continentality &#40;yearly max. - min. temperatures&#41;, cumulative Spring &#40;March – May&#41; precipitation, cumulative summer precipitation, and average summer incident solar radiation &#40;henceforth, insolation&#41; &#40;for calculation details see Appendices S2, S3 in Chardon et al. 2022 and Appendix S2 in von Oppen et al. 2021&#41;.<br> Topography and terrain wetness indicator variables<br>We calculated several topographic and terrain wetness indices at a local scale. We derived slope, aspect, and the SAGA wetness index &#40;hereafter TWI; Boehner et al., 2002; Boehner and Selige, 2006&#41; from the GIMP DEM. TWI is a measure of how ‘wet’ an area is, based on water drainage from the surrounding landscape. We also calculated the tasseled cap wetness component &#40;hereafter TCW, Crist and Cicone 1984&#41; from satellite images &#40;for details see Appendices S2, S3 in Chardon et al. 2022&#41; as an alternative measure of wetness. <br> Computer code<br>Attached as zip file and available on GitLab &#40;https://gitlab.com/nathaliechardon/gl&#95;microclim&#41;<br> Third-party data<br>Data used to calculate climate, topography, and terrain wetness indicator variables are publicly available &#40;see Appendix S2 in Chardon et al. 2022 for all data references&#41;.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/greenland-shrubs-and-microclimate)
+
+Automatically generated R starter code for dataset 9f8fa05d-8ca2-473e-a39c-b5d8eb6fef2c.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.286@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** sdm, accessible-shrub-forest, climate, validation, arctic, field-data
+- **issued:** 2022-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:31:33.664268
+- **metadata&#95;modified:** 2026-11-14T02:46:46.654681
+- **Resource id:** 0f8ed921-d96c-4c1f-a386-846111354d0d
+- **Resource name:** 
+- **Resource package&#95;id:** 9f8fa05d-8ca2-473e-a39c-b5d8eb6fef2c
+- **Resource description:** Resource Title: Kangerluarsunnguaq<br>    Size: 93883 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/040d25dd-71c0-40e6-99a8-849427250f5d/resource/dc1bf94c-e651-4193-9a42-de3c9f3b11e9/download/kangerluarsunnguaq.csv<br>    Description: &#35;&#35; Collected August 2020 &#40;PI: Nathalie Isabelle Chardon&#41;<br><br>These data collected August 2020 &#40;PI: Nathalie Isabelle Chardon&#41;. Please contact N. I. Chardon &#40;nathalie.chardon&#95;at&#95;gmail.com&#41; for individual quadrat &#40;i.e. 1 m x 1 m&#41; data, which are averaged at the 90 m spatial grid here. <br><br>&#35;&#35; COLUMN ABBREVIATIONS<br><br>&#35;&#35;&#35; Metadata for 90 m spatial grid<br><br>id: sampling zone and unique 90 m grid identifier<br><br>long: WGS84 longitude<br><br>lat: WGS84 latitude<br><br>x&#95;stere: longitude in Polar Stereographic &#40;EPSG 4326&#41;<br><br>y&#95;stere: latitude in Polar Stereographic &#40;EPSG 4326&#41;<br><br>date: sampling day.month.year<br><br>&#35;&#35;&#35; Species presence &#91;1&#93; or absence &#91;0&#93; at grid level<br><br>alcr: &#95;Alnus crispa&#95; <br><br>bena: &#95;Betula nana&#95;<br><br>dila: &#95;Diapensia lapponica&#95;<br><br>emni: &#95;Empetrum nigrum&#95;<br><br>hahy: &#95;Harimanella hypoides&#95;<br><br>lopr: &#95;Loiseleuria procumbens&#95;<br><br>oxpa: &#95;Oxycoccus palustre&#95;<br><br>phca: &#95;Phyllodoce caerulea&#95;<br><br>rhod: &#95;Rhododendron&#95; sp.<br><br>saar: &#95;Salix arctica&#95;<br><br>sagl: &#95;Salix glauca&#95;<br><br>sahe: &#95;Salix herbacea&#95;<br><br>vaul: &#95;Vaccinium uliginosum&#95;<br><br>drin: &#95;Dryas integrifolia&#95;<br><br>thpr: &#95;Thymus praecox&#95;<br><br>&#35;&#35;&#35; Habitat characteristics &#91;% cover&#93;<br><br>shrub: all shrub species<br><br>gram: graminoids<br><br>forb: forbs<br><br>bryo: bryophytes<br><br>lich: lichens<br><br>litt: litter<br><br>bare: bare ground<br><br>stone: stones &#40;&gt; 2 cm&#41;<br><br>org: organic crust<br><br>&#35;&#35;&#35; Shrub species height &#40;maximum vegetative height&#41; &#91;mm&#93; and cover &#40;estimated in 1x1 m quadrat&#41; &#91;%&#93;<br><br>alcr&#95;c: &#95;Alnus crispa&#95; cover<br><br>alcr&#95;h: &#95;Alnus crispa&#95; height<br><br>bena&#95;c: &#95;Betula nana&#95; cover<br><br>bena&#95;h: &#95;Betula nana&#95; height<br><br>dila&#95;c: &#95;Diapensia lapponica&#95; cover<br><br>dila&#95;h: &#95;Diapensia lapponica&#95; height<br><br>emni&#95;c: &#95;Empetrum nigrum&#95; cover<br><br>emni&#95;h: &#95;Empetrum nigrum&#95; height<br><br>hahy&#95;c: &#95;Harimanella hypoides&#95; cover<br><br>hahy&#95;h: &#95;Harimanella hypoides&#95; height<br><br>lopr&#95;c: &#95;Loiseleuria procumbens&#95; cover<br><br>lopr&#95;h: &#95;Loiseleuria procumbens&#95; height<br><br>oxpa&#95;c: &#95;Oxycoccus palustre&#95; cover<br><br>oxpa&#95;h: &#95;Oxycoccus palustre&#95; height<br><br>phca&#95;c: &#95;Phyllodoce caerulea&#95; cover<br><br>phca&#95;height: &#95;Phyllodoce caerulea&#95; height<br><br>rhod&#95;c: &#95;Rhododendron&#95; sp. cover<br><br>rhod&#95;h: &#95;Rhododendron&#95; sp. height<br><br>saar&#95;c: &#95;Salix arctica&#95; cover<br><br>saar&#95;h: &#95;Salix arctica&#95; height<br><br>sagl&#95;c: &#95;Salix glauca&#95; cover<br><br>sagl&#95;h: &#95;Salix glauca&#95; height<br><br>sahe&#95;c: &#95;Salix herbacea&#95; cover<br><br>sahe&#95;h: &#95;Salix herbacea&#95; height<br><br>vaul&#95;c: &#95;Vaccinium uliginosum&#95; cover<br><br>vaul&#95;h: &#95;Vaccinium uliginosum&#95; height<br><br>drin&#95;c: &#95;Dryas integrifolia&#95; cover<br><br>drin&#95;h: &#95;Dryas integrifolia&#95; height<br><br>&#35;&#35;&#35; Community characteristics<br><br>rich&#95;pa: shrub species richness at grid level<br><br>rich: shrub species richness averaged across 3 1x1 m sampling quadrats per grid<br><br>shan: Shannon diversity &#40;‘vegan’ package; Oksanen et al. 2019&#41;<br><br>comp&#95;bena: shrub competition on &#95;Betula nana&#95; &#40;i.e. summed cover of non-&#95;B. nana&#95; species&#41; &#91;% cover&#93;<br><br>comp&#95;sagl: shrub competition on &#95;Salix glauca&#95; &#40;i.e. summed cover of non-&#95;S. glauca&#95; species&#41; &#91;% cover&#93;<br><br>ht&#95;cwm: maximum shrub canopy height &#40;i.e. community weighted mean by abundance of maximum shrub height&#41; &#91;mm&#93;<br><br>&#35;&#35;&#35; Topography and terrain wetness &#40;calculated from&#41;<br><br>tcws: Tasseled Cap Wetness component &#40;Sentinal images&#41;<br><br>slope: slope angle &#40;MEaSUREs Greenland Ice Mapping Project Digital Elevation Model v. 1; Howat et al., 2014, 2015&#41; &#91;º&#93;<br><br>twi: SAGA wetness index &#40;MEaSUREs Greenland Ice Mapping Project Digital Elevation Model v. 1; Howat et al., 2014, 2015&#41;<br><br>asp: aspect &#40;MEaSUREs Greenland Ice Mapping Project Digital Elevation Model v. 1; Howat et al., 2014, 2015&#41; &#91;º&#93;<br><br>&#35;&#35;&#35; Downscaled climate &#40;time series 1984 – 2013&#41;<br><br>insoljja: average June-August insolation &#91;MJ cm-2 yr-1&#93;<br><br>precipmam: cumulative March-May precipitation &#91;mm&#93;<br><br>tempcont: yearly maximum – minimum temperature &#91;ºC&#93;<br><br>tempmin: yearly minimum temperature &#91;ºC&#93;<br><br>precipjja: cumulative June-August precipitation &#91;mm&#93;<br><br>tempjja: average maximum June-August temperature &#91;ºC&#93;<br><br>tempmax: yearly maximum temperature &#91;ºC&#93;
+- **Resource issued:** 2022-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **0f8ed921-d96c-4c1f-a386-846111354d0d** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/040d25dd-71c0-40e6-99a8-849427250f5d/resource/dc1bf94c-e651-4193-9a42-de3c9f3b11e9/download/kangerluarsunnguaq.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

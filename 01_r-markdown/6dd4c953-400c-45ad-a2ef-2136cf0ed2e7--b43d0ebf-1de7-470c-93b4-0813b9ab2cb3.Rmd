@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Fotos im Archiv von Hans Himmelheber &#40;1908–2003&#41; im Museum Rietberg
+
+Das Museum Rietberg ist das einzige Museum für aussereuropäische Kunst in der Schweiz. Die international renommierte Sammlung beherbergt bedeutende Werke aus Asien, Afrika, Amerika und Ozeanien.<br><br>Hans Himmelheber nahm auf seinen Reisen mehr als 15&#x27;000 Fotografien auf. Diese Bilder sind wichtige visuelle Dokumente der von ihm untersuchten Phänomene. Die Fotografien liefern uns zudem wertvolle Hinweise zu ihrem Entstehungskontext und den abgebildeten Personen. Darüber hinaus bilden die Fotografien einen Ausgangspunkt für kritische postkoloniale Fragestellungen. Weil Himmelheber seine Kameras oft aus der Hand gegeben hat, ist die Autorenschaft bei einigen Fotografien nicht mehr festzustellen. Mit Sicherheit finden sich unter den Fotografien solche, die von Assistent&#42;innen, Mitgliedern seiner Familie  oder seinen wichtigsten Vertrauten vor Ort aufgenommen wurden.<br>2013 übergab die Erbengemeinschaft Hans Himmelheber das Fotoarchiv an das Museum Rietberg und finanzierte dessen Aufarbeitung. Bei der digitalen Bereitstellung der Fotografien halten wir uns an folgende Richtlinien:<br><br>Wo immer möglich, wurden die auf den Fotografien abgebildeten Personen identifiziert und ihre Namen erfasst.<br>Um den zeitgeschichtlichen Kontext der fotografischen Momente zu verdeutlichen, sind möglichst präzise Angaben zu Aufnahmedatum und -ort hinzugefügt.<br>Fotografien, auf denen die Würde der abgebildeten Personen verletzt wird, wurden gesperrt. Dazu gehören Situationen, in denen die abgebildeten Personen im fotografischen Moment keinerlei Handlungsmacht besassen, etwa Fotografien von Gefangenen, Sterbenden oder Personen, denen Gewalt widerfuhr.<br>Weiter wurden Fotografien gesperrt, die an Orten aufgenommen wurden und/oder Gegenstände zeigen, die im Ursprungskontext nur einem kleinen, eingeweihten Kreis von berechtigten Personen zugänglich waren. Dazu zählen beispielsweise nur Initiierten vorbehaltene Rituale oder Räume.<br>Fotografien von Frauen und Mädchen, die in erotisierender Weise dargestellt sind und Fotografien von unbekleideten Kindern sind ebenfalls nicht zugänglich.<br>Originalnotizen von Hans Himmelheber zu einzelnen Fotos sind durch Anführungszeichen gekennzeichnet. Beleidigende oder diskriminierend Wörter haben wir gestrichen.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/fotos-im-archiv-von-hans-himmelheber-19082003-im-museum-rietberg)
+
+Automatically generated R starter code for dataset 6dd4c953-400c-45ad-a2ef-2136cf0ed2e7.
+
+## Metadata
+
+- **identifier:** e2b9ad28-2a72-4fbc-933e-ddde376ce9a5@stadt-zurich
+- **publisher.name:** Museum Rietberg, Präsidialdepartement
+- **organization.display&#95;name:** Stadt Zürich
+- **organization.url:** http://www.stadt-zuerich.ch/opendata
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** afrika, alaska, archiv, ethnologie, fotografie, himmelheber, kunst, reisen, github
+- **issued:** 2023-06-06 00:00:00
+- **metadata&#95;created:** 2023-06-27T01:06:55.393550
+- **metadata&#95;modified:** 2026-11-11T01:35:46.307815
+- **Resource id:** b43d0ebf-1de7-470c-93b4-0813b9ab2cb3
+- **Resource name:** mrz&#95;himmelheber&#95;fotos.csv
+- **Resource package&#95;id:** 6dd4c953-400c-45ad-a2ef-2136cf0ed2e7
+- **Resource description:** 
+- **Resource issued:** 2023-06-26 12:40:29.970859
+- **Resource modified:** 2026-10-11 00:41:34.410981
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **mrz&#95;himmelheber&#95;fotos.csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.stadt-zuerich.ch/dataset/mrz_himmelheber_fotos/download/mrz_himmelheber_fotos.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@zuerich.ch &#124; Open Data Zürich

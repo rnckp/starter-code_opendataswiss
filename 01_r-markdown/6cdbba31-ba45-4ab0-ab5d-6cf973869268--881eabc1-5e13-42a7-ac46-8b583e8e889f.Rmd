@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Lernende der Regelschule im Kanton Zürich nach Erstsprache &#40;Deutsch/nicht Deutsch&#41; ab 2000
+
+Schüler/innen an öffentlichen Regelschulen im Kanton Zürich, die nach kantonalem Lehrplan unterrichtet werden. Mit Regelschule wird die Schulbildung während der obligatorischen Schulzeit bezeichnet. Die obligatorische Schulzeit umfasst den Kindergarten, sechs Jahre Primarschule und drei Jahre Sekundarstufe I. Nicht mitgezählt sind Lernende der Mittelschulen, Lernende in in Heim-/Sonderschulen, und Lernende in Privatschulen. Es gilt das Schulortprinzip, gezählt werden Schülerinnen und Schüler, welche eine Schule innerhalb des Kantons Zürich besuchen.<br><br>Die Daten werden jährlich für den Stichtag 15.9. erhoben.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/lernende-der-volksschule-im-kanton-zurich-nach-erstsprache-deutsch-nicht-deutsch-ab-2000)
+
+Automatically generated R starter code for dataset 6cdbba31-ba45-4ab0-ab5d-6cf973869268.
+
+## Metadata
+
+- **identifier:** 1581@bildungsstatistik-kanton-zuerich
+- **publisher.name:** Bildungsstatistik des Kantons Zürich
+- **organization.display&#95;name:** Bildungsstatistik Kanton Zürich
+- **organization.url:** https://pub.bista.zh.ch
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** hauptsprache, ausbildung, schuelerinnen, schulgemeinden, volksschule, lernende, bildung, sekundarschule, kindergarten, sprache, primarschule
+- **issued:** 2022-10-24 00:00:00+02:00
+- **metadata&#95;created:** 2022-10-25T03:10:27.597346
+- **metadata&#95;modified:** 2026-10-29T04:08:52.005167
+- **Resource id:** 881eabc1-5e13-42a7-ac46-8b583e8e889f
+- **Resource name:** Lernende der Regelschule im Kanton Zürich nach Erstsprache &#40;Deutsch/nicht Deutsch&#41; ab 2000
+- **Resource package&#95;id:** 6cdbba31-ba45-4ab0-ab5d-6cf973869268
+- **Resource description:** Ausgewiesen wird die Anzahl der Lernenden an Regelschule im Kanton Zürich. Die Daten sind differenziert nach Jahr, zuständiger Schulgemeinde und Erstsprache.<br><br>Bei Zellen kleiner 5 wird nur der Wert &quot;1-5&quot; ausgewiesen.<br><br>jahr: Das Jahr ist jeweils das Kalenderjahr der Erhebung, wobei der Stichtag der 15.9. ist. Die Daten für das Jahr 2024 sind somit im Schuljahr 2024/25 erhoben worden und zeigen den Datenstand am 15. September 2024.<br>schulgemeinde: Hier wir die zuständige Schulgemeinde dargestellt. Das ist üblicherweise die Schulgemeinde des Wohnort. Es entspricht aber nicht in jedem Fall der Schulgemeinde des Schulstandorts der effektiv besucht wird.<br>erstsprache: Als Erstsprache gilt diejenige Sprache, die als erste erlernt wird. Die Bildungsstatistik erhebt seit 2010 die Erstsprache als Merkmal der Lernenden. Bis zum Jahr 2009 wurde die Muttersprache erhoben.<br>anzahl: Anzahl der Schülerinnen und Schüler mit der entsprechenden Merkmalskombination.<br>obs&#95;status: Bei kleinen Fallzahlen &#40;&lt;6&#41; wird die genaue Anzahl in der betreffenden Zeile aus Datenschutzgründen nicht ausgegeben. Diese Zeilen werden mit obs&#95;status &quot;Q&quot; ausgewiesen, Zeilen mit einem dargestellten Wert erhalten den obs&#95;status &quot;A&quot; &#40;siehe https://www.i14y-a.admin.ch/de/catalog/concepts/5993fe3b-8fa3-4422-95a8-dceeb98e090b/description&#41;.<br><br>Die Daten werden im Rahmen der Statistik der Lernenden für das Bundesamtes für Statistik erhoben. Es handelt sich um eine Vollerhebung.
+- **Resource issued:** 2022-10-24 00:00:00+02:00
+- **Resource modified:** 2026-10-28 15:26:21.452398+01:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Lernende der Regelschule im Kanton Zürich nach Erstsprache &#40;Deutsch/nicht Deutsch&#41; ab 2000** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.bista.zh.ch/basicapi/ogd/data_lernende_regelschule_regional_erstsprache")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+bista@bi.zh.ch &#124; Bildungsstatistik des Kantons Zürich

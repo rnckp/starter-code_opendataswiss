@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Täglich aktualisierte Meteodaten, seit 1992
+
+<br>Der Datensatz umfasst &#42;&#42;Tageswerte&#42;&#42; &#42;&#42;ab 1992 bis zum aktuellen Vortag&#42;&#42; aufgeteilt in Jahresdateien und einmal als kompletter Datensatz im parquet-Format. Darin enthalten sind die Stationen Stampfenbachstrasse, Schimmelstrasse und Rosengartenstrasse. Gemessen wird der Luftdruck &#40;p&#41;, die Niederschlagsdauer &#40;RainDur&#41;, die Globalstrahlung &#40;StrGlo&#41;, die Temperatur &#40;T&#41; und die relative Luftfeuchtigkeit &#40;Hr&#41;. Die Winddaten werden zur Zeit nicht auf Tageswerte gemittelt, sind aber im Datensatz &quot;Stündlich aktualisierte Meteodaten, seit 1988&quot; als Stundenwerte verfügbar.<br><br>Die Tageswerte des laufenden Jahres werden jeweils 30 Minuten nach Mitternacht &#40;UTC+1&#41; aktualisiert.<br>
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/taglich-aktualisierte-meteodaten-seit-1992)
+
+Automatically generated R starter code for dataset dfecda71-8190-4d57-b215-f715dd5ed57d.
+
+## Metadata
+
+- **identifier:** 12ef82b6-f31e-4989-a74a-895d32bd4e0d@stadt-zurich
+- **publisher.name:** Messung Luftqualität, Umwelt- und Gesundheitsschutz, Gesundheits- und Umweltdepartement
+- **organization.display&#95;name:** Stadt Zürich
+- **organization.url:** http://www.stadt-zuerich.ch/opendata
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** echtzeit, feuchte, global-strahlung, hitze, hr, kalte, luft, luftdruck, luftfeuchte, lufttemperatur, messwerte, meteo, niederschlag, p&#95;, regen, regendauer, sachdaten, t&#95;, tabelle, temperatur, umweltdaten, wd, wetter, wind, windgeschwindigkeit, windrichtung, wv, zeitreihe
+- **issued:** 
+- **metadata&#95;created:** 2024-11-28T02:49:35.069347
+- **metadata&#95;modified:** 2026-11-16T01:20:37.833821
+- **Resource id:** d02bdf54-4bc0-41e3-9586-d1158bcccfb0
+- **Resource name:** ugz&#95;ogd&#95;meteo&#95;d1&#95;2003.csv
+- **Resource package&#95;id:** dfecda71-8190-4d57-b215-f715dd5ed57d
+- **Resource description:** 
+- **Resource issued:** 2024-11-27 11:12:58.873998
+- **Resource modified:** 2026-11-15 23:41:11.056759
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **ugz&#95;ogd&#95;meteo&#95;d1&#95;2003.csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.stadt-zuerich.ch/dataset/ugz_meteodaten_tagesmittelwerte/download/ugz_ogd_meteo_d1_2003.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@zuerich.ch &#124; Open Data Zürich

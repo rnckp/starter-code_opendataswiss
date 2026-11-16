@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: COVID&#95;19 Abwassermonitoring im Kanton Zürich ab 30.05.2021 bis 02.05.2023
+
+Dreimal&#42; wöchentliche SARS-CoV-2-RNA-Messungen aus Proben von dreizehn über den Kanton Zürich verteilten Abwasserreinigungsanlagen &#40;ARA&#41;. Die analysierten Werte werden einige Tage darauf publiziert &#40;einmal wöchentlich jeweils am Mittwoch&#41;. Daten enhalten: &#x27;SARS-CoV-2 RNA im Rohabwasser pro 100&#x27;000 Personen&#x27;, &#x27;Zufluss zur ARA in Kubikmeter pro Tag&#x27;, &#x27;Einzugsgebiet &#40;Anzahl an die ARA angeschlossene Einwohner:innen&#41;&#x27;. Wichtiger Hinweis: Die Messungen von SARS-CoV-2-RNA im Abwasser unterliegen teilweise erheblichen Messfehlern. Eine Interpretation der Abwassermessungen von SARS-CoV-2 im Vergleich zu den Fallzahlen ist daher nur über längere Zeiträume aussagekräftig und hängt von der gewählten Skala ab. Die Daten sollten daher mit Vorsicht interpretiert werden, da ein grosser Spielraum für Fehlinterpretationen besteht. Im Zeitraum von Januar bis Anfang März 2022 wurde die Aktualisierung der Daten pausiert, um die Abweichungen des Abwassermonitorings von den gemeldeten positiven Fallzahlen zu untersuchen. Nachdem die Methode an die vorherrschende Virusvariante angepasst worden ist, werden die Daten rückwirkend ab Januar 2022 weiter aktualisiert.<br>Ab Januar 2023 wird die Beprobung auf die ARAs Bülach, Dietikon, Illnau-Effretikon, Winterthur und Zürich &#40;Werdhölzli&#41; reduziert.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/covid_19-abwassermonitoring-im-kanton-zurich-ab-30-05-2021)
+
+Automatically generated R starter code for dataset 7dc986ce-4432-4ea0-86ce-9f59c9630781.
+
+## Metadata
+
+- **identifier:** 728@gesundheitsdirektion-kanton-zuerich
+- **publisher.name:** Gesundheitsdirektion des Kantons Zürich
+- **organization.display&#95;name:** Gesundheitsdirektion Kanton Zürich
+- **organization.url:** https://www.zh.ch/de/gesundheitsdirektion.html
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** krankheiten, corona, covid-19, wasser, gesundheit, kantonzuerich, bezirke
+- **issued:** 2021-07-06 00:00:00+02:00
+- **metadata&#95;created:** 2021-09-30T03:37:27.145370
+- **metadata&#95;modified:** 2026-09-15T03:05:26.450453
+- **Resource id:** 9fbc4d0b-4919-43e6-a0ed-efa32af07c5f
+- **Resource name:** SARS-CoV-2-RNA-Abwassermonitoring
+- **Resource package&#95;id:** 7dc986ce-4432-4ea0-86ce-9f59c9630781
+- **Resource description:** SARS-CoV-2-RNA-Messungen aus Proben von dreizehn ins Monitoring integrierten Abwasserreinigungsanlagen &#40;ARA&#41;. Variabeln: &#x27;date&#x27; = Tag der Entnahme der Probe; &#x27;SARS&#95;CoV&#95;2&#95;RNA&#95;copies&#95;d&#95;100000&#x27; = SARS-CoV-2 RNA im Rohabwasser pro 100&#x27;000 Personen; &#x27;quantification&#95;flag&#x27; = &#x27;Q&#x27;: über Quantifizierungsgrenze &#40;&gt;LOQ&#41;, &#x27;D&#x27;: über Nachweisgrenze &#40;&gt;LOD&#41;, &#x27;N&#x27;: unter Nachweisgrenze &#40;&lt;LOD&#41;; &#x27;flow&#95;m3&#95;d&#x27; = Zufluss zur ARA in Kubikmeter pro Tag; &#x27;sample&#95;origin&#x27; = Abkürzung der ARA &#40;&#x27;ARA&#95;code&#x27; gemäss Ressource &quot;Liste der Abwasserreinigungsanlagen mit Einzugsgebiet&quot;&#41;.
+- **Resource issued:** 2021-07-06 00:00:00+02:00
+- **Resource modified:** 2022-03-21 00:00:00+01:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **SARS-CoV-2-RNA-Abwassermonitoring** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://raw.githubusercontent.com/openZH/covid_19_wastewater_monitoring_ZH/master/COVID19_Abwassermonitoring.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+gdstab@gd.zh.ch &#124; Gesundheitsdirektion des Kantons Zürich, Coronavirus-Hotline

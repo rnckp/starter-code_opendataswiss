@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: GA Travelcard / Half Fare Travelcard
+
+Die vierstelligen Postleitzahlen beziehen sich auf die im amtlichen Ortschaftenverzeichnis angegebenen Postleitzahlen:&#91;Amtliches Ortschaftenverzeichnis&#93;&#40;https://www.swisstopo.admin.ch/de/amtliches-ortschaftenverzeichnis&#41;Institutionelle Postleitzahlen, die im Ortschaftenverzeichnis nicht angegeben sind, wurden einer Postleitzahl mit räumlichem Bezug zugeordnet &#40;bspw. 3000 Bern 65 zu 3014 Bern&#41;.The four-digit postal codes refer to the postal codes listed in the official register of localities:&#91;Official directory of towns and cities&#93;&#40;https://www.swisstopo.admin.ch/en/official-directory-of-towns-and-cities&#41;Institutional postal codes that are not listed in the list of localities have been assigned to a postal code with spatial reference &#40;e.g. 3000 Bern 65 to 3014 Bern&#41;.Jahr&#95;An&#95;Anno<br>Jahr des<br>  Stichdatums des Datenauszugs. Der Datenauszug erfolgt jeweils in Woche 51 des<br>  Bezugsjahres.<br><br><br>PLZ&#95;NPA<br>Vierstellige<br>  Postleitzahl gemäss Ortschaftenverzeichnis von cadastre.ch.<br><br><br>GA&#95;AG<br>Anzahl<br>  Generalabonnemente im Umlauf per Stichdatum.<br><br><br>GA&#95;AG&#95;flag<br>Falls<br>  1: Angegeben ist aus Datenschutzgründen der Mittelwert der Anzahl<br>  Generalabonnemente über alle PLZ-Kreise, die in der ersten PLZ-Zahl<br>  übereinstimmen und weniger als 20 Abonnemente ausweisen.<br><br><br>HTA&#95;ADT&#95;meta-prezzo<br>Anzahl<br>  Halbtaxabonnemente im Umlauf per Stichdatum.<br><br><br>HTA&#95;ADT&#95;meta-prezzo&#95;flag<br>Falls<br>  2: Angegeben ist aus Datenschutzgründen der Mittelwert der Anzahl<br>  Halbtaxabonnemente über alle PLZ-Kreise, die weniger als 20 Abonnemente<br>  ausweisen.<br>
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/generalabo-halbtax1)
+
+Automatically generated R starter code for dataset 11a86e61-03f4-4128-81bd-930505e8d103.
+
+## Metadata
+
+- **identifier:** generalabo-halbtax@schweizerische-bundesbahnen-sbb
+- **publisher.name:** schweizerische-bundesbahnen-sbb
+- **organization.display&#95;name:** Schweizerische Bundesbahnen SBB
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** traffic
+- **issued:** 2017-08-16 00:00:00
+- **metadata&#95;created:** 2019-09-11T10:46:05.290510
+- **metadata&#95;modified:** 2026-10-31T08:01:46.488299
+- **Resource id:** 57146987-5e1e-484d-b497-8aa1c926a302
+- **Resource name:** csv
+- **Resource package&#95;id:** 11a86e61-03f4-4128-81bd-930505e8d103
+- **Resource description:** GA Travelcard / Half Fare Travelcard &#40;csv&#41;
+- **Resource issued:** 2017-08-16 00:00:00
+- **Resource modified:** 2026-03-13 09:20:45+00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://sbb.opendatasoft.com/api/v2/catalog/datasets/generalabo-halbtax/exports/csv?use_labels=true")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+data@sbb.ch &#124; Ansprechstelle fuer Daten

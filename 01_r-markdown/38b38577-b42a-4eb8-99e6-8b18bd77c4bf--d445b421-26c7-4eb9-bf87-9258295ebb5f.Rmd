@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Bilan démographique de la population résidante permanente, par commune, sexe et catégorie de nationalité, dès 1981
+
+Ce jeu de données présente le bilan démographique de la population du canton de Fribourg, ventilé par genre, catégorie de nationalité et niveau géographique &#40;district, commune&#41;, dès 1981.Le bilan démographique décrit, pour chaque année civile, la variation de l&#x27;effectif de la population résultant des mouvements naturels &#40;naissances, décès&#41; et spatiaux &#40;immigrations et émigrations internationales, arrivées et départs intercantonaux et intracantonaux&#41;, ainsi que des changements de type de population, des changements de nationalité, des changements de genre et d&#x27;éventuelles corrections statistiques. Il comprend notamment la population au 1er janvier, la population au 31 décembre et l&#x27;accroissement total. La population de référence est la population résidante permanente. Jusqu&#x27;en 2010, celle-ci comprend les personnes de nationalité suisse ayant leur domicile principal en Suisse ainsi que les ressortissants étrangers titulaires d&#x27;une autorisation de séjour valable au moins 12 mois. Depuis le 1er janvier 2011, avec l&#x27;introduction de STATPOP, elle inclut en outre les personnes en procédure d&#x27;asile séjournant en Suisse depuis au moins 12 mois. Des écarts ponctuels entre l&#x27;état de la population au 31 décembre et celui du 1er janvier de l&#x27;année suivante peuvent apparaître, notamment lors des adaptations aux recensements fédéraux de la population &#40;1990/1991 et 2000/2001&#41;, du passage d&#x27;ESPOP à STATPOP &#40;2010/2011&#41; ou de modifications territoriales.Les données sont établies par l&#x27;Office fédéral de la statistique. Elles reposent sur la Statistique de l&#x27;état annuel de la population &#40;ESPOP&#41; pour la période 1981-2010, puis sur la Statistique de la population et des ménages &#40;STATPOP&#41; dès 2011.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/bevolkerungsbilanz-der-standigen-wohnbevolkerung-nach-gemeinde-geschlecht-und-staatsangeho-1981)
+
+Automatically generated R starter code for dataset 38b38577-b42a-4eb8-99e6-8b18bd77c4bf.
+
+## Metadata
+
+- **identifier:** 01&#95;03&#95;bilan&#95;demo&#95;sex&#95;natio@ssd
+- **publisher.name:** ssd
+- **organization.display&#95;name:** Amt für Statistik und Daten Freiburg
+- **organization.url:** https://www.fr.ch/deef/ssd
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** commune, nationalite, genre, population-residante
+- **issued:** 2026-08-20 00:00:00
+- **metadata&#95;created:** 2025-01-30T19:23:16.725355
+- **metadata&#95;modified:** 2026-09-15T02:07:05.133436
+- **Resource id:** d445b421-26c7-4eb9-bf87-9258295ebb5f
+- **Resource name:** csv
+- **Resource package&#95;id:** 38b38577-b42a-4eb8-99e6-8b18bd77c4bf
+- **Resource description:** Bilan démographique de la population résidante permanente, par commune, sexe et catégorie de nationalité, dès 1981 &#40;csv&#41;
+- **Resource issued:** 2026-08-20 00:00:00
+- **Resource modified:** 2026-08-20 07:27:57.066000+00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://opendata.fr.ch/api/explore/v2.1/catalog/datasets/01_03_bilan_demo_sex_natio/exports/csv?use_labels=true")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@fr.ch &#124; Centre de compétences et de coordination OGD / Kompetenz- und Koordinationszentrum für OGD

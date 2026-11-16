@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Réserves naturelles et plans de site
+
+Couche présentant les différents sites naturels du Canton, bénéficiant d&#x27;une protection légale en faveur de la nature. Ces périmètres ont été définis sur la base d&#x27;inventaires fédéraux et cantonaux ou encore de connaissances d&#x27;experts. Ils ont été validés par Arrêtés du Conseil d&#x27;Etat. Cette couche répertorie les deux grands types de protections de sites naturels du Canton, précise les bases légales de référence ainsi que la date d&#x27;adoption du périmètre par Arrêté du Conseil d&#x27;Etat. Ces deux types de protections sont : - Les réserves naturelles : définies sur la base du règlement sur la protection du paysage, des milieux naturels et de la flore &#40;RPPMF, L 4 05.11&#41;. - Les plans de sites : définies sur la base de la loi sur la protection des monuments, de la nature et des sites &#40;LPMNS, L 4 05&#41;. Ces deux types de protection présentent plusieurs différences notoires, les principales étant listées ci-dessous : Réserve naturelle Plan de site Base légale L 4 05.11 &#40;art.18 à 21&#41; L 4 05 &#40;art.38 à 41&#41; Validation Arrêté du Conseil d&#x27;Etat Arrêté du Conseil d&#x27;Etat Mention au OUI, dans tous les cas &#40;art.6&#41; Possibilité &#40;at. 64&#41; Registre Foncier Durée de validité Illimité Illimité Accord du OUI, nécessité d&#x27;obtenir Non, soumis à enquête propriétaire un accord signé. public, plan de site opposable au propriétaire. Document de Plan de gestion Plan&#40;s&#41; et éventuellement référence règlement. Validité du 10 à 15 ans, en principe lllimité. Toute modification document &#40;pas de contrainte légale&#41; engendre une nouvelle référence approbation par le Conseil d&#x27;Etat. Restrictions Toute activité proscrite &#40;art.19&#41; Uniquement maintenir voire sauf les travaux agricoles et améliorer l&#x27;état du site ou sylvicoles compatibles avec le restrictions précisées dans but de protection. un éventuel règlement. Dérogations Activités autorisées Aucune dans le plan de gestion &#40;art.20&#41; Les réserves naturelles situées en forêt &#40;soit dans le cadastre forestier selon la loi cantonale sur les forêts M 5 10 &#41; sont également des réserves forestières, au sens de l&#x27;article 36 de la loi cantonale sur les forêts &#40;LForêts M 5 10&#41;. - Les réserves intégrales ou sanctuaires forestiers, où toute exploitation de bois et gestion active de milieux naturels est proscrite, seuls les chemins sont sécurisés. - Les réserves forestières, correspondent à un mode d&#x27;exploitation en taillis sous futaie. Ce type de réserve est historique et correspond à une volonté post seconde guerre mondiale de redéfinir durablement des zones d&#x27;exploitation plus traditionnelles et optimales d&#x27;un bois de qualité. Ce type de réserve n&#x27;est aujourd&#x27;hui plus utilisé. - Les réserves biologiques à gestion dirigée, permettent le maintien de milieux particulièrement intéressants et diversifiés. Elles visent, par des interventions plus ou moins intensives à garantir la présence en forêt de certains milieux de types prairies ou zones humides, mais aussi d&#x27;associations phytosociologiques particulièrement rares comme les pinèdes à molinie. Ce type de réserve en forêt est le plus courant sur le canton. L&#x27;accès au public à ces sites est indiqué sur place travers d&#x27;une signalisation adaptée reprenant les règles et usages pour chaque site. &#40;art.23; RPPMF; L 4 05.11&#41;
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/reserves-naturelles-et-plans-de-site1)
+
+Automatically generated R starter code for dataset 5438e914-523f-4ddf-afb3-2ad41eb4ee24.
+
+## Metadata
+
+- **identifier:** FFP&#95;RES&#95;NAT&#95;PLAN&#95;SITE@canton-geneve
+- **publisher.name:** Office cantonal de l&#x27;agriculture et de la nature
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:05:07.438021
+- **metadata&#95;modified:** 2026-10-31T03:46:24.998306
+- **Resource id:** fa7ee2d4-cc6f-41ee-a966-d49266a33a8f
+- **Resource name:** CSV
+- **Resource package&#95;id:** 5438e914-523f-4ddf-afb3-2ad41eb4ee24
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-10-29 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/FFP_RES_NAT_PLAN_SITE-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+joelle.kohler@etat.ge.ch &#124; Office cantonal de l&#x27;agriculture et de la nature

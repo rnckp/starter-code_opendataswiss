@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: CCN, hygroscopicity, predicted cloud droplet numbers Weissfluhjoch
+
+Cloud Condensation Nuclei &#40;CCN&#41; data: A Droplet Measurement Technologies &#40;DMT&#41; single-column continuous-flow streamwise thermal gradient chamber &#40;CFSTGC; Roberts and Nenes, 2005&#41; was deployed at the measurement site Weissfluhjoch &#40;2700 m a.s.l., LON: 9.806475, LAT: 46.832964&#41; to record the in-situ CCN number concentrations between February 24 and March 8 2019 for different supersaturations &#40;SS&#41;. To account for the difference between the ambient &#40;&#126;735 mbar&#41; and the calibration pressure &#40;&#126;800 mbar&#41;, the SS reported by the instrument is adjusted by a factor of 0.92. The CFSTGC was cycled between 6 discrete SS values ranging from 0.09% to 0.74%, producing a full CCN spectrum every hour. The raw CCN measurements are filtered to discount periods of transient operation and whenever the room temperature housing the instrument changed sufficiently to induce a reset in column temperature. Additional information can be found in Section 2.1.2 &#91;here&#93;&#40;https://acp.copernicus.org/preprints/acp-2020-1036/&#41;.<br>Hygroscopicity data: The CCN number concentration measurements were directly related to the size distribution and total aerosol concentration data measured by the Scanning Mobility Particle Size Spectrometer &#40;SMPS&#41; instrument at the same station &#40;https://www.envidat.ch/dataset/aerosol-data-weissfluhjoch&#41; to infer the particles hygroscopicity parameter &#40;kappa&#41;. For each SMPS scan, the particles critical dry diameter &#40;Dcr&#41; is estimated by integrating backward the SMPS size distribution, until the aerosol number matches the CCN concentration observed for the same time period as the SMPS scan. Assuming the particle chemical composition is internally mixed, the kappa is determined from Dcr and SS, applying Köhler theory. Additional information can be found in Section 2.2 &#91;here&#93;&#40;https://acp.copernicus.org/preprints/acp-2020-1036/&#41;.<br>Predicted cloud droplet numbers: Droplet calculations are carried out with the physically based aerosol activation parameterization of Morales and Nenes &#40;2014&#41;, employing the “characteristic velocity” approach of Morales and Nenes &#40;2010&#41;. Aerosol size distribution observations required to predict the cloud droplet numbers and maximum in-cloud supersaturation are obtained from the SMPS instrument deployed at Weissfluhjoch. The required vertical velocity measurements are derived from the wind Doppler Lidar &#40;https://www.envidat.ch/dataset/lidar-wind-profiler-data&#41; deployed at Davos Wolfgang and are extracted for the altitude of interest, being 1100 m above ground level for Weissfluhjoch. Additional information can be found in Section 2.3 &#91;here&#93;&#40;https://acp.copernicus.org/preprints/acp-2020-1036/&#41;.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/ccn-hygroscopicity-predicted-cloud-droplet-numbers-weissfluhjoch)
+
+Automatically generated R starter code for dataset d22c6b8c-ca52-459b-bb35-27cafc09b4d1.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.198@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** cloud-modeling, cloud-droplets, ccn, dmt-ccn-chamber, supersaturation, weissfluhjoch, hygroscopicity, sigma-w, raclets
+- **issued:** 2020-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:28:04.973373
+- **metadata&#95;modified:** 2026-11-14T02:45:43.374766
+- **Resource id:** 6c40d1e3-2011-4457-b123-558f55ca4a3f
+- **Resource name:** 
+- **Resource package&#95;id:** d22c6b8c-ca52-459b-bb35-27cafc09b4d1
+- **Resource description:** Resource Title: Predicted cloud droplet number concentrations Weissfluhjoch<br>    Size: 256123 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/ecb08acd-01d0-40e6-ac42-584aab9fc27f/resource/f732a28e-10b1-411f-a497-b784e1b716af/download/predicted&#95;droplets&#95;wfj&#95;kappa0.25.csv<br>    Description: In-situ measurements of aerosol size distributions along with updraft velocities collected from a wind Doppler Lidar are coupled with a state-of-the art droplet activation parameterization &#40;Morales and Nenes, 2014&#41; to determine the cloud droplet number and maximum in-cloud supersaturation that can potentially form over the Weissfluhjoch station between February 24 and March 8 2019. For this, a hygroscopicity parameter of 0.25 is assumed, according to the CCN-derived values. The data file contains:<br><br>&#42; Date and time &#40;DD/MM/YYYY hh:mm:ss&#41; in UTC<br>&#42; The wind-lidar derived standard deviation of updraft velocities &#40;sigma-w&#41; in m/s, used to apply the parameterization employing a single characteristic velocity &#40;Morales and Nenes, 2010&#41;<br>&#42; The maximum predicted cloud parcel supersaturation &#40;Smax%&#41;<br>&#42; The total in-situ aerosol number concentration &#40;Naer&#41; in cmˉ³, measured by the SMPS<br>&#42; The predicted cloud droplet numbers &#40;Nd&#41; in cmˉ³<br>&#42; The activation fraction &#40;%&#41;
+- **Resource issued:** 2020-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **6c40d1e3-2011-4457-b123-558f55ca4a3f** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/ecb08acd-01d0-40e6-ac42-584aab9fc27f/resource/f732a28e-10b1-411f-a497-b784e1b716af/download/predicted_droplets_wfj_kappa0.25.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

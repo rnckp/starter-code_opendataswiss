@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Detaillierte Statistik 2024 der Überwachungen im Post- und Fernmeldeverkehr
+
+Die Schweizer Strafverfolgungsbehörden und der Nachrichtendienst des Bundes &#40;NDB&#41; können zur Aufklärung von schweren Straftaten gestützt auf die Strafprozessordnung bzw. auf das Nachrichtendienstgesetz Massnahmen zur Überwachung des Post- und Fernmeldeverkehrs anordnen. Der Dienst Überwachung Post- und Fernmeldeverkehr &#40;Dienst ÜPF&#41; führt über diese Überwachungen eine Statistik gemäss Artikel 16 Absatz 1 Buchstabe k Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs &#40;BÜPF&#41;.<br><br>Die Anzahl der Überwachungsmassnahmen ist im Jahr 2024 gestiegen. Sowohl bei den Echtzeitüberwachungen &#40;+46%&#41; als auch bei den rückwirkenden Überwachungen &#40;+24%&#41; ist ein Wachstum zu verzeichnen. Auch die Anzahl Notsuchen liegt im Jahr 2024 um knapp ein Fünftel über dem Vorjahresniveau. Anders verhält es sich bei den Fahndungen, die leicht gesunken sind.<br><br>Der stärkste Anstieg betrifft die Antennensuchläufe, deren Zahl sich verfünffacht hat. Auch die Fallzahlen haben sich im Jahr 2024 im Vergleich zum Vorjahr verdoppelt. <br><br><br>Hinweis: Die Zahlen des NDB und des Dienstes ÜPF sind aufgrund einer anderen Zählweise nicht vergleichbar.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/detaillierte-statistik-2024-der-uberwachungen-im-post-und-fernmeldeverkehr1)
+
+Automatically generated R starter code for dataset 648a9aed-03d6-49fe-991b-423ede8fc883.
+
+## Metadata
+
+- **identifier:** UEPF&#95;DETSTAT@dienst-ueberwachung-post-und-fernmeldeverkehr-uepf
+- **publisher.name:** Dienst Überwachung Post- und Fernmeldeverkehr &#40;ÜPF&#41;
+- **organization.display&#95;name:** Dienst Überwachung Post- und Fernmeldeverkehr
+- **organization.url:** https://www.li.admin.ch
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** fernmeldeverkehr, kriminalitat, sicherheit, uberwachung
+- **issued:** 2025-04-29 00:00:00
+- **metadata&#95;created:** 2026-07-30T17:06:15.006423
+- **metadata&#95;modified:** 2026-09-15T06:01:36.328999
+- **Resource id:** 3f5e78ba-258f-401e-9d77-69dbf8610b90
+- **Resource name:** Detaillierte Statistik ÜPF 2024
+- **Resource package&#95;id:** 648a9aed-03d6-49fe-991b-423ede8fc883
+- **Resource description:** Die detaillierten Statistiken zu den Post- und Fernmeldeüberwachungen in der Schweiz aus dem Jahr 2024.
+- **Resource issued:** 2025-04-29 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Detaillierte Statistik ÜPF 2024** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.li.admin.ch/sites/default/files/2025-06/uberwachungen-2024.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+ptss-aemterkonsultationen@isc-ejpd.admin.ch &#124; Dienst Überwachung Post- und Fernmeldeverkehr ÜPF

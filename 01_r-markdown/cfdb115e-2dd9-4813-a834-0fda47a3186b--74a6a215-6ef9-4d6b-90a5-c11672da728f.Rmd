@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Luftschadstoffemissionen im Kanton Zürich
+
+Emissionen der wichtigsten Luftschadstoffe &#40;BC, CO, NH3, NMVOC, NOx, PM10, PM2.5, SO2&#41; im Kanton Zürich. Die Emissionsbilanzierung liegt bis auf Stufe Gemeinde und für verschiedene Zeitstände vor. Die Emissionsdaten der Stickoxide &#40;NOx&#41;, Feinstaub &#40;PM10 und PM2.5&#41; sowie Russ &#40;BC&#41; wurden im Rahmen einer schweizweiten Aktualisierung der Karten für Luftschadstoffimmissionen Schweiz und Liechtenstein 2015, 2020, 2030 in Hektarrasterauflösung bilanziert. Die Datengrundlagen für die Emissionen bildet das Emissionsinformations-System Schweiz &#40;EMIS&#41; – die Datenbank des Bundesamts für Umwelt BAFU mit den nationalen Luftschadstoff- und Treibhausgasemissionen - zum Zeitpunkt Mitte 2019. In einer Ergänzungsstudie im Auftrag des BAFU wurden für dieselben Emittentengruppen anschliessend auch Emissionskataster in Hektarrasterauflösung für weitere Luftschadstoffe und Treibhausgase erstellt. Im Anschluss an die genannten Arbeiten hat die &#x27;Luftqualitätsüberwachung der Ostschweizer Kantone und des Fürstentums Liechtenstein&#x27; &#40;OSTLUFT&#41; die Arbeitsgemeinschaft INFRAS/Meteotest damit beauftragt, die Emissionen aller genannten Substanzen auf Stufe Gemeinden des OSTLUFT-Gebiets zu aggregieren und die Daten in geeigneter Form aufzubereiten mit dem Ziel, für die OSTLUFT-Gemeinden eine mit dem schweizerischen Emissionskataster konsistente Datengrundlage zur Verfügung zu haben. Eine Aktualisierung der Daten wurde mit gleicher Methodik aber basierend auf den Datengrundlagen aus dem Emissionsinformations-System Schweiz &#40;EMIS&#41; zu den Zeitpunkten Mitte 2023 und 2025 durchgeführt. Die unterschiedlichen Datengrundlagen sind über das Attribut &#91;stand&#93; &#40;stand == &quot;sub&#95;19&quot;: Daten aus Submission 2019 &#124; stand == &quot;sub&#95;23&quot;: Daten aus Submission 2023 &#124; stand == &quot;sub&#95;25&quot;: Daten aus Submission 2025&#41; filterbar. Hinweis: Die Städte Winterthur und Zürich verfügen über eigenen Bilanzierungen der Luftschadstoffe auf ihrem Gebiet. Detailliertere Angaben dazu sind unter &quot;weitere Informationen&quot; verlinkt.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/luftschadstoffemissionen-im-kanton-zurich)
+
+Automatically generated R starter code for dataset cfdb115e-2dd9-4813-a834-0fda47a3186b.
+
+## Metadata
+
+- **identifier:** 1363@awel-kanton-zuerich
+- **publisher.name:** Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich
+- **organization.display&#95;name:** Amt für Abfall, Wasser, Energie und Luft Kanton Zürich
+- **organization.url:** https://www.zh.ch/de/baudirektion/amt-fuer-abfall-wasser-energie-luft.html
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** immissionen, luftschadstoffe, gemeinden, kantonzuerich, stickstoffdioxid, luft, kohlenmonoxid, feinstaub, ammoniak, luftqualitaet, schadstoffbelastung, emissionen, russ
+- **issued:** 2022-07-07 00:00:00+02:00
+- **metadata&#95;created:** 2022-07-08T03:13:18.547122
+- **metadata&#95;modified:** 2026-09-15T03:07:21.268687
+- **Resource id:** 74a6a215-6ef9-4d6b-90a5-c11672da728f
+- **Resource name:** Luftschadstoffemissionen im Kanton Zürich ab 1990
+- **Resource package&#95;id:** cfdb115e-2dd9-4813-a834-0fda47a3186b
+- **Resource description:** Emissionen der wichtigsten Luftschadstoffe &#40;NOx, PM10, PM2.5, Russ, Ammoniak, NMVOC, CO und SO2&#41; im Kanton Zürich. <br>Die aufgeführten Luftschadstoffemissionen sind nach dem Territorialprinzip bilanziert und werden in Tonnen pro Jahr ausgewiesen. <br>Die Emissionen liegen als jährliche Zeitreihe ab 1990 vor. <br>Mehr Informationen zum Inhalt der Daten sind in der Ressource &quot;Datenbeschreibung Luftschadstoffemissionen im Kanton Zürich&quot; enthalten.
+- **Resource issued:** 2026-01-12 15:42:25.383137+01:00
+- **Resource modified:** 2026-01-19 09:50:22.632908+01:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Luftschadstoffemissionen im Kanton Zürich ab 1990** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001363_00006729.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+gian-marco.alt@bd.zh.ch &#124; Amt für Abfall, Wasser, Energie und Luft des Kantons Zürich, Abteilung Luft, Klima und Strahlung

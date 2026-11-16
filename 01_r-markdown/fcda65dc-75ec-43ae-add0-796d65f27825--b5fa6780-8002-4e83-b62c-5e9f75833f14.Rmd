@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: FACE: Stillberg CO2 enrichment and soil warming study
+
+Background information<br>High elevation ecosystems are important in research about environmental change because shifts in climate associated with anthropogenic greenhouse gas emissions are predicted to be more pronounced in these areas compared to most other regions of the world. This project involved a Free Air CO2 Enrichment &#40;FACE&#41; and soil warming experiment located in a natural treeline environment near Davos, Switzerland &#40;Stillberg, 2200 m a.s.l.&#41;. Elevated atmospheric CO2 concentrations &#40;+200 ppm&#41; were applied from 2001 until 2009, and a soil warming treatment &#40;+4 °C&#41; was applied from 2007 until 2012. The combined CO2 enrichment and warming treatment reflects conditions expected to occur in this region in approximately 2050. A broad range of ecological and biogeochemical research was carried out as part of this environmental change project.<br> Experimental design<br>The experiment consisted of 40 hexagonal 1.1 m² plots, 20 with a &#42;Pinus mugo&#42; ssp. &#42;uncinata&#42; &#40;mountain pine, evergreen&#41; individual in the centre and 20 with a &#42;Larix decidua&#42; &#40;European larch, deciduous&#41; individual in the centre. A dense cover of understorey vegetation surrounded the tree in each plot, including the dominant dwarf shrub species &#42;Vaccinium myrtillus&#42; &#40;bilberry&#41;, &#42;Vaccinium gaultherioides&#42; &#40;group &#42;V. uliginosum agg.&#42;, northern bilberry&#41; and &#42;Empetrum nigrum&#42; ssp. &#42;hermaphroditum&#42; &#40;crowberry&#41; plus several herbaceous and non-vascular species.<br>At the beginning of the experimental period, the 40 plots were assigned to ten groups of four neighbouring plots &#40;two larch and two pine trees per group&#41; in order to facilitate the logistics of CO2 distribution and regulation. Half of these groups were randomly assigned to an elevated CO2 treatment, while the remaining groups served as controls and received no additional CO2. In spring 2007, one plot of each tree species identity was randomly selected from each of the 10 CO2 treatment groups and assigned a soil warming treatment, yielding a balanced design with a replication of five individual plots for each combination of CO2 level, warming treatment and tree species.<br> Data description<br>Soil and air conditions have been monitored closely throughout the study period, with most measurements made during the combined CO2 x warming experiment &#40;2007-2009&#41;. The data comprise of air temperature, soil temperature, soil moisture, sapflow, tree diameter and CO2 measurements.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/face-stillberg-co2-enrichment-and-soil-warming-study)
+
+Automatically generated R starter code for dataset fcda65dc-75ec-43ae-add0-796d65f27825.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.46@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** soil-temperature, carbon-dioxide, stillberg, climate-change, vegetation, experiment
+- **issued:** 2016-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:47:13.282788
+- **metadata&#95;modified:** 2026-11-14T03:02:22.507461
+- **Resource id:** b5fa6780-8002-4e83-b62c-5e9f75833f14
+- **Resource name:** 
+- **Resource package&#95;id:** fcda65dc-75ec-43ae-add0-796d65f27825
+- **Resource description:** Resource Title: Metadata FACE Stillberg Data File Description<br>    Size: 9011 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/0d88fc12-285e-4a64-b2d6-d8a7bf0603f8/resource/eb14b5cf-974f-402a-9cf6-1cc95bd0a7dd/download/metadata&#95;face&#95;stillberg&#95;data-file&#95;description.csv<br>    Description: List of descriptions for each of the .csv FACE data files.
+- **Resource issued:** 2016-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **b5fa6780-8002-4e83-b62c-5e9f75833f14** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/0d88fc12-285e-4a64-b2d6-d8a7bf0603f8/resource/eb14b5cf-974f-402a-9cf6-1cc95bd0a7dd/download/metadata_face_stillberg_data-file_description.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

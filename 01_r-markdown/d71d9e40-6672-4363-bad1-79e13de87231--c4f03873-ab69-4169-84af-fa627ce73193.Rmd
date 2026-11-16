@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Coronavirus &#40;COVID-19&#41;: Fallzahlen und Inzidenzen Basel-Stadt
+
+Dieser Datensatz zeigt die Anzahl positiv auf SARS-CoV-2 getesteter Personen mit Wohnsitz im Kanton Basel-Stadt sowie die kumulierten Werte über die letzten 7 resp. 14 Tage, die jeweiligen Mittelwerte und die Inzidenzen pro 100 000 EinwohnerInnen gemäss &#91;STATPOP&#93;&#40;https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/erhebungen/statpop.html&#41;. Die Zahlen werden gemäss dem Datum des Test-Resultats ausgewiesen, also gemäss jenem Datum, an dem ein Testresultat vorliegt. Dies geschieht in aller Regel innerhalb von 24 Stunden nach einem erfolgten Test. Bei nachträglich eintreffenden Meldungen werden die Zahlen der Vortage entsprechend korrigiert.Änderungsprotokoll:Die Erhebung der Werte wurde per 5. Juli 2023 sistiert. Der Datensatz wird nicht mehr aktualisiert. Aktualisierungsintervall von &quot;WEEKLY&quot; auf &quot;NEVER&quot; geändert.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/coronavirus-covid-19-fallzahlen-und-inzidenzen-basel-stadt)
+
+Automatically generated R starter code for dataset d71d9e40-6672-4363-bad1-79e13de87231.
+
+## Metadata
+
+- **identifier:** 100108@kanton-basel-stadt
+- **publisher.name:** Medizinische Dienste
+- **organization.display&#95;name:** Kanton Basel-Stadt
+- **organization.url:** https://data.bs.ch
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** krankheit, gesundheit, coronavirus, corona, covid-19, test, inzidenz, fallzahlen, lungenentzundung
+- **issued:** 2020-12-04 00:00:00
+- **metadata&#95;created:** 2021-09-03T09:18:28.281991
+- **metadata&#95;modified:** 2026-09-15T00:49:35.756512
+- **Resource id:** c4f03873-ab69-4169-84af-fa627ce73193
+- **Resource name:** csv
+- **Resource package&#95;id:** d71d9e40-6672-4363-bad1-79e13de87231
+- **Resource description:** Coronavirus &#40;COVID-19&#41;: Fallzahlen und Inzidenzen Basel-Stadt &#40;csv&#41;
+- **Resource issued:** 2020-12-04 00:00:00
+- **Resource modified:** 2024-03-13 14:01:44.682000+00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by/
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.bs.ch/api/v2/catalog/datasets/100108/exports/csv?use_labels=true")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@bs.ch &#124; Open Data Basel-Stadt

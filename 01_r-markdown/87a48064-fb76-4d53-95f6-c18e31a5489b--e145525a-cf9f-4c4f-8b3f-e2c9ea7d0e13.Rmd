@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Daten der Verkehrszählung zum motorisierten Individualverkehr &#40;Stundenwerte&#41;, seit 2012
+
+Die hier verfügbaren Datensätze beinhalten die &#42;&#42;täglich aktualisierten&#42;&#42; Messwerte zum motorisierten Individualverkehr &#40;MIV&#41; in der Stadt Zürich, welche von den zahlreichen Zählstellen der Dienstabteilung Verkehr &#40;DAV&#41; gemessen wurden.<br><br>Die Aktualisierung beinhaltet jeweils die Daten vom &#42;&#42;Vortag&#42;&#42;. Bis spätestens 07:00 Uhr morgens sind die neuesten Daten des Vortags verfügbar.<br><br>Zu einer Zählstelle gehören mehrere Messstellen, welche wiederum Messungen mit sogenannten Detektoren vornehmen. In den vorliegenden Datensätzen sind die Messwerte pro Zählstelle enthalten. Für jede Zählstelle gibt es einen detaillierten PDF-Situationsplan in der Datei &quot;Zaehlstellen&#95;Detail.zip&quot;, welcher u.a. die genaue Lage der Detektoren anzeigt.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/daten-der-verkehrszahlung-zum-motorisierten-individualverkehr-stundenwerte-seit-2012)
+
+Automatically generated R starter code for dataset 87a48064-fb76-4d53-95f6-c18e31a5489b.
+
+## Metadata
+
+- **identifier:** 6212fd20-e816-4828-a67f-90f057f25ddb@stadt-zurich
+- **publisher.name:** Dienstabteilung Verkehr, Sicherheitsdepartement
+- **organization.display&#95;name:** Stadt Zürich
+- **organization.url:** http://www.stadt-zuerich.ch/opendata
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** auto, motorrad, sachdaten, sasa, stau, tabelle, verkehr, verkehrszaehlung, zeitreihe
+- **issued:** 2020-03-13 00:00:00
+- **metadata&#95;created:** 2025-07-05T03:33:13.749034
+- **metadata&#95;modified:** 2026-11-16T01:27:51.781668
+- **Resource id:** e145525a-cf9f-4c4f-8b3f-e2c9ea7d0e13
+- **Resource name:** sid&#95;dav&#95;verkehrszaehlung&#95;miv&#95;OD2031&#95;2012.csv
+- **Resource package&#95;id:** 87a48064-fb76-4d53-95f6-c18e31a5489b
+- **Resource description:** 
+- **Resource issued:** 2020-11-03 12:07:03.038170
+- **Resource modified:** 2026-11-15 11:00:46.110709
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **sid&#95;dav&#95;verkehrszaehlung&#95;miv&#95;OD2031&#95;2012.csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.stadt-zuerich.ch/dataset/sid_dav_verkehrszaehlung_miv_od2031/download/sid_dav_verkehrszaehlung_miv_OD2031_2012.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@zuerich.ch &#124; Open Data Zürich

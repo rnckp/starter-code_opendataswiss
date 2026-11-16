@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Hydraulic stress limits thermal acclimation in trees under chronic drought
+
+Plant ecophysiological and associated environmental data for two tree species &#40;&#42;Fagus sylvatica&#42; and &#42;Quercus pubescens&#42;&#41; grown for five years in a factorial open-top climate chamber experiment &#40;Model Ecosystem Facility, Birmensdorf, Switzerland&#41; to test the long-term effects of heat &#40;+5 °C&#41; and soil drought &#40;irrigation reduced by 50%&#41;. n = 4 trees per species and treatment, n = 48 trees total.<br> Included data sheets:<br>- Environmental&#95;Data.csv: Chamber-level environmental recorded every 10 minutes<br>- Tleaf.csv: Leaf temperatures recorded every 10 minutes<br>- Gas&#95;exchange.csv: Leaf-level gas exchange data taken diurnally on four days during the growing season<br>- Leaf&#95;traits.csv: Leaf functional traits<br>- TSMs&#95;HSMs.csv: Photosynthetic thermal tolerance and leaf water potential data, summarized also in terms of leaf thermal safety margins and hydraulic safety margins, collected 3-4 times during the growing season<br>- Scorch.csv: Leaf-level leaf scorching data, including leaf thermal safety margins and scorching occurrence and presence, summarized by date
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/hydraulic-stress-limits-thermal-acclimation-in-trees-under-chronic-drought)
+
+Automatically generated R starter code for dataset 172f1f5f-eba9-4963-999e-44f857221b3c.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.720@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** thermal-safety-margins, thermoregulation, hydraulic-safety-margins, gas-exchange, hot-drought, fagus-sylvatica, quercus-pubescens, leaf-scorching, functional-traits
+- **issued:** 2025-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:24:10.701297
+- **metadata&#95;modified:** 2026-11-14T02:51:51.372760
+- **Resource id:** 094622fb-4c98-4106-baca-fd6d205dbaeb
+- **Resource name:** 
+- **Resource package&#95;id:** 172f1f5f-eba9-4963-999e-44f857221b3c
+- **Resource description:** Resource Title: Leaf&#95;traits.csv<br>    Size: 7772 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/8780a01e-98aa-46bb-9938-ba8e0568fa20/resource/eaf9d8ce-80f5-489f-af97-e80760927aee/download/leaf&#95;traits.csv<br>    Description: Tree-level leaf functional trait data.<br><br>Variable List: <br>	- TreeID: Unique identifier for individual trees<br>	- Chamber: open-top-chamber ID<br>	- Treatment: chamber abiotic treatment &#40;C = control, H = heated, RM = reduced soil moisture, H&#95;RM = heated and reduced soil moisture&#41;<br>	- Heating: Yes or no<br>	- RM: Reduced soil moisture, yes or no<br> 	- Species: Tree species<br>	- Leaf&#95;width &#40;cm&#41;<br>	- Leaf&#95;area &#40;cm^2&#41;<br>	- Stomatal&#95;density &#40;count per cm^2&#41;<br>	- Pore&#95;length: Stomatal pore length &#40;micrometers&#41;<br>	- Guard&#95;cell&#95;width: Stomatal guard cell width &#40;micrometers&#41;<br>	- Leaf&#95;thickness &#40;mm&#41;<br>	- Epidermal&#95;thickness &#40;mm&#41;<br>	- Parenchyma&#95;thickness &#40;mm&#41;<br>	- Parenchyma:Epidermis: Ratio between parenchyma and epidermal thickness<br>	- Reflectance: Reflectance of photosynthetically active radiation &#40;400-700&#41;, fraction<br>	- Transmittance: Transmittance of photosynthetically active radiation &#40;400-700&#41;, fraction<br>	- Absorptance: Absorptance of photosynthetically active radiation &#40;400-700&#41;, fraction<br>	- Absorbance: Optical absorbance of photosynthetically active radiation &#40;400-700 nm&#41;, unitless<br>	- g1: Medlyn-style stomatal slope calculated with Licor LI6800 data
+- **Resource issued:** 2025-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by/
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **094622fb-4c98-4106-baca-fd6d205dbaeb** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/8780a01e-98aa-46bb-9938-ba8e0568fa20/resource/eaf9d8ce-80f5-489f-af97-e80760927aee/download/leaf_traits.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

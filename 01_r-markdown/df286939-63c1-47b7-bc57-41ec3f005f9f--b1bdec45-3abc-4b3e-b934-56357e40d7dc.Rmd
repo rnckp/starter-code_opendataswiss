@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Individual tree TLS point clouds for tree volume estimation
+
+Dataset<br>This dataset is based on terrestrial laser scanning &#40;TLS&#41; data acquired during winter 2020/2021 in leaf-off conditions, with a Leica BLK 360 instrument following a tree-centric scanning pattern. <br>The data was acquired on two sites &#40;47.42°N 8.49°E and 47.504°N, 7.78°E&#41;, both of which were managed mixed temperate forest stands.<br>Individual trees were semi-automatically segmented from the co-registered TLS point clouds.<br> Background<br>Accurate estimates of individual tree volume or biomass within forest inventories are essential for calibration and validation of biomass mapping products based on Earth observation data.<br>Terrestrial laser scanning &#40;TLS&#41; enables detailed and non-destructive volume estimation of individual trees, with existing approaches ranging from simple geometrical features to virtual 3D reconstruction of entire trees. Validating such approaches with weight measurements is a key step before the integration of TLS or other close-range technologies into operational applications such as forest inventories.<br>In this study, we firstly evaluate individual tree volume estimation approaches based on 3D reconstruction through quantitative structure models &#40;QSM&#41; against destructive reference data of 60 trees and compare them to operational allometric scaling models &#40;ASM&#41;.<br>Secondly, we determine the explanatory power of TLS-derived geometric parameters regarding total tree, stem, coarse wood and fine branch volume.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/individual-tree-tls-point-clouds-for-tree-volume-estimation)
+
+Automatically generated R starter code for dataset df286939-63c1-47b7-bc57-41ec3f005f9f.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.403@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** biomass, tree-volume, forest-inventory, single-tree, terrestiral-laserscanning, lidar
+- **issued:** 2023-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:48:33.611450
+- **metadata&#95;modified:** 2026-11-14T02:41:45.313322
+- **Resource id:** b1bdec45-3abc-4b3e-b934-56357e40d7dc
+- **Resource name:** 
+- **Resource package&#95;id:** df286939-63c1-47b7-bc57-41ec3f005f9f
+- **Resource description:** Resource Title: Individual tree parameters and volume estimates based on TLS point clouds and allometric models<br>    Size: 42401 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/c82b9485-0b40-41f4-a798-4e4e725cafdc/resource/450e6bd6-f0c2-4c31-b410-52013c50e988/download/tree&#95;parameters&#95;tls&#95;ad&#95;wl.csv<br>    Description: &quot;ASM&quot; denotes volume estimates calculated by allometric scaling models &#40;as used in Swiss NFI&#41;, based on tree height, DBH and D7.<br>&quot;QSM&quot; denotes volume estimates derived from TLS point clouds by quantitative structure models &#40;QSM&#41;.<br>The remaining variables are geometrical features directly calculated from single tree TLS point clouds.<br>For more detailed variable descriptions see related publication.
+- **Resource issued:** 2023-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **b1bdec45-3abc-4b3e-b934-56357e40d7dc** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/c82b9485-0b40-41f4-a798-4e4e725cafdc/resource/450e6bd6-f0c2-4c31-b410-52013c50e988/download/tree_parameters_tls_ad_wl.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

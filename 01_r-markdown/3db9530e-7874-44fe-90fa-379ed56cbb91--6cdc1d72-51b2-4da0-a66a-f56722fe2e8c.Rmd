@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Wasserqualität an Badeplätzen
+
+Messwerte zur Beurteilung der Wasserqualität an Badeplätzen im Kanton Zug, 2006 bis 2026. <br><br>Untersuchungen erfolgten auf: <br>- Escherichia coli <br>- Enterokokken &#40;ab 2011&#41;<br>- Salmonellen &#40;bis 2012&#41; <br><br>Masseinheit:<br>KBE/100ml = Kolonie-bildende Einheiten pro 100 Milliliter<br><br>Erläuterung: <br>&quot;n.n.&quot; = nicht nachweisbar &#40;in Probe keine Keime der gesuchten Spezies/Genus pro 100 ml nachweisbar&#41; <br><br>Mikrobiologische Untersuchungen anhand Indikatorkeimen bestimmen den Grad der Verunreinigung durch Abschwemmung von Oberflächen, Erdreich und möglicher Eintrag von Fäkalien tierischen und menschlichen Ursprungs. Daraus ergibt sich ein Hinweis auf möglicherweise vorhandene, krankheitserregende Bakterien und Viren. <br><br>------------------------------------------------------------------------------------------------------------<br>Auf Grund der Untersuchungsergebnisse wird das Badewasser in die Qualitätsklassen A - D eingeteilt &#40;siehe auch &quot;Dokumentation: Übersichtsgrafik Qualitätsklassen&quot;&#41;: <br><br>A/B<br>Beurteilung: gut, eine gesundheitliche Beeinträchtigung ist nicht zu erwarten.<br><br>C<br>Beurteilung: akzeptabel, eine gesundheitliche Beeinträchtigung ist nicht auszuschliessen. Empfehlung: Nicht tauchen, nach dem Baden gründlich duschen.<br><br>D<br>Beurteilung: schlecht, eine gesundheitliche Beeinträchtigung ist möglich. Das Baden ist mit gesundheitlichen Risiken verbunden, es wird vom Baden abgeraten.<br><br>------------------------------------------------------------------------------------------------------------<br><br>Das Amt für Verbraucherschutz untersucht regelmässig die Badewasserqualität der öffentlichen Seebäder. Lorze, Sihl und Reuss gelten nicht als öffentliche Badegewässer. Badeplätze an diesen Flüssen sind aber in der Bevölkerung äusserst beliebt. Es wird deshalb an einigen Messstellen auch die Badewasserqualität dieser Flüsse untersucht.<br><br>Resultate zu Probestellen unterhalb einer Abwasserreinigungsanlage &#40;ARA&#41;:<br>Die Probestellen «Sihl, Sihlbrugg, Sihlbruggstr. Parkplatz» und «Lorze, Hagendorn, Spielplatz» wurde bis 2023 als Badeplätze geführt. Sie befinden sich direkt unterhalb einer ARA. An diesen Wasserstellen gibt es eine erhöhte Konzentration von Bakterien durch das Einleiten von gereinigtem Abwasser. Darunter befinden sich auch krankheitserregende und antibiotikaresistente Keime. An diesen Stellen wird trotz möglicherweise genügender Qualitätsklasse vom Baden abgeraten.<br><br>Risiken:<br>-	Magen-Darm-Erkrankungen mit Durchfall und/oder Erbrechen<br>-	Vereiterung von Wunden, Bindehautreizungen, Ohrenentzündungen<br>-	Erschwerte Behandlung, wenn Infektion durch antibiotikaresistente Keime verursacht<br><br>Trotzdem ins Wasser? Diese Massnahmen reduzieren Ihr Risiko:<br>-	Möglichst wenig Wasser schlucken<br>-	Hautverletzungen wasserdicht abdecken<br>-	Nach dem Baden gründlich duschen
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/wasserqualitat-an-badeplatzen)
+
+Automatically generated R starter code for dataset 3db9530e-7874-44fe-90fa-379ed56cbb91.
+
+## Metadata
+
+- **identifier:** 307c201c-58fb-4aed-a43d-a28a3a0d6de9@kanton-zug
+- **publisher.name:** Amt für Verbraucherschutz des Kantons Zug
+- **organization.display&#95;name:** Kanton Zug
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** wasserqualitat, keime, badewasser, freibad
+- **issued:** 
+- **metadata&#95;created:** 2025-11-07T09:01:01.952216
+- **metadata&#95;modified:** 2026-11-12T21:46:14.898630
+- **Resource id:** 6cdc1d72-51b2-4da0-a66a-f56722fe2e8c
+- **Resource name:** Messungen Salmonella spp
+- **Resource package&#95;id:** 3db9530e-7874-44fe-90fa-379ed56cbb91
+- **Resource description:** 
+- **Resource issued:** 
+- **Resource modified:** 2026-07-31 07:07:18.468000+00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Messungen Salmonella spp** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.zg.ch/store/1/resource/1839")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@zg.ch &#124; Open Data Zug

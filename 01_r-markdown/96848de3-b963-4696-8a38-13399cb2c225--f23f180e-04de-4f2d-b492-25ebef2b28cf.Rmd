@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Soil sealing Barcelona and Milan different territorial levels
+
+Dataset description-br /- <br>This dataset is a recalculation of the Copernicus 2015 high resolution layer &#40;HRL&#41; of imperviousness density data &#40;IMD&#41; at different spatial/territorial scales for the case studies of Barcelona and Milan. The selected spatial/territorial scales are the following: <br> &#42; a&#41;	Barcelona city boundaries<br> &#42; b&#41;	Barcelona metropolitan area, Àrea Metropolitana de Barcelona &#40;AMB&#41;<br> &#42; c&#41;	Barcelona greater city &#40;Urban Atlas&#41;<br> &#42; d&#41;	Barcelona functional urban area &#40;Urban Atlas&#41;<br> &#42; e&#41;	Milan city boundaries<br> &#42; f&#41;	Milan metropolitan area, Piano Intercomunale Milanese &#40;PIM&#41;<br> &#42; g&#41;	Milan greater city &#40;Urban Atlas&#41;<br> &#42; h&#41;	Milan functional urban area &#40;Urban Atlas&#41;-br /- <br>In each of the spatial/territorial scales listed above, the number of 20x20mt cells corresponding to each of the 101 values of imperviousness &#40;0-100% soil sealing: 0% means fully non-sealed area; 100% means fully sealed area&#41; is provided, as well as the converted measure into squared kilometres &#40;km2&#41;. -br /- -br /- <br>-br /- Dataset composition-br /- <br>The dataset is provided in .csv format and is composed of: -br /- <br>&#95;IMD15&#95;BCN&#95;MI&#95;Sources.csv&#95;: Information on data sources -br /- <br> &#95;IMD15&#95;BCN.csv&#95;: This file refers to the 2015 high resolution layer of imperviousness density &#40;IMD&#41; for the selected territorial/spatial scales in Barcelona: <br> &#42; a&#41;	Barcelona city boundaries &#40;label: bcn&#95;city&#41; <br> &#42; b&#41;	Barcelona metropolitan area, Àrea metropolitana de Barcelona &#40;AMB&#41; &#40;label: bcn&#95;amb&#41;<br> &#42; c&#41;	Barcelona greater city &#40;Urban Atlas&#41; &#40;label: bcn&#95;grc&#41;<br> &#42; d&#41;	Barcelona functional urban area &#40;Urban Atlas&#41; &#40;label: bcn&#95;fua&#41;-br /- <br> &#95;IMD15&#95;MI.csv&#95;: This file refers to the 2015 high resolution layer of imperviousness density &#40;IMD&#41; for the selected territorial/spatial scales in Milan: <br> &#42; e&#41;	Milan city boundaries &#40;label: mi&#95;city&#41;<br> &#42; f&#41;	Milan metropolitan area, Piano intercomunale milanese &#40;PIM&#41; &#40;label: mi&#95;pim&#41;<br> &#42; g&#41;	Milan greater city &#40;Urban Atlas&#41; &#40;label: mi&#95;grc&#41;<br> &#42; h&#41;	Milan functional urban area &#40;Urban Atlas&#41; &#40;label: mi&#95;fua&#41;-br /- <br>&#95;IMD15&#95;BCN&#95;MI.mpk&#95;: the shareable project in Esri ArcGIS format including the HRL IMD data in raster format for each of the territorial boundaries as specified in letter a&#41;-h&#41;. -br /- <br>Regarding the territorial scale as per letter f&#41;, the list of municipalities included in the Milan metropolitan area in 2016 was provided to me in 2016 from a person working at the PIM. -br /- <br>In the IMD15&#95;BCN.csv and IMD15&#95;MI.csv, the following columns are included:<br> &#42; Level: the territorial level as defined above &#40;a&#41;-d&#41; for Barcelona and e&#41;-h&#41; for Milan&#41;;<br> &#42; Value: the 101 values of imperviousness density expressed as a percentage of soil sealing &#40;0-100%: 0% means fully non-sealed area; 100% means fully sealed area&#41;;<br> &#42; Count: the number of 20x20mt cells corresponding to a certain percentage of soil sealing or imperviousness; <br> &#42; Km2: the conversion of the 20x20mt cells into squared kilometres &#40;km2&#41; to facilitate the use of the dataset.-br /- -br /- <br>-br /- Further information on the Dataset-br /- <br>This dataset is the result of a combination between different databases of different types and that have been downloaded from different sources. Below, I describe the main steps in data management that resulted in the production of the dataset in an Esri ArcGIS &#40;ArcMap, Version 10.7&#41; project.-br /- <br> 1. The high resolution layer &#40;HRL&#41; of the imperviousness density data &#40;IMD&#41; for 2015 has been downloaded from the official website of Copernicus. At the time of producing the dataset &#40;April/May 2021&#41;, the 2018 version of the IMD HRL database was not yet validated, so the 2015 version was chosen instead. The type of this dataset is raster. <br> 2. For both Barcelona and Milan, shapefiles of their administrative boundaries have been downloaded from official sources, i.e. the ISTAT &#40;Italian National Statistical Institute&#41; and the ICGC &#40;Catalan Institute for Cartography and Geology&#41;. These files have been reprojected to match the IMD HRL projection, i.e. ETRS 1989 LAEA.<br> 3. Urban Atlas &#40;UA&#41; boundaries for the Greater Cities &#40;GRC&#41; and Functional Urban Areas &#40;FUA&#41; of Barcelona and Milan have been checked and reconstructed in Esri ArcGIS from the administrative boundaries files by using a Eurostat correspondence table. This is because at the time of the dataset creation &#40;April/May 2021&#41;, the 2018 Urban Atlas shapefiles for these two cities were not fully updated or validated on the Copernicus Urban Atlas website. Therefore, I had to re-create the GRC and FUA boundaries by using the Eurostat correspondence table as an alternative &#40;but still official&#41; data source. The use of the Eurostat correspondence table with the codes and names of municipalities was also useful to detect discrepancies, basically stemming from changes in municipality names and codes and that created inconsistent spatial features. When detected, these discrepancies have been checked with the ISTAT and ICGC offices in charge of producing Urban Atlas data before the final GRC and FUA boundaries were defined.-br /- <br>Steps 2&#41; and 3&#41; were the most time consuming, because they required other tools to be used in Esri ArcGIS, like spatial joins and geoprocessing tools for shapefiles &#40;in particular dissolve and area re-calculator in editing sessions&#41; for each of the spatial/territorial scales as indicated in letters a&#41;-h&#41;. -br /- <br>Once the databases for both Barcelona and Milan as described in points 2&#41; and 3&#41; were ready &#40;uploaded in Esri ArcGIS, reprojected and their correctness checked&#41;, they have been ‘crossed’ &#40;i.e. clipped&#41; with the IMD HRL as described in point 1&#41; and a specific raster for each territorial level has been calculated. The procedure in Esri ArcGIS was the following:<br> &#42; Clipping: Arctoolbox - Data management tools - Raster - Raster Processing - Clip. The ‘input’ file is the HRL IMD raster file as described in point 1&#41; and the ‘output’ file is each of the spatial/territorial files. The option &quot;Use Input Features for Clipping Geometry &#40;optional&#41;” was selected for each of the clipping. <br> &#42; Delete and create raster attribute table: Once the clipping has been done, the raster has to be recalculated first through Arctoolbox - Data management tools - Raster - Raster properties - Delete Raster Attribute Table and then through Arctoolbox - Data management tools - Raster - Raster properties - Build Raster Attribute Table; the &quot;overwrite&quot; option has been selected. -br /-<br>-br /- Other tools used for the raster files in Esri ArcGIS have been the spatial analyst tools &#40;in particular, Zonal - Zonal Statistics&#41;. As an additional check, the colour scheme of each of the newly created raster for each of the spatial/territorial attributes as per letters a&#41;-h&#41; above has been changed to check the consistency of its overlay with the original HRL IMD file. However, a perfect match between the shapefiles as per letters a&#41;-h&#41; and the raster files could not be achieved since the raster files are composed of 20x20mt cells.-br /- <br>The newly created attribute tables of each of the raster files have been exported and saved as .txt files. These .txt files have then been copied in the excel corresponding to the final published dataset.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/soil-sealing-barcelona-and-milan-different-territorial-levels)
+
+Automatically generated R starter code for dataset 96848de3-b963-4696-8a38-13399cb2c225.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.251@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** milan, barcelona, urban-atlas, copernicus, imperviousness, soil-sealing
+- **issued:** 2021-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:32:53.160789
+- **metadata&#95;modified:** 2026-11-14T02:47:09.105649
+- **Resource id:** f23f180e-04de-4f2d-b492-25ebef2b28cf
+- **Resource name:** 
+- **Resource package&#95;id:** 96848de3-b963-4696-8a38-13399cb2c225
+- **Resource description:** Resource Title: IMD15&#95;BCN<br>    Size: 9402 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/34fc9c0c-1c90-4f87-b3a9-76cc0e888eda/resource/b49ab377-1058-44b0-9db3-eae5af4bb518/download/imd15&#95;bcn.csv<br>    Description: 2015 high resolution layer of imperviousness density &#40;IMD&#41; for the selected territorial/spatial scales in Barcelona
+- **Resource issued:** 2021-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+- **Resource rights:** http://www.opendefinition.org/licenses/cc-by-sa
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **f23f180e-04de-4f2d-b492-25ebef2b28cf** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/34fc9c0c-1c90-4f87-b3a9-76cc0e888eda/resource/b49ab377-1058-44b0-9db3-eae5af4bb518/download/imd15_bcn.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

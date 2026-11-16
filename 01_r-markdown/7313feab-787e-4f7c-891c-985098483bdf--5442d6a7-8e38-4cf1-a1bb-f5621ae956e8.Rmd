@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Barrierefreies Reisen - Rollstuhlzugänglichkeit
+
+Dieser Datensatz enthält Informationen über die Rollstuhlzugänglichkeit pro Haltestelle und Haltekante, auf Basis der Fahrplandaten aus INFO+ und der BehiG-Bestandsaufnahme. Ausserdem enthalten ist die Zugänglichkeit für eine kleine Menge von Fahrzeugen, inklusive einer Erklärung wie diese bewertet wurden.<br><br>Die Daten sind die Basis für barrierefreies Reisen &#40;BfR&#41; und vereinfachen die Berechnung von Rollstuhlsymbolen, entsprechend der in Richtlinie V580 &#40;Produkt 02&#41; geforderten Granularität.<br><br>Achtung:<br>Ab 06. Dezember 2024 werden die Rollstuhlzugänglichkeiten von Haltestellen oder Haltekanten in der Datei BfR&#95;Haltestellendaten.csv mit Gültigkeiten versehen. Das heisst, jeder Eintrag enthält zusätzlich die zwei Spalten &quot;gültigVon&quot; und &quot;gültigBis&quot;, welche festlegen, wie lange die fragliche Zugänglichkeit gültig ist. Dies bedeutet auch, dass für eine bestimmte Haltestelle oder Haltekante mehrere Einträge vorhanden sein können mit unterschiedlichen Zugänglichkeiten und Gültigkeiten. Ein Beispiel soll dies veranschaulichen, wobei der Einfachheit halber nicht alle Spalten aufgeführt werden:<br>DIDOK      Name             sg&#95;Autonomie  ug&#95;Ersatztransport   sloid     gültigVon   gültigBis<br>8503059    Zürich Stadelhofen, Bahnhof   1     0     ch:1:sloid:3059::1      18.11.2024  15.12.2024<br>8503059    Zürich Stadelhofen, Bahnhof   0     1     ch:1:sloid:3059::1      16.12.2024  14.05.2025<br><br>In diesem konstruierten Beispiel ist die Haltekante mit SwissLocationId &quot;ch:1:sloid:3059::1&quot; bis 15. Dezember autonom zugänglich, aber aufgrund einer Baustelle ab dem 16. Dezember für Fahrgäste im Rollstuhl nur noch mittels Ersatz-Shuttle erreichbar.<br><br>Weitere Details und Erklärungen hier: https://opentransportdata.swiss/de/cookbook/accessibility-cookbook/<br>
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/bfr-rollstuhlzuganglichkeit)
+
+Automatically generated R starter code for dataset 7313feab-787e-4f7c-891c-985098483bdf.
+
+## Metadata
+
+- **identifier:** bfr-rollstuhl@oevch
+- **publisher.name:** Fahrplan &#40;INFO+&#41;
+- **organization.display&#95;name:** Geschäftsstelle Systemaufgaben Kundeninformation &#40;SBB AG&#41;
+- **organization.url:** https://www.opentransportdata.swiss
+- **maintainer:** behig.ski@sbb.ch
+- **maintainer&#95;email:** 
+- **keywords:** behig, rollstuhlzuganglichkeit, proprietar, daten, haltestelle, haltekante, verkehrsmittel, zug, bus, rollstuhlfahrer, passagier
+- **issued:** 2023-06-15 11:01:51.704407
+- **metadata&#95;created:** 2023-12-13T02:42:48.278807
+- **metadata&#95;modified:** 2026-11-15T08:06:09.193263
+- **Resource id:** 5442d6a7-8e38-4cf1-a1bb-f5621ae956e8
+- **Resource name:** BfR&#95;Fahrzeugmapping.csv
+- **Resource package&#95;id:** 7313feab-787e-4f7c-891c-985098483bdf
+- **Resource description:** 
+- **Resource issued:** 2026-11-15 04:01:04.746702
+- **Resource modified:** 2026-11-15 04:01:04.746702
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **BfR&#95;Fahrzeugmapping.csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://data.opentransportdata.swiss/dataset/8456c028-4d73-4f2e-8127-9ce8ec889c9d/resource/ec47a113-22c3-40e3-842e-1ee1daa2b617/download/bfr_fahrzeugmapping.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+behig.ski@sbb.ch &#124; SKI Fachstelle BehiG

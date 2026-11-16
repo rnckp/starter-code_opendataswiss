@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Adresses de bâtiment non postales
+
+Selon l&#x27;ordonnance sur les noms géographiques &#40;ONGéo&#41;, tous les bâtiments doivent être identifiables par au moins une adresse. Cependant, pour les bâtiments n&#x27;ayant pas de nécessité à être habités comme les poulaillers, les garages privés ou des dépôts, une adresse de type NON POSTALE est référencée au centre du bâtiment. Cette adresse permet de faire un lien avec le bâtiment le plus proche qui est pourvu d&#x27;une adresse postale. L&#x27;attribut POSTALE de ce type de bâtiment est renseigné avec la valeur NON L&#x27;attribut NUMUNI&#95;INDEX est renseigné avec une valeur incrémentielle &gt; 0 Par exemple &#40;voir l&#x27;image de la fiche&#41;: Le bâtiment d&#x27;habitation au 17A, chemin des Manons porte l&#x27;ADRESSE POSTALE: 17A avec un index =0. - 17A.0 chemin des Manons. Cette donnée est publiée dans le jeu de donnée &quot;Adresses de bâtiment&quot; &#40;CAD&#95;ADRESSE&#41; Le garage privé attenant est référencé avec une ADRESSE NON POSTALE: 17A et un index =1. - 17A.1 chemin des Manons Le troisième bâtiment, adresse non postale également, porte l&#x27;ADRESSE NON POSTALE: 17A et l&#x27;index suivant =2. - 17A.2 chemin des Manons. Pour consulter l&#x27;ensemble des adresses du canton, postale et non-postale il est donc nécessaire d&#x27;afficher les deux jeux de données &quot;Adresses de bâtiment&quot; &#40;CAD&#95;ADRESSE&#41; et &quot;Adresses de bâtiment non postales&quot; &#40;CAD&#95;ADRESSE&#95;NON&#95;POSTALE&#41;. Dans le contexte suisse et genevois, l&#x27;adresse de bâtiment est rattachée au registre fédéral des bâtiments et des logements &#40;RegBL&#41;, qui recense l&#x27;ensemble des adresses officielles du pays. Chaque adresse y est géoréférencée, c&#x27;est-à-dire associée à des coordonnées géographiques précises. Une adresse est dite officielle lorsqu&#x27;elle a été validée par l&#x27;autorité compétente, en l&#x27;occurrence, dans le canton de Genève, par la Direction de l&#x27;information du territoire.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/adresses-georeferencees-non-postales)
+
+Automatically generated R starter code for dataset 188c703f-e72b-4bef-af12-23ed1cc0a19c.
+
+## Metadata
+
+- **identifier:** CAD&#95;ADRESSE&#95;NON&#95;POSTALE@canton-geneve
+- **publisher.name:** Direction de l&#x27;information du territoire
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:00:13.558569
+- **metadata&#95;modified:** 2026-11-16T02:49:41.630010
+- **Resource id:** 79089b3f-917e-4026-b981-00faf15c8467
+- **Resource name:** CSV
+- **Resource package&#95;id:** 188c703f-e72b-4bef-af12-23ed1cc0a19c
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-11-14 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/CAD_ADRESSE_NON_POSTALE-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+vincent.galley@etat.ge.ch &#124; Direction de l&#x27;information du territoire

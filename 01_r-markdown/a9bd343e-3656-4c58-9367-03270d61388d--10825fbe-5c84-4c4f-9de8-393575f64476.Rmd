@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Couverture du sol selon classification OTEMO
+
+OTEMO est l&#x27;acronyme de l&#x27;Ordonnance technique du DDPS sur la mensuration officielle du 10 juin 1994. Cette ordonnance fédérale introduit un catalogue d&#x27;objets de couverture du sol cantonale &#40;art.7-b&#41;. Selon cette ordonnance, la couche d&#x27;information &quot;couverture du sol&quot; couvre l&#x27;entier du territoire et distingue 6 genres &#40;renseignés sous CODE&#95;OTEMO&#95;1&#41; et 25 sous-genres &#40;renseignés sous CODE&#95;OTEMO&#95;2&#41; d&#x27;objets: 1. Bâtiments ; 2. Surfaces à revêtement dur, subdivisées en: route/chemin, trottoir, îlot, chemin de fer, place d&#x27;aviation, bassin et autres surfaces à revêtement dur ; 3. Surfaces vertes, subdivisées en: champ/pré/pâturage, culture intensive &#40;elle-même subdivisée en vigne et autre culture intensive&#41;, jardin, haut- et bas-marais et autre surface verte ; 4. Eaux, subdivisées en: eau stagnante, cours d&#x27;eau et roselière ; 5. Surfaces boisées, subdivisées en: forêt dense, pâturage boisé &#40;lui-même subdivisé en «pâturage boisé dense» et «pâturage boisé ouvert»&#41; et autre surface boisée ; 6. Surfaces sans végétation, subdivisées en: rocher, glacier/névé, éboulis/sable, extraction de matériaux/décharge et autre surface sans végétation. Afin de pouvoir répondre aux exigences fédérales, la carte OTEMO compile les données &quot;métier&quot; issues de: - la Mensuration Officielle &#40;MO&#41;, sous la responsabilité de la Direction de l&#x27;information du territoire &#40;DIT&#41; ; - la carte des milieux naturels du Grand Genève &#40;MN&#41;, diffusée par le consortium Système d&#x27;information du patrimoine vert &#40;SIPV&#41; sous la responsabilité du Jardin Botanique de Genève. Les données cadastrales de la MO définissent la propriété foncière et servent de référence au système d&#x27;information du territoire à Genève &#40;SITG&#41;. Elles servent également à l&#x27;établissement du plan du registre foncier, des états descriptifs des parcelles, du plan de base et du plan de ville. Ces données se fondent sur le modèle de données fédéral MD.01-MO-CH, qui organise le contenu en couches d&#x27;informations thématiques telles que la couverture du sol. La carte MN vise à inventorier les milieux naturels du canton de Genève à partir de différentes sources de données telles que les orthophotos, les données cadastrales, des observations terrain, et autres contributions tierces. La carte est mise à jour chaque année avec les données des CJBG, les couches de la MO et les données acquises par des tiers &#40;Office cantonal de l&#x27;agriculture et de la nature, communes, bureaux, etc.&#41;. A l&#x27;heure actuelle, le canton n&#x27;est pas prospecté de manière uniforme: les zones publiques sont davantage prospectées que les zones privées ou non-accessibles. Lorsque des surfaces sont relevées par des géomètres, elles sont rapportées dans les couches de la MO puis remontées dans la carte MN, selon une table d&#x27;équivalence mise en place par le CJGB et la DIT. En retour, la carte MN est utilisée pour documenter les surfaces du canton qui ne sont pas relevées dans les données cadastrales officielles fournies par la MO. Un script FME est utilisé à la DIT pour convertir les données d&#x27;un modèle à l&#x27;autre et automatiser les flux. En sortie, la DIT fournit une carte en partition complète du territoire cantonal selon la norme OTEMO.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/couverture-du-sol-selon-classification-otemo1)
+
+Automatically generated R starter code for dataset a9bd343e-3656-4c58-9367-03270d61388d.
+
+## Metadata
+
+- **identifier:** CAD&#95;CARTE&#95;OTEMO@canton-geneve
+- **publisher.name:** Direction de l&#x27;information du territoire
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:00:16.297014
+- **metadata&#95;modified:** 2026-11-02T02:20:18.975656
+- **Resource id:** 10825fbe-5c84-4c4f-9de8-393575f64476
+- **Resource name:** CSV
+- **Resource package&#95;id:** a9bd343e-3656-4c58-9367-03270d61388d
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-11-01 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/CAD_CARTE_OTEMO-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+dit@etat.ge.ch &#124; Direction de l&#x27;information du territoire

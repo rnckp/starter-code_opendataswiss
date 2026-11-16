@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: In-situ soil moisture measurements Napf-region
+
+In the context of landslide early warning research, soil moisture &#40;e.g. volumetric soil water content and soil water potential&#41; has been measured at six locations in the Napf-region &#40;Emmental, central Switzerland&#41; since April 2019. Here, we provide the hourly mean values of all sensors from all 6 locations after a comprehensive data control, filtering and aggregation &#40;from 10-min to 1-hour values&#41;. A sub-set of these data &#40;for the locations Wasen i.E.&#41; has previously been published in envidat.ch at https://www.doi.org/10.16904/envidat.369 applying the same data post-processing method. The dataset is complemented with meteorological data &#40;locally measured air temperature and precipitation&#41; as well as soil temperature. A detailed description of the sites and measurement installations can be found in a separate report &#40;attached with the data&#41;.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/in-situ-soil-moisture-measurements-napf-region)
+
+Automatically generated R starter code for dataset 60ae3ea7-e372-40a5-8e93-54c427d779f4.
+
+## Metadata
+
+- **identifier:** 10.16904&#95;ENVIDAT.395@envidat
+- **publisher.name:** EnviDat
+- **organization.display&#95;name:** EnviDat: das Umwelt-Datenportal
+- **organization.url:** https://www.envidat.ch/
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** landslide-early-warning, soil-water-content, soil-moisture, soil-water-matrix-potential, soil-temperature
+- **issued:** 2024-01-01 00:00:00
+- **metadata&#95;created:** 2026-04-23T14:50:38.174135
+- **metadata&#95;modified:** 2026-11-14T03:04:58.790977
+- **Resource id:** 7bf77183-7a8b-4b9b-8aa2-bb47076d3b0b
+- **Resource name:** 
+- **Resource package&#95;id:** 60ae3ea7-e372-40a5-8e93-54c427d779f4
+- **Resource description:** Resource Title: In-situ soil moisture measurements, Wasen i.E., flat location, since 2019<br>    Size: 13662945 bytes<br>    Format: text/csv<br>    URL: https://www.envidat.ch/dataset/60d27b8c-1004-40fa-ab26-da593cd90e74/resource/49ea6359-5735-42fd-adea-2db3ce46328d/download/soil&#95;moisture&#95;data&#95;wasen&#95;i.e.&#95;flat&#95;terrain&#95;emm&#95;2.csv<br>    Description: Volumetric soil water content &#40;m3 m-3&#41;, soil water potential &#40;mbar&#41; and soil temperatures &#40;oC&#41; measured in two profiles and four depths each, and two additional soil temperature measurements &#40;oC&#41;, air temperature &#40;oC&#41; and precipitation &#40;mm&#41;. Time intervall: 1 hour. Measurement period: since April 2019.<br>Location: flat terrain, meadow<br>For a detailed description of site, soil and vegetation: see attached document.<br>Updates 2025:<br>The “precipitation” column was set to not available &#40;NA&#41; for periods when the pluviometer was identified as clogged. These periods were assigned &#40;i&#41; based on regular maintenance of the measurement station and &#40;ii&#41; irregular behavior of the measurement series compared to the precipitation signal from the other nearby measurement stations.<br>Column “VWC&#95;0.7m&#95;right” and “ST&#95;5TE&#95;0.7m&#95;right” were set to not available &#40;NA&#41; for the period after the 2023-06-19T14:00:00Z due to irregular behavior of the ECH2O - 5TE sensor.
+- **Resource issued:** 2024-01-01 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by&#95;ask
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **7bf77183-7a8b-4b9b-8aa2-bb47076d3b0b** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.envidat.ch/dataset/60d27b8c-1004-40fa-ab26-da593cd90e74/resource/49ea6359-5735-42fd-adea-2db3ce46328d/download/soil_moisture_data_wasen_i.e._flat_terrain_emm_2.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+envidat@wsl.ch &#124; EnviDat

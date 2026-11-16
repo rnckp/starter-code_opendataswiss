@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Agglo - Aires urbaines - Stratégie du PA4
+
+Projet d&#x27;agglomération de 4ème génération &#40;2021&#41;, données schématiques de stratégie. Les aires urbaines définies sont les suivantes: 1&#41; Le coeur de l&#x27;agglomération centrale, d&#x27;urbanisation ancienne, est très densément occupé : à dominante activités, il accueille les équipements et espaces publics majeurs de l&#x27;agglomération franco-valdo-genevoise. 2&#41; Les aires urbaines d&#x27;agglomération centrale, correspond à la première couronne autour du coeur ; d&#x27;urbanisation plus récente, elles sont densément occupées et à dominante habitat; elles accueillent également des pôles d&#x27;emplois et des équipements et espaces publics d&#x27;intérêt d&#x27;agglomération. 3&#41; Les aires urbaines d&#x27;agglomération régionale correspondent aux villes principales des agglomérations régionales, ainsi qu&#x27;aux urbanisations plus ou moins contiguës des communes voisines; elles sont de densité moyenne et accueillent des pôles d&#x27;emplois et les équipements et espaces publics régionaux principaux. 4&#41; Les aires urbaines périphériques à l&#x27;agglomération centrale &#40;a&#41; ou aux agglomérations régionales &#40;b&#41; plus ou moins contiguës avec les aires urbaines denses et d&#x27;urbanisation récente, sont peu densément occupées et à dominante résidentielle. 5&#41; Les aires urbaines de centre local sont de densité moyenne et accueillent des activités et des équipements locaux. 6&#41; Les aires villageoises sont peu densément occupées et à dominante résidentielle. Les aires de développement urbain offrent un potentiel important de renouvellement urbain, de densification des tissus bâtis et d&#x27;extension urbaine et bénéficient d&#x27;une excellente desserte en transports publics. Leur affectation et leur densité correspondent à leur aire urbaine. Les aires ont été regroupées dans 4 catégories lors de l&#x27;élaboration du PA4: - Agglomération centrale &#40;1,2, 4a&#41; - Agglomération régionale &#40;3, 4b&#41; - Centre local &#40;5&#41; - Aire villageoise &#40;6&#41; La localisation est schématique et doit être interprétée à l&#x27;échelle du schéma d&#x27;agglomération &#40;max 1:100&#x27;000&#41;
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/agglo-aires-urbaines-strategie-du-pa41)
+
+Automatically generated R starter code for dataset 090b6c9d-7dd6-4549-8807-fd9b86d5a3d4.
+
+## Metadata
+
+- **identifier:** AGGLO&#95;AIRE&#95;URB&#95;PA4@canton-geneve
+- **publisher.name:** Direction du projet d&#x27;agglomération Grand Genève
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:01:02.815009
+- **metadata&#95;modified:** 2026-09-15T02:14:02.187319
+- **Resource id:** f0849848-02f0-4127-804b-176c062d62ed
+- **Resource name:** CSV
+- **Resource package&#95;id:** 090b6c9d-7dd6-4549-8807-fd9b86d5a3d4
+- **Resource description:** Serveur de fichiers Opendata
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2023-07-03 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://ge.ch/sitg/geodata/SITG/OPENDATA/AGGLO_AIRE_URB_PA4-CSV.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+louca.lerch@etat.ge.ch &#124; Direction du projet d&#x27;agglomération Grand Genève

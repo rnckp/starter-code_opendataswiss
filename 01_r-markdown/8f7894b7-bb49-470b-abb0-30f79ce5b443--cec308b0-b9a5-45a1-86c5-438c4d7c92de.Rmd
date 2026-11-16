@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Produktegruppen Budget 2018
+
+Die Stadt Bern führt ihre Rechnung nach den Grundsätzen des «New Public Management». In der Schweiz steht dafür der Begriff «wirkungsorientiere Verwaltungsführung»: die Verwaltung wird an ihrer Wirkung gemessen. D.h. Rechnung und Budget werden primär nach Produktegruppen erstellt. Dadurch wird eine grössere Transparenz der Verwaltungstätigkeit erreicht.  Für jedes Produkt und jede Dienststelle wird möglichst genau bestimmt, wie viel für welche Aufgaben und Leistungen ausgegeben bzw. wie viel eingenommen werden soll. Das Budget der Erfolgsrechnung ist verbindlich. In der Rechnung werden Ist und Soll gegenübergestellt.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/de-produktegruppen-budget-2018)
+
+Automatically generated R starter code for dataset 8f7894b7-bb49-470b-abb0-30f79ce5b443.
+
+## Metadata
+
+- **identifier:** Produktegruppen Budget PGB 2018@finanzverwaltung-der-stadt-bern
+- **publisher.name:** Finanzverwaltung der Stadt Bern
+- **organization.display&#95;name:** Finanzverwaltung der Stadt Bern
+- **organization.url:** 
+- **maintainer:** Finanzverwaltung der Stadt Bern, Bundesgasse 33, 3011 Bern, Tel. +41 31 321 65 80
+- **maintainer&#95;email:** finanzverwaltung@bern.ch
+- **keywords:** budget, finanzen, finanzverwaltung, jahresrechnung, new-public-management, produktegruppen, rechnung, stadt-bern, stadtverwaltung-wirkungsorientierte-verwaltungsfuhrung
+- **issued:** 2017-09-14 00:00:00
+- **metadata&#95;created:** 2018-02-23T09:50:55.823645
+- **metadata&#95;modified:** 2025-03-18T10:48:42.532365
+- **Resource id:** cec308b0-b9a5-45a1-86c5-438c4d7c92de
+- **Resource name:** Produktegruppen Budget 2018
+- **Resource package&#95;id:** 8f7894b7-bb49-470b-abb0-30f79ce5b443
+- **Resource description:** Die Datensätze für Rechnung und Budget sind hierarchisch gleich aufgebaut: Direktion bzw. Sonderrechnung, Dienststelle, Produktegruppe, Produkt.
+- **Resource issued:** 2017-09-14 00:00:00
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Produktegruppen Budget 2018** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("http://www.bern.ch/open-government-data-ogd/ogd-nach-themen/finanzen-ogd/download-rechnung-und-budget-ogd/produktegruppen-budget-2018.txt/download")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+finanzverwaltung@bern.ch &#124; Finanzverwaltung der Stadt Bern, Bundesgasse 33, 3011 Bern, Tel. +41 31 321 65 80

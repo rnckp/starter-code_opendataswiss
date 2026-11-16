@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Sites prioritaires pour la faune
+
+La couche « Sites prioritaires pour la faune » recense les principaux sites connus du canton de Genève où vivent des espèces animales menacées ou remarquables. Elle a pour objectif de faciliter la prise en compte de la faune dans les projets de construction, de rénovation ou d’aménagement du territoire, et de sensibiliser à la nécessité de préserver ces milieux et le cadre de vie de ces espèces. Attention, cette carte n’est pas un inventaire exhaustif. Elle montre uniquement les informations actuellement recensées par l’administration. Lorsqu’un site est indiqué, cela signifie que sa valeur faunistique est confirmée. En revanche, l’absence d’information ne signifie pas qu’il n’y a pas d’espèces ou d’enjeux faunistiques. Des habitats ou espèces peuvent être présents sans être cartographiés. Une part importante de ces sites concerne des espèces installées dans le bâti et, plus largement, dans les espaces construits &#40;par ex. colonies de chauves-souris, de martinets, etc.&#41;. Ces espèces sont particulièrement vulnérables lors de travaux &#40;rénovations, démolitions, nouvelles constructions&#41; et nécessitent une attention particulière dans la planification et l’organisation des travaux. Utilisation dans le cadre de projets ou de diagnostics: - L’utilisation de cette couche ne dispense pas de demander une extraction complète de données auprès des bases nationales &#40;InfoSpecies&#41;. - L’absence de données dans l’emprise d’un projet ne signifie pas que celui-ci est sans impact sur la faune. - L’entité référente doit être consultée pour une analyse détaillée. - Les spécialistes faune du service milieux et espèces de l’OCAN, ainsi que les ONGs spécialisées, sont à disposition pour conseiller sur la meilleure manière d’adapter un projet afin de préserver la valeur écologique du site. Fonctions principales de la couche: - Appui aux services administratifs : identifier les demandes d’autorisation &#40;construction, abattage d’arbres, etc.&#41; nécessitant un préavis de l’OCAN &#40;accès complet via un guichet interne sécurisé&#41;. - Aide aux professionnels : permettre aux bureaux &#40;architecte, urbaniste, ingénieur, bureau environnementaux&#41; spécialisés d’identifier les sites sensibles afin de préserver leur valeur faunistique &#40;accès partiel&#41;. - Information du public : donner accès à une partie des sites prioritaires pour la conservation de la faune &#40;accès partiel&#41;. Sources des données: les informations sont compilées par le Service milieux et espèces de l’OCAN à partir : - des observations de ses agents &#40;techniciens, gardes de l’environnement&#41;, - des données transmises par des ONG spécialisées &#40;CCO-GE, GOBG, KARCH-GE, COR, PIBG, etc.&#41;.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/sites-prioritaires-pour-la-faune)
+
+Automatically generated R starter code for dataset c3b86fcf-d8dd-4f53-923a-62ce0077efc7.
+
+## Metadata
+
+- **identifier:** FFP&#95;SITES&#95;PRIORITAIRES&#95;FAUNE@canton-geneve
+- **publisher.name:** Office cantonal de l&#x27;agriculture et de la nature
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:00:42.893788
+- **metadata&#95;modified:** 2026-10-31T03:44:42.256163
+- **Resource id:** fc40639b-4675-4de1-83fc-e2d029790ae2
+- **Resource name:** CSV
+- **Resource package&#95;id:** c3b86fcf-d8dd-4f53-923a-62ce0077efc7
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-10-29 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/FFP_SITES_PRIORITAIRES_FAUNE-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+alizee.testard@etat.ge.ch &#124; Office cantonal de l&#x27;agriculture et de la nature

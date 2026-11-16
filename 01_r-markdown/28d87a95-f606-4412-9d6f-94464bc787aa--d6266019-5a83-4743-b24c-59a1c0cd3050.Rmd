@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Cadastre des installations de combustion stationnaires - Chaudières
+
+État et caractéristiques des installations de combustion stationnaires &#40;chaudières&#41; présentes sur le territoire genevois. Objectif: Centralisation et mise à disposition de l&#x27;information sur les installations de combustion stationnaires &#40;chaudières&#41;. Ces données sont notamment utilisées dans le cadre de la planification énergétique territoriale, pour l&#x27;élaboration de concepts énergétiques territoriaux &#40;CET&#41;. Elles pourront également servir à l&#x27;élaboration d&#x27;autres couches de données géo-référencées concernant des indicateurs énergie-territoire, notamment au niveau des sous-secteurs statistiques &#40;GIREC&#41;. Source: Ces informations sont extraites de l&#x27;application ramonage du Portail Energie &#40;base de donnée RAMONAGE&#41;. L&#x27;exactitude des données dépend de l&#x27;information contenue dans la BD RAMONAGE, laquelle est renseignée : - pour les installations d&#x27;une puissance inférieure à 1000 kW par les Maîtres Ramoneurs, - pour les installations d&#x27;une puissance supérieure ou égale à 1000 kW par le service de l&#x27;air, du bruit et des rayonnements non ionisants &#40;SABRA&#41;, et - pour les installations industrielles par le service de l&#x27;environnement des entreprises &#40;SEN&#41;, lors des mises en service et des contrôles périodiques d&#x27;émissions conformément à l&#x27;OPair. Le suivi administratif est sous la responsabilité du SABRA pour toutes les puissances. Précisions IMPORTANTE relatives à la qualité des données de la BD RAMONAGE : Une partie des données de la base de données RAMONAGE ne sont plus à jour, un travail informatique est en cour afin que ces données soient mises jour d&#x27;ici mi 2016. Le service de l&#x27;air, du bruit et des rayonnements non ionisants &#40;SABRA&#41; assure depuis le 2ème semestre 2012 la compétence pour le suivi administratif de l&#x27;ensemble des installations de combustion destinées au chauffage des locaux. Selon la volonté du Conseil d&#x27;Etat, la priorité du SABRA consiste à garantir que ces chaudières respectent les valeurs limites d&#x27;émission prescrites par l&#x27;ordonnance sur la protection de l&#x27;air &#40;OPair&#41;, notamment pour ce qui est des installations situées dans les communes où la qualité de l&#x27;air n&#x27;est pas satisfaisante &#40;les valeurs limites d&#x27;immisssion fixées par l&#x27;OPair sont dépassées&#41; . A ce jour, il n&#x27;existe aucun système automatique de remontée des données issues des contrôles des maîtres ramoneurs ou des entreprises de réglages pour les chaudières de puissance inférieure ou égale à 1000 kW. Certaines données relatives à ces installations de combustion sont toutefois saisies manuellement par le SABRA, notamment en cas de non-conformité depuis le second semestre 2012, et sont disponibles dans la couche SCANE&#95;CHAUDIERE. Le SABRA peut donc garantir l&#x27;exactitude des données uniquement pour : les installations de combustion d&#x27;une puissance supérieure à 1000 kW, et ce quel que soit la date de leur contrôle. Le contrôle de la limitation préventive des émissions desdites chaudières est en effet assuré par le SABRA. les installations d&#x27;une puissance inférieure ou égale à 1000 kW qui ont été déclarées non conformes par les entreprises de réglage spécialisées, agréées par le canton, qui ont dû procéder à leur réglage &#40;sur ordre des ramoneurs&#41; et ce depuis 2012. Remarques concernant le type de combustible &#40;attribut LIBELLE&#95;COMBUSTIBLE&#41; : Les types: &quot;Bois a&quot;, &quot;Bois b&quot;, &quot;Bois C&quot;, correspondent à la dénomination donnée dans l&#x27;annexe 5 de l&#x27;OPair: a. le bois à l&#x27;état naturel et en morceaux, y compris son écorce, en particulier les bûches, les briquettes, les brindilles et les pives; b. le bois à l&#x27;état naturel sous une autre forme qu&#x27;en morceaux, en particulier les granulés, le bois déchiqueté, les copeaux, la sciure, la poussière d&#x27;une ponceuse et les écorces; c. les résidus de l&#x27;industrie du bois et de son artisanat, dans la mesure où le bois n&#x27;est pas imprégné d&#x27;un enduit ni recouvert d&#x27;un revêtement renfermant des composés organo-halogénés. La BD RAMONAGE ayant été créée dans le but d&#x27;assurer le suivi et le contrôle des émissions dues aux installations de combustion stationnaires &#40;chaudières&#41;, la présence de valeurs &quot;Electricité&quot;, &quot;Géothermie&quot;, &quot;Solaire&quot; est dès lors sujette à caution. Les entités qui ont ces valeurs devraient être utilisées avec beaucoup de prudence, pour plus d&#x27;information à ce sujet prendre contact avec le SABRA.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/cadastre-des-installations-de-combustion-stationnaires-chaudieres1)
+
+Automatically generated R starter code for dataset 28d87a95-f606-4412-9d6f-94464bc787aa.
+
+## Metadata
+
+- **identifier:** SCANE&#95;CHAUDIERE@canton-geneve
+- **publisher.name:** Office cantonal de l&#x27;énergie
+- **organization.display&#95;name:** Kanton Genf
+- **organization.url:** 
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** 
+- **issued:** 2025-06-12 00:00:00
+- **metadata&#95;created:** 2026-01-12T16:07:56.674152
+- **metadata&#95;modified:** 2026-11-16T02:41:37.606813
+- **Resource id:** d6266019-5a83-4743-b24c-59a1c0cd3050
+- **Resource name:** CSV
+- **Resource package&#95;id:** 28d87a95-f606-4412-9d6f-94464bc787aa
+- **Resource description:** Service téléchargement extracteur
+- **Resource issued:** 2025-06-12 00:00:00
+- **Resource modified:** 2026-11-14 00:00:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **CSV** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://extract.sitg.ge.ch/files/SCANE_CHAUDIERE-csv.zip")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+basile.grandjean@etat.ge.ch &#124; Office cantonal de l&#x27;énergie

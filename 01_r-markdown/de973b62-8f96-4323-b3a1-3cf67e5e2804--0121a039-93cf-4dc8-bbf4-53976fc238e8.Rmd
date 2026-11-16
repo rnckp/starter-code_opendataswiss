@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Geschossflächen im Kanton Zürich
+
+Übersicht über den Stand der Geschossflächen im Kanton Zürich. Die Geschossflächendefinition lehnt sich an die Definition der Geschossfläche GF gemäss SIA und der anrechenbaren Geschossfläche gemäss Planungs- und Baugesetz &#40;PBG&#41; an. Es werden Daten auf Stufe Gemeinde, Planungsregion und für den Kanton Zürich als Ganzes bereitgestellt. Die Erhebung der Geschossflächen leitet sich indirekt aus gesetzlichen Vorgaben von Bund und Kanton ab. Der Zweck der Erhebung der Geschossflächenreserven ist, aufzuzeigen, welches Verdichtungspotential rechnerisch in Form von Geschossflächen in der Bauzone theoretisch vorhanden ist. Demgegenüber soll mit dem Geschossflächenbestand quantifiziert werden, wie viel Geschossfläche innerhalb der Bauzone bereits realisiert wurde. Ab 2021 wird ein neues Berechnungsmodell angewendet, daher sind die Werte mit den Vorjahren nur schwer vergleichbar. Für 2020 wurden aus technischen Gründen keine Daten erhoben. Datenquellen sind die Nutzungszonen gemäss ÖREB-Kataster des Kantons Zürich, das Gebäude- und Wohnregister &#40;GWR&#41; des Bundesamts für Statistik &#40;BFS&#41;, Daten der Gebäudeversicherung des Kantons Zürich &#40;GVZ&#41;, der Solarkataster &#40;SOLKAT&#41; des Bundesamts für Energie &#40;BFE&#41;, der Überbauungs -und Erschliessungsstand &#40;UbEs&#41; des Amtes für Raumentwicklung des Kantons Zürich und Laserscanning-Punktwolken &#40;LiDAR&#41;.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/geschossflachen-im-kanton-zurich)
+
+Automatically generated R starter code for dataset de973b62-8f96-4323-b3a1-3cf67e5e2804.
+
+## Metadata
+
+- **identifier:** 1802@are-kanton-zuerich
+- **publisher.name:** Amt für Raumentwicklung des Kantons Zürich
+- **organization.display&#95;name:** Amt für Raumentwicklung Kanton Zürich
+- **organization.url:** https://www.zh.ch/de/baudirektion/amt-fuer-raumentwicklung.html
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** raumentwicklung, raumplanungsregionen, geschossflaeche, gemeinden
+- **issued:** 2022-12-05 00:00:00+01:00
+- **metadata&#95;created:** 2022-12-06T03:12:49.914126
+- **metadata&#95;modified:** 2026-10-03T04:19:44.110112
+- **Resource id:** 0121a039-93cf-4dc8-bbf4-53976fc238e8
+- **Resource name:** Geschossflächenbestand 2000 bis 2019 in 1&#x27;000m2
+- **Resource package&#95;id:** de973b62-8f96-4323-b3a1-3cf67e5e2804
+- **Resource description:** Der Geschossflächenbestand gibt an, wie viel Geschossfläche innerhalb der Bauzone bereits realisiert wurde. Es wird unterschieden in Wohnzone, Mischzone und Arbeitszone. Mit der Spalte «GEO&#95;LEVEL&#95;LEVEL» können im Vergleich zur Spalte &quot;BFS&#95;NR&quot; neben den Gemeinden und Städten &#40;3&#41; zusätzlich auch die Regionen &#40;6&#41;, die Bezirke &#40;2&#41; und der Kanton Zürich &#40;1&#41; als Ganzes identifizieren werden. Für die Generierung der Daten bis einschliesslich 2019 war das alte Berechnungsmodell im Einsatz.
+- **Resource issued:** 2024-04-16 00:00:00+02:00
+- **Resource modified:** 2025-10-22 00:00:00+02:00
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;by
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Geschossflächenbestand 2000 bis 2019 in 1&#x27;000m2** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://daten.statistik.zh.ch/ogd/daten/ressourcen/KTZH_00001802_00005249.csv")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+raumbeobachtung@bd.zh.ch &#124; Amt für Raumentwicklung des Kantons Zürich, Raumplanung

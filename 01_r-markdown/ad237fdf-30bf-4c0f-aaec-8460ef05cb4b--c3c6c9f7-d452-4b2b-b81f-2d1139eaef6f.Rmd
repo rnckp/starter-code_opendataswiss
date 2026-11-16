@@ -1,0 +1,180 @@
+---
+title: "Open government data provided by opendata.swiss"
+date: "2026-11-16"
+output: html_document
+---
+
+## Dataset: Bauminventar &#40;inkl. 3D&#41;
+
+Stadtweites Bauminventar basierend auf dem Baumkataster von GSZ und dem Landschaftsmodell von swisstopo &#40;TLM3D&#41;<br><br>&#42;&#42;Zweck&#42;&#42;: Datengrundlage zum städtischen Baumbestand &#40;Baumstandorten und -höhen&#41; für diverse Applikationen &#40;u.a. Züri Virtuell und Züri 4D&#41;<br><br>Das Interesse an Daten zum Baumbestand in der Stadt Zürich hat in den letzten Jahren stark zugenommen. Einerseits steigt der Druck auf Grünanlagen und deren Nutzung stetig. Andererseits kann beobachtet werden, dass Geodaten vermehrt in frühe Arbeitsschritte von Projektarbeiten, Forschungen und Arbeitsplanungen einfliessen. Der digitale Fortschritt begünstigt vielfältige Arbeiten zu Baumbestand wie beispielsweise 3D-Visualisierungen und Baumpflanzpotenzialstudien. Der Stadt Zürich fehlt allerdings eine flächendeckende, einheitliche und frei zugängliche Arbeitsgrundlage &#40;Bauminventar&#41;. Zum jetzigen Zeitpunkt ist der Baumkataster der einzig vorhandene Datensatz zum Baumbestand in der Stadt Zürich. Jedoch dient er als Kontroll- und Pflegeapplikation und ist limitiert auf die städtisch unterhaltenen Bäume. Zu Baumstandorten auf Privatgrund sind bisher keinerlei Informationen vorhanden. Die Vielzahl an Privatbäumen und die Zutrittsbeschränkungen auf Privatflächen verunmöglichen die manuelle Erfassung jedes einzelnen Baumes auf Gemeindefläche. Diese Limitierung kann mit Hilfe des topographischen Landschaftsmodells der Schweiz von swisstopo umgangen werden. Das Modell beinhaltet aus Laser- und Luftbilddaten automatisch abgeleitete Punktdaten zu Einzelbäumen. Wird das bestehende Baumkataster mit dieser Datenquelle ergänzt, resultiert ein flächendeckendes Bauminventar. Wichtig ist, dass der Datenungenauigkeit genügend Beachtung geschenkt wird. Diese Methodik stellt aber auf Grund fehlender Alternativen die genaueste, mögliche Annäherung an ein städtisches Bauminventar dar.<br><br>Der Geschäftsbereich Park- und Grünanlagen sieht sich stellvertretend für Grün Stadt Zürich &#40;GSZ&#41; verantwortlich, eine Datengrundlage zum städtischen Baumbestand zu erarbeiten und zu pflegen. Deshalb soll zur Förderung interdisziplinären und abwechslungsreichen Arbeiten ein aus dem Baumkataster, Lidardaten und Landschaftsmodell kombinierter Open Data Datensatz zum Baumbestand auf der Stadtfläche &#40;excl. Wald&#41; von Zürich erarbeitet werden. Das Ziel ist nicht die Ablösung oder Überarbeitung des bestehenden Baumkasters, sondern ein weiterentwickelter Datensatz unter anderem basierend auf dem Baumkataster.
+
+[View this dataset in the data catalogue](https://opendata.swiss/de/dataset/bauminventar-inkl-3d)
+
+Automatically generated R starter code for dataset ad237fdf-30bf-4c0f-aaec-8460ef05cb4b.
+
+## Metadata
+
+- **identifier:** 3989c310-fdbc-49c7-96ac-568151a5c791@stadt-zurich
+- **publisher.name:** Park- und Grünanlagen, Grün Stadt Zürich, Tiefbau- und Entsorgungsdepartement
+- **organization.display&#95;name:** Stadt Zürich
+- **organization.url:** http://www.stadt-zuerich.ch/opendata
+- **maintainer:** 
+- **maintainer&#95;email:** 
+- **keywords:** baumhohe, baumkataster, baumstandorte, geodaten, geoportal, lidar, polygondaten, punktdaten, stadtbegrunung, stzh, swisstlm3d, vektordaten
+- **issued:** 
+- **metadata&#95;created:** 2026-04-30T03:49:03.083673
+- **metadata&#95;modified:** 2026-09-15T01:18:45.874377
+- **Resource id:** c3c6c9f7-d452-4b2b-b81f-2d1139eaef6f
+- **Resource name:** Bauminventar.csv
+- **Resource package&#95;id:** ad237fdf-30bf-4c0f-aaec-8460ef05cb4b
+- **Resource description:** 
+- **Resource issued:** 2026-04-29 05:50:23.009986
+- **Resource modified:** 
+- **Resource license:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+- **Resource rights:** https://opendata.swiss/terms-of-use&#35;terms&#95;open
+
+## Load packages
+
+This template targets tidyverse (2.x) and skimr (2.x) with R 4.1 or newer for the native `|>` pipe; package versions are not pinned. Install missing packages once with `install.packages(c("tidyverse", "skimr"))`.
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(skimr)
+theme_set(theme_minimal())
+
+USER_AGENT <- "OpendataSwiss-StarterCode-R/1.0"
+HTTP_TIMEOUT <- 30
+
+get_dataset <- function(url, delim = NULL, drop_empty_unnamed = TRUE, ...) {
+  if (grepl("^https?://", url)) {
+    local_file <- tempfile()
+    on.exit(unlink(local_file), add = TRUE)
+    old_options <- options(timeout = HTTP_TIMEOUT)
+    on.exit(options(old_options), add = TRUE)
+    status <- download.file(url, local_file, method = "libcurl", mode = "wb",
+                            quiet = TRUE, headers = c("User-Agent" = USER_AGENT))
+    if (status != 0) stop("Resource download failed")
+    url <- local_file
+  }
+  data <- read_delim(url, delim = delim, show_col_types = FALSE, ...)
+  stop_for_problems(data)
+  if (drop_empty_unnamed && nrow(data) > 0) {
+    # Blank CSV headers (often from trailing separators) become "...n".
+    unnamed <- grepl("^\\.\\.\\.[0-9]+$", names(data))
+    empty_unnamed <- unnamed & map_lgl(data, ~ all(is.na(.x)))
+    if (any(empty_unnamed)) {
+      message("Removed empty unnamed columns: ", paste(names(data)[empty_unnamed], collapse = ", "))
+      data <- data[, !empty_unnamed, drop = FALSE]
+    }
+  }
+  data
+}
+```
+
+## Load data
+
+Selected resource: **Bauminventar.csv** (CSV). This notebook loads only this resource.
+
+For CSV, the delimiter and column types are guessed. Check the preview and metadata; set `delim`, `col_types`, `na`, or `locale` in `get_dataset(...)` when needed (for example, read identifiers with leading zeros as character columns). Parsing problems stop the import so they can be addressed.
+
+Fully empty columns named `...n` are removed on import. Named empty columns and unnamed columns containing values are kept. Use `drop_empty_unnamed = FALSE` to retain every column, including intentionally named `...n` fields.
+
+```{r load-data}
+df <- get_dataset("https://www.stadt-zuerich.ch/geodaten/download/Bauminventar?format=10008")
+```
+
+## Overview
+
+Inspect before cleaning: these chunks leave `df` unchanged. Duplicate rows and missing values may be meaningful.
+
+```{r overview}
+tibble(
+  rows = nrow(df),
+  columns = ncol(df),
+  duplicate_rows_after_first = sum(duplicated(df))
+)
+glimpse(df)
+head(df)
+```
+
+## Missing values
+
+```{r missing-values}
+missing <- tibble(
+  column = names(df),
+  missing = map_int(df, ~ sum(is.na(.x))),
+  missing_pct = map_dbl(df, ~ mean(is.na(.x)) * 100)
+) |>
+  arrange(desc(missing_pct))
+missing
+
+# Show up to 20 columns with missing values; percentages use all rows.
+missing_plot <- missing |> filter(missing > 0) |> slice_head(n = 20)
+if (nrow(missing_plot) > 0) {
+  ggplot(missing_plot, aes(x = missing_pct, y = reorder(column, missing_pct))) +
+    geom_col(fill = "steelblue") +
+    scale_x_continuous(limits = c(0, 100)) +
+    labs(x = "Missing values (%)", y = NULL, title = "Missingness by column")
+} else {
+  message("No missing values to plot (or the dataset has no rows).")
+}
+```
+
+## Summary and distributions
+
+`skim()` reports completeness and type-specific summaries. Inspect units before interpreting numeric codes as measurements.
+
+```{r summary}
+if (nrow(df) > 0 && ncol(df) > 0) {
+  skim(df)
+} else {
+  message("No data to summarize.")
+}
+```
+
+```{r histograms}
+# Plot up to four numeric columns, excluding non-finite values only from plots.
+numeric_names <- names(select(df, where(is.numeric))) |> head(4)
+for (column in numeric_names) {
+  values <- df[[column]]
+  values <- values[is.finite(values)]
+  if (length(values) > 0) {
+    plot <- ggplot(tibble(value = values), aes(x = value)) +
+      geom_histogram(bins = 30, fill = "steelblue", colour = "white") +
+      labs(title = column, x = column, y = "Count")
+    print(plot)
+  }
+}
+```
+
+```{r category-counts}
+# Top 10 values for up to three categorical columns, including missing values.
+categorical_names <- df |>
+  select(where(~ is.character(.x) || is.factor(.x) || is.logical(.x))) |>
+  names() |>
+  head(3)
+for (column in categorical_names) {
+  cat(column, "\n")
+  df |> count(.data[[column]], sort = TRUE) |> head(10) |> print()
+}
+```
+
+## Next steps
+
+Choose columns from `names(df)` and adapt these examples. Use the metadata to decide which comparisons make sense.
+
+```{r next-steps}
+# Group summary (replace column names):
+# df |> summarise(n = n(), mean = mean(value, na.rm = TRUE), .by = group)
+
+# Parse a date explicitly, then inspect a time trend:
+# dated <- df |> mutate(date = parse_date(date, format = "%Y-%m-%d"))
+# dated |> ggplot(aes(x = date, y = value)) + geom_point()
+
+# Relationship between two numeric variables:
+# df |> ggplot(aes(x = x_column, y = y_column)) + geom_point(alpha = 0.5)
+```
+
+## Questions about the data?
+
+opendata@zuerich.ch &#124; Open Data Zürich
